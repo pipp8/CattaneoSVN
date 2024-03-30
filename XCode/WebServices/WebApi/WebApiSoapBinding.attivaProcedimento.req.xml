@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+ xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ns1="http://webapi.wfca.infocert.it">
+ <SOAP-ENV:Body>
+   <ns1:attivaProcedimento>
+    <ns1:token></ns1:token>
+    <ns1:username></ns1:username>
+    <ns1:idAmministrazione>0</ns1:idAmministrazione>
+    <ns1:idAoo>0</ns1:idAoo>
+    <ns1:codFlusso></ns1:codFlusso>
+    <ns1:nomeDocumento></ns1:nomeDocumento>
+    <ns1:nomeFile></ns1:nomeFile>
+    <ns1:metaDatiDocumento>
+     <ns1:nome></ns1:nome>
+     <ns1:tipo>0</ns1:tipo>
+     <ns1:valore></ns1:valore>
+    </ns1:metaDatiDocumento>
+    <ns1:metaDatiDocumento>
+     <ns1:nome></ns1:nome>
+     <ns1:tipo>0</ns1:tipo>
+     <ns1:valore></ns1:valore>
+    </ns1:metaDatiDocumento>
+    <ns1:metaDatiProcedimento>
+     <ns1:nome></ns1:nome>
+     <ns1:tipo>0</ns1:tipo>
+     <ns1:valore></ns1:valore>
+    </ns1:metaDatiProcedimento>
+    <ns1:metaDatiProcedimento>
+     <ns1:nome></ns1:nome>
+     <ns1:tipo>0</ns1:tipo>
+     <ns1:valore></ns1:valore>
+    </ns1:metaDatiProcedimento>
+   </ns1:attivaProcedimento>
+
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

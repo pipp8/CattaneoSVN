@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+ xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ns1="http://webapi.wfca.infocert.it">
+ <SOAP-ENV:Body>
+   <ns1:getGiustificativi>
+    <ns1:token></ns1:token>
+    <ns1:anno></ns1:anno>
+    <ns1:mese></ns1:mese>
+    <ns1:esito></ns1:esito>
+    <ns1:codiceFlusso></ns1:codiceFlusso>
+    <ns1:idAmministrazione>0</ns1:idAmministrazione>
+    <ns1:idAoo>0</ns1:idAoo>
+   </ns1:getGiustificativi>
+
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

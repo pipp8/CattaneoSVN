@@ -1,0 +1,5 @@
+DatagramHost=localhost
+DatagramPortIn=54321
+DatagramPortOut=12345
+CBSPort=24680
+PhoneNumber=+123456789

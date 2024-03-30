@@ -1,0 +1,87 @@
+\documentclass[11pt]{article}
+\usepackage[italian]{babel}
+\usepackage{fancyhdr}
+\usepackage{fancybox}
+
+
+\addto\captionsitalian{%
+  \def\refname{Elenco delle pubblicazioni di Giuseppe Cattaneo al: \curdate}
+}
+
+%% DIMENSIONI della PAGINA:
+
+% Paragraphs are marked by large space rather than indentation:
+\parindent 0pt
+\parskip 7pt plus 1pt minus 1pt
+\setlength{\textwidth}{17cm}
+\setlength{\oddsidemargin}{-0,54cm}      % normally 0 implies 1 inch margin, so this means 2cm
+\setlength{\evensidemargin}{0cm}         % TeX Built-in
+\setlength{\textheight}{23.7 cm}         % height of text on page
+
+
+\makeatletter
+
+% parametri per i box (package fancybox)
+\setlength{\fboxsep}{20pt}
+\newlength{\titlewidth}
+\setlength{\titlewidth}{\textwidth}
+\addtolength{\titlewidth}{-2\fboxsep}
+
+% parametri per gli header e footer (package fancyheader)
+%\setlength{\headrulewidth}{1 pt}
+%\setlength{\footrulewidth}{1 pt}
+%\setlength{\plainheadrulewidth}{0pt}
+%\setlength{\plainfootrulewidth}{0pt}
+\setlength{\headsep}{10 mm}   % spazio dall'  header e l' inizio del testo
+\setlength{\topmargin}{-20mm} % 0cm  lascia un margine di 2 cm su A4
+                                     % a questo si somma \headheight
+\setlength{\headheight}{17 mm} % altezza dell'  header. 0 => no header
+\setlength{\topskip}{0mm}
+\setlength{\footskip}{15mm}   % distanza dal testo al footer
+
+\def\periodo{nel periodo dal {\em 1 Novembre 2006 al 31 Ottobre 2009}}
+\def\curdate{\em \@date}
+
+\def\headtitle{\scriptsize Relazione sull' attivit\`a scientifica
+        svolta dal {\sl Prof. Giuseppe Cattaneo} \periodo}
+
+\title{{\sffamily\bfseries {\Huge Relazione\\} \medskip
+ {\large sull'attivit\`a scientifica svolta dal\\
+   Prof. Giuseppe Cattaneo\\}
+   {\normalsize \periodo}}}
+
+
+
+\def\@maketitle{%
+  \begin{Sbox}
+    \begin{minipage}{\titlewidth}
+      \begin{center}
+        \@title
+        \vskip 1.0em{\small Fisciano, 15 Gennaio 2010}%\@date
+      \end{center}
+    \end{minipage}
+  \end{Sbox}
+  \begin{center}
+    \shadowbox{\TheSbox}
+  \end{center}
+  \par
+  \vskip .5em
+}
+
+\newskip\myskip
+
+
+
+\begin{document}
+
+% \section{Elenco delle Pubblicazioni Allegate alla Domanda}
+
+% \cite{ipl:1,icon:2,cnr:1,cnr:2,mxlog:1,litp:1,mxlog:2,SPLT:89,GULP:89,ISCIS:1,ISCIS:2,litp:2,ISCIS:3,AICA:1,threads:1,SEKE:1,ISCIS:4,AICA:2,sistemiII,SODA96:1,SODA97:2,jea:1,RETIS:97,ALEX:98,CABOTO:98,ECOM:2,ECOM:1,IFIP:98,acms:99,WSDAL:00,USENIX:01,DBLP:conf/usenix/2001f,AICA:01,CATAI:02,ALENEX:02,DBLP:conf/alenex/2002,AICA:02,SSGRR:03,wbem:03,WRSM:03a,WRSM:03b,jwe:04,airo:04,AnonAuth:04,jive:04,DBLP:conf/icws/2004,DBLP:conf/vl/2004,speech:06,itoken:07,DBLP:journals/vlc/CattaneoSP08,voip:08,DBLP:conf/ecweb/CastiglioneCCFP09,DBLP:conf/ecweb/2009,DISCERN09,DAMS2010,DBLP:conf/cisis/SantisCCCPP10,DBLP:conf/wistp/CattaneoFPV10}
+\nocite{*}
+\bibliography{personal}
+%\bibliographystyle{amsalpha}
+%\bibliographystyle{IEEEtranSA}
+\bibliographystyle{plainyr}
+%\bibliographystyle{ieeetr}
+
+\end{document}

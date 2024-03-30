@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.7)
+The top-level auxiliary file: android.aux
+The style file: IEEEtran.bst
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: android.bib
+-- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
+You've used 17 entries,
+            4039 wiz_defined-function locations,
+            918 strings with 10800 characters,
+and the built_in function-call counts, 9816 in all, are:
+= -- 761
+> -- 231
+< -- 48
++ -- 120
+- -- 45
+* -- 432
+:= -- 1566
+add.period$ -- 36
+call.type$ -- 17
+change.case$ -- 21
+chr.to.int$ -- 123
+cite$ -- 17
+duplicate$ -- 750
+empty$ -- 879
+format.name$ -- 55
+if$ -- 2215
+int.to.chr$ -- 0
+int.to.str$ -- 17
+missing$ -- 147
+newline$ -- 78
+num.names$ -- 21
+pop$ -- 386
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 760
+stack$ -- 0
+substring$ -- 304
+swap$ -- 527
+text.length$ -- 7
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 17
+warning$ -- 0
+while$ -- 36
+width$ -- 19
+write$ -- 173

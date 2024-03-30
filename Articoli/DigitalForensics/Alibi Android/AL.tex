@@ -1,0 +1,533 @@
+%\documentclass[10pt, conference, compsocconf, draft, onecolumn]{IEEEtran}
+
+\documentclass[10pt, conference]{IEEEtran}
+
+\IEEEoverridecommandlockouts
+
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{balance}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{epsfig}
+
+%\usepackage{lineno}
+
+\usepackage{hyperref}
+\usepackage{cite}
+
+\hypersetup{
+%  bookmarks = false,
+%  pagebackref=true,
+  pdftoolbar=true,
+  pdfnewwindow=true,
+  pdfmenubar=true,
+  pdftitle = {On the Construction of a False Digital Alibi on the Android OS},
+  pdfkeywords = {Digital Forensics; Mobile Forensics; Anti-Forensics; Mobile Anti-Forensics; Counter-Forensics; Android OS; Android Forensics;  Digital Evidence; Digital Investigation; False Digital Evidence; False Alibi; Digital Alibi},
+  pdfauthor = {Pietro Albano, Aniello Castiglione, Giuseppe Cattaneo, Giancarlo De Maio and Alfredo De Santis},
+  pdfsubject =  {Sixth International Conference on Broadband and Wireless Computing, Communication and Applications  - BWCCA-2011},
+  pdfcreator =  {Dr. Aniello Castiglione - castiglione@ieee.org},
+}
+
+\usepackage{subfig}
+
+\usepackage{listings}
+\usepackage{color}
+\lstset{
+language=bash,
+captionpos=b,
+tabsize=3,
+frame=lines,
+keywordstyle=\color{blue},
+commentstyle=\color{darkgreen},
+stringstyle=\color{red},
+%numbers=left,
+numberstyle=\tiny,
+numbersep=5pt,
+breaklines=true,
+showstringspaces=false,
+basicstyle=\scriptsize\ttfamily,
+emph={label}
+}
+
+\begin{document}
+
+\bstctlcite{IEEEexample:BSTcontrol}
+
+\title{On the Construction of a False Digital Alibi\\on the Android OS}
+
+
+\author{
+\IEEEauthorblockN{Pietro Albano\IEEEauthorrefmark{1}, Aniello Castiglione\IEEEauthorrefmark{2}\thanks{Corresponding author: Aniello Castiglione,~Member,~\textit{IEEE},~\href{mailto:castiglione@ieee.org}{castiglione@ieee.org},~Phone: +39089969594,~FAX: +39089969821}, Giuseppe Cattaneo\IEEEauthorrefmark{4}, Giancarlo De Maio\IEEEauthorrefmark{5}, Alfredo De Santis\IEEEauthorrefmark{3}}
+
+\IEEEauthorblockA{Dipartimento di Informatica ``R.M. Capocelli''\\
+Universit\`{a} degli Studi di Salerno\\
+%Via Ponte don Melillo,\\
+I-84084 Fisciano (SA), Italy\\
+\href{mailto:pietro.albano@gmail.com}{pietro.albano@gmail.com}\IEEEauthorrefmark{1},  \href{mailto:castiglione@ieee.org}{castiglione@ieee.org}\IEEEauthorrefmark{2},
+\href{mailto:cattaneo@dia.unisa.it}{cattaneo@dia.unisa.it}\IEEEauthorrefmark{4},
+\href{mailto:demaio@dia.unisa.it}{demaio@dia.unisa.it}\IEEEauthorrefmark{5}, \href{mailto:ads@dia.unisa.it}{ads@dia.unisa.it}\IEEEauthorrefmark{3}}
+
+}
+
+\maketitle
+
+%\linenumbers
+
+\begin{abstract}
+Digital evidence can determine either the conviction or acquittal of a suspect. In the latter case, such information constitutes a digital alibi.
+It has been recently shown how it is possible to set up a common PC in order to produce digital evidence in an automatic and systematic manner. Such traces are indistinguishable post-mortem from those left by human activity, thus being exploitable to forge a digital alibi.
+Modern smartphones are becoming more and more similar to PCs, due both to their computational power as well as their capacity to produce digital evidence, local or remote, which can assume a probative value. However, smartphones are still substantially different from common PCs, with OS limitations, lack of tools and so on, thus making it difficult to adopt the same techniques proposed for PCs to forge a digital alibi on a mobile device.
+
+In this paper novel techniques to create a false digital alibi on a smartphone equipped with the Android OS are presented. In particular, it is possible to simulate human interaction with a mobile device using a software automation, with the produced traces being indistinguishable post-mortem from those left by a real user. Moreover, it will be shown that advanced computer skills are not required to forge a digital alibi on an Android device, since some of the presented techniques can be easily carried out by non-savvy users. This emphasizes how the probative value of digital evidence should always be evaluated together with traditional investigation techniques.
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+Digital Forensics; Mobile Forensics; Anti-Forensics; Mobile Anti-Forensics; Counter-Forensics; Android Forensics;  Digital Evidence; Digital Investigation; False Digital Evidence; False Alibi; Digital Alibi.
+\end{IEEEkeywords}
+
+\section{Introduction}
+In recent years smartphones have become widely used and are replacing traditional mobile phones.
+They support complex applications, such as web browsers, e-mail clients, navigation systems and so on.
+The computational and storage capacity of a smartphone can be compared to that of a common PC. Moreover, OSes for smartphones make it possible to execute most of the operations supported by the traditional OSes for PCs. With respect to portable devices such as notebooks and netbooks, the main advantage of smartphones is that they can be used everywhere, thanks to their size.
+
+Smartphones are personal devices and contain sensitive user information, such as contacts, text messages, call lists, as well as e-mails, websites visited, geo-location data, etc.. From a digital forensics point of view, a smartphone is one of the most important sources of evidence. A mobile device also produces a number of traces on remote locations, for example, regarding its registration with a base station, which can provide a fairly accurate position of the user at a given time, as well as accesses to services via Internet and so on. All this information can provide a well-defined profile of the user and makes it possible to reconstruct his temporal activities. 
+Usually remote traces have a more probative value than local ones, since they are, in a sense, validated by the trusted third-parties to which they belong. For example, an user cannot manipulate his cell phone transcripts at the mobile operator, nor modify the posting time of a message on Facebook. Such evidence can be considered reliable in the context of a digital alibi.
+
+%\subsubsection{Digital Alibi}in the United States and elsewhere in the world.
+There has been a significant increase in the amount of digital evidence being brought into Courts. Digital devices can be subject to forensics investigations in order to collect useful traces about the behavior of a person involved in a proceeding, to be either cleared of an accuse or charged with an offense.
+
+A recent work~\cite{autoalibi} highlighted how Courts should be careful when considering the admissibility and probative value of digital evidence, since an individual (not necessarily skilled) can setup a software automation which is able to generate digital traces on a PC being indistinguishable in a post-mortem analysis from those produced by human activity. Such an automation can be exploited in order to construct a \textit{false digital alibi} or, in other words, a set of ``reliable'' digital evidence proving to the Court that the user was acting on his PC during a specific timeline - if in reality he was elsewhere.
+
+The aim of this work is to show that a similar approach can be adopted in order to create a false digital alibi by means of a common smartphone equipped with the Android OS. While a lot of tricks can be employed to accomplish this task on a PC, the inherent limitations of mobile devices - limited OSes, inability to configure some parameters, lack of tools and so on - lead to the adoption of different strategies. The lack of exploitable tools on Android is mostly due to the strict permission constraints imposed by the OS.
+
+The construction of a digital alibi includes the implementation of an automation strategy as well as the application of a method to avoid/erase any unwanted evidence left by the automation on the involved device(s). The automation strategies presented in this work are divided into two classes: \textit{local techniques}, which make use of procedures local to the Android device, and \textit{remote techniques}, whose execution is controlled from a common PC. Both cases include novel strategies that do not require advanced computer skills, but also more complex techniques which require some programming knowledge.
+
+In Section~\ref{TheAndroidOS} the permission mechanism of Android is analyzed. In Section~\ref{AutomationInAndroidOS} techniques viable to creating an automation for Android are presented, while in Section~\ref{DigitalEvidenceInAndroid} an analysis of the possible evidence left by their execution is dealt with. In Section~\ref{DevelTesting} the development and testing phases of the proposed techniques are discussed. In Section~\ref{CaseStudy}, a real case study is analyzed, ending with the authors conclusions in Section~\ref{Conclusions}.
+
+\section{Permissions in the Android OS}\label{TheAndroidOS}
+
+    Android is an open-source operating system for mobile devices developed by the Open Handset Alliance, a business alliance of 83 companies led by Google~\cite{site:OHA}. Android consists of a kernel derived from the Linux kernel, a middleware layer which includes a set of system libraries and a runtime environment, as well as an application layer which includes APIs and applications~\cite{site:androidos}.
+    
+    The Android system provides a signature-based permissions enforcement, so that applications can share functionality and data only if signed by the same developer. This inherent limitation of the OS is the main cause for the lack of fully-fledged tools to automate actions in Android.
+    As a consequence, all the automation techniques for a PC presented in~\cite{autoalibi} are difficult to implement in such a context, since they are all based on the concept of a ``controller process'' (the automation) injecting events (clicks, keystrokes, etc.) in some ``slave processes'' (word processor, browser, etc.). 
+    
+    %\noindent Some novel techniques proposed in~\ref{Methodology} allow to meet the lack of tools due to such characteristic.
+    
+    This section is followed by a discussion about the previously mentioned mechanism.
+    
+    %For a better understanding of the strategies proposed in~\ref{Methodology}, there follows a deeper explanation of the Android security mechanisms.
+    
+    % xchè ci focalizziamo sulla sicurezza e xchè ci interessa il fatto dei certificati
+    % in modo conciso e chiaro della tecnica injection - un cenno
+
+\subsection{Security and Permissions}\label{SecurityAndPermissions}
+
+    Android is a privilege-separated OS, where each application runs with a distinct system identity (the Linux \emph{user ID} and \emph{group ID}).
+    %Parts of the system are also separated into distinct identities. Linux thereby isolates applications from each other and from the system.
+    A central design point of the Android security architecture is that no application, by default, has permission to perform any operations that could adversely impact other applications, the operating system, or the user. This includes reading or writing the user private data (such as contacts or e-mails), reading or writing another application files, performing network access, keeping the device awake, etc.
+
+    The kernel is solely responsible for ``sandboxing'' applications from each other, which implies that applications must declare the permissions they need for additional capabilities not provided by the basic sandbox functionalities. Such permissions can be statically declared in the application package, and are prompted by the OS to the user at installation time, which let the user choose whether to proceed or not.
+    %Android has no mechanism for granting permissions dynamically at run-time because it complicates the user experience to the detriment of security.
+
+    An Android package (.apk file), containing an application, has to be signed by the developer and has to include the certificate that makes it possible to verify its signature. The certificate does not need to be signed by a Certificate Authority: usually Android applications include self-signed certificates, whose purpose is only to distinguish the different authors of applications.
+
+    At installation time, the Android OS gives each package a distinct Linux user ID, which remains the same for the entire lifetime of the application on the device.
+    %On a different device, the same package may have a different user ID; what matters is that each package has a distinct user ID on a given device.
+    Since security enforcement happens at process level, two applications having different user IDs cannot interact (i.e., share functionalities and data) by default.
+    %, so it is not possible that an application is able to issue commands to another application, since they need to run as different Linux users. 
+    It is possible to overcome this limitation by assigning the same user ID to the \verb"sharedUserId" attribute in the file \verb"AndroidManifest.xml" of the involved packages, which is a request to the OS to share the same user ID. It is important to note that the kernel accepts such requests only if the packages are signed by the same author (therefore have the same certificate)~\cite{site:AndroidSecurityFeatures}.
+
+    
+% \subsection{Useful Android Tools}
+% 
+% The Android OS comes equipped by default with some interesting tools, which are also useful for the purpose of this work. It follows a brief presentation of them.
+%     
+%     \subsubsection*{ADB}
+%     
+%     \subsubsection*{Monkey}
+    
+
+\section{Automation Techniques}\label{AutomationInAndroidOS}
+
+   % In questa sezione verranno illustrati tutti i possibili tool di automazione che possono essere utilizzati nel forgiare un falso alibi digitale su un dispositivo mobile con SO Android.
+
+The techniques proposed in this work, for the creation of a false digital alibi by means of an Android device, is based on the creation and use of an ``automation'', which is a program that performs a predetermined set of operations on the smartphone within a certain timeline. The aim of such an automation is to produce evidence indistinguishable by a digital forensics analysis from those left by the real user activity. This can be exploited by the user in order to forge a digital alibi which could be valid in the context of a legal proceeding. 
+%In the present work it is also shown that crafting a false digital alibi is ``easy''. There are presented some techniques that make such a task possible to be accomplished even by non-savvy users. 
+Even though advanced techniques could be evaluated (e.g., implementing low-level automations compiled to native ARM language), the aim of this work is to show that the result can be also obtained by adopting approaches viable by non-skilled users. 
+%As discussed below, each of these can leave different unwanted traces which should be treated in order to avoid suspicions.
+
+The proposed automation techniques are divided into two categories: \textit{local techniques}, which are executed only on the smartphone; \textit{remote techniques}, which are generally simpler to implement but require a secondary control device - i.e., a common PC.
+
+\subsection{Local Techniques}
+
+%In contrast with the approach discussed above, where nothing (but the \verb=adb= daemon) is executed on the Android device, 
+Several techniques that make it possible to create an automation that only require an Android device are presented in this section. Some simple approaches which do not require particular computer skills are firstly addressed, then an analysis of slightly more complex techniques, which extend the set of reproducible scenarios, is dealt with.
+    
+\subsubsection{Simple Automation}\label{basicTech}
+The aim of these basic techniques is to show that advanced skills are not required to forge a digital alibi by means of an Android device. The idea is to exploit some simple applications, freely available on the Android Market, which make it possible to trigger automatic actions at the occurrence of certain events. Applications such as AutomateIt~\cite{site:AutomateItPro} and Tasker~\cite{site:Tasker} can be used to implement this technique.
+
+The triggers are usually system events such as the reception of a text message, or an incoming call from a specific number. The triggered actions can usually be chosen from a predetermined set, and usually make it possible to enable/disable mobile data connectivity, kill applications, send text messages, place or answer calls and so on.
+      %The use of such features allows the creation of an automation capable to simulate the usual user behavior. 
+From the point of view of the digital alibi, evidence produced by sending a text message or placing a call should appear in the communication transcripts maintained by the mobile operator, and could be accepted in the context of a legal proceeding. However, the set of scenarios being reproducible using such an approach is generally limited. This is mostly due to the permission constraints (see~\ref{SecurityAndPermissions}) imposed by the Android OS, which denies a full interaction among applications belonging to different packages. In other words, it is not possible to simulate activities that require interactions with other applications, including a browser to surf the web, the Facebook application to post a message, as well as a text editor in order to modify a document.
+
+      \subsubsection{Event-Injection}
+      \label{evtInj}
+      %Even though an automation created with the local tools described before could meet all the requirements needed to forge a digital alibi plausible in the context of a legal proceeding, the operative scenario is very limited. There are analyzed some techniques that can be considered in order to create a fully-fledged automation which can realize a wider set of scenarios.
+
+The aim of the event-injection technique is to overcome the limits of the previous technique, i.e. create an automation able to simulate a full interaction of the user with the smartphone. The idea is to directly inject events (clicks, keystrokes and so on) into applications executing on the device.
+In order to accomplish this task, it is possible to exploit some professional testing tools, such as Robotium~\cite{site:Robotium}, which makes it possible to directly inject events into third party Android software. It usually requires the implementation of a ``tester'' program that should be installed on the device and realizes the interaction with the involved applications components. However, even though the APIs provided by such frameworks are generally easy-to-use, the need for programming skills makes such an approach more difficult to be realized with respect to the previous one.
+An automation created using this technique can simulate any scenario involving the use of applications: the posting on Facebook, the modification of a text document stored on the device and so on.
+      
+      
+      \subsubsection{Event-Replication}
+      \label{evtBased}
+      The event-replication approach is based on the idea of capturing events received by the input devices of the Android smartphone in order to replicate them later.
+For each input device (touchscreen, keyboard, light sensor, etc.) the Android kernel allocates a virtual device (usually \verb=/dev/input/eventX=) which can be used to both read occurring input events and generate new input events. Android also provides two system tools, namely \verb=getevent= and \verb=sendevent=, that make it possible to read and generate input events via shell commands.
+%       It is optionally possible to implement such technique in a remote manner. In fact, all the required commands can be issued by means of a remote shell over ADB, allowing a user to receive back the output from the phone directly on his PC. In such a case, it is evident that nothing have to be stored on the handset.
+This technique can potentially replicate any user activities, previously recorded with \verb=getevent=, by means of a shell script which performs the same actions through a series of \verb=sendevent= commands. While a very basic knowledge of shell scripting is required in order to realize this strategy, the correct functioning of the automation is strictly related to the ``current state'' of the smartphone. For example, a slight change in the graphics, as well as an unexpected slowdown in loading an application could compromise the correct generation/reception of the events.
+   
+
+\subsection{Remote Techniques}\label{PCToSmartphone}
+The mobile device can be remotely controlled from a secondary device connected to it, such as a common PC. As a consequence, an automation running on the controller machine can indirectly perform actions on the Android device in order to produce evidence for a digital alibi. Although an automation that is implemented following this strategy is simple and powerful, it needs more attention in the analysis of the possible unwanted evidence left on the devices.
+	
+%This approach allows the reuse of all the techniques and tools presented in~\cite{autoalibi} to construct an automation on a PC.
+This technique requires the combined use of three elements: a communication channel, a remote control software and an automation program.
+
+\subsubsection{Communication}
+A persistent connection between the controller device and the smartphone should be maintained for the entire execution of the automation procedure. While the standard in-box USB cable can be used to physically connect the devices, some expedients can be adopted in order to make it work over a wireless channel.
+Communication with the smartphone requires an Android Debug Bridge (ADB) daemon running on the Android system. ADB is already present on any default installation of Android and can be enabled by switching some simple system settings, thus not requiring any particular skills nor suspicious packages to be installed on the device.
+	
+\subsubsection{Remote Control}
+A remote control software is required in order to issue commands from the controller device to the smartphone.
+Open-source tools, such as Android Screencast~\cite{site:androidscreencast} and Droid@Screen~\cite{site:droid@screen}, are particularly useful for this purpose, since they implement a graphical remote control interface, usually called ``simulator'', which is able to reproduce the current screen view of the Android device on the Windows/*NIX system connected to it. Mouse clicks on that interface are translated into touch events on the smartphone screen, as well as keystrokes on the controller system generate keyboard events on the mobile device.
+        %Clearly, an automation running on the controller machine can itself control the smartphone through the simulator.
+	%In other words, traces of the automation will only be present on the controller device.
+	%It is important to note that the proper functioning of such tools requires root permissions on the Android OS.
+
+	%\subsubsection{Remote Control}
+	  
+	%There are some frameworks that implement a simulator over \verb=adb=, such as \textit{androidscreencast}~\cite{androidscreencast} and Droid@Screen~\cite{droid@screen}. 
+	%By using such tools, all events raised by keyboard and mouse on the controller machine are sent to the Android device through \verb=adb=.
+
+\subsubsection{Automation}
+\label{basicRem}
+As previously stated, the remote technique requires a simulator in order to reproduce the smartphone screen on a controller machine. Clearly, all the operations being reproducible through the simulator can be also performed by a software automation running on the controller system. Substantially, the same techniques viable to implementing an automation for a PC~\cite{autoalibi} can be reused in order to create an automation for a smartphone equipped with Android.
+A tool like Sikuli~\cite{site:Sikuli} is particularly useful when employing such an approach. It is a framework projected to automate the test of GUIs using screenshots, and that can be exploited to create powerful automations for mobile devices. 
+In fact, an automation implemented with Sikuli can interact with anything seen on the screen of the mobile device, which is in turn seen on the screen of the controller machine.
+%Sikuli includes Sikuli Script, a visual scripting API for writing visual scripts with screenshots easily. Sikuli Script automates anything seen on the screen of the mobile device without internal API's support. Sikuli allows to automate the interaction with a web page, a Windows/Linux/Mac OS X desktop application, or even an iPhone or Android application running in a simulator or via VNC.
+%\subsubsection{MOET}
+\noindent Any other tools based on screen coordinates, such as AutoIT~\cite{site:autoit} and Automator~\cite{site:automator}, can be also exploited for the same purpose. 
+	    
+%Even though using this approach it is potentially possible to simulate every operational scenarios, its implementation is closely related to the current screen view of both the mobile device and the controller machine. In practice, a slightly change in the screen resolution, in the desktop theme, and in general in the graphics elements of the interface could compromise the correct execution of the automation.
+	    
+%\subsubsection{Advanced Remote Automation}
+%A more advanced tool like MOET~\cite{site:MOET}, which permits a better control of the operations to be performed on the smartphone, can be also adopted by users having adequate computer skills. It is based on the \verb=monkeyrunner= API, which also comes pre-installed on the Android OS.
+ 
+	    %Nel forgiare un falso alibi digitale, utilizzando tale framwork, sul dispositivo mobile non viene lasciata alcuna digital evidence di tale artefatto, mentre sul PC bisogna cancellare gli script che hanno permesso la simulazione automatizzata dell'interazione tra utente e dispositivo mobile.
+
+	    %\subsubsection*{Handling Connection}
+	    %Generally, the communication with the smartphone requires an Android Debug Bridge (ADB) daemon running on the Android system. ADB is already present on any default installation of Android and can be enabled by switching some simple system settings, thus not requiring either particular skills nor suspicious packages to be installed on the device.
+	    
+	    %A simple trick can be adopted in order to loose the short-distance requirement due to the cable connection between the smartphone and the controller machine. In practice, applications such as adbWireless~\cite{adbWireless} or Wireless ADB~\cite{wirelessADB} can be used in order to make ADB work over Wi-Fi.
+
+
+%         Robotium~\cite{site:Robotium} is a test framework created to make it easy to write powerful and robust automatic black-box test cases for Android applications. Utilizzando tale framwork \`e possibile sviluppare una applicazione in grado di effettuare l'injection degli eventi in applicazioni di terze parti, simulando quindi l'interazione utente-dispositivo. Sfruttare tale tecnica per creare un falso alibi digitale implica che l'applicazione tester e l'applicazione da testare siino firmate con lo stesso certificato, quindi sviluppati dallo stesso sviluppatore. In order to create a false digital alibi, it is important to simulate the interaction between the user and the applications such as a web browser to surf the Internet, the ``phone application'' to place/answer a call or send SMS, etc.. Questo implica rifirmare le applicazioni, coinvolte nella creazione del falso alibi digitale, con lo stesso certificato dell'applicazione tester.
+% 
+%             Le tracce lasciate nel sistema utilizzando tale tecnica sono costituite sia dalla presenza dell'applicazione tester (Malware), sia dalla presenza di applicazioni proprietare firmate con un certificato falso.
+
+%         \subsubsection{AutomateIt}
+% 
+%             AutomateIt~\cite{site:AutomateItPro} is a third party application wich lets automate certain tasks by setting a trigger (e.g., the reception of a text message or of a call from a specific number, etc.) and a corresponding action (e.g., enable/disable mobile data connectivity, kill application, send text messages, place or answer calls, etc.). Bisogna sottolineare che AutomateIt non consente di simulare l'interazione tra utente e dispositivo. Essendo AutomateIt un'applicazione di terze parti, come tale, lascia tracce nel SO. Le uniche digital evidence che AutomateIt lascia nel sistema, a parte se stesso, sono rappresentate da un file xml usato per l'automazione. Tale file \`e salvato nel private folder dell'applicazione e quindi verr\`{a} cancellato a seguito della disinstallazione dell'applicazione stessa. Visto che il file xml di configurazione \`{e} oggetto di modifiche, anche dopo la disinstallazione dell'applicazione saranno presenti delle sue copie nel file system. Per evitare il recupero di tali copie \`{e} possibile applicare la tecnica proposta in~\cite{AndroidAF11}.
+
+
+% \section{The Proposed Methodology - da fondere con la sezione precedente}\label{Methodology}
+% 
+%     The construction of a false digital alibi on a mobile phone involves different activities.
+%     In particular, the proposed methodology is an iterative process composed by three fundamental phases: 
+%     \begin{itemize}
+%      \item choice and development of the automation technique
+%      \item implementation of an appropriate sanitization strategy
+%      \item testing of the entire process
+%     \end{itemize}
+%     ...
+% 
+%     \subsection{Automation Strategy}
+%     \--- Questa sottosezione andrebbe fusa con la sezione precedente ---\
+% 
+%         Objective of this phase is to identify the appropriate strategy that will lead to the construction of the automation procedure.
+%         The choice may be influenced by the characteristics of the techniques discussed in~\ref{AutomationInAndroidOS}, depending both on the operative environment and user skills. For instance, an advanced user could plan to realize an automation based on Robotium, which permits to accomplish a large set of activities, as well as a non-skilled user could choose AutomateIt, which is simpler but less powerful. In both cases, the proposed methodology will guarantee the proper fulfilment of a false digital alibi.
+% 
+%     \subsection{Remote Control}
+% 
+%         Some tools can be used in order to remotely control a mobile device from a PC. Clearly, all the operations being possible through these tools can be themselves performed by an automation running on the controller machine.
+% 
+%         Although a large number of scenarios can be reproduced employing such techniques, a connection between the smartphone and the controller PC is required during the entire automation process. Moreover, tools used to remotely control the mobile device can themselves leave unwanted traces on the system. Detailed discussions on the identification of unwanted evidence on a PC and on how erase or avoid are discussed in~\cite{autoalibi} and~\cite{securedel}.
+% 
+%         \subsubsection*{Cable Connection}
+% 
+%             As discussed in~\ref{AutomationInAndroidOS}, there are frameworks that provide facilities to perform automatic operations on a PC. Such tools can be also exploited in order to schedule automatic operations on a Android device. However, they require to be executed from a PC having the appropriate libraries installed, with the smartphone being connected to it through a standard USB cable. Moreover, some frameworks such as Sikuli should require a remote desktop access to the mobile device, which can be accomplished by means of tools such as androidscreencast~\cite{site:androidscreencast}.
+% 
+%             The main advantage in using these tools is that of having a powerful control of the actions being performed on the mobile device. Moreover, no unwanted evidence are left on the smartphone since all tools are executed at the controller side. The main disadvantage comes from the large amount of unwanted traces produced by both the remote control and the automation software on the controller machine. Another drawback could come from the small-ranged connection between the smartphone and the PC.
+% 
+%         \subsubsection*{Wi-Fi Connection}
+% 
+%             Some alternative techniques can be employed in order to overcome the small-ranged (cabled) connection between the controller and the mobile device. For instance, it is possible to remotely control an Android device by means of a VNC connection over a Wi-Fi link. However, it generally requires the presence of some third-party software on the smartphone (such as doid VNC server v0.991). Nevertheless, in this case unwanted evidence on the mobile device should be also considered and removed.
+%             
+%             It is important to note that it is not possible to use a Bluetooth connection to perform such a connection because Bluetooth communication is limited in Android
+% 
+%     \subsection{Local Automation}
+% 
+%             In this case, a secondary device is not needed in order to execute the automation process. In fact the automation can directly run on the smartphone itself by means of tools such as AutomateIt, Tasker~\cite{site:Tasker} and so on. Such tools provide, generally, an easy-to-use environment in which it is possible to define some predefined actions to be performed on the handset. However, the set of possible actions is sometimes limited: for example, it is not possible to perform the playback of an audio file - in order to simulate a user talking - during a placed or received call, since the OS mutes the applications volume during the entire conversation.
+
+%The automation can directly run on the mobile device... AutomateIT, Robotium...\\
+%Pros: no evidence on other devices...\\
+%Cons: limited actions
+
+	%\subsection{Deletion of Unwanted Evidence}
+
+        %The operations needed to delete (or obfuscate) the unwanted traces left by the automation depends on the chosen automation strategy. Adopting a remote control strategy (as shown in subsubsection~\ref{PCToSmartphone}), all the supporting tools are installed on the controller device (i.e. a common PC), while nothing suspicious will be present on the handset. In such a case, all the precautions discussed in~\cite{autoalibi} can be adopted in order to avoid as much unwanted evidence as possible, while the secure deletion methodology presented in~\cite{securedel} can be implemented in order to remove the remaining.
+
+        %If a local automation strategy is chosen, any unwanted evidence left on the smartphone by the automation procedure should be removed (or obfuscated). In particular, if auxiliary tools such as AutomateIt have been used, any data tracing back to them should be erased from the system, since it could result suspicious if detected by a digital forensic analysis.
+	%As discussed in~\cite{AndroidAF11}, the standard deletion routine of the Android OS does not guarantee the complete remotion of data from the internal device solid-state memory. In order to avoid data remanence, the secure deletion procedure proposed in such work can be adopted, though it requires root access to the Android OS as well as some manual (that is, not automatable) operations.
+
+    \section{Digital Evidence of an Android Automation}\label{DigitalEvidenceInAndroid}
+
+    %As described in Section~\ref{SecurityAndPermissions}, all Android applications (.apk files) can be signed with a self-signed certificate whose private key is held by their developer. This security feature can be exploited to develop an application (malware) capable of \emph{inject event attack} to other applications. Injection event attack makes it possible to simulate the automated interaction between the user and the application, therefore injecting key and touch events, in order to forge a false digital alibi. Per apportare un attacco di tipo injection event bisogna sviluppare un'applicazione di terze parti capace di generare eventi legati alla pressione di tasti o al tocco sullo schermo. Tali eventi saranno poi inviati ad un'altra applicazione di terze parti che si comporterà come se tali eventi siino stati generati da un utente reale. Note that third party applications can not inject input events into other applications. Such technique is made possibile only if both applications (the injected and the injecting) are re-signed with the same certificate.
+%Utilizzando tale tecnica le uniche tracce lasciate nel sistema sono: la presenza dell'applicazione che effettua l'injection e l'applicazione firmata con un certificato non valido, ovvero con un certificato non appartenente allo sviluppatore dell'applicazione stessa.
+%Utilizzando questa tecnica, le uniche tracce lasciate sul dispositivo mobile, sono la presenza nel SO dell'applicazione rifirmata con un certificato non valido, mentre l'applicazione malware una volta disinstallata non lascia alcuna traccia nel sistema di se stessa.
+%Using this technique, traces left on the mobile device is the presence in the OS of an applications signed with invalid certificate.
+Most of the techniques proposed in this paper can leave unwanted traces on the involved system(s). In this section some guidelines to identify and avoid/remove such traces are presented.
+A comprehensive analysis of the evidence detectable by a digital forensics analysis on an Android system is addressed in~\cite{AFHoog}.
+%In this section the possible traces left by an application on Android and their secure deletion from such a system are discussed.
+
+\subsection{Application Data}
+At installation time the Android package manager creates a distinct folder for each package, usually located in \verb=/data/data=, which is inaccessible for reading and writing operations by any other applications. For example, for the Facebook application the OS creates the folder \emph{/data/data/com.facebook.katana}. This directory stores application data, including executable files and application logs, and will be ``logically removed'' (i.e., through the common \verb=unlink= operation) by the OS when the package is uninstalled.
+    
+ Application traces can be also left in other different filesystem locations: in fact, packages could require additional permissions at installation time, including read/write access on the SD card. Generally, data created on the SD card is not removed at uninstallation time.
+An automation constructed by following the simple or the event-injection techniques require the installation of third party applications on the Android system, which should be completely removed after the automation procedure. The set of unwanted traces could include files created on the SD card.
+      
+      %At the end of the automation procedure, any third party applications used to accomplish this task, as well as any data tracing back to them (e.g., temporary files), should be completely removed from the system in order to avoid suspicions. 
+      
+The simple uninstallation of a package is not sufficient to completely remove its presence from the device. The method analyzed in~\cite{AndroidAF11} can be adopted instead in order to delete applications and data from an Android system in a secure manner.
+
+\subsection{Non-Sandboxed Code Execution}
+Some software such as native executables and shell scripts can be executed outside of the sandbox mechanism described in~\ref{SecurityAndPermissions}, thus bypassing the standard permission constraints. More generally, any software executed with root permissions (see~\ref{SuperuserAccess}) can potentially write everywhere on the filesystem (except on partitions mounted in read-only mode). In substance, any data produced by an automation procedure requiring root access to the system should be carefully identified.
+      
+      It is important to note that usually the execution of shell commands is not logged in Android, while system logs are written by default only on the RAM~\cite{AFHoog}. Due to their volatile nature, this work does not considered them as a potential unwanted trace, since a simple system reboot should be sufficient to erase them.
+      
+The event-replication technique requires the execution of some shell commands with root permissions on the Android system. However, all the data written on the filesystem by the procedure can be easily isolated in a specific location, such as a directory on the SD card, which can be securely deleted.
+      
+The remote control tools employed to realize remote-control strategies usually leave unwanted evidence on the Android device. For example, Android Screencast copies a file named \verb=InjectAgent.jar= (containing the program in charge of injecting keyboard/mouse events on the smartphone) in the directory \verb=/data/local/tmp/=. This operation is transparently performed by sending shell commands to the mobile device through ADB, which are clearly executed outside the Android sandbox mechanism. Although this file is automatically removed by the application upon exiting, it would be advisable to apply the aforementioned sanitization strategy.
+    
+%       \subsubsection{Secure Deletion}
+%       \label{SecureDel}
+%       Any files containing unwanted data should be securely removed from the system. As discussed in~\cite{AndroidAF11}, the standard deletion function implemented by the OS (i.e., the common \verb=rm= operation, which realizes the unlinking operation of the filesystem) does not guarantee that all the traces of a deleted file are completely removed from the system. A possible solution is to adopt the techniques proposed in~\cite{AndroidAF11} for the secure deletion of files from an Android device.
+    
+
+\subsection{Certificate Incoherence}
+%\noindent {\em Unwanted Traces:}
+As discussed in~\ref{SecurityAndPermissions}, any applications running in Android are signed by the author and include a digital certificate which makes it possible to verify the signature. Moreover two applications can fully interact only if signed by the same author.
+%Some advanced techniques discussed later in this work require to modify the signature of specific applications, which implies the replacement of the original certificate with an ad-hoc forged certificate. There will be also presented some tricks to avoid that a digital forensics analysis on the device could reveal such inconsistence.
+Considering the event-injection technique, the tester program and any other applications controlled by the automation should have the same certificate. It requires that any involved packages are re-signed by the same author and re-installed on the mobile device. Clearly, the presence of proprietary software having a certificate different from the original one can be considered at least suspicious in the context of a digital forensics analysis.
+In order to minimize the unwanted traces, the tester should be securely deleted. A paranoid approach could include the secure removal of any re-signed applications by using the same technique. Moreover, the original version of any re-signed applications should be re-installed in order to avoid the certificate incoherence.
+    
+    
+\subsection{Superuser Access}
+\label{SuperuserAccess}
+Most of the techniques discussed in~\ref{AutomationInAndroidOS}, except the simple approach and the event-injection strategy, require superuser access to the Android OS. Unfortunately, the logon as the \verb=root= user is usually disabled by default on Android. There are some procedures that could be followed in order to unlock this feature (many tutorials are available on~\cite{site:xda}), which do not require advanced computer skills. 
+      
+\noindent In the authors opinion, such evidence cannot be considered suspicious in the context of a digital forensics analysis, since it is very common among the Android users.
+      
+      
+\subsection{Digital Evidence on Secondary Devices}
+%\subsubsection*{Unwanted Traces}
+When adopting a remote control strategy, most of the supporting tools are installed on the controller device. In particular, the Android SDK is required to run the ADB client on the PC, as well as some tools in order to execute the automation. Clearly, the automation program is itself an unwanted trace that has to be considered.
+      
+All the precautions discussed in~\cite{autoalibi} can be adopted in order to avoid as much unwanted evidence as possible on the controller machine (as it is a common PC), while the secure deletion methodology presented in~\cite{securedel} can be implemented in order to remove the remaining ones.
+	
+
+\section{Development and Testing}
+\label{DevelTesting}
+In order to minimize the amount of data that can potentially lead back to the use of an automation, the development and testing phases should be accomplished in an isolated environment. 
+Possible unwanted traces being produced during such phases are analyzed in this section.
+	
+\subsubsection*{Local Techniques}
+No particular precautions should be taken for the implementation of the simple technique. In fact, the previously mentioned applications also provide the development environment for the automation. The traces left during this phase are generally contained in the same filesystem directory containing the private data of the package, therefore it can be removed during the sanitization phase.
+The implementation of the event-injection technique requires a more sophisticated environment. In particular, the Android SDK as well as the specific framework libraries should be installed on the system. Clearly, this implies that the development of the automation should be done on a PC. The unwanted traces left during this phase can thus be avoided/removed/obfuscated by adopting the methods exposed in~\cite{autoalibi}. The resulting automation can be properly tested on the same development environment making use of the standard emulator provided by the Android SDK.
+	  
+The implementation of the event-replication technique can be accomplished on the same Android system as well as a secondary PC connected to the smartphone through ADB. In the former case, all the produced evidence can be isolated in a specific filesystem directory, so that it can be removed during the sanitization phase. While in the latter, the same precautions mentioned for the development of the event-injection technique can be adopted. 
+	  
+\subsubsection*{Remote Techniques}
+The implementation of the remote technique requires a controller system, with the Android device being connected to it in order to properly construct an automation based on the smartphone screen view. Clearly, all the elements on which the technique is based - a communication channel, a remote control interface and an automation software - should be set-up on the development environment. 
+	  
+The precautions advised in~\cite{autoalibi} can be taken in order to minimize any unwanted traces on the controller machine, while the same methods proposed for the sanitization can be adopted in order to remove those left on the Android device by the remote control tools.
+%The testing phase could require the use of the same Android device that will be used to produce the digital alibi. In fact, as discussed in~\ref{basicRem}, the remote techniques are usually based on coordinates or screen views, thus being strictly related to the graphical environment. 
+	  
+
+\section{Case Study}\label{CaseStudy}
+In this section a real case study focusing on the production of a false digital alibi by means of an Android smartphone is analyzed.
+    
+Several experiments have been conducted by following the simple technique with different automation tools, such as AutomateIt and Tasker, and different smartphone models such as HTC Desire Z and HTC Nexus One. In particular, an automatic SMS exchange between these devices was implemented, driven by both time events and SMS contents. 
+The unwanted traces produced by the involved tools on the devices were removed by adopting the sanitization method presented in~\cite{AndroidAF11}. A digital forensics analysis on the smartphones, conducted by following the techniques presented in~\cite{AFHoog}, revealed no significant unwanted evidence.
+
+Since the simple technique is very easy to implement and does not require detailed explanations, the case based on a technique of medium difficulty, namely the event-replication, is discussed.
+    
+In order to minimize the risks of any unwanted evidence being left on the involved devices, any unnecessary writing operations on persistent memories (e.g., hard disks and smartphone storage) were avoided. A digital forensics analysis on the devices involved in the experiment revealed no significant traces about both the preparatory phase (i.e., the development and testing) and the definitive execution of the automation.
+
+\subsection{Operational Environment}
+The machines used for the experiments consisted of an Android device, namely an HTC Desire Z, together with a common PC. A standard in-box USB cable was used to maintain a connection between the devices for the entire preparatory phase of the automation. Any communications took place by means of ADB.
+The smartphone came equipped with a modified version of Android 2.3.4 - namely Cyanogen Mod 7.1.0-RC1 - providing the superuser access that was required to implement the event-injection technique. Any operations involving the PC were executed from a live Linux distribution - Ubuntu 11.04.     
+    
+The only software tool installed on the Android device during the experiments was Script Manager~\cite{site:ScriptManager}, an application which makes it possible to run a shell scripts at a specific time.
+The presence of this tool should not raise any suspicion in a digital forensics analysis, since it is commonly used as well as freely available on the Android Market. Even though the Android SDK is required to use ADB, it produces no permanent traces on the PC since it is installed on the live Linux distribution.
+%%%has been employed to construct the automation procedure:
+%%%    \begin{itemize}
+%%%     \item the Android Terminal Emulator, which permits to execute bash shell in order to execute scripts;
+%%%     \item two simple shell commands: getevent and setevent, which allows to manage event in order to implement automation.
+%%%    \end{itemize}
+    
+    %Moreover, tools used to remotely control the mobile device can themselves leave unwanted traces on the underlying system.
+    
+    %In order to avoid those problems, a Linux forensics distribution, has been chosen.
+    %Using a Linux forensics distribution allows to not leave unwanted trace on the hard disk because the live system only uses the central memory for all his operations.
+    %As a Linux forensics distribution has been chosen DEFT 6~\cite{site:DEFT}, a Linux distribution based on kernel 2.6.35 on which has been installed the following software packages:
+
+%     \subsection{Android SDK}
+% 
+%         The Android SDK has the tools, code samples, and docs needed for application development. The Android SDK contains the tool Android Debug Bridge~\cite{site:ADB} (ADB) which makes it possible to remotely connect to the device and perform remote operations on it.
+
+%     \subsection{androidscreencast}
+% 
+%         androidscreencast is a multiplatform desktop application that allows to control an Android ``rooted'' device remotely using mouse and keyboard. All events raised by keyboard and mouse are sent to the Android device through ADB. Using androidscreencast no unwanted trace is left on the mobile device.
+	
+%     \subsection{Sikuli}
+
+%         Sikuli is a visual technology to automate and test graphical user interfaces (GUI) using images (screenshots). Sikuli includes Sikuli Script, a visual scripting API for writing visual scripts with screenshots easily. Sikuli Script automates anything seen on the screen of the mobile device without internal API's support. Sikuli allows to automate the interaction with a web page, a Windows/Linux/Mac OS X desktop application, or even an iPhone or Android application running in a simulator or via VNC.
+
+\subsection{Construction of the Automation}
+    
+The event-replication technique consists of two steps: the recording of the events to be cloned and their replication.
+In this case study, only the events generated by the interaction with the touchscreen were considered in order to realize the automation. 
+The events were captured and saved in a text file on the live system, named \verb=events.txt=. 
+Precisely, it was accomplished by executing the following command:
+%\begin{scriptsize}
+%\begin{verbatim}
+\begin{lstlisting}
+$ adb shell getevent -t /dev/input/event1 > events.txt
+\end{lstlisting}
+%\end{verbatim}
+%\end{scriptsize}
+where \verb=-t= indicates to output the timestamp of each event and \verb=/dev/input/event1= represents the touchscreen device (it may vary depending on the smartphone).
+
+\noindent The following dump is an example of the output generated by the previous command for a single pressure on the screen.
+%\begin{scriptsize}
+%\begin{verbatim}
+\begin{lstlisting}
+6559-132416: 0003 0030 0000003f
+6559-132447: 0003 0032 00000005
+6559-132477: 0003 0035 000000f6
+6559-132477: 0003 0036 000002a7
+6559-132508: 0000 0002 00000000
+6559-132508: 0000 0000 00000000
+6559-171845: 0003 0030 00000000
+6559-172333: 0000 0000 00000000
+\end{lstlisting}
+% \end{verbatim}
+% \end{scriptsize}
+
+Each outputted line is composed of a timestamp and three hexadecimal values indicating the event occurred.
+
+\noindent The result of the recording phase was processed in order to implement a simple shell script which replicates the same actions by means of the \verb=sendevent= command, which takes in input the same - decimal-coded - values given in output by the \verb=getevent= command. The timestamps were useful in preserving the timing of the events, which was implemented by interleaving the instructions with some \verb=sleep= commands.
+%%%%The command used is:
+%%%%		\begin{scriptsize}
+%%%%		\begin{verbatim}
+%%%%		$ sendevent $device $command $argument $value
+%%%%		\end{verbatim}
+%%%%		\end{scriptsize}
+
+An excerpt of the shell script obtained by processing the \verb=events.txt= file - corresponding to the same pressure event examined before - follows.
+%%%%shell script of Per generare un singolo click sul touchscreen bisogna creare il seguente script bash:
+% \begin{scriptsize}
+% \begin{verbatim}
+\begin{lstlisting}
+sendevent /dev/input/event1 3 48 63
+sendevent /dev/input/event1 3 50 5
+sendevent /dev/input/event1 3 53 246
+sendevent /dev/input/event1 3 54 679
+sendevent /dev/input/event1 0 2 0
+sendevent /dev/input/event1 0 0 0
+sendevent /dev/input/event1 3 48 0
+sendevent /dev/input/event1 0 0 0
+\end{lstlisting}
+% \end{verbatim}
+% \end{scriptsize}
+		
+%%%%It is important to note that the parameters \$command, \$argument and \$value accepts values in decimal format, so the values obtained in Record phase should be converted.
+        
+% 	The automation process consist of two phases:
+% 	\begin{enumerate}
+% 	 \item Record: using the getevent bash command, all the events generated by user-device interaction (e.g., touch, key press, etc.) are captured and saved in a file
+% 	 \item Playback: using the setevent bash command, all events captured in Record phase are replicated in order to implement automation 
+% 	\end{enumerate}
+% 	
+% 	At the end of the two steps, in order to eliminate the unwanted digital evidence (bash scripts), the technique described in~\cite{AndroidAF11} can be adopted.
+%         
+%         In order to show how simple is the construction of an automation using bash scripting, a script excerpt is finally presented. 
+% 	
+	
+According to this approach, some different shell scripts were implemented in order to reproduce a plausible activity timeline, with it being exploitable by a person in order to forge a digital alibi. 
+In particular, an automation performing the following activities was implemented in this case study.
+
+\subsubsection{Posting to Facebook}
+The first action performed by the automation is the posting of a status message on Facebook. It reproduces a touch on a link of the Facebook application on the home screen. After some seconds, the scripts sends a pressure to the appropriate text section, thus simulating the use of the virtual keyboard to write a message. Finally, the automation reproduces the pressure on the ``Send'' button and restores the home screen view by touching the ``Home'' button.
+	
+\subsubsection{Sending a SMS}
+Starting from the home screen, the automation simulates a touch on the messaging application link in the application bar. Similarly to the previous activity, it generates the appropriate input events in order to write an SMS, and finally sends it to a predetermined telephone number.
+	
+	%An excerpt of the bash script implementing event-based automation technique,  
+% 	\subsubsection{Placing a Call}
+%         The last action performed by the implemented automation consists into the simulation of a call, including the playback of an audio file simulating the user speech.
+% 
+% 	The automation script simulates the pushing on the default call application, as well as the composition of a predefined phone number (alternatively, the selection of a specific contact can be implemented). Using the Sikuli facilities, the screen is monitored until it indicates that the call has been answered. At this point, it starts the playback of an audio file being beforehand opened with an audio player on the controller system. Clearly, the last action requires an appropriate distance between the mobile device and the PC speakers, as well as the playback of a plausible audio.
+% 
+% 	An excerpt of the Sikuli script implementing the actions just described is presented in Fig.~\ref{fig:code}. The initial androidscreencast view is shown in Fig.~\ref{fig:screen}.
+% 	
+% 	\begin{figure}
+% 	  \centering
+% 	  \subfloat[Code snippet]{\label{fig:code}\includegraphics[scale=0.4]{Screenshot-1_code.png}}                
+% 	  \subfloat[Initial androidscreencast view]{\label{fig:screen}\includegraphics[scale=0.3]{Screenshot-2_screen.png}}  
+% 	\end{figure}
+
+\balance 
+
+\subsection{Development and Testing}
+The recording phase of the the proposed technique was remotely conducted from the same PC. In particular, the \verb=getevent= command was sent through a remote connection over ADB, and the output was recorded on the PC. The result of this operation was processed in order to obtain the corresponding sequence of \verb=sendevent= commands. A resulting shell script of this sequence was executed several times from the PC on the smartphone in order to verify that all the proper actions were correctly executed. The development and testing of the automation on a live Linux distribution made it possible to avoid the creation of any meaningful traces on both the hard disk of the PC as well as the smartphone.
+
+Prior to its execution finalized to the construction of a false digital alibi, only the final version of the automation script was loaded onto the external memory of the smartphone. The device was sanitized adopting the method presented in~\cite{AndroidAF11}. A digital forensics analysis conducted by the authors on the involved device, following the directives presented in~\cite{AFHoog}, revealed no meaningful traces about the automation procedure.
+
+\section{Conclusions}\label{Conclusions}
+This work highlights how it could be possible to artificially create a false digital alibi, plausible in the context of a legal proceeding, by exploiting some features of an Android device. The proposed techniques make use of a software automation which is able to fully simulate a real series of human activities. It is worth noting that advanced skills are not required to implement such techniques. 
+
+A real case study was also analyzed in order to validate the authors thesis. 
+The results stress the need of a constant effort by digital forensics experts 
+to upgrade and keep update their knowledge about new technologies. 
+In addition, the work underlines that Courts should consider digital evidence 
+as a part of a larger pattern of behaviour reconstructed by means of traditional forensics techniques.
+
+
+\section*{Acknowledgements}
+The authors are grateful to the President of the IISFA Italian Chapter, Gerardo
+Costabile, who remarked the relevance of the subject of this paper in Courts.
+A special thank goes to Mario Ianulardo, lawyer in computer crime, for the 
+endless and interesting discussions on the probative value of a false digital alibi.
+
+%The authors would like to thank Mario Ianulardo for the long interesting discussions on the probative values of a false digital alibi.
+%
+\bibliographystyle{IEEEtran}
+\bibliography{AL}
+
+\end{document} 

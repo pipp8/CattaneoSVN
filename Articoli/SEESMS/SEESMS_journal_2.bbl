@@ -1,0 +1,72 @@
+\begin{thebibliography}{12}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{Brown et~al.(2001)Brown, Hankerson, L{\'o}pez, and
+  Menezes}]{BrownHLM01}
+Brown, M., Hankerson, D., L{\'o}pez, J., Menezes, A., 2001. Software
+  implementation of the nist elliptic curves over prime fields. In: CT-RSA. pp.
+  250--265.
+
+\bibitem[{{Certicom Research}(2010{\natexlab{a}})}]{sec1}
+{Certicom Research}, 2010{\natexlab{a}}. Standards for efficient cryptography
+  -- {SEC 1: Elliptic Curve Cryptography}.
+  \url{http://www.secg.org/download/aid-385/sec1_final.pdf}.
+
+\bibitem[{{Certicom Research}(2010{\natexlab{b}})}]{sec2}
+{Certicom Research}, 2010{\natexlab{b}}. Standards for efficient cryptography
+  -- {SEC 2: Recommended Elliptic Curve Domain Parameters}.
+  \url{http://www.secg.org/download/aid-386/sec2_final.pdf}.
+
+\bibitem[{De~Santis et~al.(2010)De~Santis, Castiglione, Cattaneo, Cembalo,
+  Petagna, and Petrillo}]{SEESMS}
+De~Santis, A., Castiglione, A., Cattaneo, G., Cembalo, M., Petagna, F.,
+  Petrillo, U.~F., 2010. An extensible framework for efficient secure sms. In:
+  Proceedings of the 2010 International Conference on Complex, Intelligent and
+  Software Intensive Systems. CISIS '10. IEEE Computer Society, Washington, DC,
+  USA, pp. 843--850.
+\newline\urlprefix\url{http://dx.doi.org/10.1109/CISIS.2010.81}
+
+\bibitem[{{De Santis} et~al.(2010){De Santis}, Castiglione, Cattaneo, Cembalo,
+  Petagna, and Petrillo}]{DeSantis2010}
+{De Santis}, A., Castiglione, A., Cattaneo, G., Cembalo, M., Petagna, F.,
+  Petrillo, U.~F., 2010. An extensible framework for efficient secure sms.
+  Vol.~0. IEEE Computer Society, Los Alamitos, CA, USA, pp. 843--850.
+
+\bibitem[{Hankerson et~al.(2003)Hankerson, Menezes, and Vanstone}]{Menezes}
+Hankerson, D., Menezes, A.~J., Vanstone, S., 2003. Guide to Elliptic Curve
+  Cryptography. Springer-Verlag New York, Inc., Secaucus, NJ, USA.
+
+\bibitem[{Johnson et~al.(2001)Johnson, Menezes, and Vanstone}]{JohnsonMV01}
+Johnson, D., Menezes, A., Vanstone, S.~A., 2001. {The Elliptic Curve Digital
+  Signature Algorithm (ECDSA)}. Int. J. Inf. Sec. 1~(1), 36--63.
+
+\bibitem[{Kim et~al.(2006)Kim, Hong, and Lim}]{KimHL06}
+Kim, K., Hong, J., Lim, J., 2006. {Analysis of the Power Consumption of Secure
+  Communication in Wireless Networks}. In: DEXA. pp. 894--903.
+
+\bibitem[{Potlapally et~al.(2006)Potlapally, Ravi, Raghunathan, and
+  Jha}]{Potlapally06}
+Potlapally, N.~R., Ravi, S., Raghunathan, A., Jha, N.~K., 2006. {A Study of the
+  Energy Consumption Characteristics of Cryptographic Algorithms and Security
+  Protocols}. IEEE Transactions on Mobile Computing 5~(2), 128--143.
+
+\bibitem[{Rivest et~al.(1978)Rivest, Shamir, and Adleman}]{Rivest78amethod}
+Rivest, R., Shamir, A., Adleman, L., 1978. {A Method for Obtaining Digital
+  Signatures and Public-Key Cryptosystems}. Communications of the ACM 21,
+  120--126.
+
+\bibitem[{{The Legion of Bouncy Castle}(2010)}]{Bouncy}
+{The Legion of Bouncy Castle}, 2010. {Bouncy Castle Crypto API}.
+  \url{http://www.bouncycastle.org/java.html}.
+
+\bibitem[{Wander et~al.(2005)Wander, Gura, Eberle, Gupta, and
+  Shantz}]{wander2005energy}
+Wander, A., Gura, N., Eberle, H., Gupta, V., Shantz, S., 2005. {Energy analysis
+  of public-key cryptography for wireless sensor networks}. In: Proceedings of
+  the Third IEEE International Conference on Pervasive Computing and
+  Communications. IEEE Computer Society Washington, DC, USA, pp. 324--328.
+
+\end{thebibliography}

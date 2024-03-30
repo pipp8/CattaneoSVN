@@ -1,0 +1,3 @@
+
+all: libjpeg.a cjpeg djpeg jpegtran rdjpgcom rdjpgsects wrjpgcom
+

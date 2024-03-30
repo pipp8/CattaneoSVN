@@ -1,0 +1,146 @@
+/* 
+  Localizable.strings (Italian Version)
+  iOTP
+
+  Created by Giuseppe Cattaneo on 16/03/15.
+  Copyright (c) 2015 Giuseppe Cattaneo. All rights reserved.
+
+*/
+
+"%d Failed Passcode Attempts"           = "%d tentativi falliti";
+
+"1 Failed Passcode Attempt"             = "1 tentativo fallito";
+
+"ABORT-BT"          = "Interrompi";
+
+"ALREADYINITED-MSG" = "Attenzione l'App è stata già attivata, se si cancella il seed occorrerà effettuare di nuovo la registrazione.";
+
+"AUTHFAIL-ERR"      = "Userid o PIN errato. Riprova per favore.";
+
+"Change Passcode"   = "Cambio del codice di sblocco";
+
+"COMMERROR-MSG"     = "Errore %@";
+
+"COMMERROR-TITLE"   = "Errore Accesso al Servizio";
+
+"CONNECTION-ERROR"  = "Connessione al server fallita! Errore: %@ - %@";
+
+"CREATESEED-MNU"    = "Collega il tuo Infocert ID";
+
+"DESTROYSEED-MSG"    = "Attenzione!!! Una volta raggiunto il numero massimo di tentativi di inserimento del PIN il seed registrato verrà distrutto";
+
+"Enter Passcode"    = "Inserire il codice di sblocco";
+
+"Enter a passcode"                      = "Scegliere un codice di sblocco";
+
+"Enter your new passcode"               = "Inserire il nuovo codice di sblocco";
+
+"Enter your old passcode"               = "Inserire il codice di sblocco precedente";
+
+"Enter your passcode"                   = "Inserire il proprio codice di sblocco";
+
+"ERROR-TITLE"       = "Errore";
+
+"GENERATEOTP-LBL"   = "Per generare l'OTP premere il tasto e inserire il proprio codice di sblocco oppure usa il Touch ID:";
+
+"HELP-MNU"          = "Help";
+
+"INFO-MNU"          = "ABOUT";
+
+"INIT1-MSG"         = "Prima di essere utilizzata l'App deve essere inizializzata attraverso la procedura di registrazione.\rPremere il tasto per attivare l'App.";
+
+"Inizializza l'App" = "Inizializza l'App";
+
+"InsertCodiceVerifica-LBL" = "Inserisci il codice di verifica ricevuto via SMS (digitando solo i numeri) per completare l'attivazione dell'App.";
+
+"InsertCredentials-LBL" = "Inserisci il tuo username e la tua password: riceverai un SMS con il codice di verifica che ti permetterà di attivare l'App!";
+
+"INVALIDOTP-ERR"    = "403 - OTP valido ma non corretto";
+
+"INVALIDTOKEN-ERR"  = "400 - Token anti-csrf non valido o non coincidente tra header e cookie";
+
+"ITEM_ALREADY_EXISTS-ERR" = "Errore l'oggeto è già presente nello store";
+
+"ITEM_AUTHENTICATION_FAILED-ERR" = "Errore autenticazione fallita";
+
+"ITEM_NOT_FOUND-ERR" = "Errore oggetto non presente";
+
+"KEYTOOSHORT-ERROR" = "La chiave deve essere di 8 caratteri.";
+
+"LVL2SESSION-ERR"   = "406 - Sessione già di livello 2";
+
+"Next"              = "Prossimo";
+
+"NOSEED-MSG"        = "Occorre terminare la procedura di registrazione del seed prima di poter utilizzare l'OTP";
+
+"NOTIFY-TITLE"      = "Notifica";
+
+"NOTREADY-STR"      = "Manca il Seed";
+
+"OK-BT"             = "OK";
+
+"OTPLEN-MNU"        = "Lunghezza OTP: ";
+
+"OTPMISMATCH-ERR"   = "400 - Token anti-csrf non valido o non coincidente tra header e cookie o OTP non valido";
+
+"FIRSTOTPFAILED-ERR"  = "400 - L'OTP generato dal server non corrisponde a quello ricevuto dall'App";
+
+"Passcodes did not match. Try again."   = "I due codici non corrispondono. Riprovare.";
+
+"PINMGT-MNU"        = "GESTIONE PIN";
+
+"PSWDEXPIRED-ERR"   = "410 - Password scaduta";
+
+"PSWDLOCKED-ERR"    = "402 - Password bloccata";
+
+"Re-enter your new passcode" = "Reinserire il nuovo codice di sblocco";
+
+"Re-enter your passcode" = "Reinserire il codice di sblocco";
+
+"READY-STR"         = "GENERA OTP";
+
+"REMOVESEED-MNU"    = "Scollega il tuo InfoCert ID";
+
+"SEEDCONFIRMED-MSG" = "OTP Confermato, Orario sul Server:\n%@\nClock Skew: %.0f sec.";
+
+"SEEDDESTROYED-MSG" = "Attenzione !!! Il SEED è stato distrutto per aver raggiunto il numero massimo di tentativi falliti. Per utilizzare l'App rieseguire la procedura di enrtollment";
+
+"SEEDGENERATORFAILED-ERR" = "412 - Errore generazione SEED";
+
+"SEEDMGT-MNU"       = "GESTIONE INFOCERT ID";
+
+"SEEDRECEIVED-TITLE" = "Seed Setup";
+
+"SESSIONNOTFOUND-ERR" = "404 - Sessione non trovata o account senza cellulare associato";
+
+"Set Passcode"      = "Codice di sblocco";
+
+"SETTING-TITLE"     = "Impostazioni";
+
+"SMSREQUESTED-MSG"  = "Richiesta effettuata, attendere la ricezione dell'SMS e digitare il codice numerico ricevuto";
+
+"SUCCESS-STR"      = "successo";
+
+"Tempo rimanente:" = "Tempo rimanente:";
+
+"TOOMANYFAILS-ERR"  = "401 - Tentativi di invio OTP terminati per la sessione";
+
+"TOOMANYOTPFAIL-ERR" = "401 - Tentativi di verifica OTP terminati per la sessione";
+
+"TOOWEAKTOKEN-ERR"  = "401 - Il token fa riferimento ad una sessione di livello < 2";
+
+"TouchID-MSG"       = "Autenticarsi per generare l'OTP";
+
+"TOUCHIDENABLE-MNU" = "Abilita il Touch ID";
+
+"VERSION-MSG"       = "%@\nVersione: %@ (build %@)\nRevisione: %@ del %@";
+
+"Warning" = "Warning";
+
+"WRONGOTP-ERROR"    = "Il Server ha segnalato un errore, probabilmente l'OTP non è stato inserito correttamente.";
+
+"WRONGPIN-MSG"      = "PIN Errato!!!";
+
+"WRONGSEED-ERROR"   = "Il Seed ricevuto non è conforme alle specifiche riprovare o segnalare l'errore.";
+
+"WRONGOTPSMS-ERROR" = "Il server ha segnalato un errore, probabilmente il Codice di Verifica è stato digitato male, riprovare";

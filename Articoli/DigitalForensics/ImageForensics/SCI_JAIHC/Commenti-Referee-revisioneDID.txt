@@ -1,0 +1,58 @@
+An improvement method, proposed by authors, about the classification of the altered images problem is
+lowering the decision thresholds. But lowering the decision thresholds will increase the passing rate of pictures in
+every test. It is lack of theory to prove that it is right. If there is one improvement method, according to the data
+of experiments, proposed by the authors then it will be a wonderful papwe. Hence, I accept the paper weakly.
+
+
+Authors: The idea of lowering the decision thresholds we have followed in our experimentation was not meant to be intended as a general approach to
+follow in these cases. Even if, as experimented in our tests and as observed by the reviewer, this solution may improve the false rejection rate, it may as well increase the false acceptance rate (FAR). We modified the paper to clarify this point.
+
+
+- In the end of section 4, software and hardware details of the simulation environment are provided; actually,
+such details are useful only if performance tests are presented (e.g. execution times of the source camera
+identification method in its various instances). I would either remove the HW and SW details or add performance
+measurements (table or graphics).
+
+Authors: We removed HW and SW details from the mentioned paragraph.
+
+- In the end of paragraph 5.1, Figure 1 is presented but few details are provided. Please add some comments
+about the results presents in Fig. 1.
+
+Authors: We added some comments about the results presented in Figure 1, by distinguishing three cases:
+-- correlation of pictures taken using the same camera model and instance than the one used for determining the image reference pattern;
+-- correlation of pictures taken using the same camera model and a different instance than the one used for determining the image reference pattern;
+-- correlation of pictures taken using a different camera modelthan the one used for determining the image reference pattern;
+
+- Please make uniform the titles of the paragraphs 5.1, 5.2, 5.3 with the ones of paragraphs 6.1, 6.2, 6.3; i.e.,
+use either "Test 1" or "First test" nomenclature for both.
+
+Authors: The tests have been renumbered so to avoid duplicates and use now the same nomenclature
+
+
+1. This manuscript gave a clear presentation and detailed experimental analysis for Lukas et al.'s method. However,
+since there are many approaches to the problem of source camera identification stated in Session 2, it is suggested
+that the authors should test these different approaches to find out the best solution and/or give some possible
+improvements.
+
+Authors: The other source camera identification methods mentioned in the paper (i.e., the one based on Color Filter Array
+and the one based on the Lens Radial Distortion) have already been tested in the past (see 1,2) and, as stated in the paper, they work better as camera model identification technique. 
+Instead, the Lukas et al.'s method (and its variations) is the prominent technique for the source camera identification problem. However, we are aware that the performance of these techniques may change when used to classify pictures that have been pre-processed (such as the one retrieved from OSNs) and acknowledged this problem in the conclusions of the paper.
+
+
+
+2. This manuscript failed to formally define the evaluation criteria and normal testing processes. In my opinion, the
+above work is useful to apply a systematic evaluation procedure on different approaches and make a precise
+comparison.
+
+Authors: The evaluation criteria and the testing setup used in the paper follow the ones already used in several previous papers on these topics. The objective of our paper was not to improve this methodology, even if we acknowledge the refereee that there is need for a more rigorous and extensive approach, but to experiment the performance of a widely-used camera identification technique when used with images that have been subject to several types of pre-processing.
+
+
+
+3. It is better if the authors can give more detailed improvement suggestions for some ineffective cases, such as
+the images from OPSs and OSNs, stated in the manuscript.
+
+Authors: A possible solution to improve the identification process when used with pictures retrieved from OSNs is to develop ad-hoc image reference patterns calculated in such a way to take into account the processing operators applied by the OSNs on the pictures they store. We commented about this possibility in the Conclusions of the paper. 
+
+(1)Please adjust or modify tables in the paper to improve clarity and consistence for understanding.
+
+Authors: We revised the format of the tables in the paper so to improve their readability and consistency. 

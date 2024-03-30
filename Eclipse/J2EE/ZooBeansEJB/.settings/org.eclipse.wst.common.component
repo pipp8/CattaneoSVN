@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+<wb-module deploy-name="ZooBeansEJB">
+<wb-resource deploy-path="/" source-path="/ejbModule"/>
+<dependent-module deploy-path="/" handle="module:/resource/ZooBeansEJBClient/ZooBeansEJBClient">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<property name="java-output-path" value="build/classes"/>
+<property name="ClientProject" value="ZooBeansEJBClient"/>
+<property name="ClientJARURI" value="ZooBeansEJBClient.jar"/>
+</wb-module>
+</project-modules>

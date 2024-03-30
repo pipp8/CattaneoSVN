@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+  <HEAD>
+    <TITLE>WMA TCK Message Service (25-Apr-2002)</TITLE>
+    <!-- Created by: Gary Adams - SMI Software Development, 25-Apr-2002 -->
+    <!-- Changed by: Gary Adams - SMI Software Development, 25-Apr-2002 -->
+
+
+  </HEAD>
+  <BODY>
+    WMA TCK Message Service.
+
+    <P>
+      This proposal is made in assumption that minimal requirement
+      for WMA implementation is:
+
+      <UL>
+	<LI> ability to receive a Message from network </LI>
+	<LI> ability to send a Message to network </LI>
+      </UL>
+
+      Abilities to send Message to network and ability to perform
+      device-to-device exchange are optional.
+    </P>
+
+    <P>
+      In this situation only possible way for TCK to test for
+      sending/receiving messages is to require from implementation
+      under test some J2SE-based Framework API that will provide
+      functionality of "network-initiated send" and "network-side
+      receive". "Roundtrip" tests, where device sends/receive Messages
+      to itself, will not work for all expected WMA implementations.
+    </P>
+
+    <P>
+      This document contains proposal on this framework API.  It is
+      supposed to run on J2SE, it is ~= to WMA, located in
+      com.sun.tck.wma package. All APIs, that are unnecessary for
+      testing are stripped. These stripped APIs are:
+    </P>
+
+    <PRE>
+	Connector.open*Stream
+	Connector.open(String, ...) methods with
+		more than one parameter
+	MessageConnection.numberOfSegments
+	MessageConnection.setMessageListener
+	MessageListener
+
+    </PRE>
+
+    <P>
+      The proposal does not contain javadoc comments,
+      assuming that these will be copied from WMA spec.
+    </P>
+
+    <P>
+      The API consists of set of interfaces with single entry point
+      com.sun.tck.wma.Connector interface and it's method
+      <code>open(String)</code>. Licensee (and RI) should provide
+      implementation of these interfaces and specify name of class,
+      implementing <CODE>com.sun.tck.wma.Connector</CODE> interface,
+      to TCK.
+    </P>
+    <P>
+      TCK will use distributed test framework then to test if Message,
+      sent from device, can be received by the network and vice-versa.
+    </P>
+    <P>
+      Possible problems with this approach:
+    </P>
+    <UL>
+    
+      <LI> extra requirement on RI to provide J2SE implementation
+        of WMA for TCK testing purposes. This J2SE WMA implementation
+        is dependent of RI's WMA implementation - message
+        transport and formatting. The J2SE WMA implementation
+        can be done by TCK team, but in this case synchronization
+        should be supported of any changes in RI with J2SE WMA 
+        implementation and TCK will need extra resources. </LI>
+
+      <LI> Unreasonable requirement on licensee that is able to
+	support "roundtrip" tests to provide J2SE implementation of
+	WMA.  Note, that ~such API would be required if we do testing
+        of mapping of WMA to underlying protocol, that we are not
+        going to do, as I understand. </LI>
+
+      <P>
+	extra documentation efforts
+	
+      </P>
+      
+    </UL>
+    
+  </BODY>
+</HTML>

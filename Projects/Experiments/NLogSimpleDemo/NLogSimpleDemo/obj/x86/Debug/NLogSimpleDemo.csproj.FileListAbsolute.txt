@@ -1,0 +1,8 @@
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\Experiments\NLogSimpleDemo\NLogSimpleDemo\bin\Debug\NLog.config
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\Experiments\NLogSimpleDemo\NLogSimpleDemo\bin\Debug\NLogSimpleDemo.exe
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\Experiments\NLogSimpleDemo\NLogSimpleDemo\bin\Debug\NLogSimpleDemo.pdb
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\Experiments\NLogSimpleDemo\NLogSimpleDemo\bin\Debug\NLog.dll
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\Experiments\NLogSimpleDemo\NLogSimpleDemo\bin\Debug\NLog.xml
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\Experiments\NLogSimpleDemo\NLogSimpleDemo\obj\x86\Debug\NLogSimpleDemo.exe
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\Experiments\NLogSimpleDemo\NLogSimpleDemo\obj\x86\Debug\NLogSimpleDemo.pdb
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\Experiments\NLogSimpleDemo\NLogSimpleDemo\bin\Debug\NLogSimpleDemo.exe.config

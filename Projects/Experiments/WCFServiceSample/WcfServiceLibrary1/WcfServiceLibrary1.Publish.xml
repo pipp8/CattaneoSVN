@@ -1,0 +1,18 @@
+<publishData>
+  <publishTarget publishUrl="http://localhost/WCF">
+    <file relUrl="bin/WcfServiceLibrary1.pdb" publishTime="12/05/2013 10:44:38" />
+    <file relUrl="WcfServiceLibrary1.Service1.svc" publishTime="12/05/2013 10:44:39" />
+    <file relUrl="bin/WcfServiceLibrary1.dll.config" publishTime="12/05/2013 10:44:26" />
+    <file relUrl="Web.config" publishTime="12/05/2013 10:44:26" />
+    <file relUrl="bin/WcfServiceLibrary1.dll" publishTime="12/05/2013 10:44:38" />
+    <file relUrl="bin/SampleDB.xml" publishTime="10/24/2010 13:39:06" />
+  </publishTarget>
+  <publishTarget publishUrl="C:\inetpub\wwwroot\WCF\">
+    <file relUrl="bin/WcfServiceLibrary1.pdb" publishTime="12/02/2013 18:03:06" />
+    <file relUrl="WcfServiceLibrary1.Service1.svc" publishTime="12/02/2013 18:03:07" />
+    <file relUrl="bin/WcfServiceLibrary1.dll.config" publishTime="10/24/2010 15:02:46" />
+    <file relUrl="Web.config" publishTime="10/24/2010 15:02:46" />
+    <file relUrl="bin/WcfServiceLibrary1.dll" publishTime="12/02/2013 18:03:06" />
+    <file relUrl="bin/SampleDB.xml" publishTime="10/24/2010 13:39:06" />
+  </publishTarget>
+</publishData>

@@ -1,0 +1,1257 @@
+%
+% $Header: http://maccattaneo:8081/svn/Cattaneo/Documenti/CV/CV2.tex 907 2019-12-02 12:01:19Z cattaneo $
+%
+
+% $Log: CV2.tex,v $
+% Revision 1.1  2010/05/03 07:29:38  cattaneo
+% Versione iniziale
+%
+% Revision 1.21  1999/04/15 16:08:49  cattaneo
+% *** empty log message ***
+%
+% Revision 1.20  1999/04/14 09:57:26  cattaneo
+% *** empty log message ***
+%
+% Revision 1.19  1999/04/14 09:46:15  cattaneo
+% *** empty log message ***
+%
+% Revision 1.18  1999/04/08 18:01:41  cattaneo
+% *** empty log message ***
+%
+% Revision 1.18  1999/04/08 18:00:16  cattaneo
+% Nuova versione per concorso 1999
+%
+% Revision 1.3  1999/04/06 06:05:48  cattaneo
+% *** empty log message ***
+%
+% Revision 1.2  1999/04/06 03:40:30  cattaneo
+% *** empty log message ***
+%
+% Revision 1.17  1997/07/14 08:27:51  cattaneo
+% *** empty log message ***
+%
+% Revision 1.16  1997/07/07 16:38:52  cattaneo
+% *** empty log message ***
+%
+% Revision 1.15  1996/07/10  16:05:35  cattaneo
+% *** empty log message ***
+%
+% Revision 1.14  1996/07/10  15:11:47  cattaneo
+% *** empty log message ***
+%
+% Revision 1.13  1996/07/09  15:00:48  cattaneo
+% *** empty log message ***
+%
+% Revision 1.12  1996/07/09  11:16:56  cattaneo
+% *** empty log message ***
+%
+% Revision 1.11  1996/07/09  11:09:38  cattaneo
+% *** empty log message ***
+%
+% Revision 1.10  1996/07/09  09:30:19  cattaneo
+% 
+
+
+\documentclass[11pt]{article}
+\usepackage[italian]{babel}
+\usepackage{epsfig}
+\usepackage{fancyheadings}
+\usepackage{fancybox}
+
+
+% riaggiustamenti alla traduzione di babel
+\addto\captionsitalian{%
+  \def\contentsname{Sommario}
+  \def\listfigurename{Lista delle figure}
+  \def\listtablename{Lista delle tavole}
+  \def\refname{Elenco delle pubblicazioni}
+  \def\indexname{Indice}
+  \def\figurename{Figura}
+  \def\tablename{Tavola}
+  \def\appendixname{Appendice}
+}
+%% DIMENSIONI della PAGINA:
+
+
+% Paragraphs are marked by large space rather than indentation:
+\parindent 0pt
+\parskip 7pt plus 1pt minus 1pt
+\setlength{\textwidth}{15.7cm}
+\setlength{\oddsidemargin}{0cm}      % this implies 1 inch margin
+\setlength{\evensidemargin}{0cm}     % TeX Built-in
+\setlength{\textheight}{22.5cm}      % height of text on page
+
+\makeatletter
+
+\newlength{\posii}
+\newlength{\posiibox}
+\newlength{\posiil}
+\newlength{\finepar}
+\newlength{\fineitem}
+\newlength{\boxsize}
+
+\setlength{\posii}{3.8cm}
+\setlength{\posiil}{4.5cm}
+\setlength{\finepar}{55pt}
+\setlength{\fineitem}{10pt}
+\setlength{\boxsize}{\textwidth}
+\addtolength{\boxsize}{-1\posii}
+\setlength{\posiibox}{\posii}
+\addtolength{\posiibox}{-15pt}
+
+% parametri per i box (package fancybox)
+\setlength{\fboxsep}{10pt}
+\newlength{\titlewidth}
+\setlength{\titlewidth}{\textwidth}
+\addtolength{\titlewidth}{-2\fboxsep}
+\newlength{\figwidth}
+\setlength{\figwidth}{\textwidth}
+\addtolength{\figwidth}{-2\fboxsep}
+\addtolength{\figwidth}{-10pt}
+
+% parametri per gli header e footer (package fancyheader)
+\setlength{\headrulewidth}{1 pt}
+\setlength{\footrulewidth}{1 pt}
+\setlength{\plainheadrulewidth}{0pt}
+\setlength{\plainfootrulewidth}{0pt}
+\setlength{\headsep}{10 mm}   % spazio dall'  header e l' inizio del testo
+\setlength{\topmargin}{-20mm} % 0cm  lascia un margine di 2 cm su A4
+                                     % a questo si somma \headheight
+\setlength{\headheight}{20mm} % altezza dell'  header. 0 => no header
+\setlength{\topskip}{0mm}
+\setlength{\footskip}{15mm}   % distanza dal testo al footer
+
+
+
+%% DATES, VERSIONS AND TITLES:
+
+\def\fileversion{$Revision: 730 $}
+\def\filedate{$Date: 2019-12-02 13:01:19 +0100(Lun, 02 Dic 2019) $}
+
+% N.B. date nel formato italiano 
+\def\today{\number\day \space\ifcase\month\or
+  Gennaio\or Febbraio\or Marzo\or Aprile\or Maggio\or Giugno\or
+  Luglio\or Agosto\or Settembre\or Ottobre\or Novembre\or Dicembre\fi
+  \space \number\year}
+
+\def\expanddate $#1:#2/#3/#4 #5:#6:#7${\day=#4 \month=#3 \year=#2}
+\begingroup
+  \expandafter\expanddate\filedate
+  \xdef\thefiledate{\today}
+\endgroup
+
+\def\expandrevision $#1:#2.#3${Versione: #2.#3}
+\begingroup
+  \xdef\thefileversion{\expandafter\expandrevision\fileversion}
+\endgroup
+
+
+%
+% First page parameters ..
+%
+\setcounter{page}{1}
+\newcounter{lastpage}
+
+\author{\Large \sl Giuseppe CATTANEO}
+
+\date{\thefileversion \\ del \thefiledate}
+
+\def\headtitle{Curriculum dell'attivit\`a scientifica e
+didattica di {\sl Giuseppe CATTANEO}}
+
+\newenvironment{bigtitle} {
+  \fontencoding{OT1}\fontfamily{cmfib}
+  \fontseries{m}
+  \fontshape{n}
+  \fontsize{20}{25pt}\selectfont}{}
+
+
+
+\title{{\sffamily\bfseries {\Huge Curriculum\\}   
+ {\Large dell'attivit\a`a scientifica e didattica\\}}}
+
+\def\@maketitle{%
+  \begin{Sbox}
+    \begin{minipage}{\titlewidth}
+      \begin{center}
+           \@title
+               \vskip 1.5em
+               {\begin{tabular}[t]{c}\@author\end{tabular}\par}
+        \vskip 1.5em{\small\@date}%
+      \end{center}
+   \end{minipage}
+  \end{Sbox}
+  \begin{center}
+    \shadowbox{\TheSbox}
+  \end{center}
+  \par
+}
+
+
+%% TABLE OF CONTENTS
+
+\newskip\myskip
+
+\def\tableofcontents{%
+  \par\vfill
+  \begin{quote}
+    \begin{center} \huge\bf \contentsname \end{center}
+    \def\numberline##1{\hbox to 0pt{\hss##1\hskip 1em}}%
+    \let\oldaddvspace\addvspace
+    \def\addvspace##1{%
+      \myskip##1\relax
+      \oldaddvspace{.5\myskip}}
+    \@starttoc{toc}%
+  \end{quote}
+  \thispagestyle{empty}
+  \vfill
+  \clearpage}
+
+%% PAGE STYLE:
+
+\pagestyle{fancy}
+
+\if@twoside
+  \markboth{\headtitle}%
+    {\headtitle}%
+\else
+  \markright{\headtitle}
+\fi
+\lhead{}
+\chead{\rm \small \sl \headtitle}
+\rhead{}
+
+\lfoot{\rm \small \sl \thefileversion\  del \thefiledate}
+\cfoot{}
+\rfoot{\rm \small \sl -- \thepage\ / \pageref{lastpage}\ --} % page number
+
+%
+% -------------- fine definizioni ------------------------
+%
+
+\makeatother
+
+\begin{document}
+
+% prima pagina
+\maketitle
+\newpage
+\tableofcontents
+
+%
+% ---------------------------------------------------
+%
+
+\section{Dati Anagrafici}
+\begin{tabbing}
+ \makebox[\posii]{}\=\makebox[\boxsize]{}\=\kill
+        {\sl Cognome:}\>        CATTANEO\\[\fineitem]
+        {\sl Nome:}\>   Giuseppe\\[\fineitem]
+        \parbox[t]{\posii}
+        {\sl Data di nascita:}\> 11 Gennaio 1960\\[\fineitem]
+        {\sl Luogo di nascita:}\> Bari\\[\fineitem]
+        {\sl Residenza:}\> Via Panoramica, 15 -
+                           I-84100 Salerno (SA)\\[\fineitem]
+        {\sl Cittadinanza:}\> Italiana\\[\fineitem]
+        {\sl Stato civile:}\> Coniugato con un figlio a carico\\[\fineitem]
+        {\sl Telefono:}\> +39 089 792672\\[\fineitem]
+        {\sl Ufficio:}\> +39 089 965330\\[\fineitem]
+        {\sl FAX:}\>    +39 089 965272\\[\fineitem]
+	{\sl E-Mail:} \> {\tt cattaneo@dia.unisa.it}\\
+\end{tabbing}
+
+% Posizione obblighi militari:  Esentato ai sensi dell'art. 23-ter D.L. 27/2/1982 n. 57
+% Lingue straniere conosciute:  Inglese e Francese.
+
+
+\section{Formazione}
+\begin{description}
+\item [[ 1978]]
+\hfill \parbox[t]{\boxsize}     { Consegue la maturit\a`a scientifica
+presso il Liceo Scientifico Statale ``F.~Severi'' con votazione
+60/60.}
+
+\item[[ 12/1983]] \hfill \parbox[t]{\boxsize}{Consegue la Laurea in
+Scienze dell'Informazione con lode presso l'Universit\a`a degli studi
+di Salerno, discutendo la tesi {\sl ``Architetture Special Purpose per
+l'Elaborazione di Immagini\/''}.}
+\end{description}
+
+\section{Borse di studio}
+\label{borse}
+\begin{description}
+\item [[ 1986]]
+\hfill  \parbox[t]{\boxsize} {Ottiene una borsa di studio bandita
+dall'Universit\a`a di Salerno con i fondi del FORMEZ, per un soggiorno
+di 9 mesi presso un laboratorio di ricerca di un'Universit\a`a estera.}
+\end{description}
+
+\section{Servizi prestati nell'Ateneo Salernitano e in enti di ricerca}
+\subsection{Posizione attuale}
+ Ricercatore Universitario per il gruppo di discipline {\tt 92/bis}
+ successivamente convertito in {\tt K05B} presso la Facolt\a`a di
+ Scienze Matematiche Fisiche e Naturali dell'Universit\a`a degli studi
+ di Salerno dal Maggio del 1986. Ricercatore confermato dal 26 Maggio 1989,
+ afferisce al Dipartimento di Informatica ed Applicazioni ``{R.M. Capocelli}''.
+
+\subsection{Precedenti esperienze}
+\begin{description}
+\item [[ 3/84 -- 5/86]]
+\hfill  \parbox[t]{\boxsize} {Titolare di un contratto triennale
+stipulato con l'Universit\a`a di Salerno ai sensi dell'art. 26 D.P.R.
+380.}
+
+\item [[ 10/86 -- 12/87]]
+\hfill  \parbox[t]{\boxsize} {Soggiorno a Parigi
+presso il Laboratoire d'Informatique Th\a'eorique et Programmation
+(L.I.T.P.) Universit\a`a Parigi 6, nell'ambito di una collaborazione
+scientifica tra il L.I.T.P. ed il Dipartimento di origine grazie ad una
+borsa di studio di cui al punto \ref{borse}.}
+
+\item [[ 7/88 -- 12/90]] \hfill \parbox[t]{\boxsize} {Contratto di
+ricerca biennale ( n.871B00-7909245-LAAISLCIMAIA) con il L.I.T.P.
+Universit\a`a Parigi 6 per lo sviluppo, la realizzazione e messa a
+punto di una Lisp Machine (MAIA) interamente progettata e costruita in
+Francia da un progetto del Centre National d'Etudes en
+T\a'el\a'ecommunications (CNET).}
+\end{description}
+
+\section{Attivit\a`a Scientifica}
+
+\subsection{Introduzione}
+L'intera attivit\`a di ricerca \a`e stata schematizzata nelle
+seguenti aree ed \a`e rappresentata graficamente rispetto agli anni di
+attivit\a`a nella figura \ref{schema}:
+
+\begin{enumerate}
+\item Studio ed implementazione dei linguaggi di programmazione ed in
+particolare dei linguaggi logico/funzionali.
+
+\item Approccio al parallelismo mediante linguaggi funzionali.
+
+\item Linguaggi Actor Oriented per il parallelismo massivo.
+
+\item Progetto, Sperimentazione e Ingegnerizzazione di Algoritmi e
+Strutture Dati.
+
+\item Animazione di algoritmi e Computer Supported Cooperative
+Workgroup on the {\sl web}.
+\end{enumerate}
+
+\begin{figure}[h]
+  \framebox{
+    \psfig{figure=Proget1.eps,width=\figwidth}
+    }
+  \caption{Svogimento delle attivit\a`a scientifiche in ordine cronologico}
+\label{schema}
+\end{figure}
+  
+  
+La prima fase si \`e avviata negli anni successivi alla laurea.  In
+questo periodo ha continuato gli studi intrapresi con la tesi nell'
+ambito delle architetture parallele e lo sviluppo di linguaggi evoluti
+\cite{ipl:1,icon:2}, cercando di accumulare esperienze nel campo delle
+tecniche di programmazione per la realizzazione di grandi progetti
+software.
+
+Queste esperienze sono state poi utilizzate sia nello studio delle
+tecniche  non convenzionali di implementazione di Prolog, sia
+nell'utilizzo  del paradigma della programmazione
+funzionale come approccio al parallelismo.
+
+Grazie a ripetuti contatti con il prof. G. Agha, Direttore del ``{\sl
+Open Systems Laboratory}'' presso l'Universit\`a dell'Illinois a
+Urbana--Champaign (USA), l'approccio al parallelismo massivo si \`e
+diretto verso i cos\a`\i\ detti  {\sl linguaggi ad attori}.  In
+questo paradigma di programmazione confluiscono idee proprie della
+programmazione funzionale, della programmazione Object Oriented e
+perfino della programmazione logica ({\sl reflection}).
+
+Nel 1993, in seguito alla diminuzione dell'interesse da parte
+della  comunit\a`a scientifica nell'area del parallelismo massivo,
+tutti gli  sforzi si sono concentrati sul progetto, analisi e
+sperimentazione  di algoritmi su grafi dinamici, sfruttando una
+proficua sinergia con il prof. G.F. Italiano.
+Nel settore dell'{\sl algorithm engineering} sono stati
+raggiunti risultati  di notevole interesse sia in campo applicativo
+che  teorico.
+
+
+\subsection{Approccio al parallelismo mediante linguaggi funzionali} 
+
+Agli inizi del 1985 nell'ambito di una
+collaborazione con l'unit\a`a del C.N.R. di Arco Felice (NA) 
+ha partecipato in qualit\a`a di collaboratore esterno al
+progetto strategico nazionale {\sl ``Tecnologia del Software''} con il gruppo
+locale diretto dal dott. M. Furnari. In questo contesto 
+ha avuto modo di avvicinarsi alle problematiche legate
+all'implementazione ed alla definizione dei linguaggi logico
+funzionali \cite{icon:2,mxlog:1} con particolari riferimenti al parallelismo
+\cite{cnr:1,cnr:2}.
+
+\label{parigi} 
+Nell'ottobre del 1986 grazie ad una
+borsa di studio per l'estero, si recava presso il Laboratoire
+d'Informatique Th\a`eorique et Programmation dell'Universit\a`a Parigi 6
+per interessarsi specificamente alle problematiche inerenti
+l'implementazione dei linguaggi logico funzionali \cite{litp:1},
+essendo tale laboratorio tra i pi\`u qualificati su questi temi.
+
+Dopo un breve periodo di formazione, ha cominciato a partecipare alla
+intensa attivit\a`a scientifica del laboratorio divenendo
+``{\sl Chercheur Associ\a'e}'' del laboratorio e membro dell'equipe n.2
+``{\sl Langages Applicatifs}'' di cui ha continuato  a far parte per
+molti anni.
+In questo periodo ha tenuto numerosi seminari per presentare gli stati
+di avanzamento del progetto cui partecipava.
+
+\a`E stato titolare di un contratto di
+ricerca biennale (6/88--6/90) stipulato con il L.I.T.P
+nell'ambito di una convenzione stipulata dal laboratorio con il
+CNET per lo sviluppo e la valutazione di una LISP machine (MAIA),
+interamente prodotta in Francia, da realizzarsi nel biennio 1988--90.
+Il progetto globale si \a`e articolato su due sottoprogetti :
+
+\begin{enumerate}
+\item [a)] Sviluppo Sistema ISO Lisp sulla architettura MAIA.
+\item [b)] Estensione del sistema Common Lisp con un insieme di
+  primitive che potessero conciliare le esigenze di Multitasking e
+  computazione simbolica con i vincoli di {\sl real-time} imposti
+  dalle strumentazioni di controllo.
+\end{enumerate}
+
+Il contratto di ricerca di cui \`e stato titolare gli affidava il
+coordinamento di una equipe di ricercatori per lo sviluppo del secondo
+sottoprogetto, mentre la prima parte \a`e stata affidata ad un'altra equipe
+diretta dal prof. C. Queinnec.  In tale ambito si \a`e arrivati alla
+realizzazione di una delle prime implementazioni di un sistema
+Common--LISP che forniva un insieme esteso di primitive per il
+parallelismo a partire dal modello shared-memory e dalla proposta
+di ``{\sl standard}'' presentata nel rapporto ``{\sl sceptre}''
+\cite{litp:1,ISCIS:1}.
+
+In questo stesso periodo, utilizzando ancora una volta una piattaforma
+basata su sistemi Common--Lisp, ha attivamente collaborato con un'
+equipe mista (italo-francese) allo studio ed alla realizzazione di un
+sistema Prolog basato su una tecnica di implementazione assolutamente
+innovativa rispetto a quelle correntemente impiegate per questo tipo
+di implementazioni \cite{mxlog:2,SPLT:89,GULP:89}.  Questa tecnica
+\a`e basata sulla possibilit\a`a di accedere e/o modificare lo stato
+della computazione corrente sostanzialmente rappresentata come una
+successione di contesti storici creati ad ogni chiamata funzionale.
+
+Continuando lo studio sulle tecniche di implementazione di
+linguaggi evoluti impiegando linguaggi di alto livello, senza
+per questo rinunciare ad aspetti quali l'efficienza ed ottenendo,
+d'altra parte, maggiore portabilit\a`a e manutenibilit\a`a, si \a`e
+arrivati ad una versione finale del sistema Prolog che contiene,
+oltre al dimostratore, anche un ambiente di programmazione
+interamente basato su questa tecnica di implementazione 
+\cite{ISCIS:2,SEKE:1}. In questo modo si \a`e ottenuto un
+duplice risultato:
+
+\begin{enumerate}
+\item La dimostrazione della potenza e della flessibilit\a`a dello
+  strumento utilizzato in un ambito le cui difficolt\`a d'implementazione
+  sono ben note. Questo risultato scaturisce direttamente da estesi
+  confronti con le tecniche standard ben consolidate.
+
+\item In modo omogeneo si \a`e esteso il campo di applicazione di
+  questa tecnica anche a settori della programmazione (Programming
+  Environment) per i quali si riteneva non fosse possibile introdurre
+  innovazioni sostanziali rispetto alle tecniche di implementazione
+  gi\`a esistenti.
+\end{enumerate}
+
+Come ulteriore campo di indagine si \a`e indagato sulla possibilit\`a
+di estendere il sistema Prolog realizzato con un compilatore che
+utilizzi come codice intermedio un linguaggio evoluto (linguaggio C)
+includendo tutti i costrutti che sono stati definiti per la
+manipolazione della storia del calcolo.
+
+A tal riguardo ha coordinato una tesi di dottorato presso il
+laboratorio parigino che ha portato all'implementazione su scala
+reale di un compilatore per un linguaggio Pascal like (CLIP) che rende
+disponibili tutti i costrutti dedicati alla manipolazione della storia
+del calcolo con la massima efficienza raggiungibile.  In seguito ad
+ulteriori analisi questa tecnica si \a`e rivelata ugualmente utile
+come strumento formale per la specifica funzionale di sistemi
+complessi.
+
+
+\subsection{Linguaggi Actor Oriented per il parallelismo massivo}
+
+Dopo il rientro in Italia (1/90) ha continuato ad interessarsi a
+problemi connessi al parallelismo ed alla programmazione evoluta.
+Nell'ambito del progetto finalizato C.N.R. ``Calcolo Parallelo'' ha
+analizzato nuove tecniche di implementazione per linguaggi fortemente
+paralleli. Seguendo l'approccio formale di C. Hewitt sono state
+investigate le aree dei cosidetti ``{\sl linguaggi ad attori}'' questa
+volta in modo indipendente dalle architetture hardware e basandosi
+sul paradigma di computazione ``{\sl Message Passing}''
+\cite{ISCIS:3,ISCIS:4}.
+
+\a`E stato realizzato un prototipo di un kernel minimale di un
+linguaggio Actor-Based in collaborazione con il prof. M. Di Santo ed
+il prof. G. Iannello del Dipartimento di Ingegneria Informatica e
+Matematica dell'Universit\a`a di Salerno, che opera su una macchina
+multiprocessore Encore Multimax e sfrutta il concetto di esecuzione
+multithreads \cite{threads:1} per incapsulare l'attivit\a`a di ogni
+attore, prescindendo dall'architettura sottostante (memoria
+condivisa).  Dopo una fase di valutazione delle prestazioni e di messa
+a punto del prototipo, il progetto \`e migrato su di una macchina
+``{\sl Transputer-based}'' a pi\a`u alto grado di parallelismo
+\cite{AICA:1,AICA:2}.
+
+
+\subsection{Progetto, Sperimentazione e Ingegnerizzazione di Algoritmi e Strutture Dati.}
+
+Nel corso del 1993, visto il crescente interesse che si andava
+riversando verso l'area del {\em software engineering} e sfruttando
+l'occasione di collaborare con il prof.  G.F. Italiano che nel 1994
+prendeva servizio presso la stessa Facolt\a`a, il sottoscritto ha
+cominciato ad avvicinarsi all'area algoritmica specializzandosi nel
+campo della sperimentazione ed analisi di algoritmi.  Tale interesse
+nasceva da diverse opportunit\a`a, seguendo le indicazioni provenienti
+da pi\a`u settori della Computer Science, che tuttora tendono sempre
+pi\a`u a legare i risultati scientifici (algoritmi e complessit\a`a
+teoriche) con le esigenze concrete degli sviluppatori di applicazioni.
+
+In tale lavoro sono confluite tutte le esperienze accumulate nello
+sviluppo di progetti software di notevoli dimensioni, ed in
+particolare sin dai primi risultati si \a`e cercato di mantenere uno
+stretto contatto con gli altri gruppi di ricerca impegnati su temi
+affini per poter confrontare i risultati della sperimentazione,
+renderli omogenei e diffonderli tra i vari gruppi aumentando la
+ricaduta nei settori di mercato adiacenti.
+ 
+Il primo obiettivo di questa ricerca \`e stato quello di progettare e
+realizzare  una comune piattaforma software per l'analisi sperimentale
+di algoritmi che potesse avere la massima diffusione grazie
+all'impiego  di strumenti standard quali C++ e la libreria di tipi di dati
+astratti  LEDA, Library of Efficient Data types and Algorithms
+sviluppata presso MPI a Saarbr\"ucken dai proff. K.  Melhorn e S. N\"aher.
+
+Gli obiettivi e le fasi intermedie di questo progetto di ricerca sono
+stati infatti definiti insieme agli stessi autori di LEDA ricadendo in
+un comune progetto finanziato in parte con i fondi della Commissione
+della  Comunit\`a Europea (progetto ESPRIT-LTR n.20244 ALCOM-IT) in
+parte  dal MURST (progetto ``Efficienza di Algoritmi e Progetto di
+Strutture  Informative''), e comprendono attivit\`a di tipo sia
+teorico  che sperimentale.
+
+Il sottoprogetto sviluppato a Salerno si \`e sviluppato in tre fasi:
+\begin{itemize}
+\item La prima \`e stata dedicata alla definizione ed all'acquisizione
+degli strumenti di base e dell'ambiente operativo (Software di base,
+Software di sviluppo, ed utility in generale) necessari per sviluppare
+una piattaforma comune tra i vari gruppi di ricerca in modo da rendere
+omogenei i dati sperimentali rilevati.
+
+\item La seconda fase ha prodotto uno schema di valutazione delle
+  prestazioni per algoritmi dinamici su grafi. In sostanza sono state
+  messi a punto le procedure di benchmark e gli intervalli di
+  variabilit\`a entro i quali valutare le prestazioni rispetto alle
+  reali  esigenze che potenzialmente potevano emergere da casi reali di
+  studio  ed applicazioni.
+
+\item La terza fase ha prodotto l'implementazione di un insieme di algoritmi
+  noti in letteratura e mai precedentemente analizzati dal
+  punto di vista pratico. Una volta terminata la fase implementativa
+  si \a`e passati all'analisi delle prestazioni dei vari casi di studio
+  mediante  confronti diretti sia nel caso medio che nei casi estremi
+  (worst case). 
+\end{itemize}
+
+Dal punto di vista algoritmico il lavoro si \a`e concentrato nell'area
+dei  grafi dinamici ed in particolare su problematiche legate alla
+connettivit\`a e al mantenimento del {\sl Minimum Spanning Tree}.
+
+Nell'ambito della connettivit\`a su grafi dinamici sono state
+confrontate le due tecniche pi\a`u famose, note con il nome di
+``Sparsification'' di G.F. Italiano et al. e ``Dynamic Connectivity''
+di M.R.  Henzinger.  Ricercando il massimo rapporto tra genericit\a`a
+ed efficienza, sono state esaminate diverse strategie e tecniche di
+implementazione delle strutture dati prima di arrivare alla soluzione
+ottimale.  Inoltre il risultato di questa prima fase dello studio ha
+portato anche un contributo teorico nell'analisi nel caso medio di
+algoritmi dinamici riassunti in due pubblicazioni\cite{SODA96:1,jea:1}.
+
+Nell'ambito del problema del Minimum Spanning Tree sono state messe a
+confronto quattro tecniche per l'approccio dinamico al problema:
+Sparsification, Frederickson, Il giro di Eulero ed una variante che
+impiega gli alberi di Slaetor e Tarjan realizzata ad--hoc per il
+problema in questione.
+
+Tutti i risultati raggiunti sono stati considerati di grande interesse
+per la comunit\a`a scientifica, tanto che l'intera piattaforma \a`e
+stata inserita un package distribuito insieme a LEDA chiamato Leda
+Extension Package \cite{ALEX:98} che, sfruttando l'alta
+flessibilit\a`a ottenuta mediante tecniche proprie dell'Object
+Oriented Programming, punta a rendere concretamente impiegabili i
+risultati raggiunti negli ambiti pi\a`u diversi.
+
+Tutte le implementazioni realizzate sono state accuratamente testate 
+sia dal punto di vista della prova della correttezza dei risultati che da
+quello,  pi\a`u propriamente legato al software engineering, che
+riguarda  l'ottimalit\a`a delle strutture dati disegnate. 
+
+Fino ad oggi sono stati sperimentati e valutati almeno 15 algoritmi
+noti in letteratura nell'area dei grafi dinamici, mostrando, spesso,
+come risultati teorici asintotici esaltanti, possono non trovare
+riscontri pratici, mentre altri algoritmi con prestazioni teoricamente
+inferiori, ma di pi\`u facile implementazione, possono dar luogo a
+migliori risultati nei casi concreti derivanti da problemi reali. I
+risultati di tale attivit\`a nell'ambito degli algoritmi su Minimum
+Spanning Tree su grafi dinamici, sono stati sintetizzati in \cite{SODA97:2}.
+
+Nel corso degli ultimi anni il sottoscritto, coordinando tesisti e
+dottorandi, ha organizzato un gruppo di lavoro grazie al quale \a`e
+stato possibile confrontarsi con la qualit\a`a, i ritmi di lavoro ed i
+livelli di produttivit\a`a degli altri laboratori impegnati su temi
+affini. Tutti i risultati e le esperienze maturate in questo ambito
+sono state fotografati in un lavoro di grande sintesi pubblicato in
+\cite{acmcs:98}.
+
+\subsection{Animazione di algoritmi e CSCW on the WEB }
+
+Alla luce del crescente interesse che si \a`e sviluppato nell'ambito
+del World Wide Web e delle tecnologie introdotte a supporto del
+Cooperative Workgroup, per altro molto vicine alle precedenti
+esperienze maturate in ambito sistemistico dal sottoscritto,
+a partire dal 1994 sono
+stati sviluppati numerosi progetti di ricerca che impiegando tali
+tecnologie innovative hanno mirato al raggiungimento di un alto grado
+di interattivit\a`a su reti geografiche.  Tali temi spaziano dalla
+security (Electronic Commerce \cite{ECom:1,ECom:2,CABOTO:98}) alle
+adattivit\a`a e tele--teaching \cite{RETIS:97} includendo l'animazione
+{\sl over the net} basata sull'impiego di oggetti distribuiti JAVA /
+CORBA ed hanno tutti come denominatore comune l'impiego di protocolli
+WEB oriented.
+
+In particolare, la maggiore attenzione \a`e stata dedicata alla
+ricerca nell'ambito dell'Algorithm Animation visto il ruolo
+complementare giocato nei confronti dell'Algorithm Engineering,
+rivisitando ed arricchendo tutte le definizioni del problema note, alla luce
+delle opportunit\a`a offerte dall'architettura e dai protocolli
+pensati per il World Wide Web. Il risultato \a`e racchiuso in un
+intero package, denominato CATAI, pronto per l'animazione di qualsiasi
+algoritmo che impieghi strutture dati definite a partire dalle
+primitive di base di CATAI.  Anche in questo caso la piattaforma
+adottata \a`e C++ e LEDA data type. Ci\a`o ha condotto ad una collaborazione
+su questi temi con il prof. K. Melhorn che, come ideatore della
+piattaforma LEDA, ha intravisto un forte parallelismo tra gli obiettivi
+dei rispettivi progetti. Tale sinergia si concretizza nella
+possibilit\a`a messa a disposizione da CATAI di supportare l'analisi
+ed il debug dei programmi scritti a partire dalle classi di LEDA,
+molte delle quali sono gi\a`a state realizzate nelle controparti
+animate.  In questo modo aumenta il grado di riutilizzo del lavoro
+svolto e, senza ulteriore sforzo, l'utente di LEDA pu\a`o ottenere le versioni
+animate delle proprie implementazioni, aumentando la capacit\a`a di
+descrivere le strutture dati e la facilit\a`a di messa a punto.  Una
+descrizione dettagliata dell'architettura \a`e stata presentata alla
+conferenza mondiale IFIP '98. \cite{IFIP:98}.
+
+\subsection{Attivit\a`a legate al dottorato di ricerca}
+\begin{description}
+\item [$ \bullet $ [ 1987 -- 90]] \hfill \parbox[t]{\boxsize} { A
+Parigi durante la permanenza presso il L.I.T.P.  dell' Universit\a`a
+Parigi 6 sono state seguite 5 tesi di D.E.S.S. (Diplome d'Etudes
+Specialis\a'ees Sup\a'erieures) che hanno portato alla realizzazione
+di un rapporto tecnico ed un articolo presentato ad una conferenza
+internazionale \cite{ISCIS:1,litp:2} e 2 tesi di terzo ciclo.  Con
+alcuni di questi allievi, si sono mantenuti stretti rapporti di
+collaborazione scientifica oggetto del paragrafo \ref{parigi} anche
+dopo il termine del loro lavoro di tesi e la partenza dal
+laboratorio.
+}
+
+\item [$ \bullet $ [ 1991 -- 93]] \hfill \parbox[t]{\boxsize} { Nell'
+ambito della collaborazione scientifica con il prof. G. Agha ha
+coordinato la parte sperimentale della tesi di un suo studente di PhD
+dell'Universit\a`a dell'Illinois a Urbana-Champain (U.S.A.),
+R. Panwar, che ha svolto uno stage di 60 giorni presso il Dipartimento
+di Informatica ed Applicazioni dell'Universit\`a di Salerno
+sull'implementazione efficiente di linguaggi Actor-Oriented,
+interamente riportato nella sua tesi di PhD e poi oggetto di alcune
+pubblicazioni.
+}
+
+\item [$ \bullet $ [ 1996 -- 97]] \hfill \parbox[t]{\boxsize}
+{nell'ambito del dottorato di Informatica attivato presso il Dipartimento di
+Informatica ed Applicazioni ha tenuto un corso di 30 ore, coordinando la
+redazione delle tesine finali su problematiche legate
+all'InternetWorking con particolari approfondimenti sull'evoluzioni
+del protocollo IP da IP 4 a IP 6.
+}
+
+\item [$ \bullet $ [ 9/97]] \hfill \parbox[t]{\boxsize}{ Nell'ambito
+della scuola nazionale del dottorato di ricerca GII, tenutasi a
+Benevento dal 2 al 13 Settembre 1997 il sottoscritto ha tenuto un
+corso di tre giorni sull'Analisi sperimentale degli algoritmi in
+collaborazione con il prof. G.F. Italiano che ha introdotto il disegno
+degli algoritmi. 
+}
+
+\item [$ \bullet $ [98 -- 99]] \hfill \parbox[t]{\boxsize}{
+Nell'ultimo ciclo del dottorato di ricerca di Salerno, attivato nel
+Febbraio del 1998, sta svolgendo il ruolo di tutore scientifico di un
+dottorando, con il quali continua ad interessarsi dei temi introdotti
+durante la tesi di laurea \cite{IFIP:98}.
+}
+
+\end{description}
+
+
+\subsection{Attivit\a`a di ricerca svolta presso soggetti pubblici e privati}
+
+Sin dai primi anni della sua attivit\a`a scientifica, il sottoscritto
+ha sentito l'esigenza di confrontarsi con le principali industrie
+dell'area campana o comunque con tutte realt\a`a nazionali ed estere
+che avessero affinit\a`a con i temi di interesse scientifici trattati
+dal sottoscritto. Questo con la finalit\a`a di avviare proficue
+collaborazioni e di individuare quei temi che meglio potessero
+coniugare gli interessi scientifici con le reali esigenze del mondo
+del lavoro. Tale sforzo \a`e risultato particolarmente utile sia
+nell'attivit\a`a didattica, che ha potuto cos\a`\i\ beneficiare di una
+lunga serie di feedback da parte dell'industrie software, sia
+nell'attivit\a`a scientifica che \a`e rimasta sempre molto legata a
+temi concreti e percepibili nel mondo del lavoro . Inoltre da tali
+collaborazioni sono derivati grossi vantaggi in termini di risorse che
+sono state affidate al Dipartimento per sperimentazione o in termini
+di borse di studio per laureandi o post laurea. Questi contatti sono
+stati ancora pi\a`u apprezzati con l'introduzione del Diploma di
+Laurea in Informatica che espressamente prevede nel suo statuto uno
+stretto contatto con il mondo del lavoro da parte dei diplomandi.
+
+Tra le attivit\a`a scientifiche condotte con i partner di maggior
+rilevanza in ordine cronologico si citano:
+
+\begin{description}
+\item [$ \bullet $ [ 1984 -- 86]] \hfill \parbox[t]{\boxsize} {
+ITALTEL S. Maria C.V.  (CE) per una collaborazione sull'introduzione
+dei sistemi aperti (UNIX) nella loro catena di produzione e per la
+sperimentazione di una linea di apparati trasmissione dati. }
+
+\item [$ \bullet $ [ 1987 -- 90]] \hfill \parbox[t]{\boxsize} { Con il
+Laboratoire d'Informatique Th\a`eorique et Programmation
+dell'Universit\a`a Parigi 6 ed il Centre National d'Etudes en
+T\a'el\a'ecommunications (CNET) \a`e stata tenuta una proficua
+collaborazione scientifica i cui risultati sono riportati nel
+paragrafo \ref{parigi}
+}
+
+\item [$ \bullet $ [ 1985 -- 98]] \hfill \parbox[t]{\boxsize} {
+ITALDATA S.p.A. Pianodardine Avellino, gruppo Siemens Data, per
+numerosissime collaborazioni su vari temi che andavano dai sistemi
+aperti (sperimentazione di stazioni Sinix fornite gratuitamente al
+Dipartimento); collaborazione sul progetto finalizzato Calcolo
+Parallelo \cite{AICA:1,AICA:2}, numerose tesi di laurea e stage di
+formazione, su temi che vanno dal commercio elettronico al CSCW
+\cite{ECom:1,ECom:2,CABOTO:98}.
+}
+
+\item [$ \bullet $ [ 1990 -- 99]] \hfill \parbox[t]{\boxsize} {
+SINTEL Tecnologie gruppo Finmatica per l'introduzione nel processo
+produttivo delle tecnologie innovative relative al calcolo distribuito
+e pi\a`u in generale alla programmazione ad oggetti {\sl Unified Modeling Language}.
+}
+
+\item [$ \bullet $ [ 1996 -- 98]] \hfill \parbox[t]{\boxsize} { Parco
+Scientifico e Tecnologico di Salerno, Avellino e Benevento con il
+quale sono stati sviluppati molti progetti e sono stati tenuti corsi
+divulgativi dell'attivit\a`a scientifica ai soci del PST (Club delle
+imprese), anche in questo caso cercando affinit\a`a e spunti di
+collaborazione.
+}
+\end{description}
+
+
+\section{Attivit\a`a didattica}
+\subsection{Carico didattico}
+\begin{description}
+\item [$ \bullet $ [ 1986 -- 96]] \hfill 
+\parbox[t]{\boxsize} { A partire dall'anno accademico 1986--87 e fino
+al 1994, ha svolto come carico didattico le esercitazioni del corso
+``{\sl Teoria ed applicazioni delle macchine calcolatrici}''
+(TAMC). Ha anche organizzato attivamente i laboratori didattici ed ha
+partecipato alle commissioni d'esame.
+
+Il contenuto delle esercitazioni si riferiva all'introduzione dei
+concetti fondamentali della programmazione e l'insegnamento del
+linguaggio C.  Ogni anno sono state coordinate esercitazioni guidate
+nei laboratori volte a trovare un'adeguata corrispondenza tra i
+concetti astratti insegnati durante le lezioni teoriche e la realt\a`a
+delle macchine a disposizione degli studenti.
+
+Nell'anno accademico 1989/90 si \a`e avviata una sperimentazione
+didattica volta a ottimizzare la preparazione degli studenti per
+ci\a`o che concerne gli approcci alla scrittura ed al debugging di
+programmi in ambienti di programmazione evoluti.
+
+Sempre nel contesto del corso di TAMC ha inoltre curato lo sviluppo di
+una macchina virtuale equivalente al processore teorico introdotto dal
+testo di F. Preparata ``Introduzione alla organizzazione ed alla
+progettazione di un elaboratore elettronico''. I programmi nel
+linguaggio assembler scritti a lezione potevano cos\a`\i\  essere
+eseguiti su  Personal Computer convenzionali.
+
+Nell'anno 1994--95 il contenuto del corso si \`e ulteriormente
+evoluto passando dall'architettura astratta del SEC all'architettura
+reale del processore MIPS descritta nel testo di Patterson e Hennessy
+``Struttura e progetto dei calcolatori. L'interfaccia hardware e
+software''.}
+
+\item [$ \bullet $ [ 1996 -- 98]] \hfill 
+\parbox[t]{\boxsize} {
+Negli anni accademici 1996--98 il carico didattico \a`e stato svolto sul
+corso di ``{\sl Sistemi per l'Elaborazione dell'Informazione: Programmazione
+su reti}'' tenuto dal prof. G. Persiano. 
+In sintonia con il titolo del corso, le esercitazioni sono state
+basate prevalentamente su un approccio molto applicativo alla
+programmazione di applicazioni che sfruttino il supporto offerto dalla rete,
+passando in rassegna prima le primitive offerte dal sistema Unix (socket BSD) poi
+i protocolli evoluti basati su RPC (Remote Procedure Call) con cenni a
+CORBA e RMI come standard emergenti.}
+
+\item [$ \bullet $ [ 1998 -- 99]] \hfill 
+\parbox[t]{\boxsize} { Nell'anno accademico 1998--99 il carico
+didattico \a`e stato svolto sul corso di ``{\sl Programmazione I}''
+tenuto dai proff. E. Fischetti e M. Napoli.  Anche questo corso \`e
+stato improntato alla ricerca di un'adeguata rispondenza tra le
+strutture dati astratte insegnate implementazione delle strutture dati
+astratti. Il corso tenuto al primo anno, ha consentito una forte
+interazione con il corso di ``{\sl Laboratorio I}'' visti i notevoli
+punti di contatto.
+
+}
+\end{description}
+
+\subsection{Supplenze ex art. 12 Legge 341/90}
+
+\begin{description}
+\item \parbox[t]{\posiibox} 
+{\bf \raggedright $ \bullet $ [ 1990 -- 92] \par
+\medskip
+Tecniche Speciali di Elaborazione}
+\hfill \parbox[t]{\boxsize} {
+
+Con l'entrata in vigore della legge n. 341 del 19 Novembre 1990, ai
+sensi dell'art. 12, ha ricevuto l'affidamento per supplenza del corso
+di ``{\sl Tecniche Speciali di Elaborazione}'' presso la Facolt\a`a di
+Scienze Matematiche Fisiche e Naturali per gli anni accademici
+1990--91 e 1991--92. Il programma del corso, cos\a`\i come concordato
+con il Consiglio di Corso di Laurea, trattava molte delle tematiche
+relative all'attivit\`a di ricerca svolta.  In particolare venivano
+introdotte le principali metodologie per l'approccio al parallelismo
+massivo, architetture di elaboratori paralleli a memoria condivisa e a
+memoria ripartita, tutte basate su paradigmi computazionali di ``{\sl
+message-passing}''. Inoltre ogni anno sono state svolte esercitazioni
+guidate in laboratorio basate su programmi sviluppati usando un
+linguaggio actor-like ABCL/1 definito da Yonezawa et al.  Questo
+linguaggio di programmazione si fonda su concetti molto vicini al
+modello originale di G. Agha con un buon approccio metodologico per
+quanto concerne la programmazione concorrente orientata agli oggetti.}
+
+
+\item \parbox[t]{\posiibox} 
+{\bf \raggedright $ \bullet $ [ 1992 -- 93] \par
+\medskip
+Linguaggi Speciali di Programmazione}
+\hfill \parbox[t]{\boxsize} {
+
+Per l'anno accademico 1992--93 ha ricevuto l' affidamento per
+supplenza del corso di ``{\sl Linguaggi Speciali di
+Programmazione}''. Nell' ambito di tale corso, sono stati mantenuti
+molti dei contenuti del corso di Tecniche Speciali di Elaborazione con
+delle modifiche frutto dell' esperienza degli anni precedenti che
+comunque non hanno modificato le caratteristiche essenziali del
+corso.}
+
+\item \parbox[t]{\posiibox} 
+{\bf \raggedright $ \bullet $ [ 1993 -- 94] \par
+\medskip
+Sistemi per l'Elaborazione dell'Informazione II}
+\hfill \parbox[t]{\boxsize} {
+
+Per l'anno accademico 1993--94 ha ricevuto l'affidamento per supplenza
+del corso di ``{\sl Sistemi per l'Elaborazione dell'Informazione
+II}''. Nell'ambito di tale corso, fondamentale del secondo anno del
+Corso di Laurea in Informatica, ha trattato in modo approfondito tutte
+le tematiche inerenti il disegno, lo sviluppo e l'utilizzo dei moderni
+sistemi operativi. Il corso comincia con una panoramica sul sistema
+operativo Unix come caso di studio per i sistemi time-sharing ed
+arriva fino ai sistemi multiprocessore a memoria condivisa (Encore
+Multimax - MACH) passando per i cluster di workstation organizzati
+intorno ad una rete locale dotati del software necessario per fornire
+le primitive di comunicazione e task-management. Per tale corso \a`e
+stata redatta una dispensa a supporto degli argomenti non trattati nei
+testi adottati \cite{sistemiII}.}
+
+\item \parbox[t]{\posiibox} 
+{\bf \raggedright $ \bullet $ [ 1995 -- 98] \par
+\medskip
+Sistemi per l' Elaborazione dell'Informazione: Reti di Calcolatori I
+e II}
+\hfill \parbox[t]{\boxsize} {
+
+In seguito alla riorganizzazione del Corso di Laurea in Scienze dell'
+informazione, ora rinominato Corso di Laurea in Informatica, ed
+all'attivazione di un indirizzo di studio ``{\sl Reti di
+Calcolatori}'' ha ricevuto per l'anno accademico 1995--96 l'
+affidamento per supplenza dei corsi di ``{\sl Sistemi per l'
+Elaborazione dell'Informazione: Reti di Calcolatori}'' parte prima e
+parte seconda ciascuno di una unit\`a didattica.  I due programmi si
+articolavano intorno al modello di calcolo definito dall'ISO noto come
+``{\sl Open System Interconnection}''.  Il primo corso parte da temi
+legati alla struttura hardware delle reti locali quali Ethernet e
+Token-Ring, per passare via via ai livelli pi\a`u alti per affrontare
+problematiche di ottimizzazione (Bridge/Gateway) ed un esempio di
+network programming quale NetBIOS.
+
+Il secondo tratta invece aspetti pi\`u specificatamente legati agli
+strati software dedicati all'interconnessione di reti ed il
+protocollo TCP/IP. Parallelamente al fenomeno dell'{\sl
+Internetworking} che si andava via via affermando, sono stati
+trattati e messi in evidenza tutti i problemi legati alla
+realizzazione di reti geografiche basate su TCP/IP.  Particolare
+risalto \`e stato dato agli algoritmi e ai protocolli di routing
+progettati per la rete Internet.}
+\end{description}
+
+\subsection{Tesi di laurea}
+\begin{description}
+\item [$ \bullet $ [ 1985 -- 99]] \hfill\parbox[t]{\boxsize} {Circa 80
+    tesi di laurea sono state coordinate nell'ambito delle attivit\`a
+    didattiche.  Alcune, su tematiche molto vicine agli attuali
+    interessi scientifici hanno portato risultati di buon livello.
+    Tra queste va senz'altro citata la tesi di laurea di G. Amato,
+    coordinata insieme al prof. G.F. Italiano interamente dedicata all'
+    implementazione ed all'analisi delle strutture dati descritte da
+    Frederickson per il mantenimento di un Minimum Spanning Tree in
+    presenza di operazioni di inserimento e rimozione di archi dal
+    grafo iniziale.}
+\end{description}
+
+
+\section{Attivit\`a di organizzazione, direzione e coordinamento}
+
+\subsection{Cariche  Istituzionali}
+\begin{description}
+\item \parbox[t]{\posiibox} 
+{\bf \raggedright $ \bullet $ [ 1986 -- 96] \par
+\medskip
+Responsabile Scientifico Centro di Calcolo Dipartimentale}
+\hfill \parbox[t]{\boxsize} {
+
+All' interno delle attivit\a`a dipartimentali, sin dagli anni
+successivi alla laurea, ha curato la pianificazione e lo sviluppo
+delle strutture di calcolo del Dipartimento di Informatica ed
+Applicazioni, interessandosi particolarmente all'importazione ed
+all'apprendimento di tutte quelle tecnologie che potevano migliorare
+la funzionalit\a`a dei servizi offerti dalla struttura stessa.  In
+qualit\`a di responsabile scientifico delle attrezzature informatiche
+del Dipartimento, ha coordinato lo sviluppo di tali risorse con
+l'obiettivo di disporre di mezzi di calcolo sempre adeguati al
+crescente numero degli afferenti ed alle mutevoli esigenze
+scientifico/didattiche.  }
+
+\item \parbox[t]{\posiibox}
+{\bf  \raggedright $ \bullet $  [ 1990 -- 98] \par
+\medskip
+Membro della Giunta di Dipartimento}
+\hfill \parbox[t]{\boxsize} {
+
+Dal rientro dalla Francia, per poter meglio svolgere il ruolo di
+responsabile scientifico delle attrezzature di calcolo, ha fatto parte
+della Giunta dipartimentale in qualit\`a di rappresentante dei
+ricercatori fino al 1998, collaborando con le direzioni che si sono
+succedute negli anni alle scelte tecniche e all'organizzazione dei
+laboratori.}
+
+\item \parbox[t]{\posiibox}
+{\bf  \raggedright $ \bullet $ [ 1992 -- 99] \par
+\medskip
+Delegato del Rettore Rete GARR Ateneo Salernitano}
+\hfill \parbox[t]{\boxsize} {
+Dall'ottobre del 1991, con l'entrata in esercizio della rete GARR
+(Gruppo Armonizzazione Reti Ricerca), voluta dal Ministero
+dell'Universit\`a e della Ricerca Scientifica e Tecnologica (MURST),
+ha coordinato la nascita del polo dell'Ateneo Salernitano, nel ruolo
+di responsabile del Polo GARR, delegato del Rettore.  In questo
+contesto ha personalmente partecipato alle scelte tecniche del polo
+Napoletano ed alla messa a punto delle attrezzature che all'epoca si
+basavano su standard ancora non maturi e quindi causa di numerosi
+problemi.  Successivamente ha curato la migrazione dell'accesso ad
+Internet dal provider I2Unix a GARR, estendendo i servizi telematici a
+tutte le componenti dell'Ateneo che ne hanno fatto richiesta.  Da
+allora la comunit\a`a degli utenti \a`e diventata via via pi\a`u
+numerosa fino a dar vita in modo naturale ad una convenzione stipulata
+con l'Ateneo stesso oggetto di un successivo paragrafo.  Tra le varie
+attivit\a`a legate a questo ruolo vi \a`e la specifica esigenza di
+stabilire le politiche di indirizzamento all'interno del polo (che
+risulta un vero e proprio Autonomous System) e di rendere attuali le
+politiche stabilite dal GARR. Questo ha comportato la configurazione
+ed il mantenimento di tutti i router che si sono succeduti nelle varie
+tecnologie, nonch\`e la gestione diretta di tutto il dominio ``{\tt
+unisa.it}'' per ci\a`o che riguarda politiche di sicurezza,
+instradamento e ottimizzazione del traffico. A questo proposito va
+considerata la particolare struttura dell'Ateneo Salernitano che
+risulta particolarmente distribuito ed insiste su di un territorio
+particolarmente vasto.
+
+In quest'ambito \a`e stato recentemente curata dal sottoscritto la migrazione
+alla rete GARR-B, che prevede un notevole aumento della banda a disposizione
+ed un'alta qualit\a`a dei servizi, interamente basati su tecnologia ATM.
+
+Successivamente, ha presentato un progetto per un importo previsto di
+L. 2.130.000.000 finanziato al 75\% dal MURST, per la realizzazione di
+una rete regionale ed in particolare per la creazione delle
+infrastrutture all'interno dell'Ateneo per reti multimodali a larga
+banda, per fonia, dati ed immagini.  }
+
+\item \parbox[t]{\posiibox}
+{\bf  \raggedright $ \bullet $  [ 1993 -- 96] \par
+\medskip
+Membro Commissione per la risoluzione delle problematiche informatiche
+dell' Ateneo Salernitano}
+\hfill \parbox[t]{\boxsize} {
+Con decreto rettorale \`e stato nominato membro della {\sl Commissione
+per la risoluzione delle problematiche informatiche dell'Ateneo
+Salernitano}. Tale commissione aveva come incarico quello di
+coordinare lo sviluppo delle attrezzature informatiche dell'intero
+Ateneo, programmando la nascita di nuovi laboratori e gestendo laddove
+possibile la condivisione di risorse tra vari centri con l'intento di
+razionalizzare la spesa sia per quanto riguarda l'hardware che per
+quanto riguarda la manutenzione e le licenze software.}
+
+
+\item \parbox[t]{\posiibox}
+{\bf \raggedright $ \bullet $  [ 1993 -- 96] \par
+\medskip
+Membro Commissione aggiudicatrice servizi segreteria studenti}
+\hfill \parbox[t]{\boxsize} {
+Dopo aver partecipato in seno alla Commissione di Ateneo, all'analisi
+delle specifiche ed alla stesura del capitolato speciale d'appalto,
+\`e stato nominato membro della commissione aggiudicatrice per la gara
+per l'informatizzazione dei servizi di segreteria studenti. La gara
+svolta con la modalit\`a di appalto--concorso, ha richiesto la
+valutazione di 15 progetti per l'automazione delle segreterie studenti
+sia dal punto di vista architetturale che dal punto di vista delle
+procedure software.}
+\end{description}
+
+\subsection{Organizzazione laboratori scientifici e didattici}
+
+\begin{description}
+
+\item \parbox[t]{\posiibox} 
+{\bf \raggedright $ \bullet $ [ 1982 -- 84] \par
+\medskip
+Laboratorio Personal Computer IBM}
+\hfill \parbox[t]{\boxsize} {
+
+In qualit\a`a di tecnico art. 26 ha svolto le sue attivit\a`a avviando
+il primo laboratorio di personal Computer, particolarmente dedicato
+all'elaborazione delle immagini. Contemporaneamente \a`e stata
+realizzata la prima rete locale su tecnologia Token-Ring.  }
+
+\item \parbox[t]{\posiibox} 
+{\bf \raggedright $ \bullet $ [ 1984 -- 99] \par
+\medskip
+Centro di Calcolo Scientico Dipartimentale}
+\hfill \parbox[t]{\boxsize} {
+
+Nel 1984, precorrendo le attuali tendenze, si \a`e fatto carico della
+migrazione dei sistemi operativi utilizzati dalle macchine del
+Dipartimento (VMS per i due VAX 11/750 e 11/785) verso il pi\`u
+moderno ed evoluto mondo offerto dai sistemi aperti (Unix BSD).  In
+questo contesto \a`e stato realizzato uno dei primi sistemi di posta
+elettronica e di news elettroniche attivato in Italia. Le prime
+connessioni con l'allora nascente rete Internet avvenivano infatti via
+modem su linee telefoniche internazionali, prima con siti francesi e
+soltanto nel 1988 con il primo provider italiano I2Unix.
+ 
+Nonostante le difficolt\a`a legate essenzialmente alla assoluta
+mancanza di supporto tecnico esterno, il progetto iniziale si \`e
+costantemente evoluto fino alla realizzazione dell'attuale rete
+dipartimentale, con alta condivisione delle risorse, che conta circa
+300 nodi basati su diverse tecnologie che vanno dai personal-computer
+ai cluster di workstation quale istanza ideale delle macchine
+multiprocessore.  \a`E stato cos\a`i realizzato l'attuale laboratorio
+per il calcolo scientifico al quale hanno afferito la maggior parte
+delle attivit\a`a scientifiche del Dipartimento, con grande
+soddisfazione da parte degli utenti finali.
+
+Contemporaneamente si \a`e avviata una stretta collaborazione con il
+personale tecnico amministrativo addetto al laboratorio, che \a`e
+stato coordinato al fine di automatizzare tutte le attivit\a`a
+essenziali per la corretta erogazione dei servizi.  
+}
+
+
+\item \parbox[t]{\posiibox} 
+{\bf \raggedright $ \bullet $ [ 1992 -- 98] \par
+\medskip
+Laboratorio Didattico Unix}
+\hfill \parbox[t]{\boxsize} {
+
+La stessa esperienza nell'ambito dei sistemi aperti ha dato vita al
+laboratorio didattico, basato prima su sistemi Ultrix, successivamente
+su Open OSF ed infine Digital Unix. Tale sistema \a`e caratterizzato
+da un grosso carico di utenti (circa 3000 account consegnati fino ad
+oggi), su un numero elevato di postazioni terminali, prima
+alfanumerici e successivamente grafici (X-Window).
+}
+
+
+\item \parbox[t]{\posiibox} 
+{\bf \raggedright $ \bullet $ [ 1996 -- 99] \par
+\medskip
+Laboratorio Specialistico Linux/TCFS}
+\hfill \parbox[t]{\boxsize} {
+
+Sin dai suoi esordi, particolare interesse \a`e stato dedicato al
+sistema operativo Linux, sulle piattaforme Intel e non. In particolare
+in collaborazione con il prof. G. Persiano si sono coordinate le
+attivit\a`a di un laboratorio specialistico appositamente creato,
+all'interno del quale si sviluppano in maniera estremamente
+professionale parti del sistema (file system crittografico) che poi
+vengono messe a disposizione dell'intera comunit\a`a di utenti sparsa
+nel mondo. Finora hanno gravitato attorno al laboratorio ed alle
+attivit\a`a ad esso connesso circa 20 studenti, formando cos\a`\i\ un
+vero e proprio centro di competenza. Gli utenti del pacchetto
+sviluppato sono centinaia e mostrano un interesse crescente per il
+servizio offerto partecipando a tutte le frequenti fasi di upgrade e
+sviluppo.}
+
+
+\end{description}
+
+\subsection{Convenzioni ex art. 66 Legge 382/80}
+
+\begin{description}
+\item \parbox[t]{\posiibox} 
+{\bf \raggedright $ \bullet $ [ 1994 -- 97] \par
+\medskip
+Sistema Gestionale Opera Universitaria EDISU}
+\hfill \parbox[t]{\boxsize} {
+
+Dopo una lunga fase progettuale nei primi mesi del 1995 \`e stata
+attivata una convenzione con l'Ente per il Diritto allo Studio
+Universitario (EDISU) per la fornitura di tutti i servizi
+informatici e per un importo annuo di circa 250.000.000. Tali
+servizi in precedenza venivano forniti da una ditta esterna in
+services e comprendono tra l'altro la gestione remota di 3 mense
+con, rilevazione presenze e gestione del personale, oltre a tutti
+gli aspetti per l'automazione della gestione delle graduatorie dei
+concorsi per l'assegnazione degli assegni di studio nonch\`e la
+gestione finanziaria dell'Ente. Insieme al prof. A. Negro ha
+condotto tutta la fase progettuale, disegnando l'architettura
+tuttora in funzione.}
+
+\item \parbox[t]{\posiibox} 
+{\bf \raggedright $ \bullet $ [ 10/95 -- 99] \par
+\medskip
+Rete geografica privata e servizi su rete}
+\hfill \parbox[t]{\boxsize} {
+
+Nell' Ottobre del 1995 ha stilato i contenuti di una convenzione
+triennale stipulata tra il Dipartimento e la societ\`a ``{\sl XCom
+Wide Communication S.r.L.}'' per un importo annuo di L.
+70.000.000. Di tale convenzione \`e stato responsabile
+scientifico.  Tale convenzione ha per obiettivo la sperimentazione
+e la prototipizzazione di prodotti ad alta tecnologia che vanno
+dalle reti ad alta velocit\`a al software di accesso ad InterNet.
+Da tale convenzione e da un accordo con Telecom, \`e stato
+realizzata una rete privata che copre tutta la regione Campania ed
+alcuni tratti della regione Basilicata per la vendita di accessi
+ad InterNet.}
+
+\item \parbox[t]{\posiibox} 
+{\bf \raggedright $ \bullet $ [ 4/98 -- 2000] \par
+\medskip
+Erogazione servizi telematici all'Ateneo Salernitano}
+\hfill \parbox[t]{\boxsize} {
+
+Nell'Aprile del 1998 il Direttore del Dipartimento ha firmato una
+convenzione con il Rettore dell'Universit\a`a degli studi di Salerno
+per la fornitura dei servizi telematici all'intero Ateneo.  Tale
+convenzione \a`e il frutto dell'impegno speso nella diffusione di tali
+servizi e che hanno visto il Dipartimento in prima linea nel mettere a
+disposizione di tutte le componeneti dell'Ateneo le proprie competenze
+in questo campo.  In particolare il sottoscritto, ha fattivamente
+collaborato, man mano che ne emergeva l'esigenza, con le singole
+componenti dell'Ateneo, spesso partendo dal disegno della rete, per
+arrivare alla organizzazione di un dominio, ed in particolare alla
+definizione dei servizi e delle soluzioni informatiche per le
+specifiche realt\a`a.  L'oggetto di tale convenzione \a`e definito in
+un Piano Operativo da realizzarsi in due anni per un importo totale di
+300.000.000 e verte essenzialmente a realizzare un'organizzazione
+capace di erogare in maniera autonoma e centralizzata i servizi che
+finora sono stati prestati in maniera volontaristica dal Dipartimento
+di Informatica ed Applicazioni. }
+
+\end{description}
+
+\subsection{Pacchetti Software realizzati e distribuiti}
+
+\begin{description}
+\item [$ \bullet $ [ 1989]] \hfill \parbox[t]{\boxsize} { Sistema
+Prolog completo di ambiente di programmazione realizzato in Common
+Lisp. Sono stati ricevuti circa 50 feedback da parte di persone che
+hanno scaricato e installato il software.
+
+}
+\item [$ \bullet $ [ 1992]] \hfill \parbox[t]{\boxsize} { Sistema per
+la gestione dei thread scritto in C ad alte prestazioni e basso tempo
+di context switching. Gira sotto Unix BSD ma ormai \a`e stato reso
+obsoleto dalle successive modifiche apportate al modello standard e
+dall'inclusione nella maggior parte dei Sistemi Operativi. Sono stati
+ricevuti circa 150 feedback da parte di persone che hanno scaricato e
+installato il software.  }
+
+\item [$ \bullet $ [ 1997]] \hfill \parbox[t]{\boxsize} { Leda
+Extension Package, completamente rilasciato solo nel 1998, contiene
+l'intera piattaforma realizzata per il testing degli algoritmi su
+grafi dinamici e le implementazioni delle strutture dati realizzate.
+Sono stati ricevuti circa 200 feedback da parte di persone che hanno
+scaricato e installato il software.
+} 
+
+\item [$ \bullet $ [ 1997]] \hfill \parbox[t]{\boxsize} { TCFS,
+Transparent Cryptographic File System, \a`e il pacchetto pi\a`u
+diffuso che conta oltre 500 download e molto interesse da parte degli
+utenti.  Interamente scritto in C aggiunge un modulo al sistema
+operativo Linux per la gestione di un file system remoto completamente
+automatizzata e trasparente per l'utente. Oltre al modulo base \a`e
+disponibile anche un pacchetto di utility. Per far fronte alle
+frequenti richieste, \a`e stata realizzata una mailing list che viene
+utilizzata per far circolare le informazioni sugli ultimi sviluppi,
+soluzioni di problemi comuni e suggerimenti di utilizzo in generale, tra gli
+utenti interessati.  }
+
+\end{description}
+
+\newpage
+\bibliography{personal}
+\bibliographystyle{plainrevyr}
+%\bibliographystyle{plain}
+\addcontentsline{toc}{section}{\refname}
+
+
+
+Salerno, l\a`\i\ \thefiledate
+\hfill\parbox[t]{5cm}{
+  \begin{center}
+    firmato\\
+    {\sl Giuseppe CATTANEO}
+  \end{center}
+  \vskip 1cm
+  \hrule   
+}
+
+\label{lastpage}
+\end{document}
+
+

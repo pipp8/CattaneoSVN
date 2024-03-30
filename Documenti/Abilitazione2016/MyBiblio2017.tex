@@ -1,0 +1,182 @@
+% !TeX spellcheck = it_IT
+% !TEX encoding = UTF-8 Unicode
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{classic}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+% \nopagenumbers{}                                 % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% adjust the page margins
+\usepackage[scale=0.8, top=2.5cm, bottom=2.5cm]{geometry}
+\recomputelengths 
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}       % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+\usepackage[T1]{fontenc}
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+\usepackage[italian,english]{babel}
+
+\usepackage{csquotes} % requested by bilatex
+
+
+
+\usepackage[backend=biber, style=numeric-comp, maxbibnames=10, sorting=ydnt, defernumbers=true, doi=false, isbn=false, url=false]{biblatex}
+%\usepackage[defernumbers=true,backend=biber]{biblatex}
+
+\addbibresource{personal.bib}
+
+\DeclareRefcontext{rc}{sorting=ydnt}
+
+\AtEveryBibitem{%
+  \clearfield{note}%
+  \clearlist{language}%
+}
+
+
+\usepackage{tabularx}
+
+\usepackage[shortlabels]{enumitem}
+
+\makeatletter
+\newcommand\subparagraph{%
+  \@startsection{subparagraph}{5}
+  {\parindent}
+  {3.25ex \@plus 1ex \@minus .2ex}
+  {-1em}
+  {\normalfont\normalsize\bfseries}}
+\newcommand\subsubsection{%
+  \@startsection{subsubsection}{5}
+  {\parindent}
+  {3.25ex \@plus 1ex \@minus .2ex}
+  {-1em}
+  {\normalfont\normalsize\bfseries}}
+\newcommand\paragraph{%
+  \@startsection{paragraph}{5}
+  {\parindent}
+  {3.25ex \@plus 1ex \@minus .2ex}
+  {-1em}
+  {\normalfont\normalsize\bfseries}}
+\makeatother
+
+\NewDocumentCommand{\mysection}{sm}{%
+  \cvitem[0ex]{\strut\raggedleft\raisebox{2pt}{\color{color1}\rule{\hintscolumnwidth}{0.95ex}}}{\strut\sectionstyle{#2}}
+}
+
+%\usepackage{scrextend} % per addmargin
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+
+
+\usepackage{titlesec} %
+
+%\titlespacing*{\section}{0pt}{5.5ex plus 1ex minus .2ex}{4.3ex plus .2ex}
+%\titlespacing*{\subsection}{0pt}{5.5ex plus 1ex minus .2ex}{4.3ex plus .2ex}
+
+\titleformat{\section}
+    {}
+    {\thesection}{0pt}{\mysection}
+    
+\titlespacing*{\section}{0pt}{20pt}{-4pt}
+
+\titleformat{\subsection}
+    {}
+    {\thesubsection}{0pt}{\subsectionstyle}
+\titlespacing*{\subsection}{0pt}{10pt}{2pt}
+
+\let\subparagraph\relax % You don't want to use \subparagraph
+\let\paragraph\relax % You don't want to use \subparagraph
+\let\subsubsection\relax % You don't want to use \subparagraph
+
+%
+%\AtDataInput{%
+%  \csnumgdef{entrycount:\strfield{prefixnumber}}{%
+%    \csuse{entrycount:\strfield{prefixnumber}}+1}}
+%
+%\DeclareFieldFormat{labelnumber}{\mkbibdesc{#1}}    
+%\newrobustcmd*{\mkbibdesc}[1]{%
+%  \number\numexpr\csuse{entrycount:\strfield{prefixnumber}}+1-#1\relax}
+%
+
+\usepackage{lastpage}
+\usepackage[official]{eurosym}
+\usepackage[table]{xcolor} %Used to color the last column
+
+
+\newcommand{\lastYear}{\em 2017} 
+
+\newcommand{\commento}[1]{{\footnotesize{\emph{\textcolor{blue}{Commento: #1}}}}}
+
+% personal data
+\name{Giuseppe}{Cattaneo}
+\firstname{Giuseppe}
+\familyname{Cattaneo}
+
+%\title{Curriculum Vit\ae{}}                               % optional, remove / comment the line if not wanted
+
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+\makeatletter
+\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+\makeatother
+\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+\makeatletter
+\renewcommand*{\nopagenumbers}{\@displaypagenumbersfalse}
+\AtEndPreamble{%
+  \AtBeginDocument{%
+    \if@displaypagenumbers%
+      \@ifundefined{r@lastpage}{}{%
+        \ifthenelse{\pageref{lastpage}>1}{%
+          \settowidth{\pagenumberwidth}{\color{color2}\addressfont\itshape\strut\thepage/\pageref{lastpage}}%
+          \fancypagestyle{plain}{%
+            \fancyfoot[r]{\parbox[t]{\pagenumberwidth}{\color{color2}\addressfont\itshape\strut\thepage/\pageref{lastpage}}}}% the parbox is required to ensure alignment with a possible center footer (e.g., as in the casual style)
+          \pagestyle{plain}}{}}%
+      \AtEndDocument{\label{lastpage}}\else\fi}}
+\makeatother
+
+\cfoot{\addressfont\itshape\textcolor{color2}{Pagina \thepage\ / \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{0.4pt}
+
+\makeatletter
+\chead{\addressfont\itshape\textcolor{color2}{Lista delle pubblicazioni di \@firstname~\@familyname}}
+\makeatother
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\thispagestyle{empty}
+
+\nocite{*}
+
+%\printbibheading
+\printbibheading[title={Lista delle pubblicazioni}]
+
+
+\begin{refcontext}[labelprefix=J]{rc}
+
+\printbibliography[type=article, title={Articoli su riviste internazionali}, heading=subbibliography, resetnumbers=true]
+\end{refcontext}
+%
+%
+\begin{refcontext}[labelprefix=W]{rc}
+
+\printbibliography[nottype=article, title={Articoli presentati a conferenze internazionali}, heading=subbibliography,resetnumbers=true]
+
+\end{refcontext}
+
+
+\clearpage
+
+\end{document}
+

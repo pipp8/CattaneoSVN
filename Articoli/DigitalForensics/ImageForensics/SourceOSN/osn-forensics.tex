@@ -1,0 +1,564 @@
+%
+%
+%
+% $LastChangedDate: 2011-10-05 10:06:18 +0200(Mer, 05 Ott 2011) $
+%
+% $Header: http://maccattaneo:8081/svn/Cattaneo/Articoli/DigitalForensics/ImageForensics/SourceOSN/osn-forensics.tex 229 2011-10-05 08:06:18Z cattaneo $
+%
+%
+
+
+%\documentclass[10pt, conference, compsocconf, draft, onecolumn]{IEEEtran}
+
+\documentclass[10pt, conference]{IEEEtran}
+
+\IEEEoverridecommandlockouts
+
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{balance}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{epsfig}
+
+%\usepackage{lineno}
+
+\usepackage{hyperref}
+\usepackage{cite}
+
+
+%\def\LastChangedDate: #1-#2-#3 #4:#5:#6 #7 (#8) {\year=#1\month=#2\day=#3\date{\today{} #4:#5}}
+%\newenvironment{subversionparse}{\catcode`$=0}{\catcode`$=3}
+%\begin{subversionparse}
+%$LastChangedDate: 2011-10-05 10:06:18 +0200(Mer, 05 Ott 2011) $
+%\end{subversionparse}
+
+
+\hypersetup{
+%  bookmarks = false,
+%  pagebackref=true,
+  pdftoolbar=true,
+  pdfnewwindow=true,
+  pdfmenubar=true,
+  pdftitle = {A Forensic Analysis of Images on Online Social Networks},
+  pdfkeywords = {Online Social Networks; OSN; Digital Forensics; Image Forensics; Quantization Table},
+  pdfauthor = {Aniello Castiglione, Alfredo De Santis and Francesco Palmieri},
+  pdfsubject =  {Third International Conference on Intelligent Networking and Collaborative Systems - Workshop: Third International Workshop on Managing Insider Security Threats (MIST 2011)},
+  pdfcreator =  {Dr. Aniello Castiglione - castiglione@ieee.org},
+}
+
+
+\begin{document}
+
+
+
+
+\title{A Forensic Analysis of Images on\\Online Social Networks}
+
+
+\author{
+\IEEEauthorblockN{Aniello Castiglione\IEEEauthorrefmark{1}\thanks{Corresponding author: Aniello Castiglione,~Member,~\textit{IEEE},~\href{mailto:castiglione@ieee.org}{castiglione@ieee.org},~Phone: +39089969594,~FAX: +39089969821}, Giuseppe Cattaneo\IEEEauthorrefmark{2}, Alfredo De Santis\IEEEauthorrefmark{3}}
+
+\IEEEauthorblockA{Dipartimento di Informatica ``R.M. Capocelli''\\
+Universit\`{a} degli Studi di Salerno\\
+%Via Ponte don Melillo,\\
+I-84084 Fisciano (SA), Italy\\
+\href{mailto:castiglione@ieee.org}{castiglione@ieee.org}\IEEEauthorrefmark{1},
+\href{mailto:cattaneo@dia.unisa.it}{cattaneo@dia.unisa.it}\IEEEauthorrefmark{2},
+\href{mailto:ads@dia.unisa.it}{ads@dia.unisa.it}\IEEEauthorrefmark{3}
+}
+%\\
+%$LastChangedDate: 2011-10-05 10:06:18 +0200(Mer, 05 Ott 2011) $
+}
+
+\maketitle
+
+%\linenumbers
+
+
+\begin{abstract}
+The Web 3.0 is approaching fast and the Online Social Networks (OSNs) are becoming more and more pervasive in today daily activities. A subsequent consequence is that criminals are running at the same speed as technology and most of the time highly sophisticated technological machineries are used by them. Images are often involved in illicit or illegal activities, with it now being fundamental to try to ascertain as much as information on a given image as possible. Today, most of the images coming from the Internet flow through OSNs.
+
+The paper analyzes the characteristics of images  published on some OSNs. The analysis mainly focuses on how the OSN processes the uploaded images and what changes are made to some of the characteristics, such as JPEG quantization table, pixel resolution and related metadata.  The experimental analysis was carried out in June-July 2011 on Facebook, Badoo and Google+. It also has a forensic value: it can be used to establish whether an image has been downloaded from an OSN or not.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Online Social Networks; OSN; Digital Forensics; Image Forensics; Quantization Table; Quality Factor; Facebook; Google+; Badoo; Pixel Resolution; Metadata.
+
+\end{IEEEkeywords}
+
+\section{Introduction}
+
+Online Social Networks (OSNs) are becoming more and more popular. Their growth is almost exponential. Facebook, launched in 2004, had over 100 million active users in July 2008, over 250 million in July 2009, over 500 million in July 2010 and over 750 million in July 2011~\cite{facebookstats}. Facebook has been designed to easily share information such as messages and photos, and nowadays over 30 billion contents (photo albums, notes, web links, stories, etc.) are shared monthly on it. Above all, Facebook publishes a huge number of user photos which is growing at a rate of more than 3 billion of uploads per month. This produces a traffic of more than 1.2 million photos per second during peak time~\cite{pingdom}.
+Similarly Badoo, launched in November 2006, had about 125 million active users  in July 2011 and a rate of 1.8 million user photos and videos uploaded every day~\cite{badoo}.
+Finally, even more surprising, Google+ in the first month of its launch reached 25 million users registrations, while Twitter and Facebook took about 3 years~\cite{gplus}.
+
+These statistics show how fast OSNs are growing and how pervasive their use is in everyday activities. A consequence is that criminals runs at the same speed as technology and most of the time technological machineries are used by them. Images are often involved in illicit or illegal activities, with it now being fundamental to try to ascertain as much as information on a given image as possible. Today, most of the images available on the Internet flow through OSNs.
+In~\cite{SCI_AIHC2011}, an analysis of the Lukas et al. \cite{Lukas06} technique on images published by common OSNs was presented. This technique enables source camera identification by extracting the PRNU (Photo-Response Non-Uniformity) sensor noise from digital images.
+% and therefore may be extremely useful to make available to investigators a toolbox to establish how a given image has been captured, how has been manipulated and even if it has been downloaded by a famous OSN.
+
+In this paper, the following three characteristics of digital images published on some OSNs have been analyzed. 
+%  that can be extracted by a digital image and that lead us to establish if the target image have been downloaded by one of the Online Social Network (OSN) under study.
+%The paper focuses on three characteristics:
+\begin{itemize}
+\item {\sl Image format.} Images can be encoded using different formats such as JPEG, BMP, and PNG. JPEG is the most used format. One of the analyzed aspects is the JPEG quantization tables selected by the OSN during the publishing  process.
+\item {\sl Metadata.} It provides information that supplements the primary content of digital documents such as file name, creation or modification date, orientation, creator, location or comments.
+\item {\sl Pixel resolution.} Size of the image expressed in number of pixels for each row and each column.
+\end{itemize}
+
+%In facts each digital image owns a set of characteristics depending on the devices used for the digitalization. Once saved these characteristics %are necessary to display the image. In the next section will be shown how each OSN analyzed affect these characteristics leaving a sort of %digital signature which enable the recognition of the OSN from which have been downloaded if the image has not been further modified by %external tool for image manipulation. Clearly if an image does not meet the full set of expected characteristic values  that means it has not %been downloaded in the actual format. 
+
+An analysis of the characteristics focuses mainly on how OSNs process the uploaded images and what changes are made to their characteristics.
+The authors have not been able to find any documentation on this process either on the OSNs or in current literature. Information, mainly on the pixel resolution, can be found on forums and blogs. 
+The following  methodology was used:
+\begin{enumerate}
+\item First, a data set with images generated by several different brands of digital camera was created. It constitutes a heterogeneous data set with different characteristics, i.e. image format, metadata and pixel resolution.
+\item Then, each image was uploaded and successively downloaded from each target OSN.
+\item Finally, each input image was compared to the corresponding downloaded image in order to analyze how the OSN publication process modified the images with respect to the aforementioned characteristics.
+\end{enumerate}
+
+The image analysis used the following tools: Exiftool, GIMP, IrfanView, JPEGSnoop, Matlab with the IPT package. Most of them run on both Windows and Linux OS.
+
+However, the policies for the content management, and particularly the publication process, may change over time depending on marketing issues as well as technical factors such as disk space or bandwidth availability. The analysis described in this work is based on experiments carried out in June-July 2011 accessing the target OSNs using authors and class students profiles according to the methodology described above.
+
+The analysis focused on the following three OSNs: Facebook, Badoo and Google+. 
+The experimental results show that all the target OSNs change the pixel resolution and metadata of the uploaded images to fixed values. Facebook and Badoo compress the images using predefined  JPEG quantization tables.
+Therefore, every image downloaded by a given OSN presents known values for some characteristics.
+As a consequence, this analysis is useful in Image Forensics. If a given image matches all the predefined values of the relative characteristics of one of the OSNs, then it might have been downloaded from that OSN. Otherwise, it was not downloaded in its actual form.
+% As consequence each OSN  has been associated with a set of values for the selected characteristics able to distinguish / recognize the source OSN if the image has been downloaded by one of the target OSNs.
+
+% The shown methodology may analogous be extended to other OSN and even the meaningful characteristic set may be extended having more details on the process automatically applied by each OSN when the images are uploaded.manca la descrizione dell'organizzazione del paper.
+
+The paper is organized as follows. Section~\ref{sec1} describes the image types published on the considered OSNs. 
+The three aforementioned characteristics, i.e., image format, metadata and pixel resolution are analyzed in Sections~\ref{sec2},~\ref{sec3}, and \ref{sec4}, respectively. Section~\ref{sec5} presents some remarks about the Digital Forensics applications of the paper findings. Conclusions are made in Section~\ref{sec6}.
+
+
+\section{The Online Social Networks and the Images}
+\label{sec1}
+In this paper, three OSNs have been considered, namely Facebook, Badoo and Google+. 
+Facebook is the most widely used OSN with about 750 million users all over the world.
+Badoo is mainly active in Latin America, France, Spain, and Italy\cite{gtrend}. Google+, although being the last to be launched and still in beta version, represents the most innovative and competitive OSN thanks to its integration with the Google services. The official opening to all users (not only to invited ones), the new features introduced, as well as the Facebook counter-moves, promise to produce a true revolution in the OSN scenario.
+% As first step of our project we had to select the target OSNs among the most famous ones which let the users to upload images and organize picture albums. As matter of facts Facebook and Badoo have been chosen as they provide all the features the project need. Moreover, in the first half of 2011, Google announced and launched its new surprising implementation of Social Network, namely Google+. At time of this writing is still in beta test.
+
+All of them offer features which allow their users to share images along with comments and user references.
+
+It is possible to divide the published images into three types:
+\begin{itemize}
+\item {\sl User supplied images} are uploaded with a ``good'' resolution and can be organized into albums or associated to user profiles. OSNs provide a publication service which lets the user upload their own images. This process defines some constraints for the images to be accepted for publication, such as image format and size.
+Some OSNs, during the upload process, let the user choose from different resolutions. For example, Facebook proposes two resolutions referred to here as {\sl standard} and {\sl high}. All these images are big enough to fit one browser page or are displayed as an album slideshow.
+
+\item {\sl Thumbnails} that are the reduced-size version of the uploaded images used to help  recognize and organize them. They are produced using scaling/cropping operations on the user supplied images. These are mostly used as placeholders in the ``walls'' to identify the user or hypertext links to other contents.
+
+\item {\sl Advertisement} images, supplied by the OSN's marketing services, on which the user has no control. This kind of images were not considered in the analysis.
+\end{itemize}
+
+Each OSN uses its own custom strategy to display images at the appropriate resolution according to the environment. For example, Badoo manages four thumbnail sizes to provide users with the best quality possible.
+In order to avoid overburdening the presentation, before starting the analysis, a shorthand notation was established for all the different kinds of images displayed on the three OSNs considered.
+In the case of Facebook, the following image types were considered:
+
+\begin{description}
+\item [$FB_{hi}$] User supplied images with high resolution.
+\item [$FB_{st}$] User supplied images with standard resolution.
+\item [$FB_{pr}$] Profile pictures, i.e., the images associated with the user and generally displayed on its home page.
+\item [$FB_{th}$] Small thumbnails at the lowest resolution.
+\end{description}
+
+Badoo does not give the possibility to choose among different resolutions, but derives four different thumbnails of different sizes from the uploaded image.
+
+\begin{description}
+\item [$BD_{st}$] User supplied images with standard resolution.
+\item [$BD_{th1}$] Thumbnails at the highest resolution.
+\item [$BD_{th2}$] Thumbnails at medium resolution.
+\item [$BD_{th3}$] Thumbnails at low resolution.
+\item [$BD_{th4}$] Thumbnails at the lowest resolution.
+\end{description}
+
+Finally, Google+ has only one resolution for user supplied images and a fixed size thumbnail. 
+\begin{description}
+\item [$G+_{st}$] User supplied images with standard resolution. 
+\item [$G+_{th1}$] Thumbnails at the lowest resolution.
+\end{description}
+
+Google+ in the current beta version uses Picasa as its image repository. As a consequence, Google+ albums also include images previously uploaded to Picasa by a user with the same credentials. Picasa is an online photo-sharing service and has more options, with respect to images, than the OSNs previously analyzed. Picasa allows users to upload images in four ways according to their pixel resolution:
+\begin{description}
+\item [$Pic_{hi}$] User supplied images uploaded without any processing and thus published in their original form.
+\item [$Pic_{st}$] User supplied images with the suggested resolution useful to be printed or to be used as screensaver.
+\item [$Pic_{me}$] User supplied images with medium resolution, best suited for fast download and sharing.
+\item [$Pic_{lo}$] User supplied images with the lowest resolution to be included in blogs or web pages.
+\end{description}
+
+Finally, the methodology described in the Introduction was applied, by uploading and downloading images in the input data set for each OSN image type. 
+
+
+\section{Image Format Analysis}
+\label{sec2}
+% In this section are shown which are the image format that are allowed on an OSN. 
+% In particular, are analyzed which format are allowed for the images to be uploaded
+% on an OSN and the format that the OSNs use to store such images.
+
+Many image formats are available as a container of digital images with different characteristics.
+All the images published by Facebook and Badoo are only in the JPEG format, while Google+ stores uploaded images in different formats such as JPEG, PNG, GIF and BMP, depending on the input image. Moreover, Picasa does not convert the input images.
+However due to its features, particularly the compression performance, JPEG is the most widely used file format to store digital images.
+Nevertheless, the three OSNs accept also images in other formats such as PNG, BMP and GIF. The test results show that there are also unaccepted formats such as TIFF. 
+If the input image satisfies size constraints of the OSN, then the image is either published without modifying its encoding or is converted into another format preserving the pixel resolution. Otherwise, the OSN reduces the size of the image according to its policies and user supplied options using scaling operations.
+
+A series of experiments were run on input images which were not scaled by the OSN. In order to have a more detailed understanding of the conversion process adopted by the OSNs, the same input images were converted using GIMP2 and IrfanView. These images have been compared to the ones downloaded from the OSN. The experimental results on Facebook showed that images converted (from GIF and PNG to JPEG) are identical to the ones converted using the GIMP2 tool.
+On the contrary, the conversion performed by IrfanView slightly differs. More precisely, for each RGB channel, corresponding pixel values differ by at most 1, that is, if one has value $x$ then the other has value $x-1$, $x$, or $x+1$. In particular, the percentage of different values is 14,61\% for the red channel, 17,46\% for green and 17,35\% for blue in case of PNG to JPEG conversion, while in the case of GIF to JPEG conversion, the percentages are 15,24\%, 17,03\% and 16,58\%, respectively.
+On the other hand, the same experimental results on Badoo show that the conversion is different from the one performed by both GIMP2 and IrfanView. The results are reported in Table~\ref{tab:GIMP2} for GIMP2 and in Table~\ref{tab:IrfanView} for IrfanView. As for Facebook, for each RGB channel the values differ by at most 1. 
+\begin{table}[htbp]
+\caption{Differences between images converted by Badoo and GIMP2.}
+\centering
+\begin{tabular}{| l | c | c | c |}
+\hline
+ format & Red & Green & Blu\\
+\hline\hline
+PNG & 23.17\% & 24.59\% & 26.93\%\\
+GIF & 25.94\% & 27.10\% & 29.16\%\\
+BMP & 12.96\% & 13.37\% & 14.36\%\\
+\hline
+\end{tabular}
+\label{tab:GIMP2}
+\end{table}
+
+\begin{table}[htbp]
+\caption{Differences between images converted by Badoo and  IrfanView.}
+\centering
+\begin{tabular}{| l | c | c | c |}
+\hline
+ format & Red & Green & Blu\\
+\hline\hline
+PNG & 10,20\% & 10,81\% & 13,27\%\\
+GIF & 10.16\% & 11.37\% & 13.46\%\\
+BMP & 5.19\% & 5.52\% & 6.47\%\\
+\hline
+\end{tabular}
+\label{tab:IrfanView}
+\end{table}
+Google+ accepts and publish images in different formats. If the uploaded image, with a format JPEG, PNG, GIF, or BMP, has a resolution less than 2048 on the longest side, then the image is published as it is. Otherwise, the image is scaled down (see Section~\ref{sec4}) and the format is eventually converted to JPEG or PNG. In particular, images in the JPEG and PNG format are not converted, but images in BMP are converted to JPEG and GIF to PNG.
+
+A consequence of the analysis is that OSNs do not add watermarks to the encoded data section of some images.
+In fact, whenever the image is published as it is or the format conversion process can be replicated obtaining the same output image, then no watermark is added by the OSN. This is the case of Google+ for images with a resolution smaller than 2048 on the long side.
+This is also true for images that are uploaded to Facebook in GIF or PNG and then converted to JPEG, since the OSN removes the entire EXIF section (see Subsection~\ref{sec3:exif}).
+
+Badoo gives users the possibility to add a visible watermark to the published images. This is useful when preventing the unauthorized use of images stored on Badoo and makes it impossible for anyone to copy a photo and upload it back onto the Badoo web site~\cite{badoohelp}. 
+Users can add the watermark by setting the appropriate option in the privacy section of their profile.  This watermark consists of a strip located at the bottom of the image with the Badoo logo and the URL of the Badoo home page of the user who published the image. Its forensic value is clearly evident.
+
+\subsection{JPEG Quantization Tables}
+\label{sec3:jpeg}
+The JPEG standard defines a well known lossy compression algorithm. One of its most interesting features is the variable compression ratio. 
+Specifically, it gives the user the possibility to choose the compression factor (namely the Quality Factor or QF) thus, optimizing the ratio quality/space.
+A detailed description of the JPEG format can be found in many text books. The encoding process is based on the Discrete Cosine Transform (DCT) of $8 \times 8$ pixels image blocks. The resulting DCT coefficients are then quantized by dividing each coefficient value by its corresponding entry in a predetermined quantization table (QT). Then, the resulting values are rounded to the nearest integer. Finally, the quantized DCT coefficients are ordered and losslessly encoded.
+The JPEG decompression process, first retrieves the quantized coefficients by a lossless decoding, than the DCT coefficient values are dequantized by multiplying the retrieved DCT coefficient values by their corresponding entries in the QT. For this reason, the $8 \times 8$ QT is part of the JPEG structure and is stored in a dedicated section of JPEG files.
+
+For color images, this process is performed for both luminance and chrominance layers on distinct QTs resulting in two matrices, called luminance QT and chrominance QT. The JPEG standard suggests two standard QTs for the luminance and chrominance defined by the Independent JPEG Group in~\cite{ijq_qf}. The Group also established a method that, given a Quality Factor (QF), computes a new QT matrix whose entries $C^{*}_{i,j}$ are computed from the corresponding entries $C_{i,j}$ of the suggested matrices as follows:
+\begin{equation}
+\label{eq1}
+C^{*}_{i,j} = \left\{
+\begin{array}{ll}
+         \left \lfloor \frac{ C_{i,j} \cdot 5000 / QF  + 50}{100} \right \rfloor, &    \mbox{if $ 1 \leq QF < 50$} \\
+\\
+         \left \lfloor \frac{ C_{i,j} \cdot (200 - QF \cdot 2)  + 50}{100} \right \rfloor, &  \mbox{if $ 50 \leq QF \leq 99.$} 
+\end{array}
+\right. 
+\end{equation}
+
+The value QF is a measure of the compression ratio as well as the perceived quality of the image. Higher values of QF correspond to a smaller compression ratio and better quality while lower values imply smaller file size and greater loss of image details.
+Using the aforementioned methodology, a set of images saved with different QFs ranging from 30 to 99, were uploaded to each OSN. Afterward, the images were downloaded to evaluate how the two QTs have been changed during the publication process.
+
+The results of these experiments were very encouraging due to them showing that all the OSNs whenever modifying the input images, for example converting the input images to JPEG, compress them using fixed QTs. 
+These QTs, that can be found in the resulting image encodings, are the same as those that can be derived by using~\ref{eq1} with fixed values of QF. These values are listed in Table~\ref{tab:QF}.
+For example, all the user-uploaded images published by Facebook have QTs corresponding to QFs=85.
+The luminance QT corresponding to QF=85, is reported in Table~\ref{tab:QTFacebook}.
+The entries ``No Mod'' in Table~\ref{tab:QF} mean that the images of that type are not modified by the OSN, i.e. that the image is published without modifying its encoding.
+
+%that can be found in the resulting images, can be obtained by using the derivation process shown in Equation~\ref{eq1} by using a pre-fixed value of QF. These values are listed in Table~\ref{tab:QF}.
+
+%ANICAS
+%
+%For each image type  (except for the types  "original size" allowed by Picasa) in the upload process have reencoded the JPEG image fixing its own Quality Factory and therefore adding its own QT to the JPEG file. This means that the two QTs from a JPEG image represent a consistent amount of information to identify the source OSN. 
+%
+%Analyzing the QT extracted by the JPEG file it has been possible to calculate the QF the OSN decided to apply to the images before publishing. The computation of the QF is straightforward inverting the algorithm to scale the QT from the standard one (proposed by the Independent JPEG Group which represent QF = 100) to other smaller values.
+%
+%Table~\ref{tab:QF} reports the different QF have been detected during the experiments and adopted by the target OSN for each categories of uploaded images. As shown in section~\ref{OSN} Facebook adopted two categories for users images: {\sl standard} for all the images handled, {\sl Thumbnail} for  the images shown as preview and. A third category raised for the images shown for advertisement which got a QF=100.
+%
+%Similarly Badoo assigned the lowest QF to the full size images while the smallest Thumbnail images got a QF=97.
+%
+%In the case of Picasa we defined three categories. We proved that for the {\sl Original Size} images they leave untouched the source images while the precomputation process enforces a QF of 81,45 for {\sl suggested size} and 78,58 for {\sl Medium Size} images. Moreover we noticed that Picasa let the user to upload images in various formats including PNG, GIF and even BMP. Than the resampling process is not applied to images with a resolution lower than 2048x2048. Finally we remark that the software used by Picasa apply a different scaling (QF) for Luminance and Chrominance QTs.
+
+%It is worth to clarify that once the image has been reencoded by the OSN the original QTs we uploaded along the images are lost. In order to save disk space, in many cases, depending on the device used to capture the image, the input quality is greater than the QF choosen by the OSN resulting in a data loss that cannot be recovered.
+
+
+\begin{table}[htbp]
+\caption{QF values for OSNs and image types}
+\centering
+
+\begin{tabular}{| l | l | c | c |}
+\hline
+\multicolumn{1} {|c|}{\textbf{ OSN}} & \multicolumn {1} {c|} {\textbf{Image Type}} & \multicolumn {1} {c|} {\textbf QF\_Lum} & {\textbf QF\_Chrom}\\
+\hline\hline
+\multirow {3} {*} {Facebook} &  $FB_{hi}$ & 85 & 85 \\
+ &  $FB_{st}$ & 85 & 85 \\
+ &  $FB_{th}$ & 95 & 95 \\
+% &  Advertisement  & 100 & 100\\
+\hline
+
+\multirow {3} {*} {Badoo} &  $BD_{st}$ & 91 & 91\\
+ &  $BD_{th1}$ & 97 & 97 \\
+ &  $BD_{th2}, BD_{th3}, BD_{th4}$ & 94 & 94 \\
+\hline
+
+\multirow {2} {*} {Google+} & $G+_{st}$ & No Mod & No Mod \\
+&  $G+_{th1}$ & 81,45 & 88,78\\
+\hline
+
+\multirow {4} {*} {Picasa} & $Pic_{hi}$ & No Mod & No Mod\\
+ &  $Pic_{me}$ & 78,58 & 88,60\\
+ &  $Pic_{st}$ & 81,45 & 88,78\\\
+ &  $Pic_{lo}$ & 78,58 & 88,60\\
+\hline
+\end{tabular}
+
+\label{tab:QF}
+\end{table}
+
+%$FB_{hi}$ 
+%$FB_{st}$
+%$FB_{pr}$
+%$FB_{th}$
+%$BD_{st}$
+%$BD_{th1}$
+%$BD_{th2}$
+%$BD_{th3}$
+%$BD_{th4}$
+%$G+_{st}$ 
+%$G+_{th1}$
+%$Pic_{hi}$
+%$Pic_{st}$
+%$Pic_{me}$
+%$Pic_{lo}$
+
+
+\begin{table}[htbp]
+\caption{Luminance QT corresponding to QF=85}
+%\caption{The Luminance QT stored in the images downloaded by Facebook obtained scaling the standard QT by a QF of 85}
+\centering
+
+\begin{tabular}{| c c c c c c c c |}
+\hline
+%\multicolumn{8} {|c|}{\textbf{Luminance QT corresponding to QF=85}}\\
+%\hline
+16 & 11 & 10 & 16 & 24 & 40 & 51 & 61\\
+12 & 12 & 14 & 19 & 26 & 58 & 60 & 55\\
+14 & 13 & 16 & 24 & 40 & 57 & 69 & 56\\
+14 & 17 & 22 & 29 & 51 & 87 & 80 & 62\\
+18 & 22 & 37 & 56 & 68 & 109 & 103 & 77\\
+24 & 35 & 55 & 64 & 81 & 104 & 113 & 92\\
+49 & 64 & 78 & 87 & 103 & 121 & 120 & 101\\
+72 & 92 & 95 & 98 & 112 & 100 & 103 & 99\\
+\hline
+
+\end{tabular}
+
+\label{tab:QTFacebook}
+\end{table}
+
+%A deep analysis of the JPEG-QT is performed in order to establish if the OSNs 
+%adopt custom and fixed quantization tables for the JPEG images stored on them.
+
+%Bisogna far presente che laddove si abbassa il Quality Factor, i metodi per il
+%riconoscimento delle immagini che si basano sul rumore caratteristico PNRU
+%non funzionano bene.
+
+
+\section{Metadata Analysis}
+\label{sec3}
+When referring to digital images, metadata can be considered both internal and external to the file containing an image. Internal metadata are usually contained in the EXIF tags defined in~\cite{exif} for both for digital image formats and audio files. External metadata are represented by the name of the file that OSNs use to store images on their technological infrastructure, or at least, the file name resulting after the download of an image from a given OSN.
+
+\subsection{EXIF extensions}
+\label{sec3:exif}
+After the publication of an image by an OSN, it is possible to notice that almost always the file size of the resulting image is less or equal to the image prior to being uploaded on the OSN. This is due to both the JPEG compression as well as the deletion of any EXIF metadata on the image
+
+Facebook, during the JPEG compression process, applies some fixed parameters on the processed image, such as ``Baseline DCT'', ``Huffman coding'', fixed QTs (see Subsection~\ref{sec3:jpeg}) and 24 bit encoding for each RGB pixel. Moreover, it uses a specific sub-sampling operation on the original size (YCbCr 4:2:0 (2 2))
+and adds to the metadata information needed for the rendering of the image, the ICC Profile~\cite{icc}, to the $FB_{hi}$ and $FB_{st}$ image types.
+Even though Facebook removes the EXIF metadata, it is important to note that its thumbnail images $FB_{th}$ have the EXIF field ``Comment'' set to the string ``CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 95''. The GD Graphics Library is a freeware and open source graphic library often used for the creation of dinamically rich content on the Web.
+
+Google+ manages metadata in a different way depending on the resolution of the image involved.
+If the image to be uploaded has a resolution of more than 2048 pixels (on the long side), then a resize operation is performed, and the EXIF metadata are removed. In this case, metadata associated to the image can be only seen on the OSN and are not present in the image when downloaded from the OSN. On the contrary, if the long side of the image has a resolution of less than 2048 pixels, then the image is not modified at all, including the original EXIF metadata which will be left untouched.
+
+Badoo decreases the size of an image published thanks to the JPEG compression and the EXIF metadata deletion. During JPEG compression, Badoo uses the same fixed parameters of Facebook, with the only difference being the QFs value. Differently from Facebook, Badoo does not add information on the ICC Profile to be used.
+All the EXIF metadata are removed but one. In fact, a new EXIF ``Comment'' field is added to store important information regarding the user who uploaded the image. 
+In details, the EXIF ``Comment'' is an hexadecimal string that can be decomposed into several parts. 
+Here is an example:
+
+\scriptsize
+\begin{verbatim}
+zU0 9393951E2866 0D0D0FD5D5D5 9292941E286D 783F2CD7D7D7 
+8D8C911D2765 131416CECDC9 828284946750 121315C1C2C4 
+0E3758F0 0000C400
+\end{verbatim}
+\normalsize
+
+\noindent It is composed of $3+112$ characters divided as follows: the first 3 characters can be seen as a signature and are always \verb=zU0=. 
+The following 96 characters represent an internal color representation of the image and are grouped into 8 sections of 12-characters. The last characters can be divided into 2 sections of 8-characters: ``{\sl 0E3758F0}'' that is the hex representation of the user identification number ``{\sl 0238508272}'', and ``{\sl0000C400}'' i.e. the hex representation of the number of the image, ``{\sl50176}''. Since it has been noted that Badoo uses images of at most 920 pixel wide, the resulting original file name is ``{\sl50176\_920.jpg} (where 920 is the Badoo standard resolution).
+Recalling that Badoo publishes an image by using the following scheme,
+{\sl http://badoo.com/[user\_identification/p[photo\_number]}, the resulting URL of the image from the previous example will be {\sl http://badoo.com/0238508272/p50176}.
+
+%In fact during the upload process Badoo adds in the EXIF field comment a string containing the numeric id which identify the user, another numeric field which identifies the image among all the Badoo images and even information related to the content of the image. Moreover these information let the user to know the direct URL to access the image. 
+
+\subsection{Image File Names}
+In this subsection, the file names of the images coming from an OSN are analyzed.
+Some file names give interesting information which is useful for a Digital
+Forensics analysis. When a user asks to download an image from an OSN, the browser prompts as the default file name to save the image on the user computer the same name used for that image on the OSN. Therefore, the analysis took into account also the policy used by each OSN to assign a name to images after the user upload.
+ 
+Facebook and Badoo give no possibility to choose the image file name or to keep the source file name while Google+/Picasa leave/keep the source file name and, when a user download an image from these OSNs, is prompted with the source file name as the default name to save that image. Facebook assigns an unique ``Image IDentifier'' to each image along with the ``Album IDentifier'' and the ``User IDentifier''. Therefore, it is possible to download the image {\sl 2387802023252} in the album {\sl a.2387759502189.141733} of the user {\sl 1496850761} by setting the fields {\sl fbid} and {\sl set} in the URL obtaining the following HTTP query string:
+
+\scriptsize
+\begin{verbatim}
+http://www.facebook.com/photo.php?fbid=2387802023252\
+      &set=a.2387759502189.141733.1496850761\&type=1
+\end{verbatim}
+\normalsize
+
+\noindent Whereas this image will be downloaded using the download action, the following file name 
+\scriptsize
+\verb=314951_2387802023252_1496850761_2715967_378561091_n.jpg=
+\normalsize
+
+\noindent will be proposed to the user having in the file name the ``Image ID'' and the ``User ID''.
+%If they use the symbol "\_" as field separator, it is not known the meaning of the other fields.
+
+\noindent Badoo does not explicitly allow the download of images. To perform the same test of Facebook, the HTML source code was analyzed, extracting the URL in the tag ``SRC'' of the image under study.
+%This is the same name Badoo assigned when the image has been uploaded.
+For example, visiting the profile of user {\sl 172329121}, the image {\sl t1285234502/813151\_300.jpg} will be displayed using the following URL:
+
+\scriptsize
+\begin{verbatim}
+http://77.67.26.43/167/3/8/8/172329121/696068/
+      t1285234502/813151_300.jpg
+\end{verbatim}
+\normalsize
+where 77.67.26.43 is the IP address of the host {\sl p34.badoo.com}.
+In the same directory, the thumbnails with a lower resolution are also stored. As a consequence, the image downloaded from this URL will have a height of 300 pixels, while the $BD_{th1}$, $BD_{th2}$ and $BD_{th3}$ versions can be downloaded using as file names 813151\_48.jpg, 813151\_96.jpg, and 813151\_192.jpg respectively, at the end of the previous URL.
+
+As previously stated, Google+ and Picasa do not change the source file name and therefore the images downloaded from this OSN are not discussed.
+ 
+
+\section{Pixel Resolution Analysis}
+\label{sec4}
+The pixel resolution of an image is usually described with a pair of two
+positive integer numbers, where the first number is the number of pixel
+columns and the second is the number of pixel rows.
+This is one of the indicators of the appearance quality of the image as
+well as its size.
+The larger the numbers, the better the quality and the greater its
+size. An OSN with many published images can be interested in limiting
+the size of images to save on bandwidth and total storage needed. 
+Therefore, upper bounds on the pixel resolution are established and any image 
+with a greater resolution is converted to the upper bound resolution. The upper 
+bound is big enough to allow a good appearence quality while saving on storage. 
+The upper bound varies according to some image classification: for
+example, thumbnails have a smaller pixel resolution than other images. 
+Fixing upper bounds $UP_N\times UP_M$ on both the number of pixel rows
+$N\leq UP_N$ and the number of pixel columns $M\leq UP_M$ implies that an
+image with greater values $N\times M$ has to be resized, while 
+images with pixel resolution smaller than the upper bound are published
+without resizing.
+Rescaling the original resolution to the bound resolution $UP_N\times UP_M$ 
+causes distortion in the picture if the resolution ratios $N/M$ and $UP_N/UP_M$ 
+are different. However, if the bound does not preserve the resolution ratio
+$N/M=UP_N/UP_M$ and distortion should be avoided, then the resizing process
+has two possibilities:
+\begin{itemize}
+\item The image is resized by a factor which is the maximum value among
+the ratios $N/UP_N$ and $M/UP_M$. Namely, the resized image has pixel
+expansion $N/\alpha\times M/\alpha$ where $\alpha=\max \{N/UP_N, M/UP_M\}$.
+\item Another possibility would be cropping the image.
+\end{itemize}
+The first approach is followed by the OSNs analyzed in this paper for
+almost all images. While the latter approach is used for thumbnails and profile images on
+Facebook.
+Facebook lets the user upload images with two options on the resolution:
+standard $FB_{st}$ or high $FB_{hi}$. The published image will be at most $720\times 720$ in
+the standard resolution and $2048\times 2048$ in the high resolution. These
+are upper bounds: the values of pixel resolution $N\times M$ have to be
+$N\leq 720$ and $M\leq 720$ in the standard case 
+($N\leq 2048 $ and $M\leq 2048 $ in the high case).
+Images with pixel resolution values $N\times M$ both smaller than
+the limit, are published without resizing.
+Otherwise, the image is resized by a factor of $\alpha=\max \{N/720,
+M/720\}$ for the standard or $\alpha=\max \{N/2048, M/2048\}$ for the high
+case. The resulting image will have its greater dimension equal to $720$
+pixel in the standard case or $2048$ pixel in the high resolution case.
+Each Facebook user can upload his profile picture $FB_{pr}$. To be accepted each
+image has to be at most 4MB and with a pixel resolution of at least 180
+pixel as the number of columns. 
+Facebook thumbnail images $FB_{th}$ have pixel expansion $50\times 50$. They are
+derived from the $FB_{pr}$ uploaded by users, i.e., the $N\times
+M$ user image is resized and cropped near the center, to get a $50\times
+50$ image.
+
+Images published by Badoo ($BD_{st}$) have a pixel resolution of at most $920\times 920$.
+This is an upper bound: the pixel resolution values $N\times M$ have to
+be $N\leq 920$ and $M\leq 920$. The resizing of images with a greater
+resolution is done analogously to Facebook. 
+There is also a constrain on the allowed images: users can upload images with a pixel 
+resolution $N\geq 200$ and $M\geq 200$, otherwise they are not accepted by Badoo for publishing.
+Badoo associates thumbnails to published images. Thumbnails can have
+different pixel resolutions constraints: $M=48$ ($BD_{th1}$) , $M=96$ ($BD_{th2}$), 
+$M=192$ ($BD_{th3}$), and $M=300$ ($BD_{th4}$), with no limitation on $N$. 
+According to the four different cases, the image is resized preserving the apect ratio.
+
+Images published by Google+ have a pixel resolution of at most $2048\times
+2048$ ($G+_{st}$). As for the previous cases, this is an upper bound: the values of
+pixel resolution $N\times M$ have to be $N\leq 2048$ and $M\leq 2048$. 
+Images with pixel resolution values $N\times M$ smaller than
+the limit are published without resizing or any processing. The experiments 
+show that the MD5 and SHA-1 values of the input user image and those of the downloaded
+image are the same. The resizing of images with a greater resolution is done similarly to
+Facebook and Badoo.
+
+Picasa allows users to upload images in four ways, according to their pixel resolution.
+The ``original dimension'' manages the image at the original image resolution (for example $4288\times 2848$). The ``recommended'' (1600 pixels) resolution is mostly used for prints, sharing online albums, or for use as a screensaver. The third resolution, ``medium (1024 pixels) is the one preferred for sharing online albums with friends and family. The last resolution, ``small'' (640 pixels) is mainly used for publishing images on blogs and web pages.
+
+\section{OSN Image Forensics}
+\label{sec5}
+The science of Image Forensics has been widely discussed in many scientific publications and  provides the forensics analysts several tools and methodologies to investigate different ways an image can be involved in a digital investigation. Traditionally, previous studies and findings investigate how an image has been created, modified, or ``used'' during a crime or an illegal act.
+%The analysis presented in this paper gives some advice on how to collect digital evidence, by means of images, useful to reconstruct social networking activities.
+The analysis presented in this paper gives some advice on the image ``fingerprints'', useful in reconstructing social networking activities. This data, could be correlated to further information coming from other sources of evidence to allow investigators to reconstruct illegal or illicit activities on some of the most common OSNs.
+The analysis presented so far can be relevant in an Image Forensic analysis to establish whether
+an image has been uploaded to a particular OSN and then published or not.
+
+The analysis was carried out on images published on the three considered OSNs.
+Clearly, if a user has modified the image then some forensically relevant fingerprints may disappear. However, there are many forensic techniques which are capable of detecting a variety of standard image manipulations. Recompressing an image which has previously been JPEG compressed, also known as ``double JPEG'' compression, can be detected~\cite{PopescuF04},~\cite{PevnyF08} and the quantization table used during the initial application of JPEG compression can be estimated. If anti-forensic techniques, such as those in~\cite{tifs2011}, are used then forensically significant compression fingerprints (i.e., forensically detectable fingerprints) are removed from the image and the mentioned techniques will not work.
+
+It is worth pointing out that Facebook and Google+ do not add watermarks to the encoded data section of different kinds of image. Badoo gives users the possibility to add a visible watermark
+to the published images.
+
+%Clearly, if anti-forensic techniques, as those in~\cite{tifs2011}, are used to hide image fingerprintings, then the forensic analysis will not produce the expected results.
+
+
+\section{Conclusions}
+\label{sec6}
+%One of the consequence of this study is that it is not possible to hide information in images published on Facebook by using standard steganographic techniques while that it is possible on Google Picasa. 
+The paper has analyzed the characteristics of images published on some OSNs. The 
+analysis has mainly focused on how the OSN processes the uploaded images and 
+what changes are made to some characteristics, such as JPEG quantization table, 
+pixel resolution and related metadata. The experimental analysis was carried out in June-July 2011 on Facebook, Badoo and Google+. Due to the rapidly approaching changes, the experimental analysis presented in this paper should be updated following the OSN changes in the publication process.
+%During the preparation of the camera ready version of the paper, the authors noticed that some aspects of their research was changing.
+It could be interesting to repeat the authors analysis when Google+ is released (it is still in a beta version) and Facebook replies.
+
+
+\section*{Acknowledgments}
+The authors would like to thank Hamza Hamim, Giuseppe Lanzilli and Gianluca Roscigno 
+for their help in running the experiments and interesting discussions.
+%
+%The authors would like to thank Hamza Hamim, Giuseppe Lanzilli and Gianluca Roscigno
+%for their work during the M.Sc. course in Digital Forensics. Their tests resulted very
+%interesting in validating many of the author's findings.
+
+\bibliographystyle{IEEEtran}
+\bibliography{osn-forensics}
+
+\end{document} 

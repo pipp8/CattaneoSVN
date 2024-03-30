@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Wed Sep 17 17:08:02 CEST 2008
+onejar.license.required=false
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=valworkbench.jar
+manifest.mergeall=false
+manifest.mainclass=valworkbench.graphics.MainForm
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=
+includes=<inc|Validationlibrary/resource>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="http://localhost" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="Default Web Site/CalcApp" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="MSDeploy" replaceMatchingFiles="True" userName="administrator" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAreE1NOdxZkiDK0QOkI3TIQAAAAACAAAAAAAQZgAAAAEAACAAAAD6cpZ4ng0+pncfQw3ee7UIyCaqykFK22YUYjenqh5eGQAAAAAOgAAAAAIAACAAAAA/WobApwdHb7tCxoyNH6sqK8okcYEp3xECb3Cn6jaDuRAAAADXZT9WFBhBoY5heIDhwZodQAAAAM3QrKHYGpA1KreusMWf6iOD4w0YaXV0fyaWcKp8HGiZ6YFrilbldGtSU0pvr9PnXSvZw/UC6WOzlx6LFzuv3QU=" SelectedForPublish="True">
+    <file relUrl="Service1.svc" publishTime="12/06/2013 10:03:58" />
+    <file relUrl="bin/CalcClientService.dll" publishTime="12/06/2013 10:25:50" />
+    <file relUrl="Web.config" publishTime="12/06/2013 10:25:51" />
+    <file relUrl="bin/CalcClientService.pdb" publishTime="12/06/2013 10:25:50" />
+  </publishProfile>
+</publishData>

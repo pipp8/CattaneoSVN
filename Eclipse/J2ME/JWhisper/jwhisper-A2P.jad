@@ -1,0 +1,12 @@
+MIDlet-2: JWhisper-A2PCleaner,,jwhisper.a2p.gui.JWhisperA2PCleanerMidlet
+MIDlet-1: JWhisper-A2P,,jwhisper.a2p.gui.JWhisperA2PMidlet
+MIDlet-Jar-URL: JWhisper-A2P.jar
+MIDlet-Icon: res/icon_A2P.png
+MicroEdition-Configuration: CLDC-1.0
+MIDlet-Version: 1.0.0
+MIDlet-Vendor: DIA
+MIDlet-Description: Crypto Messaging System with Elliptic Curves Cryptography P2P
+MIDlet-Name: JWhisper A2P
+MIDlet-Info-URL: http://www.dia.unisa.it
+MicroEdition-Profile: MIDP-2.0
+MIDlet-Permissions: javax.microedition.io.PushRegistry, javax.microedition.io.Connector.sms, javax.wireless.messaging.sms.receive,javax.wireless.messaging.sms.send

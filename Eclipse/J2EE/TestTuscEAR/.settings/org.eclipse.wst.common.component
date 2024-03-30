@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+<wb-module deploy-name="TestTuscEAR">
+<wb-resource deploy-path="/" source-path="/EarContent"/>
+<dependent-module deploy-path="/" handle="module:/resource/TestTusc/TestTusc">
+<dependent-object>EjbModule_1200066151078</dependent-object>
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module archiveName="TestTuscClient.jar" deploy-path="/" handle="module:/resource/TestTuscClient/TestTuscClient">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+</wb-module>
+</project-modules>

@@ -1,0 +1,699 @@
+// !$*UTF8*$!
+{
+	1D3623240D0F684500981E51 /* PDFSignVerifyAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {920, 635}}";
+			sepNavSelRange = "{693, 0}";
+			sepNavVisRange = "{0, 754}";
+			sepNavWindowFrame = "{{38, 41}, {1108, 1111}}";
+		};
+	};
+	1D3623250D0F684500981E51 /* PDFSignVerifyAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {920, 2470}}";
+			sepNavSelRange = "{2070, 0}";
+			sepNavVisRange = "{732, 1573}";
+			sepNavWindowFrame = "{{755, 87}, {1116, 1091}}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* PDFSignVerify */ = {
+		activeExec = 0;
+		executables = (
+			64253E4B129D6C12008DFFC0 /* PDFSignVerify */,
+		);
+	};
+	28C286E00D94DF7D0034E888 /* MenuViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1200, 2600}}";
+			sepNavSelRange = "{4562, 20}";
+			sepNavVisRange = "{3485, 1911}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeArchitecturePreference = armv7;
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 64253E4B129D6C12008DFFC0 /* PDFSignVerify */;
+		activeSDKPreference = iphoneos4.2;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* PDFSignVerify */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* PDFSignVerify */,
+		);
+		breakpoints = (
+			64D3129F12BE69BE0005A611 /* TableViewController.m:326 */,
+			64D312E512BE72E40005A611 /* CertTableViewController.m:271 */,
+			64D3130412BE75B10005A611 /* TableViewController.m:132 */,
+			64D3131512BE779D0005A611 /* TableViewController.m:447 */,
+			64D3131712BE77CC0005A611 /* TableViewController.m:347 */,
+			64D3131912BE77F20005A611 /* TableViewController.m:277 */,
+			64D3131B12BE77FB0005A611 /* TableViewController.m:250 */,
+			64D3131D12BE78020005A611 /* TableViewController.m:238 */,
+			64D3131F12BE78180005A611 /* TableViewController.m:220 */,
+			64D3132112BE782D0005A611 /* TableViewController.m:208 */,
+			64D3132312BE78460005A611 /* TableViewController.m:121 */,
+			64D3132512BE784D0005A611 /* TableViewController.m:81 */,
+			64D3132712BE78590005A611 /* TableViewController.m:49 */,
+			64D3134012BE7B5C0005A611 /* TableViewController.m:196 */,
+		);
+		codeSenseManager = 64253E55129D6C3A008DFFC0 /* Code sense */;
+		executables = (
+			64253E4B129D6C12008DFFC0 /* PDFSignVerify */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					742,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXSymbolsDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXSymbolsDataSource_SymbolNameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					16,
+					200,
+					50,
+					499,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXSymbolsDataSource_SymbolTypeIconID,
+					PBXSymbolsDataSource_SymbolNameID,
+					PBXSymbolsDataSource_SymbolTypeID,
+					PBXSymbolsDataSource_ReferenceNameID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.XCSCMDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					535,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_SCM_ColumnID,
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					933,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 314480776;
+			PBXWorkspaceStateSaveDate = 314480776;
+		};
+		perUserProjectItems = {
+			6455C61512BE0C83001C683F = 6455C61512BE0C83001C683F /* PBXTextBookmark */;
+			64B947D712BE96F000164C45 = 64B947D712BE96F000164C45 /* PlistBookmark */;
+			64B947D812BE96F000164C45 = 64B947D812BE96F000164C45 /* PBXBookmark */;
+			64B947E512BE974100164C45 = 64B947E512BE974100164C45 /* PBXTextBookmark */;
+			64D3123B12BE61F70005A611 = 64D3123B12BE61F70005A611 /* PBXTextBookmark */;
+			64D3123D12BE61F70005A611 = 64D3123D12BE61F70005A611 /* PBXTextBookmark */;
+			64D312F512BE74BA0005A611 = 64D312F512BE74BA0005A611 /* PBXTextBookmark */;
+			64D3132B12BE785E0005A611 = 64D3132B12BE785E0005A611 /* PBXTextBookmark */;
+			64D3135912BE83890005A611 = 64D3135912BE83890005A611 /* PBXTextBookmark */;
+			64D3135A12BE83890005A611 = 64D3135A12BE83890005A611 /* PBXTextBookmark */;
+			64D313A112BE84B50005A611 = 64D313A112BE84B50005A611 /* PBXTextBookmark */;
+			64F5468D12BE98A100E159BA /* PBXTextBookmark */ = 64F5468D12BE98A100E159BA /* PBXTextBookmark */;
+			64F5469512BE98D000E159BA /* PBXTextBookmark */ = 64F5469512BE98D000E159BA /* PBXTextBookmark */;
+			64FD626D12BA9F6D009B2A77 = 64FD626D12BA9F6D009B2A77 /* PBXTextBookmark */;
+			64FD627012BA9F6D009B2A77 = 64FD627012BA9F6D009B2A77 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 64253E54129D6C3A008DFFC0 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	4150101212BBA35400C9DA28 /* PdfSigUtils.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {920, 1261}}";
+			sepNavSelRange = "{179, 0}";
+			sepNavVisRange = "{0, 1310}";
+		};
+	};
+	64253E4B129D6C12008DFFC0 /* PDFSignVerify */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = PDFSignVerify;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	64253E54129D6C3A008DFFC0 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	64253E55129D6C3A008DFFC0 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	6435695B129D73750070D358 /* DBAccountInfo.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1200, 707}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 644}";
+		};
+	};
+	6435696C129D73750070D358 /* DBRestClient.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1084, 10777}}";
+			sepNavSelRange = "{4379, 0}";
+			sepNavVisRange = "{3819, 1210}";
+		};
+	};
+	6455C44C12BE0897001C683F /* OpenSSLRSA.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {838, 1989}}";
+			sepNavSelRange = "{763, 0}";
+			sepNavVisRange = "{578, 425}";
+		};
+	};
+	6455C61512BE0C83001C683F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Openssl/pkcs7.h: No such file or directory";
+		fRef = 4150101212BBA35400C9DA28 /* PdfSigUtils.h */;
+		rLen = 1;
+		rLoc = 9;
+		rType = 1;
+	};
+	64B24F3412BE159300560B94 /* cacert.crt */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {920, 780}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 2445}";
+		};
+	};
+	64B947D712BE96F000164C45 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* PDFSignVerify-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleIdentifier,
+		);
+		name = "/Users/pipp8/src/XCode/IOS/PDF-Verify/PDFSignVerify/PDFSignVerify-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	64B947D812BE96F000164C45 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 64B24F3412BE159300560B94 /* cacert.crt */;
+	};
+	64B947E512BE974100164C45 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 64B24F3412BE159300560B94 /* cacert.crt */;
+		name = "cacert.crt: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2510;
+		vrLoc = 0;
+	};
+	64D3123B12BE61F70005A611 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 748956B812045736007AA0A1 /* TableViewController.h */;
+		name = "TableViewController.h: 34";
+		rLen = 0;
+		rLoc = 918;
+		rType = 0;
+		vrLen = 1040;
+		vrLoc = 0;
+	};
+	64D3123D12BE61F70005A611 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7481A5341205D7E3001F34DD /* CertTableViewController.h */;
+		name = "CertTableViewController.h: 31";
+		rLen = 0;
+		rLoc = 813;
+		rType = 0;
+		vrLen = 882;
+		vrLoc = 0;
+	};
+	64D3129F12BE69BE0005A611 /* TableViewController.m:326 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 748956B912045736007AA0A1 /* TableViewController.m */;
+		functionName = "-tableView:numberOfRowsInSection:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 326;
+		location = PDFSignVerify;
+		modificationTime = 314474539.874791;
+		originalNumberOfMultipleMatches = 1;
+		state = 0;
+	};
+	64D312E512BE72E40005A611 /* CertTableViewController.m:271 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 7481A5351205D7E3001F34DD /* CertTableViewController.m */;
+		functionName = "-tableView:numberOfRowsInSection:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 271;
+		location = PDFSignVerify;
+		modificationTime = 314474539.925318;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	64D312F512BE74BA0005A611 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* PDFSignVerifyAppDelegate.h */;
+		name = "PDFSignVerifyAppDelegate.h: 31";
+		rLen = 0;
+		rLoc = 693;
+		rType = 0;
+		vrLen = 754;
+		vrLoc = 0;
+	};
+	64D3130412BE75B10005A611 /* TableViewController.m:132 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 748956B912045736007AA0A1 /* TableViewController.m */;
+		functionName = "-restClient:loadedMetadata:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 132;
+		location = PDFSignVerify;
+		modificationTime = 314474539.998099;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	64D3131512BE779D0005A611 /* TableViewController.m:447 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 748956B912045736007AA0A1 /* TableViewController.m */;
+		functionName = "-tableView:commitEditingStyle:forRowAtIndexPath:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 447;
+		location = PDFSignVerify;
+		modificationTime = 314474540.053773;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	64D3131712BE77CC0005A611 /* TableViewController.m:347 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 748956B912045736007AA0A1 /* TableViewController.m */;
+		functionName = "-tableView:cellForRowAtIndexPath:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 347;
+		location = PDFSignVerify;
+		modificationTime = 314474540.110921;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	64D3131912BE77F20005A611 /* TableViewController.m:277 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 748956B912045736007AA0A1 /* TableViewController.m */;
+		functionName = "-restClient:loadFiledWithError:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 277;
+		location = PDFSignVerify;
+		modificationTime = 314474540.151333;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	64D3131B12BE77FB0005A611 /* TableViewController.m:250 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 748956B912045736007AA0A1 /* TableViewController.m */;
+		functionName = "-restClient:loadedFile:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 250;
+		location = PDFSignVerify;
+		modificationTime = 314474540.233339;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	64D3131D12BE78020005A611 /* TableViewController.m:238 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 748956B912045736007AA0A1 /* TableViewController.m */;
+		functionName = "-restClient:loadProgress:forFile:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 238;
+		location = PDFSignVerify;
+		modificationTime = 314474540.288293;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	64D3131F12BE78180005A611 /* TableViewController.m:220 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 748956B912045736007AA0A1 /* TableViewController.m */;
+		functionName = "-restClient:deletedPath:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 220;
+		location = PDFSignVerify;
+		modificationTime = 314474540.3524979;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	64D3132112BE782D0005A611 /* TableViewController.m:208 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 748956B912045736007AA0A1 /* TableViewController.m */;
+		functionName = "-restClient:deletePathFailedWithError:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 208;
+		location = PDFSignVerify;
+		modificationTime = 314474540.403213;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	64D3132312BE78460005A611 /* TableViewController.m:121 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 748956B912045736007AA0A1 /* TableViewController.m */;
+		functionName = "-restClient:loadedMetadata:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 121;
+		location = PDFSignVerify;
+		modificationTime = 314474540.469133;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	64D3132512BE784D0005A611 /* TableViewController.m:81 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 748956B912045736007AA0A1 /* TableViewController.m */;
+		functionName = "-generatePhotoThumbnail:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 81;
+		location = PDFSignVerify;
+		modificationTime = 314474540.5243371;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	64D3132712BE78590005A611 /* TableViewController.m:49 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 748956B912045736007AA0A1 /* TableViewController.m */;
+		functionName = "-viewDidLoad";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 49;
+		location = PDFSignVerify;
+		modificationTime = 314474540.590152;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	64D3132B12BE785E0005A611 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* PDFSignVerifyAppDelegate.m */;
+		name = "PDFSignVerifyAppDelegate.m: 80";
+		rLen = 0;
+		rLoc = 2070;
+		rType = 0;
+		vrLen = 1573;
+		vrLoc = 732;
+	};
+	64D3134012BE7B5C0005A611 /* TableViewController.m:196 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 748956B912045736007AA0A1 /* TableViewController.m */;
+		functionName = "-restClient:loadMetadataFailedWithError:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 196;
+		location = PDFSignVerify;
+		modificationTime = 314474540.652149;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	64D3135912BE83890005A611 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 748956B912045736007AA0A1 /* TableViewController.m */;
+		name = "TableViewController.m: 49";
+		rLen = 0;
+		rLoc = 1470;
+		rType = 0;
+		vrLen = 1551;
+		vrLoc = 914;
+	};
+	64D3135A12BE83890005A611 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7481A5351205D7E3001F34DD /* CertTableViewController.m */;
+		name = "CertTableViewController.m: 54";
+		rLen = 0;
+		rLoc = 1485;
+		rType = 0;
+		vrLen = 1149;
+		vrLoc = 11583;
+	};
+	64D313A112BE84B50005A611 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 74829B501205B4B200A06DA1 /* PDFViewController.m */;
+		name = "PDFViewController.m: 59";
+		rLen = 0;
+		rLoc = 1871;
+		rType = 0;
+		vrLen = 1712;
+		vrLoc = 742;
+	};
+	64F5468D12BE98A100E159BA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 64B24F3412BE159300560B94 /* cacert.crt */;
+		name = "cacert.crt: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2445;
+		vrLoc = 0;
+	};
+	64F5469512BE98D000E159BA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 64B24F3412BE159300560B94 /* cacert.crt */;
+		name = "cacert.crt: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2445;
+		vrLoc = 0;
+	};
+	64FD626D12BA9F6D009B2A77 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		name = "PhotoInfoViewController.m: 149";
+		rLen = 5;
+		rLoc = 5282;
+		rType = 0;
+		vrLen = 2005;
+		vrLoc = 4787;
+	};
+	64FD627012BA9F6D009B2A77 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* MenuViewController.m */;
+		name = "MenuViewController.m: 162";
+		rLen = 20;
+		rLoc = 4547;
+		rType = 0;
+		vrLen = 1911;
+		vrLoc = 3485;
+	};
+	7481A5341205D7E3001F34DD /* CertTableViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {920, 658}}";
+			sepNavSelRange = "{813, 0}";
+			sepNavVisRange = "{0, 882}";
+		};
+	};
+	7481A5351205D7E3001F34DD /* CertTableViewController.m */ = {
+		uiCtxt = {
+			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{10576, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{10627, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{10677, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 12732}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1503, 6006}}";
+			sepNavSelRange = "{1485, 0}";
+			sepNavVisRange = "{11526, 1149}";
+			sepNavWindowFrame = "{{15, 62}, {1108, 1111}}";
+		};
+	};
+	74829B501205B4B200A06DA1 /* PDFViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1622, 1976}}";
+			sepNavSelRange = "{1871, 0}";
+			sepNavVisRange = "{742, 1711}";
+			sepNavWindowFrame = "{{15, 62}, {1108, 1111}}";
+		};
+	};
+	748956B812045736007AA0A1 /* TableViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {920, 658}}";
+			sepNavSelRange = "{918, 0}";
+			sepNavVisRange = "{0, 1040}";
+		};
+	};
+	748956B912045736007AA0A1 /* TableViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1125, 6279}}";
+			sepNavSelRange = "{1725, 0}";
+			sepNavVisRange = "{2392, 2436}";
+			sepNavWindowFrame = "{{474, 67}, {1108, 1111}}";
+		};
+	};
+	74D6C9AF12005D7C002CE501 /* ServicesViewController.m */ = {
+		uiCtxt = {
+			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{6075, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{6126, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{6176, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 6967}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1049, 3562}}";
+			sepNavSelRange = "{251, 0}";
+			sepNavVisRange = "{0, 1504}";
+			sepNavWindowFrame = "{{15, 62}, {1108, 1111}}";
+		};
+	};
+	8D1107310486CEB800E47090 /* PDFSignVerify-Info.plist */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{61, 20}, {1108, 1111}}";
+		};
+	};
+}

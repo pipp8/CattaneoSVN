@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\inetpub\wwwroot\WSTest" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="Default Web Site" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/TestWebService.pdb" publishTime="04/23/2017 12:53:55" />
+    <file relUrl="Service1.asmx" publishTime="07/23/2013 10:34:50" />
+    <file relUrl="Web.config" publishTime="04/23/2017 12:54:05" />
+    <file relUrl="bin/TestWebService.dll" publishTime="04/23/2017 12:53:55" />
+  </publishProfile>
+</publishData>

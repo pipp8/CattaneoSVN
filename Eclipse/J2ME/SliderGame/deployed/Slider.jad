@@ -1,0 +1,8 @@
+MIDlet-Name: Slider
+MIDlet-Version: 0.1.0
+MIDlet-Vendor: Pipp8
+MicroEdition-Profile: MIDP-2.0
+MicroEdition-Configuration: CLDC-1.1
+MIDlet-Jar-URL: Slider.jar
+MIDlet-Jar-Size: 7586
+MIDlet-1: SliderGame, , slider.SliderGame

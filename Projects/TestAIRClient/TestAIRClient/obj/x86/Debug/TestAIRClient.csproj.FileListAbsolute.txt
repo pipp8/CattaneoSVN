@@ -1,0 +1,17 @@
+c:\users\pippo\documents\visual studio 2010\Projects\TestAIRClient\TestAIRClient\bin\Debug\TestAIRClient.exe.config
+c:\users\pippo\documents\visual studio 2010\Projects\TestAIRClient\TestAIRClient\bin\Debug\TestAIRClient.exe
+c:\users\pippo\documents\visual studio 2010\Projects\TestAIRClient\TestAIRClient\bin\Debug\TestAIRClient.pdb
+c:\users\pippo\documents\visual studio 2010\Projects\TestAIRClient\TestAIRClient\obj\x86\Debug\TestAIRClient.Properties.Resources.resources
+c:\users\pippo\documents\visual studio 2010\Projects\TestAIRClient\TestAIRClient\obj\x86\Debug\TestAIRClient.csproj.GenerateResource.Cache
+c:\users\pippo\documents\visual studio 2010\Projects\TestAIRClient\TestAIRClient\obj\x86\Debug\TestAIRClient.exe
+c:\users\pippo\documents\visual studio 2010\Projects\TestAIRClient\TestAIRClient\obj\x86\Debug\TestAIRClient.pdb
+C:\Users\Pippo\documents\visual studio 2010\Projects\TestAIRClient\TestAIRClient\obj\x86\Debug\TestAIRClient.Form1.resources
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\TestAIRClient\TestAIRClient\bin\Debug\TestAIRClient.exe.config
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\TestAIRClient\TestAIRClient\obj\x86\Debug\TestAIRClient.exe
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\TestAIRClient\TestAIRClient\obj\x86\Debug\TestAIRClient.pdb
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\TestAIRClient\TestAIRClient\bin\Debug\TestAIRClient.exe
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\TestAIRClient\TestAIRClient\bin\Debug\TestAIRClient.pdb
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\TestAIRClient\TestAIRClient\obj\x86\Debug\TestAIRClient.Form1.resources
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\TestAIRClient\TestAIRClient\obj\x86\Debug\TestAIRClient.Properties.Resources.resources
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\TestAIRClient\TestAIRClient\obj\x86\Debug\TestAIRClient.csproj.GenerateResource.Cache
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\TestAIRClient\TestAIRClient\obj\x86\Debug\TestAIRClient.csprojResolveAssemblyReference.cache

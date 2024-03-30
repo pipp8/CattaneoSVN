@@ -1,0 +1,10 @@
+C:\Users\cattaneo\documents\visual studio 2010\Projects\RPCSample\CalcClient\bin\Debug\CalcClient.exe.config
+C:\Users\cattaneo\documents\visual studio 2010\Projects\RPCSample\CalcClient\bin\Debug\CalcClient.exe
+C:\Users\cattaneo\documents\visual studio 2010\Projects\RPCSample\CalcClient\bin\Debug\CalcClient.pdb
+C:\Users\cattaneo\documents\visual studio 2010\Projects\RPCSample\CalcClient\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\cattaneo\documents\visual studio 2010\Projects\RPCSample\CalcClient\obj\x86\Debug\CalcClient.Form1.resources
+C:\Users\cattaneo\documents\visual studio 2010\Projects\RPCSample\CalcClient\obj\x86\Debug\CalcClient.Properties.Resources.resources
+C:\Users\cattaneo\documents\visual studio 2010\Projects\RPCSample\CalcClient\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\cattaneo\documents\visual studio 2010\Projects\RPCSample\CalcClient\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\cattaneo\documents\visual studio 2010\Projects\RPCSample\CalcClient\obj\x86\Debug\CalcClient.exe
+C:\Users\cattaneo\documents\visual studio 2010\Projects\RPCSample\CalcClient\obj\x86\Debug\CalcClient.pdb

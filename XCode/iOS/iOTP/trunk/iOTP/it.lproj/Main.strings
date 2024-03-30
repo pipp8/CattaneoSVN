@@ -1,0 +1,130 @@
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "2nC-Cw-Xzq"; */
+"2nC-Cw-Xzq.placeholder" = "Password";
+
+/* Class = "UITextField"; placeholder = "Username"; ObjectID = "3Co-ke-zxi"; */
+"3Co-ke-zxi.placeholder" = "Username";
+
+/* Class = "UILabel"; text = "pronto"; ObjectID = "4b1-DN-ZVU"; */
+"4b1-DN-ZVU.text" = "pronto";
+
+/* Class = "UIButton"; normalTitle = "NUOVO OTP"; ObjectID = "50Y-CZ-afv"; */
+"50Y-CZ-afv.normalTitle" = "NUOVO OTP";
+
+/* Class = "UIButton"; normalTitle = "INIZIA A USARE"; ObjectID = "56B-gb-Z7s"; */
+"56B-gb-Z7s.normalTitle" = "INIZIA A USARE";
+
+/* Class = "UINavigationItem"; title = "OTP"; ObjectID = "5ei-RU-llI"; */
+"5ei-RU-llI.title" = "OTP";
+
+/* Class = "UITextField"; placeholder = "Inserisci il tuo codice di sblocco"; ObjectID = "5hF-vN-s1N"; */
+"5hF-vN-s1N.placeholder" = "Inserisci il tuo codice di sblocco";
+
+/* Class = "UITextField"; placeholder = "PIN Ricevuto"; ObjectID = "6hA-ap-LfR"; */
+"6hA-ap-LfR.placeholder" = "PIN Ricevuto";
+
+/* Class = "UINavigationItem"; title = "Avvia Registrazione"; ObjectID = "7Ps-xe-Oga"; */
+"7Ps-xe-Oga.title" = "Avvia Registrazione";
+
+/* Class = "UIViewController"; title = "Sincronizzazione Segreto"; ObjectID = "7a5-PA-1vf"; */
+"7a5-PA-1vf.title" = "Sincronizzazione Segreto";
+
+/* Class = "UILabel"; text = "Inserisci il codice numerico ricevuto via SMS per completare l'attivazione dell'App e premi il bottone \"ATTIVA L'App\""; ObjectID = "8qJ-8N-mIy"; */
+"8qJ-8N-mIy.text" = "Inserisci il codice numerico ricevuto via SMS per completare l'attivazione dell'App e premi il bottone \"ATTIVA L'App\"";
+
+/* Class = "UIButton"; normalTitle = "Non ho ricevuto l'SMS"; ObjectID = "A6V-3g-2xX"; */
+"A6V-3g-2xX.normalTitle" = "Non ho ricevuto l'SMS";
+
+/* Class = "UIViewController"; title = "OTP Root View"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "OTP Root View";
+
+/* Class = "UIButton"; normalTitle = "Attiva l'App"; ObjectID = "Chl-Yo-ml4"; */
+"Chl-Yo-ml4.normalTitle" = "Attiva l'App";
+
+/* Class = "UILabel"; text = "eTuitus S.r.L. è uno spin-off "; ObjectID = "CmP-2k-oi5"; */
+"CmP-2k-oi5.text" = "eTuitus S.r.L. è uno spin-off ";
+
+/* Class = "UILabel"; text = "Inserire la passphrase ricevuta"; ObjectID = "Cy3-zG-d0q"; */
+"Cy3-zG-d0q.text" = "Inserire la passphrase ricevuta";
+
+/* Class = "UINavigationController"; title = "Main Navigation"; ObjectID = "F9R-r6-9CK"; */
+"F9R-r6-9CK.title" = "Main Navigation";
+
+/* Class = "UILabel"; text = "OTP generato:"; ObjectID = "FrN-4M-Nq1"; */
+"FrN-4M-Nq1.text" = "OTP generato:";
+
+/* Class = "UILabel"; text = "App attivata con successo"; ObjectID = "HxY-OT-bJx"; */
+"HxY-OT-bJx.text" = "App attivata con successo";
+
+/* Class = "UILabel"; text = "  Copyright (c) 2015 eTuitus.com. All rights reserved."; ObjectID = "J5U-Uy-jYq"; */
+"J5U-Uy-jYq.text" = "  Copyright (c) 2015 eTuitus.com. All rights reserved.";
+
+/* Class = "UITableViewController"; title = "Impostazioni"; ObjectID = "K0J-gS-Muh"; */
+"K0J-gS-Muh.title" = "Impostazioni";
+
+/* Class = "UILabel"; text = "Inserisci il tuo username e la tua password: riceverai un SMS con il codice di verifica che ti permetterà di attivare l'App!"; ObjectID = "Kse-Jc-y97"; */
+"Kse-Jc-y97.text" = "Inserisci il tuo username e la tua password: riceverai un SMS con il codice di verifica che ti permetterà di attivare l'App!";
+
+/* Class = "UIButton"; normalTitle = "Press"; ObjectID = "NPQ-sa-Vnx"; */
+"NPQ-sa-Vnx.normalTitle" = "Press";
+
+/* Class = "UINavigationItem"; title = "Generazione Seed"; ObjectID = "S1B-37-3jK"; */
+"S1B-37-3jK.title" = "Generazione Seed";
+
+/* Class = "UIViewController"; title = "Attivazione"; ObjectID = "VIt-fU-KQf"; */
+"VIt-fU-KQf.title" = "Attivazione";
+
+/* Class = "UILabel"; text = "Attiva l'App"; ObjectID = "WJM-Mh-AL7"; */
+"WJM-Mh-AL7.text" = "Attiva l'App";
+
+/* Class = "UIBarButtonItem"; title = "Home"; ObjectID = "YYq-Gt-NcE"; */
+"YYq-Gt-NcE.title" = "Home";
+
+/* Class = "UIButton"; normalTitle = "ATTIVA L'App"; ObjectID = "ZcP-ys-Rhl"; */
+"ZcP-ys-Rhl.normalTitle" = "ATTIVA L'App";
+
+/* Class = "UILabel"; text = "dell'Università di Salerno e di InfoCert S.p.A."; ObjectID = "bxa-sH-VwV"; */
+"bxa-sH-VwV.text" = "dell'Università di Salerno e di InfoCert S.p.A.";
+
+/* Class = "UINavigationItem"; title = "About Infocert-ID"; ObjectID = "c6L-ch-B6O"; */
+"c6L-ch-B6O.title" = "About Infocert-ID";
+
+/* Class = "UIViewController"; title = "Welcome"; ObjectID = "eDz-IB-ha4"; */
+"eDz-IB-ha4.title" = "Welcome";
+
+/* Class = "UIViewController"; title = "Info"; ObjectID = "enV-ZN-Om4"; */
+"enV-ZN-Om4.title" = "Info";
+
+/* Class = "UIBarButtonItem"; title = "Next"; ObjectID = "gVH-Zg-Dip"; */
+"gVH-Zg-Dip.title" = "Next";
+
+/* Class = "UILabel"; text = "Per generare l'OTP premere il tasto e inserire il proprio codice di sblocco:"; ObjectID = "ir3-bl-3um"; */
+"ir3-bl-3um.text" = "Per generare l'OTP premere il tasto e inserire il proprio codice di sblocco:";
+
+/* Class = "UINavigationItem"; title = "Impostazioni"; ObjectID = "lDu-AN-OTV"; */
+"lDu-AN-OTV.title" = "Impostazioni";
+
+/* Class = "UILabel"; text = "Tempo rimanente:"; ObjectID = "lni-dn-tCg"; */
+"lni-dn-tCg.text" = "Tempo rimanente:";
+
+/* Class = "UIButton"; normalTitle = "RICHIEDI CODICE DI VERIFICA"; ObjectID = "mVW-tm-ntO"; */
+"mVW-tm-ntO.normalTitle" = "RICHIEDI CODICE DI VERIFICA";
+
+/* Class = "UILabel"; text = "Prima di essere utilizzata l'App deve essere inizializzata attraverso la procedura di enrollment prevista sul server di autenticazione.
+Premere il tasto per attivare l'App."; ObjectID = "pgd-ns-XY1"; */
+"pgd-ns-XY1.text" = "Prima di essere utilizzata l'App deve essere inizializzata attraverso la procedura di enrollment prevista sul server di autenticazione.\nPremere il tasto per attivare l'App.";
+
+/* Class = "UINavigationItem"; title = "Benvenuto"; ObjectID = "rP2-LX-mKp"; */
+"rP2-LX-mKp.title" = "Benvenuto";
+
+/* Class = "UIViewController"; title = "Fine"; ObjectID = "rW1-5o-C1s"; */
+"rW1-5o-C1s.title" = "Fine";
+
+/* Class = "UILabel"; text = "Soft Token per la generazione di Time based One Time Password secondo la specifica RFC 6238."; ObjectID = "vUS-Bi-dXP"; */
+"vUS-Bi-dXP.text" = "InfoCert ID è l’applicazione InfoCert per l’autenticazione sicura.\n\nAttraverso l’App è possibile generare One Time Password (OTP) da utilizzare con  il proprio account InfoCert ID per autenticarsi su tutti i portali web che aderiscono al circuito SPID.\n";
+
+/* Class = "UIViewController"; title = "OTP"; ObjectID = "xBv-N6-7nw"; */
+"xBv-N6-7nw.title" = "OTP";
+
+/* Class = "UIViewController"; title = "Off-Line Setup"; ObjectID = "yre-d8-9j4"; */
+"yre-d8-9j4.title" = "Off-Line Setup";

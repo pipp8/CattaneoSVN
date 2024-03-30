@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jbosscmp-jdbc PUBLIC "-//JBoss//DTD JBOSSCMP-JDBC 4.0//EN" "http://www.jboss.org/j2ee/dtd/jbosscmp-jdbc_4_0.dtd">
+
+<jbosscmp-jdbc>
+   <defaults>
+     <datasource>java:/DefaultDS</datasource>
+     <datasource-mapping>Hypersonic SQL</datasource-mapping>
+     <create-table>false</create-table>
+       <alter-table>false</alter-table>
+     <remove-table>false</remove-table>
+     <preferred-relation-mapping>foreign-key</preferred-relation-mapping>
+   </defaults>
+
+   <enterprise-beans>
+
+     <!--
+       To add beans that you have deployment descriptor info for, add
+       a file to your XDoclet merge directory called jbosscmp-jdbc-beans.xml
+       that contains the <entity></entity> markup for those beans.
+     -->
+
+      <entity>
+         <ejb-name>ScheduleItem</ejb-name>
+		 <datasource>java:/DefaultDS</datasource>
+		 <datasource-mapping>Hypersonic SQL</datasource-mapping>
+         <create-table>false</create-table>
+         <remove-table>false</remove-table>
+         <table-name>PUBLIC.SCHEDITEM</table-name>
+
+         <cmp-field>
+            <field-name>itemId</field-name>
+			<read-only>false</read-only>
+            <column-name>ITEMID</column-name>
+
+            <jdbc-type>INTEGER</jdbc-type>
+            <sql-type>INTEGER</sql-type>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>name</field-name>
+			<read-only>false</read-only>
+            <column-name>NAME</column-name>
+
+            <jdbc-type>VARCHAR</jdbc-type>
+            <sql-type>VARCHAR(30)</sql-type>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>startTime</field-name>
+			<read-only>false</read-only>
+            <column-name>STARTTIME</column-name>
+
+            <jdbc-type>INTEGER</jdbc-type>
+            <sql-type>INTEGER</sql-type>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>endTime</field-name>
+			<read-only>false</read-only>
+            <column-name>ENDTIME</column-name>
+
+            <jdbc-type>INTEGER</jdbc-type>
+            <sql-type>INTEGER</sql-type>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>day</field-name>
+			<read-only>false</read-only>
+            <column-name>DAY</column-name>
+
+            <jdbc-type>INTEGER</jdbc-type>
+            <sql-type>INTEGER</sql-type>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>scheduleId</field-name>
+			<read-only>false</read-only>
+            <column-name>SCHEDULEID</column-name>
+
+            <jdbc-type>VARCHAR</jdbc-type>
+            <sql-type>VARCHAR(10)</sql-type>
+
+        </cmp-field>
+
+<!-- jboss 3.2 features -->
+<!-- optimistic locking does not express the exclusions needed -->
+      </entity>
+
+   </enterprise-beans>
+
+</jbosscmp-jdbc>

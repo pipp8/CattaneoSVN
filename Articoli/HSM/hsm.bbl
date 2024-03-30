@@ -1,0 +1,116 @@
+\begin{thebibliography}{10}
+
+\bibitem{cryptoeprint:2003:072}
+{\sc Awasthi, A.~K., and Lal, S.}
+\newblock Proxy blind signature scheme.
+\newblock Cryptology ePrint Archive, Report 2003/072, 2003.
+\newblock http://eprint.iacr.org/.
+
+\bibitem{DBLP:conf/nca/BakkerST01}
+{\sc Bakker, A., van Steen, M., and Tanenbaum, A.~S.}
+\newblock A law-abiding peer-to-peer network for free-software distribution.
+\newblock In {\em NCA\/} (2001), IEEE Computer Society, pp.~60--67.
+
+\bibitem{DBLP:conf/icycs/FanZL08}
+{\sc Fan, C., Zhou, S., and Li, F.}
+\newblock Deniable proxy-anonymous signatures.
+\newblock In {\em ICYCS\/} (2008), IEEE Computer Society, pp.~2131--2136.
+
+\bibitem{DBLP:conf/ccs/FosterKTT98}
+{\sc Foster, I.~T., Kesselman, C., Tsudik, G., and Tuecke, S.}
+\newblock A security architecture for computational grids.
+\newblock In {\em ACM Conference on Computer and Communications Security\/}
+  (1998), pp.~83--92.
+
+\bibitem{DBLP:conf/scn/FuchsbauerP08}
+{\sc Fuchsbauer, G., and Pointcheval, D.}
+\newblock Anonymous proxy signatures.
+\newblock In {\em SCN\/} (2008), pp.~201--217.
+
+\bibitem{DBLP:conf/snpd/HuL07}
+{\sc Hu, C., and Li, D.}
+\newblock A new type of proxy ring signature scheme with revocable anonymity.
+\newblock In {\em SNPD (1)\/} (2007), pp.~866--868.
+
+\bibitem{DBLP:conf/mcam/HuLL07}
+{\sc Hu, C., Liu, P., and Li, D.}
+\newblock A new type of proxy ring signature scheme with revocable anonymity
+  and no info leaked.
+\newblock In {\em MCAM\/} (2007), pp.~262--266.
+
+\bibitem{DBLP:conf/ism/KimC06}
+{\sc Kim, Y.~S., and Chang, J.~H.}
+\newblock Provably secure proxy blind signature scheme.
+\newblock In {\em ISM\/} (2006), IEEE Computer Society, pp.~998--1003.
+
+\bibitem{DBLP:conf/acisp/LeeKK01}
+{\sc Lee, B., Kim, H., and Kim, K.}
+\newblock Secure mobile agent using strong non-designated proxy signature.
+\newblock In {\em ACISP\/} (2001), V.~Varadharajan and Y.~Mu, Eds., vol.~2119
+  of {\em Lecture Notes in Computer Science}, Springer, p.~474.
+
+\bibitem{DBLP:conf/sec/LeiwoHHT00}
+{\sc Leiwo, J., H{\"a}nle, C., Homburg, P., and Tanenbaum, A.~S.}
+\newblock Disallowing unauthorized state changes of distributed shared objects.
+\newblock In {\em SEC\/} (2000), S.~Qing and J.~H.~P. Eloff, Eds., vol.~175 of
+  {\em IFIP Conference Proceedings}, Kluwer, pp.~381--390.
+
+\bibitem{DBLP:conf/snpd/LiuTLZ07}
+{\sc Liu, W., Tong, F., Luo, Y., and Zhang, F.}
+\newblock A proxy blind signature scheme based on elliptic curve with proxy
+  revocation.
+\newblock In {\em SNPD (1)\/} (2007), pp.~99--104.
+
+\bibitem{DBLP:conf/cans/LuCD06}
+{\sc Lu, R., Cao, Z., and Dong, X.}
+\newblock Efficient id-based one-time proxy signature and its application in
+  e-cheque.
+\newblock In {\em CANS\/} (2006), D.~Pointcheval, Y.~Mu, and K.~Chen, Eds.,
+  vol.~4301 of {\em Lecture Notes in Computer Science}, Springer, pp.~153--167.
+
+\bibitem{MamboO97}
+{\sc Mambo, M., and Okamoto, E.}
+\newblock Proxy cryptosystem: delegation of the power to decrypt ciphertexts.
+\newblock In {\em IEICE Trans. Fundamentals E80-A(1)\/} (1997), pp.~54--63.
+
+\bibitem{DBLP:conf/ccs/MamboUO96}
+{\sc Mambo, M., Usuda, K., and Okamoto, E.}
+\newblock Proxy signatures for delegating signing operation.
+\newblock In {\em ACM Conference on Computer and Communications Security\/}
+  (1996), pp.~48--57.
+
+\bibitem{DBLP:conf/icics/ParkL01}
+{\sc Park, H.~U., and Lee, I.~Y.}
+\newblock A digital nominative proxy signature scheme for mobile communication.
+\newblock In {\em ICICS\/} (2001), S.~Qing, T.~Okamoto, and J.~Zhou, Eds.,
+  vol.~2229 of {\em Lecture Notes in Computer Science}, Springer, pp.~451--455.
+
+\bibitem{DBLP:conf/csse/QinW08}
+{\sc Qin, Y., and Wu, X.}
+\newblock Cryptanalysis and improvement of two blind proxy signature schemes.
+\newblock In {\em CSSE (3)\/} (2008), pp.~762--765.
+
+\bibitem{DBLP:journals/jss/ShaoCL07}
+{\sc Shao, J., Cao, Z., and Lu, R.}
+\newblock Improvement of yang et al.'s threshold proxy signature scheme.
+\newblock {\em Journal of Systems and Software 80}, 2 (2007), 172--177.
+
+\bibitem{DBLP:conf/iscis/Yumin06}
+{\sc Yumin, Y.}
+\newblock A threshold proxy signature scheme with nonrepudiation and anonymity.
+\newblock In {\em ISCIS\/} (2006), A.~Levi, E.~Savas, H.~Yenig{\"u}n,
+  S.~Balcisoy, and Y.~Saygin, Eds., vol.~4263 of {\em Lecture Notes in Computer
+  Science}, Springer, pp.~1002--1010.
+
+\bibitem{DBLP:conf/csreaSAM/ZhaoTLZ06}
+{\sc Zhao, Z., Tang, X., Li, B., and Zhu, L.}
+\newblock An id-based anonymous proxy signature from bilinear pairings.
+\newblock In {\em Security and Management\/} (2006), H.~R. Arabnia and
+  S.~Aissi, Eds., CSREA Press, pp.~138--144.
+
+\bibitem{DBLP:conf/csse/ZhouW08a}
+{\sc Zhou, X., and Wei, P.}
+\newblock Anonymous proxy authorization signature scheme with forward security.
+\newblock In {\em CSSE (3)\/} (2008), pp.~872--875.
+
+\end{thebibliography}

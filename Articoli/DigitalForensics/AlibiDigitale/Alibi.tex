@@ -1,0 +1,1040 @@
+%%%%%%%%%%%%%%%%%%%%%%% file typeinst.tex %%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is the LaTeX source for the instructions to authors using
+% the LaTeX document class 'llncs.cls' for contributions to
+% the Lecture Notes in Computer Sciences series.
+% http://www.springer.com/lncs       Springer Heidelberg 2006/05/04
+%
+% It may be used as a template for your own input - copy it
+% to a new file with a new name and use it as the basis
+% for your article.
+%
+% NB: the document class 'llncs' has its own and detailed documentation, see
+% ftp://ftp.springer.de/data/pubftp/pub/tex/latex/llncs/latex2e/llncsdoc.pdf
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\documentclass[runningheads,english]{llncs}
+\documentclass[runningheads]{llncs}
+
+\usepackage{amssymb}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+
+\usepackage{listings}
+\usepackage{url}
+
+\usepackage{marvosym}
+
+
+\newcommand{\keywords}[1]{\par\addvspace\baselineskip
+\noindent\keywordname\enspace\ignorespaces#1}
+
+\newcommand{\bs}{$\backslash$}
+
+\begin{document}
+
+\mainmatter  % start of an individual contribution
+
+% first the title is needed
+%\title{Automated Production of \\ Predetermined Digital Evidence}
+% On the construction of a false digital alibi
+%\title{How to automate the construction of a \\false digital alibi}
+\title{Automated Construction of a False Digital Alibi}
+
+% a short form should be given in case it is too long for the running head
+%\titlerunning{Automated Production of Predetermined Digital Evidence}
+
+% the name(s) of the author(s) follow(s) next
+%
+% NB: Chinese authors should write their first names(s) in front of
+% their surnames. This ensures that the names appear correctly in
+% the running heads and the author index.
+%
+\author{Alfredo De Santis\inst{1} \and Aniello Castiglione\inst{1}\thanks{Corresponding author: Aniello Castiglione, \Letter~Dipartimento di Informatica ``\textit{R.M. Capocelli}'' - Universit\`a degli Studi di Salerno, Via Ponte don Melillo, I-84084 Fisciano (SA), Italy. \Telefon: +39089969594, \Faxmachine: +39089969821. \Email: \emph{castiglione@\{ieee,acm\}.org}}
+\and Giuseppe Cattaneo\inst{1}\\ Giancarlo De~Maio\inst{1} \and Mario Ianulardo\inst{2}}
+%
+
+\authorrunning{De Santis et al.}   % abbreviated author list (for running head)
+%
+%%%% list of authors for the TOC (use if author list has to be modified)
+\tocauthor{ A. De Santis, A. Castiglione, G. Cattaneo, G. De Maio, M. Ianulardo}
+
+% the affiliations are given next; don't give your e-mail address
+% unless you accept that it will be published
+\institute{Dipartimento di Informatica \emph{``R. M. Capocelli''}\\
+Universit\`{a} degli Studi di Salerno, I-84084, Fisciano (SA), Italy\\
+\email{ads@dia.unisa.it, castiglione@acm.org, cattaneo@dia.unisa.it, demaio@dia.unisa.it}
+\and
+Computer Crime Lawyer, Italy\\
+\email{marioianulardo@codicieleggi.it}
+}
+
+%
+% NB: a more complex sample for affiliations and the mapping to the
+% corresponding authors can be found in the file "llncs.dem"
+% (search for the string "\mainmatter" where a contribution starts).
+% "llncs.dem" accompanies the document class "llncs.cls".
+%
+
+%\toctitle{Lecture Notes in Computer Science}
+%\tocauthor{Authors' Instructions}
+\maketitle
+
+
+\begin{abstract}
+%/--- Verificare che qui e nell'intro ci sia qualcosa che riprende il titolo ---/
+
+Recent legal cases have shown that \emph{digital evidence} is becoming more widely used in court proceedings (by defense, accusation, public prosecutor, etc.). Digital tracks can be left on computers, phones, digital cameras as well as third party servers
+belonging to Internet Service Providers (ISPs), telephone providers and companies that provide services via
+Internet such as YouTube, Facebook, Gmail.
+
+% It is possible to suppose that these digital tracks can be forged ad-hoc in order to set up a false alibi with the help of a collaborator.
+This work highlights the possibility to set up a false digital alibi
+%without any collaborator. The key idea is that it is possible to produce digital evidence
+in a fully automatic way without any human intervention.
+% <taglio>
+%The so obtained digital traces are indistinguishable ex-post from digital evidence produced by an individual in the same place and in the same time.
+% </taglio>
+A forensic investigation on the digital evidence produced cannot establish whether such traces have been produced through either human activity or by an automated tool. These considerations stress the difference between digital and physical - namely traditional - evidence. Essentially, digital evidence should be considered relevant only if supported by evidence collected using  ``traditional'' investigation techniques.
+The results of this work should be considered by anyone involved in a Digital Forensics, due to it demonstrating that court rulings should not be based only on digital evidence, with it always being correlated to additional information provided by the various disciplines of Forensics Sciences.
+
+\keywords{Digital Evidence; Digital Investigation; Digital Forensics; Anti-Forensics; Counter-Forensics; False Digital Evidence; Automated Alibi; False Alibi; Digital Alibi; False Digital Alibi}
+\end{abstract}
+
+
+\section{Introduction}
+
+\subsection{The Digital Evidence}
+
+The use of digital technology is rapidly growing. The number of Internet users in the world is almost 2 billion, with a penetration of
+28.7\% of the world population~\cite{stat}. As a consequence, more and more
+crimes are performed on the Internet or have something to do with digital
+equipment. For these reasons, there is an increase in the amount of digital evidence being used courtrooms around the world.
+Consequently, courts are now becoming concerned about the admissibility and probative value of digital evidence. Even if digital devices have not been directly used by an
+individual who has been indicted for a crime, they can be subject to
+forensic investigations in order to collect useful traces about the suspect activities, in order to be either cleared or charged with an offense. The elements required to 
+determine the liability for having committed a crime often consist of files stored in a 
+PC memory, photos on a digital camera, information on a mobile phone, as well as on many other digital devices.
+
+Digital traces are \emph{ubiquitous}: they can be located anywhere in the world. In
+fact, digital traces can be retrieved on mobile devices (phones, PDAs, laptops,
+GPSs, etc.) but especially on servers that provide services via
+Internet, which often register the IP addresses and any other information concerning
+the connected clients. These servers can be located in remote countries, with different national laws being an obstacle for the acquisition of digital evidence during the investigation.
+
+Digital traces are also \emph{immaterial}. It is well known that all digital data
+present on a device are mere sequences of one and zero. These data can be
+modified by anyone who has enough privileges on that device.
+% In particular, multitask/multiuser Operating Systems (OSes), such as Microsoft Windows, Apple Mac OSX or Linux, distinguish between ``\emph{user}'' and ``\emph{kernel}'' mode. In such OSes there exists a superuser - e.g. the ``root'' in Linux - that can execute every operation on the system including access to every hardware/software resource, leading to the possibility of modifying all data stored on the PC.
+% <taglio>
+%For example, in modern multiuser Operating Systems (OSes), such as Microsoft Windows, Apple Mac OSX or Linux, there exists a \emph{superuser} (e.g. the ``root'' in Linux) that can execute every operation, including access to any hardware/software resource, leading to the possibility of modifying all data stored on the device.
+
+%Devices running simpler OSes, such as GPSs, digital cameras, and, in part, mobile phones, often do not distinguish between access modes. In such cases, any person who has physical access to the device can modify its memory without the necessity of gaining \emph{superuser} privileges.
+% </taglio>
+
+% Digital Forensics is constantly subject to change and evolution as it is mainly influenced by technological innovations. It makes necessary to constantly upgrade not only the tools for detecting and reporting digital traces, but also the analysis methodologies and the personnel that manages such tools.
+% Judges, juries, and attorneys are more and more aware of the presence and of the relevant value of digital evidence. However, much of the digital evidence is never get seen by judges, juries, and the public. They assume that any digital evidence found by the investigators could have been produced only by the users and in particular by the accused person.
+%The CSI effect:
+%Perception that Digital Evidence is accurate and impartial.
+%Digital evidence is always perfect and easy to find...
+% <taglio>
+%The digital forensic techniques have to meet the growing demand of scientific evidence in legal cases: this phenomenon is known as the ``\emph{CSI effect}''~\cite{csi}. It is a phenomenon reported by prosecutors who claim that television shows based on scientific crime solving have made actual jurors reluctant to vote to convict when, as is typically true, forensic evidence is neither necessary nor available.
+% </taglio>
+
+\subsection{The Digital Alibi}
+\label{sub:digital_alibi}
+
+Computers cannot only be involved in as well as contain the proof of crimes, but they can also be an \emph{alibi} for the defense of anyone who is under accusation. In the Latin the word ``\emph{alibi}'' is an adverb meaning ``\emph{in or at another place}''.
+According to the Merriam-Webster online dictionary~\cite{webster}, alibi is ``the plea of having been at the time of the commission of an act elsewhere than at the place of commission''.
+
+% According to the Webster's NewWorld dictionary~\cite{webster}, alibi is
+% ``the defensive plea or fact that an accused person was elsewhere than at the
+% scene of the crime with which the person is charged.''
+
+
+%\subsection{Alibi digitali in recenti procedimenti giudiziari}
+
+%Here are discussed two examples of legal proceedings in which the digital evidence has been considered an alibi that contributed to exonerate the accused.
+
+There are several examples of legal proceedings in which digital evidence has been considered an alibi that contributed to exonerating the accused. These include the interesting case of Rodney Bradford~(\cite{fb_nyt},~\cite{fb_cnn}),
+%\cite{fb_msnbc},~
+accused of armed robbery and released thanks to his digital alibi, consisting of activities on his Facebook account.
+The Erb Law Firm, a corporation of lawyers in Philadelphia, emphasized that ``Facebook Can Keep You Out of Jail''~\cite{erb}.
+Another example is the Italian case of ``Garlasco'' (\cite{garlasco0}),
+%\cite{garlasco1},~\cite{garlasco2}
+in which the proceedings of the first instance ended with the acquittal of Alberto
+Stasi, the main suspect in the murder of his girlfriend Chiara Poggi. Digital evidence of the work activity left on his laptop during the committing of the crime confirmed his digital alibi.
+% since the defense attorney has proved to the Court that the suspect was working on his laptop during the time of the crime.
+
+% Rodney Bradford, a 19 years old resident of New York, was arrested on October 18, 2009 for suspicion of armed robbery at the Farragut Houses in Brooklyn, where he lives~\cite{fb_msnbc},~\cite{fb_nyt},~\cite{fb_cnn}. His defense lawyer, Robert Reuland, claimed the innocence of Mr. Bradford asserting that he was at his father's house, located in the Harlem quarter, at the time of the crime. The evidence offered in support of this thesis was a message posted by the suspected to his girlfriend - ``\emph{On the phone with this fat chick... where my IHOP.}'' - on his Facebook page having timestamp ``October 17 - 11:49 AM'', exactly one minute before the robbery. The status update would take place from his father's PC. The subsequent investigation confirmed that the connection was established from an apartment located in the 71 West, 118th Street of Manhattan, i.e. the father's house, which was far more than thirteen miles from the scene of the crime. Rodney Bradford was released 12 days after his arrest. This is probably the first case in which a status update on Facebook has been used as an alibi.
+% <taglio>
+% It is clear that anyone who knew the appropriate username and password could modify a Facebook profile. For example, these actions may have been made by a partner. However, according to defense attorney Reuland, this possibility was remote because it would imply a level of criminal genius unusual in a so young individual.
+% </taglio>
+
+% Another Court case, extremely interesting in terms of assessing the digital alibi, is the italian case named ``Garlasco'' from the small city located in North Italy where the facts happened (\cite{garlasco1},~\cite{garlasco2}). The proceeding of first instance ended with the acquittal of Alberto Stasi, the main suspect in the murder of his girlfriend Chiara Poggi. The defendant proclaimed his innocence claiming a digital alibi: when his girlfriend was murdered he was writing the thesis on his computer. This court case is characterized by a close comparison between the results of analysis performed on each type of specimen, such as DNA traces and digital evidence on the PCs of the victim and the suspected. These findings were complemented by traditional techniques. However, the attention of the investigators still focus on verifying if the digital alibi claimed by Stasi was true or false. While noting the errors committed by the experts at the stage of retrieving and analyzing the digital evidence, the Court directed an acquittal of the accused person.
+% This means that the digital alibi, although undermined by mistakes, has proved to the court that the suspect was working on his
+% laptop during the time of the crime.
+
+%/--- Differences between "classic" alibi and digital alibi --- mi pare che siano gi\`a dette ---/
+
+%/--- The problem of user identification. --- da mettere ---/
+
+Identifying the true originator of digital evidence is a very hard task.
+In fact, it is possible to trace the owner of a digital device, but the digital evidence itself does not contain any information on \emph{who} or \emph{what} has produced it.
+% <taglio>
+% Also, in multiuser environments, where authentication is required to access the system, a malicious user could bypass the normal logon procedure and act on behalf of the owner. It is known as the \emph{problem of user identification} and is raised by the \emph{immaterial} nature of the digital data.
+%, which may be a person or an automated program.
+% </taglio>
+
+This work shows that it is possible to set up a series of automated actions in order to produce digital traces that are \emph{post-mortem indistinguishable} from those left by a person, and how such evidence could be claimed in a court to forge a valid alibi. The direct consequence of this result is that the forensic analysis in legal cases should focus not only on the retrieval and analysis of digital evidence, but also on the identification of its author.
+
+The paper is organized as follows:
+in Section~\ref{sec:creation} various approaches of forging a false digital alibi are discussed.
+%In Section \ref{sec:remotization} we describe ...
+In Section~\ref{sec:undistingushable} the methodology of forging a false digital alibi creating a fully automated tool is presented and analyzed.
+In Section~\ref{sec:CaseStudy} a case study on Microsoft Windows systems is reported.
+Finally, this paper ends with the authors conclusions in Section~\ref{sec:conc}.
+%In Section \ref{sec:DEasAlibi} ...
+
+\section{Creation of a False Digital Alibi}
+\label{sec:creation}
+In this work it is assumed that there is a particular device (e.g. PC, Smartphone, etc.) used to produce evidence. Moreover, there are some trusted companies providing services (e.g. social networks, mail boxes and so on) that record traces about their users, such as access date, session duration, which can be considered trusted in a legal case scenario.
+In order to forge a digital alibi based on these assumptions, it is possible to follow different strategies.
+% depending on three main factors: risks, costs and implementation complexity
+% (tools to use, necessary skills, trace to delete a-posteriori, etc.). In
+% general, there are three options.
+A simple technique is to engage an accomplice which produces digital evidence on behalf of another person (e.g. accessing his mailbox, leaving messages on Facebook, etc.). This technique does not require any particular skill. However, the presence of another person could produce unwanted non-digital (e.g. biological) evidence which can be revealed by traditional forensic investigation techniques.
+
+In this work two new approaches which do not require any human accomplice are presented: remotization and automation.
+\begin{itemize}
+% This technique do not require the involved people
+% to have particular skills, but can be very dangerous and expensive. In fact, it
+% is not so simple for a criminal to find a trustworthy accomplice, furthermore
+% the traditional investigation techniques can reveal evidence belonging to the
+% accomplice(s).
+
+ \item \emph{Remotization.} In order to forge a digital alibi by themselves, it is necessary to produce evidence at some trusted entities during the same timeline of the alibi. To accomplish this task, it is possible to remotely control a device by means of an IP connection (e.g., over the Internet), using a KVM device or a Remote Control software. However, this technique requires the interaction with another device (the controller) while producing the evidence.
+
+ \item \emph{Automation.} The automation method consists of forging a digital alibi using a fully automated software tool. This approach does not require any interaction with the device while producing the digital evidence.
+
+\end{itemize}
+% Generally,
+% remote accesses leave traces on the involved devices and data about the
+% connections can be stored by the routers along the path on the network. For
+% these reasons, the criminal is required to be skilled enough to delete every
+% inconvenient evidence. Moreover, the devices used for the remotization can be
+% very expensive.
+
+%The criminal can use fully automated tools to generate evidence on his digital devices.
+% As shown later in the paper, this technique requires the criminal to
+% have intermediate skills in using computers, have no costs and intermediate
+% risks.
+
+
+\subsection{Remotization}
+\label{sec:remotization}
+
+In this section two techniques to forge an alibi by using a personal
+computer to be remotely controlled are discussed.
+%We discuss how to set up the computer to be remotely controlled from a
+
+\subsubsection{Remote Connection by Means of KVM Over IP}
+An individual who intends to create an alibi can use a KVM over IP switch (iKVM)~\cite{kvm}
+%\footnote{A KVM switch (with KVM being an abbreviation for keyboard, video or visual display unit, mouse) is a hardware device that allows a user to control multiple computers from a single keyboard, video monitor and mouse. KVM over IP devices use a dedicated microcontroller and potentially specialized video capture hardware to capture the video, keyboard, and mouse signals, compress and convert them into packets, and send them over an Ethernet link to a remote console application that unpacks and reconstitutes the dynamic graphical image.}
+to control his PC remotely. This technique does not require any suspicious software to be
+installed. However, the individual must take some precautions to limit
+the amount of unwanted traces. For example, he should configure the iKVM with a static
+IP address in order to avoid that requests to the local DHCP server are recorded.
+% Moreover, if a local router is present, the criminal may configure it
+% to allow the communication with the iKVM.
+While assuming that he could take all reasonable precautions to avoid suspicious evidence, an accurate investigation at the ISP side can reveal the unusual IP connection persisting for the overall duration of the alibi.
+
+\subsubsection{Remote Connection Through Remote Control Software}
+Someone looking for an alibi can use a Remote Control software. To limit suspicious traces, he can use a portable software from
+a USB flash drive (e.g. TeamViewer Portable for Windows), but traces of such softwares on the host computer may also be found.
+%However, it leaves some traces on the Windows Registry and prefetch files on the hard disk.
+However, as in the previous case, the IP connection to the Remote Control software produces non-removable unwanted evidence at the ISP side as well as on the routers along the network path.
+In both cases, in order to try to fool a digital investigator, an unwary person should obfuscate the auxiliary hardware such as the iKVM switch and the USB flash drive in order to not raise any suspicion.
+
+\subsection{Manual vs Automation}
+
+The production of digital evidence for an alibi can be considered an Anti-Forensics activity. Following the ``manual'' approach, an individual can forge his alibi generating digital evidence a-priori or a-posteriori to the alibi timeline. For example, he can manually modify the access time of a file in order to pretend he was writing a document at the time of the crime. This can be considered the ``classic'' Anti-Forensic approach. However, this approach produces evidence that is ``local'' to the system of the suspected person and should not always be considered trusted by the Courts.
+
+% The ``automated approach'' proposed in this paper can be considered as new Anti-Forensic technique that can be used by a criminal to forge a digital alibi.
+With respect to manual techniques, the automation can act ``at the same time'' (or ``during'') as the crime being committed. It determines that the forged evidence can be \emph{validated} by trusted third parties. For example,  automation can activate the Internet connection and access the Facebook account of an individual, so that both the ISP and Facebook will record its logon information. These records can subsequently be claimed as evidence.
+
+\section{Undistinguishable Automated Production of Digital Evidence}
+\label{sec:undistingushable}
+
+In this paper the production of digital evidence by means of automated tools is discussed.
+% The methodology discussed in this paper consists of forging a
+% digital alibi using fully automated tools that can simulate the actions
+% performed by a human during the time of a crime.
+It is also shown how this evidence is undistinguishable, upon a post-mortem forensic analysis, from that produced by the human behaviour and therefore can be used in a legal case to claim a digital alibi.
+The typical actions performed by a human on a PC, which may be
+simulated by automated tools, are mouse clicks, the pressing of keyboard keys,
+the writing of texts, the use of specific software, which are all separated by random timings.
+
+% There are a lot of computer applications capable to perform these tasks
+% automatically, for example:
+% \begin{itemize}
+% \item AutoHotKey (for Windows)~\cite{autohotkey};
+% \item AutoIt (for Windows)~\cite{autoit};
+% \item Windows Host Script (for Windows)~\cite{wsh};
+% \item DoThisNow (for Windows and Linux)~\cite{dothisnow};
+% \item GNU Xnee (for Linux)~\cite{xnee};
+% \item Automator (for Mac Os X)~\cite{automator}.
+% \end{itemize}
+%
+% Among these tools, the most suitable for anti-forensic purposes are Automator
+% and AutoIt. Automator is part of the software bundle of Mac OS X from version
+% 10.4 (Tiger). AutoIt is a freeware software for Windows environment. Both the
+% tools can receive in input script files which contains the actions to perform.
+% Alternatively, scripts can be compiled into standalone executables which can be
+% executed on the target system without the necessity that the tools are
+% installed. With respect to Automator which is part of the Mac OS X software
+% bundle, latter feature is more important for AutoIt, because it does not come
+% pre-installed on Windows systems and the presence of such software can be
+% suspicious.
+%
+% Recently, because of their growing usefulness, many resources like tutorials,
+% online communities, tools, downloads, and books on automation tools are becaming
+% available \cite{Myer}.
+
+There are several automation tools used to avoid boring, manual, repetitive, and
+error-prone tasks.
+They speed up otherwise tedious, time-consuming tasks,
+thus avoiding the possibility of errors while doing them.
+Applications of automation tools include data analysis, data munging, data
+extraction, data transformation as well as data integration. %\cite{Myer}.
+
+In this paper, a new potential application of automation tools for the construction of a digital alibi is introduced.
+Some automation tools generally have the possibility to perform simple operations such as simulate keystrokes and mouse gestures,
+manage windows (e.g., activation, opening, closing, resizing),
+get information on (and interact with) edit boxes, check boxes, list boxes, combos, buttons, status bars,
+control time for operation (e.g., choose time to schedule each operation or choose time delay between consecutive tasks).
+
+Automation tools usually provide much powerful functions, but the basic and simple operations listed 
+above are sufficient to automate tasks for the purpose of constructing a digital alibi.
+The list of tasks includes:
+\begin{itemize}
+\item {\em Web navigation.} Opening new tabs, new windows, new URLs. Inserting
+username, password, text. Uploading or downloading files. These include
+interaction with social networks, and popular websites such as Picasa, Dropbox,
+Gmail.
+\item {\em Files and folders.} Processing specific files, renaming them, working
+with folders.
+\item {\em Photos and images.} Processing photos, cropping images, creating
+thumbnails.
+\item {\em Music and audio files.} Play an audio file. Adjusting audio controls.
+Converting audio to text.
+\item {\em Compound files.} Create new text files, modifying (inserting and
+deleting) them, saving them. These include Office documents being processed by Word, Excel and Powerpoint.
+\item {\em Computer applications.} Launching any application. For example,
+launching a browser or using email by opening unread messages and sending new messages with attachments.
+\item {\em Phone calls.} While it would be easy to simulate a phone call using
+IP Telephony like Skype/VoIP, it is possible to make a phone call over the PSTN
+circuit or GSM mobile network by using additional hardware, as well as send a text message. For example, AT commands can be sent to a modem connected with a PC.
+\end{itemize}
+
+
+\subsection{Digital Evidence of an Automation}
+\label{sub:automevid}
+%Several unwanted traces can be produced during both these phases. The criminal may obfuscate them in order to avoid any suspect during the forensics analysis.
+
+An individual who intends to create an alibi should identify unwanted evidence that the deployed program leaves on the system, then implement a technique to avoid or remove such traces.
+The evidence of the automation strongly depends on the OS in which it is executed. As discussed later in this section, there are two categories of unwanted traces that should be removed: execution traces and logon traces.
+
+
+\subsubsection{Execution Traces}
+%\label{subsub:extrac}
+%Discutere prima quali sono le tracce lasciate da un arbitrario eseguibile e poi precisare quali sono quelle unwanted.
+For any OS, the {\em process} is considered as the basic execution
+unit~\cite{os}, and even the simplest OS provides mechanisms to trace the
+execution of each process it runs saving data such as executable name, the time
+it was started, the amount of CPU allocated during the execution, maximum resident size for virtual memory and so on. These records are generally referred to as ``accounting data''.
+Depending on the OS, the execution of an automation generated with tools such as AutoIt also leaves this kind of trace. For example, Windows stores accounting data in the Registry. In Linux, application logs are stored in the \verb=/var/logs= directory and the memory map of the processes is maintained in \verb=/proc=. Most of the more recent OSes implement techniques such as ``Virtual Memory Allocation'' and ``Prefetch'', which also store data about programs on the filesystem.
+%\\/--- Qualcosa su MAC OS? ---/
+% <taglio>
+%In order to forge a strong alibi, the accounting data regarding the automation should be removed. In section \ref{sec:CaseStudy} it is discussed how this task can be performed on a Windows environment.
+% </taglio>
+
+\subsubsection{Logon Traces}
+Besides the data related to the process execution, another specific OS module
+is in charge of storing each user access to the system {\em logon data}.
+Normally this is done during login-logout phases and the module is supposed to
+record data such as local login time, local logout time, source address of the
+connection (if the operation was performed through the net) or the \verb=tty= (the ``serial'' line) the user used to connect to the terminal both for local or modem access.
+Although it is possible to modify the files containing such records, there are several Digital Forensics tools that can verify the integrity of such files and, in this case, they should be considered meaningful.
+
+% There were many historical reasons for an OS to keep trace of such data. For
+% example in the old time sharing OSes this was necessary for billing purposes, but
+% actually it holds steady even with the advent of the personal workstations and
+% the personal OSes. In fact the accounting modules have been considered useful to
+% provide the user with statistical data about the system and the CPU usage.
+%
+% The accounting data are collected in memory by a kernel module (process
+% management) and stored on several files when the process terminates its
+% execution. On the other hand logon data are immediately stored on disk when the
+% operation is performed.
+% Data on disk are stored in multiple formats in order to efficiently face with
+% the big amount of records (an OS can run thousands processes per day), therefore
+% binary (vs textual) representation is required and  usually once per day the
+% files are compressed, keeping only average values.
+%
+% As far Digital Forensics concerns this  approach produces an interesting side
+% effect, making hard to edit this files for normal users. Binary record cannot be
+% modified by a usual editor and statistical data represents a sort of checksum of
+% the current file. Moreover, these files are owned by the super user and normally
+% have the read-only flag true. This does not mean that during a forensic analysis
+% we should trust the content of these files but it is possible to verify (with
+% several tool) the integrity of such files and in this case they should be
+% considered meaningful.
+%
+% Substantially, since it is hard for a non-skilled person to modify the logon information stored by the OS, the only way to guarantee that the automation tool do not leave suspicious traces is to simulate the typical access pattern of the user. For example, it can be be suspicious if at the day of the crime the logon time will be very different from the previous average logon times.
+%
+% There exists some simple tricks that the criminal can use to automatically login and logout at his system. For example, the most of BIOSes can be programmed in order to automatically turn on the computer at a specific time. Regarding the logout action, the automation script can be programmed to send a shutdown signal to the OS.
+
+\subsection{Different Approaches to Unwanted Evidence Handling}
+\label{sub:meth}
+The use of an automation tool produces some unwanted traces that can be 
+detected by digital forensics analysis. In order to forge an alibi all this evidence 
+should be removed. There are basically two approaches that can be adopted 
+to accomplish this task.
+
+\subsubsection{Avoid Evidence a-priori} 
+The individual can take several precautions in order to avoid as much
+unwanted evidence as possible. Sometimes, when it is not possible to
+completely delete some evidence, an \textit{a-priori obfuscation} strategy could be used in order to avoid any logical connection between the
+evidence and the automation process, in a way that it
+could have been the result of ``normal'' operations within the system.
+For example, it is possible to disable some OS-specific mechanisms that
+record data about process execution.
+The fact that such mechanisms have been disabled could depend on either a
+direct user operation or an optimization software which is very common to speed-up the operating system.
+ 
+ \subsubsection{Remove Evidence a-posteriori}
+ It is possible to adopt wiping techniques
+ %~\cite{pgut01}~\cite{pgut02}~\cite{usdod5220}
+ in order to remove the unwanted traces left by the automation on the system drive(s). Sometimes it is not possible to wipe all unwanted data, which makes  
+ an \textit{a-posteriori obfuscation} strategy necessary in order to avoid logical connections between these data and the automation tool.
+\medskip
+
+The most productive approach to avoid that a digital forensics analysis reveals suspicious evidence about an automation is to design it in a way that leaves as less unwanted traces as possible.
+% In this work a hybrid approach is discussed: substantially, most of the unwanted evidence can be even avoided while some must be deleted. Both these tasks can be performed by a non-savvy user, that is, it is not necessary to be a computer hacker.
+However, even using this approach, a separate solution should be adopted to address the problem of removing (or obfuscating) the file(s) implementing the automation itself.
+There are some OS-specific precautions that can be taken in order to avoid unwanted evidence. They mostly regard OS configuration. For example, in Windows it is possible to disable the Virtual Memory and the Prefetch mechanisms in order to avoid that data about processes is stored on the filesystem, as well as application logging being possible to disable in Linux.
+
+Some OS-independent tricks can be also adopted to avoid unwanted traces, for example running the automation executable from a removable device avoiding to copy it onto the hard disk. This approach could address the problem of obfuscating the file(s) implementing the automation. However, an external drive can leave traces regarding its use.
+Generally, it is not possible to completely avoid the accounting data. For example, in Windows it is not possible to disable the recording of program execution paths in the Registry. It is not possible to avoid that memory maps of processes are stored on the filesystem in Linux. In such cases, traces that cannot be avoided should be wiped or obfuscated. Moreover, if the automation program is stored on the hard disk, it is unwanted evidence that must be deleted. 
+% There are two approaches for handling traces that cannot be avoided: they can be \emph{obfuscated} or \emph{wiped}.
+%, that is, after that the automation has been executed and the false alibi has been forged.
+
+\subsection{Removing Unwanted Digital Evidence of an Automation}
+\label{sub:remevid}
+
+%As discussed in \ref{subsub:devetest}, there exists some tricks that a criminal can use to completely remove evidence about the developing and testing of the automation. More difficult is to erase traces about the automation recorded by the OS after it has been executed\ref{subsub:extrac}.
+
+Evidence of automation can be removed employing three different approaches.\\
+% \begin{itemize}
+% \item Manual deletion.
+% \item Semi-automatic method.
+% \item Automatic method.
+% \end{itemize}
+
+\noindent {\bf Manual deletion.}
+The individual who intends to generate the alibi can manually remove the unwanted evidence from the system. In particular, he/she has to delete all the system information regarding the automation. For example, in Windows it includes Registry entries, while in Linux the memory map files. The file(s) constituting the automation itself must be removed using wiping techniques.
+
+\noindent {\bf Semi-automatic method.} %... using chiavetta, RAM disk
+It is possible to further minimize the unwanted data that will be left on the drive running the automation executable by using a removable device (e.g. an USB  flash drive or a CD-ROM). Using this approach, the person does not have to wipe the file(s) of the automation from the drive. However, he/she should also remove all suspicious evidence ``recorded'' by the OS about its execution. Moreover, the trace left by the use of the removable device should be considered.
+%containing the automation program is itself an unwanted evidence and should be obfuscated or simply destroyed.\\
+
+\noindent{\bf Automatic method.}
+The deletion process of unwanted evidence can itself be part of the automation. It requires that the individual who prepares the automation is skilled enough to create a shell script that firstly runs the automation part, then deletes all unwanted traces about its execution ``recorded'' on the OS, and eventually wipes itself.
+This work deals with the semi-automatic deletion method, due to it being considered the simplest. An analysis of the automatic method has been carried out in another study~\cite{cancellazione}.
+
+\subsection{Automation Development and Testing }
+\label{subsub:devetest}
+
+The construction of an automation consists of two iterative phases:
+the development of the automation and the testing on the system.
+Along with the implementation of the automation, it is necessary to identify the unwanted evidence that the automation leaves on the system. It is possible to forge a digital alibi only if all (or at least the most suspicious) unwanted traces are detected and removed/obfuscated. %Detecting these traces is in practice not easy as it includes three complementary activities:
+First of all, the documentation about the OS and the used filesystem should be consulted and considered. However, the lack of documentation makes the use of software tools to identify unwanted evidence sometime necessary. For example, useful tools for this purpose are:
+
+\begin{itemize}
+ \item \emph{Process monitoring tools}.
+ Some utilities to monitor the activities of the automation at execution time can be used. For example, Process Monitor~\cite{procmon}, which is an advanced monitoring tool for Windows that shows real-time filesystem, Registry and process/thread activity.
+ \item \emph{Digital forensic tools}.
+ Digital forensic tools can be used in a post-mortem fashion in order to to analyze the system drive(s) and detect traces left by the execution of the automation.
+\end{itemize}
+
+\subsubsection{Design of the Automation}
+
+The automation itself must be developed and tested to verify if it acts correctly and does not leaves suspicious traces on the target system.
+In most cases, the automation must be extensively tested before being used for such a sensible task, which is the creation of a false digital alibi. In fact, an automation created using software tools is strictly connected to the running environment. For example, when using AutoIt under Microsoft Windows, the mouse movements and clicks must be specified using absolute coordinates $(x,y)$, therefore the different positions of an element on the screen result in a different behaviour of the automation. Due to these considerations, the automation must be tested on a system that has the same appearance as the target system (screen resolution, windows position, desktop theme, icon size, etc.).
+
+The automation must also be extensively tested in order to identify (and consequently minimize) all the unwanted traces left on the system by its execution, using the methodologies discussed above. Moreover, it is necessary to verify the effectiveness of the deletion method used to remove the automation from the system after its execution.
+% <taglio>
+%It means that the effective construction of the automation is an iterative-incremental process constituted by two phases: the implementation of the actions that should be automatically executed and its testing.
+% </taglio>
+
+
+\subsubsection{Unwanted Evidence of the Automation Development}
+
+The preparation of the automation can leave some unwanted traces. The OS, in fact, typically records recently opened files and applications. For example, Microsoft Windows stores this information in the Registry, which can only be  modified by the Administrator, with the modifications taking effect only after a system reboot.
+%In this case, an accurate post-mortem forensic analysis can reveal these evidence.
+
+It is possible to employ some workarounds to avoid most of the suspicious traces about the development phase.
+
+\begin{itemize}
+%  \item \emph{The same system} - The criminal can use the same system that will be used to forge his alibi to develop and test the automation. These tasks leave several traces that can be difficult to retrieve and remove: Registry entries, prefetch data and virtual memory information on the filesystem, repetitive execution of specific operations and so on.
+ \item \emph{Virtual machine}. A virtual machine running an identical copy of the OS of the target system can be used in order to test the automation. This technique does not leave any unwanted traces on the target system except for the files containing the virtual machine image and traces that the virtual machine itself has been powered on.
+ %However, as discussed in~\ref{sub:wiping}, wiping any trace of the virtual machine files is an hard task.
+ \item \emph{Live OS}. A live CD or live USB version of the target OS can be used in order to develop and test the automation. This technique does not leave any unwanted traces on the hard disk because the live OS only uses the central memory for all its operations.
+ %However, it can be an hard task the cloning of the target OS on a live media.
+ \item \emph{Another system}. The automation can be simply developed and tested on another PC running the same OS with a similar configuration. Subsequently, the program responsible for the automation can be copied onto a removable media and launched directly from there. In this case, the entire secondary PC must be obfuscated in order to avoid any forensic analysis on it.
+ \item \emph{External device}. It is possible to use portable software in order to implement and test the automation from an external (local or remote) device. In this case, it is possible to configure the OS in order to avoid that it records meaningful unwanted evidence, such as accounting data of the used programs. Following this approach, the development of the automation takes place on the same system where it will be deployed.
+ %It is supposed that traces recorded by the OS as mounting an external drive are not suspicious.
+\end{itemize}
+
+\subsection{Additional Cautions}
+
+A recent paper~\cite{bacterial} explains how it is possible to recognize who has used a computer analyzing the bacteria left by their fingertips on the keyboard and mouse. The imprint left by the bacteria on the keys and mouse persists for more than two weeks. This is potentially a new tool for forensic investigation. Obviously, investigators should use gloves before examining the device. This kind of analysis can be exploited by an individual to validate his digital alibi.
+If the suspect made sure of being the only one to use the computer, the defending lawyer can request a forensic analysis within two weeks, which will confirm that bacterial traces on the keyboard and mouse are those of the suspect.
+
+People have their habits and follow a predictable pattern. For example, it may be usual for the suspect to connect to the Internet during the morning, access his mailbox, browse some websites and work on his thesis. In practice, the behaviour of the suspect inferred from his digital alibi must be not very different from his typical behaviour. Suspicious traces must not be discovered by an hypothetical Anomaly Detection analysis.
+% <taglio>
+%The connection time, the amount of transmitted and received bytes, the amount of access to social networks, and other actions must be similar to those of the previous days according to the habits of the accused. The same behavior inferred from the digital evidence may be repeated on other days with some randomization.
+% </taglio>
+The testing phase of the automation can already give regularity to the behavioural pattern of the suspect and therefore may be useful in order to guard against eventual Anomaly Detection analysis~\cite{Chandola}.
+
+\section{Case Study}
+\label{sec:CaseStudy}
+%Slide 14, 15
+%Strumenti utilizzati
+%Realizzazione, sperimentazione ed analisi
+% In this section a sample case study is presented in order to demonstrate that it is really possible to forge a fake digital alibi without having particular skills in anti-forensics.
+In this section a case study is analyzed with it being the development of an automation to produce a digital alibi in Microsoft Windows XP with Service Pack 3 and Microsoft Windows Vista.
+The script language chosen to implement the automation is AutoIt v3 for Windows~\cite{autoit}.
+AutoIt has been chosen for this experiment due to it being a powerful and easy-to-use tool which does not require a detailed knowledge of programming languages, and therefore can be used by unskilled users.
+
+
+\subsection{AutoIt}
+%Slide 16, 17
+AutoIt is a freeware automation language for Microsoft Windows.
+The syntax of AutoIt is similar to BASIC language.
+An AutoIt automation script can be compiled into a compressed, stand-alone
+executable which can be run on computers that do not have the AutoIt interpreter installed.
+%The function
+A very basic knowledge of the AutoIt scripting language is required in order to create a fully-fledged automation program. The main functions used in the experiment are listed below:
+
+\begin{itemize}
+ \item \emph{Run(``path/to/external/program'')} Runs an external program;
+ \item \emph{Send(``sequence\_of\_keys'')} Sends simulated keystrokes to the active window;
+ \item \emph{MouseClick(``mouse\_button'', x\_coordinate, y\_coordinate, number\_of\_clicks)}\\ Performs a mouse operation, simulating the pressure of a mouse button; %on the position specified by the coordinates;
+ \item \emph{WinWaitActive(``title'')} Pauses until the requested window is active;
+ \item \emph{Sleep(delay)} Pauses the script for \textit{delay} milliseconds.
+\end{itemize}
+
+\subsection{AutoIt Script Example}
+Several AutoIt scripts have been created as proof of concept, which implement a different number of actions and alibi timelines.
+The scripts have been compiled into standalone executables and do not require that the AutoIt interpreter is installed on the target system.
+Generally, for a sample source script of 300 lines the resulting executable file is about 200Kb.
+%The sample script created using AutoIt is intended as a proof of concept and therefore is not a complete alibi simulation.
+
+In order to show how simple is the construction of an automation is using the AutoIt scripting language, a script excerpt is presented which simulates the actions of interacting with the webpages of the BBC and Facebook.
+The automation opens the Firefox web browser and inserts the URL \verb=http://www.bbc.co.uk/= in the location bar, then simulates the pressing of the ENTER key which lets the browser load the website. After the web page has been loaded, it clicks on a link and simulates the human activity of reading page contents waiting some minutes. Subsequently, the script simulates an access to Facebook loading the \verb=http://www.facebook.com/= website and inserting the access credentials. The main part of the relative source code is listed below.
+\bigskip
+
+\noindent
+\begin{tabular}{| p{0.55\textwidth} | p{0.45\textwidth} |}
+\hline
+\vspace{-0.4cm}
+{\footnotesize
+\begin{verbatim}
+...
+Run ("C:\Program files\Mozilla Firefox\
+      firefox.exe")
+Send ("^t")
+Send ("http://www.bbc.co.uk/")
+Send ("{ENTER}")
+WinWaitActive ("BBC")
+MouseClick ("left","295","355","1")
+WinWaitActive ("Sport")
+Sleep (12940)
+...
+\end{verbatim}
+}
+\vspace{-0.6cm}
+&
+\vspace{-0.4cm}
+{\footnotesize
+\begin{verbatim}
+...
+Send ("^t")
+Send ("http://www.facebook.com/")
+Send ("{ENTER}")
+WinWaitActive("Facebook")
+Send ("{TAB}")
+Send ("castiglione@ieee.org")
+Send ("{TAB}")
+Send ("password")
+Send ("{ENTER}")
+...
+\end{verbatim}
+}
+\vspace{-0.6cm}
+\\
+\hline
+\end{tabular}
+
+
+\subsection{Unwanted Traces}
+In the case study presented, the approach of avoiding as much unwanted evidence as possible has been followed (see Section~\ref{sub:meth}). In this subsection, the unwanted traces detected in the experiment and some simple techniques to avoid them are described. The only trace that remains on the filesystem is the automation executable file, which has to be deleted. For a more complete discussion about deletion see Subsection~\ref{sub:wiping}.
+
+\subsubsection{Windows Registry}
+Microsoft Windows contains significant amounts of digital
+evidence that enables an investigator to reconstruct the
+events that took place on the machine before it was
+seized. The Windows Registry, in particular, contains
+a wealth of information about the configuration and use
+of a computer~\cite{Carrier}.
+
+In details, Windows records in the Registry data relative to programs executed on the system. If an executable is launched using the \verb=File Explorer= mechanism, its complete pathname is recorded in the following Registry keys:
+{%\scriptsize
+\begin{verbatim}
+HKEY_CURRENT_USER\Software\Microsoft\Windows\ShellNoRoam\MUICache
+
+HKEY_USERS\S-1-5-21-2025429265-688789844-854245398-1003\Software
+\Microsoft\Windows\ShellNoRoam\MUICache
+\end{verbatim}
+}
+
+Otherwise, if an executable is launched using the DOS command prompt, only the value \verb=x:\windows\system32\cmd.exe=
+%(\verb=x:= is the drive where Windows is installed)
+is recorded in the following Registry key:
+
+{%\scriptsize
+\begin{verbatim}
+HKEY_CURRENT_USER\Software\Microsoft\Windows\ShellNoRoam\MUICache
+\end{verbatim}
+}
+
+Due to it not being possible to completely avoid the recording of such evidence, in this experiment the execution of the automation has been \emph{obfuscated} running it from a command prompt. In this case, the string recorded in the Registry (\verb=x:\windows\system32\cmd.exe=) does not reveal any information regarding the automation. In fact, the shell may have been used to launch any other command (e.g., a \verb=ping=).
+According to the authors' experience, a further digital forensics analysis does not reveal any other meaningful information about the automation in the Registry.
+%In order to exploit this characteristic, in our experiment the automation script is executed in a DOS shell using a simple batch (.bat) script~\ref{batch}.
+
+\subsubsection{Filesystem}
+
+Windows XP and subsequent versions implement the Prefetch mechanism~\cite{prefetch}. The \emph{prefetcher} is a component of the \emph{memory manager} that
+%speeds up the Windows boot process, and shortens the amount of time it takes to start up programs. It
+attempts to accelerate application and boot launch times respectively by monitoring and adapting to usage patterns over periods of time and loading the majority of the files and data needed by them into the memory, so that they can be accessed very quickly when needed.
+
+Auxiliary files (with \verb=.pf= extension) containing information about used programs are stored on the filesystem in the directory \verb=x:\WINDOWS\Prefetch=. In the experiment, this mechanism has been disabled in order to avoid that unwanted evidence of the automation program was stored on the hard disk by the \emph{prefetcher}. This has been accomplished by setting to zero the following Registry key value:
+
+{%\scriptsize
+\begin{verbatim}
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SessionManager\
+MemoryManagement\PrefetchParameters
+\end{verbatim}
+}
+
+
+Disabling the \emph{prefetch} mechanism could not be considered a suspicious action. In fact, this configuration can sometimes reduce hard disk utilization and is often used among the Windows users. Moreover, there are many tweaking tools for optimizing the performance of a PC that, among other tasks, disable the \emph{prefetch} feature.
+
+\subsubsection{Virtual Memory}
+Another mechanism implemented by Microsoft Windows, which must be disabled in order to avoid unwanted evidence on the filesystem, is the Virtual Memory~\cite{os}. In order to free up space in the memory, an operating system with a virtual memory capability transfers data that is not immediately needed from the memory to the hard disk. When that data is needed again, it is copied back into the memory. In Microsoft Windows, there is a specific file on the filesystem used for swapping such data, namely \verb=pagefile.sys=, which could also memorize information relative to the automation.
+
+In this case study, the Virtual Memory mechanism has been disabled by setting the virtual memory size equal to zero in the system properties of Windows using the following navigation: {\verb=Control Panel->Advanced->Performance->=}
+
+\noindent
+{\verb=Settings->Advanced->Virtual memory=}.
+Disabling the virtual memory can sometimes improve the system performance as well as increase the hard disk space available. Several Windows users employ this customization, with it therefore not being considered suspicious by investigators.
+
+\subsection{Wiping}
+\label{sub:wiping}
+In the case study, some Windows-specific settings have been modified in order to avoid that the OS would record meaningful evidence about the execution of the automation script.
+The only potential unwanted evidence that remains available is the compiled AutoIt script implementing the automation.
+
+It is important to note that deleting a file using the OS-specific functions does not completely remove the file from the drive. In fact, the sectors that were occupied by a file become available for a new writing operation, but the previous data remains on the disk until it is overwritten.
+% <taglio>
+%Also a rewriting of these sectors does not guarantees the complete data deletion.  It mostly happens on magnetic devices such as hard disks, where electromagnetic traces may remain even after several rewritings.
+% </taglio>
+
+The amount of rewritings necessary to perform secure wiping of data on a drive is a controversial issue~\cite{usdod5220},~\cite{pgut01},~\cite{1ovew}.
+%\cite{pgut02},
+Considering the NIST Special Publication 800-88~\cite{nist}, which claims that ``Studies have shown that most of today's media can be effectively cleared by one overwrite'', the approach adopted in this experiment consists of a single rewriting. However, the replacement of this technique with a more paranoid one, consisting of multi-rewritings, can be quite straightforwardly implemented.
+
+% Even tough there exists some \emph{wiping} techniques that can be adopted in order to completely erase unwanted data from a device, such as the DoD 5220.22-M~\cite{usdod5220} and the Gutmann method~\cite{pgut01}~\cite{pgut02}
+In this study, a \emph{semi-automatic} approach for deleting the automation data has been adopted, due to it being easier to carry out by unskilled users.
+%The adopted technique relies on the assumption that, on recent memorization technologies, a single rewriting of the sectors occupied by a file should be sufficient to completely wipe this~\cite{1ovew}.
+% The automation executable has been launched from a removable USB pendrive, then the file has been deleted using the standard OS mechanism and the USB drive has been formatted in order to remove any metadata regarding the automation. Subsequently the pendrive has been filled with data in order to overwrite all sectors.
+In practice, an USB flash drive has been formatted and almost completely filled with audio and video files, then the automation script has been also copied onto it. The USB flash drive has been plugged into the PC two days before executing the automation. After the automation execution, the script has been deleted (using the ``classic'' Windows \verb=del= command from the \verb=cmd.exe= shell) and the USB flash drive has been completely filled by copying additional multimedia files onto it. These actions should guarantee that the traces left by the USB flash drive in the Registry are not suspicious as it was plugged in two days before the alibi timeline. Moreover, filling the USB flash drive after the deletion of the script should overwrite all sectors previously occupied by the automation script.
+
+%
+% In the presented case study, a simple java script has been created which wipes the automation executable after it has been executed. An interpreted script written in Java can also modify itself at runtime (code injection). In order to remove unwanted traces, in the authors implementation the wiper script transforms itself in a simple ``Hello World'' program.
+%
+% A portion of the code of the wiper script is presented below.
+%
+% \subsubsection{Wiper Script}
+% {\scriptsize
+% \begin{verbatim}
+% public class HelloWorld {
+%   public static void main (String[] args)
+%   {
+%     HelloWorld al = new HelloWorld();
+%
+%     for(int i = 0; i < args.length; i++)
+%       al.wipeFile( args[i]);
+%
+%     al.replaceFile("HelloWorld");
+%   }
+% }
+% \end{verbatim}
+% }
+%
+% \subsection{The final script}
+% A simple bash script that performs all the actions discussed above in this section has been developed. Being an interpreted program, the bash script can also rewrite itself at run time. It acts as follows:
+% \begin{enumerate}
+%  \item Waits a certain amount of seconds
+% {\scriptsize
+% \begin{verbatim}
+% sleep 3600
+% \end{verbatim}
+% }
+%  \item Executes the AutoIt script
+% {\scriptsize
+% \begin{verbatim}
+% A18D5E7.tmp
+% \end{verbatim}
+% }
+%  \item Executes the Wiper script
+% {\scriptsize
+% \begin{verbatim}
+% java HelloWorld A18D5E7.tmp
+% \end{verbatim}
+% }
+%  \item Wipes itself
+% {\scriptsize
+% \begin{verbatim}
+% for /l %%a in (1,1,1) do (
+%   echo 1234567 > script.bat
+%    for /l %%b in (1,1,15) do (
+%     echo 1234567 >> script.bat
+% ))
+% \end{verbatim}
+% }
+% \end{enumerate}
+
+
+
+% \section{Digital Evidence as an Alibi}
+% \label{sec:DEasAlibi}
+%
+% Discuss the issues related to the use of digital evidence as an alibi in digital
+% forensics investigations.
+%
+% The fact that it is possible to construct a digital alibi using automation
+% tools, as shown in this paper, does not imply that every digital alibi have no probative
+% values.
+%
+% Observe that a digital alibi can be constructed also with the help of an
+% accomplisher.
+%
+% The same point is true also in the physical world, non only in the digital one.
+% There have been various cases in which a false testimony have provided a
+% "physical" alibi to the accused person. Serve qualche altro esempio ...
+%
+% The fact that malicious people can construct a fake alibi has not invalidated
+% his probative value.
+%
+% ... elaborare anche su
+% ~\cite{Caloyannides}
+% ~\cite{Carrier}
+%
+% ...
+
+\section{The Digital Alibi in Court}
+
+%%Le tracce digitali, infatti, sono sottoposte al vaglio di esperti di computer forensics che ne valuteranno l’attendibilità in applicazione della famosa regola anglosassone delle 5 W (Who, What, When, Where, Why).
+
+In some countries, it is a common practice that, in legal proceedings, digital evidence are vetted by digital forensics experts, which assess its trustworthiness according to the \emph{Five Ws Rule}~(Who, What, When, Where, Why).
+
+It is well known that a human accomplice could be engaged in order to forge an alibi, but this approach is hazardous since he could avow his actions or even blackmail the suspect. Consequently, if the individual interested in producing the alibi has enough technical skills, he may prefer to use an automation in order to forge a digital alibi. In this case, the absence of accomplices and the creation of ad-hoc digital evidence, undistinguishable post-mortem from those left by  ordinary human behaviour could produce a ``perfect alibi''. 
+
+In fact, the Court would be in a delicate situation if the digital alibi confirms that the suspect was using his PC while the crime was being committed:
+\begin{itemize}
+\item if on the \emph{locus committi delicti} (i.e. the crime scene) there is no evidence related to the suspect (biological traces, witnesses, etc.), the Court could consider decisive the probative value of the digital alibi and acquit the suspect;
+\item on the contrary, if on the crime scene biological traces referable to the suspect have been detected (left, for example, during previous contact with the victim), the probative value of the digital alibi should be carefully weighed.
+\end{itemize}
+
+After this paper, the technical consultants which carry out any form of Digital Forensics analysis should consider the hypothesis that the suspect might have used an automation to forge his digital alibi. A technical consultant, aware of such a possibility, has to carefully analyze the exhibits and look for eventual evidence left by an incorrect implementation of the automation process.
+
+In general, criminal investigation divisions should include Digital Forensics experts who constantly update their knowledge and understanding in order to face the evolution of Anti-Forensics techniques.
+This is an additional argument on the importance of scientific knowledge for the expert testimony in a Court, according to the rule 702 of the ``Federal Rules of Evidence''~\cite{rule702} and to the ``Daubert Test''~\cite{daubert}. 
+
+
+\section{Conclusions}
+\label{sec:conc}
+% <taglio>
+%Computers are becoming more and more important in our society. People use PCs to accomplish a large set of activities, related to their work or personal purposes.
+% </taglio>
+
+A PC may contain lot of information about the people who use it, such as logon data, used applications, visited websites and so on. As a result, the number of court cases involving digital evidence is increasing.
+In this paper, it has been shown how simple the set up of digital evidence could be in order to provide an individual with a false digital alibi. In particular, an automated method of generating digital evidence has been discussed. Using this approach, it is possible to claim a digital alibi involving some trusted third parties. In fact, the automation could, for example, activate the Internet connection by means of an ISP, access a Facebook account, send an email and so on, leaving traces on their respective servers. The problem of avoiding unwanted evidence left by the automation has been addressed. Finally, a real case study has been presented in order to demonstrate that the implementation of such methodologies is not a hard task and can even be carried out by unskilled users.
+
+Experiments on various OSes have been and are being conducted in order to prove that the techniques described in this paper really do produce digital evidence that is undistinguishable from those produced by a human, which could be used to forge a digital alibi. Moreover, a fully automated approach of deleting evidence from a drive is analyzed in a companion work~\cite{cancellazione}.
+
+The main goal of this work is to stress the need of an evolution in approaching legal cases that involve digital evidence. 
+Evidently, a legal investigation case should not only rely on digital evidence to pass judgement, but should also consider it to be part of a larger pattern of behaviour reconstructed by means of traditional forensics investigations. In conclusion, the plausibility of a digital alibi should be  
+verified \emph{cum grano salis}.
+
+%In particular, it is necessary to define accurate rules for the legal investigations that include the following keypoints:
+%\begin{itemize}
+% \item verdicts should not be based only on digital evidence;
+% \item digital evidence should always be part of a larger pattern of behavior reconstructed by means of traditional forensics investigations;
+%%  \item criminal investigation divisions should include digital forensics experts which constantly upgrade their knowledge in order to face the evolution of anti-forensic techniques.
+%\end{itemize}
+%
+
+%
+% Defense attorneys are becoming more knowledgeable about computer forensics and digital evidence, ... and possibly increased suppression of evidence. --- che si vuole dire?
+%
+% The discipline of Computer Forensics cannot survive for long if it relies on the
+% lack of technical and scientific understanding by the courts.
+%
+% Cum grano salis --- che si vuole dire ?
+%
+% Parallel to the evolution of digital forensics techniques, tools and methodologies to ... are becoming more dangerous.
+%
+% Digital evidence is probably the strongest when it can be shown to be part of a
+% larger pattern of behavior.
+%
+% \noindent Alcuni spunti da inserire nelle conclusioni sono i seguenti: \dots
+% \begin{itemize}
+% \item i giudici imparino a dare il giusto peso alle evidenze digitali;
+% \item i tecnici acquisiscano le competenze necessarie per la corretta raccolta
+% delle evidenze digitali;
+% \item non si faccia affidamento esclusivo sulle evidenze digitali al fine del
+% raggiungimento del verdetto finale e tali prove digitali non sostituiscano le
+% prove ``classiche''.
+%\end{itemize}
+
+
+\section*{Acknowledgements}
+The authors would like to thank their friends from IISFA (International Information System Forensics Association) for their support, their valuable suggestions and useful discussions during the research phase. In particular to Gerardo Costabile (President of IISFA Italian Chapter), Francesco Cajani (Deputy Public Prosecutor High Tech Crime Unit Court of Law in Milano, Italy), Mattia Epifani and Litiano Piccin of the IISFA Italian Chapter. A warm thank goes to Paolo Iorio for the many discussions during the preparation of his thesis.
+% \section*{Ringraziamenti}
+% \noindent Qui vanno i ringraziamenti \dots \\
+
+\begin{thebibliography}{1}
+
+\bibitem{stat}
+\emph{Internet World Stats}, June 30, 2010,
+http://www.internetworldstats.com/stats.htm
+
+% \bibitem{fb_msnbc}
+% Msnbc News, \emph{Facebook message frees NYC robbery suspect}, November 12,
+% 2009. http://www.msnbc.msn.com/id/33883605/ns/technology\_and\_science-tech\_and\_ga
+% dgets/
+
+\bibitem{fb_nyt}
+D. Beltrami, The New York Times, \emph{I'm Innocent. Just Check My Status on Facebook},
+November 12, 2009. http://www.nytimes.com/2009/11/12/nyregion/12facebook.html?\_r=1
+
+\bibitem{fb_cnn}
+V. Juarez, CNN, \emph{Facebook status update provides alibi}, November 12, 2009. 
+http://www.cnn.com/2009/CRIME/11/12/facebook.alibi/index.html
+
+\bibitem{garlasco0}
+Xomba: A Writing Community,
+\emph{Garlasco, Alberto Stasi acquitted},
+http://www.xomba.com/garlasco\_alberto\_stasi\_acquitted,
+December 2009
+
+% \bibitem{garlasco1}
+% S. Vitelli, GUP presso il Tribunale di Vigevano, \emph{Sentenza del processo Stasi},
+% http://static.repubblica.it/laprovinciapavese/pdf/SENTENZA\_STASI.pdf,
+% 17 Dicembre 2009 (in Italian)
+
+% \bibitem{garlasco2}
+% F. Bravo, \emph{La computer forensics nelle motivazioni della sentenza
+% sull'omicidio di Garlasco},
+% http://internetsociety.wordpress.com/2010/03/16/la-computer-forensics-nelle-motivazioni-della-sentenza-sullomicidio-di-garlasco/, 16 Marzo 2010 (in Italian)
+
+% \bibitem{exif}
+% Japan Electronic Industries Development Association (JEIDA), \emph{Exchangeable
+% Image File Format},
+% http://en.wikipedia.org/wiki/Exchangeable\_image\_file\_format
+
+\bibitem{usdod5220}
+U.S. Department of Defense, \emph{DoD Directive 5220.22, National Industrial
+Security Program (NISP)},
+%http://www.dtic.mil/whs/directives/corres/html/522022m.htm,
+28 February, 2010
+
+\bibitem{pgut01}
+P. Gutmann, \emph{Secure Deletion of Data from Magnetic and Solid-State
+Memory}, Sixth USENIX Security Symposium Proceedings, San Jose, California,
+%http://www.cs.auckland.ac.nz/$\sim$pgut001/pubs/secure\_del.html,
+July 22-25, 1996.
+
+% \bibitem{pgut02}
+% P. Gutmann, \emph{Data Remanence in Semiconductor Devices}, 2001 Usenix
+% Security Symposium, Washington DC, http://www.cypherpunks.to/$\sim$peter/usenix01.pdf, August 13-17, 2001.
+
+% \bibitem{nist}
+% US NIST, \emph{Guidelines for Media Sanitization}, NIST Special Publication
+% 800-88, September  2006.
+% \\http://csrc.nist.gov/publications/nistpubs/800-88/NISTSP800-88\_rev1.pdf ,
+
+\bibitem{bacterial}
+N. Fierer, C.L. Lauber, N. Zhou, D. McDonald, E.K.
+Costello and R. Knight, \emph{Forensic identification using skin bacterial
+communities}, Proceedings of the National Academy of Sciences, Abstract,
+%http://www.pnas.org/content/early/2010/03/01/1000162107.abstract,
+March 2010.
+
+% \bibitem{autohotkey}
+% AutoHotKey website, \emph{AutoHotKey}, http://www.autohotkey.com/ , March 2010.
+
+\bibitem{autoit}
+J. Bennett, \emph{AutoIt v3.3.6.0}, http://www.autoitscript.com/autoit3/,
+March 7, 2010.
+
+% \bibitem{wsh}
+% Microsoft Corporation MSDN, \emph{Windows Script Host},
+% http://msdn.microsoft.com/en-us/library/9bbdkx3k(VS.85).aspx , 2010.
+
+% \bibitem{dothisnow}
+% Radical Breeze, \emph{DoThisNow}, http://radicalbreeze.com/?page\_id=50 , 2010.
+
+% \bibitem{xnee}
+% Henrik Sandklef, \emph{GNU Xnee}, http://www.sandklef.com/xnee/ , 2010.
+
+% \bibitem{automator}
+% Apple Inc., \emph{Apple Automator}, http://www.macosxautomation.com/automator/
+% , 2010.
+
+% \bibitem{dropbox}
+% DropBox Developer Team, \emph{DropBox}, http://www.dropbox.com/ , 2010.
+
+% \bibitem{zanero}
+% F. Maggi, S. Zanero, and V. Iozzo, \emph{Seeing the Invisible - Forensic Uses of
+% Anomaly Detection and Machine Learning}, ACM Operating Systems Review, vol. 42,
+% no. 3, pp. 52-59, April 2008.
+
+% \bibitem{stegole}
+% A. Castiglione, A. De Santis and C. Soriente, \emph{Taking advantage of a
+% disadvantage: digital forensics and steganography using document metadata},
+% Journal of Systems and Software, Elsevier 80 (5), pp. 750-764, May 2007.
+
+% \bibitem{pdfjss}
+% A. Castiglione, A. De Santis and C. Soriente, \emph{Security and Privacy Issues
+% in the Portable Document Format}, Journal of Systems and Software, Elsevier,
+% Accepted Paper, April 2010.
+
+% \bibitem{mega}
+% R. A. Joyce, J. Powers, F. Adelstein, \emph{MEGA: A tool for Mac OS X operating
+% system and application forensics}, Journal of Digital Investigation, Elsevier,
+% 5, pp. 83-90, 2008
+
+% \bibitem{gsmta}
+% 3GPP, \emph{Timing Advance}, http://en.wikipedia.org/wiki/Timing\_advance
+
+% \bibitem{dfrws}
+% M. Geiger, \emph{Evaluating Commercial Counter-Forensic Tools},
+% http://www.dfrws.org/2005/proceedings/geiger\_couterforensics.pdf
+
+% \bibitem{u3stick}
+% T. Bosschert, \emph{Battling Anti-Forensics: Beating the U3 Stick}, Journal of
+% Digital Forensic Practice, 1556-7346, Volume 1, Issue 4, pp. 265-273, 2006
+
+% \bibitem{smith}
+% A. Smith, \emph{Describing and Categorizing Disk-Avoiding Anti-Forensics Tools},
+% Journal of Digital Forensic Practice, 1556-7346, Volume 1, Issue 4, pp. 309-313,
+% 2006
+
+% \bibitem{winrar}
+% G. Fellows, \emph{WinRAR Temporary Folder Artefacts}, Journal of Digital
+% Investigation, Elsevier, article in press, March 2010
+
+% \bibitem{6w1h}
+% D.-Y. Kao, S.-J. Wang and F. Fu-Yuan Huang, \emph{SoTE: Strategy of Triple-E on
+% solving Trojan defense in Cyber-crime cases}, Journal of Computer Law and
+% Security Review, Elsevier, Volume 26, Issue 1, pp. 52-60, January 2010
+
+% \bibitem{Caloyannides}
+% Caloyannides, M. A.; \emph{Forensics Is So "Yesterday"}, IEEE Security \&
+% Privacy, March-April 2009,  vol. 7, Issue: 2, pp. 18 - 25
+
+% \bibitem{Carrier}
+% Carrier, B.D.;  \emph{Digital Forensics Works}, IEEE Security \& Privacy,
+% March-April 2009
+% vol. 7, Issue: 2, pp. 26 - 29
+
+% \bibitem{Myer}
+% Thomas Myer; {Apple[unkch] Automator with AppleScript Bible}, Wiley Publishing,
+% Inc., 2010
+
+\bibitem{Carrier}
+V. Mee, T. Tryfonas and I. Sutherland, \emph{The Windows Registry as
+a forensic artefact: Illustrating evidence collection for Internet usage}, Journal of Digital Investigation, Elsevier, vol. 3, issue 3, pp. 166-173, September 2006
+
+\bibitem{Chandola}
+V. Chandola, A. Banerjee and V. Kumar, \emph{Anomaly detection: A
+survey}, ACM Computing Surveys, vol. 41, n. 3, pp. 15:1--15:58, July 2009
+
+\bibitem{csi}
+D.E. Shelton; \emph{The 'CSI Effect': Does It Really Exist?},
+National Institute of Justice, journal No. 259, March 17, 2008
+
+\bibitem{procmon}
+M. Russinovich and B. Cogswell, \emph{Microsoft Sysinternals Process Monitor}, 
+http://technet.microsoft.com/en-us/sysinternals/bb896645, April 13, 2011
+
+\bibitem{webster}
+\emph{Merriam-Webster online dictionary}, http://www.merriam-webster.com/
+
+\bibitem{kvm}
+Wikipedia, \emph{KVM switch}, http://en.wikipedia.org/wiki/KVM\_switch
+
+\bibitem{prefetch}
+H. Carvey, \emph{Windows Forensics Analysis, Second Edition}, Syngress, 2009
+
+\bibitem{1ovew}
+W. Craig, K. Dave and S.R.S. Shyaam, \emph{Overwriting Hard Drive Data: The Great Wiping Controversy}, Vol. 5352 of Lecture Notes in Computer Science (Springer Berlin / Heidelberg), pp. 243-257, December 2008
+
+\bibitem{cancellazione}
+A. Castiglione, G. Cattaneo, A. De Santis and G. De Maio, \emph{Automatic and Selective Deletion Resistant Against Forensics Analysis}, Submitted, April 2011
+
+\bibitem{os}
+A. Silberschatz, P. B. Galvin and G. Gagne,
+\emph{Operating System Concepts, 7th Edition}, Wiley, 2004
+
+\bibitem{nist}
+\emph{NIST Special Publication 800-88: Guidelines for Media Sanitization}, p. 7, 2006
+
+\bibitem{erb}
+The Erb Law Firm, \emph{Facebook Can Keep You Out of Jail}, November 2009,
+http://www.facebook.com/note.php?note\_id=199139644051
+
+%\bibitem{5w}
+%Wikipedia, \emph{Five Ws}, http://en.wikipedia.org/wiki/Five\_Ws
+
+\bibitem{daubert}
+Margaret A. Berger, \emph{What Has a Decade of Daubert Wrought?}, in: American Journal of Public Health, Vol. 95 No. S1, pp. S59-S65, July 2005
+%http://www.defendingscience.org/loader.cfm?url=/commonspot/security/getfile.cfm\&PageID=2407
+
+\bibitem{rule702}
+U.S. House of Representative, \emph{Federal Rules of Evidence}, December 2006,
+http://afcca.law.af.mil/content/afcca\_data/cp/us\_federal\_rules\_of\_evidence\_2006.pdf
+
+\end{thebibliography}
+
+
+%\section*{Appendix: Springer-Author Discount}
+
+
+\end{document}

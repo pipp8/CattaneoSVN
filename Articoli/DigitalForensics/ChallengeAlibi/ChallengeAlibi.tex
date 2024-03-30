@@ -1,0 +1,794 @@
+%%%%%%%%%%%%%%%%%%%%%%% file typeinst.tex %%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% $LastChangedDate: 2012-03-24 21:21:48 +0100(Sab, 24 Mar 2012) $
+% $Id: ChallengeAlibi.tex 320 2012-03-24 20:21:48Z cattaneo $ 
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\documentclass[runningheads,english]{llncs}
+\documentclass[10pt, conference]{IEEEtran}
+
+\IEEEoverridecommandlockouts
+
+\usepackage{amssymb}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+\usepackage{color}
+
+\usepackage{balance}
+
+\usepackage{listings}
+\usepackage{url}
+
+\usepackage{hyperref}
+\usepackage{cite}
+
+\usepackage{marvosym}
+\usepackage{svninfo}
+
+\usepackage{fancyvrb}
+
+\usepackage{listings}
+\usepackage{color}
+\lstset{
+language=Java,
+captionpos=b,
+tabsize=3,
+frame=lines,
+keywordstyle=\color{blue},
+commentstyle=\color{darkgreen},
+stringstyle=\color{red},
+numbers=right,
+numberstyle=\tiny,
+numbersep=-2pt,
+breaklines=true,
+showstringspaces=false,
+basicstyle=\footnotesize\ttfamily,
+emph={label}
+}
+
+\hypersetup{
+ bookmarks = false,
+%  pagebackref=true,
+  pdftoolbar=true,
+  pdfnewwindow=true,
+  pdfmenubar=true,
+  pdftitle = {The Forensic Analysis of a False Digital Alibi},
+  pdfkeywords = {Digital Evidence; Digital Investigation; Digital Forensics; Anti-Forensics; Counter-Forensics; False Digital Evidence;
+ Automated Alibi; False Alibi; Digital Alibi; False Digital Alibi.},
+  pdfauthor = {Aniello Castiglione, Giuseppe Cattaneo, Gerardo Costabile, Giancarlo De Maio, Alfredo De Santis, and Mattia Epifani},
+  pdfsubject =  {The Sixth International Conference on Innovative Mobile and Internet Services in Ubiquitous Computing (IMIS-2012)},
+  pdfcreator =  {Giancarlo De Maio - demaio@dia.unisa.it}
+}
+
+%\newcommand{\keywords}[1]{\par\addvspace\baselineskip
+%\noindent\keywordname\enspace\ignorespaces#1}
+
+\newcommand{\bs}{$\backslash$}
+
+%\setlength{\textwidth}{15cm}
+%\setlength{\textheight}{23cm}
+%\setlength\oddsidemargin   {1cm}
+%\setlength\evensidemargin  {1cm}
+
+\begin{document}
+
+\bstctlcite{IEEEexample:BSTcontrol}
+
+\svnInfo $Id: ChallengeAlibi.tex 320 2012-03-24 20:21:48Z cattaneo $ 
+
+
+% first the title is needed
+
+%%%%% \title{The Forensic Analysis of a False Digital Alibi}
+
+%\title{The Forensic Analysis of a False Digital Alibi\\ {\small \svnId}}
+\title{The Forensic Analysis of a False Digital Alibi}
+
+%\title{A Strong Verification of a False Digital Alibi}
+%\title{An Experimental Verification of a False Digital Alibi}
+%\title{How valuable could be a digital alibi}
+%\title{The Forensic Analysis of a Watertight Digital Alibi\\ {\small \svnId}}
+%\title{Strength and Weakness of Digital Alibi\\ {\small \svnId}}
+%\title{Toward-On the detection of a False Digital Alibi\\ {\small \svnId}}
+
+
+% a short form should be given in case it is too long for the running head
+%\titlerunning{Automated Production of Predetermined Digital Evidence}
+
+% the name(s) of the author(s) follow(s) next
+%
+
+
+%%%\author{
+%%%\IEEEauthorblockN{A. Castiglione\IEEEauthorrefmark{1},
+%%%G. Cattaneo\IEEEauthorrefmark{2},
+%%%G. De~Maio\IEEEauthorrefmark{3},
+%%%A. De~Santis\IEEEauthorrefmark{4}}
+%%%\IEEEauthorblockA{\\Dipartimento di Informatica \emph{``R. M. Capocelli''}\\
+%%%Universit\`{a} degli Studi di Salerno, I-84084, Fisciano (SA), Italy\\
+%%%\textit{\href{mailto:castiglione@acm.org}{castiglione@acm.org}\IEEEauthorrefmark{1},
+%%%\href{mailto:cattaneo@dia.unisa.it}{cattaneo@dia.unisa.it},\IEEEauthorrefmark{2}}\\
+%%%\textit{\href{mailto:demaio@dia.unisa.it}{demaio@dia.unisa.it}\IEEEauthorrefmark{3}, \href{mailto:ads@dia.unisa.it}{ads@dia.unisa.it}\IEEEauthorrefmark{4}}}
+%%%
+%%%\and
+%%%\IEEEauthorblockN{G. Costabile\IEEEauthorrefmark{5}, M. Epifani\IEEEauthorrefmark{6},}
+%%%\IEEEauthorblockA{\\International Information Systems Forensics Association\\IISFA Italian Chapter\\Via Tibullo 11, 00193 Rome (Italy)\\
+%%%\textit{\href{mailto:gerardo@costabile.net}{gerardo@costabile.net}\IEEEauthorrefmark{5}, \href{mailto:mattia.epifani@realitynet.it}{mattia.epifani@digital-forensics.it}\IEEEauthorrefmark{6}}}
+%%%}
+
+\author{
+\IEEEauthorblockN{Aniello Castiglione\IEEEauthorrefmark{1}, Giuseppe Cattaneo\IEEEauthorrefmark{2}, \\ Giancarlo De Maio\IEEEauthorrefmark{3}\thanks{Corresponding author: Giancarlo De Maio,~\href{mailto:demaio@dia.unisa.it}{demaio@dia.unisa.it}, Dipartimento
+di Informatica, Universit\`a degli Studi di Salerno, Via Ponte don Melillo, I-84084 Fisciano (SA), ITALY.~~Phone: 
++39089969594,~Fax: +39089969821}, Alfredo De Santis\IEEEauthorrefmark{4}}
+
+\IEEEauthorblockA{Dipartimento di Informatica, Universit\`{a} degli Studi di Salerno\\
+%Via Ponte don Melillo,\\
+I-84084 Fisciano (SA), Italy\\
+\href{mailto:castiglione@acm.org}{castiglione@acm.org}\IEEEauthorrefmark{1},
+\href{mailto:cattaneo@dia.unisa.it}{cattaneo@dia.unisa.it}\IEEEauthorrefmark{2},\\
+\href{mailto:demaio@dia.unisa.it}{demaio@dia.unisa.it}\IEEEauthorrefmark{3},
+\href{mailto:ads@dia.unisa.it}{ads@dia.unisa.it}\IEEEauthorrefmark{4}}
+
+\and
+\IEEEauthorblockN{Gerardo Costabile\IEEEauthorrefmark{5}, Mattia Epifani\IEEEauthorrefmark{6}}\\
+\IEEEauthorblockA{International Information Systems Forensics Association\\
+IISFA Italian Chapter\\
+Via Tibullo 11, I-00193 Roma, Italy}
+\href{mailto:gerardo@costabile.net}{gerardo@costabile.net}\IEEEauthorrefmark{5},
+\href{mailto:mattia.epifani@digital-forensics.it}{mattia.epifani@digital-forensics.it}\IEEEauthorrefmark{6}
+
+%\and
+%\IEEEauthorblockN{Francesco Palmieri\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{Dipartimento di Ingegneria dell'Informazione\\
+%Seconda Universit\`a degli Studi di Napoli\\
+%I-81031 Aversa (CE), Italy\\
+%\href{mailto:francesco.palmieri@unina2.it}{francesco.palmieri@unina.it}\IEEEauthorrefmark{4}}
+%
+%
+}
+%
+
+%\toctitle{Lecture Notes in Computer Science}
+%\tocauthor{Authors' Instructions}
+\maketitle
+
+
+\begin{abstract}
+
+In recent years the relevance of digital evidence in Courts disputes is growing up and many cases have been solved thanks to digital
+traces that addressed investigations on the right way. Actually in some cases digital evidence represented the only proof of the
+innocence of the accused. In such a case this information constitutes a digital alibi. It usually consists of a set of local and Internet
+activities performed through a digital device.
+It has been recently shown how it is possible to setup a common PC in order to produce digital evidence in an automatic and
+systematic manner. Such traces are indistinguishable upon a forensic post-mortem analysis from those left by human activity,
+thus being exploitable to forge a digital alibi.
+
+In this paper we verify the undetectability of a false digital alibi by setting up a challenge. An alibi maker team set up a script which
+simulated some human activities as well as a procedure to remove all the traces of the automation including itself. The verification
+team received the script and executed it on its own PCs. The verification team could perform not only a usual post-mortem analysis
+but also a deeper forensic analysis. Indeed, they knew all the details of the script and the original state of the PC before running it.
+The verification confirmed that a well-constructed false digital alibi is indistinguishable from an alibi based on human activities.
+%However, this is a delicate task if the analysis is carried out on by well-known forensic experts that have a complete knowledge on what to search for.
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+ Digital Evidence; Digital Investigation; Digital Forensics; Anti-Forensics; Counter-Forensics;
+ Automated Alibi; False Alibi; Digital Alibi; False Digital Alibi.
+\end{IEEEkeywords}
+
+
+\section{Introduction}
+%The use of digital technology is rapidly growing. 
+Lives of people are increasingly being dependent on technology. They rely on digital devices for entertainment, to communicate each
+other, to store sensitive information, to manage their assets, to buy products and so on. More than two billion people use Internet,
+with a penetration higher than 30\% (statistics for December 31, 2011)~\cite{stat}.  
+%The number of users in the world that is using the Internet is almost 2 billion, with a penetration of 28.7\% of the world population~\cite{stat}. 
+Furthermore, traditional security paradigms based on the strong
+separation between a secure  ``inside'' area and a hostile ``outside''
+one, are no longer effective in presence of modern borderless
+communication infrastructures~\cite{PalmieriFC11}.
+
+In this context, more and more crimes are performed on the Internet or have something to do with digital equipment. For these reasons
+the amount of digital evidence being brought in Courts is rapidly increasing. Consequently, Courts are becoming concerned about the
+admissibility and probative value of digital evidence. Although digital devices have not been directly used by an accused, they can be
+subject to forensic investigations in order to collect useful traces about the behavior of such individual, either to be cleared of an accuse
+or to be charged of an offense. Elements required to determine the liability for having committed a crime often consist of files stored in a
+PC memory, photos on a digital camera, data on a mobile phone or any other digital devices. Such elements are referred to digital evidence.
+``Digital evidence or electronic evidence is any probative information stored or transmitted digitally and a party to a judicial dispute in Court
+can use the same during the trial''~\cite{uslegal}. E-mails, digital photos, electronic documents, instant message histories, spreadsheets,
+Internet browser histories, databases, temporary files and backups can contain useful information in the context of a legal proceeding to
+reconstruct the profile and the user behavior in a certain time frame of a defendant.
+
+Those traces are \emph{ubiquitous}, \emph{immaterial} and \emph{implicit}, i.e., in many cases the individual who ``generated'' them
+is unaware of their existence. In fact, digital traces can be retrieved on mobile devices (phones, PDAs, laptops, GPSs, etc.) but especially
+on servers that provide services via Internet, which often register the IP addresses and other information concerning the connected clients.
+These servers can be located in countries different from the one in which the crime has been committed, and different national laws can be
+an obstacle for the acquisition of the digital evidence during an investigation.
+Such digital traces are also immaterial because it is well known that all digital data is represented as sequences of binary digits. Obviously,
+digital data can be easily manipulated.
+
+%Descrivere in questo paragrafo la struttura dell'articolo (vedi abstract) con maggiore dettaglio.
+
+
+This paper aims to state how a deep forensic analysis is able to discern whether the evidence collected from a digital device might
+have been artificially created. In particular, this problem has been considered in order to ascertain whether the methodology introduced
+in~\cite{autoalibi} effectively weaken the acceptability of a digital alibi in Courts. 
+Early experiments showed that digital evidence constructed using such a methodology is indistinguishable 
+from the one produced by a human activity. For that reason, this paper presents new experiments where the forensic analysts
+have more knowledge about the methodological and technical procedures employed to create the false alibi.
+In details, the authors setup a challenge between two groups. The first one prepared the procedure while the other one performed
+the forensic analysis of the system where the procedure was run.
+The former designed a storyboard with all the activities to be executed in unattended way creating an automation script. Successively,
+this was sent to the other group in order to create the digital evidence. After the execution, the PC where the automation was run has
+been scrutinized by the analysts to detect, as much as possible, anomalous traces proving that all the evidence have been produced
+by an automatic procedure without requiring the presence of an individual in the alibi time frame.
+
+The paper starts with a brief presentation of the concept of false digital alibi in Section~\ref{sec:falsealibi}.
+The core idea of the paper, including the challenge organization and details about the Digital Forensics
+methodology used for the analysis, is presented in Section~\ref{sec:challenge}. A case study showing an 
+implementation of the aforementioned methodology and its results is presented in Section~\ref{sec:casestudy}.
+Conclusions are drawn in Section~\ref{sec:conclusions}.
+
+
+\section{False Digital Alibi}
+\label{sec:falsealibi}
+
+Computers can be involved in the commission of crimes and can contain evidence of crimes, but these evidence can also
+represent an \emph{alibi} for the defense of an accused person. In the Latin language the word ``\emph{alibi}'' is an adverb
+meaning ``\emph{in or at another place}''. According to the Merriam-Webster online dictionary~\cite{webster}, alibi is ``the plea
+of having been at the time of the commission of an act elsewhere than at the place of commission''.
+
+%\noindent {\sc False Digital Alibi.}
+\paragraph{False Digital Alibi}
+In a recent paper~\cite{autoalibi} a methodology to produce a predetermined set of digital evidence by means of an automation has
+been presented. Such evidence resulted to be indistinguishable, upon a post-mortem forensic analysis, from those produced by the
+real user activity. It demonstrates that this methodology could be exploited in the context of a legal proceeding to forge a digital alibi.
+Any typical actions performed by an individual on a computer can be simulated by means of automated tools, including mouse clicks,
+pressure of keys, writing of texts, use of applications, and so on. When a false digital alibi is forged might be worth to automate, among
+the other actions, the access to Internet public services because, in these cases, the alibi could also be confirmed by the digital evidence
+collected on the remote servers and  validated by the remote service providers as trusted third parties.
+However, people have their habits and follow a predictable behavioral patterns. For example, it may be usual for an individual to read
+news during the morning, to access his mailbox at certain time intervals, to work on some documents in the afternoon, to shutdown the
+computer in the evening. In practice, the behaviour of the suspect inferred from his digital alibi must be very similar to his typical behaviour.
+Moreover, no suspicious traces have to be discovered by an hypothetical Anomaly Detection analysis~\cite{PalmieriF10}.
+
+A similar approach, presented in~\cite{autoalibi}, can be also adopted in order to produce indistinguishable digital evidence by means of
+a mobile device equipped with Android~\cite{androalibi}~\cite{android_af}.
+
+
+%\noindent {\sc Unwanted Evidence.}
+\paragraph{Unwanted Evidence}
+An automation can leave clues revealing its presence on the system. Such a trace is referred to as unwanted evidence, and should
+be always \textit{avoided} or \textit{removed} in order to divert the forensics analysis. There are basically two approaches that can
+be adopted to accomplish this task:
+
+\begin{list}{\labelitemi}{\leftmargin=0.5em}
+ \item \emph{Avoid evidence a-priori.} Several precautions can be taken in order to avoid as much unwanted evidence as possible.
+ Whenever it is not possible to securely remove an unwanted trace (for example, when its location is write-protected), an
+ \textit{a-priori obfuscation} strategy could be adopted in order to avoid any logical connections between this information
+ and the automation procedure, in a way that such information could have been produced by a ``normal'' system operation.
+ \item \emph{Remove evidence a-posteriori.} In the last decade a large number of wiping techniques~\cite{pgut01}~\cite{pgut02}~\cite{usdod5220}
+ have been proposed. Although they can be adopted to remove unwanted data left by the automation on a memory, in this context
+ the actual problem is ``how to erase the eraser''. In~\cite{securedel} several methods that can be exploited to implement an
+ automatic, selective and secure deletion/self-deletion are shown.
+ %Again, sometimes it is not possible to wipe all unwanted data, which makes necessary an \textit{a-posteriori obfuscation} strategy in order to avoid logical connections between these data and the automation tool.
+\end{list}
+
+
+%\noindent {\sc Development and Testing.}
+\paragraph{Development and Testing}
+%Anche la fase di sviluppo e testing lascia tracce e quindi meglio farle su macchine diverse (fisiche o virtuali). Al termine il risultato potrà essere caricato sulla macchina target per essere eseguito.
+
+The construction of an automation consists of two iterative phases: (1.) the development of the automation and (2.) the testing of
+the procedure on the target system. These activities could leave lot of clues on the target system which should be avoided.
+The ideal solution would be that of carrying out such tasks on a completely separate system, like a secondary computer or 
+a Virtual Machine (VM). Otherwise, any unwanted evidence has to be detected and removed/obfuscated as described before.
+Typical unwanted traces produced during the construction stage are system records and logs, which usually contain recently
+opened files and launched applications. For example, in Microsoft OSes information like that is stored in the Windows Registry,
+which can only be modified by the \emph{administrator} and the modifications take effect only after a system reboot.
+%In this case, an accurate post-mortem forensic analysis can reveal these evidence.
+
+In~\cite{autoalibi} a number of workarounds to avoid most of the suspicious traces about the development phase are proposed. 
+In order to minimize the risk of unwanted clues, it could be useful to develop the automation on a completely separate environment,
+such as a VM, a live OS, or even a different computer. Since an automation is typically strictly cut for a specific
+hardware/software environment, the development system should be as similar as possible to the target system.
+
+
+\section{Forensic Analysis as a Challenge}
+\label{sec:challenge}
+
+% Citing Galileo
+Scientific Knowledge must be objective, reliable, provable and understandable. In other words, a thesis
+should always be supported by experimental results and such experiments must be repeatable by everyone and, in the same
+conditions, should produce always the same results.
+%~\cite{galileo}.
+Keeping that in mind, the authors have intended to apply this approach to prove their thesis.
+
+To validate the methodology presented in~\cite{autoalibi} it is crucial that the verification procedure can be carried out by a
+competent third part. In the occasion of the symposium UAE OLAF 2011~\cite{olaf}, held in Milano in January 2011, a
+challenge has been conducted among the authors of~\cite{autoalibi} and an IISFA~\cite{site:iisfa} analyst team. The experiment
+consisted of the post-mortem analysis of the hard disk extracted from a PC  where a false alibi procedure was run. The goal of the
+analysis focused on the identification of any digital evidence  left in a fixed time frame. Moreover, the analysts had to verify whether
+such evidence has been produced by a human activity or a software automation. The analysts where able to completely reconstruct
+the whole activities timeline. No digital evidence of automation execution, except a statistical anomaly, were found. In facts, only an
+anomalous browsing activity of a photo album on Picasa was identified. In particular, the analysts detected that 10 photos were
+requested with a constant interval of about 5780 milliseconds~\cite{slide_alibi_mattia}. This was due to the presence of an iterative
+block of repeated actions where the time delay did not change. Apart from such suspicious evidence, the challenge confirmed that
+a false digital alibi is indistinguishable in a post-mortem forensic analysis.
+
+%To further enhance the results of the aforementioned experience, the authors considered the possibility to provide the analysts with more information in order to address the choice of the right tools and analysis procedure to unveil a false digital alibi. For that reason, a new challenge has been arranged as described in the following paragraphs.
+
+In order to conduct a deeper analysis on the eventual traces left by the automation procedure, the following scenario has been considered.
+The analysts had complete information of the entire alibi-construction process (including the source code of the automation) and were able
+to run the automation at their will. Hence the analysts could choose the right tools and procedures, without being limited by the post-mortem
+approach. As an example, they had knowledge of the system status before and after the execution of the automation, so they could
+automatically compute all the relative differences. For a deeper analysis, a new challenge has been arranged as described in the following
+of the paper.
+
+%In order to enforce this result we arranged a new challenge giving more opportunities to the analysts.
+
+It is important to highlight that an automation resistant against the analysis presented in this work is certainly resistant against a forensic
+analysis conducted in a real context, since the evidence available to the analysts is certainly a ``superset'' of the evidence that would be
+available in a real case. In fact:
+\begin{itemize}
+ \item The analysts have full knowledge of the methodology adopted to construct the alibi and any implementation details.
+ \item The analysts could themselves setup the testing environment (according to a few required settings) on their computers.
+ \item The analysts could execute the automation as many times as they wish.
+ %\item The analysts could search for traces of the automation files (for example, alphanumeric substrings) on the system memories.
+ \item The analysts could record different system snapshots useful to detect any artifacts left by the automation. For instance, they
+ could search for traces of the automation files (e.g., alphanumeric substrings) on the system memories, as well as identify any files
+ modified upon the execution of the automation.
+ %\item the computer involved in the execution of the automation belongs to the analysts, therefore the state of the system prior to the script execution is available to the DFA and can be used during the analysis as comparison term to extract any modified data
+\end{itemize}
+
+% { \color{red}
+% There are some benefits with these assumptions. First of all the DFA knows what he is searching for and in particular knows the source code and related script files created to execute and wipe the automation. Than the DFA can set up an environment in which he can test the automation. The chosen environment permits the DFA to create 2 different snapshots: one just before executing the automation and the other just after the execution. This approach permits to highlight the differences in some possibly interesting files.
+% }
+
+\subsection{Organization of the Challenge}
+\label{sub:organization}
+%\subsection{Organizzazione della challenge}
+%Come \'e stato organizzato l'esperimento: ...
+
+
+A challenge between two teams, the Alibi Makers (AM) and the Digital Forensics Analysts (DFA), has been arranged.
+The following methodology has been adopted to conduct the
+analysis: the AM constructed an automated procedure $P$ according to~\cite{autoalibi} in order to forge a
+digital alibi by means of a common computer. This step has been carried out on a development system.
+The automation, including documentation and source codes, has been transferred to
+the DFA. The DFA setup a Testing System (TS) where the procedure $P$  could be executed.
+The DFA finally analyzed the TS in order to collect any eventual traces supporting the thesis that the alibi
+has been produced by an automation.
+
+
+%The forensics analysis presented in this work has been conducted as a challenge. One of the two competing team has been in charge of constructing the automation, while the other has executed the procedure and analyzed the system searching for suspicious traces. Each step of the experiment is described and documented in this work. In particular, in this section the motivations of the challenge are stated, the operational scenario is presented and the methodologies adopted to setup the experiment and analyze the involved devices are discussed.
+%
+
+%Objective of this work is to show that the actual methods and technologies used to perform a post-mortem analysis of a personal computer are not powerful enough to distinguish between evidence produced by a real human activity and evidence produced by a (well-implemented) software automation. Actually, there are no technologies aimed to support the digital forensics analyst in distinguishing between real and ah-hoc constructed digital traces. A considerable effort is therefore required by the detectives, which can only rely on their intuitions and investigative skills, to detect a scenario where a false digital alibi has been constructed.
+
+% I gruppi di lavoro,chi siamo e perch\'e della sfida: effettuare una verifica  della robustezza del metodo. Occorre dare le definizioni dei ruoli, l'imputato (defendant), il consulente (CTU, digital forensic analysts). false alibi maker / builder (FAM) -  digital forensic analyst (DFA)
+
+% Per rendere pi\'u significativo il risultato il DFA \' e stato agevolato nelle attivit\'a perch\'e rispetto al caso reale:
+
+Initially, the two teams agreed on the operational environment. 
+This was a non-trivial task because they had to pre-arrange the TS hardware and software configuration in order to simulate a real
+scenario. The TS was equipped with: 
+\begin{itemize}
+ \item common hardware resources (i.e., storage device such as magnetic hard disk, standard input devices such as mouse and keyboard, etc.),
+ \item a common software environment (i.e., the same OS, widely used applications, common libraries, etc.).
+\end{itemize}
+
+Clearly, these choices influence the software tools and the wiping methods to be used for developing the alibi.
+
+A crucial aspect is how the automation files are imported on the target machine. In fact, a large amount of unwanted traces could
+be produced at this stage. For example, the OS could log information about the device used to transfer the automation to the computer,
+such as a CD-ROM or an USB drive, as well as information about the network service used to download the respective files. 
+%during the copy operation by automatic shadow copy service, or by the mount operation of a CD-ROM or USB drive, or by the log of a network cloud storage service. 
+
+The AM and DFA also dealt with the problem of the removal of the automation from the TS. It is important to note that the typical
+delete operation performed by means of the OS system calls is not enough to remove any traces of a file from the system. In order
+to avoid data remanence, a secure deletion procedure should be adopted. In this work, \textit{secure deletion} is referred to as a
+procedure able to both wipe the target files (i.e., overwrite the physical disk blocks storing their data) and erase any traces of its
+presence from the system (i.e., data and metadata referring to the file containing the procedure itself). In other words, the wiper
+should self-delete its image on disk. 
+
+Among the various solutions to this problem proposed in~\cite{securedel}, in this work a technique based on the use of a Secure Digital
+(SD) memory card has been chosen. More precisely, the automation has been loaded onto a SD subsequently connected to the TS by
+means of an USB adapter. 
+Even though USB memories can be used as a secure authentication means~\cite{jowua_usb}, for the purpose of this paper the USB technology is used as an hardware proxy with the primary goal of hiding the object inserted into it (i.e., the SD). In fact, only the \emph{device-ID} (i.e., the pair VID and PID) of the adapter is logged by the hosting machine, with no reference to the contained object.
+Afterward, the automation has been executed without copying it onto the hard-disk of the TS, thus avoiding
+the risk of data remanence on its main filesystem. The secure deletion procedure designed for the challenge firstly wipes any automation
+files, then fills up the residual SD space in order to overwrite unused memory blocks eventually containing unwanted data (for example,
+with multimedia data such as MP3 and JPEG files). Adopting this approach, the SD was left connected to the TS resulting in no clues
+about the automation.
+
+The TS has been implemented as a VM in order to speed up the overall analysis process. The use of a VM allowed
+the DFA to create different snapshots of the system at their will, for example, just before or after the execution of the automation procedure.
+
+\subsection{Analysis Methodology}
+The DFA had full knowledge about the methods, procedures and technologies exploited to construct the digital alibi, hence their
+analysis mainly focused on 4 aspects.
+
+%The approach used to analyze the evidence can be categorized in 4 steps.
+\noindent {\sc Operating system and application analysis:} The system structures typically containing information about executed
+applications (for example, the Windows Registry, the browser history, etc.) were analyzed in order to verify whether the automation
+produced artifacts due to its execution. Any evidence being part of the alibi (website visit, mail sending, document creation, etc.) has
+also been collected in order to reconstruct the time baseline.
+
+\noindent {\sc Timeline analysis:} This analysis focused on the identification of the files accessed or modified during the construction
+of the alibi in order to detect any relationships with the automation.
+
+\noindent {\sc File content analysis (SD Card):} The files stored on the SD were analyzed in order to find any suspicious traces.
+
+\noindent {\sc Keyword Search analysis:} A set of keywords collected from the source code of the automation has been used to perform
+a deep low-level search analysis of the SD (including allocated and unallocated space) in order to find any possible clues of the automation.
+
+
+\section{Case Study}
+\label{sec:casestudy}
+
+In this section the strategies adopted to forge the digital alibi are presented, along with the techniques and the tools used to
+implement the automation and to analyze the system where it has been executed.
+The false digital alibi constructed by the AM is based on the digital evidence produced by the sequence of user activities
+summarized in Table~\ref{tab:timeline}. Of course all the activities involving remote services are also validated by the
+remote providers as trusted third parties. 
+
+
+\begin{center}
+\begin{table}[h!]
+\caption{Event timeline of the digital alibi.}
+ \begin{tabular}{| c | p{7cm} |}
+  \hline
+  \textbf{Instant} & \textbf{Activity}\\
+  \hline
+  $t_0$ & Access to a Facebook account and post of a status message.\\
+  \hline
+  $t_1$ & Use of Gmail to compose and send an email to several recipients.\\
+  \hline
+  $t_2$ & Browsing of an user photo album with a sequential visualization of images.\\
+  \hline
+  $t_3$ & Copy of the last displayed image into the clipboard.\\
+  \hline
+  $t_4$ & Execution of a word processor and creation of a new document.\\
+  \hline
+  $t_5$ & Write of a predefined text and paste of the previously copied image into the document.\\
+  \hline
+  $t_6$ & Shutdown of the system.\\
+  \hline
+ \end{tabular}
+\label{tab:timeline}
+\end{table}
+\end{center}
+
+The automation responsible for the creation of the alibi has been implemented on a common Personal Computer running
+Windows 7 Home, and is compatible with any versions of  Windows, starting from Windows XP. During the challenge,
+the automation has been executed on the TS running Windows 7 Professional. 
+%The Launcher should be edited with a text editor in order to set the starting time parameter. 
+The Facebook and Gmail accounts involved into the alibi have been previously accessed from the TS to prevent unexpected
+responses of the relative websites.
+
+%\bigskip
+
+\subsection{Automation Strategy} As mentioned in~\ref{sub:organization}, all the needed files have been stored on a SD memory card.
+In addition to the files containing the automation, some ``padding'' files have been also added in the same directory. Moreover, all the
+padding files had the same name pattern and extension (i.e., \verb=IMG_xxxx.JPG=). At the end of the entire procedure,
+the automation securely removed any suspicious data (including itself). 
+Unfortunately, some traces could persist on the disk after the deletion of a file. For example,
+it is possible to find name and last accessed date of removed files in some filesystem structures and Superfetch history logs.
+In order to make such information meaningless, the AM assigned to each automation file a name coherent with the pattern of the
+padding file names, thus obfuscating their real content. Adopting this strategy, it is not necessary to remove any files from the
+SD, as they can be overwritten ``in place'' (i.e., using the same physical blocks) with a different content.
+
+In practice, a secure wiping procedure has been adopted to physically overwrite the automation files with the content of some
+padding files. The number of files present on the SD and their names are not modified by the automation procedure. Only
+the content of four files has been overwritten and their ``last-modified-date'' metadata are updated with new values coherent with
+the planned event timeline. Finally, the overwriting operations made all the file contents consistent with their extensions, leaving the data on the SD and the system traces compliant with a post-mortem analysis.
+
+% All the files stored on the SD before the execution of the automation were also present at the end of the process. Moreover, the content of each file was consistent with its extension.
+
+\smallskip
+
+\noindent In details, the SD has been initially preloaded with:
+\begin{itemize}
+\item $N$ files with \verb=.JPG= extension:
+%\begin{list}{$\hookrightarrow$}{\leftmargin=0em}
+%\begin{list}{    *}{\leftmargin=0em}
+\begin{itemize}
+ \item $N-2$ were real photos (which were used as padding files),
+ \item one was a Java archive containing the classes needed by the automation,
+ \item one was a common image-viewer application suitably renamed.
+\end{itemize}
+\item one executable file (\verb=.EXE= extension), having the same name of the image-viewer application, but containing the automation code.
+\item one batch script (\verb=.BAT= extension) to launch the automation, with a common name such as \verb=autorun.bat=
+\end{itemize}
+
+\noindent The DFA executed the automation by launching the batch script. The automation performed all the
+activities described in Table~\ref{tab:timeline} at the appropriate timings. Finally, the clean-up procedure transformed
+the content of the SD, according to the strategy presented before. \\
+\noindent In particular, the SD after the automation contained:
+
+\begin{itemize}
+\item $N$ files with \verb=.JPG= extension, all representing real photos.
+%\begin{list}{    --}{\leftmargin=0em}
+% \item $N$ were real photos (padding files).
+%\end{list}
+\item one executable file (\verb=.EXE= extension), containing the original code of the image-viewer application, but preserving the initial name.
+\item one batch script (\verb=autorun.bat= extension) launching a simple slide-show of the images present on the SD.
+\end{itemize}
+  
+%It is important to note that the deletion of a file typically does not imply the removal of any related metadata (i.e., filename, creation date, last modification date, etc.) from the internal filesystem structure. According to this consideration, all the filenames of the three files have been carefully chosen in order to obfuscate their original sense. Moreover, in order to avoid any clues, the secure wiping module has been implemented by adopting the strategy presented below. All the filenames chosen for the automation designed by the AM do not need to be modified by the clean-up procedure. Moreover, at the end of the whole process the content of these files is coherent both with their name and their extension.
+
+
+\subsection{Architecture and Implementation of the Automation}
+\label{sub:automarch}
+
+The false digital alibi has been coded into four software modules:
+
+\begin{itemize}
+\item {\sc Launcher}: a batch script (\verb=autorun.bat=), which should be launched with \emph{administrator} privileges, used
+to configure and to start the automation. 
+
+\item {\sc Scheduler}: a Java class (\verb=HelloWorld.class=) stored in the JAR archive named \verb=IMG_5719 (copy).JPG=, which provides
+the timed and ordered execution of the automation modules.
+
+\item {\sc Simulator}: an executable file, compiled in native code without external dependencies. Despite of its name
+(\verb=IrfanViewPortable.exe=), it simulates all the necessary human-machine interactions to perform the activities listed
+in Table~\ref{tab:timeline}.
+
+\item {\sc Wiper}: a Java class (\verb=HelloWorld1.class=) contained in the JAR file \verb=IMG_5719 (copy).JPG=, which implements the secure wiping
+procedure to remove the unwanted evidence. 
+
+% {\em It is invoked by the Scheduler at the end of the whole process in order to remove any unwanted traces from the system. As described below, the Wiper uses different techniques depending on the file to be deleted.}
+
+%See ~\cite{autoalibi} for details on the construction of an automation.
+\end{itemize}
+
+% It is worth to note the user after copying the chosen image in the clipboard had to switch from the browser to the word  processor in order to paste it in the previously opened document. 
+
+It is worth to note that the execution of programs from the Windows Command Prompt produces less traces in the Registry with respect to applications launched from the Windows GUI (see~\cite{autoalibi}). For this reason, the Launcher of the automation has been designed as a batch script, whose instructions are always executed from the Command Prompt. The Launcher invokes the remaining automation modules, which are in turn executed from the Command Prompt with the same benefits.
+
+%Infine viene avviata il modulo di wiping che effettua il clean-up.
+Once launched, the Scheduler prompts the user for the starting time of the alibi, then sleeps and starts the Simulator at the established time. When the simulation ends, the Wiper is invoked in order to clean-up the system. 
+
+The activities listed in Table~\ref{tab:timeline} have been coded into the Simulator by means of a specific tool, namely AutoIt~\cite{site:autoit}.
+It provides an easy-to-use framework which allows to automate a sequence of systematic and repeatable human-machine interactions, such
+as system configuration tasks or test cases. While a number of different tools are suitable to construct an automation, AutoIt has been 
+preferred in this challenge mainly for two reasons: (1.) it is easy-to-use but robust and reliable and (2.) it provides also a compiler to
+optionally produce a stand-alone executable, without external dependencies, which does not require the
+installation of additional software on the TS. Obviously, in the context of a digital alibi, the executable file implementing the automation
+is part of the unwanted evidence and must be therefore carefully removed.
+
+The Wiper module transforms the content of the SD according to the technique described afterward. The Wiper module uses different secure
+deletion strategies depending on the file to be removed. In particular, the content of the file \verb=autorun.bat= is overwritten with some non-suspicious textual data coherent with the file format and the operational environment. This strategy, named Injection Techinque, has been introduced in~\cite{securedel}.
+The content of the Launcher after the execution of the automation consists of a single line ({\tt for /f \%\%f in ('dir /b *.jpg') do IrfanViewPortable.exe \%\%f}) which effectively launches a simple slide-show using the images stored on the SD.
+
+The secure deletion of the Simulator (\verb=IrfanViewPortable.exe=) is also performed by means of the Injection Technique. After its execution,
+the file content is completely overwritten with the content of the original implementation of the image-viewer software (IrfanView~\cite{irfan}
+portable version). This new content was initially stored on the SD card in a file named \verb=IMG_9785.JPG=. After that the \verb=IrfanViewPortable.exe= file has been replaced with the proper content, the source file \verb=IMG_9785.JPG= is itself cleaned-up overwriting its data blocks with the content of the image named \verb=IMG_9785 (copy).JPG= present on the SD.
+
+The deletion of the JAR file containing the Scheduler and the Wiper modules (i.e., \verb=IMG_5719 (copy).JPG=) is the most complex task because the Wiper must replace itself whilst running. As discussed in~\cite{securedel}, a self-deletion technique must be adopted. 
+While for native executables the OS typically locks the file to preserve the read-only semantic of the text segment, this does not occur for programs written in interpreted languages. In fact, in such a case the code is not directly executed but ``translated'' on-the-fly by means of an interpreter. 
+According to this consideration, the Wiper module has been implemented in Java, which uses the Java Virtual Machine (JVM) to interpret the bytecode
+produced by the compiler.
+When started, the JVM loads all the requested classes from the JAR archive \verb=IMG_5719 (copy).JPG= and invokes the Wiper as last step. This module can overwrite the JAR itself by using an image from the SD (\verb=IMG_5719.JPG=) as data source. No renaming operation was performed because the JAR file has been originally named \verb=IMG_5719 (copy).JPG=, consistently with its new content.
+
+The Injection Technique does not guarantee that all the physical blocks of a file are overwritten. Clearly, it is necessary that the size of the new content is greater then the old content, otherwise part of the old data could be retrieved by a file carving procedure. In order to avoid this problem, the size of the files used as source of the Injection Technique has been properly chosen.
+
+% This strategy has been proved to be resistant to any file carving operation performed by the DFA on the SD, because the analysis reveals only a file with a ``valid'' content coherent with the other files stored on the SD. In facts, according to the plans of the AM, at the end of the entire procedure the DFA should find on the SD only the real IrfanViewPortable executable, a batch script invoking its execution and a set of JPG files. Moreover there are no data related to the automation files recorded in the filesystem structure which could reveal to the DFA any suspicious information.
+
+\subsection{Automation Setup}
+It is fundamental to avoid unwanted information being recorded in system-protected structures that cannot be edited (and therefore cleaned) by the Wiper. The loading of the automation onto the TS is a crucial aspect for the undetectability of the entire process, as it must be accomplished without producing unwanted evidence. In these paragraphs all the preliminary precautions necessary for a clean execution of the automation are described.
+%In particular, in this paragraph some tasks that could interfere with the clean-up procedure, along with the solutions chosen by the AM to avoid the unwanted related evidence, are discussed.
+
+\subsubsection{Environment Setup}
+%\smallskip
+
+The Prefetch~\cite{prefetcher} and Superfetch~\cite{superfetch1}~\cite{superfetch2} features of the Windows Memory
+Manager~\cite{memoryman} aim to speed up the applications startup by preloading their code and data into the main memory. This performance
+improvement is accomplished by recording some ready-to-be-accessed information about used programs and files in a caching area of the
+main filesystem (i.e., the \verb=C:\Windows\Prefetch= folder). However, the execution from an external drive prevents the creation of prefetch files (\verb=C:\Windows\Prefetch\*.pf=) regarding the automation.
+Information about applications and data (such as filenames and access date) are logged into history files (\verb=C:\Windows\Prefetch\*.db=) of the Superfetch~\cite{rewolf}. However, thanks to the obfuscation techniques presented in the previous paragraphs, such information only reveals the execution of an application named \verb=IrfanViewPortable.exe= and the access to some \verb=JPEG= files.
+
+%\smallskip
+
+In order to prevent copies of code, or data belonging to the automation, onto the disk (i.e., in the \verb=C:\pagefile.sys= file), the amount of
+Virtual Memory of the system has been set to \verb=0=.
+
+%\smallskip
+
+Another feature of Windows 7 that could produce unwanted evidence is the Volume Shadow Copy Service (VSS)~\cite{vss}, which could
+accidentally create a restore point including information regarding the automation. Since this service does not perform copies
+of data stored on external devices by default, the presence of the automation modules on the SD produces no unwanted traces. Moreover, the use of a SD has also avoided any presence of the automation onto the main drive of the TS.
+
+%\smallskip
+
+Some antivirus/antimalware software, such as Avast!~\cite{avast}, could detect the automation as a threat. For sake of simplicity, no application like that has been installed on the TS.
+
+%\smallskip
+
+The use of a log-structured/transactional/journaled filesystem to store the automation files could determine unwanted traces due to history metadata. Even though the main drive of the TS was equipped with a journaled filesystem (NTFS) the use of an external SD to maintain the automation files with a non-journaled filesystem (FAT32) avoids such risk.
+%For its part, the SD card used for the challenge has been prepared as described below. When received by the DFA, the procedure will be launched connecting the SD card to the TS by means of a common USB adapter.
+
+\subsubsection{Automation Loading}
+
+A standard SD with capacity of 8 GB has been used for the experiment as described in the following. First of all, its content has been
+wiped by using Active KillDisk~\cite{akd}. Afterward, the SD has been mounted on a Canon EOS 1000D camera and has been
+formatted by means of the embedded software, which created a FAT32 filesystem with a standard directory structure.
+Several pictures have been taken with the camera, resulting in a set of different JPG files getting stored on the SD. The memory
+has been then connected to the developing system by means of an USB adapter. A portable version of the IrfanView software
+(renamed to \verb=IMG_9785.JPG=) has been copied onto it, along with the automation files \verb=autorun.bat=,
+\verb=IMG_5719 (copy).JPG= and \verb=IrfanViewPortable.exe=), constructed as described in subsection~\ref{sub:automarch}. 
+Thereafter the SD has been enveloped into an anti-static bag and sent by express mail to the DFA.
+
+
+\subsubsection{Automation Setting}
+
+Some preliminary operations have been accomplished by the DFA team before executing the automation.
+In particular, a SATA hard-disk has been formatted with the NTFS filesystem and mounted on the TS. 
+Afterward, the TS has been booted from a pre-installed hard-disk containing Microsoft Windows 7 Professional. 
+A new VM with Windows 7 Home, stored on the just mounted hard-disk, has been powered up by means of VMware Player~\cite{vmware}.
+%The Virtual Machine has been subsequently launched and a copy of Microsoft Windows 7 - 32 bit has been installed onto it.
+
+Before running the automation, according to the setup instructions given by the AM, the DFA performed the following system customizations: 
+(1.) the screen resolution has been set to 1024x768 pixels, (2.) Mozilla Firefox 8 and Java Runtime Environment (version 6 update 30) have been downloaded through Internet Explorer and installed, (3.) the pop-up blocker of the browser has been disabled, (4.) the Gmail and Facebook websites have been accessed several times in order to both test their reachability and create a behavioral pattern of the user (which is a sort of digital profile).
+Finally, the VM has been turned off and a forensic copy of it has been acquired and stored on the host OS, in order to keep a system snapshot before launching the automation. 
+%Again, from the host OS the batch file on the SD has been edited setting the starting date and time when the false alibi should be run.
+
+
+\subsubsection{Automation Execution}
+
+To create the false digital alibi, the VM has been booted up and the SD containing the automation has
+been connected to the system by means of an USB adapter. The DFA opened the just mounted drive (\verb=E:=) through the Windows file
+manager and executed the Launcher (\verb=autorun.bat=) with administrator privileges (\verb=right click -> run as administrator=).
+It started the Scheduler, which asked the user for the starting time of the alibi and deferred the launch of the Simulator until that moment. After the automation performed all the planned actions, the system has been automatically turned-off, as expected.
+
+\subsection{Analysis Techniques and Tools}
+
+Having complete knowledge of the methods and techniques adopted to construct the digital alibi, the DFA analysis focused
+on two main elements: (1.) the SD found on the system and (2.) the VM hosting the TS where the automation has been executed.
+
+In order to preserve the original snapshot of the TS after the execution of the automation, the VM has been backed-up and its read-only
+property has been preserved. 
+A forensic copy of the SD has been acquired by means of a hardware USB Write-Blocker~\cite{writeblocker} and the \verb=dd= tool~\cite{dd}. The MD5 hash of both the SD content and the VM has been computed for further verifications.
+The main tools used by the DFA to perform the analysis of the TS are:
+
+\begin{itemize}
+ \item RegRipper2~\cite{regripper} to analyze the Windows Registry.
+ \item Mozilla History View~\cite{mozhistview} and Mozilla Cache View~\cite{mozcacheview} to collect any evidence left by the browser activity.
+ \item AccessData Forensic Toolkit~\cite{ftk} to analyze the SD content and the main drive of the TS.
+ \item AccessData Forensic Toolkit (DT Search engine) to perform a low-level keyword-based search operation on the involved digital memories.
+\end{itemize}
+
+In particular, the latter activity consisted of a search for some keywords considered as {\sl signatures} of the automation modules, selected from the automation code initially stored on the SD, in the entire physical space of both the SD and the main drive of the TS. 
+More information on file carving techniques can be found in~\cite{jowua11-2-3-03}.
+This operation could reveal hidden information about the automation procedure, such as metadata stored in the filesystem structure, deleted contents of files, etc. Later on, the search results have been carefully analyzed by the DFA in order to disclose any connections with the automation procedure. 
+Some examples of keywords selected from the code of the automation are: \verb=IMG85719=, \verb=IrfanView=, \verb=HelloWorld=, \verb=AutoIt=, \verb=WIPER=, \verb=AUTOM=.
+
+
+\subsection{Analysis Results}
+
+This section points out the main outcomes of the analysis performed by the DFA. The analysis focused on the PC (the VM running the TS)  where the automation has been executed and particularly on the SD Card used to transfer the necessary files. 
+
+\noindent {\sc SD Analysis} The analysis of the SD only stated that some files have been accessed or modified during the alibi timeline, in a way that is coherent with the alibi. In particular:
+
+\begin{itemize}
+ \item The modification date of the file \verb=IMG_5719 (copy).JPG= was changed, and its content was exactly the same of of \verb=IMG_5719.JPG=. 
+ % No clue about its previous content was recovered.
+ \item The file \verb=autoexec.bat= was modified and its content was found to be ``{\tt for /f \%\%f in ('dir /b *.jpg') do IrfanViewPortable.exe \%\%f}''. 
+ % No clue about its previous content was recovered.
+ \item The modification date of the file \verb=IrfanViewPortable.exe= has been set to a time within the alibi timeline. However, its content was exactly the original image-viewer application.
+ % No clue about its previous content was recovered.
+ \item The remaining files stored on the SD (padding files) were still present and untouched.
+ \item The low-level keyword search operation performed on both the allocated and unallocated space of the SD did not produce any interesting results, and no reference to the automation procedure was detected.
+\end{itemize}
+
+These results show that no clue about the automation and its execution was found on the SD.
+
+\noindent {\sc VM Analysis} The analysis of the VM where the automation procedure run revealed the following results:
+
+\begin{itemize}
+ \item The traces left by the applications used during the alibi timeline (Firefox cache and history, Wordpad metadata, etc.) confirmed that all the events claimed by the AM (see Table~\ref{tab:timeline}) were effectively performed on the TS. 
+ \item The analysis of the artifacts produced by the OS (referenced and unreferenced Registry entries, prefetching information, system logs, etc.) were coherent with all the activities performed by the user.
+ \item The low-level keyword search operations performed on the main drive of the TS detected several locations containing the filenames used by the automation.
+\end{itemize}
+
+The filenames found with the keyword search in both the allocated and the free space of the disk did not give any clue related to the automation.
+
+As a further confirmation, the Superfetch history files (\verb=*.db=) stored in the \verb=C:\Windows\Prefetch= folder of the TS have been decoded (see~\cite{rewolf} for details) and analyzed in order to find out any suspicious program. Even though these logs typically retain a full history of the used applications and data files, the DFA team was not able to extract any meaningful information. 
+
+A deep analysis of the Registry let the DFA to reconstruct the application execution history during the alibi timeline. It is worth recalling that deleted entries can still be found in an unreferenced space of the Registry file. Its content has been recovered by means of RegRip2 in order to filter useful information about any anomalous user behavior. A snippet of the extracted data is listed below. 
+
+\begin{lstlisting}
+ClassGUID
+{533c5b84-ec70-11d2-9505-00c04f79deaf}
+Driver
+{533c5b84-ec70-11d2-9505-00c04f79deaf}\0001
+##?#STORAGE#VOLUMESNAPSHOT#HARDDISKVOLUMESNAPSHOT2#
+  {53f5630d-b6bf-11d0-94f2-00a0c91efb8b}
+DeviceInstance
+STORAGE\VOLUMESNAPSHOT\HARDDISKVOLUMESNAPSHOT2
+SymbolicLink
+\System32\cmd.exe
+\Windows\system32\mode.com
+\Windows\system32\java.exe
+\IrfanViewPortable.exe
+\Windows\System32\DeviceCenter.dll
+\Windows\system32\verclsid.exe
+\Windows\System32\tquery.dll
+\Program Files\Mozilla Firefox\firefox.exe
+\Windows\system32\taskhost.exe
+\Program Files\Windows NT\Accessories\wordpad.exe
+\Windows\System32\EhStorShell.dll
+\Windows\System32\cscui.dll
+\Windows\System32\ntshrui.dll
+\Windows\System32\networkexplorer.dll
+\Windows\system32\SearchProtocolHost.exe
+\Windows\system32\SearchFilterHost.exe
+\end{lstlisting}
+%\Windows\System32\mssvp.dll
+%\Windows\System32\wpdshext.dll
+%\Windows\System32\audiodev.dll
+%\Windows\system32\shutdown.exe
+
+The lines \verb=10=, \verb=12= and \verb=13= correspond to the execution, respectively, of the Launcher, the Scheduler and the Simulator modules. However, the presence of this information cannot be considered suspicious since the respective filenames have been obfuscated in the design phase.
+
+In conclusion, the DFA did not found traces revealing that the digital alibi claimed by the AM was forged by an automation procedure.
+%This result confirmed that, to the current state of the art, there are no digital forensic techniques able do distinguish between evidence produced by an automation from evidence produced by an human.
+
+
+
+\section{Conclusions}
+\label{sec:conclusions}
+
+In this work an alibi has been forged according to the methodologies and techniques presented in~\cite{autoalibi}.
+The authors findings are supported by a real experiment documented in this work. It consisted of a challenge between two teams: the AM, in charge of constructing the automation; the DFA, responsible for both the execution of the procedure and the analysis of the system.
+Despite all the useful implementation details were revealed to the DFA, no clue was found revealing that the digital alibi was produced by an automation procedure rather that by a real user. Therefore, the forged alibi has resulted to be resistant against a Digital Forensics analysis conducted on  a ``superset'' of the evidence that could normally be collected in real cases.
+
+% Only a deep knowledge of the host OS allows the AM to prevent any unwanted traces. 
+% In such a case, it is very hard to distinguish whether the evidence found on a digital device has been produced by a human interaction or by an automated program.
+% It is important to highlight that the more complex is the automation, the larger is the number of details to be managed, and hence the higher may be the possibility of failure. In fact, a small omission or mistake in the construction of the automation could produce unwanted evidence, with it invalidating the entire procedure.
+When setting up a false alibi the last thing one may want to focus on is failure. Clearly, the chances of failures increase as the alibi becomes more complex. By running the experiment, the authors have learned that there are several reasons why a false digital alibi may fail to work:
+
+\noindent \textit{Poor planning of actions.} 
+The elements of the alibi can seem suspicious if consisting of actions not usually performed. For example, there might be too many actions or the sequence of actions might exhibit a very regular behaviour (like a constant delay between each other).
+
+\noindent \textit{Insufficient knowledge of the system and the tools.}
+Unexpected traces of the automation may be left on the filesystem or recorded by a system service. Only a deep knowledge of both the host OS and the automation tools allows to prevent any unwanted information. This issue demands for a continuous upgrade of the techniques since OSes are constantly evolving.
+
+\noindent \textit{Unthought changes of external services.}
+A service involved in the alibi may change in such a way that the automation did not consider. For example, the webpage of the email service used by the automation could be upgraded.
+
+\noindent \textit{Unexpected events.}
+Many different unpredictable events may undermine a false digital alibi.
+For example, the PC can be infected by a virus or have hardware problems such as failure of a component or power interruption. Other events, even though unlikely, may occur such as the intrusion of a burglar, or the presence of a video surveillance system which contradicts (part of) the alibi timeline. 
+
+%As consequence of these considerations, both the AM and the DFA groups gained advantages from the challenge described in this work. 
+However, it is important to highlight that if none of the above cases occurs, it is impossible to distinguish whether the digital alibi has been produced by a human interaction or by an automated program.  
+%the conclusion that the Digital Forensics techniques actually adopted in legal proceedings are not able to discern whether a digital evidence has been produced by a real human activity or by an automation procedure. For this reason, 
+Therefore, the results of a Digital Forensics analysis always needs to be planted in the context of the framework of all direct and circumstantial evidence.
+
+%As consequence, traditional approaches do not apply to legal proceedings where digital evidence plays a crucial role in identifying the profile of the accused.  These evidence must be carefully verified and validated more than any other kinds of evidence before being evaluated by a Court. Therefore the results of forensic analysis could be considered as a driver for the legal investigations but should be considered only as part of a larger behavioral pattern.
+
+
+\section*{Acknowledgements}
+The authors would like to thank many friends from IISFA (International Information System Forensics Association) and in particular 
+Francesco Cajani (Deputy Public Prosecutor High Tech Crime Unit, Court of Law in Milano) and Mario Ianulardo (Computer Crime
+Lawyer in Napoli) for their many interesting and stimulating discussions.
+
+A special thank goes to Litiano Piccin for his precious support during the preliminary challenge held for the OLAF 2011 event.
+
+% \section*{Ringraziamenti}
+% \noindent Qui vanno i ringraziamenti \dots \\
+
+%\bibliographystyle{plain} 
+
+\balance
+
+\bibliographystyle{IEEEtran} 
+\bibliography{IEEEabrv,ChallengeAlibi}
+
+\end{document}

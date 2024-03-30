@@ -1,0 +1,232 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		64B621E91671DFD70079531D /* p7signer.c in Sources */ = {isa = PBXBuildFile; fileRef = 64B621E81671DFD70079531D /* p7signer.c */; };
+		64B621EB1671DFD70079531D /* p7signer.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 64B621EA1671DFD70079531D /* p7signer.1 */; };
+		64B621F21671E5E10079531D /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B621F11671E5E10079531D /* libssl.a */; };
+		64B621F41671E5F30079531D /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B621F31671E5F30079531D /* libcrypto.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		64B621E21671DFD70079531D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				64B621EB1671DFD70079531D /* p7signer.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		646674B5169EF81500BAD95D /* cms_enc_mod.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = cms_enc_mod.c; path = "../../../openssl-1.0.1c/demos/cms/cms_enc_mod.c"; sourceTree = "<group>"; };
+		646674B6169EF81E00BAD95D /* cms_dec_mod.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = cms_dec_mod.c; path = "../../../openssl-1.0.1c/demos/cms/cms_dec_mod.c"; sourceTree = "<group>"; };
+		64B621E41671DFD70079531D /* p7signer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = p7signer; sourceTree = BUILT_PRODUCTS_DIR; };
+		64B621E81671DFD70079531D /* p7signer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = p7signer.c; sourceTree = "<group>"; };
+		64B621EA1671DFD70079531D /* p7signer.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = p7signer.1; sourceTree = "<group>"; };
+		64B621F11671E5E10079531D /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../../../../../../../usr/local/lib/libssl.a; sourceTree = "<group>"; };
+		64B621F31671E5F30079531D /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../../../../../../../usr/local/lib/libcrypto.a; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		64B621E11671DFD70079531D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64B621F21671E5E10079531D /* libssl.a in Frameworks */,
+				64B621F41671E5F30079531D /* libcrypto.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		64B621D91671DFD70079531D = {
+			isa = PBXGroup;
+			children = (
+				64B621E71671DFD70079531D /* p7signer */,
+				64B621E51671DFD70079531D /* Products */,
+				64B621F11671E5E10079531D /* libssl.a */,
+				64B621F31671E5F30079531D /* libcrypto.a */,
+			);
+			sourceTree = "<group>";
+		};
+		64B621E51671DFD70079531D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				64B621E41671DFD70079531D /* p7signer */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		64B621E71671DFD70079531D /* p7signer */ = {
+			isa = PBXGroup;
+			children = (
+				64B621E81671DFD70079531D /* p7signer.c */,
+				646674B5169EF81500BAD95D /* cms_enc_mod.c */,
+				646674B6169EF81E00BAD95D /* cms_dec_mod.c */,
+				64B621EA1671DFD70079531D /* p7signer.1 */,
+			);
+			path = p7signer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		64B621E31671DFD70079531D /* p7signer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64B621EE1671DFD70079531D /* Build configuration list for PBXNativeTarget "p7signer" */;
+			buildPhases = (
+				64B621E01671DFD70079531D /* Sources */,
+				64B621E11671DFD70079531D /* Frameworks */,
+				64B621E21671DFD70079531D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = p7signer;
+			productName = p7signer;
+			productReference = 64B621E41671DFD70079531D /* p7signer */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		64B621DB1671DFD70079531D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Giuseppe Cattaneo";
+			};
+			buildConfigurationList = 64B621DE1671DFD70079531D /* Build configuration list for PBXProject "p7signer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 64B621D91671DFD70079531D;
+			productRefGroup = 64B621E51671DFD70079531D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				64B621E31671DFD70079531D /* p7signer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		64B621E01671DFD70079531D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64B621E91671DFD70079531D /* p7signer.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		64B621EC1671DFD70079531D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		64B621ED1671DFD70079531D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		64B621EF1671DFD70079531D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		64B621F01671DFD70079531D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		64B621DE1671DFD70079531D /* Build configuration list for PBXProject "p7signer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64B621EC1671DFD70079531D /* Debug */,
+				64B621ED1671DFD70079531D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64B621EE1671DFD70079531D /* Build configuration list for PBXNativeTarget "p7signer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64B621EF1671DFD70079531D /* Debug */,
+				64B621F01671DFD70079531D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 64B621DB1671DFD70079531D /* Project object */;
+}

@@ -1,0 +1,1229 @@
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+	<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta name="author" content="COMUNE DI BATTIPAGLIA">
+	<meta name="language" content="">
+	<meta name="description" content="Albo Pretorio - Visione Dettaglio" >
+	<meta name="keywords" content="" >
+	<META HTTP-EQUIV='Expires' CONTENT='-1'>
+	<META HTTP-EQUIV='Pragma' CONTENT='no-cache'>
+	<META HTTP-EQUIV='Cache-Control' CONTENT='no-cache'>
+	<META CONTENT='IE=EmulateIE7' http-equiv='X-UA-Compatible'>
+	<title>Albo Pretorio - Visione Dettaglio</title>
+	
+<script type="text/javascript" src='/urbi/stjsfunc.js'></script>
+<SCRIPT type="text/javascript"><!--
+ns4=document.layers
+ie4=document.all
+ns6=document.getElementById&&!document.all
+screen_height = screen.height;
+screen_width = screen.width;
+stlbase="stlbase.sto";
+stdecode="stdecode.sto";
+stdecstl="stdecstl.sto";
+function StwDocument(win,doc)
+{
+   this.win     = win;
+   this.doc     = doc;
+   this.items   = new Array();
+   this.gifs    = new Array();
+   this.current =1;
+   this.tabtop  =0;
+   this.formtop =0;
+   this.offset    =0;
+   this.formwidth =0;
+   this.formheight=0;
+   this.form0     =false;
+   this.freeform  =false;
+   this.noformbkg =false;
+   this.w_shortmenu=20;
+   this.w_fullmenu =20;
+   this.w_workarea =Math.round(screen_width*0.95-this.w_shortmenu);
+   this.h_height   =Math.round(screen_height*0.9);
+   this.w_fix      =610;
+   this.h_fix      =336;
+   this.available_width;
+   this.available_height;
+   // methods
+   this.writeStyles=stw_writeStyles;
+   this.addItem    =stw_addItem;
+   this.writeTabs  =stw_writeTabs;
+   this.Init       =stw_Init;
+   this.activateTab=stw_activateTab;
+   this.swap       =stw_swapPage;
+   this.show       =stw_show;
+   this.hide       =stw_hide;
+   this.onClick    =stw_onTabClick;
+   this.write      =stw_writeLayer;
+   this.writeInfo  =stw_writeInfoLayer;
+   this.writeStatus=stw_writeStatusLayer;
+   this.getFld     =stw_getFldVal;
+   this.setFld     =stw_setFldVal;
+   this.setDef     =stw_setFldDef;
+   this.setVal     =stw_setVal;
+   this.setDesc    =stw_setDesc;
+   this.slide      =stw_slide;
+   this.createForm0=stw_createForm0;
+   this.fillForm0  =stw_fillForm0;
+   this.reset      =stw_resetForms;
+   this.Field      =stw_getField;
+   this.Form       =stw_getForm;
+   // calls for stdecode.sto and other external things
+   this.decodebase =stw_decodebase;
+   this.decode     =stw_decode;
+   this.decodeEx   =stw_decodeEx;
+   this.decodeKey  =stw_decodeKey;
+   this.decodeKeyEx=stw_decodeKeyEx;
+   this.decstlbase =stw_decstlbase;
+   this.decstl     =stw_decstl;
+   this.decstlEx   =stw_decstlEx;
+   this.decstlKey  =stw_decstlKey;
+   this.decstlKeyEx  =stw_decstlKeyEx;
+   this.calendar   =stw_calendar;
+   this.calendar2  =stw_calendar2;
+   this.calendarEx   =stw_calendarEx;
+   this.stlbase    =stw_stlbase;
+   this.stl        =stw_stl;
+   this.stlEx      =stw_stlEx;
+   this.help       =stw_help;
+   this.helpindex  =0;
+   this.helppage   =0;
+}
+function stw_writeStyles()
+{
+  var doc=this.doc;
+  var txt="";
+  var bkg="";
+  var bkg2="";
+  doc.write('\n<STYLE TYPE="text/css">\n');
+bkg='';
+  txt +='#titleDiv {position: absolute; z-index: 1; visibility: visible; top:0;';
+  txt +=' left:'  +this.w_shortmenu+ ';'
+  txt +=' width:' +this.w_workarea+ ';'
+  txt +=' height:'+this.h_height+   ';'
+  txt+=bkg + '}\n';
+  txt +='#statusDiv {position: absolute; z-index: 8; visibility: hidden ; top:0;';
+  txt +=' left:'  +this.w_shortmenu+ ';'
+  txt +=' width:' +this.w_workarea+ ';'
+  txt+=bkg + '}\n';
+  if(this.items.length)
+  {
+    txt +='#tabDiv    {position: absolute;   z-index: 2; visibility: hidden; top:0;';
+    txt +=' left:'  +this.w_shortmenu+ ';' +bkg;
+    txt +=' width:' +this.w_workarea+ ';}\n';
+bkg='';
+bkg2='';
+    if(this.freeform) bkg=bkg2;
+    if(this.noformbkg) bkg='';
+    txt +='#form0Div  {position: absolute;   z-index: 3; visibility: hidden;';
+    txt +=' left:'  +this.w_shortmenu+ ';' +bkg;
+    if(!this.freeform)
+    {  txt +=' width:' +this.w_fix+ '; heigth:'+ this.h_fix+';}\n';
+    }
+    else
+    {  txt +=' width:' +this.w_workarea+ ';}\n';
+    }
+    for(i=1; i<=this.items.length; i++)
+    {
+      txt+='#form' +i+ 'Div  {position: absolute; z-index: 4; visibility: hidden;';
+      txt +=' left:'  +this.w_shortmenu+ ';' +bkg;
+      if(!this.freeform)
+      {  //txt +=' width:' +this.w_fix+ '; heigth:'+ this.h_fix+';}\n';
+         txt +=' background-repeat: no-repeat; width:' +this.w_fix+ '; heigth:'+ this.h_fix+';}\n';
+      }
+      else
+      {  txt +=' width:' +this.w_workarea+ ';}\n';
+      }
+    }
+  }
+  doc.write(txt);
+  doc.write("\n<\/STYLE>\n");
+}
+function setLayerCoo(lyr,t,l,w,h)
+{
+  if(ns4)
+  { lyr.top  = t;  lyr.width = w;
+    lyr.left = l;  lyr.height= h;
+  }
+  else
+  { lyr.style.pixelTop  = t; lyr.style.pixelWidth = w;
+    lyr.style.pixelLeft = l; lyr.style.pixelHeight = h
+  }
+}
+function setLayerLeft(lyr,l)
+{
+  if (ns4) lyr.left = l;
+  else     lyr.style.pixelLeft=l;
+}
+function moveLayer(lyr,t,l)
+{
+  if (ns4) { lyr.top  = t;  lyr.left = l; }
+  else     { lyr.style.pixelTop  = t; lyr.style.pixelLeft = l;}
+}
+function clipLayer(lyr,t,r,b,l)
+{
+  if(ns4)
+  {  lyr.clip.top = t;    lyr.clip.right = r;
+     lyr.clip.bottom = b; lyr.clip.left = l;
+  }
+  else if (ie4) lyr.clip = "rect("+t+"px "+r+"px "+b+"px "+l+"px)";
+}
+function layerHeight(lyr)
+{
+  if(ns4) return lyr.document.height;
+  else    return lyr.scrollHeight;
+}
+function layerWidth(lyr)
+{
+  if(ns4) return lyr.document.width;
+  else    return lyr.scrollWidth;
+}
+function stw_Init()
+{
+  var doc   =this.doc;
+  var layers;
+  var menuX =0;
+  var ttop  =0;
+  var lleft =this.w_shortmenu;
+  var formwidth=0;
+  var formheight=0;
+  var cmpheight=0;
+  var cmpwidth =0;
+  var slidestart=0;
+  this.writeTabs();
+  if(ns4)
+  {
+    this.available_width=this.win.innerWidth;
+    this.available_height=this.win.innerHeight;
+    layers=this.doc.layers;
+  }
+  else if(ie4)
+  {
+    this.available_width=doc.body.clientWidth;
+    this.available_height=doc.body.clientHeight;
+    layers=this.doc.all;
+  }
+  if(ie4)
+  { this.w_workarea=this.available_width-this.w_shortmenu;
+    this.h_height=this.available_height;
+  }
+  var titleLyr =layers["titleDiv"];
+  var tabLyr   =layers["tabDiv"];
+  var form0Lyr =layers["form0Div"];
+  var statusLyr=layers["statusDiv"];
+  var formLyr  =0;
+  if(titleLyr)
+  {
+    setLayerCoo(titleLyr,0,lleft, this.w_workarea, this.h_height);
+    clipLayer(titleLyr,0, this.w_workarea, this.h_height,0);
+    ttop=layerHeight(titleLyr);
+  }
+  this.tabtop=ttop;
+  if(tabLyr)
+  {
+    setLayerCoo(tabLyr,ttop,lleft, this.w_workarea, this.h_height);
+    clipLayer(tabLyr,0, this.w_workarea, this.h_height,0);
+    ttop +=layerHeight(tabLyr);
+  }
+  this.formtop=ttop;
+  if(this.items.length > 0)
+  {
+    for(i=1; i<=this.items.length; i++)
+    {
+      if(ns4) formLyr=doc.layers["form" +i+ "Div"];
+      else    formLyr=layers["form" +i+ "Div"];
+      if(!formLyr)
+      { alert("Layer Form"+i+"Div =0 ???");
+        continue;
+      }
+      cmpheight=layerHeight(formLyr);
+      if(i>1) cmpheight +=this.offset;
+      cmpwidth=layerWidth(formLyr);
+      if(cmpheight >formheight) formheight=cmpheight;
+      if(cmpwidth  >formwidth ) formwidth =cmpwidth;
+    }
+    if(!this.freeform)
+    {
+      //this.formheight=this.h_fix;
+      //this.formwidth =this.w_fix;
+      if(formheight < this.h_fix) this.formheight=this.h_fix;
+      else                        this.formheight=formheight;
+      if(formwidth < this.w_fix) this.formwidth =this.w_fix;
+      else                       this.formwidth =formwidth;
+    }
+    else
+    { this.formheight=formheight;
+      this.formwidth =formwidth;
+    }
+  }
+  if(form0Lyr)
+  {
+    setLayerCoo(form0Lyr,ttop,lleft, this.formwidth, this.formheight);
+    clipLayer(form0Lyr,0, this.formwidth, this.formheight,0);
+    this.offset=0; //layerHeight(form0Lyr);
+    this.form0=true;
+  }
+  if(this.items.length > 0)
+  {
+    for(i=1; i<=this.items.length; i++)
+    {
+      if(ns4) formLyr=doc.layers["form" +i+ "Div"];
+      else    formLyr=layers["form" +i+ "Div"];
+      if(!formLyr)
+      { alert("Layer Form"+i+"Div =0 ???");
+        continue;
+      }
+      if(i > 1)
+      { setLayerCoo(formLyr,ttop+this.offset,lleft, this.formwidth, this.formheight);
+        clipLayer(formLyr,0, this.formwidth, this.formheight,0);
+      }
+      else
+      { setLayerCoo(formLyr,ttop,lleft, this.formwidth, this.formheight);
+        clipLayer(formLyr,0, this.formwidth, this.formheight,0);
+      }
+    }
+    ttop+=this.formheight;
+  }
+  if(statusLyr)
+  {
+    setLayerCoo(statusLyr,ttop,lleft, this.w_workarea, this.h_height);
+    clipLayer(statusLyr,0, this.w_workarea, this.h_height,0);
+  }
+  formLyr=layers["form1Div"];
+  if(titleLyr) this.show("titleDiv");
+  if(tabLyr)   this.show("tabDiv");
+  if(formLyr)  this.show("form1Div");
+  if(statusLyr)this.show("statusDiv");
+}
+function stw_slide(to,step,time,tabdoc)
+{
+  var doc=tabdoc.doc;
+  var xpos;
+  if(ns4) xpos=parseInt(doc["form0Div"].left);
+  else    xpos=parseInt(doc.all["form0Div"].style.pixelLeft);
+  if(xpos < to)
+  {
+     if(xpos+step > to) xpos=to
+     else               xpos +=step;
+     if(ns4)
+	 {	doc["form0Div"].left = xpos;
+		doc["tabDiv"].left = xpos;
+     }
+     else
+	 {	doc.all["form0Div"].style.pixelLeft = xpos;
+		doc.all["tabDiv"].style.pixelLeft = xpos;
+	 }
+     setTimeout(stw_slide,time,to,step,time,tabdoc);
+  }
+  else tabdoc.show("form1Div");
+}
+function stw_addItem(label,gif)
+{
+  this.items[this.items.length] = label;
+  this.gifs[this.gifs.length] = gif;
+}
+function stw_activateTab(tab)
+{ var idx=tab;
+  var doc = (ns4) ? this.doc.tabDiv.document: this.doc;
+  if(idx != this.current)
+  {
+     doc.images["tab_img"+this.current].src = "/urbi/images/"+this.gifs[this.current-1]+"_dn.gif";
+     doc.images["tab_img"+idx].src = "/urbi/images/"+this.gifs[idx-1]+"_up.gif";
+     this.current=idx;
+  }
+}
+function stw_swapPage(hideobj,showobj)
+{
+  this.hide(hideobj);
+  this.show(showobj);
+}
+function stw_show(showobj)
+{
+  if (ns4) this.doc.layers[showobj].visibility = "show";
+  else     this.doc.all[showobj].style.visibility = "visible";
+}
+function stw_hide(hideobj)
+{
+  if(ns4) this.doc.layers[hideobj].visibility = "hide";
+  else    this.doc.all[hideobj].style.visibility = "hidden";
+}
+function stw_onTabClick(tab)
+{
+  var old=this.current;
+  this.activateTab(tab);
+  this.swap("form"+old+"Div","form"+tab+"Div");
+}
+function stw_writeTabs(w,h)
+{
+  if(!w) var w=94;
+  if(!h) var h=96;
+  var tabtxt;
+if(this.items.length > 1)
+{
+  var tabtxt="";
+  for(i=1; i<=this.items.length;i++)
+  {
+    tabtxt +="<A HREF='javascript:onTabClick(" + i +");'>";
+    tabtxt +="<IMG NAME='tab_img"+i +"' ";
+    if(i==1) tabtxt +=" SRC='/urbi/images/" + this.gifs[i-1]+"_up.gif'";
+    else     tabtxt +=" SRC='/urbi/images/" + this.gifs[i-1]+"_dn.gif'";
+    tabtxt +=" ALT='" + this.items[i-1]+"' ALIGN='bottom' ";
+    tabtxt +=" BORDER='0' SUPPRESS='TRUE' ><\/A>";
+  }
+  if(ns4)
+  { var doc=this.doc.layers["tabDiv"].document;
+    doc.open();
+    doc.write(tabtxt);
+    doc.close();
+  }
+  else if (ie4) this.doc.all["tabDiv"].innerHTML = tabtxt;
+ }
+}
+function stw_writeLayer(id,text,nestref)
+{
+  if (ns4)
+  {
+    if (nestref) var lyr = eval('this.doc.'+nestref+'.document.'+id+'.document');
+    else
+    { if(this.doc.layers[id]) var lyr = this.doc.layers[id].document;
+      else var lyr=false;
+    }
+    if(lyr)
+    { lyr.open();
+      lyr.write(text);
+      lyr.close();
+    }
+  }
+  else if (ie4)
+  { if(this.doc.all[id]) this.doc.all[id].innerHTML = text;
+  }
+}
+function stw_writeInfoLayer(text)
+{
+   this.write("form0Div",text);
+}
+function stw_writeStatusLayer(text)
+{
+   this.write("statusDiv",text);
+}
+function stw_getFldVal(frm,fld)
+{
+  var myfld=this.Field(frm,fld);
+  if(myfld) return st_getfieldvalue(myfld);
+  else      return "";
+}
+function stw_setFldVal(frm,fld,value)
+{
+  var myfld=this.Field(frm,fld);
+  if(myfld) st_setfieldvalue(myfld,value);
+}
+function stw_setFldDef(frm,fld)
+{
+  var myfld=this.Field(frm,fld);
+  if(myfld) st_setfielddefault(myfld);
+}
+function stw_setDesc(frm,fld,text)
+{
+  if(ns4)
+  { if(this.doc.layers["form"+frm+"Div"].document.layers[fld])
+    { var ldoc=this.doc.layers["form"+frm+"Div"].document.layers[fld].document;
+        ldoc.open();
+        ldoc.write(text);
+        ldoc.close();
+    }
+    else
+    { for(var i=1; i <=this.items.length; i++)
+      {  if(this.doc.layers["form"+i+"Div"].document.layers[fld])
+         { var ldoc=this.doc.layers["form"+i+"Div"].document.layers[fld].document;
+           ldoc.open();
+           ldoc.write(text);
+           ldoc.close();
+           break;
+         }
+      }
+    }
+  }
+  else
+  {  campo=this.doc.all[fld].innerHTML= text;
+  }
+}
+function stw_setVal(frm,fld,value)
+{
+  var myfld=this.Field(frm,fld);
+  if(!myfld)
+  { for(i=1; i <=this.items.length; i++)
+    { myfld=this.Field(i,fld);
+      if(myfld) break;
+    }
+  }
+  if(myfld) st_setfieldvalue(myfld,value);
+//  else       this.setDesc(frm,fld,value);
+}
+function stw_getField(frm,fld)
+{
+  var mform=this.Form(frm);
+  if(mform.elements[fld]) return mform.elements[fld];
+  for(var i=0; i<mform.elements.length; i++)
+  {
+      if(mform.elements[i].name.toUpperCase()==fld) return mform.elements[i];
+  }
+  return false;
+}
+function st_getfieldvalue(fldobj)
+{
+if(!fldobj) return "";
+  var value="";
+  switch(fldobj.type)
+  {
+    case "text":
+    case "textarea":
+    case "hidden":
+    case "password":
+          value=fldobj.value;
+          break;
+    case "checkbox":
+          if(fldobj.checked) value=fldobj.value;
+          break;
+    case "select-one":
+          if(fldobj.selectedIndex >=0)
+             value= fldobj.options[fldobj.selectedIndex].value;
+          break;
+    case  "select-multiple":
+          if(fldobj.selectedIndex >=0)
+          {  for(var i=0; i<fldobj.length; i++)
+             { if(fldobj.options[i].selected && fldobj.options[i].value !="")
+               { if(value != "") value +="|";
+                 value +=fldobj.options[i].value;
+               }
+             }
+          }
+          break;
+    default:
+           if(fldobj.length && fldobj.length >0)
+           {  if(fldobj[0].type=="radio")
+              { var radio;
+                for(var i=0; i<fldobj.length; i++)
+                {   radio=fldobj[i];
+                    if(radio.checked)
+                    {  value=radio.value;
+                       break;
+                    }
+                }
+              }
+           }
+           else value=fldobj.value;
+           break;
+  }
+  return value;
+}
+function st_setfieldvalue(fldobj,value)
+{
+  switch(fldobj.type)
+  {
+    case "text":
+    case "textarea":
+    case "hidden":
+    case "password":
+          fldobj.value=value;
+          break;
+    case "checkbox":
+          if(value && value != "")  fldobj.checked=true;
+          else                      fldobj.checked=false;
+          break;
+    case "select-one":
+          fldobj.selectedIndex=-1;
+          for(i=0; i <fldobj.length; i++)
+          { if(fldobj.options[i].value==value)
+            {  fldobj.options[i].selected=true;
+               fldobj.selectedIndex=i;
+            }
+            else
+            {  fldobj.options[i].selected=false;
+            }
+          }
+          break;
+    case  "select-multiple":
+          if(fldobj.length >0 && value != "")
+          {  var val_list = value.split ('|');
+             if(val_list[0]!="@") break;
+             for(i=0; i<fldobj.length; i++)
+             {  if(val_list.length > i+1)
+                {  fldobj.options[i].value=val_list[i+1];
+                   fldobj.options[i].text=val_list[i+1];
+                }
+                else
+                {  fldobj.options[i].value="";
+                   fldobj.options[i].text="";
+                }
+             }
+          }
+          break;
+    case  "radio":
+    default:
+           if(fldobj.length && fldobj.length >0)
+           {  if(fldobj[0].type=="radio")
+              { var radio;
+                for(i=0; i<fldobj.length; i++)
+                {   radio=fldobj[i];
+                    if(radio.value==value) radio.checked=true;
+                    else                   radio.checked=false;
+                }
+                return;
+              }
+           }
+           else fldobj.value=value;
+           break;
+  }
+}
+function stw_getForm(frm)
+{
+  if(frm==0) return this.doc.Form0;
+  if(ns4)    return this.doc.layers["form"+frm+"Div"].document.forms["Form"+frm];
+  else       return this.doc.forms["Form"+frm];
+}
+function stw_fillForm0()
+{
+  var doc=this.doc;
+  if(!doc.Form0) return;
+  var mform=doc.Form0;
+  var sform=0;
+  var lastname="";
+  for(i=1; i<=this.items.length; i++)
+  {
+    if(ns4)  sform=doc.layers["form"+i+"Div"].document.forms["Form"+i];
+    else     sform=doc.forms["Form"+i];
+    if(!sform) continue;
+    for(j=0; j<sform.length; j++)
+    {   if(mform.elements[sform.elements[j].name] )
+        { lastname=sform.elements[j].name;
+          mform.elements[sform.elements[j].name].value=this.getFld(i,sform.elements[j].name);
+        }
+    }
+  }
+}
+function stw_resetForms()
+{
+  var sform=0;
+  for(i=1; i<=this.items.length; i++)
+  { if(ns4)  sform=this.doc.layers["form"+i+"Div"].document.forms["Form"+i];
+    else     sform=this.doc.forms["Form"+i];
+    if(sform) sform.reset();
+  }
+  this.writeStatus("");
+}
+function stw_createForm0(action)
+{
+  var doc=this.doc;
+  var lastname="";
+  doc.write('<FORM name="Form0" method="POST" enctype="multipart/form-data"');
+  if(action) doc.writeln(' action="'+action+'">');
+  else       doc.writeln(' action="" >');
+  for(i=1; i<=this.items.length; i++)
+  { if(ns4) var sform=doc.layers["form"+i+"Div"].document.forms["Form"+i];
+    else    var sform=doc.forms["Form"+i];
+    if(sform)
+    {  for(j=0; j<sform.length; j++)
+       {  if(sform.elements[j].name !=lastname)
+          { if(sform.elements[j].name != "" && sform.elements[j].type !="button")
+               doc.writeln('<input type="hidden" name="' +sform.elements[j].name+'">');
+            lastname=sform.elements[j].name;
+          }
+       }
+    }
+  }
+  doc.writeln('<\/form>');
+}
+function stw_calendar(fld)
+{
+  var mform =this.Form(this.current);
+  window.dateField = mform.elements[fld];
+  calendar = window.open('/popup/calendar.html','cal','WIDTH=200,HEIGHT=250');
+}
+function stw_calendar2(fld,fld2)
+{
+  var mform =this.Form(this.current);
+  window.dateField = mform.elements[fld];
+  window.dateField2 = mform.elements[fld2];
+  calendar = window.open('/popup/calendar2.html','cal','WIDTH=200,HEIGHT=250');
+}
+function stw_calendarEx(fld,fld2)
+{
+  var nargs=stw_calendarEx.arguments.length;
+  if(nargs!=2)
+  {
+	alert("Mancano i parametri per calendar!");
+    	return;
+  }
+  var mform =this.Form(this.current);
+  window.dateField = mform.elements[fld];
+  window.eventField = fld2;
+  Doc=this;
+  calendar = window.open('/popup/calendar.html','cal','WIDTH=200,HEIGHT=250');
+  if(calendar.opener==null) calendar.opener=window;
+  calendar.focus();
+}
+// mode=1 decode; 2=decode key
+function stw_decodebase(lst,args,mode,submit)
+{
+  var val;
+  var plist="CX=yes";
+  var loc=stdecode+'?Mode='+mode+'&Lst='+lst+'&LF='+this.current;
+  var nargs=args.length;
+  if(mode==1) plist="";
+  if(submit) loc=loc+"&DoSubmit=1";
+  if(args.length <2)
+  {  alert("Mancano i parametri per decode()");
+     return;
+  }
+  if(args.length ==2)
+  { val=escape(this.getFld(this.current,args[1]));
+    loc +="&Q1=" + val +'&C=' + args[1];
+  }
+  else
+  {  if(args.length >2)
+     { str=args[nargs-1];
+       if(str.indexOf("=") >= 0)
+       {  plist=str;
+          nargs--;
+       }
+     }
+     for(var i=1; i<nargs; i++)
+     {   val=escape(this.getFld(this.current,args[i]));
+         loc +="&Q" +i+ "="+val;
+     }
+     loc +="&" + plist;
+  }
+  this.win.parent.dummy.location=loc;
+}
+function stw_decode(lst,fld)
+{ this.decodebase(lst,stw_decode.arguments,1,false);
+}
+function stw_decodeEx(lst,fld)
+{ this.decodebase(lst,stw_decodeEx.arguments,1,true);
+}
+function stw_decodeKey(lst,fld)
+{ this.decodebase(lst,stw_decodeKey.arguments,2,false);
+}
+function stw_decodeKeyEx(lst,fld)
+{ this.decodebase(lst,stw_decodeKeyEx.arguments,2,true);
+}
+var Doc;
+function stw_stlbase(lst,args,submit)
+{
+  var ns4 = (document.layers)? true:false
+  var ie4 = (document.all)? true:false
+  if(ns4)
+	browse = 'N';
+  else
+	browse = 'E';
+  var val;
+  var plist="CX=yes";
+  var nargs=args.length;
+  var loc=stlbase+'?&Lst='+lst+'&LF='+this.current + '&Browse=' + browse;
+  if(submit) loc =loc+"&DoSubmit=1";
+  if(args.length <2)
+  {  alert("Mancano i parametri per stl()");
+     // GIOVANNI: in qualche caso dava un warning -> return false;
+  }
+  if (args.length >2)
+  {  str=args[nargs-1];
+     if( str.indexOf("=") >= 0)
+     {   plist=str;
+         nargs--;
+     }
+  }
+  for(var i=1; i<nargs; i++)
+  {
+  	  val=escape(this.getFld(this.current,args[i]));
+     loc +="&Q" +i+ "="+val;
+  }
+  loc +="&" + plist;
+  Doc=this;
+  stlwin = window.open(loc ,'stl',
+      'WIDTH=500,HEIGHT=600,,top=0,left=0,resizable=1,scrollbars=1');
+  if(stlwin.opener==null) stlwin.opener=window;
+  stlwin.focus();
+}
+function stw_stlEx(lst,fld)
+{ this.stlbase(lst,stw_stlEx.arguments,true);
+}
+function stw_stl(lst,fld)
+{
+this.stlbase(lst,stw_stl.arguments,false);
+}
+function stw_decstlbase(lst,args,mode,submit)
+{
+	//mode=1 decode; 2=decode key
+  	var val;
+  	var pp;
+  	var pp1;
+	var strstl;
+	var strstlok;
+	var dl;
+  	var loc=stdecstl+'?Mode='+mode+'&Lst='+lst+'&LF='+this.current;
+  	var nargs=args.length;
+  	if(submit) loc=loc+"&DoSubmit=1";
+  	if(args.length <4)
+  	{
+		alert("Mancano i parametri per decstl()");
+		return;
+ 	}
+	strstl=args[nargs-1];
+	strdec=args[nargs-2];
+	//Controllo se siamo nel modo con | o con funzione
+	if(strstl.indexOf("|") != -1)
+	{
+		//Controllo che esistano almeno tre |
+		var strstl1 = strstl;
+		var k=0;
+		while(strstl1.indexOf("|") != -1)
+		{
+			pp = strstl1.indexOf("|");
+       		 	strstl1 = strstl1.substring(pp+1);
+			k++;
+		}
+  		if(k<3)
+  		{
+			alert("Mancano i parametri per la parte stl di decstl()");
+			return;
+ 		}
+		var DoSubmitS = strstl.split("|")[1];
+  		if(DoSubmitS != '0' && DoSubmitS != '1')
+  		{
+			alert("Il secondo parametro della parte stl deve essere 0 o 1");
+			return;
+ 		}
+		strstlok = strstl.replace(/&/gi,"|");
+		dl=1;
+	}
+	else
+	{
+		dl=0;
+		strstlok = strstl;
+	}
+     	for(var i=1; i<nargs-2; i++)
+     	{
+		val=escape(this.getFld(this.current,args[i]));
+         	loc +="&Q" +i+ "="+val;
+     	}
+  	loc +="&" + strdec;
+  	loc = loc + "&DL=" + dl + "&STRSTL=" + strstlok;
+  	this.win.parent.dummy.location=loc;
+}
+function stw_decstl(lst,fld)
+{ this.decstlbase(lst,stw_decstl.arguments,1,false);
+}
+function stw_decstlEx(lst,fld)
+{ this.decstlbase(lst,stw_decstlEx.arguments,1,true);
+}
+function stw_decstlKey(lst,fld)
+{ this.decstlbase(lst,stw_decstlKey.arguments,2,false);
+}
+function stw_decstlKeyEx(lst,fld)
+{ this.decstlbase(lst,stw_decstlKeyEx.arguments,2,true);
+}
+function stw_help()
+{
+  if(this.helpindex && this.helppage)
+  {
+  	if(this.helppage.indexOf(".htm") != -1)
+  		var url=this.helpindex+ ".sto?hpage=" + this.helppage;
+	else
+  		var url=this.helpindex+ ".sto?hpage=" + this.helppage+".sto";
+	Help = window.open(url,'Help','width='+(screen.width-120)+',height='+(screen.height-120)+',top=30,left=50,resizable=1,scrollbars=1');
+  }
+  else if(this.helppage)
+  {
+  	if(this.helppage.indexOf(".htm") != -1)
+  		var url=this.helppage;
+	else
+  		var url=this.helppage+".sto";
+	Help = window.open(url,'Help','width='+(screen.width-120)+',height='+(screen.height-120)+',top=30,left=50,resizable=1,scrollbars=1');
+  }
+}
+function showHelp(url)
+{
+  Help = window.open(url,'Help','width='+(screen.width-120)+',height='+(screen.height-120)+',top=30,left=50,resizable=1,scrollbars=1');
+}
+function writeCookie(CookieName,CookieValue)
+{
+   document.cookie = CookieName + "=" + escape (CookieValue);
+}
+function readCookie (CookieName) {
+  var CookieString = document.cookie;
+  var CookieSet = CookieString.split (';');
+  var SetSize = CookieSet.length;
+  var CookiePieces
+  var ReturnValue = "";
+  var x = 0;
+  for(x = 0; ((x < SetSize) && (ReturnValue == "")); x++)
+  { CookiePieces = CookieSet[x].split ('=');
+    if(CookiePieces[0].substring (0,1) == ' ')
+    { CookiePieces[0] = CookiePieces[0].substring (1, CookiePieces[0].length);
+    }
+    if(CookiePieces[0] == CookieName)
+    { ReturnValue = CookiePieces[1];
+    }
+  }
+  return(ReturnValue);
+}
+function stw_removeMenu()
+{
+   writeCookie("StwFrames","2"+main.location.pathname);
+   window.location=window.location.pathname;
+}
+function stw_showMenu()
+{
+   writeCookie("StwFrames","1"+main.location.pathname);
+   window.location=window.location.pathname;
+}
+function st_setfielddefault(fldobj)
+{
+	switch(fldobj.type)
+	{
+		case "text":
+		case "textarea":
+		case "hidden":
+		case "password":
+			fldobj.value=fldobj.defaultValue;
+			break;
+		case "checkbox":
+		case "radio":
+			fldobj.checked=fldobj.defaultChecked;
+			break;
+		case "select-multiple":
+		case "select-one":
+			for(var i=0; i<fldobj.length; i++)
+				fldobj.options[i].selected=fldobj.options[i].defaultSelected;
+			break;
+		default:
+			if(fldobj.length && fldobj.length >0 && (fldobj[0].type=="radio" || fldobj[0].type=="checkbox"))
+				for(var i=0; i<fldobj.length; i++)
+					fldobj[i].checked=fldobj[i].defaultChecked;
+			break;
+	}
+}
+function StwDocument0(win,doc)
+{
+   this.win     = win;
+   this.doc     = doc;
+   this.current = 1;
+   this.formwidth =0;
+   this.formheight=0;
+   this.available_width;
+   this.available_height;
+   // methods
+   this.Init       =stw0_Init;
+   this.getFld     =stw0_getFldVal;
+   this.setFld     =stw0_setFldVal;
+   this.setDef     =stw0_setFldDef;
+   this.setVal     =stw0_setVal;
+   this.reset      =stw0_resetForms;
+   this.Field      =stw0_getField;
+   this.Form       =stw0_getForm;
+   // calls for stdecode.sto and other external things
+   this.decodebase =stw_decodebase;
+   this.decode     =stw_decode;
+   this.decodeEx   =stw_decodeEx;
+   this.decodeKey  =stw_decodeKey;
+   this.decodeKeyEx=stw_decodeKeyEx;
+   this.decstlbase =stw_decstlbase;
+   this.decstl     =stw_decstl;
+   this.decstlEx   =stw_decstlEx;
+   this.decstlKey  =stw_decstlKey;
+   this.decstlKeyEx  =stw_decstlKeyEx;
+   this.calendar   =stw_calendar;
+   this.calendar2   =stw_calendar2;
+   this.calendarEx   =stw_calendarEx;
+   this.stlbase    =stw_stlbase;
+   this.stl        =stw_stl;
+   this.stlEx      =stw_stlEx;
+   this.help       =stw_help;
+   this.helpindex  =0;
+   this.helppage   =0;
+   this.write      =stw_writeLayer;
+   this.writeStatus=stw_writeStatusLayer;
+}
+function stw0_Init()
+{
+  if(ns4)
+  { this.available_width=this.win.innerWidth;
+    this.available_height=this.win.innerHeight;
+  }
+  else if(ie4)
+  { this.available_width=this.doc.body.clientWidth;
+    this.available_height=this.doc.body.clientHeight;
+  }
+}
+function stw0_getFldVal(frm,fld)
+{ var myfld=this.Field(frm,fld);
+  if(myfld) return st_getfieldvalue(myfld);
+  else      return "";
+}
+function stw0_setFldVal(frm,fld,value)
+{ var myfld=this.Field(frm,fld);
+  if(!myfld)  { alert("Field "+fld +"does not exist"); return;}
+  st_setfieldvalue(myfld,value);
+}
+function stw0_setFldDef(frm,fld)
+{ var myfld=this.Field(frm,fld);
+  if(!myfld)  { alert("Field "+fld +"does not exist"); return;}
+  st_setfielddefault(myfld);
+}
+function stw0_setVal(frm,fld,value)
+{
+  var myfld=this.Field(frm,fld);
+  if(!myfld)  { alert("Field "+fld +"does not exist"); return;}
+  st_setfieldvalue(myfld,value);
+}
+function stw0_getField(frm,fld)
+{
+  var mform=this.Form(frm);
+  if(!mform) return false;
+  if(mform.elements[fld]) return mform.elements[fld];
+  for(var i=0; i<mform.elements.length; i++)
+  {
+  		if(!mform.elements[i].type) continue;
+      if(mform.elements[i].name.toUpperCase()==fld) return mform.elements[i];
+  }
+  return false;
+}
+function stw0_getForm(frm)
+{
+  return this.doc.forms[0];
+}
+function stw0_resetForms()
+{
+  var mform=this.doc.forms[0];
+  if(mform) mform.reset();
+  this.writeStatus("");
+}
+// --></SCRIPT>
+<script type="text/javascript">
+var Doc = new StwDocument0(window,document);
+function DocInit()
+{
+	Doc.Init();
+}
+function Apro_Help_Gen(url)
+{
+	var win=window.open(url ,'Vis',
+	'WIDTH=800,HEIGHT=600,,top=0,left=0,resizable=1,scrollbars=1');
+	win.focus();
+}
+	function Apro_Help(db,hpg,sid)
+	{
+		var url = hpg + ".sto?DB_NAME=" + db;
+		var win=window.open(url ,'Vis',
+		'WIDTH=800,HEIGHT=600,,top=0,left=0,resizable=1,scrollbars=1');
+		win.focus();
+	}
+	
+function Cambio_Utente(id,db)
+{
+	window.location = "soldelega.sto?DB_NAME="+db+"&SOLIdReq="+id;
+}
+function Ripristino_Utente(id,db)
+{
+	window.location = "soldelega.sto?StwEvent=102&DB_NAME="+db+"&IdDelega="+id;
+}
+</script>
+	<link rel="stylesheet" type="text/css" href="solgeneralecss2009.css">
+	<link rel="stylesheet" type="text/css" href="solgeneralecss2009_server.css">
+	<link rel="stylesheet" type="text/css" href="solgeneralecss2009_l202191.css">
+	<link rel="StyleSheet" href="/urbi/treeSOLMESSI.css" type="text/css">
+	
+	</head>
+	<body onLoad="DocInit();">
+<script type="text/javascript">
+function MainSubmit(stwevent,numero)
+{
+   document.Form0.StwEvent.value=stwevent;
+   if(stwevent == 101)
+   {
+   
+   	document.Form0.OpenTree.value='';
+   }
+	if(stwevent==101) //bottone visualizza devo ripartire dalla prima pagina
+	{
+		Doc.setFld(0, 'PaginaCorrente', 1 );
+		Doc.setFld(0, 'inizio', 0 );
+	}
+	if(stwevent == 110 || stwevent == 111)
+	{
+		document.Form0.StwEvent.value=101;
+   		document.Form0.inizio.value=numero;
+	}
+    document.Form0.action='ur1ME001.sto';
+    document.Form0.submit();
+}
+function sol_calendar(fld)
+{
+	window.dateField = document.Form0.elements[fld];
+	calendar = window.open('/popup/calendar.html','cal','WIDTH=200,HEIGHT=250');
+}
+function Dettagli(idm, tmpArchivio)
+{
+    var db = document.Form0.DB_NAME.value;
+ 	Dett = window.open('/urbi/progs/urp/ur1ME001.sto?' +
+	'StwEvent=102&DB_NAME=' + db +
+	'&IdMePubblica=' + idm
+	+ '&Archivio=' + tmpArchivio
+	,'Dett','scrollbars=yes,menubar=no,toolbar=no,left=0,top=0,width=750,height=700');
+	Dett.focus();
+}
+function DettagliPratica(idp, idm, anno, numero)
+{
+    var db = document.Form0.DB_NAME.value;
+ 	//Dett = window.open(
+ 	window.location = '/urbi/progs/urp/ur1UR013.sto?' +
+	'StwEvent=101&DB_NAME=' + db +
+	'&IdPratica=' + idp +
+	'&IdMessi=' + idm +
+	'&PraticaAnnoVideo=' + anno +
+	'&PraticaDaNumeroVideo=' + numero +
+	'&PraticaANumeroVideo=' + numero
+	//,'Dett','scrollbars=yes,menubar=no,toolbar=no,left=0,top=0,width=750,height=700');
+	//Dett.focus();
+}
+function DettagliAtto(idm)
+{
+    var db = document.Form0.DB_NAME.value;
+ 	Dett = window.open('/urbi/progs/urp/ur2DE001.sto?' +
+	'StwEvent=101&DB_NAME=' + db +
+	'&IdDelibere=' + idm
+	,'Dett_del','scrollbars=yes,menubar=no,toolbar=no,left=0,top=0,width=750,height=700');
+	Dett.focus();
+}
+// funzioni per paginazione
+function NumeroPagina(pagina)
+{
+	var Npag = Doc.getFld(0,'NumRecordMax');
+	if (isNumber(pagina,1,Npag))
+	{
+		var VisualizzaMax = Doc.getFld(0,'ViewNumber');
+		var pagina = pagina.value ;
+		pagina = pagina - 1 ;
+		var inizio = pagina * VisualizzaMax ;
+		Doc.setFld(0,'inizio',inizio);
+		document.Form0.StwEvent.value=101;
+	    document.Form0.action='ur1ME001.sto';
+	    document.Form0.submit();
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+function MaxRecord(obj)
+{
+	if (isNumber(obj,1,30))
+	{
+		Doc.setFld(0,'inizio',0);
+	   	document.Form0.StwEvent.value=101;
+	    document.Form0.action='ur1ME001.sto';
+	    document.Form0.submit();
+	    return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+</script>
+<div id='contenitore'>
+<h1 class='titolo_principale' id='titolo_principale'>
+Albo Pretorio - Visione Dettaglio
+</h1>
+<div id='corpo'>
+<form name='Form0' action='' method='POST' enctype='multipart/form-data'>
+	<div>
+<div>
+<input type='hidden' name='StwEvent' value='102'>
+<input type='hidden' name='StwSubEvent'value=''>
+<input type='hidden' name='StwData' value=''>
+<input type='hidden' name='StwFldsName' value=''>
+<input type='hidden' name='StwOldRecord' value=''>
+<input type='hidden' name='QUERY_STRING' value="DB_NAME=l202191&amp;StwEvent=102&amp;DB_NAME=l202191&amp;IdMePubblica=2425&amp;Archivio=">
+<input type='hidden' name='urbi_return' value=''>
+<input type='hidden' name='urbi_fail' value=''>
+<input type='hidden' name='iter_univoco' value=''>
+<input type='hidden' name='iter_codice' value=''>
+<input type='hidden' name='indirizzo_wf' value=''>
+<input type='hidden' name='codice_attivita' value=''>
+<input type='hidden' name='WFDAT' value="">
+<input type='hidden' name='WFCALL' value="">
+<input type='hidden' name='AnnoAttivoOri' value=''>
+</div>
+<input type='hidden' name='SOLCodice1' value=''>
+		<input type='hidden' name='DB_NAME' value="l202191">
+		<input type='hidden' name='SOLCodice' value="">
+		<input type='hidden' name='SOLCodici' value="">
+		<input type='hidden' name='Archivio' value="">
+		<input type='hidden' name='OpenTree' value="">
+	</div>
+	<div class="infotestata">
+		<div class="testata">
+			<div class="infolabel">Ente Mittente</div>
+			<div class="infodato larghezza_100x100">COMUNE DI BATTIPAGLIA </div>
+		</div>
+		<div class="testata">
+			<div class="infolabel">Tipologia</div>
+			<div class="infodato larghezza_100x100">Catalogo Documenti/DEMOGRAFICI/Pubblicazioni di Matrimonio</div>
+		</div>
+		<br><br>
+		<div class="dettaglio">
+			<div class="infolabel">Oggetto</div>
+			<div class="infodato larghezza_100x100" style='max-width:95%!imporant; max-height:400px!important;'>PUBBLICAZIONE DI MATRIMONIO TRA MAURO MARCO E GRILLO MARIA.</div>
+		</div>
+		<br><br>
+		<div class="dettaglio">
+			<div class="infolabel">N.Reg</div>
+			<div class="infodato">2422/2011 </div>
+			<div class="infolabel">In Pubblicazione dal</div>
+			<div class="infodato">24-06-2011</div>
+			<div class="infolabel">al</div>
+			<div class="infodato">02-07-2011</div>
+		</div>
+	</div>
+	<div class="vuoto">&nbsp;</div>
+	<div class="vuoto">&nbsp;</div>
+<fieldset class="generica">
+	<legend>Documenti Allegati</legend>
+	
+		<div class="tbl_generica tbl_altezza_100">
+		<table>
+			<thead>
+			<tr>
+				<!--
+				<th>Num.</th>
+				-->
+				<th>Descrizione</th>
+				<th>Apri</th>
+		 	</tr>
+		 	</thead>
+		 	<tbody>
+			
+				<tr class="rigadispari">
+					<!--
+					<td>1</td>
+					-->
+					<td>Documento 1 : Allegato 1 alla Pubblicazione Id. 2425</td>
+					<td>
+						<a href="fecore01.sto?CPT=N&amp;FileContesto=ME&amp;DB_NAME=l202191&amp;NDFH=2590&amp;TDFH=%24MESSI_PUB%24&amp;PRFH=ALLEGATO&amp;MPFH=1&amp;AEFH=PTODBNBBVTOQGVVBVDNRAYUEQ%24QTFIQ_UUW%24YZLLJAGMHXWSLDRNBRSXAR1SOH_M202191U202191&amp;FNFH=Pubblicazione di matrimonio Mauro Marco e Grillo Maria.pdf" title="Scarica Documento 1 : Allegato 1 alla Pubblicazione Id. 2425"><img src="/urbi/images/zoom.gif" alt="zoom"></a>
+						
+					</td>
+				</tr>
+				
+			</tbody>
+			</table>
+	</div>
+</fieldset>
+</form>
+<div class='vuoto'>&nbsp;</div>
+</div> <!-- corpo -->
+</div> <!-- contenitore -->

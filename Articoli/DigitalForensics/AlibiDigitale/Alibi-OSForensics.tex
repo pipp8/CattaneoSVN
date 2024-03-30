@@ -1,0 +1,85 @@
+
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[11pt, onecolumn, draft]{IEEEtran}
+%\documentclass[10pt, conference, compsocconf]{IEEEtran}
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\usepackage{pifont}
+
+\begin{document}
+
+
+
+\section{OS Forensics}
+
+
+For any Operating System (OS) {\em process} is considered as the basic execution unit {\cite{kkk} ), and even the simplest OS provides mechanisms to track the execution of each process it runs saving data such as, executable name, the time was started, the amount of CPU was allocated during the execution, max resident size for virtual memory and so on. We generically define these records {\em accounting data}. 
+
+Besides the data related to the process execution, another dedicated OS module is in charge of storing each user access to the system {\em logon data}; normally this is done during login-logout phases and the module is supposed to record data such as local login time, local logout time, source address of the connection (if the operation was performed through the net) or the tty (the serial line) the user used to connect to the terminal both for local or modem access. 
+
+There were many historical reasons for an OS to keep track of such data. For example in the old time sharing OSs this was necessary for billing purposes, but actually it holds steady even with the advent of the personal workstations and the personal OSs. In fact the accounting modules have been considered useful to provide the user with statistical data about the system and the CPU usage. 
+
+The accounting data are collected in memory by a kernel module (process management) and stored on several files when the process terminates its execution. On the other hand logon data are immediately stored on disk when the operation is performed.
+Data on disk are stored in multiple formats in order to efficiently face with the big amount of records (an OS can run thousands processes per day), therefore binary (vs textual) representation is required and  usually once per day the files are compressed, keeping only average values.
+
+As far Digital Forensics concerns this  approach produces an interesting side effect, making hard to edit this files for normal users. Binary record cannot be modified by a usual editor and statistical data represents a sort of checksum of the current file. Moreover, these files are owned by the super user and normally have the read-only flag true. This does not mean that during a forensic analysis we should trust the content of these files but it is possible to verify (with several tool) the integrity of such files and in this case they should be considered meaningful.
+ 
+
+% that's all folks
+\end{document}
+
+

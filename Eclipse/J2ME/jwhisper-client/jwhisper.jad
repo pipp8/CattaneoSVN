@@ -1,0 +1,12 @@
+MIDlet-2: JWhisperCleaner,,jwhisper.gui.JWhisperCleanerMidlet
+MIDlet-1: JWhisper,,jwhisper.gui.JWhisperMidlet
+MIDlet-Jar-URL: jwhisper.jar
+MIDlet-Icon: /jwhisperico.png
+MicroEdition-Configuration: CLDC-1.0
+MIDlet-Version: 1.0.1
+MIDlet-Vendor: DIA
+MIDlet-Description: Crypto Messaging System with Elliptic Curves Cryptography
+MIDlet-Name: Crypto Messaging System
+MIDlet-Info-URL: http://www.dia.unisa.it
+MicroEdition-Profile: MIDP-2.0
+MIDlet-Permissions: javax.microedition.io.PushRegistry, javax.microedition.io.Connector.sms, javax.wireless.messaging.sms.receive,javax.wireless.messaging.sms.send

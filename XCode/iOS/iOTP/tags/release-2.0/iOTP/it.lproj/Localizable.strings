@@ -1,0 +1,62 @@
+/* 
+  Localizable.strings (Italian Version)
+  iOTP
+
+  Created by Giuseppe Cattaneo on 16/03/15.
+  Copyright (c) 2015 Giuseppe Cattaneo. All rights reserved.
+
+"KEY" = "CONTENT";
+"You like?" = "You like?";
+*/
+
+"SAVESEED-TITLE"    = "Salvataggio Seed";
+"INSERTPIN-MSG"     = "Inserire un PIN a scelta\n(Attenzione non potrà essere recuperato!)";
+"ABORT-BT"          = "Interrompi";
+"OK-BT"             = "OK";
+"TouchID-MSG"       = "Autenticarsi per generare l'OTP";
+
+"NOTIFY-TITLE"      = "Notifica";
+"NOSEED-MSG"        = "Occorre terminare l'enrollment del seed prima di poter utilizzare l'OTP";
+
+"SEEDLOADING-TITLE" = "Caricamento Seed";
+"INSERTPIN-MSG"     = "Inserire il PIN";
+
+"WRONGPIN-MSG"      = "PIN Errato!!!";
+
+"SMSREQUESTED-MSG"  = "Richiesta effettuata, attendere la ricezione dell'SMS e digitare il codice numerico ricevuto";
+
+"SEEDSTORED-MSG"    = "Seed ricevuto e registrato";
+
+"COMMERROR-TITLE"   = "Errore di accesso al servizio";
+"COMMERROR-MSG"     = "Errore di comunicazione:\n%@";
+
+"SEEDRECEIVED-TITLE"= "Seed Setup";
+"SEEDCONFIRMED-MSG" = "OTP Confermato, Orario sul Server:\n%@\nClock Skew: %.0f sec.";
+
+"ALREADYINITED-MSG" = "Seed già caricato. Attenzione la richiesta di un nuovo seed potrebbe rendere l'app inutilizzabile!!!";
+
+"READY-STR"         = "Genera OTP";
+"NOTREADY-STR"      = "Manca il Seed";
+
+// errori enrollment remoto
+"ATUTHFAIL-ERR"     = "401 - Autenticazione non valida (es. password errata, userid non trovato, ...)";
+"PSWDLOCKED-ERR"    = "402 - Password bloccata";
+"PSWDEXPIRED-ERR"   = "410 - Password scaduta";
+"INVALIDTOKEN-ERR"  = "400 - Token anti-csrf non valido o non coincidente tra header e cookie";
+"TOOMANYFAILS-ERR"  = "401 - Tentativi di invio OTP terminati per la sessione";
+"SESSIONNOTFOUND-ERR"="404 - Sessione non trovata o account senza cellulare associato";
+"LVL2SESSION-ERR"   = "406 - Sessione già di livello 2";
+"OTPMISMATCH-ERR"   = "400 - Token anti-csrf non valido o non coincidente tra header e cookie o OTP non valido";
+"TOOMANYOTPFAIL-ERR"    = "401 - Tentativi di verifica OTP terminati per la sessione";
+"INVALIDOTP-ERR"    = "403 - OTP valido ma non corretto";
+
+"TOOWEAKTOKEN-ERR"  = "401 - Il token fa riferimento ad una sessione di livello < 2";
+"SESSIONNOTFOUND-ERR"    = "404 - Sessione non trovata";
+"SEEDGENERATORFAILED-ERR" = "412 - Errore generazione SEED";
+"OTPNOTFAOUND-ERR"  = "400 - OTP non trovato";
+
+// errori secure store TouchID
+"SUCCESS-STR"           = "successo\n";
+"ITEM_ALREADY_EXISTS-ERR" = "Errore l'oggeto è già presente nello store";
+"ITEM_NOT_FOUND-ERR" = "Errore oggetto non presente";
+"ITEM_AUTHENTICATION_FAILED-ERR" = "Errore autenticazione fallita";

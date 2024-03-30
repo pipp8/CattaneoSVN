@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jnlp codebase="" href="launch.jnlp" spec="1.0+">
+    <information>
+        <title>Segnapunti</title>
+        <vendor>pipp8</vendor>
+        <homepage href=""/>
+        <description>Segnapunti</description>
+        <description kind="short">Segnapunti</description>
+    <icon href="LogoDI531x195.png" kind="splash"/>
+<offline-allowed/>
+</information>
+    <update check="background"/>
+    <security>
+<all-permissions/>
+</security>
+    <resources>
+        <j2se version="1.7+"/>
+        <jar href="Segnapunti.jar" main="true"/>
+    <jar href="lib/swing-layout-1.0.4.jar"/>
+</resources>
+    <application-desc main-class="it.unisa.segnapunti.Segnapunti">
+    </application-desc>
+</jnlp>

@@ -1,0 +1,581 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		64405BAB1ABED13400D02C7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64405BAA1ABED13400D02C7C /* main.m */; };
+		64405BAE1ABED13400D02C7C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64405BAD1ABED13400D02C7C /* AppDelegate.m */; };
+		64405BB71ABED13400D02C7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64405BB51ABED13400D02C7C /* Main.storyboard */; };
+		64405BB91ABED13400D02C7C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64405BB81ABED13400D02C7C /* Images.xcassets */; };
+		64405BBC1ABED13400D02C7C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64405BBA1ABED13400D02C7C /* LaunchScreen.xib */; };
+		64405BC81ABED13500D02C7C /* iOTPiOS5Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 64405BC71ABED13500D02C7C /* iOTPiOS5Tests.m */; };
+		64405BDD1ABED19900D02C7C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64405BD11ABED19900D02C7C /* MainViewController.m */; };
+		64405BDE1ABED19900D02C7C /* RemoteSeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64405BD21ABED19900D02C7C /* RemoteSeedViewController.m */; };
+		64405BDF1ABED19900D02C7C /* InitSeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64405BD31ABED19900D02C7C /* InitSeedViewController.m */; };
+		64405BE01ABED19900D02C7C /* AboutBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64405BD61ABED19900D02C7C /* AboutBoxViewController.m */; };
+		64405BE11ABED19900D02C7C /* TuitusOTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 64405BD91ABED19900D02C7C /* TuitusOTP.m */; };
+		64405BE21ABED19900D02C7C /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64405BDA1ABED19900D02C7C /* MainTabBarViewController.m */; };
+		64405BEF1ABED2A900D02C7C /* bicycle-bell-2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 64405BE41ABED2A900D02C7C /* bicycle-bell-2.wav */; };
+		64405BF01ABED2A900D02C7C /* camera-video-button-press.wav in Resources */ = {isa = PBXBuildFile; fileRef = 64405BE51ABED2A900D02C7C /* camera-video-button-press.wav */; };
+		64405BF11ABED2A900D02C7C /* LogoInfoCert.png in Resources */ = {isa = PBXBuildFile; fileRef = 64405BE61ABED2A900D02C7C /* LogoInfoCert.png */; };
+		64405BF21ABED2A900D02C7C /* token_base.png in Resources */ = {isa = PBXBuildFile; fileRef = 64405BE71ABED2A900D02C7C /* token_base.png */; };
+		64405BF31ABED2A900D02C7C /* etuitus.png in Resources */ = {isa = PBXBuildFile; fileRef = 64405BE81ABED2A900D02C7C /* etuitus.png */; };
+		64405BF41ABED2A900D02C7C /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = 64405BE91ABED2A900D02C7C /* ic_launcher.png */; };
+		64405BF51ABED2A900D02C7C /* infocert.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 64405BEA1ABED2A900D02C7C /* infocert.jpg */; };
+		64405BF61ABED2A900D02C7C /* auth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64405BEB1ABED2A900D02C7C /* auth@2x.png */; };
+		64405BF71ABED2A900D02C7C /* keychain@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64405BEC1ABED2A900D02C7C /* keychain@2x.png */; };
+		64405BF81ABED2A900D02C7C /* 157-wrench.png in Resources */ = {isa = PBXBuildFile; fileRef = 64405BED1ABED2A900D02C7C /* 157-wrench.png */; };
+		64405BF91ABED2A900D02C7C /* 187-pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 64405BEE1ABED2A900D02C7C /* 187-pencil.png */; };
+		64405C041ABED2E400D02C7C /* back10-32x32.png in Resources */ = {isa = PBXBuildFile; fileRef = 64405BFA1ABED2E400D02C7C /* back10-32x32.png */; };
+		64405C051ABED2E400D02C7C /* back10-48x48.png in Resources */ = {isa = PBXBuildFile; fileRef = 64405BFB1ABED2E400D02C7C /* back10-48x48.png */; };
+		64405C061ABED2E400D02C7C /* back10-64x64.png in Resources */ = {isa = PBXBuildFile; fileRef = 64405BFC1ABED2E400D02C7C /* back10-64x64.png */; };
+		64405C071ABED2E400D02C7C /* backbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 64405BFD1ABED2E400D02C7C /* backbutton.png */; };
+		64405C081ABED2E400D02C7C /* Info2Icon256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 64405BFE1ABED2E400D02C7C /* Info2Icon256x256.png */; };
+		64405C091ABED2E400D02C7C /* info28-32x32.png in Resources */ = {isa = PBXBuildFile; fileRef = 64405BFF1ABED2E400D02C7C /* info28-32x32.png */; };
+		64405C0A1ABED2E400D02C7C /* info28-48x48.png in Resources */ = {isa = PBXBuildFile; fileRef = 64405C001ABED2E400D02C7C /* info28-48x48.png */; };
+		64405C0B1ABED2E400D02C7C /* info28-64x64.png in Resources */ = {isa = PBXBuildFile; fileRef = 64405C011ABED2E400D02C7C /* info28-64x64.png */; };
+		64405C0C1ABED2E400D02C7C /* InfoIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 64405C021ABED2E400D02C7C /* InfoIcon.png */; };
+		64405C0D1ABED2E400D02C7C /* InfoIcon32x32.png in Resources */ = {isa = PBXBuildFile; fileRef = 64405C031ABED2E400D02C7C /* InfoIcon32x32.png */; };
+		64405C0F1ABED51D00D02C7C /* libcrypto_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64405C0E1ABED51D00D02C7C /* libcrypto_iOS.a */; };
+		64405C111ABEEB4000D02C7C /* BluButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 64405C101ABEEB4000D02C7C /* BluButton.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		64405BC21ABED13500D02C7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64405B9D1ABED13400D02C7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 64405BA41ABED13400D02C7C;
+			remoteInfo = iOTPiOS5;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		64405BA51ABED13400D02C7C /* iOTPiOS5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOTPiOS5.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		64405BA91ABED13400D02C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64405BAA1ABED13400D02C7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		64405BAC1ABED13400D02C7C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		64405BAD1ABED13400D02C7C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		64405BB61ABED13400D02C7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		64405BB81ABED13400D02C7C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		64405BBB1ABED13400D02C7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		64405BC11ABED13500D02C7C /* iOTPiOS5Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOTPiOS5Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		64405BC61ABED13500D02C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64405BC71ABED13500D02C7C /* iOTPiOS5Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOTPiOS5Tests.m; sourceTree = "<group>"; };
+		64405BD11ABED19900D02C7C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../../../iOTP/iOTP/MainViewController.m; sourceTree = "<group>"; };
+		64405BD21ABED19900D02C7C /* RemoteSeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RemoteSeedViewController.m; path = ../../../iOTP/iOTP/RemoteSeedViewController.m; sourceTree = "<group>"; };
+		64405BD31ABED19900D02C7C /* InitSeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InitSeedViewController.m; path = ../../../iOTP/iOTP/InitSeedViewController.m; sourceTree = "<group>"; };
+		64405BD41ABED19900D02C7C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ../../../iOTP/iOTP/MainViewController.h; sourceTree = "<group>"; };
+		64405BD51ABED19900D02C7C /* InitSeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InitSeedViewController.h; path = ../../../iOTP/iOTP/InitSeedViewController.h; sourceTree = "<group>"; };
+		64405BD61ABED19900D02C7C /* AboutBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutBoxViewController.m; path = ../../../iOTP/iOTP/AboutBoxViewController.m; sourceTree = "<group>"; };
+		64405BD71ABED19900D02C7C /* RemoteSeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RemoteSeedViewController.h; path = ../../../iOTP/iOTP/RemoteSeedViewController.h; sourceTree = "<group>"; };
+		64405BD81ABED19900D02C7C /* TuitusOTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TuitusOTP.h; path = ../../../iOTP/iOTP/TuitusOTP.h; sourceTree = "<group>"; };
+		64405BD91ABED19900D02C7C /* TuitusOTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TuitusOTP.m; path = ../../../iOTP/iOTP/TuitusOTP.m; sourceTree = "<group>"; };
+		64405BDA1ABED19900D02C7C /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTabBarViewController.m; path = ../../../iOTP/iOTP/MainTabBarViewController.m; sourceTree = "<group>"; };
+		64405BDB1ABED19900D02C7C /* MainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTabBarViewController.h; path = ../../../iOTP/iOTP/MainTabBarViewController.h; sourceTree = "<group>"; };
+		64405BDC1ABED19900D02C7C /* AboutBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutBoxViewController.h; path = ../../../iOTP/iOTP/AboutBoxViewController.h; sourceTree = "<group>"; };
+		64405BE41ABED2A900D02C7C /* bicycle-bell-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "bicycle-bell-2.wav"; path = "../../../iOTP/iOTP/Resources/bicycle-bell-2.wav"; sourceTree = "<group>"; };
+		64405BE51ABED2A900D02C7C /* camera-video-button-press.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "camera-video-button-press.wav"; path = "../../../iOTP/iOTP/Resources/camera-video-button-press.wav"; sourceTree = "<group>"; };
+		64405BE61ABED2A900D02C7C /* LogoInfoCert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LogoInfoCert.png; path = ../../../iOTP/iOTP/Resources/LogoInfoCert.png; sourceTree = "<group>"; };
+		64405BE71ABED2A900D02C7C /* token_base.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = token_base.png; path = ../../../iOTP/iOTP/Resources/token_base.png; sourceTree = "<group>"; };
+		64405BE81ABED2A900D02C7C /* etuitus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = etuitus.png; path = ../../../iOTP/iOTP/Resources/etuitus.png; sourceTree = "<group>"; };
+		64405BE91ABED2A900D02C7C /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_launcher.png; path = ../../../iOTP/iOTP/Resources/ic_launcher.png; sourceTree = "<group>"; };
+		64405BEA1ABED2A900D02C7C /* infocert.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = infocert.jpg; path = ../../../iOTP/iOTP/Resources/infocert.jpg; sourceTree = "<group>"; };
+		64405BEB1ABED2A900D02C7C /* auth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "auth@2x.png"; path = "../../../iOTP/iOTP/Resources/auth@2x.png"; sourceTree = "<group>"; };
+		64405BEC1ABED2A900D02C7C /* keychain@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "keychain@2x.png"; path = "../../../iOTP/iOTP/Resources/keychain@2x.png"; sourceTree = "<group>"; };
+		64405BED1ABED2A900D02C7C /* 157-wrench.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "157-wrench.png"; path = "../../../iOTP/iOTP/Resources/157-wrench.png"; sourceTree = "<group>"; };
+		64405BEE1ABED2A900D02C7C /* 187-pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "187-pencil.png"; path = "../../../iOTP/iOTP/Resources/187-pencil.png"; sourceTree = "<group>"; };
+		64405BFA1ABED2E400D02C7C /* back10-32x32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "back10-32x32.png"; path = "../../../iOTP/iOTP/Resources/Icons/back10-32x32.png"; sourceTree = "<group>"; };
+		64405BFB1ABED2E400D02C7C /* back10-48x48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "back10-48x48.png"; path = "../../../iOTP/iOTP/Resources/Icons/back10-48x48.png"; sourceTree = "<group>"; };
+		64405BFC1ABED2E400D02C7C /* back10-64x64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "back10-64x64.png"; path = "../../../iOTP/iOTP/Resources/Icons/back10-64x64.png"; sourceTree = "<group>"; };
+		64405BFD1ABED2E400D02C7C /* backbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backbutton.png; path = ../../../iOTP/iOTP/Resources/Icons/backbutton.png; sourceTree = "<group>"; };
+		64405BFE1ABED2E400D02C7C /* Info2Icon256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Info2Icon256x256.png; path = ../../../iOTP/iOTP/Resources/Icons/Info2Icon256x256.png; sourceTree = "<group>"; };
+		64405BFF1ABED2E400D02C7C /* info28-32x32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "info28-32x32.png"; path = "../../../iOTP/iOTP/Resources/Icons/info28-32x32.png"; sourceTree = "<group>"; };
+		64405C001ABED2E400D02C7C /* info28-48x48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "info28-48x48.png"; path = "../../../iOTP/iOTP/Resources/Icons/info28-48x48.png"; sourceTree = "<group>"; };
+		64405C011ABED2E400D02C7C /* info28-64x64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "info28-64x64.png"; path = "../../../iOTP/iOTP/Resources/Icons/info28-64x64.png"; sourceTree = "<group>"; };
+		64405C021ABED2E400D02C7C /* InfoIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = InfoIcon.png; path = ../../../iOTP/iOTP/Resources/Icons/InfoIcon.png; sourceTree = "<group>"; };
+		64405C031ABED2E400D02C7C /* InfoIcon32x32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = InfoIcon32x32.png; path = ../../../iOTP/iOTP/Resources/Icons/InfoIcon32x32.png; sourceTree = "<group>"; };
+		64405C0E1ABED51D00D02C7C /* libcrypto_iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto_iOS.a; path = ../../LocalLibraries/lib/libcrypto_iOS.a; sourceTree = "<group>"; };
+		64405C101ABEEB4000D02C7C /* BluButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BluButton.png; path = ../../../iOTP/iOTP/Resources/BluButton.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		64405BA21ABED13400D02C7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64405C0F1ABED51D00D02C7C /* libcrypto_iOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64405BBE1ABED13500D02C7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		64405B9C1ABED13400D02C7C = {
+			isa = PBXGroup;
+			children = (
+				64405C0E1ABED51D00D02C7C /* libcrypto_iOS.a */,
+				64405BA71ABED13400D02C7C /* iOTPiOS5 */,
+				64405BC41ABED13500D02C7C /* iOTPiOS5Tests */,
+				64405BA61ABED13400D02C7C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		64405BA61ABED13400D02C7C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				64405BA51ABED13400D02C7C /* iOTPiOS5.app */,
+				64405BC11ABED13500D02C7C /* iOTPiOS5Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		64405BA71ABED13400D02C7C /* iOTPiOS5 */ = {
+			isa = PBXGroup;
+			children = (
+				64405BE31ABED27A00D02C7C /* Resources */,
+				64405BD11ABED19900D02C7C /* MainViewController.m */,
+				64405BD21ABED19900D02C7C /* RemoteSeedViewController.m */,
+				64405BD31ABED19900D02C7C /* InitSeedViewController.m */,
+				64405BD41ABED19900D02C7C /* MainViewController.h */,
+				64405BD51ABED19900D02C7C /* InitSeedViewController.h */,
+				64405BD61ABED19900D02C7C /* AboutBoxViewController.m */,
+				64405BD71ABED19900D02C7C /* RemoteSeedViewController.h */,
+				64405BD81ABED19900D02C7C /* TuitusOTP.h */,
+				64405BD91ABED19900D02C7C /* TuitusOTP.m */,
+				64405BDA1ABED19900D02C7C /* MainTabBarViewController.m */,
+				64405BDB1ABED19900D02C7C /* MainTabBarViewController.h */,
+				64405BDC1ABED19900D02C7C /* AboutBoxViewController.h */,
+				64405BAC1ABED13400D02C7C /* AppDelegate.h */,
+				64405BAD1ABED13400D02C7C /* AppDelegate.m */,
+				64405BB51ABED13400D02C7C /* Main.storyboard */,
+				64405BB81ABED13400D02C7C /* Images.xcassets */,
+				64405BBA1ABED13400D02C7C /* LaunchScreen.xib */,
+				64405BA81ABED13400D02C7C /* Supporting Files */,
+			);
+			path = iOTPiOS5;
+			sourceTree = "<group>";
+		};
+		64405BA81ABED13400D02C7C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				64405BA91ABED13400D02C7C /* Info.plist */,
+				64405BAA1ABED13400D02C7C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		64405BC41ABED13500D02C7C /* iOTPiOS5Tests */ = {
+			isa = PBXGroup;
+			children = (
+				64405BC71ABED13500D02C7C /* iOTPiOS5Tests.m */,
+				64405BC51ABED13500D02C7C /* Supporting Files */,
+			);
+			path = iOTPiOS5Tests;
+			sourceTree = "<group>";
+		};
+		64405BC51ABED13500D02C7C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				64405BC61ABED13500D02C7C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		64405BE31ABED27A00D02C7C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				64405C101ABEEB4000D02C7C /* BluButton.png */,
+				64405BFA1ABED2E400D02C7C /* back10-32x32.png */,
+				64405BFB1ABED2E400D02C7C /* back10-48x48.png */,
+				64405BFC1ABED2E400D02C7C /* back10-64x64.png */,
+				64405BFD1ABED2E400D02C7C /* backbutton.png */,
+				64405BFE1ABED2E400D02C7C /* Info2Icon256x256.png */,
+				64405BFF1ABED2E400D02C7C /* info28-32x32.png */,
+				64405C001ABED2E400D02C7C /* info28-48x48.png */,
+				64405C011ABED2E400D02C7C /* info28-64x64.png */,
+				64405C021ABED2E400D02C7C /* InfoIcon.png */,
+				64405C031ABED2E400D02C7C /* InfoIcon32x32.png */,
+				64405BE41ABED2A900D02C7C /* bicycle-bell-2.wav */,
+				64405BE51ABED2A900D02C7C /* camera-video-button-press.wav */,
+				64405BE61ABED2A900D02C7C /* LogoInfoCert.png */,
+				64405BE71ABED2A900D02C7C /* token_base.png */,
+				64405BE81ABED2A900D02C7C /* etuitus.png */,
+				64405BE91ABED2A900D02C7C /* ic_launcher.png */,
+				64405BEA1ABED2A900D02C7C /* infocert.jpg */,
+				64405BEB1ABED2A900D02C7C /* auth@2x.png */,
+				64405BEC1ABED2A900D02C7C /* keychain@2x.png */,
+				64405BED1ABED2A900D02C7C /* 157-wrench.png */,
+				64405BEE1ABED2A900D02C7C /* 187-pencil.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		64405BA41ABED13400D02C7C /* iOTPiOS5 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64405BCB1ABED13500D02C7C /* Build configuration list for PBXNativeTarget "iOTPiOS5" */;
+			buildPhases = (
+				64405BA11ABED13400D02C7C /* Sources */,
+				64405BA21ABED13400D02C7C /* Frameworks */,
+				64405BA31ABED13400D02C7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOTPiOS5;
+			productName = iOTPiOS5;
+			productReference = 64405BA51ABED13400D02C7C /* iOTPiOS5.app */;
+			productType = "com.apple.product-type.application";
+		};
+		64405BC01ABED13500D02C7C /* iOTPiOS5Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64405BCE1ABED13500D02C7C /* Build configuration list for PBXNativeTarget "iOTPiOS5Tests" */;
+			buildPhases = (
+				64405BBD1ABED13500D02C7C /* Sources */,
+				64405BBE1ABED13500D02C7C /* Frameworks */,
+				64405BBF1ABED13500D02C7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				64405BC31ABED13500D02C7C /* PBXTargetDependency */,
+			);
+			name = iOTPiOS5Tests;
+			productName = iOTPiOS5Tests;
+			productReference = 64405BC11ABED13500D02C7C /* iOTPiOS5Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		64405B9D1ABED13400D02C7C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Giuseppe Cattaneo";
+				TargetAttributes = {
+					64405BA41ABED13400D02C7C = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					64405BC01ABED13500D02C7C = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 64405BA41ABED13400D02C7C;
+					};
+				};
+			};
+			buildConfigurationList = 64405BA01ABED13400D02C7C /* Build configuration list for PBXProject "iOTPiOS5" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 64405B9C1ABED13400D02C7C;
+			productRefGroup = 64405BA61ABED13400D02C7C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				64405BA41ABED13400D02C7C /* iOTPiOS5 */,
+				64405BC01ABED13500D02C7C /* iOTPiOS5Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		64405BA31ABED13400D02C7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64405BF11ABED2A900D02C7C /* LogoInfoCert.png in Resources */,
+				64405BF41ABED2A900D02C7C /* ic_launcher.png in Resources */,
+				64405C0C1ABED2E400D02C7C /* InfoIcon.png in Resources */,
+				64405C051ABED2E400D02C7C /* back10-48x48.png in Resources */,
+				64405BF61ABED2A900D02C7C /* auth@2x.png in Resources */,
+				64405BF31ABED2A900D02C7C /* etuitus.png in Resources */,
+				64405BF21ABED2A900D02C7C /* token_base.png in Resources */,
+				64405C0A1ABED2E400D02C7C /* info28-48x48.png in Resources */,
+				64405C071ABED2E400D02C7C /* backbutton.png in Resources */,
+				64405C041ABED2E400D02C7C /* back10-32x32.png in Resources */,
+				64405C091ABED2E400D02C7C /* info28-32x32.png in Resources */,
+				64405C111ABEEB4000D02C7C /* BluButton.png in Resources */,
+				64405BF91ABED2A900D02C7C /* 187-pencil.png in Resources */,
+				64405BEF1ABED2A900D02C7C /* bicycle-bell-2.wav in Resources */,
+				64405C0B1ABED2E400D02C7C /* info28-64x64.png in Resources */,
+				64405BF51ABED2A900D02C7C /* infocert.jpg in Resources */,
+				64405BB71ABED13400D02C7C /* Main.storyboard in Resources */,
+				64405C081ABED2E400D02C7C /* Info2Icon256x256.png in Resources */,
+				64405BF71ABED2A900D02C7C /* keychain@2x.png in Resources */,
+				64405BF81ABED2A900D02C7C /* 157-wrench.png in Resources */,
+				64405C0D1ABED2E400D02C7C /* InfoIcon32x32.png in Resources */,
+				64405BBC1ABED13400D02C7C /* LaunchScreen.xib in Resources */,
+				64405BF01ABED2A900D02C7C /* camera-video-button-press.wav in Resources */,
+				64405C061ABED2E400D02C7C /* back10-64x64.png in Resources */,
+				64405BB91ABED13400D02C7C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64405BBF1ABED13500D02C7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		64405BA11ABED13400D02C7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64405BAE1ABED13400D02C7C /* AppDelegate.m in Sources */,
+				64405BDF1ABED19900D02C7C /* InitSeedViewController.m in Sources */,
+				64405BDE1ABED19900D02C7C /* RemoteSeedViewController.m in Sources */,
+				64405BDD1ABED19900D02C7C /* MainViewController.m in Sources */,
+				64405BE11ABED19900D02C7C /* TuitusOTP.m in Sources */,
+				64405BE21ABED19900D02C7C /* MainTabBarViewController.m in Sources */,
+				64405BE01ABED19900D02C7C /* AboutBoxViewController.m in Sources */,
+				64405BAB1ABED13400D02C7C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64405BBD1ABED13500D02C7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64405BC81ABED13500D02C7C /* iOTPiOS5Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		64405BC31ABED13500D02C7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 64405BA41ABED13400D02C7C /* iOTPiOS5 */;
+			targetProxy = 64405BC21ABED13500D02C7C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		64405BB51ABED13400D02C7C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64405BB61ABED13400D02C7C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		64405BBA1ABED13400D02C7C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64405BBB1ABED13400D02C7C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		64405BC91ABED13500D02C7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		64405BCA1ABED13500D02C7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		64405BCC1ABED13500D02C7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/Users/pipp8/Universita/Src/XCode/iOS/LocalLibraries/include,
+				);
+				INFOPLIST_FILE = iOTPiOS5/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/pipp8/Universita/Src/XCode/iOS/LocalLibraries/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		64405BCD1ABED13500D02C7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/Users/pipp8/Universita/Src/XCode/iOS/LocalLibraries/include,
+				);
+				INFOPLIST_FILE = iOTPiOS5/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/pipp8/Universita/Src/XCode/iOS/LocalLibraries/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		64405BCF1ABED13500D02C7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iOTPiOS5Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOTPiOS5.app/iOTPiOS5";
+			};
+			name = Debug;
+		};
+		64405BD01ABED13500D02C7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iOTPiOS5Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOTPiOS5.app/iOTPiOS5";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		64405BA01ABED13400D02C7C /* Build configuration list for PBXProject "iOTPiOS5" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64405BC91ABED13500D02C7C /* Debug */,
+				64405BCA1ABED13500D02C7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64405BCB1ABED13500D02C7C /* Build configuration list for PBXNativeTarget "iOTPiOS5" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64405BCC1ABED13500D02C7C /* Debug */,
+				64405BCD1ABED13500D02C7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64405BCE1ABED13500D02C7C /* Build configuration list for PBXNativeTarget "iOTPiOS5Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64405BCF1ABED13500D02C7C /* Debug */,
+				64405BD01ABED13500D02C7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 64405B9D1ABED13400D02C7C /* Project object */;
+}

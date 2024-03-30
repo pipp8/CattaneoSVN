@@ -1,0 +1,26 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "ec92c943-5db4-0f4b-9571-7a1bbd119c6d++3775",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "ec92c943-5db4-0f4b-9571-7a1bbd119c6d++3775" : {
+      "DVTSourceControlWorkingCopyRepositoryTagsLocationKey" : "XCode\/iOS\/iOTP\/tags",
+      "DVTSourceControlWorkingCopyRepositoryPrimaryBranchLocationKey" : "XCode\/iOS\/iOTP\/trunk"
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "ec92c943-5db4-0f4b-9571-7a1bbd119c6d++3775" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "AD023D23-0650-452E-B166-13754B1DD659",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "ec92c943-5db4-0f4b-9571-7a1bbd119c6d++3775" : "iOTP\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "InfoCertID",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "InfoCertID.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/minosse.diaserv.unisa.it\/svn\/Cattaneo",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ec92c943-5db4-0f4b-9571-7a1bbd119c6d++3775"
+    }
+  ]
+}

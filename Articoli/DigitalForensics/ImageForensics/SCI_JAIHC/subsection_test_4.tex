@@ -1,0 +1,96 @@
+\subsection{Test 4}\label{exp4}
+All the previous tests have been conducted on unmodified pictures or on pictures that have been intentionally modified by the end-user, using  photo-editing tools. In the real word, it is quite usual to upload digital pictures on photo-sharing sites or social networks, without any prior modification. This could lead to the wrong conclusion that the pictures found on these sites retain the same properties of their original counterparts and, so, can be used for the digital identification process.  Instead, photo-sharing and social networks sites usually process uploaded pictures in order to reduce their size and to speed-up their handling. The arising question is: does this pre-processings puts at risk the effectiveness of  the \Lukas\ identification technique when applied to pictures retrieved from one of these sites?.
+
+In this test, a set of social networks and photo-sharing sites, chosen according to their popularity, has been selected. Then, several sets of pictures have been uploaded and downloaded  from all these sites. The downloaded pictures have been analyzed in order to understand if and how they have been modified.
+
+In Table \ref{photo_sharing_statistics} the results of one of these experiments, carried out with a sample picture of resolution $3.888x2.592$ pixels and size $2.275$ kilobytes, are presented. For each site, it has been checked if the picture was modified or not and, in the former case, it has been measured the size and the resolution of the modified picture. These experiments show that only the following social networks and photo-sharing services, among the considered ones, process and modify uploaded pictures:
+
+\begin{table*}[htb]
+\centering
+
+\caption{Modifications performed by several photo-sharing and social network sites on a target image of resolution  $3.888x2.592$ pixels and size $2.275$ kilobytes .}
+
+\begin{tabular}{  |l | c | c  |  c |} 
+\hline
+
+Service & Modified & Modified image resolution & Modified image size \\ \hline
+
+
+Facebook & Yes & $720$x$480$ & $53$ Kb  \\
+Flickr & No & $3.888$x$2.592$ & $2.275$ Kb \\
+MySpace & Yes  & $600$x$399$ & $33$ Kb\\
+PhotoBucket & Yes  & $1.023$x$682$ & $131$ Kb \\
+Picasa & No & $3.888$x$2.592$ & $2.275$ Kb\\
+Twitpic & No & $3.888$x$2.592$ & $2.275$ Kb  \\
+
+\hline
+\end{tabular}
+\label{photo_sharing_statistics}
+\end{table*}
+
+
+\paragraph{Facebook} Facebook (FAC) is currently the most used social network in the world, with more than $500$ million active users. It offers a relatively simple support for uploading and sharing photos. No limit is apparently put on the size of the pictures that can be uploaded. Currently, the service administrators do not disclose any information about the way images are processed and stored on their servers. However our experiments revealed a strong compression, via downsampling, of all the pictures uploaded to Facebook to a standard resolution of $720$ pixels on the long edge. This is evidently done in order to cope with the huge amount of pictures uploaded daily. 
+
+Recently, the service administrators have announced an upgrade on the maximum size of the images stored in the Facebook database. According to this new setting, it will be possible to upload also high-resolution images, with a maximum size of $2.048$ pixels on the long edge. 
+
+\paragraph{Photobucket} Photobucket (PHB) is one of the most popular online photo sharing service with a massive audience of more than $23$ million monthly unique users in the U.S., and over four million images uploaded per day from the web and smartphones \cite{PhotoBucketStat}. Photobucket offers a simple support for massive uploading and dowloading and sharing photos. Like in the Facebook case, no information is disclosed about the way pictures are stored on Photobucket servers. However, our experiments reveal a compression process, albeit less aggressive than the one used by Facebook. 
+
+%In our experiments the images was published on Photobucket and later the images was downloaded. These images constitutes the set PHB of images where test the method of Lukas.
+
+
+\paragraph{MySpace} MySpace (MSP) is a social networking website where users can share music, videos and pictures. No limit is put on the number and on the size of the uploadable pictures. However, even in this case, our experiments revealed a strong compression of the uploaded images, both in terms of size and downsampling. 
+
+%In our experiments the images was published on MySpace and later the images was downloaded. These images constitutes the set MSP of images where test the method of Lukas.
+
+\begin{table}[bht]
+\centering
+\caption{Number of images rejected on pictures previously uploaded on social network sites with thresholds computed in test 1 - Resize}
+\begin{tabular}{  |c  | c | c |  c | c   |} 
+\hline
+& \multicolumn{4}{|c|}{ \textbf{Site}} \\ \hline
+{\textbf{ID}}& \textbf{None} & \textbf{FAC} & \textbf{PHB} & \textbf{MSP} \\ \hline
+1 		& | 	& 178 	& 96 		& 180	 \\
+2 		& | 	& 176	& 80 		& 180 	 \\
+3 		& 9 	& 171 	& 40 		& 180 	 \\
+4 		& | 	& 159 	& 46 		& 180 	 \\
+5 		& | 	& 180 	& 104 	& 180	 \\
+6 		& | 	& 180 	& 178 	& 180 	\\
+7 		& 2	& 2 		& 2 		& 20 	 \\
+8 		& | 	& 178 	& 22 		& 180 	 \\ \hline \hline
+{Total} 	& 11	& 1224	& 568	& 1280 	\\
+\hline
+\end{tabular}
+\label{tableExp4}
+\end{table}
+
+
+In the second part of these tests, the \Lukas\ identification technique has been experimented by applying it on pictures previously uploaded on each of these sites. This experimentation has been first conducted by using the same decision threshold computed in Test 1. The results, presented in Table \ref{tableExp4}, show a substantial failure of the identification technique, especially when processing pictures retrieved from FAC and MSP. This can be explained by considering that these two services employ a more aggressive processing strategy than the one used by PHB. However, it is interesting to note that the failure rate is also much worser than the one experienced on resized pictures in Test 2 and Test 3. This is probably due to a strong downsampling of the input images, that discards additional information from them. The test has been concluded by computing decision thresholds from scratch using images stored and retrieved from the considered social networks. Then, the  \Lukas\ identification technique has been tested again using the same batch of images used in the previous experiment.  The results, shown in Table \ref{socialNetworkExp}, confirm a strong improvement of the identification technique, especially with pictures shot using camera with ID 3 and 4. A fair improvement is also evident for pictures shot using cameras with ID 5, 6 and 8. While, the technique is still almost failing when processing pictures shot using camera with ID 1 and 2. These results holds for FAC and PHB. Instead, the identification technique is mostly useless when processing pictures retrieved from MSP. 
+
+
+%Analyzing Figure~\ref{thresholdsChart}, it can be noted that no relation seem to exists between the thresholds and the manufacturer of the camera models used.
+%Moreover, each camera is independent from the others since it presents its own threshold. In fact, the thresholds differ for the same camera model (cameras 3 and 4) and for camera models probably equipped with the same sensor (cameras 1 and 2).
+%Furthermore, the figure highlights how the results of the operations are strictly dependent on the camera, showing that the operations do not linearly affect all the cameras.
+
+
+
+\begin{table*}[htb]
+\centering
+\caption{Decision thresholds, FRR and number of images rejected on the red channel for the tests FAC, PHB and MSP.}
+\begin{tabular}{  | p{1.8cm}   | p{1.8cm} | p{1.8cm}  |  p{1.8cm} | p{1.8cm}  | p{1.8cm} | p{1.8cm}  |} 
+\hline
+& \multicolumn{2}{|c|}{ \textbf{FAC} } & \multicolumn{2}{|c|}{ \textbf{PHB} }  & \multicolumn{2}{|c|}{ \textbf{MSP} }\\ \hline
+{\textbf{ID}}& Decision threshold& Images rejected (FRR) & Decision threshold& Images rejected (FRR) & Decision threshold& Images rejected (FRR)  \\ \hline
+
+1 &	0,0062		& 	165 (0,9133)	& 0,0057			& 36 (0,2000)		&	0,0118		   	&		180 (1)	 \\
+2 &	0,0076		& 	175 (0,9667)	& 0,0090			& 105 (0,5833)		&	0,0069		   	&		179 (0,9944)	 \\ 
+3 &	0,0063		& 	18 (0,0933)	& 0,0067			& 11 (0,0611)		&	0,0073			&		152 (0,8444)  \\ 
+4 &	0,0062	 	& 	2 (0,0133) 	& 0,0073			& 2 (0,0111)		&	0,0098			&		168 (AA) 	\\ 
+5 & 	0,0061 	 	&	14 (0,0600)	& 0,0193			& |				& 	0,0062			& 		160 (AA) \\
+6 &	0,0040  		&	84 (0,4867) 	& 0,0035			& 10 (0,0556)		&	0,0049			&		179 (0,9944) \\ 
+7 &	0,0072  		&	4 (0,0200)	& 0,0070			& 2 (0,0111)		&	0,0078			&		90 (0,5000) \\
+8 &	0,0069  		&	68 (0,3867)	& 0,0080			& 2 (0,0111)		&	0,0112			&		180 (1)	 \\ \hline \hline\hline \hline
+\multicolumn{2}{|c|}{total number of images rejected} & 530 & & 168 & & 1288 \\
+\hline
+\end{tabular}
+\label{socialNetworkExp}
+\end{table*}

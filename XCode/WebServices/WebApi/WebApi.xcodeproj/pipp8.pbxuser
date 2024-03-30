@@ -1,0 +1,370 @@
+// !$*UTF8*$!
+{
+	08FB7793FE84155DC02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 64B3C4331366BF1B00A4AE07 /* WebApi */;
+		activeTarget = 8DD76F620486A84900D96B5E /* WebApi */;
+		addToTargets = (
+			8DD76F620486A84900D96B5E /* WebApi */,
+		);
+		breakpoints = (
+			64326425136C82C200F761BF /* main.cpp:32 */,
+			64326440136C836F00F761BF /* main.cpp:68 */,
+			64326448136C84E900F761BF /* main.cpp:96 */,
+			64326465136C8B4C00F761BF /* soapC.cpp:4075 */,
+		);
+		codeSenseManager = 64B3C4391366BF4100A4AE07 /* Code sense */;
+		executables = (
+			64B3C4331366BF1B00A4AE07 /* WebApi */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					582,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					508,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 325881144;
+			PBXWorkspaceStateSaveDate = 325881144;
+		};
+		perUserProjectItems = {
+			6432642F136C831200F761BF /* PBXTextBookmark */ = 6432642F136C831200F761BF /* PBXTextBookmark */;
+			64326430136C831200F761BF /* PBXTextBookmark */ = 64326430136C831200F761BF /* PBXTextBookmark */;
+			64326457136C898200F761BF /* PBXTextBookmark */ = 64326457136C898200F761BF /* PBXTextBookmark */;
+			6432646B136C8D1400F761BF /* PBXTextBookmark */ = 6432646B136C8D1400F761BF /* PBXTextBookmark */;
+			6493E5F2136C8DA400FE6C8A /* PBXBookmark */ = 6493E5F2136C8DA400FE6C8A /* PBXBookmark */;
+			6493E600136C945F00FE6C8A /* PBXTextBookmark */ = 6493E600136C945F00FE6C8A /* PBXTextBookmark */;
+			6493E601136C945F00FE6C8A /* PBXTextBookmark */ = 6493E601136C945F00FE6C8A /* PBXTextBookmark */;
+			6493E602136C945F00FE6C8A /* PBXTextBookmark */ = 6493E602136C945F00FE6C8A /* PBXTextBookmark */;
+			6493E603136C945F00FE6C8A /* PBXTextBookmark */ = 6493E603136C945F00FE6C8A /* PBXTextBookmark */;
+			6493E608136C945F00FE6C8A /* PBXTextBookmark */ = 6493E608136C945F00FE6C8A /* PBXTextBookmark */;
+		};
+		sourceControlManager = 64B3C4381366BF4100A4AE07 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	08FB7796FE84155DC02AAC07 /* main.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {761, 1573}}";
+			sepNavSelRange = "{1458, 0}";
+			sepNavVisRange = "{1753, 1224}";
+			sepNavWindowFrame = "{{15, 62}, {1108, 1111}}";
+		};
+	};
+	643263F2136C7D2500F761BF /* soapStub.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = soapStub.h;
+		path = /Users/pipp8/Universita/Src/XCode/WebServices/gSOAP/WebApi/soapStub.h;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1153, 15366}}";
+			sepNavSelRange = "{23118, 13}";
+			sepNavVisRange = "{21449, 3585}";
+			sepNavWindowFrame = "{{225, 65}, {1108, 1111}}";
+		};
+	};
+	64326421136C82B600F761BF /* stdsoap2.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1286, 210262}}";
+			sepNavSelRange = "{264746, 0}";
+			sepNavVisRange = "{264257, 790}";
+		};
+	};
+	64326425136C82C200F761BF /* main.cpp:32 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 08FB7796FE84155DC02AAC07 /* main.cpp */;
+		functionName = "main (int argc, char * const argv[])";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 32;
+		location = WebApi;
+		modificationTime = 325881445.780268;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	6432642F136C831200F761BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 64B3C4961366E05400A4AE07 /* soapClient.cpp */;
+		name = "soapClient.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1748;
+		vrLoc = 3982;
+	};
+	64326430136C831200F761BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 643263F2136C7D2500F761BF /* soapStub.h */;
+		name = "soapStub.h: 11";
+		rLen = 0;
+		rLoc = 361;
+		rType = 0;
+		vrLen = 1851;
+		vrLoc = 0;
+	};
+	64326440136C836F00F761BF /* main.cpp:68 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 08FB7796FE84155DC02AAC07 /* main.cpp */;
+		functionName = "main (int argc, char * const argv[])";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 68;
+		location = WebApi;
+		modificationTime = 325881450.78313;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	64326448136C84E900F761BF /* main.cpp:96 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 08FB7796FE84155DC02AAC07 /* main.cpp */;
+		functionName = "main (int argc, char * const argv[])";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 96;
+		location = WebApi;
+		modificationTime = 325881452.089835;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	64326457136C898200F761BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 64326458136C898200F761BF /* stdsoap2.h */;
+		name = "stdsoap2.h: 1160";
+		rLen = 22;
+		rLoc = 27453;
+		rType = 0;
+		vrLen = 1394;
+		vrLoc = 26604;
+	};
+	64326458136C898200F761BF /* stdsoap2.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = stdsoap2.h;
+		path = /Users/pipp8/Universita/Src/XCode/WebServices/gSOAP/WebApi/stdsoap2.h;
+		sourceTree = "<absolute>";
+	};
+	64326465136C8B4C00F761BF /* soapC.cpp:4075 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 64B3C49C1366E0EC00A4AE07 /* soapC.cpp */;
+		functionName = "_ns1__attivaProcedimento::soap_serialize(struct soap *soap)";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 4075;
+		location = WebApi;
+		modificationTime = 325881456.591088;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	6432646B136C8D1400F761BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 64B3C49E1366E13000A4AE07 /* soapWebApiSoapBindingProxy.h */;
+		name = "soapWebApiSoapBindingProxy.h: 20";
+		rLen = 0;
+		rLoc = 930;
+		rType = 0;
+		vrLen = 5173;
+		vrLoc = 0;
+	};
+	6493E5F1136C8DA200FE6C8A /* soapStub.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1153, 15366}}";
+			sepNavSelRange = "{23118, 13}";
+			sepNavVisRange = "{21449, 3585}";
+		};
+	};
+	6493E5F2136C8DA400FE6C8A /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 6493E5F1136C8DA200FE6C8A /* soapStub.h */;
+	};
+	6493E600136C945F00FE6C8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 64B3C49B1366E0CE00A4AE07 /* soapH.h */;
+		name = "soapH.h: 420";
+		rLen = 0;
+		rLoc = 22734;
+		rType = 0;
+		vrLen = 3169;
+		vrLoc = 20382;
+	};
+	6493E601136C945F00FE6C8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
+		name = "main.cpp: 63";
+		rLen = 0;
+		rLoc = 1458;
+		rType = 0;
+		vrLen = 1224;
+		vrLoc = 1753;
+	};
+	6493E602136C945F00FE6C8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 64B3C49C1366E0EC00A4AE07 /* soapC.cpp */;
+		rLen = 0;
+		rLoc = 4075;
+		rType = 1;
+	};
+	6493E603136C945F00FE6C8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 64B3C49C1366E0EC00A4AE07 /* soapC.cpp */;
+		name = "soapC.cpp: 4076";
+		rLen = 0;
+		rLoc = 171279;
+		rType = 0;
+		vrLen = 2222;
+		vrLoc = 170665;
+	};
+	6493E608136C945F00FE6C8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 6493E5F1136C8DA200FE6C8A /* soapStub.h */;
+		name = "soapStub.h: 555";
+		rLen = 13;
+		rLoc = 23118;
+		rType = 0;
+		vrLen = 3585;
+		vrLoc = 21449;
+	};
+	64B3C4331366BF1B00A4AE07 /* WebApi */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = WebApi;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	64B3C4381366BF4100A4AE07 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	64B3C4391366BF4100A4AE07 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	64B3C4961366E05400A4AE07 /* soapClient.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1762, 6383}}";
+			sepNavSelRange = "{4727, 0}";
+			sepNavVisRange = "{3982, 1299}";
+		};
+	};
+	64B3C49B1366E0CE00A4AE07 /* soapH.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1699, 33046}}";
+			sepNavSelRange = "{22734, 0}";
+			sepNavVisRange = "{20382, 3169}";
+		};
+	};
+	64B3C49C1366E0EC00A4AE07 /* soapC.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1629, 159991}}";
+			sepNavSelRange = "{171279, 0}";
+			sepNavVisRange = "{170665, 2222}";
+		};
+	};
+	64B3C49E1366E13000A4AE07 /* soapWebApiSoapBindingProxy.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {833, 702}}";
+			sepNavSelRange = "{2451, 0}";
+			sepNavVisRange = "{0, 4312}";
+			sepNavWindowFrame = "{{15, 62}, {1108, 1111}}";
+		};
+	};
+	8DD76F620486A84900D96B5E /* WebApi */ = {
+		activeExec = 0;
+		executables = (
+			64B3C4331366BF1B00A4AE07 /* WebApi */,
+		);
+	};
+}

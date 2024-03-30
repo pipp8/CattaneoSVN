@@ -1,0 +1,6 @@
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\RemotingDemo\C#\Debug\CSRemotingClient.exe.config
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\RemotingDemo\C#\Debug\CSRemotingClient.exe
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\RemotingDemo\C#\Debug\CSRemotingClient.pdb
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\RemotingDemo\C#\CSRemoting\CSRemotingClient\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\RemotingDemo\C#\CSRemoting\CSRemotingClient\obj\Debug\CSRemotingClient.exe
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\RemotingDemo\C#\CSRemoting\CSRemotingClient\obj\Debug\CSRemotingClient.pdb

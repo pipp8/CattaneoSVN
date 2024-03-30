@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+  <HEAD>
+    <TITLE>J2SE SMS Message Connection Implementation (16-Jan-2003)</TITLE>
+    <!-- Created by: Gary Adams - SMI Software Development, 26-Apr-2002 -->
+    <!-- Changed by: Gary Adams - SMI Software Development, 16-Jan-2003 -->
+
+
+  </HEAD>
+  <BODY>
+    J2SE SMS Message Connection Implementation.
+    <P>
+      Implementation classes for the SMS Message Connection layered
+      on a <code>DatagramSocket</code> low level transport.
+    </P>
+
+    <P>
+      A single class is shared by the J2ME client and the J2SE
+      service to allow formatted messages to be transmitted
+      across platforms.
+
+      <code>com.sun.midp.io.j2me.sms.DatagramRecord</code> provides
+      the interface to get/set fielded data packed into a
+      binary datagram message.
+    </P>
+    <H2>Configuration File</H2>
+    <P>
+      Properties can be set in a configuration file called
+      "connections.prop" in the current working dirctectory to
+      over ride the built in default values for the target
+      client host name and the datagram ports to use for sending
+      and receiving datagrams from the test platform.
+      A phone number may also be set in the configuration file 
+      identifying the sender's address.
+    </P>
+    <P>
+      Here is a sample connections.prop file that matches the 
+      built in defaults.
+    </P>
+    <PRE>
+DatagramHost=localhost
+DatagramPortIn=12345
+DatagramPortOut=54321
+CBSPort=24680
+PhoneNumber=+123456789
+    </PRE>
+
+  </BODY>
+</HTML>

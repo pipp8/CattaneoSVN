@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6400120B1406F74D00149CB6 /* SplashScreenController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 640012091406F74D00149CB6 /* SplashScreenController.xib */; };
+		6400120E1406F93D00149CB6 /* SplashScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6400120D1406F93D00149CB6 /* SplashScreenController.m */; };
+		6410786E1406CCA000A54FF1 /* HistoryManagerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6410786C1406CCA000A54FF1 /* HistoryManagerController.xib */; };
+		641078741406CCF100A54FF1 /* ColorPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 641078701406CCF100A54FF1 /* ColorPickerViewController.xib */; };
+		641078751406CCF100A54FF1 /* OptionsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 641078721406CCF100A54FF1 /* OptionsController.xib */; };
+		64DBCE3D13FC3526000E8DAE /* OptionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DBCE3B13FC3526000E8DAE /* OptionsController.m */; };
+		64E0555413FAFD1C00D8520F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E0555313FAFD1C00D8520F /* UIKit.framework */; };
+		64E0555613FAFD1C00D8520F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E0555513FAFD1C00D8520F /* Foundation.framework */; };
+		64E0555813FAFD1C00D8520F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E0555713FAFD1C00D8520F /* CoreGraphics.framework */; };
+		64E0555E13FAFD1C00D8520F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64E0555C13FAFD1C00D8520F /* InfoPlist.strings */; };
+		64E0556113FAFD1C00D8520F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64E0556013FAFD1C00D8520F /* main.m */; };
+		64E0556713FAFD1C00D8520F /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64E0556513FAFD1C00D8520F /* MainWindow.xib */; };
+		64E0559A13FB26FA00D8520F /* CanvasController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64E0559813FB26FA00D8520F /* CanvasController.xib */; };
+		64E055A013FB272500D8520F /* CanvasController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64E0559F13FB272400D8520F /* CanvasController.m */; };
+		64E8699F1406CB35003018E9 /* HistoryManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64E8699E1406CB35003018E9 /* HistoryManagerController.m */; };
+		64EACD96140012EE0087B1BF /* ColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64EACD8E140012EE0087B1BF /* ColorPickerView.m */; };
+		64EACD97140012EE0087B1BF /* ColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64EACD90140012EE0087B1BF /* ColorPickerViewController.m */; };
+		64EACD98140012EE0087B1BF /* ColorSwatchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64EACD92140012EE0087B1BF /* ColorSwatchView.m */; };
+		64EACD99140012EE0087B1BF /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64EACD95140012EE0087B1BF /* GradientView.m */; };
+		64EACD9F1400134E0087B1BF /* UIColor-Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 64EACD9C1400134E0087B1BF /* UIColor-Expanded.m */; };
+		64EACDA01400134E0087B1BF /* UIColor-HSVAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 64EACD9E1400134E0087B1BF /* UIColor-HSVAdditions.m */; };
+		64EACDAE1400194F0087B1BF /* bar_select.png in Resources */ = {isa = PBXBuildFile; fileRef = 64EACDA91400194F0087B1BF /* bar_select.png */; };
+		64EACDAF1400194F0087B1BF /* colormap.png in Resources */ = {isa = PBXBuildFile; fileRef = 64EACDAA1400194F0087B1BF /* colormap.png */; };
+		64EACDB01400194F0087B1BF /* crosshair.png in Resources */ = {isa = PBXBuildFile; fileRef = 64EACDAB1400194F0087B1BF /* crosshair.png */; };
+		64EACDB11400194F0087B1BF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 64EACDAC1400194F0087B1BF /* Default.png */; };
+		64EACDB21400194F0087B1BF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 64EACDAD1400194F0087B1BF /* Icon.png */; };
+		64F2DE2913FBB51F0041F828 /* SpirographAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F2DE2813FBB51F0041F828 /* SpirographAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6400120A1406F74D00149CB6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SplashScreenController.xib; sourceTree = "<group>"; };
+		6400120C1406F93D00149CB6 /* SplashScreenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SplashScreenController.h; path = Classes/SplashScreenController.h; sourceTree = "<group>"; };
+		6400120D1406F93D00149CB6 /* SplashScreenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SplashScreenController.m; path = Classes/SplashScreenController.m; sourceTree = "<group>"; };
+		6410786D1406CCA000A54FF1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HistoryManagerController.xib; sourceTree = "<group>"; };
+		641078711406CCF100A54FF1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ColorPickerViewController.xib; sourceTree = "<group>"; };
+		641078731406CCF100A54FF1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OptionsController.xib; sourceTree = "<group>"; };
+		64DBCE3A13FC3526000E8DAE /* OptionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OptionsController.h; path = Classes/OptionsController.h; sourceTree = "<group>"; };
+		64DBCE3B13FC3526000E8DAE /* OptionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OptionsController.m; path = Classes/OptionsController.m; sourceTree = "<group>"; };
+		64E0554F13FAFD1C00D8520F /* Spirograph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spirograph.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		64E0555313FAFD1C00D8520F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		64E0555513FAFD1C00D8520F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		64E0555713FAFD1C00D8520F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		64E0555B13FAFD1C00D8520F /* Spirograph-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Spirograph-Info.plist"; sourceTree = "<group>"; };
+		64E0555D13FAFD1C00D8520F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		64E0555F13FAFD1C00D8520F /* Spirograph-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spirograph-Prefix.pch"; sourceTree = "<group>"; };
+		64E0556013FAFD1C00D8520F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		64E0556613FAFD1C00D8520F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		64E0559913FB26FA00D8520F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CanvasController.xib; sourceTree = "<group>"; };
+		64E0559E13FB272400D8520F /* CanvasController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CanvasController.h; path = Classes/CanvasController.h; sourceTree = "<group>"; };
+		64E0559F13FB272400D8520F /* CanvasController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CanvasController.m; path = Classes/CanvasController.m; sourceTree = "<group>"; };
+		64E8699D1406CB35003018E9 /* HistoryManagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryManagerController.h; path = Classes/HistoryManagerController.h; sourceTree = "<group>"; };
+		64E8699E1406CB35003018E9 /* HistoryManagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryManagerController.m; path = Classes/HistoryManagerController.m; sourceTree = "<group>"; };
+		64EACD8D140012EE0087B1BF /* ColorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorPickerView.h; path = Classes/ColorPickerView.h; sourceTree = "<group>"; };
+		64EACD8E140012EE0087B1BF /* ColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColorPickerView.m; path = Classes/ColorPickerView.m; sourceTree = "<group>"; };
+		64EACD8F140012EE0087B1BF /* ColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorPickerViewController.h; path = Classes/ColorPickerViewController.h; sourceTree = "<group>"; };
+		64EACD90140012EE0087B1BF /* ColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColorPickerViewController.m; path = Classes/ColorPickerViewController.m; sourceTree = "<group>"; };
+		64EACD91140012EE0087B1BF /* ColorSwatchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorSwatchView.h; path = Classes/ColorSwatchView.h; sourceTree = "<group>"; };
+		64EACD92140012EE0087B1BF /* ColorSwatchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColorSwatchView.m; path = Classes/ColorSwatchView.m; sourceTree = "<group>"; };
+		64EACD93140012EE0087B1BF /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Classes/Constants.h; sourceTree = "<group>"; };
+		64EACD94140012EE0087B1BF /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GradientView.h; path = Classes/GradientView.h; sourceTree = "<group>"; };
+		64EACD95140012EE0087B1BF /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GradientView.m; path = Classes/GradientView.m; sourceTree = "<group>"; };
+		64EACD9B1400134E0087B1BF /* UIColor-Expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor-Expanded.h"; path = "Classes/UIColor-Expanded.h"; sourceTree = "<group>"; };
+		64EACD9C1400134E0087B1BF /* UIColor-Expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor-Expanded.m"; path = "Classes/UIColor-Expanded.m"; sourceTree = "<group>"; };
+		64EACD9D1400134E0087B1BF /* UIColor-HSVAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor-HSVAdditions.h"; path = "Classes/UIColor-HSVAdditions.h"; sourceTree = "<group>"; };
+		64EACD9E1400134E0087B1BF /* UIColor-HSVAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor-HSVAdditions.m"; path = "Classes/UIColor-HSVAdditions.m"; sourceTree = "<group>"; };
+		64EACDA91400194F0087B1BF /* bar_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bar_select.png; path = "UI Parts/bar_select.png"; sourceTree = "<group>"; };
+		64EACDAA1400194F0087B1BF /* colormap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = colormap.png; path = "UI Parts/colormap.png"; sourceTree = "<group>"; };
+		64EACDAB1400194F0087B1BF /* crosshair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = crosshair.png; path = "UI Parts/crosshair.png"; sourceTree = "<group>"; };
+		64EACDAC1400194F0087B1BF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = "UI Parts/Default.png"; sourceTree = "<group>"; };
+		64EACDAD1400194F0087B1BF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = "UI Parts/Icon.png"; sourceTree = "<group>"; };
+		64F2DE2713FBB51F0041F828 /* SpirographAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpirographAppDelegate.h; path = Classes/SpirographAppDelegate.h; sourceTree = "<group>"; };
+		64F2DE2813FBB51F0041F828 /* SpirographAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpirographAppDelegate.m; path = Classes/SpirographAppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		64E0554C13FAFD1C00D8520F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64E0555413FAFD1C00D8520F /* UIKit.framework in Frameworks */,
+				64E0555613FAFD1C00D8520F /* Foundation.framework in Frameworks */,
+				64E0555813FAFD1C00D8520F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		64E0554413FAFD1C00D8520F = {
+			isa = PBXGroup;
+			children = (
+				64E0555913FAFD1C00D8520F /* Spirograph */,
+				64E0555213FAFD1C00D8520F /* Frameworks */,
+				64E0555013FAFD1C00D8520F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		64E0555013FAFD1C00D8520F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				64E0554F13FAFD1C00D8520F /* Spirograph.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		64E0555213FAFD1C00D8520F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64E0555313FAFD1C00D8520F /* UIKit.framework */,
+				64E0555513FAFD1C00D8520F /* Foundation.framework */,
+				64E0555713FAFD1C00D8520F /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		64E0555913FAFD1C00D8520F /* Spirograph */ = {
+			isa = PBXGroup;
+			children = (
+				64E0557613FB14D300D8520F /* Classes */,
+				64E0557713FB14E200D8520F /* Resources */,
+				64E0555A13FAFD1C00D8520F /* Supporting Files */,
+			);
+			path = Spirograph;
+			sourceTree = "<group>";
+		};
+		64E0555A13FAFD1C00D8520F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				64E0555B13FAFD1C00D8520F /* Spirograph-Info.plist */,
+				64E0555C13FAFD1C00D8520F /* InfoPlist.strings */,
+				64E0555F13FAFD1C00D8520F /* Spirograph-Prefix.pch */,
+				64E0556013FAFD1C00D8520F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		64E0557613FB14D300D8520F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6400120C1406F93D00149CB6 /* SplashScreenController.h */,
+				6400120D1406F93D00149CB6 /* SplashScreenController.m */,
+				64E8699D1406CB35003018E9 /* HistoryManagerController.h */,
+				64E8699E1406CB35003018E9 /* HistoryManagerController.m */,
+				64EACD8D140012EE0087B1BF /* ColorPickerView.h */,
+				64EACD8E140012EE0087B1BF /* ColorPickerView.m */,
+				64EACD8F140012EE0087B1BF /* ColorPickerViewController.h */,
+				64EACD90140012EE0087B1BF /* ColorPickerViewController.m */,
+				64EACD91140012EE0087B1BF /* ColorSwatchView.h */,
+				64EACD92140012EE0087B1BF /* ColorSwatchView.m */,
+				64EACD93140012EE0087B1BF /* Constants.h */,
+				64EACD94140012EE0087B1BF /* GradientView.h */,
+				64EACD95140012EE0087B1BF /* GradientView.m */,
+				64E0559E13FB272400D8520F /* CanvasController.h */,
+				64E0559F13FB272400D8520F /* CanvasController.m */,
+				64F2DE2713FBB51F0041F828 /* SpirographAppDelegate.h */,
+				64F2DE2813FBB51F0041F828 /* SpirographAppDelegate.m */,
+				64DBCE3A13FC3526000E8DAE /* OptionsController.h */,
+				64DBCE3B13FC3526000E8DAE /* OptionsController.m */,
+				64EACD9A140013280087B1BF /* UIColor Extension */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		64E0557713FB14E200D8520F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				64EACDA91400194F0087B1BF /* bar_select.png */,
+				64EACDAA1400194F0087B1BF /* colormap.png */,
+				64EACDAB1400194F0087B1BF /* crosshair.png */,
+				64EACDAC1400194F0087B1BF /* Default.png */,
+				64EACDAD1400194F0087B1BF /* Icon.png */,
+				64E0559813FB26FA00D8520F /* CanvasController.xib */,
+				641078701406CCF100A54FF1 /* ColorPickerViewController.xib */,
+				641078721406CCF100A54FF1 /* OptionsController.xib */,
+				6410786C1406CCA000A54FF1 /* HistoryManagerController.xib */,
+				64E0556513FAFD1C00D8520F /* MainWindow.xib */,
+				640012091406F74D00149CB6 /* SplashScreenController.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		64EACD9A140013280087B1BF /* UIColor Extension */ = {
+			isa = PBXGroup;
+			children = (
+				64EACD9B1400134E0087B1BF /* UIColor-Expanded.h */,
+				64EACD9C1400134E0087B1BF /* UIColor-Expanded.m */,
+				64EACD9D1400134E0087B1BF /* UIColor-HSVAdditions.h */,
+				64EACD9E1400134E0087B1BF /* UIColor-HSVAdditions.m */,
+			);
+			name = "UIColor Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		64E0554E13FAFD1C00D8520F /* Spirograph */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64E0556A13FAFD1C00D8520F /* Build configuration list for PBXNativeTarget "Spirograph" */;
+			buildPhases = (
+				64E0554B13FAFD1C00D8520F /* Sources */,
+				64E0554C13FAFD1C00D8520F /* Frameworks */,
+				64E0554D13FAFD1C00D8520F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Spirograph;
+			productName = Spirograph;
+			productReference = 64E0554F13FAFD1C00D8520F /* Spirograph.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		64E0554613FAFD1C00D8520F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Dip. Informatica - Università di Salerno";
+			};
+			buildConfigurationList = 64E0554913FAFD1C00D8520F /* Build configuration list for PBXProject "Spirograph" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 64E0554413FAFD1C00D8520F;
+			productRefGroup = 64E0555013FAFD1C00D8520F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				64E0554E13FAFD1C00D8520F /* Spirograph */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		64E0554D13FAFD1C00D8520F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64E0555E13FAFD1C00D8520F /* InfoPlist.strings in Resources */,
+				64E0556713FAFD1C00D8520F /* MainWindow.xib in Resources */,
+				64E0559A13FB26FA00D8520F /* CanvasController.xib in Resources */,
+				64EACDAE1400194F0087B1BF /* bar_select.png in Resources */,
+				64EACDAF1400194F0087B1BF /* colormap.png in Resources */,
+				64EACDB01400194F0087B1BF /* crosshair.png in Resources */,
+				64EACDB11400194F0087B1BF /* Default.png in Resources */,
+				64EACDB21400194F0087B1BF /* Icon.png in Resources */,
+				6410786E1406CCA000A54FF1 /* HistoryManagerController.xib in Resources */,
+				641078741406CCF100A54FF1 /* ColorPickerViewController.xib in Resources */,
+				641078751406CCF100A54FF1 /* OptionsController.xib in Resources */,
+				6400120B1406F74D00149CB6 /* SplashScreenController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		64E0554B13FAFD1C00D8520F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64E0556113FAFD1C00D8520F /* main.m in Sources */,
+				64E055A013FB272500D8520F /* CanvasController.m in Sources */,
+				64F2DE2913FBB51F0041F828 /* SpirographAppDelegate.m in Sources */,
+				64DBCE3D13FC3526000E8DAE /* OptionsController.m in Sources */,
+				64EACD96140012EE0087B1BF /* ColorPickerView.m in Sources */,
+				64EACD97140012EE0087B1BF /* ColorPickerViewController.m in Sources */,
+				64EACD98140012EE0087B1BF /* ColorSwatchView.m in Sources */,
+				64EACD99140012EE0087B1BF /* GradientView.m in Sources */,
+				64EACD9F1400134E0087B1BF /* UIColor-Expanded.m in Sources */,
+				64EACDA01400134E0087B1BF /* UIColor-HSVAdditions.m in Sources */,
+				64E8699F1406CB35003018E9 /* HistoryManagerController.m in Sources */,
+				6400120E1406F93D00149CB6 /* SplashScreenController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		640012091406F74D00149CB6 /* SplashScreenController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6400120A1406F74D00149CB6 /* en */,
+			);
+			name = SplashScreenController.xib;
+			sourceTree = "<group>";
+		};
+		6410786C1406CCA000A54FF1 /* HistoryManagerController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6410786D1406CCA000A54FF1 /* en */,
+			);
+			name = HistoryManagerController.xib;
+			sourceTree = "<group>";
+		};
+		641078701406CCF100A54FF1 /* ColorPickerViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				641078711406CCF100A54FF1 /* en */,
+			);
+			name = ColorPickerViewController.xib;
+			sourceTree = "<group>";
+		};
+		641078721406CCF100A54FF1 /* OptionsController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				641078731406CCF100A54FF1 /* en */,
+			);
+			name = OptionsController.xib;
+			sourceTree = "<group>";
+		};
+		64E0555C13FAFD1C00D8520F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64E0555D13FAFD1C00D8520F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		64E0556513FAFD1C00D8520F /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64E0556613FAFD1C00D8520F /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		64E0559813FB26FA00D8520F /* CanvasController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64E0559913FB26FA00D8520F /* en */,
+			);
+			name = CanvasController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		64E0556813FAFD1C00D8520F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		64E0556913FAFD1C00D8520F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		64E0556B13FAFD1C00D8520F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Spirograph/Spirograph-Prefix.pch";
+				INFOPLIST_FILE = "Spirograph/Spirograph-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		64E0556C13FAFD1C00D8520F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Spirograph/Spirograph-Prefix.pch";
+				INFOPLIST_FILE = "Spirograph/Spirograph-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		64E0554913FAFD1C00D8520F /* Build configuration list for PBXProject "Spirograph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64E0556813FAFD1C00D8520F /* Debug */,
+				64E0556913FAFD1C00D8520F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64E0556A13FAFD1C00D8520F /* Build configuration list for PBXNativeTarget "Spirograph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64E0556B13FAFD1C00D8520F /* Debug */,
+				64E0556C13FAFD1C00D8520F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 64E0554613FAFD1C00D8520F /* Project object */;
+}

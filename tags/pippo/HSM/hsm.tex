@@ -1,0 +1,86 @@
+\documentclass{llncs}
+
+\title{Proxy SmartCard}
+
+\author{Giuseppe Cattaneo\inst{1}  \and Pompeo Faruolo\inst{1} \and Ivan Visconti\inst{1}}
+
+\institute{ Universit\`{a} di Salerno,
+Dipartimento di Informatica ed Applicazioni {\sl R.M. Capocelli},\\
+Via Ponte don Melillo, I-84081 Fisciano (SA), Italy\\ 
+\email{\{cattaneo,pomfar,visconti\}@dia.unisa.it}}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We present a ... bla bla
+\end{abstract}
+
+\section{Introduction}
+The concepts of proxy signature and proxy cryptosystem was introduced respectively by Mambo et al.\cite{DBLP:conf/ccs/MamboUO96} in the 1996 and by Mambo and Okamoto\cite{MamboO97} in 1997.  In these schema an user, called \emph{owner}, delegates another user, called \emph{proxy user}, the power to execute own cryptographic tasks. In detail, the proxy user can sign messages on owner's behalf, in the proxy signature, and decrypt ciphertexts encrypted with owner's public key, in the proxy cryptosystem. In literature many extensions and improvements have been proposed for both schema, such as threshold proxy signatures\cite{DBLP:journals/jss/ShaoCL07}, blind proxy signatures \cite{DBLP:conf/snpd/LiuTLZ07,DBLP:conf/csse/QinW08,DBLP:conf/ism/KimC06}, proxy signatures with warrant recovery [xx], nominative proxy signatures [xx], one-time proxy signatures \cite{DBLP:conf/cans/LuCD06}, and proxy-anonymous proxy signatures \cite{DBLP:conf/iscis/Yumin06,DBLP:conf/snpd/HuL07,DBLP:conf/mcam/HuLL07,DBLP:conf/csreaSAM/ZhaoTLZ06,DBLP:conf/csse/ZhouW08a,DBLP:conf/scn/FuchsbauerP08,DBLP:conf/icycs/FanZL08}. Initially the schema was thought to be used in the large enterprise scenario, where a manager want delegate the sign of some documents in his absence or he can delegates his secretary to decrypt some emails encrypted using his public key. Successively these schema have been adopted in numerous other contexts such as, the electronics transaction [x], mobile agent environment [x] , distributed systems [x], grid computing [x], distributed shared object systems [x], global distribution networks [x], and mobile communications [x].%vedere ref "2003Boldyrreva_Secure..."
+\\Most of these solutions are difficultly applicable in the real world, because they don't adopt the commonly used standard cryptography operations. For example, the verification of a delegate sign can not be accomplished by the conventional programs because it requires the custom verify.  Moreover, these schema have the drawback of the impossibility to generate and store the private/secret keys on hardware tokens. Than the system that adopt them are vulnerability for the key handling and the users can not use own personal security hardware tokens.\\
+\emph{Our contribute}. We propose a system that allows the owner to delegate authorized users to sign messages on his behalf and decrypt ciphertexts encrypted with his public key through the use of his personal smartcard. The proxy users, after a strong authentication to the system, can access remotely to the owner's smartcard, sending a document to sing or a ciphertext to decrypted. If the request is compatible with the policies established by the owner for that proxy user, the system logs and executes the request forwarding the smartcard output.\\
+The safety of smartcard is preserved because the proxy users can execute only sign and decrypt operations and these are performed only by the smartcard. Then the private and secret keys are never extract from the smartcard. We think that our system overcomes some drawbacks of the proxies schema. Indeed in our system there is a simple and efficient revocation mechanism, the complete knowledge by the owner of the signed messages and decrypted ciphertexts produced by the proxy users, the possibility to use the personal security tokens and the standard cryptographic operations.\\
+\emph{Organization of the paper.} In the Section~\ref{reletedWork} we review the proxy signature and cryptosystem schema proposed, in the Section~\ref{system} we present in detail our system.... 
+
+
+
+\section{Related work}
+\label{reletedWork}
+In this section we report a state of art of the proxy signature and proxy cryptosystem schema, reporting their main characteristics.
+
+
+\subsection{Proxy Signature}
+
+
+\dots
+
+
+In literature has been introduced by Mambo et al.\cite{DBLP:conf/ccs/MamboUO96} security requirements that a proxy signature schema should satisfy. Successively Lee et at. revisited them defining the following list of requirements today the commonly accepted. 
+
+\begin{description}
+
+\item[Veriﬁability]:  From a proxy signature, a veriﬁer can be convinced of the original signer’s agreement on the signed message
+
+\item[Strong unforgeability]: Nobody, except the proxy user, cannot  create a valid proxy signature
+
+\item[Strong Identiﬁability]: Anyone can determine the identity of the corresponding proxy user from a proxy signature. 
+
+\item[Strong undeniability]: A proxy signer cannot repudiate a proxy signature it created. 
+
+\end{description}
+
+\dots
+
+
+\subsection{Proxy Cryptosystem}
+
+\dots
+
+\section{Proxy SmartCard System}
+\label{system}
+
+The key of our system is to give to the proxy users the possibility to use the owners smart card without to compromise them and at the same time to maintain completely under control the proxy users activities. This is achieved allowing the remote access to some smart cards. The system is able to manage a set of smart card reader connected to it, to which the users can access via web in order to accomplish sign and decrypt operations on the particular smart card. In our scenario, owners and proxy users have to registered them-self to our system. The owners put their smart cards into readers system and specify the proxy users, and with which features, can access to them. The proxy users, after logged in the system through a strong authorization mechanism, can use remotely the smart cards according to the policies established by the respectively owners. In detail, the owners can to authorize the delegation only for a time period and on a particular kind of documents, e.g. to decrypt only the email with a specified subject. Moreover, it possible to specify the kind of the proxy signature, that is, with or without warranty. In the former case, the signature will contain also a warning explaining that the signature is produced by a delegate. After to be authorized, the proxy users can submit to the system the requests.
+The proxy users must sign each requests with own private key, so that they cannot repudiate the requests. The system verified identity and the authorization of the proxy user, logs the request in order to allow the owners to check the activity of owns delegates. The owners can revoke the delegation to each proxy user in every time simply changing the policies of the user on the system. This withdrawal will have immediate effect, indeed, the revoked proxy user will not be able more to create a proxy signature. The past signature remain valid. 
+We remark that our system respects all the security requirements introduced by Lee et al.[]. Indeed, the \emph{Veriﬁability} is satisfied because the signature is created with the private key of the owner. The \emph{Strong undeniability} is achieved through the signature of the requests by the proxy users. The \emph{Strong Identiﬁability} and \emph{Strong unforgeability} are satisfied in the warranty schema because the signature contain information about the signer created by himself with him private key and thus not forgery. Without the warranty schema all the additional information about the signer aren't linked to the signature but maintained on the system logs.
+
+
+% virtual token
+% pin
+% potere legale firma mantenuto
+
+
+\subsection{The Architecture}
+We implemented a prototype of our system in python language. It is composed by three main components, the the Dispatcher the RequestHandlers and the CardHandlers. The Dispatcher is a daemon in listening of the user requests and that dispatches them on the respective queue in waiting being executed. The RequestHandlers have access to these queues from which extract every time a new request that will be processed. 
+
+
+For each card reader there is a special process, the CardHandler, that is dedicate to handle in exclusive the reader. It invokes on its smart card the requests of a sign o decrypt and return the results to the RequestHandler. 
+
+
+ 
+
+\bibliographystyle{splncs}
+\bibliography{hsm}
+
+\end{document}  

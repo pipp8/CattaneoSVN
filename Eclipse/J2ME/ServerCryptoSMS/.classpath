@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="D:/Documenti/MEWorkspace/ServerCryptoSMS/lib/swing-layout-1.0.jar"/>
+	<classpathentry kind="lib" path="D:/Documenti/MEWorkspace/ServerCryptoSMS/lib/BouncyCastle.jar"/>
+	<classpathentry kind="lib" path="D:/Documenti/MEWorkspace/ServerCryptoSMS/lib/comm.jar"/>
+	<classpathentry kind="lib" path="D:/Documenti/MEWorkspace/ServerCryptoSMS/lib/kenv.zip"/>
+	<classpathentry kind="lib" path="D:/Documenti/MEWorkspace/ServerCryptoSMS/lib/kvem.jar"/>
+	<classpathentry kind="lib" path="D:/Documenti/MEWorkspace/ServerCryptoSMS/lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="D:/Documenti/MEWorkspace/ServerCryptoSMS/lib/Utils.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

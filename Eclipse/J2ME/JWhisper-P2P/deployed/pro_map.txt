@@ -1,0 +1,795 @@
+jwhisper.book.Address -> e:
+    int _rmsID -> a
+    jwhisper.book.Person _person -> b
+    java.lang.String _url -> c
+    byte[] _publicKey -> d
+    int _publicKeyLen -> e
+    boolean _hasKey -> f
+    byte[] getBytes() -> a
+    java.lang.String getUrl() -> b
+    void setUrl(java.lang.String) -> a
+    jwhisper.book.Person getPerson() -> c
+    int getRmsID() -> d
+    byte[] getPublicKey() -> e
+    void setPublicKey(byte[]) -> a
+    boolean hasKey() -> f
+jwhisper.book.AddressPersonFilter -> av:
+    jwhisper.book.Person _person -> a
+    boolean matches(byte[]) -> matches
+jwhisper.book.AddressService -> am:
+    jwhisper.gui.JWhisperMidlet _midlet -> a
+    jwhisper.book.AddressService _adressService -> b
+    jwhisper.helpers.CryptedRecordStore _persons -> c
+    jwhisper.helpers.CryptedRecordStore _numbers -> d
+    jwhisper.helpers.CryptedRecordStore _messages -> e
+    jwhisper.helpers.CryptedRecordStore _settings -> f
+    void init(jwhisper.gui.JWhisperMidlet) -> a
+    void createPerson(java.lang.String,java.lang.String) -> a
+    jwhisper.book.Address[] getAdresses4Person(jwhisper.book.Person) -> a
+    boolean existsPerson(java.lang.String) -> b
+    jwhisper.book.Person[] getPersons() -> a
+    java.util.Vector getPersonV() -> g
+    void alterName(jwhisper.book.Person,java.lang.String) -> a
+    void saveMessage(jwhisper.book.CMessage) -> a
+    jwhisper.book.Settings getSetting() -> b
+    jwhisper.book.Settings saveSettings(java.lang.String,java.lang.String,jwhisper.helpers.KeyPairHelper) -> a
+    void deleteMessage(jwhisper.book.CMessage) -> b
+    jwhisper.book.CMessage[] getInboxUnreadMessages() -> c
+    jwhisper.book.CMessage[] getInboxReadMessages() -> d
+    jwhisper.book.CMessage[] getOutboxMessages() -> e
+    jwhisper.book.CMessage[] getPublicKeys() -> f
+    jwhisper.book.CMessage[] getMessagesFromEnumeration(javax.microedition.rms.RecordEnumeration) -> a
+    jwhisper.book.Person getPerson(int) -> a
+    void updateAdress(jwhisper.book.Address) -> a
+    jwhisper.book.Address findAdress4Url(java.lang.String) -> a
+    void importKey4Url(java.lang.String,byte[]) -> a
+    byte[] findPublicKey4Address(jwhisper.book.Address) -> b
+    void deleteAddress(jwhisper.book.Address) -> c
+jwhisper.book.AddressUrlFilter -> bb:
+    java.lang.String _url -> a
+    boolean matches(byte[]) -> matches
+jwhisper.book.CMessage -> as:
+    int _rmsID -> a
+    java.util.Date _time -> b
+    byte[] _data -> c
+    java.lang.String _sender -> d
+    java.lang.String _receiver -> e
+    byte _type -> f
+    byte _version -> g
+    byte getType() -> a
+    void setType(byte) -> a
+    java.lang.String getSender() -> b
+    byte[] getData() -> c
+    byte[] getBytes() -> d
+    java.lang.String getReceiver() -> e
+    void setData(byte[]) -> a
+    int getRmsID() -> f
+    java.util.Date getTime() -> g
+    void setTime(java.util.Date) -> a
+    byte[] prepareForTransport() -> h
+jwhisper.book.MessageTypeFilter -> ai:
+    byte _mType -> a
+    boolean matches(byte[]) -> matches
+jwhisper.book.Person -> b:
+    int _rmsID -> a
+    java.lang.String _name -> b
+    jwhisper.book.Address[] _conns -> c
+    java.lang.String getName() -> a
+    jwhisper.book.Address[] getConns() -> b
+    int getRmsID() -> c
+    void setConns(jwhisper.book.Address[]) -> a
+    boolean equals(jwhisper.book.Person) -> a
+jwhisper.book.PersonComparator -> ac:
+    int compare(byte[],byte[]) -> compare
+jwhisper.book.Settings -> be:
+    jwhisper.book.Settings _settings -> a
+    java.lang.String _name -> b
+    java.lang.String _number -> c
+    jwhisper.helpers.KeyPairHelper _keyPair -> d
+    java.lang.String build -> e
+    jwhisper.helpers.Logger logger -> f
+    jwhisper.book.Settings init(byte[]) -> a
+    jwhisper.book.Settings init(java.lang.String,java.lang.String,jwhisper.helpers.KeyPairHelper) -> a
+    jwhisper.book.Settings findSettings() -> a
+    java.lang.String getName() -> b
+    java.lang.String getNumber() -> c
+    byte[] getPublicKey() -> d
+    jwhisper.helpers.KeyPairHelper getPair() -> e
+    java.lang.String getVersion() -> f
+    byte[] toBytes() -> g
+jwhisper.connection.MessageReader -> q:
+    jwhisper.gui.JWhisperMidlet midlet -> a
+    jwhisper.connection.MessageReader _mr -> b
+    jwhisper.helpers.Logger log -> c
+    javax.microedition.rms.RecordStore incommingStore -> d
+    jwhisper.connection.MessageReader worker -> e
+    jwhisper.connection.MessageReader getInstance() -> b
+    void init(jwhisper.gui.JWhisperMidlet) -> a
+    jwhisper.book.CMessage loadMessage() -> c
+    void run() -> run
+    void stop() -> a
+jwhisper.connection.MessageSender -> m:
+    java.lang.Thread sender -> a
+    jwhisper.connection.MessageSender instance -> b
+    java.util.Vector queue -> c
+    jwhisper.gui.JWhisperMidlet midlet -> d
+    jwhisper.helpers.Logger log -> e
+    jwhisper.connection.MessageSender getInstance() -> a
+    void init(jwhisper.gui.JWhisperMidlet) -> a
+    void send(java.lang.String,byte[]) -> a
+    void run() -> run
+    jwhisper.connection.MessageSender$QueuedMessage accessQueue(boolean,java.lang.String,byte[]) -> a
+    jwhisper.connection.MessageSender$QueuedMessage dequeue() -> b
+jwhisper.connection.MessageSender$QueuedMessage -> ad:
+    java.lang.String url -> a
+    byte[] payload -> b
+jwhisper.connection.Receiver -> w:
+    javax.wireless.messaging.MessageConnection connection -> a
+    jwhisper.helpers.Logger log -> b
+    javax.microedition.rms.RecordStore incommingStore -> c
+    jwhisper.connection.Receiver receiver -> d
+    jwhisper.connection.Receiver getInstance() -> a
+    jwhisper.connection.Receiver dirtyInit() -> b
+    jwhisper.connection.Receiver getReceiver() -> c
+    javax.wireless.messaging.MessageConnection getConnection() -> d
+    void notifyIncomingMessage(javax.wireless.messaging.MessageConnection) -> notifyIncomingMessage
+    void saveMessage(javax.wireless.messaging.Message) -> a
+jwhisper.gui.AddressEntry -> jwhisper.gui.v:
+    javax.microedition.lcdui.Command ok -> a
+    javax.microedition.lcdui.Command cancel -> b
+    jwhisper.gui.JWhisperMidlet gui -> c
+    javax.microedition.lcdui.TextField nameField -> d
+    javax.microedition.lcdui.TextField addressField -> e
+    javax.microedition.lcdui.Displayable caller -> f
+    jwhisper.book.Address address -> g
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+jwhisper.gui.AddressList -> jwhisper.gui.s:
+    jwhisper.gui.JWhisperMidlet gui -> a
+    java.util.Vector adresses -> b
+    javax.microedition.lcdui.Command back -> c
+    javax.microedition.lcdui.Command delete -> d
+    javax.microedition.lcdui.Command add -> e
+    javax.microedition.lcdui.Command edit -> f
+    javax.microedition.lcdui.Command send -> g
+    javax.microedition.lcdui.Command newMessage -> h
+    javax.microedition.lcdui.Command sendPublikKey -> i
+    javax.microedition.lcdui.Command importKey -> j
+    java.lang.String _messageText -> k
+    javax.microedition.lcdui.Image _key -> l
+    javax.microedition.lcdui.Image _noKey -> m
+    void buildList() -> a
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+    java.lang.String access$0(jwhisper.gui.AddressList) -> a
+jwhisper.gui.AddressList$1 -> jwhisper.gui.r:
+    jwhisper.gui.AddressList this$0 -> a
+    void run() -> run
+jwhisper.gui.ErrorScreen -> jwhisper.gui.q:
+    void showE(javax.microedition.lcdui.Display,java.lang.String,javax.microedition.lcdui.Displayable) -> a
+    void showI(javax.microedition.lcdui.Display,java.lang.String,javax.microedition.lcdui.Displayable) -> b
+    void show(javax.microedition.lcdui.Display,java.lang.String,javax.microedition.lcdui.Displayable,javax.microedition.lcdui.AlertType) -> a
+jwhisper.gui.ExitScreen -> jwhisper.gui.j:
+    javax.microedition.lcdui.Command CMD_YES -> a
+    javax.microedition.lcdui.Command CMD_NO -> b
+    jwhisper.gui.JWhisperMidlet midlet -> c
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+jwhisper.gui.InfoScreen -> jwhisper.gui.d:
+    javax.microedition.lcdui.Command ok -> a
+    javax.microedition.lcdui.Command alterNumber -> b
+    jwhisper.gui.JWhisperMidlet midlet -> c
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+jwhisper.gui.JWhisperCleanerMidlet -> jwhisper.gui.JWhisperCleanerMidlet:
+    javax.microedition.lcdui.Display display -> a
+    javax.microedition.lcdui.Form form -> b
+    javax.microedition.lcdui.Command CMD_OK -> c
+    javax.microedition.lcdui.Command CMD_EXIT -> d
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+    void destroyApp(boolean) -> destroyApp
+    void pauseApp() -> pauseApp
+    void startApp() -> startApp
+jwhisper.gui.JWhisperMidlet -> jwhisper.gui.JWhisperMidlet:
+    javax.microedition.lcdui.Displayable menu -> a
+    jwhisper.helpers.PassphraseTimer timer -> b
+    jwhisper.book.Settings _settings -> c
+    jwhisper.helpers.ResourceManager res -> d
+    jwhisper.helpers.Logger log -> e
+    jwhisper.connection.Receiver receiver -> f
+    javax.microedition.lcdui.Ticker ticker -> g
+    jwhisper.helpers.TickerTask tickerTask -> h
+    void initAddressService(java.lang.String) -> a
+    javax.microedition.lcdui.Displayable getMenu() -> a
+    void destroyApp(boolean) -> destroyApp
+    void openNewMessage() -> b
+    void openUnreadMessageList() -> c
+    void openReadMessageList() -> d
+    void openOutBox() -> e
+    void pauseApp() -> pauseApp
+    void showError(java.lang.String) -> b
+    void showInfo(java.lang.String) -> c
+    void showMenu() -> f
+    void startApp() -> startApp
+    jwhisper.book.Settings getSettings() -> g
+    void setSettings(jwhisper.book.Settings) -> a
+    jwhisper.helpers.ResourceManager getResourceManager() -> h
+    void openInfoScreen() -> i
+    void finishInit() -> j
+    void setTicketText(java.lang.String) -> d
+    javax.microedition.lcdui.Ticker getTicker() -> k
+jwhisper.gui.JWhisperSplash -> jwhisper.gui.g:
+    javax.microedition.lcdui.Command ok -> a
+    jwhisper.gui.JWhisperMidlet midlet -> b
+    javax.microedition.lcdui.Image image -> c
+    javax.microedition.lcdui.ImageItem imageItem -> d
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+jwhisper.gui.KeyList -> jwhisper.gui.h:
+    jwhisper.gui.JWhisperMidlet gui -> a
+    jwhisper.book.CMessage[] messages -> b
+    javax.microedition.lcdui.Command back -> c
+    javax.microedition.lcdui.Command delete -> d
+    javax.microedition.lcdui.Command importKey -> e
+    void buildList() -> a
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+jwhisper.gui.LogOutput -> jwhisper.gui.l:
+    javax.microedition.lcdui.Command CMD_EXIT -> a
+    jwhisper.gui.JWhisperMidlet midlet -> b
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+jwhisper.gui.Login -> jwhisper.gui.i:
+    javax.microedition.lcdui.Command ok -> a
+    javax.microedition.lcdui.Command exit -> b
+    jwhisper.gui.JWhisperMidlet midlet -> c
+    int counter -> d
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+jwhisper.gui.Menu -> jwhisper.gui.p:
+    javax.microedition.lcdui.Command exit -> a
+    javax.microedition.lcdui.Command ok -> b
+    jwhisper.gui.JWhisperMidlet gui -> c
+    java.lang.String[] mainMenu -> d
+    void buildList() -> a
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+jwhisper.gui.MessageBox -> jwhisper.gui.n:
+    javax.microedition.lcdui.Command ok -> c
+    javax.microedition.lcdui.Command cancel -> d
+    jwhisper.book.Address _address -> a
+    jwhisper.gui.JWhisperMidlet midlet -> b
+    javax.microedition.lcdui.Displayable _parent -> e
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+jwhisper.gui.MessageBox$1 -> jwhisper.gui.u:
+    jwhisper.gui.MessageBox this$0 -> a
+    void run() -> run
+jwhisper.gui.MessageList -> jwhisper.gui.f:
+    jwhisper.gui.JWhisperMidlet gui -> b
+    jwhisper.book.CMessage[] messages -> c
+    javax.microedition.lcdui.Command back -> a
+    javax.microedition.lcdui.Command showText -> d
+    javax.microedition.lcdui.Command delete -> e
+    void setMessages() -> a
+    void deleteMessage(jwhisper.book.CMessage) -> a
+    java.lang.String getMessageText(jwhisper.book.CMessage) -> c
+    java.lang.String getNumber(jwhisper.book.CMessage) -> b
+    void buildList() -> b
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+    void access$0(jwhisper.gui.MessageList) -> a
+jwhisper.gui.MessageList$MessageText -> jwhisper.gui.o:
+    javax.microedition.lcdui.Command ok -> a
+    jwhisper.gui.MessageList nl -> b
+    jwhisper.gui.MessageList this$0 -> c
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+jwhisper.gui.OutBoxList -> jwhisper.gui.k:
+    void deleteMessage(jwhisper.book.CMessage) -> a
+    java.lang.String getMessageText(jwhisper.book.CMessage) -> c
+    java.lang.String getNumber(jwhisper.book.CMessage) -> b
+    void setMessages() -> a
+jwhisper.gui.ProgressScreen -> jwhisper.gui.w:
+    javax.microedition.lcdui.Displayable _next -> a
+    jwhisper.gui.ProgressScreen$Progress _progress -> b
+    javax.microedition.lcdui.Gauge _gauge -> c
+    javax.microedition.lcdui.TextField _status -> d
+    javax.microedition.lcdui.Display _display -> e
+    void setStatus(java.lang.String) -> a
+    void stop() -> a
+    void run() -> run
+jwhisper.gui.ProgressScreen$Progress -> jwhisper.gui.t:
+    int i -> a
+    boolean _running -> b
+    javax.microedition.lcdui.Gauge g -> c
+    void run() -> run
+    void stop() -> a
+jwhisper.gui.ReadMessageList -> jwhisper.gui.m:
+    void deleteMessage(jwhisper.book.CMessage) -> a
+    java.lang.String getMessageText(jwhisper.book.CMessage) -> c
+    void setMessages() -> a
+    java.lang.String getNumber(jwhisper.book.CMessage) -> b
+jwhisper.gui.Setup -> jwhisper.gui.e:
+    javax.microedition.lcdui.Command ok -> d
+    javax.microedition.lcdui.TextField name -> a
+    javax.microedition.lcdui.TextField number -> b
+    javax.microedition.lcdui.TextField pass -> e
+    javax.microedition.lcdui.TextField repeatPass -> f
+    jwhisper.gui.JWhisperMidlet midlet -> c
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+jwhisper.gui.Setup$1 -> jwhisper.gui.b:
+    jwhisper.gui.Setup this$0 -> a
+    void run() -> run
+jwhisper.gui.UnreadMessageList -> jwhisper.gui.a:
+    java.lang.String text1 -> a
+    void deleteMessage(jwhisper.book.CMessage) -> a
+    java.lang.String getNumber(jwhisper.book.CMessage) -> b
+    java.lang.String getMessageText(jwhisper.book.CMessage) -> c
+    void setMessages() -> a
+jwhisper.gui.UnreadMessageList$1 -> jwhisper.gui.c:
+    jwhisper.gui.UnreadMessageList this$0 -> a
+    jwhisper.book.CMessage val$m -> b
+    jwhisper.gui.MessageList$MessageText val$mt -> c
+    void run() -> run
+jwhisper.helpers.CacheEnumeration -> au:
+    jwhisper.helpers.RSCache _cache -> a
+    int[] _recIds -> b
+    javax.microedition.rms.RecordFilter _rf -> c
+    javax.microedition.rms.RecordComparator _rc -> d
+    int _currentRecIndex -> e
+    void destroy() -> destroy
+    void intialize() -> a
+    void destroyed() -> b
+    boolean hasNextElement() -> hasNextElement
+    boolean hasPreviousElement() -> hasPreviousElement
+    boolean isKeptUpdated() -> isKeptUpdated
+    void keepUpdated(boolean) -> keepUpdated
+    byte[] nextRecord() -> nextRecord
+    int nextRecordId() -> nextRecordId
+    int numRecords() -> numRecords
+    byte[] previousRecord() -> previousRecord
+    int previousRecordId() -> previousRecordId
+    void sort(int[],int,int) -> a
+    void rebuild() -> rebuild
+    void reset() -> reset
+jwhisper.helpers.CountryCode -> az:
+    java.lang.String code -> a
+    java.lang.String replacement -> b
+    java.lang.String getCode() -> a
+    java.lang.String getReplacement() -> b
+jwhisper.helpers.CountryCodeStore -> ba:
+    java.util.Vector CountryCodes -> a
+    boolean compareNumbers(java.lang.String,java.lang.String) -> a
+jwhisper.helpers.CryptedRecordEnumeration -> ah:
+    jwhisper.helpers.CryptedRecordStore _store -> a
+    int[] _recIds -> b
+    int _currentRec -> c
+    void destroyed() -> c
+    boolean hasNextElement() -> a
+    byte[] nextRecord() -> b
+jwhisper.helpers.CryptedRecordStore -> ao:
+    boolean initialized -> a
+    javax.microedition.rms.RecordStore magic_cookie_store -> b
+    byte[] MAGIC_COOKIE -> c
+    org.bouncycastle.crypto.engines.AESFastEngine encryptEngine -> d
+    org.bouncycastle.crypto.engines.AESFastEngine decryptEngine -> e
+    org.bouncycastle.crypto.params.KeyParameter param -> f
+    javax.microedition.rms.RecordStore store -> g
+    jwhisper.helpers.RSCache cache -> h
+    boolean checkPassword() -> f
+    void init(java.lang.String) -> a
+    jwhisper.helpers.CryptedRecordStore open(java.lang.String,boolean) -> a
+    void addRecord(byte[]) -> a
+    int getNextRecordId() -> a
+    jwhisper.helpers.CryptedRecordEnumeration enumerateCryptedRecords$2f2ffdc4() -> b
+    int[] getRecordIds() -> c
+    byte[] getRecord(int) -> a
+    byte[] encrypt(byte[]) -> b
+    byte[] decrypt(byte[]) -> c
+    java.lang.String getName() -> d
+    void setRecord(int,byte[]) -> a
+    void deleteRecord(int) -> b
+    boolean hasPass() -> e
+    jwhisper.helpers.CacheEnumeration enumerateCache(javax.microedition.rms.RecordFilter,javax.microedition.rms.RecordComparator) -> a
+jwhisper.helpers.CryptoHelper -> a:
+    org.bouncycastle.math.ec.ECCurve cFp192v1 -> a
+    org.bouncycastle.crypto.params.ECDomainParameters prime192v1 -> b
+    org.bouncycastle.security.SecureRandom PRNG -> c
+    int NONCE_SIZE -> d
+    int PRIV_KEY_SIZE -> e
+    org.bouncycastle.crypto.params.ECDomainParameters ecparms -> f
+    void initPRNG() -> a
+    byte[] encrypt(byte[],byte[]) -> a
+    byte[] decrypt(byte[],org.bouncycastle.crypto.AsymmetricCipherKeyPair) -> a
+    jwhisper.helpers.KeyPairHelper generateKeyPairHelper(jwhisper.gui.ProgressScreen) -> a
+    org.bouncycastle.crypto.params.ECPublicKeyParameters generatePublicKey(org.bouncycastle.crypto.params.ECPrivateKeyParameters) -> a
+    byte[] privateKeyArrayFromACKeyPair(org.bouncycastle.crypto.AsymmetricCipherKeyPair) -> a
+    byte[] publicKeyArrayFromACKeyPair(org.bouncycastle.crypto.AsymmetricCipherKeyPair) -> b
+    org.bouncycastle.crypto.AsymmetricCipherKeyPair ACKeyPairFromByteArrays(byte[],byte[]) -> b
+jwhisper.helpers.Helpers -> ap:
+    java.lang.String dateToStringFull(java.util.Date) -> a
+    boolean isWhitespace(char) -> a
+    java.util.Hashtable splitTokens(java.lang.String) -> a
+    java.lang.String getNumberFromUrl(java.lang.String) -> b
+jwhisper.helpers.KeyPairHelper -> bf:
+    byte[] _privateKeyBA -> a
+    byte[] _publicKeyBA -> b
+    org.bouncycastle.crypto.AsymmetricCipherKeyPair _keyPair -> c
+    org.bouncycastle.crypto.AsymmetricCipherKeyPair getKeyPair() -> a
+    byte[] getPrivateKeyBA() -> b
+    byte[] getPublicKeyBA() -> c
+jwhisper.helpers.Logger -> bj:
+    jwhisper.helpers.Logger instance -> a
+    java.lang.String[] buffer -> b
+    int next -> c
+    boolean turnaround -> d
+    jwhisper.helpers.Logger getInstance() -> a
+    void write(java.lang.String) -> a
+    java.lang.String[] readout() -> b
+jwhisper.helpers.NullEncoder -> c:
+    byte[] encode(byte[]) -> a
+jwhisper.helpers.PassphraseTimer -> bi:
+    java.util.Timer timer -> a
+    jwhisper.helpers.PassphraseTimer$Task task -> b
+    jwhisper.gui.JWhisperMidlet observing -> c
+    void start() -> a
+    void notifyObserver() -> b
+    void register(jwhisper.gui.JWhisperMidlet) -> a
+jwhisper.helpers.PassphraseTimer$Task -> v:
+    boolean valid -> a
+    jwhisper.helpers.PassphraseTimer runtime -> b
+    void run() -> run
+jwhisper.helpers.RSCache -> aa:
+    java.util.Vector records -> a
+    void add(jwhisper.helpers.Record) -> a
+    byte[] getData(int) -> a
+    int getCacheID4RecordID(int) -> c
+    void setData(int,byte[]) -> a
+    void deleteRecord(int) -> b
+    int[] getRecordIds(javax.microedition.rms.RecordFilter) -> a
+jwhisper.helpers.Record -> ab:
+    int id -> a
+    byte[] record -> b
+    byte[] getData() -> a
+    void setRecord(byte[]) -> a
+    int getId() -> b
+jwhisper.helpers.ResourceManager -> aw:
+    java.util.Hashtable tokenMap -> a
+    java.lang.String getString(java.lang.String) -> a
+jwhisper.helpers.TickerTask -> af:
+    jwhisper.gui.JWhisperMidlet midlet -> a
+    java.util.Timer timer -> b
+    int counter -> c
+    void run() -> run
+    void resetCounter() -> a
+    int accessCounter(int) -> a
+org.bouncycastle.asn1.x9.X9IntegerConverter -> ae:
+    int getByteLength(org.bouncycastle.math.ec.ECFieldElement) -> a
+    byte[] integerToBytes(org.bouncycastle.math.BigInteger,int) -> a
+org.bouncycastle.crypto.AsymmetricCipherKeyPair -> bc:
+    org.bouncycastle.crypto.CipherParameters publicParam -> a
+    org.bouncycastle.crypto.CipherParameters privateParam -> b
+    org.bouncycastle.crypto.CipherParameters getPublic() -> a
+    org.bouncycastle.crypto.CipherParameters getPrivate() -> b
+org.bouncycastle.crypto.BufferedBlockCipher -> aj:
+org.bouncycastle.crypto.CipherParameters -> j:
+org.bouncycastle.crypto.CryptoException -> p:
+org.bouncycastle.crypto.DataLengthException -> ag:
+org.bouncycastle.crypto.DerivationParameters -> t:
+org.bouncycastle.crypto.InvalidCipherTextException -> bp:
+org.bouncycastle.crypto.RuntimeCryptoException -> at:
+org.bouncycastle.crypto.agreement.ECDHBasicAgreement -> ay:
+    org.bouncycastle.crypto.params.ECPrivateKeyParameters key -> a
+    void init(org.bouncycastle.crypto.CipherParameters) -> a
+    org.bouncycastle.math.BigInteger calculateAgreement(org.bouncycastle.crypto.CipherParameters) -> b
+org.bouncycastle.crypto.digests.GeneralDigest -> n:
+    byte[] xBuf -> a
+    int xBufOff -> b
+    long byteCount -> c
+    void update(byte) -> a
+    void update(byte[],int,int) -> a
+    void finish() -> a
+    void reset() -> b
+    void processWord(byte[],int) -> a
+    void processLength(long) -> a
+    void processBlock() -> c
+    int getDigestSize() -> d
+    java.lang.String getAlgorithmName() -> e
+    int doFinal(byte[],int) -> b
+org.bouncycastle.crypto.digests.SHA1Digest -> al:
+    int H1 -> a
+    int H2 -> b
+    int H3 -> c
+    int H4 -> d
+    int H5 -> e
+    int[] X -> f
+    int xOff -> g
+    java.lang.String getAlgorithmName() -> e
+    int getDigestSize() -> d
+    void processWord(byte[],int) -> a
+    void unpackWord(int,byte[],int) -> a
+    void processLength(long) -> a
+    int doFinal(byte[],int) -> b
+    void reset() -> b
+    int f(int,int,int) -> a
+    int g(int,int,int) -> b
+    void processBlock() -> c
+org.bouncycastle.crypto.digests.SHA256Digest -> z:
+    int H1 -> a
+    int H2 -> b
+    int H3 -> c
+    int H4 -> d
+    int H5 -> e
+    int H6 -> f
+    int H7 -> g
+    int H8 -> h
+    int[] X -> i
+    int xOff -> j
+    int[] K -> k
+    java.lang.String getAlgorithmName() -> e
+    int getDigestSize() -> d
+    void processWord(byte[],int) -> a
+    void unpackWord(int,byte[],int) -> a
+    void processLength(long) -> a
+    int doFinal(byte[],int) -> b
+    void reset() -> b
+    void processBlock() -> c
+    int Ch(int,int,int) -> a
+    int Maj(int,int,int) -> b
+    int Sum0(int) -> a
+    int Sum1(int) -> b
+org.bouncycastle.crypto.engines.AESFastEngine -> bl:
+    byte[] S -> a
+    byte[] Si -> b
+    int[] rcon -> c
+    int[] T0 -> d
+    int[] T1 -> e
+    int[] T2 -> f
+    int[] T3 -> g
+    int[] Tinv0 -> h
+    int[] Tinv1 -> i
+    int[] Tinv2 -> j
+    int[] Tinv3 -> k
+    int ROUNDS -> l
+    int[][] WorkingKey -> m
+    int C0 -> n
+    int C1 -> o
+    int C2 -> p
+    int C3 -> q
+    boolean forEncryption -> r
+    int shift(int,int) -> a
+    int FFmulX(int) -> a
+    int subWord(int) -> b
+    void init(boolean,org.bouncycastle.crypto.CipherParameters) -> a
+    int processBlock(byte[],int,byte[],int) -> a
+    void unpackBlock(byte[],int) -> a
+    void packBlock(byte[],int) -> b
+    void encryptBlock(int[][]) -> a
+    void decryptBlock(int[][]) -> b
+org.bouncycastle.crypto.engines.IESEngine -> d:
+    org.bouncycastle.crypto.agreement.ECDHBasicAgreement agree$3a051f35 -> a
+    org.bouncycastle.crypto.generators.BaseKDFBytesGenerator kdf$47de5d9e -> b
+    org.bouncycastle.crypto.macs.HMac mac$6c1a5e6a -> c
+    org.bouncycastle.crypto.BufferedBlockCipher cipher -> d
+    byte[] macBuf -> e
+    boolean forEncryption -> f
+    org.bouncycastle.crypto.CipherParameters privParam -> g
+    org.bouncycastle.crypto.CipherParameters pubParam -> h
+    org.bouncycastle.crypto.params.IESParameters param -> i
+    void init(boolean,org.bouncycastle.crypto.CipherParameters,org.bouncycastle.crypto.CipherParameters,org.bouncycastle.crypto.CipherParameters) -> a
+    byte[] generateKdfBytes(org.bouncycastle.crypto.params.KDFParameters,int) -> a
+    byte[] processBlock(byte[],int,int) -> a
+org.bouncycastle.crypto.generators.BaseKDFBytesGenerator -> s:
+    int counterStart -> a
+    org.bouncycastle.crypto.digests.GeneralDigest digest$214ad1ed -> b
+    byte[] shared -> c
+    byte[] iv -> d
+    void init(org.bouncycastle.crypto.DerivationParameters) -> a
+    int generateBytes(byte[],int,int) -> a
+org.bouncycastle.crypto.generators.KDF2BytesGenerator -> bh:
+org.bouncycastle.crypto.macs.HMac -> l:
+    org.bouncycastle.crypto.digests.GeneralDigest digest$214ad1ed -> a
+    int digestSize -> b
+    int blockLength -> c
+    byte[] inputPad -> d
+    byte[] outputPad -> e
+    java.util.Hashtable blockLengths -> f
+    void init(org.bouncycastle.crypto.CipherParameters) -> a
+    int getMacSize() -> a
+    void update(byte[],int,int) -> a
+    int doFinal(byte[],int) -> a
+org.bouncycastle.crypto.params.AsymmetricKeyParameter -> k:
+org.bouncycastle.crypto.params.ECDomainParameters -> bg:
+    org.bouncycastle.math.ec.ECCurve curve -> a
+    org.bouncycastle.math.ec.ECPoint G -> e
+    org.bouncycastle.math.BigInteger h -> f
+    org.bouncycastle.math.ec.ECCurve getCurve() -> a
+    org.bouncycastle.math.ec.ECPoint getG() -> b
+    org.bouncycastle.math.BigInteger getH() -> c
+org.bouncycastle.crypto.params.ECKeyParameters -> aq:
+    org.bouncycastle.crypto.params.ECDomainParameters params -> a
+    org.bouncycastle.crypto.params.ECDomainParameters getParameters() -> b
+org.bouncycastle.crypto.params.ECPrivateKeyParameters -> o:
+    org.bouncycastle.math.BigInteger d -> a
+    org.bouncycastle.math.BigInteger getD() -> a
+org.bouncycastle.crypto.params.ECPublicKeyParameters -> br:
+    org.bouncycastle.math.ec.ECPoint Q -> a
+    org.bouncycastle.math.ec.ECPoint getQ() -> a
+org.bouncycastle.crypto.params.IESParameters -> f:
+    byte[] derivation -> a
+    byte[] encoding -> b
+    int macKeySize -> c
+    byte[] getDerivationV() -> a
+    byte[] getEncodingV() -> b
+    int getMacKeySize() -> c
+org.bouncycastle.crypto.params.ISO18033KDFParameters -> bk:
+org.bouncycastle.crypto.params.KDFParameters -> r:
+    byte[] iv -> a
+    byte[] shared -> b
+    byte[] getSharedSecret() -> a
+    byte[] getIV() -> b
+org.bouncycastle.crypto.params.KeyParameter -> bq:
+    byte[] key -> a
+    byte[] getKey() -> a
+org.bouncycastle.crypto.prng.DigestRandomGenerator -> g:
+    long counter -> a
+    org.bouncycastle.crypto.digests.GeneralDigest digest$214ad1ed -> b
+    byte[] state -> c
+    void addSeedMaterial(long) -> a
+    void nextBytes(byte[],int,int) -> a
+    void digestUpdate(long) -> b
+    void digestUpdate(byte[]) -> a
+    void digestDoFinal(byte[]) -> b
+org.bouncycastle.math.BigInteger -> ak:
+    int sign -> a
+    int[] magnitude -> b
+    int nBitLength -> c
+    long mQuote -> d
+    byte[] rndMask -> e
+    byte[] bitCounts -> f
+    org.bouncycastle.math.BigInteger ZERO -> g
+    org.bouncycastle.math.BigInteger ONE -> h
+    int[] makeMagnitude(byte[],int) -> a
+    void nextRndBytes(java.util.Random,byte[]) -> a
+    org.bouncycastle.math.BigInteger abs() -> a
+    int[] add(int[],int[]) -> a
+    org.bouncycastle.math.BigInteger add(org.bouncycastle.math.BigInteger) -> a
+    int bitLength(int,int[]) -> a
+    int bitLength() -> b
+    int compareTo(int,int[],int,int[]) -> a
+    int compareTo(org.bouncycastle.math.BigInteger) -> b
+    int[] divide(int[],int[]) -> b
+    org.bouncycastle.math.BigInteger divide(org.bouncycastle.math.BigInteger) -> h
+    boolean equals(java.lang.Object) -> equals
+    int hashCode() -> hashCode
+    org.bouncycastle.math.BigInteger mod(org.bouncycastle.math.BigInteger) -> c
+    org.bouncycastle.math.BigInteger modInverse(org.bouncycastle.math.BigInteger) -> d
+    org.bouncycastle.math.BigInteger extEuclid(org.bouncycastle.math.BigInteger,org.bouncycastle.math.BigInteger,org.bouncycastle.math.BigInteger,org.bouncycastle.math.BigInteger) -> a
+    void zero(int[]) -> a
+    org.bouncycastle.math.BigInteger modPow(org.bouncycastle.math.BigInteger,org.bouncycastle.math.BigInteger) -> a
+    int[] square(int[],int[]) -> c
+    int[] multiply(int[],int[],int[]) -> a
+    long _extEuclid(long,long,long[]) -> a
+    void multiplyMonty(int[],int[],int[],int[],long) -> a
+    org.bouncycastle.math.BigInteger multiply(org.bouncycastle.math.BigInteger) -> e
+    org.bouncycastle.math.BigInteger negate() -> c
+    org.bouncycastle.math.BigInteger not() -> g
+    int[] remainder(int[],int[]) -> d
+    org.bouncycastle.math.BigInteger remainder(org.bouncycastle.math.BigInteger) -> i
+    int[] shiftLeft(int[],int) -> a
+    org.bouncycastle.math.BigInteger shiftLeft(int) -> a
+    int[] shiftRight(int,int[],int) -> a
+    int[] shiftRightOne(int,int[]) -> b
+    org.bouncycastle.math.BigInteger shiftRight(int) -> b
+    int signum() -> d
+    int[] subtract(int,int[],int,int[]) -> b
+    org.bouncycastle.math.BigInteger subtract(org.bouncycastle.math.BigInteger) -> f
+    byte[] toByteArray() -> e
+    org.bouncycastle.math.BigInteger xor(org.bouncycastle.math.BigInteger) -> g
+    org.bouncycastle.math.BigInteger setBit(int) -> c
+    org.bouncycastle.math.BigInteger clearBit(int) -> d
+    org.bouncycastle.math.BigInteger flipBit(int) -> e
+    int[] createResult(int) -> h
+    java.lang.String toString() -> toString
+    java.lang.String toString(int) -> f
+    org.bouncycastle.math.BigInteger valueOf(long) -> a
+    int getLowestSetBit() -> f
+    boolean testBit(int) -> g
+org.bouncycastle.math.ec.ECConstants -> bd:
+    org.bouncycastle.math.BigInteger ZERO -> b
+    org.bouncycastle.math.BigInteger ONE -> c
+    org.bouncycastle.math.BigInteger TWO -> d
+org.bouncycastle.math.ec.ECCurve -> y:
+    org.bouncycastle.math.ec.ECFieldElement a -> a
+    org.bouncycastle.math.ec.ECFieldElement b -> b
+    org.bouncycastle.math.ec.ECFieldElement fromBigInteger(org.bouncycastle.math.BigInteger) -> a
+    org.bouncycastle.math.ec.ECPoint decodePoint(byte[]) -> a
+    org.bouncycastle.math.ec.ECPoint getInfinity() -> a
+org.bouncycastle.math.ec.ECCurve$Fp -> an:
+    org.bouncycastle.math.BigInteger q -> c
+    org.bouncycastle.math.ec.ECPoint$Fp infinity -> d
+    org.bouncycastle.math.ec.ECFieldElement fromBigInteger(org.bouncycastle.math.BigInteger) -> a
+    org.bouncycastle.math.ec.ECPoint decodePoint(byte[]) -> a
+    org.bouncycastle.math.ec.ECPoint getInfinity() -> a
+    boolean equals(java.lang.Object) -> equals
+    int hashCode() -> hashCode
+org.bouncycastle.math.ec.ECFieldElement -> ar:
+    org.bouncycastle.math.BigInteger x -> a
+    org.bouncycastle.math.BigInteger toBigInteger() -> f
+    org.bouncycastle.math.ec.ECFieldElement add(org.bouncycastle.math.ec.ECFieldElement) -> a
+    org.bouncycastle.math.ec.ECFieldElement subtract(org.bouncycastle.math.ec.ECFieldElement) -> b
+    org.bouncycastle.math.ec.ECFieldElement multiply(org.bouncycastle.math.ec.ECFieldElement) -> c
+    org.bouncycastle.math.ec.ECFieldElement divide(org.bouncycastle.math.ec.ECFieldElement) -> d
+    org.bouncycastle.math.ec.ECFieldElement negate() -> b
+    org.bouncycastle.math.ec.ECFieldElement square() -> c
+    org.bouncycastle.math.ec.ECFieldElement invert() -> d
+    org.bouncycastle.math.ec.ECFieldElement sqrt() -> e
+    java.lang.String toString() -> toString
+org.bouncycastle.math.ec.ECFieldElement$F2m -> bm:
+    int representation -> e
+    int m -> f
+    int k1 -> g
+    int k2 -> h
+    int k3 -> i
+    void checkFieldElements(org.bouncycastle.math.ec.ECFieldElement,org.bouncycastle.math.ec.ECFieldElement) -> a
+    org.bouncycastle.math.ec.ECFieldElement add(org.bouncycastle.math.ec.ECFieldElement) -> a
+    org.bouncycastle.math.ec.ECFieldElement subtract(org.bouncycastle.math.ec.ECFieldElement) -> b
+    org.bouncycastle.math.ec.ECFieldElement multiply(org.bouncycastle.math.ec.ECFieldElement) -> c
+    org.bouncycastle.math.ec.ECFieldElement divide(org.bouncycastle.math.ec.ECFieldElement) -> d
+    org.bouncycastle.math.ec.ECFieldElement negate() -> b
+    org.bouncycastle.math.ec.ECFieldElement square() -> c
+    org.bouncycastle.math.ec.ECFieldElement invert() -> d
+    org.bouncycastle.math.ec.ECFieldElement sqrt() -> e
+    int getM() -> a
+    boolean equals(java.lang.Object) -> equals
+    int hashCode() -> hashCode
+org.bouncycastle.math.ec.ECFieldElement$Fp -> h:
+    org.bouncycastle.math.BigInteger q -> e
+    org.bouncycastle.math.BigInteger getQ() -> a
+    org.bouncycastle.math.ec.ECFieldElement add(org.bouncycastle.math.ec.ECFieldElement) -> a
+    org.bouncycastle.math.ec.ECFieldElement subtract(org.bouncycastle.math.ec.ECFieldElement) -> b
+    org.bouncycastle.math.ec.ECFieldElement multiply(org.bouncycastle.math.ec.ECFieldElement) -> c
+    org.bouncycastle.math.ec.ECFieldElement divide(org.bouncycastle.math.ec.ECFieldElement) -> d
+    org.bouncycastle.math.ec.ECFieldElement negate() -> b
+    org.bouncycastle.math.ec.ECFieldElement square() -> c
+    org.bouncycastle.math.ec.ECFieldElement invert() -> d
+    org.bouncycastle.math.ec.ECFieldElement sqrt() -> e
+    org.bouncycastle.math.BigInteger[] lucasSequence(org.bouncycastle.math.BigInteger,org.bouncycastle.math.BigInteger,org.bouncycastle.math.BigInteger,org.bouncycastle.math.BigInteger) -> a
+    boolean equals(java.lang.Object) -> equals
+    int hashCode() -> hashCode
+org.bouncycastle.math.ec.ECPoint -> bo:
+    org.bouncycastle.math.ec.ECCurve curve -> a
+    org.bouncycastle.math.ec.ECFieldElement x -> b
+    org.bouncycastle.math.ec.ECFieldElement y -> c
+    org.bouncycastle.asn1.x9.X9IntegerConverter converter -> d
+    org.bouncycastle.math.ec.ECCurve getCurve() -> c
+    org.bouncycastle.math.ec.ECFieldElement getX() -> d
+    org.bouncycastle.math.ec.ECFieldElement getY() -> e
+    boolean isInfinity() -> f
+    boolean equals(java.lang.Object) -> equals
+    int hashCode() -> hashCode
+    byte[] getEncoded() -> a
+    org.bouncycastle.math.ec.ECPoint add(org.bouncycastle.math.ec.ECPoint) -> a
+    org.bouncycastle.math.ec.ECPoint subtract(org.bouncycastle.math.ec.ECPoint) -> b
+    org.bouncycastle.math.ec.ECPoint twice() -> b
+    org.bouncycastle.math.ec.ECPoint multiply(org.bouncycastle.math.BigInteger) -> a
+org.bouncycastle.math.ec.ECPoint$F2m -> u:
+    boolean withCompression -> d
+    byte[] getEncoded() -> a
+    org.bouncycastle.math.ec.ECPoint add(org.bouncycastle.math.ec.ECPoint) -> a
+    org.bouncycastle.math.ec.ECPoint subtract(org.bouncycastle.math.ec.ECPoint) -> b
+    org.bouncycastle.math.ec.ECPoint twice() -> b
+    org.bouncycastle.math.ec.ECPoint multiply(org.bouncycastle.math.BigInteger) -> a
+org.bouncycastle.math.ec.ECPoint$Fp -> ax:
+    boolean withCompression -> d
+    byte[] getEncoded() -> a
+    org.bouncycastle.math.ec.ECPoint add(org.bouncycastle.math.ec.ECPoint) -> a
+    org.bouncycastle.math.ec.ECPoint twice() -> b
+    org.bouncycastle.math.ec.ECPoint subtract(org.bouncycastle.math.ec.ECPoint) -> b
+    org.bouncycastle.math.ec.ECPoint multiply(org.bouncycastle.math.BigInteger) -> a
+org.bouncycastle.security.SecureRandom -> i:
+    org.bouncycastle.crypto.prng.DigestRandomGenerator generator$527189f5 -> a
+    org.bouncycastle.security.SecureRandom getInstance(java.lang.String) -> a
+    byte[] generateSeed(int) -> a
+    void nextBytes(byte[]) -> a
+    void setSeed(long) -> setSeed
+    int nextInt() -> nextInt
+    int next(int) -> next
+org.bouncycastle.util.encoders.Hex -> x:
+    org.bouncycastle.util.encoders.HexEncoder encoder$1946a372 -> a
+    byte[] decode(java.lang.String) -> a
+org.bouncycastle.util.encoders.HexEncoder -> bn:
+    byte[] encodingTable -> a
+    byte[] decodingTable -> b
+    void initialiseDecodingTable() -> a
+    boolean ignore(char) -> a
+    int decode(java.lang.String,java.io.OutputStream) -> a

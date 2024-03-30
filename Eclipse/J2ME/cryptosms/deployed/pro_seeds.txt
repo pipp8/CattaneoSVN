@@ -1,0 +1,3 @@
+org.cryptosms.gui.ScannerMidlet
+org.cryptosms.gui.CryptoSMSMidlet
+org.cryptosms.gui.EraserMidlet

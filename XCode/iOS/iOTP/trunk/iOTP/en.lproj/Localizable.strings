@@ -1,0 +1,150 @@
+/* 
+  Localizable.strings (English Version)
+  iOTP
+
+  Created by Giuseppe Cattaneo on 16/03/15.
+  Copyright (c) 2015 Giuseppe Cattaneo. All rights reserved.
+
+"KEY" = "CONTENT";
+"You like?" = "You like?";
+*/
+
+
+"%d Failed Passcode Attempts"           = "%d Failed Passcode Attempts";
+
+"1 Failed Passcode Attempt"             = "1 Failed Passcode Attempt";
+
+"ABORT-BT"          = "Abort";
+
+"ALREADYINITED-MSG" = "Your App has already been registered. If you destroy your seed you'll need a new registration.";
+
+"AUTHFAIL-ERR"     = "401 - Authentication failed (i.e. wrong password, userid not registered, ...)";
+
+"Change Passcode"   = "Change Passcode";
+
+"COMMERROR-MSG"     = "Service error:\n%@";
+
+"COMMERROR-TITLE"   = "Communication error, cannot access the registration service";
+
+"CONNECTION-ERROR"  = "Connection failed! Error: %@ - %@";
+
+"CREATESEED-MNU"    = "Get your Infocert ID";
+
+"DESTROYSEED-MSG"    = "Warning!!! If the maximun number of attempts will be reached, the seed will be destroyed";
+
+"Enter Passcode"    = "Enter Passcode";
+
+"Enter a passcode"  = "Enter a passcode";
+
+"Enter your new passcode" = "Enter your new passcode";
+
+"Enter your old passcode" = "Enter your old passcode";
+
+"Enter your passcode"     = "Enter your passcode";
+
+"ERROR-TITLE"       = "Error";
+
+"GENERATEOTP-LBL"   = "To generate OTP push the button and type your passcode or use the Touch-ID if enabled:";
+
+"HELP-MNU"          = "Help";
+
+"INFO-MNU"          = "ABOUT";
+
+"INIT1-MSG"         = "In order to be used this App must be initialized through a provisioning procedure on the authentication server. This will download your personal identification seed.\rPush the button to start the procedure.";
+
+"Inizializza l'App" = "Get your App ready";
+
+"InsertCodiceVerifica-LBL" = "Insert the code (only digits) contained in the SMS to complete the App enrollment.";
+
+"InsertCredentials-LBL" = "Please insert your username and password: A SMS will be sent to the phone number registered to this account with a code to be used to enable your App.";
+
+"INVALIDOTP-ERR"    = "403 - Wrong OTP";
+
+"INVALIDTOKEN-ERR"  = "400 - Invalid Token anti-csrf";
+
+"ITEM_ALREADY_EXISTS-ERR" = "error item already exists";
+
+"ITEM_AUTHENTICATION_FAILED-ERR" = "error item authentication failed";
+
+"ITEM_NOT_FOUND-ERR" = "Error item not found";
+
+"KEYTOOSHORT-ERROR" = "The key must be at least 8 characters long.";
+
+"LVL2SESSION-ERR"   = "406 - The session is already to level 2";
+
+"Next"              = "Next";
+
+"NOSEED-MSG"        = "The enrollment phase must be executed before the App is able to generate OTP";
+
+"NOTIFY-TITLE"      = "Notify";
+
+"NOTREADY-STR"      = "No seed available";
+
+"OK-BT"             = "OK";
+
+"OTPLEN-MNU"        = "OTP Lenght: ";
+
+"OTPMISMATCH-ERR"   = "400 - Invalid token anti-csrf or wrong OTP";
+
+"FIRSTOTPFAILED-ERR"  = "400 - The OTP sent to the server does not match";
+
+"Passcodes did not match. Try again."   = "Passcodes did not match. Try again.";
+
+"PINMGT-MNU"        = "PIN MANAGEMENT";
+
+"PSWDEXPIRED-ERR"   = "410 - Expired password";
+
+"PSWDLOCKED-ERR"    = "402 - Locked Password";
+
+"Re-enter your new passcode" = "Re-enter your new passcode";
+
+"Re-enter your passcode" = "Re-enter your passcode";
+
+"READY-STR"         = "GET OTP";
+
+"REMOVESEED-MNU"    = "Remove your InfoCert ID";
+
+"SEEDCONFIRMED-MSG" = "OTP Confirmed, Time on remote server:\n%@\nClock Skew: %.0f sec.";
+
+"SEEDDESTROYED-MSG" = "Warning!!! Too many failed attempts, the SEED has been destroyed. To use this App you must run you the enrollment procedure";
+
+"SEEDGENERATORFAILED-ERR" = "412 - SEED generation error";
+
+"SEEDMGT-MNU"       = "INFOCERT ID MANAGEMENT";
+
+"SEEDRECEIVED-TITLE" = "Seed Setup";
+
+"SESSIONNOTFOUND-ERR" = "404 - Session not found or user phone number not registered";
+
+"Set Passcode"      = "Set Passcode";
+
+"SETTING-TITLE"     = "Setting";
+
+"SMSREQUESTED-MSG"  = "Request sent, pls wait the SMS and type in the numeric code received";
+
+"SUCCESS-STR"      = "success";
+
+"Tempo rimanente:" = "Time window:";
+
+"TOOMANYFAILS-ERR"  = "401 - Too many attempts for sending the OTP. The session will be terminated";
+
+"TOOMANYOTPFAIL-ERR" = "401 - Too many attemps for this session";
+
+"TOOWEAKTOKEN-ERR"  = "401 - Wrong session level (1 is less than 2)";
+
+"TouchID-MSG"       = "Please use your Touch-Id to authenticate the request";
+
+"TOUCHIDENABLE-MNU" = "Enable the Touch ID";
+
+"VERSION-MSG"       = "%@\nVersion: %@ (build %@)\nRevision: %@ on %@";
+
+"Warning" = "Warning";
+
+"WRONGOTP-ERROR"    = "The server answered with a failure. Maybe the OTP was typed incorrectly.";
+
+"WRONGPIN-MSG"      = "Wrong PIN!";
+
+"WRONGSEED-ERROR"   = "The received seed is not compliant to the technical specifications of this App, please address this message to the call center.";
+
+"WRONGOTPSMS-ERROR" = "The server failed probably due to a wrong verification code. Try to digit again the code received by the SMS";
+

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B91285BD-A667-4510-AB64-E87F451DDF74</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>ec92c943-5db4-0f4b-9571-7a1bbd119c6d++6646</key>
+		<string>https://minosse.diaserv.unisa.it/svn/Cattaneo/XCode/iOS/iOTP</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iOTP.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>ec92c943-5db4-0f4b-9571-7a1bbd119c6d++6646</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>ec92c943-5db4-0f4b-9571-7a1bbd119c6d++6646</key>
+		<string>https://minosse.diaserv.unisa.it/svn/Cattaneo</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://minosse.diaserv.unisa.it/svn/Cattaneo/XCode/iOS/iOTP/iOTP.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>ec92c943-5db4-0f4b-9571-7a1bbd119c6d++6646</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>ec92c943-5db4-0f4b-9571-7a1bbd119c6d++6646</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOTP</string>
+		</dict>
+	</array>
+</dict>
+</plist>

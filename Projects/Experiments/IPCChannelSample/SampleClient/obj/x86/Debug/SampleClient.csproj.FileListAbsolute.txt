@@ -1,0 +1,7 @@
+c:\users\cattaneo\documents\visual studio 2010\Projects\IPCChannelSample\SampleClient\bin\Debug\SampleClient.exe
+c:\users\cattaneo\documents\visual studio 2010\Projects\IPCChannelSample\SampleClient\bin\Debug\SampleClient.pdb
+c:\users\cattaneo\documents\visual studio 2010\Projects\IPCChannelSample\SampleClient\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\cattaneo\documents\visual studio 2010\Projects\IPCChannelSample\SampleClient\obj\x86\Debug\SampleClient.exe
+c:\users\cattaneo\documents\visual studio 2010\Projects\IPCChannelSample\SampleClient\obj\x86\Debug\SampleClient.pdb
+C:\Users\cattaneo\documents\visual studio 2010\Projects\IPCChannelSample\SampleClient\bin\Debug\SharedObjectLibrary.dll
+C:\Users\cattaneo\documents\visual studio 2010\Projects\IPCChannelSample\SampleClient\bin\Debug\SharedObjectLibrary.pdb

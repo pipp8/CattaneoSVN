@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+ xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ns1="http://webapi.wfca.infocert.it">
+ <SOAP-ENV:Body>
+  <ns1:getGiustificativiResponse>
+   <ns1:getGiustificativiReturn>
+    <ns1:anno></ns1:anno>
+    <ns1:codiceFlusso></ns1:codiceFlusso>
+    <ns1:dataOraFine>2011-04-26T11:09:48Z</ns1:dataOraFine>
+    <ns1:dataOraInizio>2011-04-26T11:09:48Z</ns1:dataOraInizio>
+    <ns1:esito></ns1:esito>
+    <ns1:idDocumento>0</ns1:idDocumento>
+    <ns1:idFascicolo>0</ns1:idFascicolo>
+    <ns1:mese></ns1:mese>
+    <ns1:nominativo></ns1:nominativo>
+    <ns1:username></ns1:username>
+   </ns1:getGiustificativiReturn>
+  </ns1:getGiustificativiResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

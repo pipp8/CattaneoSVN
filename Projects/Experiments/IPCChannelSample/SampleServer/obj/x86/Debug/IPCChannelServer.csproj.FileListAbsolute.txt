@@ -1,0 +1,6 @@
+c:\users\cattaneo\documents\visual studio 2010\Projects\IPCChannelSample\IPCChannelSample\bin\Debug\IPCChannelSample.exe.config
+c:\users\cattaneo\documents\visual studio 2010\Projects\IPCChannelSample\IPCChannelSample\bin\Debug\IPCChannelSample.exe
+c:\users\cattaneo\documents\visual studio 2010\Projects\IPCChannelSample\IPCChannelSample\bin\Debug\IPCChannelSample.pdb
+c:\users\cattaneo\documents\visual studio 2010\Projects\IPCChannelSample\IPCChannelSample\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\cattaneo\documents\visual studio 2010\Projects\IPCChannelSample\IPCChannelSample\obj\x86\Debug\IPCChannelSample.exe
+c:\users\cattaneo\documents\visual studio 2010\Projects\IPCChannelSample\IPCChannelSample\obj\x86\Debug\IPCChannelSample.pdb

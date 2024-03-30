@@ -1,0 +1,4 @@
+#Sun Dec 16 20:43:58 CET 2007
+default.configuration=HelloBeansHibernateConsole
+eclipse.preferences.version=1
+hibernate3.enabled=true

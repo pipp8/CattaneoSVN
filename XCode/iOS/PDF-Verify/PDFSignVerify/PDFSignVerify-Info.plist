@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIconFile</key>
+	<string></string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>CheckedPDF.png</string>
+		<string>CheckedPDF@2x.png</string>
+		<string>CheckedPDF-Small-50.png</string>
+		<string>CheckedPDF-Small.png</string>
+		<string>CheckedPDF-Small@2x.png</string>
+	</array>
+	<key>CFBundleShortVersionString</key>
+	<string></string>
+	<key>CFBundleIdentifier</key>
+	<string>it.unisa.dia.mobileapps.${PRODUCT_NAME:rfc1034identifier}</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSMainNibFile</key>
+	<string>MainWindow</string>
+	<key>DocumentsDir</key>
+	<string>SignedDocuments</string>
+	<key>CertificateDir</key>
+	<string>Certs</string>
+	<key>DBRootPath</key>
+	<string>/Apps/PDFSignVerify</string>
+	<key>LocalDocDir</key>
+	<string>Documents</string>
+</dict>
+</plist>

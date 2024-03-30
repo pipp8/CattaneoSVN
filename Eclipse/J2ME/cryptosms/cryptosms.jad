@@ -1,0 +1,13 @@
+MIDlet-3: Reset,,org.cryptosms.gui.EraserMidlet
+MIDlet-2: PortScanner,,org.cryptosms.gui.ScannerMidlet
+MIDlet-1: CryptoSMS,,org.cryptosms.gui.CryptoSMSMidlet
+MIDlet-Jar-URL: cryptosms.jar
+MIDlet-Icon: res/cryptosms.png
+MicroEdition-Configuration: CLDC-1.0
+MIDlet-Version: 1.0.1
+MIDlet-Vendor: Midlet Suite Vendor
+MIDlet-Description: Send and receive encrypted sms with a public/private key scheme
+MIDlet-Name: cryptosms Midlet Suite
+MIDlet-Info-URL: www.cryptosms.org
+MicroEdition-Profile: MIDP-2.0
+MIDlet-Permissions: javax.microedition.io.PushRegistry, javax.microedition.io.Connector.sms, javax.wireless.messaging.sms.receive,javax.wireless.messaging.sms.send

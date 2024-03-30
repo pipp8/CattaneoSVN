@@ -1,0 +1,9 @@
+<publishData>
+  <publishTarget publishUrl="http://localhost/WCF">
+    <file relUrl="bin/RPCSample.dll.config" publishTime="12/06/2013 09:42:35" />
+    <file relUrl="bin/RPCSample.dll" publishTime="12/06/2013 10:25:50" />
+    <file relUrl="RPCSample.CalcService.svc" publishTime="12/06/2013 12:25:44" />
+    <file relUrl="Web.config" publishTime="12/06/2013 09:42:35" />
+    <file relUrl="bin/RPCSample.pdb" publishTime="12/06/2013 10:25:50" />
+  </publishTarget>
+</publishData>

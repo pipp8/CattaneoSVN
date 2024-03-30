@@ -1,0 +1,534 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* PhotoSignAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* PhotoSignAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		2899E5220DE3E06400AC0155 /* MyPhotoSignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* MyPhotoSignViewController.xib */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		28D7ACF80DDB3853001CB0EB /* PhotoSignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* PhotoSignViewController.m */; };
+		640202421BDEA79200CEDD1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 640202411BDEA79200CEDD1F /* QuartzCore.framework */; };
+		6412D4B2134E37BF0077F5D5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6412D4B1134E37BF0077F5D5 /* MessageUI.framework */; };
+		64253F0A129D6E75008DFFC0 /* iphonebkg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 64253F09129D6E75008DFFC0 /* iphonebkg1.jpg */; };
+		64253F16129D6EE7008DFFC0 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 64253F15129D6EE7008DFFC0 /* index.html */; };
+		64253F3F129D70F6008DFFC0 /* EXFGPS.m in Sources */ = {isa = PBXBuildFile; fileRef = 64253F30129D70F6008DFFC0 /* EXFGPS.m */; };
+		64253F40129D70F6008DFFC0 /* EXFHandlers.m in Sources */ = {isa = PBXBuildFile; fileRef = 64253F32129D70F6008DFFC0 /* EXFHandlers.m */; };
+		64253F41129D70F6008DFFC0 /* EXFJFIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 64253F34129D70F6008DFFC0 /* EXFJFIF.m */; };
+		64253F42129D70F6008DFFC0 /* EXFJpeg.m in Sources */ = {isa = PBXBuildFile; fileRef = 64253F36129D70F6008DFFC0 /* EXFJpeg.m */; };
+		64253F43129D70F6008DFFC0 /* EXFMetaData.m in Sources */ = {isa = PBXBuildFile; fileRef = 64253F39129D70F6008DFFC0 /* EXFMetaData.m */; };
+		64253F44129D70F6008DFFC0 /* EXFTagDefinitionHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 64253F3C129D70F6008DFFC0 /* EXFTagDefinitionHolder.m */; };
+		64253F45129D70F6008DFFC0 /* EXFUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 64253F3E129D70F6008DFFC0 /* EXFUtils.m */; };
+		6426B8841BDD59C8003D7EDD /* iPhoto2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6426B8831BDD59C8003D7EDD /* iPhoto2.png */; };
+		647D54681BDF6D510020585C /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647D54671BDF6D510020585C /* DropboxSDK.framework */; };
+		648FD09B1BCD21DD00DBEC00 /* libcrypto_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 648FD09A1BCD21DD00DBEC00 /* libcrypto_iOS.a */; };
+		648FD09D1BCD21E600DBEC00 /* libssl_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 648FD09C1BCD21E600DBEC00 /* libssl_iOS.a */; };
+		648FD09E1BCD224E00DBEC00 /* libiphone-exif.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64253F21129D7066008DFFC0 /* libiphone-exif.a */; };
+		64C5174212C6924400D21481 /* mykey.key in Resources */ = {isa = PBXBuildFile; fileRef = 64C5174112C6924400D21481 /* mykey.key */; };
+		64C5174412C6924C00D21481 /* mycert.crt in Resources */ = {isa = PBXBuildFile; fileRef = 64C5174312C6924C00D21481 /* mycert.crt */; };
+		64F546AB12BEA13800E159BA /* mongoose.c in Sources */ = {isa = PBXBuildFile; fileRef = 64F546A712BEA13800E159BA /* mongoose.c */; };
+		64F546AC12BEA13800E159BA /* MongooseWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F546AA12BEA13800E159BA /* MongooseWrapper.m */; };
+		64F546B712BEA14A00E159BA /* OpenSSLHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F546AE12BEA14A00E159BA /* OpenSSLHash.m */; };
+		64F546B812BEA14A00E159BA /* OpenSSLPKCS7.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F546B012BEA14A00E159BA /* OpenSSLPKCS7.m */; };
+		64F546B912BEA14A00E159BA /* OpenSSLRSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F546B212BEA14A00E159BA /* OpenSSLRSA.m */; };
+		64F546BA12BEA14A00E159BA /* OpenSSLTSP.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F546B412BEA14A00E159BA /* OpenSSLTSP.m */; };
+		64F546BB12BEA14A00E159BA /* OpenSSLX509.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F546B612BEA14A00E159BA /* OpenSSLX509.m */; };
+		64F546BE12BEA15200E159BA /* CommonSec.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F546BD12BEA15200E159BA /* CommonSec.m */; };
+		742CFE8E11F9D27300E56C1D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 742CFE8D11F9D27300E56C1D /* CoreLocation.framework */; };
+		742CFEF211F9DBE200E56C1D /* GPSOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 742CFEF011F9DBE200E56C1D /* GPSOverlayViewController.m */; };
+		742CFEF311F9DBE200E56C1D /* GPSOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 742CFEF111F9DBE200E56C1D /* GPSOverlayViewController.xib */; };
+		74770F62128B00430066D97B /* HelpSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74770F60128B00430066D97B /* HelpSetupViewController.m */; };
+		74770F63128B00430066D97B /* HelpSetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74770F61128B00430066D97B /* HelpSetupViewController.xib */; };
+		7485C4C8120EE91C00D733A5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7485C4C7120EE91C00D733A5 /* Security.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* PhotoSignAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoSignAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* PhotoSignAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoSignAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* PhotoSign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoSign.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2899E5210DE3E06400AC0155 /* MyPhotoSignViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPhotoSignViewController.xib; sourceTree = "<group>"; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28D7ACF60DDB3853001CB0EB /* PhotoSignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoSignViewController.h; sourceTree = "<group>"; };
+		28D7ACF70DDB3853001CB0EB /* PhotoSignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoSignViewController.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* PhotoSign_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoSign_Prefix.pch; sourceTree = "<group>"; };
+		640202411BDEA79200CEDD1F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6412D4B1134E37BF0077F5D5 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		64253F09129D6E75008DFFC0 /* iphonebkg1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = iphonebkg1.jpg; path = Resources/iphonebkg1.jpg; sourceTree = "<group>"; };
+		64253F15129D6EE7008DFFC0 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = index.html; path = Resources/index.html; sourceTree = "<group>"; };
+		64253F21129D7066008DFFC0 /* libiphone-exif.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libiphone-exif.a"; path = "../Library/iphone-exif/Release-iphoneos/libiphone-exif.a"; sourceTree = SOURCE_ROOT; };
+		64253F2D129D70F6008DFFC0 /* EXF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXF.h; path = "../Library/iphone-exif/src/iphone-exif/Classes/EXF.h"; sourceTree = SOURCE_ROOT; };
+		64253F2E129D70F6008DFFC0 /* EXFConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXFConstants.h; path = "../Library/iphone-exif/src/iphone-exif/Classes/EXFConstants.h"; sourceTree = SOURCE_ROOT; };
+		64253F2F129D70F6008DFFC0 /* EXFGPS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXFGPS.h; path = "../Library/iphone-exif/src/iphone-exif/Classes/EXFGPS.h"; sourceTree = SOURCE_ROOT; };
+		64253F30129D70F6008DFFC0 /* EXFGPS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXFGPS.m; path = "../Library/iphone-exif/src/iphone-exif/Classes/EXFGPS.m"; sourceTree = SOURCE_ROOT; };
+		64253F31129D70F6008DFFC0 /* EXFHandlers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXFHandlers.h; path = "../Library/iphone-exif/src/iphone-exif/Classes/EXFHandlers.h"; sourceTree = SOURCE_ROOT; };
+		64253F32129D70F6008DFFC0 /* EXFHandlers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXFHandlers.m; path = "../Library/iphone-exif/src/iphone-exif/Classes/EXFHandlers.m"; sourceTree = SOURCE_ROOT; };
+		64253F33129D70F6008DFFC0 /* EXFJFIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXFJFIF.h; path = "../Library/iphone-exif/src/iphone-exif/Classes/EXFJFIF.h"; sourceTree = SOURCE_ROOT; };
+		64253F34129D70F6008DFFC0 /* EXFJFIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXFJFIF.m; path = "../Library/iphone-exif/src/iphone-exif/Classes/EXFJFIF.m"; sourceTree = SOURCE_ROOT; };
+		64253F35129D70F6008DFFC0 /* EXFJpeg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXFJpeg.h; path = "../Library/iphone-exif/src/iphone-exif/Classes/EXFJpeg.h"; sourceTree = SOURCE_ROOT; };
+		64253F36129D70F6008DFFC0 /* EXFJpeg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXFJpeg.m; path = "../Library/iphone-exif/src/iphone-exif/Classes/EXFJpeg.m"; sourceTree = SOURCE_ROOT; };
+		64253F37129D70F6008DFFC0 /* EXFLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXFLogging.h; path = "../Library/iphone-exif/src/iphone-exif/Classes/EXFLogging.h"; sourceTree = SOURCE_ROOT; };
+		64253F38129D70F6008DFFC0 /* EXFMetaData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXFMetaData.h; path = "../Library/iphone-exif/src/iphone-exif/Classes/EXFMetaData.h"; sourceTree = SOURCE_ROOT; };
+		64253F39129D70F6008DFFC0 /* EXFMetaData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXFMetaData.m; path = "../Library/iphone-exif/src/iphone-exif/Classes/EXFMetaData.m"; sourceTree = SOURCE_ROOT; };
+		64253F3A129D70F6008DFFC0 /* EXFMutableMetaData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXFMutableMetaData.h; path = "../Library/iphone-exif/src/iphone-exif/Classes/EXFMutableMetaData.h"; sourceTree = SOURCE_ROOT; };
+		64253F3B129D70F6008DFFC0 /* EXFTagDefinitionHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXFTagDefinitionHolder.h; path = "../Library/iphone-exif/src/iphone-exif/Classes/EXFTagDefinitionHolder.h"; sourceTree = SOURCE_ROOT; };
+		64253F3C129D70F6008DFFC0 /* EXFTagDefinitionHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXFTagDefinitionHolder.m; path = "../Library/iphone-exif/src/iphone-exif/Classes/EXFTagDefinitionHolder.m"; sourceTree = SOURCE_ROOT; };
+		64253F3D129D70F6008DFFC0 /* EXFUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXFUtils.h; path = "../Library/iphone-exif/src/iphone-exif/Classes/EXFUtils.h"; sourceTree = SOURCE_ROOT; };
+		64253F3E129D70F6008DFFC0 /* EXFUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXFUtils.m; path = "../Library/iphone-exif/src/iphone-exif/Classes/EXFUtils.m"; sourceTree = SOURCE_ROOT; };
+		6426B8831BDD59C8003D7EDD /* iPhoto2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPhoto2.png; path = Resources/iPhoto2.png; sourceTree = "<group>"; };
+		647D54671BDF6D510020585C /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
+		648FD09A1BCD21DD00DBEC00 /* libcrypto_iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto_iOS.a; path = ../../LocalLibraries/lib/libcrypto_iOS.a; sourceTree = "<group>"; };
+		648FD09C1BCD21E600DBEC00 /* libssl_iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl_iOS.a; path = ../../LocalLibraries/lib/libssl_iOS.a; sourceTree = "<group>"; };
+		64C5174112C6924400D21481 /* mykey.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mykey.key; sourceTree = "<group>"; };
+		64C5174312C6924C00D21481 /* mycert.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mycert.crt; sourceTree = "<group>"; };
+		64F546A712BEA13800E159BA /* mongoose.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mongoose.c; path = ../Library/CommonIF/mongoose.c; sourceTree = SOURCE_ROOT; };
+		64F546A812BEA13800E159BA /* mongoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mongoose.h; path = ../Library/CommonIF/mongoose.h; sourceTree = SOURCE_ROOT; };
+		64F546A912BEA13800E159BA /* MongooseWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MongooseWrapper.h; path = ../Library/CommonIF/MongooseWrapper.h; sourceTree = SOURCE_ROOT; };
+		64F546AA12BEA13800E159BA /* MongooseWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MongooseWrapper.m; path = ../Library/CommonIF/MongooseWrapper.m; sourceTree = SOURCE_ROOT; };
+		64F546AD12BEA14A00E159BA /* OpenSSLHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenSSLHash.h; path = ../Library/CommonIF/OpenSSLHash.h; sourceTree = SOURCE_ROOT; };
+		64F546AE12BEA14A00E159BA /* OpenSSLHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenSSLHash.m; path = ../Library/CommonIF/OpenSSLHash.m; sourceTree = SOURCE_ROOT; };
+		64F546AF12BEA14A00E159BA /* OpenSSLPKCS7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenSSLPKCS7.h; path = ../Library/CommonIF/OpenSSLPKCS7.h; sourceTree = SOURCE_ROOT; };
+		64F546B012BEA14A00E159BA /* OpenSSLPKCS7.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenSSLPKCS7.m; path = ../Library/CommonIF/OpenSSLPKCS7.m; sourceTree = SOURCE_ROOT; };
+		64F546B112BEA14A00E159BA /* OpenSSLRSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenSSLRSA.h; path = ../Library/CommonIF/OpenSSLRSA.h; sourceTree = SOURCE_ROOT; };
+		64F546B212BEA14A00E159BA /* OpenSSLRSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenSSLRSA.m; path = ../Library/CommonIF/OpenSSLRSA.m; sourceTree = SOURCE_ROOT; };
+		64F546B312BEA14A00E159BA /* OpenSSLTSP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenSSLTSP.h; path = ../Library/CommonIF/OpenSSLTSP.h; sourceTree = SOURCE_ROOT; };
+		64F546B412BEA14A00E159BA /* OpenSSLTSP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenSSLTSP.m; path = ../Library/CommonIF/OpenSSLTSP.m; sourceTree = SOURCE_ROOT; };
+		64F546B512BEA14A00E159BA /* OpenSSLX509.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenSSLX509.h; path = ../Library/CommonIF/OpenSSLX509.h; sourceTree = SOURCE_ROOT; };
+		64F546B612BEA14A00E159BA /* OpenSSLX509.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenSSLX509.m; path = ../Library/CommonIF/OpenSSLX509.m; sourceTree = SOURCE_ROOT; };
+		64F546BC12BEA15200E159BA /* CommonSec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonSec.h; path = ../Library/CommonIF/CommonSec.h; sourceTree = SOURCE_ROOT; };
+		64F546BD12BEA15200E159BA /* CommonSec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonSec.m; path = ../Library/CommonIF/CommonSec.m; sourceTree = SOURCE_ROOT; };
+		742CFE8D11F9D27300E56C1D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		742CFEEF11F9DBE200E56C1D /* GPSOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSOverlayViewController.h; sourceTree = "<group>"; };
+		742CFEF011F9DBE200E56C1D /* GPSOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSOverlayViewController.m; sourceTree = "<group>"; };
+		742CFEF111F9DBE200E56C1D /* GPSOverlayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GPSOverlayViewController.xib; path = Classes/GPSOverlayViewController.xib; sourceTree = "<group>"; };
+		74770F5F128B00430066D97B /* HelpSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpSetupViewController.h; sourceTree = "<group>"; };
+		74770F60128B00430066D97B /* HelpSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpSetupViewController.m; sourceTree = "<group>"; };
+		74770F61128B00430066D97B /* HelpSetupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HelpSetupViewController.xib; path = Classes/HelpSetupViewController.xib; sourceTree = "<group>"; };
+		7485C4C7120EE91C00D733A5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		8D1107310486CEB800E47090 /* PhotoSign-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PhotoSign-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				640202421BDEA79200CEDD1F /* QuartzCore.framework in Frameworks */,
+				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				7485C4C8120EE91C00D733A5 /* Security.framework in Frameworks */,
+				742CFE8E11F9D27300E56C1D /* CoreLocation.framework in Frameworks */,
+				6412D4B2134E37BF0077F5D5 /* MessageUI.framework in Frameworks */,
+				647D54681BDF6D510020585C /* DropboxSDK.framework in Frameworks */,
+				648FD09E1BCD224E00DBEC00 /* libiphone-exif.a in Frameworks */,
+				648FD09D1BCD21E600DBEC00 /* libssl_iOS.a in Frameworks */,
+				648FD09B1BCD21DD00DBEC00 /* libcrypto_iOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				742CFEEF11F9DBE200E56C1D /* GPSOverlayViewController.h */,
+				742CFEF011F9DBE200E56C1D /* GPSOverlayViewController.m */,
+				1D3623240D0F684500981E51 /* PhotoSignAppDelegate.h */,
+				1D3623250D0F684500981E51 /* PhotoSignAppDelegate.m */,
+				28D7ACF60DDB3853001CB0EB /* PhotoSignViewController.h */,
+				28D7ACF70DDB3853001CB0EB /* PhotoSignViewController.m */,
+				74770F5F128B00430066D97B /* HelpSetupViewController.h */,
+				74770F60128B00430066D97B /* HelpSetupViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* PhotoSign.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				6412D4B1134E37BF0077F5D5 /* MessageUI.framework */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				74459ECB129AB86F00F8E5FD /* Exif */,
+				7402C87211F9FFC500E132F5 /* WEBServer */,
+				742CFEC311F9DA2700E56C1D /* Security */,
+				32CA4F630368D1EE00C91783 /* PhotoSign_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				64C5174312C6924C00D21481 /* mycert.crt */,
+				64C5174112C6924400D21481 /* mykey.key */,
+				742CFE9111F9D7AE00E56C1D /* Images */,
+				74C5857011FE059D00D124F8 /* html */,
+				2899E5210DE3E06400AC0155 /* MyPhotoSignViewController.xib */,
+				74770F61128B00430066D97B /* HelpSetupViewController.xib */,
+				742CFEF111F9DBE200E56C1D /* GPSOverlayViewController.xib */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* PhotoSign-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				640202411BDEA79200CEDD1F /* QuartzCore.framework */,
+				648FD09C1BCD21E600DBEC00 /* libssl_iOS.a */,
+				648FD09A1BCD21DD00DBEC00 /* libcrypto_iOS.a */,
+				64253F21129D7066008DFFC0 /* libiphone-exif.a */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+				742CFE8D11F9D27300E56C1D /* CoreLocation.framework */,
+				647D54671BDF6D510020585C /* DropboxSDK.framework */,
+				7485C4C7120EE91C00D733A5 /* Security.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7402C87211F9FFC500E132F5 /* WEBServer */ = {
+			isa = PBXGroup;
+			children = (
+				64F546A712BEA13800E159BA /* mongoose.c */,
+				64F546A812BEA13800E159BA /* mongoose.h */,
+				64F546A912BEA13800E159BA /* MongooseWrapper.h */,
+				64F546AA12BEA13800E159BA /* MongooseWrapper.m */,
+			);
+			name = WEBServer;
+			sourceTree = "<group>";
+		};
+		742CFE9111F9D7AE00E56C1D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				6426B8831BDD59C8003D7EDD /* iPhoto2.png */,
+				64253F09129D6E75008DFFC0 /* iphonebkg1.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		742CFEC311F9DA2700E56C1D /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				64F546BC12BEA15200E159BA /* CommonSec.h */,
+				64F546BD12BEA15200E159BA /* CommonSec.m */,
+				64F546AD12BEA14A00E159BA /* OpenSSLHash.h */,
+				64F546AE12BEA14A00E159BA /* OpenSSLHash.m */,
+				64F546AF12BEA14A00E159BA /* OpenSSLPKCS7.h */,
+				64F546B012BEA14A00E159BA /* OpenSSLPKCS7.m */,
+				64F546B112BEA14A00E159BA /* OpenSSLRSA.h */,
+				64F546B212BEA14A00E159BA /* OpenSSLRSA.m */,
+				64F546B312BEA14A00E159BA /* OpenSSLTSP.h */,
+				64F546B412BEA14A00E159BA /* OpenSSLTSP.m */,
+				64F546B512BEA14A00E159BA /* OpenSSLX509.h */,
+				64F546B612BEA14A00E159BA /* OpenSSLX509.m */,
+			);
+			name = Security;
+			sourceTree = "<group>";
+		};
+		74459ECB129AB86F00F8E5FD /* Exif */ = {
+			isa = PBXGroup;
+			children = (
+				64253F2D129D70F6008DFFC0 /* EXF.h */,
+				64253F2E129D70F6008DFFC0 /* EXFConstants.h */,
+				64253F2F129D70F6008DFFC0 /* EXFGPS.h */,
+				64253F30129D70F6008DFFC0 /* EXFGPS.m */,
+				64253F31129D70F6008DFFC0 /* EXFHandlers.h */,
+				64253F32129D70F6008DFFC0 /* EXFHandlers.m */,
+				64253F33129D70F6008DFFC0 /* EXFJFIF.h */,
+				64253F34129D70F6008DFFC0 /* EXFJFIF.m */,
+				64253F35129D70F6008DFFC0 /* EXFJpeg.h */,
+				64253F36129D70F6008DFFC0 /* EXFJpeg.m */,
+				64253F37129D70F6008DFFC0 /* EXFLogging.h */,
+				64253F38129D70F6008DFFC0 /* EXFMetaData.h */,
+				64253F39129D70F6008DFFC0 /* EXFMetaData.m */,
+				64253F3A129D70F6008DFFC0 /* EXFMutableMetaData.h */,
+				64253F3B129D70F6008DFFC0 /* EXFTagDefinitionHolder.h */,
+				64253F3C129D70F6008DFFC0 /* EXFTagDefinitionHolder.m */,
+				64253F3D129D70F6008DFFC0 /* EXFUtils.h */,
+				64253F3E129D70F6008DFFC0 /* EXFUtils.m */,
+			);
+			name = Exif;
+			sourceTree = "<group>";
+		};
+		74C5857011FE059D00D124F8 /* html */ = {
+			isa = PBXGroup;
+			children = (
+				64253F15129D6EE7008DFFC0 /* index.html */,
+			);
+			name = html;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* PhotoSign */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "PhotoSign" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhotoSign;
+			productName = MyPhotoSign;
+			productReference = 1D6058910D05DD3D006BFB54 /* PhotoSign.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = JPW97TV3UT;
+					};
+				};
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PhotoSign" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* PhotoSign */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				2899E5220DE3E06400AC0155 /* MyPhotoSignViewController.xib in Resources */,
+				742CFEF311F9DBE200E56C1D /* GPSOverlayViewController.xib in Resources */,
+				6426B8841BDD59C8003D7EDD /* iPhoto2.png in Resources */,
+				74770F63128B00430066D97B /* HelpSetupViewController.xib in Resources */,
+				64253F0A129D6E75008DFFC0 /* iphonebkg1.jpg in Resources */,
+				64253F16129D6EE7008DFFC0 /* index.html in Resources */,
+				64C5174212C6924400D21481 /* mykey.key in Resources */,
+				64C5174412C6924C00D21481 /* mycert.crt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* PhotoSignAppDelegate.m in Sources */,
+				28D7ACF80DDB3853001CB0EB /* PhotoSignViewController.m in Sources */,
+				742CFEF211F9DBE200E56C1D /* GPSOverlayViewController.m in Sources */,
+				74770F62128B00430066D97B /* HelpSetupViewController.m in Sources */,
+				64253F3F129D70F6008DFFC0 /* EXFGPS.m in Sources */,
+				64253F40129D70F6008DFFC0 /* EXFHandlers.m in Sources */,
+				64253F41129D70F6008DFFC0 /* EXFJFIF.m in Sources */,
+				64253F42129D70F6008DFFC0 /* EXFJpeg.m in Sources */,
+				64253F43129D70F6008DFFC0 /* EXFMetaData.m in Sources */,
+				64253F44129D70F6008DFFC0 /* EXFTagDefinitionHolder.m in Sources */,
+				64253F45129D70F6008DFFC0 /* EXFUtils.m in Sources */,
+				64F546AB12BEA13800E159BA /* mongoose.c in Sources */,
+				64F546AC12BEA13800E159BA /* MongooseWrapper.m in Sources */,
+				64F546B712BEA14A00E159BA /* OpenSSLHash.m in Sources */,
+				64F546B812BEA14A00E159BA /* OpenSSLPKCS7.m in Sources */,
+				64F546B912BEA14A00E159BA /* OpenSSLRSA.m in Sources */,
+				64F546BA12BEA14A00E159BA /* OpenSSLTSP.m in Sources */,
+				64F546BB12BEA14A00E159BA /* OpenSSLX509.m in Sources */,
+				64F546BE12BEA15200E159BA /* CommonSec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PhotoSign_Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../LocalLibraries/include\"/**",
+					"/Users/pipp8/Universita/Src/XCode/iOS/IronTrack-v3/Library/DropboxSDK.framework/Headers",
+				);
+				INFOPLIST_FILE = "PhotoSign-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../Library/iphone-exif/Release-iphoneos\"",
+					"\"$(SRCROOT)/../../SMTPSender/build/Debug-iphoneos\"",
+					"\"$(SRCROOT)/../../SMTPSender/build/Release-iphoneos\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "it.unisa.dia.mobileapps.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = PhotoSign;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PhotoSign_Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../LocalLibraries/include\"/**",
+					"/Users/pipp8/Universita/Src/XCode/iOS/IronTrack-v3/Library/DropboxSDK.framework/Headers",
+				);
+				INFOPLIST_FILE = "PhotoSign-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../Library/iphone-exif/Release-iphoneos\"",
+					"\"$(SRCROOT)/../../SMTPSender/build/Debug-iphoneos\"",
+					"\"$(SRCROOT)/../../SMTPSender/build/Release-iphoneos\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "it.unisa.dia.mobileapps.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = PhotoSign;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../LocalLibraries/include\"/**",
+					"\"$(SRCROOT)/DropboxSDK.framework/Headers\"",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../LocalLibraries/lib\"/**";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../LocalLibraries/include\"/**",
+					"\"$(SRCROOT)/DropboxSDK.framework/Headers\"",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../LocalLibraries/lib\"/**";
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "";
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "PhotoSign" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PhotoSign" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

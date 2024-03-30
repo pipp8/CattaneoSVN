@@ -1,0 +1,5 @@
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\Experiments\NativeAESEncryptionEngine\NativeAESEncryptionEngine\bin\Debug\NativeAESEncryptionEngine.exe
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\Experiments\NativeAESEncryptionEngine\NativeAESEncryptionEngine\bin\Debug\NativeAESEncryptionEngine.pdb
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\Experiments\NativeAESEncryptionEngine\NativeAESEncryptionEngine\obj\x86\Debug\NativeAESEncryptionEngine.exe
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\Experiments\NativeAESEncryptionEngine\NativeAESEncryptionEngine\obj\x86\Debug\NativeAESEncryptionEngine.pdb
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\Experiments\NativeAESEncryptionEngine\NativeAESEncryptionEngine\obj\x86\Debug\NativeAESEncryptionEngine.csprojResolveAssemblyReference.cache

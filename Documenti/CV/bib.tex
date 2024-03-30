@@ -1,0 +1,163 @@
+
+
+\documentclass[11pt]{article}
+\usepackage[italian]{babel}
+\usepackage{epsfig}
+
+
+
+% riaggiustamenti alla traduzione di babel
+\addto\captionsitalian{%
+  \def\contentsname{Sommario}
+  \def\listfigurename{Lista delle figure}
+  \def\listtablename{Lista delle tavole}
+  \def\refname{Elenco delle pubblicazioni}
+  \def\indexname{Indice}
+  \def\figurename{Figura}
+  \def\tablename{Tavola}
+  \def\appendixname{Appendice}
+}
+%% DIMENSIONI della PAGINA:
+
+
+% Paragraphs are marked by large space rather than indentation:
+\parindent 0pt
+\parskip 7pt plus 1pt minus 1pt
+\setlength{\textwidth}{15.7cm}
+\setlength{\oddsidemargin}{0cm}      % this implies 1 inch margin
+\setlength{\evensidemargin}{0cm}     % TeX Built-in
+\setlength{\textheight}{22.5cm}      % height of text on page
+
+\makeatletter
+
+\newlength{\posii}
+\newlength{\posiibox}
+\newlength{\posiil}
+\newlength{\finepar}
+\newlength{\fineitem}
+\newlength{\boxsize}
+
+\setlength{\posii}{3.8cm}
+\setlength{\posiil}{4.5cm}
+\setlength{\finepar}{55pt}
+\setlength{\fineitem}{10pt}
+\setlength{\boxsize}{\textwidth}
+\addtolength{\boxsize}{-1\posii}
+\setlength{\posiibox}{\posii}
+\addtolength{\posiibox}{-15pt}
+
+
+%% DATES, VERSIONS AND TITLES:
+
+\def\fileversion{$Revision: 730 $}
+\def\filedate{$Date: 2015-04-07 12:44:50 +0200(Mar, 07 Apr 2015) $}
+
+% N.B. date nel formato italiano
+\def\today{\number\day \space\ifcase\month\or
+  Gennaio\or Febbraio\or Marzo\or Aprile\or Maggio\or Giugno\or
+  Luglio\or Agosto\or Settembre\or Ottobre\or Novembre\or Dicembre\fi
+  \space \number\year}
+
+\def\expanddate $#1:#2/#3/#4 #5:#6:#7${\day=#4 \month=#3 \year=#2}
+\begingroup
+  \expandafter\expanddate\filedate
+  \xdef\thefiledate{\today}
+\endgroup
+
+\def\expandrevision $#1:#2.#3${Versione: #2.#3}
+\begingroup
+  \xdef\thefileversion{\expandafter\expandrevision\fileversion}
+\endgroup
+
+
+%
+% First page parameters ..
+%
+\setcounter{page}{1}
+\newcounter{lastpage}
+
+\author{\Large \sl Giuseppe CATTANEO}
+
+\date{\thefileversion \\ del \thefiledate}
+
+\def\headtitle{Curriculum dell'attivit\`a scientifica e
+didattica di {\sl Giuseppe CATTANEO}}
+
+\newenvironment{bigtitle} {
+  \fontencoding{OT1}\fontfamily{cmfib}
+  \fontseries{m}
+  \fontshape{n}
+  \fontsize{20}{25pt}\selectfont}{}
+
+
+
+\title{{\sffamily\bfseries {\Huge Curriculum\\}
+ {\Large dell'attivit\a`a scientifica e didattica\\}}}
+
+\def\@maketitle{%
+  \begin{Sbox}
+    \begin{minipage}{\titlewidth}
+      \begin{center}
+           \@title
+               \vskip 1.5em
+               {\begin{tabular}[t]{c}\@author\end{tabular}\par}
+        \vskip 1.5em{\small\@date}%
+      \end{center}
+   \end{minipage}
+  \end{Sbox}
+  \begin{center}
+    \shadowbox{\TheSbox}
+  \end{center}
+  \par
+}
+
+
+%% TABLE OF CONTENTS
+
+\newskip\myskip
+
+\def\tableofcontents{%
+  \par\vfill
+  \begin{quote}
+    \begin{center} \huge\bf \contentsname \end{center}
+    \def\numberline##1{\hbox to 0pt{\hss##1\hskip 1em}}%
+    \let\oldaddvspace\addvspace
+    \def\addvspace##1{%
+      \myskip##1\relax
+      \oldaddvspace{.5\myskip}}
+    \@starttoc{toc}%
+  \end{quote}
+  \thispagestyle{empty}
+  \vfill
+  \clearpage}
+
+%% PAGE STYLE:
+
+\pagestyle{plain}
+
+
+%
+% -------------- fine definizioni ------------------------
+%
+
+\makeatother
+
+\begin{document}
+
+% prima pagina
+
+%
+% ---------------------------------------------------
+%
+
+\cite{cattaneo2008,  cattaneo2007, cattaneo2006,cattaneo2004,
+cattaneo2004-1, cattaneo2004-2, cattaneo2003, cattaneo2003-1 }
+
+\bibliography{pubblicazioni}
+
+\bibliographystyle{plain}
+\addcontentsline{toc}{section}{\refname}
+
+
+\label{lastpage}
+\end{document}

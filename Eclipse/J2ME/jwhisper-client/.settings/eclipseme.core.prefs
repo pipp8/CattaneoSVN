@@ -1,0 +1,8 @@
+#Tue Nov 06 10:22:25 CET 2007
+eclipse.preferences.version=1
+instance/org.eclipse.core.net/org.eclipse.core.net.hasMigrated=true
+obfuscate_use_project=true
+preverify_config_value=CLDC-1.0
+proguard_keep=public class jwhisper.gui.* extends javax.microedition.midlet.MIDlet
+proguard_options=-dontusemixedcaseclassnames -defaultpackage '' -dontoptimize
+proguard_use_specified=true

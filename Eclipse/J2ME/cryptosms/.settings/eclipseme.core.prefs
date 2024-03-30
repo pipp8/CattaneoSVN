@@ -1,0 +1,5 @@
+#Wed Sep 12 15:10:35 CEST 2007
+eclipse.preferences.version=1
+obfuscate_use_project=true
+proguard_keep=public class org.cryptosms.gui.* extends javax.microedition.midlet.MIDlet
+proguard_options=-dontusemixedcaseclassnames -defaultpackage '' -dontoptimize

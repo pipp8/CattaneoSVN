@@ -1,0 +1,112 @@
+
+
+# The name of your C compiler:
+CC= gcc
+# miscellaneous OS-dependent stuff
+SHELL= /bin/sh
+# linker
+LN= $(CC)
+# file deletion command
+RM= rm -f
+# directory creation command
+MKDIR= mkdir
+# library (.a) file creation command
+AR= ar rc
+# second step in .a creation (use "touch" if not needed)
+AR2= ranlib
+# You may need to adjust these cc options:
+CFLAGS= -g3 -O0  -I$(srcdir)
+# Generally, we recommend defining any configuration symbols in jconfig.h,
+# NOT via -D switches here.
+
+# Link-time cc options:
+LDFLAGS= 
+
+# To link any special libraries, add the necessary -l commands here.
+LDLIBS= 
+
+# Library version ID; libtool uses this for the shared library version number.
+# Note: we suggest this match the macro of the same name in jpeglib.h.
+JPEG_LIB_VERSION = 62
+
+
+
+# source files: JPEG library proper
+LIBSOURCES= ../src/jcapimin.c ../src/jcapistd.c ../src/jccoefct.c ../src/jccolor.c ../src/jcdctmgr.c ../src/jcdiffct.c \
+	../src/jchuff.c ../src/jcinit.c ../src/jclhuff.c ../src/jclossls.c ../src/jclossy.c ../src/jcmainct.c \
+	../src/jcmarker.c ../src/jcmaster.c ../src/jcodec.c ../src/jcomapi.c ../src/jcparam.c ../src/jcphuff.c ../src/jcpred.c \
+	../src/jcprepct.c ../src/jcsample.c ../src/jcscale.c ../src/jcshuff.c ../src/jctrans.c ../src/jdapimin.c \
+	../src/jdapistd.c ../src/jdatadst.c ../src/jdatasrc.c ../src/jdcoefct.c ../src/jdcolor.c ../src/jddctmgr.c \
+	../src/jddiffct.c ../src/jdhuff.c ../src/jdinput.c ../src/jdlhuff.c ../src/jdlossls.c ../src/jdlossy.c \
+	../src/jdmainct.c ../src/jdmarker.c ../src/jdmaster.c ../src/jdmerge.c ../src/jdphuff.c ../src/jdpostct.c \
+	../src/jdpred.c ../src/jdsample.c ../src/jdscale.c ../src/jdshuff.c ../src/jdtrans.c ../src/jerror.c ../src/jfdctflt.c \
+	../src/jfdctfst.c ../src/jfdctint.c ../src/jidctflt.c ../src/jidctfst.c ../src/jidctint.c ../src/jidctred.c \
+	../src/jquant1.c ../src/jquant2.c ../src/jutils.c ../src/jmemmgr.c ../src/jmemnobs.c
+
+
+INCLUDES= ../src/jchuff.h ../src/jdhuff.h ../src/jdct.h ../src/jerror.h ../src/jinclude.h ../src/jlossls.h ../src/jlossy.h \
+	../src/jmemsys.h ../src/jmorecfg.h ../src/jpegint.h ../src/jpeglib.h ../src/jversion.h ../src/cdjpeg.h \
+	../src/cderror.h ../src/transupp.h
+
+
+# library object files common to compression and decompression
+COMOBJECTS= ./src/jcomapi.o ./src/jcodec.o ./src/jutils.o ./src/jerror.o ./src/jmemmgr.o ./src/jmemnobs.o
+
+# compression library object filesx
+CLIBOBJECTS= ./src/jcapimin.o ./src/jcapistd.o ./src/jctrans.o ./src/jcparam.o \
+        ./src/jdatadst.o ./src/jcinit.o ./src/jcmaster.o ./src/jcmarker.o ./src/jcmainct.o \
+        ./src/jcprepct.o ./src/jclossls.o ./src/jclossy.o ./src/jccoefct.o ./src/jccolor.o \
+		./src/jcsample.o ./src/jchuff.o ./src/jcphuff.o ./src/jcshuff.o ./src/jclhuff.o \
+		./src/jcpred.o ./src/jcscale.o ./src/jcdiffct.o ./src/jcdctmgr.o ./src/jfdctfst.o \
+		./src/jfdctflt.o ./src/jfdctint.o
+# decompression library object files
+DLIBOBJECTS= ./src/jdapimin.o ./src/jdapistd.o ./src/jdtrans.o ./src/jdatasrc.o \
+        ./src/jdmaster.o ./src/jdinput.o ./src/jdmarker.o ./src/jdlossls.o ./src/jdlossy.o \
+		./src/jdhuff.o ./src/jdlhuff.o ./src/jdphuff.o ./src/jdshuff.o ./src/jdpred.o \
+		./src/jdscale.o ./src/jddiffct.o ./src/jdmainct.o ./src/jdcoefct.o ./src/jdpostct.o \
+		./src/jddctmgr.o ./src/jidctfst.o ./src/jidctflt.o ./src/jidctint.o ./src/jidctred.o \
+        ./src/jdsample.o ./src/jdcolor.o ./src/jquant1.o ./src/jquant2.o ./src/jdmerge.o
+# These objectfiles are included in libjpeg.a
+LIBOBJECTS= $(CLIBOBJECTS) $(DLIBOBJECTS) $(COMOBJECTS)
+
+# object files for sample applications (excluding library files)
+COBJECTS= ./src/cjpeg.o ./src/rdppm.o ./src/rdgif.o ./src/rdtarga.o ./src/rdrle.o \
+        ./src/rdbmp.o ./src/rdswitch.o ./src/cdjpeg.o
+DOBJECTS= ./src/djpeg.o ./src/wrppm.o ./src/wrgif.o ./src/wrtarga.o ./src/wrrle.o \
+        ./src/wrbmp.o ./src/rdcolmap.o ./src/cdjpeg.o
+TROBJECTS= ./src/jpegtran.o ./src/rdswitch.o ./src/cdjpeg.o ./src/transupp.o
+
+# without libtool:
+libjpeg.a:  $(LIBOBJECTS)
+	$(RM) libjpeg.a
+	$(AR) libjpeg.a  $(LIBOBJECTS)
+	$(AR2) libjpeg.a
+
+rdjpgsects: ./src/rdjpgsects.o ./src/ExifFieldNames.o libjpeg.a
+	$(LN) $(LDFLAGS) -o rdjpgsects ./src/rdjpgsects.o ./src/ExifFieldNames.o libjpeg.a $(LDLIBS)
+
+cjpeg: $(COBJECTS) libjpeg.a
+	$(LN) $(LDFLAGS) -o cjpeg $(COBJECTS) libjpeg.a $(LDLIBS)
+
+djpeg: $(DOBJECTS) libjpeg.a
+	$(LN) $(LDFLAGS) -o djpeg $(DOBJECTS) libjpeg.a $(LDLIBS)
+
+jpegtran: $(TROBJECTS) libjpeg.a
+	$(LN) $(LDFLAGS) -o jpegtran $(TROBJECTS) libjpeg.a $(LDLIBS)
+
+rdjpgcom: ./src/rdjpgcom.o
+	$(LN) $(LDFLAGS) -o rdjpgcom ./src/rdjpgcom.o $(LDLIBS)
+
+wrjpgcom: ./src/wrjpgcom.o
+	$(LN) $(LDFLAGS) -o wrjpgcom ./src/wrjpgcom.o $(LDLIBS)
+
+
+./src/rdjpgsects.o: ../src/rdjpgsects.c ../src/ExifFieldNames.c ../src/jinclude.h ../src/jconfig.h
+./src/cjpeg.o: ../src/cjpeg.c ../src/cdjpeg.h ../src/jinclude.h ../src/jconfig.h ../src/jpeglib.h ../src/jmorecfg.h ../src/jerror.h ../src/cderror.h ../src/jversion.h
+./src/djpeg.o: ../src/djpeg.c ../src/cdjpeg.h ../src/jinclude.h ../src/jconfig.h ../src/jpeglib.h ../src/jmorecfg.h ../src/jerror.h ../src/cderror.h ../src/jversion.h
+./src/jpegtran.o: ../src/jpegtran.c ../src/cdjpeg.h ../src/jinclude.h ../src/jconfig.h ../src/jpeglib.h ../src/jmorecfg.h ../src/jerror.h ../src/cderror.h ../src/transupp.h ../src/jversion.h
+./src/rdjpgcom.o: ../src/rdjpgcom.c ../src/jinclude.h ../src/jconfig.h
+./src/rdjpgsects.o: ../src/rdjpgsects.c ../src/jinclude.h ../src/jconfig.h
+./src/wrjpgcom.o: ../src/wrjpgcom.c ../src/jinclude.h ../src/jconfig.h
+./src/cdjpeg.o: ../src/cdjpeg.c ../src/cdjpeg.h ../src/jinclude.h ../src/jconfig.h ../src/jpeglib.h ../src/jmorecfg.h ../src/jerror.h ../src/cderror.h
+

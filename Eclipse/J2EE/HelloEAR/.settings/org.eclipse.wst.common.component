@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+<wb-module deploy-name="HelloEAR">
+<wb-resource deploy-path="/" source-path="/EarContent"/>
+<dependent-module deploy-path="/" handle="module:/resource/HelloBeans/HelloBeans">
+<dependent-object>EjbModule_1197800828255</dependent-object>
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module archiveName="HelloBeansClient.jar" deploy-path="/" handle="module:/resource/HelloBeansClient/HelloBeansClient">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module deploy-path="/" handle="module:/resource/HelloWeb/HelloWeb">
+<dependent-object>WebModule_1197801077528</dependent-object>
+<dependency-type>uses</dependency-type>
+</dependent-module>
+</wb-module>
+</project-modules>

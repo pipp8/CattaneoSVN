@@ -1,0 +1,15 @@
+Release 20070526-1
+
+Bugfixes:
+
+* fixed usage of com.sun.* - those classes are now loaded via
+Class.forName() allowing graceful workaround if the classes are
+not available. This makes the application run on siemens mobiles.
+
+* GUI routines cleanup and (partially) rewritten. A number of
+potential deadlocks are now resolved.
+
+Features:
+
+* Using PushRegistry. If available the mobile starts the application 
+if a new crypted sms arrives.

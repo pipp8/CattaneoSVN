@@ -1,0 +1,2 @@
+jwhisper.gui.JWhisperMidlet
+jwhisper.gui.JWhisperCleanerMidlet

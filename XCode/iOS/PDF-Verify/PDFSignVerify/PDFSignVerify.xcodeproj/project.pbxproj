@@ -1,0 +1,771 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* PDFSignVerifyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* PDFSignVerifyAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
+		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
+		28C286E10D94DF7D0034E888 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* MenuViewController.m */; };
+		28F335F11007B36200424DE2 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* MenuViewController.xib */; };
+		4150101412BBA35400C9DA28 /* PdfSigUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4150101312BBA35400C9DA28 /* PdfSigUtils.m */; };
+		640C47B612BE8EFD00388807 /* CheckedPDF-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 640C47AF12BE8EFD00388807 /* CheckedPDF-72.png */; };
+		640C47B712BE8EFD00388807 /* CheckedPDF-original-269x269.png in Resources */ = {isa = PBXBuildFile; fileRef = 640C47B012BE8EFD00388807 /* CheckedPDF-original-269x269.png */; };
+		640C47B812BE8EFD00388807 /* CheckedPDF-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 640C47B112BE8EFD00388807 /* CheckedPDF-Small-50.png */; };
+		640C47B912BE8EFD00388807 /* CheckedPDF-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 640C47B212BE8EFD00388807 /* CheckedPDF-Small.png */; };
+		640C47BA12BE8EFD00388807 /* CheckedPDF-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 640C47B312BE8EFD00388807 /* CheckedPDF-Small@2x.png */; };
+		640C47BB12BE8EFD00388807 /* CheckedPDF.png in Resources */ = {isa = PBXBuildFile; fileRef = 640C47B412BE8EFD00388807 /* CheckedPDF.png */; };
+		640C47BC12BE8EFD00388807 /* CheckedPDF@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 640C47B512BE8EFD00388807 /* CheckedPDF@2x.png */; };
+		640C47C412BE8F1200388807 /* imgres.png in Resources */ = {isa = PBXBuildFile; fileRef = 640C47BD12BE8F1200388807 /* imgres.png */; };
+		640C47C512BE8F1200388807 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 640C47BE12BE8F1200388807 /* map.png */; };
+		640C47C612BE8F1200388807 /* pericolo.png in Resources */ = {isa = PBXBuildFile; fileRef = 640C47BF12BE8F1200388807 /* pericolo.png */; };
+		640C47C712BE8F1200388807 /* photo_old.png in Resources */ = {isa = PBXBuildFile; fileRef = 640C47C012BE8F1200388807 /* photo_old.png */; };
+		640C47C812BE8F1200388807 /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 640C47C112BE8F1200388807 /* photo.png */; };
+		640C47C912BE8F1200388807 /* tools.png in Resources */ = {isa = PBXBuildFile; fileRef = 640C47C212BE8F1200388807 /* tools.png */; };
+		640C47CA12BE8F1200388807 /* Verify.png in Resources */ = {isa = PBXBuildFile; fileRef = 640C47C312BE8F1200388807 /* Verify.png */; };
+		643569B1129D73750070D358 /* DBAccountInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6435695C129D73750070D358 /* DBAccountInfo.m */; };
+		643569B2129D73750070D358 /* DBCreateAccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6435695E129D73750070D358 /* DBCreateAccountController.m */; };
+		643569B3129D73750070D358 /* DBError.m in Sources */ = {isa = PBXBuildFile; fileRef = 64356960129D73750070D358 /* DBError.m */; };
+		643569B4129D73750070D358 /* DBLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64356962129D73750070D358 /* DBLoadingView.m */; };
+		643569B5129D73750070D358 /* DBLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64356964129D73750070D358 /* DBLoginController.m */; };
+		643569B6129D73750070D358 /* DBMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 64356966129D73750070D358 /* DBMetadata.m */; };
+		643569B7129D73750070D358 /* DBQuota.m in Sources */ = {isa = PBXBuildFile; fileRef = 64356968129D73750070D358 /* DBQuota.m */; };
+		643569B8129D73750070D358 /* DBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6435696A129D73750070D358 /* DBRequest.m */; };
+		643569B9129D73750070D358 /* DBRestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6435696C129D73750070D358 /* DBRestClient.m */; };
+		643569BA129D73750070D358 /* DBSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 6435696E129D73750070D358 /* DBSession.m */; };
+		643569BB129D73750070D358 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 64356973129D73750070D358 /* NSObject+SBJSON.m */; };
+		643569BC129D73750070D358 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 64356975129D73750070D358 /* NSString+SBJSON.m */; };
+		643569BD129D73750070D358 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 64356977129D73750070D358 /* SBJSON.m */; };
+		643569BE129D73750070D358 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 64356979129D73750070D358 /* SBJsonBase.m */; };
+		643569BF129D73750070D358 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6435697B129D73750070D358 /* SBJsonParser.m */; };
+		643569C0129D73750070D358 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6435697D129D73750070D358 /* SBJsonWriter.m */; };
+		643569C1129D73750070D358 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 64356980129D73750070D358 /* Base64Transcoder.c */; };
+		643569C2129D73750070D358 /* MPOAuthAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 64356985129D73750070D358 /* MPOAuthAPI.m */; };
+		643569C3129D73750070D358 /* MPOAuthAPIRequestLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 64356987129D73750070D358 /* MPOAuthAPIRequestLoader.m */; };
+		643569C4129D73750070D358 /* MPOAuthAuthenticationMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 64356989129D73750070D358 /* MPOAuthAuthenticationMethod.m */; };
+		643569C5129D73750070D358 /* MPOAuthAuthenticationMethodOAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 6435698B129D73750070D358 /* MPOAuthAuthenticationMethodOAuth.m */; };
+		643569C6129D73750070D358 /* MPOAuthConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6435698D129D73750070D358 /* MPOAuthConnection.m */; };
+		643569C7129D73750070D358 /* MPOAuthCredentiaIConcreteStore+KeychainAdditionsMac.m in Sources */ = {isa = PBXBuildFile; fileRef = 6435698E129D73750070D358 /* MPOAuthCredentiaIConcreteStore+KeychainAdditionsMac.m */; };
+		643569C8129D73750070D358 /* MPOAuthCredentialConcreteStore+KeychainAdditionsiPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 64356990129D73750070D358 /* MPOAuthCredentialConcreteStore+KeychainAdditionsiPhone.m */; };
+		643569C9129D73750070D358 /* MPOAuthCredentialConcreteStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 64356992129D73750070D358 /* MPOAuthCredentialConcreteStore.m */; };
+		643569CA129D73750070D358 /* MPOAuthSignatureParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 64356996129D73750070D358 /* MPOAuthSignatureParameter.m */; };
+		643569CB129D73750070D358 /* MPOAuthURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 64356998129D73750070D358 /* MPOAuthURLRequest.m */; };
+		643569CC129D73750070D358 /* MPOAuthURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 6435699A129D73750070D358 /* MPOAuthURLResponse.m */; };
+		643569CD129D73750070D358 /* MPURLRequestParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6435699C129D73750070D358 /* MPURLRequestParameter.m */; };
+		643569CE129D73750070D358 /* NSString+URLEscapingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6435699E129D73750070D358 /* NSString+URLEscapingAdditions.m */; };
+		643569CF129D73750070D358 /* NSURL+MPURLParameterAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 643569A0129D73750070D358 /* NSURL+MPURLParameterAdditions.m */; };
+		643569D0129D73750070D358 /* NSURLResponse+Encoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 643569A2129D73750070D358 /* NSURLResponse+Encoding.m */; };
+		643569D1129D73750070D358 /* NSString+Dropbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 643569A4129D73750070D358 /* NSString+Dropbox.m */; };
+		643569D2129D73750070D358 /* db_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 643569A6129D73750070D358 /* db_background.png */; };
+		643569D3129D73750070D358 /* db_create_account.png in Resources */ = {isa = PBXBuildFile; fileRef = 643569A7129D73750070D358 /* db_create_account.png */; };
+		643569D4129D73750070D358 /* db_create_account@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 643569A8129D73750070D358 /* db_create_account@2x.png */; };
+		643569D5129D73750070D358 /* db_create_account_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 643569A9129D73750070D358 /* db_create_account_button.png */; };
+		643569D6129D73750070D358 /* db_create_account_button_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 643569AA129D73750070D358 /* db_create_account_button_down.png */; };
+		643569D7129D73750070D358 /* db_link_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 643569AB129D73750070D358 /* db_link_button.png */; };
+		643569D8129D73750070D358 /* db_link_button_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 643569AC129D73750070D358 /* db_link_button_down.png */; };
+		643569D9129D73750070D358 /* db_link_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 643569AD129D73750070D358 /* db_link_header.png */; };
+		643569DA129D73750070D358 /* db_link_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 643569AE129D73750070D358 /* db_link_header@2x.png */; };
+		643569DB129D73750070D358 /* db_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 643569AF129D73750070D358 /* db_logo.png */; };
+		643569DC129D73750070D358 /* db_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 643569B0129D73750070D358 /* db_logo@2x.png */; };
+		6455C45112BE0897001C683F /* CommonSec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6455C44612BE0897001C683F /* CommonSec.m */; };
+		6455C45212BE0897001C683F /* OpenSSLHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6455C44812BE0897001C683F /* OpenSSLHash.m */; };
+		6455C45312BE0897001C683F /* OpenSSLPKCS7.m in Sources */ = {isa = PBXBuildFile; fileRef = 6455C44A12BE0897001C683F /* OpenSSLPKCS7.m */; };
+		6455C45412BE0897001C683F /* OpenSSLRSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 6455C44C12BE0897001C683F /* OpenSSLRSA.m */; };
+		6455C45512BE0897001C683F /* OpenSSLTSP.m in Sources */ = {isa = PBXBuildFile; fileRef = 6455C44E12BE0897001C683F /* OpenSSLTSP.m */; };
+		6455C45612BE0897001C683F /* OpenSSLX509.m in Sources */ = {isa = PBXBuildFile; fileRef = 6455C45012BE0897001C683F /* OpenSSLX509.m */; };
+		6455C4B512BE0A36001C683F /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6455C4B312BE0A36001C683F /* libcrypto.a */; };
+		6455C4B612BE0A36001C683F /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6455C4B412BE0A36001C683F /* libssl.a */; };
+		6455C60012BE0C17001C683F /* mongoose.c in Sources */ = {isa = PBXBuildFile; fileRef = 6455C5FC12BE0C17001C683F /* mongoose.c */; };
+		6455C60112BE0C17001C683F /* MongooseWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6455C5FF12BE0C17001C683F /* MongooseWrapper.m */; };
+		64B24F3712BE159300560B94 /* cacert.crt in Resources */ = {isa = PBXBuildFile; fileRef = 64B24F3412BE159300560B94 /* cacert.crt */; };
+		64B24F3812BE159300560B94 /* InfoCertFirmaQualificata.crt in Resources */ = {isa = PBXBuildFile; fileRef = 64B24F3512BE159300560B94 /* InfoCertFirmaQualificata.crt */; };
+		64B24F3912BE159300560B94 /* InfoCertServizidiCertificazione.crt in Resources */ = {isa = PBXBuildFile; fileRef = 64B24F3612BE159300560B94 /* InfoCertServizidiCertificazione.crt */; };
+		7481A5371205D7E3001F34DD /* CertTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7481A5351205D7E3001F34DD /* CertTableViewController.m */; };
+		7481A5381205D7E3001F34DD /* CertTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7481A5361205D7E3001F34DD /* CertTableViewController.xib */; };
+		74829B521205B4B200A06DA1 /* PDFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74829B501205B4B200A06DA1 /* PDFViewController.m */; };
+		74829B531205B4B200A06DA1 /* PDFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74829B511205B4B200A06DA1 /* PDFViewController.xib */; };
+		748956BB12045736007AA0A1 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 748956B912045736007AA0A1 /* TableViewController.m */; };
+		74C087461202DB4C00BE8D65 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74C087451202DB4C00BE8D65 /* Security.framework */; };
+		74D6C9B112005D7C002CE501 /* ServicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D6C9AF12005D7C002CE501 /* ServicesViewController.m */; };
+		74D6C9B212005D7C002CE501 /* ServicesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74D6C9B012005D7C002CE501 /* ServicesViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* PDFSignVerifyAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFSignVerifyAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* PDFSignVerifyAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFSignVerifyAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* PDFSignVerify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFSignVerify.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28A0AAE50D9B0CCF005BE974 /* PDFSignVerify_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFSignVerify_Prefix.pch; sourceTree = "<group>"; };
+		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28C286DF0D94DF7D0034E888 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		28C286E00D94DF7D0034E888 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		28F335F01007B36200424DE2 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4150101212BBA35400C9DA28 /* PdfSigUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PdfSigUtils.h; sourceTree = "<group>"; };
+		4150101312BBA35400C9DA28 /* PdfSigUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PdfSigUtils.m; sourceTree = "<group>"; };
+		640C47AF12BE8EFD00388807 /* CheckedPDF-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CheckedPDF-72.png"; path = "Resources/CheckedPDF-72.png"; sourceTree = "<group>"; };
+		640C47B012BE8EFD00388807 /* CheckedPDF-original-269x269.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CheckedPDF-original-269x269.png"; path = "Resources/CheckedPDF-original-269x269.png"; sourceTree = "<group>"; };
+		640C47B112BE8EFD00388807 /* CheckedPDF-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CheckedPDF-Small-50.png"; path = "Resources/CheckedPDF-Small-50.png"; sourceTree = "<group>"; };
+		640C47B212BE8EFD00388807 /* CheckedPDF-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CheckedPDF-Small.png"; path = "Resources/CheckedPDF-Small.png"; sourceTree = "<group>"; };
+		640C47B312BE8EFD00388807 /* CheckedPDF-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CheckedPDF-Small@2x.png"; path = "Resources/CheckedPDF-Small@2x.png"; sourceTree = "<group>"; };
+		640C47B412BE8EFD00388807 /* CheckedPDF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CheckedPDF.png; path = Resources/CheckedPDF.png; sourceTree = "<group>"; };
+		640C47B512BE8EFD00388807 /* CheckedPDF@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CheckedPDF@2x.png"; path = "Resources/CheckedPDF@2x.png"; sourceTree = "<group>"; };
+		640C47BD12BE8F1200388807 /* imgres.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = imgres.png; path = Resources/imgres.png; sourceTree = "<group>"; };
+		640C47BE12BE8F1200388807 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map.png; path = Resources/map.png; sourceTree = "<group>"; };
+		640C47BF12BE8F1200388807 /* pericolo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pericolo.png; path = Resources/pericolo.png; sourceTree = "<group>"; };
+		640C47C012BE8F1200388807 /* photo_old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = photo_old.png; path = Resources/photo_old.png; sourceTree = "<group>"; };
+		640C47C112BE8F1200388807 /* photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = photo.png; path = Resources/photo.png; sourceTree = "<group>"; };
+		640C47C212BE8F1200388807 /* tools.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tools.png; path = Resources/tools.png; sourceTree = "<group>"; };
+		640C47C312BE8F1200388807 /* Verify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Verify.png; path = Resources/Verify.png; sourceTree = "<group>"; };
+		6435695B129D73750070D358 /* DBAccountInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBAccountInfo.h; sourceTree = "<group>"; };
+		6435695C129D73750070D358 /* DBAccountInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBAccountInfo.m; sourceTree = "<group>"; };
+		6435695D129D73750070D358 /* DBCreateAccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCreateAccountController.h; sourceTree = "<group>"; };
+		6435695E129D73750070D358 /* DBCreateAccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBCreateAccountController.m; sourceTree = "<group>"; };
+		6435695F129D73750070D358 /* DBError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBError.h; sourceTree = "<group>"; };
+		64356960129D73750070D358 /* DBError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBError.m; sourceTree = "<group>"; };
+		64356961129D73750070D358 /* DBLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBLoadingView.h; sourceTree = "<group>"; };
+		64356962129D73750070D358 /* DBLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBLoadingView.m; sourceTree = "<group>"; };
+		64356963129D73750070D358 /* DBLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBLoginController.h; sourceTree = "<group>"; };
+		64356964129D73750070D358 /* DBLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBLoginController.m; sourceTree = "<group>"; };
+		64356965129D73750070D358 /* DBMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMetadata.h; sourceTree = "<group>"; };
+		64356966129D73750070D358 /* DBMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBMetadata.m; sourceTree = "<group>"; };
+		64356967129D73750070D358 /* DBQuota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBQuota.h; sourceTree = "<group>"; };
+		64356968129D73750070D358 /* DBQuota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBQuota.m; sourceTree = "<group>"; };
+		64356969129D73750070D358 /* DBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBRequest.h; sourceTree = "<group>"; };
+		6435696A129D73750070D358 /* DBRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBRequest.m; sourceTree = "<group>"; };
+		6435696B129D73750070D358 /* DBRestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBRestClient.h; sourceTree = "<group>"; };
+		6435696C129D73750070D358 /* DBRestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBRestClient.m; sourceTree = "<group>"; };
+		6435696D129D73750070D358 /* DBSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBSession.h; sourceTree = "<group>"; };
+		6435696E129D73750070D358 /* DBSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBSession.m; sourceTree = "<group>"; };
+		6435696F129D73750070D358 /* DropboxSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropboxSDK.h; sourceTree = "<group>"; };
+		64356971129D73750070D358 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		64356972129D73750070D358 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		64356973129D73750070D358 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		64356974129D73750070D358 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		64356975129D73750070D358 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		64356976129D73750070D358 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		64356977129D73750070D358 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		64356978129D73750070D358 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		64356979129D73750070D358 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		6435697A129D73750070D358 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		6435697B129D73750070D358 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		6435697C129D73750070D358 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		6435697D129D73750070D358 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		64356980129D73750070D358 /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Base64Transcoder.c; sourceTree = "<group>"; };
+		64356981129D73750070D358 /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
+		64356982129D73750070D358 /* MPDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPDebug.h; sourceTree = "<group>"; };
+		64356983129D73750070D358 /* MPOAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPOAuth.h; sourceTree = "<group>"; };
+		64356984129D73750070D358 /* MPOAuthAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPOAuthAPI.h; sourceTree = "<group>"; };
+		64356985129D73750070D358 /* MPOAuthAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPOAuthAPI.m; sourceTree = "<group>"; };
+		64356986129D73750070D358 /* MPOAuthAPIRequestLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPOAuthAPIRequestLoader.h; sourceTree = "<group>"; };
+		64356987129D73750070D358 /* MPOAuthAPIRequestLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPOAuthAPIRequestLoader.m; sourceTree = "<group>"; };
+		64356988129D73750070D358 /* MPOAuthAuthenticationMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPOAuthAuthenticationMethod.h; sourceTree = "<group>"; };
+		64356989129D73750070D358 /* MPOAuthAuthenticationMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPOAuthAuthenticationMethod.m; sourceTree = "<group>"; };
+		6435698A129D73750070D358 /* MPOAuthAuthenticationMethodOAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPOAuthAuthenticationMethodOAuth.h; sourceTree = "<group>"; };
+		6435698B129D73750070D358 /* MPOAuthAuthenticationMethodOAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPOAuthAuthenticationMethodOAuth.m; sourceTree = "<group>"; };
+		6435698C129D73750070D358 /* MPOAuthConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPOAuthConnection.h; sourceTree = "<group>"; };
+		6435698D129D73750070D358 /* MPOAuthConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPOAuthConnection.m; sourceTree = "<group>"; };
+		6435698E129D73750070D358 /* MPOAuthCredentiaIConcreteStore+KeychainAdditionsMac.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MPOAuthCredentiaIConcreteStore+KeychainAdditionsMac.m"; sourceTree = "<group>"; };
+		6435698F129D73750070D358 /* MPOAuthCredentialConcreteStore+KeychainAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MPOAuthCredentialConcreteStore+KeychainAdditions.h"; sourceTree = "<group>"; };
+		64356990129D73750070D358 /* MPOAuthCredentialConcreteStore+KeychainAdditionsiPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MPOAuthCredentialConcreteStore+KeychainAdditionsiPhone.m"; sourceTree = "<group>"; };
+		64356991129D73750070D358 /* MPOAuthCredentialConcreteStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPOAuthCredentialConcreteStore.h; sourceTree = "<group>"; };
+		64356992129D73750070D358 /* MPOAuthCredentialConcreteStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPOAuthCredentialConcreteStore.m; sourceTree = "<group>"; };
+		64356993129D73750070D358 /* MPOAuthCredentialStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPOAuthCredentialStore.h; sourceTree = "<group>"; };
+		64356994129D73750070D358 /* MPOAuthParameterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPOAuthParameterFactory.h; sourceTree = "<group>"; };
+		64356995129D73750070D358 /* MPOAuthSignatureParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPOAuthSignatureParameter.h; sourceTree = "<group>"; };
+		64356996129D73750070D358 /* MPOAuthSignatureParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPOAuthSignatureParameter.m; sourceTree = "<group>"; };
+		64356997129D73750070D358 /* MPOAuthURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPOAuthURLRequest.h; sourceTree = "<group>"; };
+		64356998129D73750070D358 /* MPOAuthURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPOAuthURLRequest.m; sourceTree = "<group>"; };
+		64356999129D73750070D358 /* MPOAuthURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPOAuthURLResponse.h; sourceTree = "<group>"; };
+		6435699A129D73750070D358 /* MPOAuthURLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPOAuthURLResponse.m; sourceTree = "<group>"; };
+		6435699B129D73750070D358 /* MPURLRequestParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPURLRequestParameter.h; sourceTree = "<group>"; };
+		6435699C129D73750070D358 /* MPURLRequestParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPURLRequestParameter.m; sourceTree = "<group>"; };
+		6435699D129D73750070D358 /* NSString+URLEscapingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEscapingAdditions.h"; sourceTree = "<group>"; };
+		6435699E129D73750070D358 /* NSString+URLEscapingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEscapingAdditions.m"; sourceTree = "<group>"; };
+		6435699F129D73750070D358 /* NSURL+MPURLParameterAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+MPURLParameterAdditions.h"; sourceTree = "<group>"; };
+		643569A0129D73750070D358 /* NSURL+MPURLParameterAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+MPURLParameterAdditions.m"; sourceTree = "<group>"; };
+		643569A1129D73750070D358 /* NSURLResponse+Encoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLResponse+Encoding.h"; sourceTree = "<group>"; };
+		643569A2129D73750070D358 /* NSURLResponse+Encoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLResponse+Encoding.m"; sourceTree = "<group>"; };
+		643569A3129D73750070D358 /* NSString+Dropbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Dropbox.h"; sourceTree = "<group>"; };
+		643569A4129D73750070D358 /* NSString+Dropbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Dropbox.m"; sourceTree = "<group>"; };
+		643569A6129D73750070D358 /* db_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = db_background.png; sourceTree = "<group>"; };
+		643569A7129D73750070D358 /* db_create_account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = db_create_account.png; sourceTree = "<group>"; };
+		643569A8129D73750070D358 /* db_create_account@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_create_account@2x.png"; sourceTree = "<group>"; };
+		643569A9129D73750070D358 /* db_create_account_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = db_create_account_button.png; sourceTree = "<group>"; };
+		643569AA129D73750070D358 /* db_create_account_button_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = db_create_account_button_down.png; sourceTree = "<group>"; };
+		643569AB129D73750070D358 /* db_link_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = db_link_button.png; sourceTree = "<group>"; };
+		643569AC129D73750070D358 /* db_link_button_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = db_link_button_down.png; sourceTree = "<group>"; };
+		643569AD129D73750070D358 /* db_link_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = db_link_header.png; sourceTree = "<group>"; };
+		643569AE129D73750070D358 /* db_link_header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_link_header@2x.png"; sourceTree = "<group>"; };
+		643569AF129D73750070D358 /* db_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = db_logo.png; sourceTree = "<group>"; };
+		643569B0129D73750070D358 /* db_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_logo@2x.png"; sourceTree = "<group>"; };
+		6455C44512BE0897001C683F /* CommonSec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonSec.h; path = ../Library/CommonIF/CommonSec.h; sourceTree = SOURCE_ROOT; };
+		6455C44612BE0897001C683F /* CommonSec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonSec.m; path = ../Library/CommonIF/CommonSec.m; sourceTree = SOURCE_ROOT; };
+		6455C44712BE0897001C683F /* OpenSSLHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenSSLHash.h; path = ../Library/CommonIF/OpenSSLHash.h; sourceTree = SOURCE_ROOT; };
+		6455C44812BE0897001C683F /* OpenSSLHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenSSLHash.m; path = ../Library/CommonIF/OpenSSLHash.m; sourceTree = SOURCE_ROOT; };
+		6455C44912BE0897001C683F /* OpenSSLPKCS7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenSSLPKCS7.h; path = ../Library/CommonIF/OpenSSLPKCS7.h; sourceTree = SOURCE_ROOT; };
+		6455C44A12BE0897001C683F /* OpenSSLPKCS7.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenSSLPKCS7.m; path = ../Library/CommonIF/OpenSSLPKCS7.m; sourceTree = SOURCE_ROOT; };
+		6455C44B12BE0897001C683F /* OpenSSLRSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenSSLRSA.h; path = ../Library/CommonIF/OpenSSLRSA.h; sourceTree = SOURCE_ROOT; };
+		6455C44C12BE0897001C683F /* OpenSSLRSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenSSLRSA.m; path = ../Library/CommonIF/OpenSSLRSA.m; sourceTree = SOURCE_ROOT; };
+		6455C44D12BE0897001C683F /* OpenSSLTSP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenSSLTSP.h; path = ../Library/CommonIF/OpenSSLTSP.h; sourceTree = SOURCE_ROOT; };
+		6455C44E12BE0897001C683F /* OpenSSLTSP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenSSLTSP.m; path = ../Library/CommonIF/OpenSSLTSP.m; sourceTree = SOURCE_ROOT; };
+		6455C44F12BE0897001C683F /* OpenSSLX509.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenSSLX509.h; path = ../Library/CommonIF/OpenSSLX509.h; sourceTree = SOURCE_ROOT; };
+		6455C45012BE0897001C683F /* OpenSSLX509.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenSSLX509.m; path = ../Library/CommonIF/OpenSSLX509.m; sourceTree = SOURCE_ROOT; };
+		6455C4B312BE0A36001C683F /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "../Library/openssl/iphone-os1.0/libcrypto.a"; sourceTree = SOURCE_ROOT; };
+		6455C4B412BE0A36001C683F /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "../Library/openssl/iphone-os1.0/libssl.a"; sourceTree = SOURCE_ROOT; };
+		6455C5FC12BE0C17001C683F /* mongoose.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mongoose.c; path = ../Library/CommonIF/mongoose.c; sourceTree = SOURCE_ROOT; };
+		6455C5FD12BE0C17001C683F /* mongoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mongoose.h; path = ../Library/CommonIF/mongoose.h; sourceTree = SOURCE_ROOT; };
+		6455C5FE12BE0C17001C683F /* MongooseWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MongooseWrapper.h; path = ../Library/CommonIF/MongooseWrapper.h; sourceTree = SOURCE_ROOT; };
+		6455C5FF12BE0C17001C683F /* MongooseWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MongooseWrapper.m; path = ../Library/CommonIF/MongooseWrapper.m; sourceTree = SOURCE_ROOT; };
+		64B24F3412BE159300560B94 /* cacert.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cacert.crt; sourceTree = "<group>"; };
+		64B24F3512BE159300560B94 /* InfoCertFirmaQualificata.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = InfoCertFirmaQualificata.crt; sourceTree = "<group>"; };
+		64B24F3612BE159300560B94 /* InfoCertServizidiCertificazione.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = InfoCertServizidiCertificazione.crt; sourceTree = "<group>"; };
+		7481A5341205D7E3001F34DD /* CertTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CertTableViewController.h; sourceTree = "<group>"; };
+		7481A5351205D7E3001F34DD /* CertTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CertTableViewController.m; sourceTree = "<group>"; };
+		7481A5361205D7E3001F34DD /* CertTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CertTableViewController.xib; path = Classes/CertTableViewController.xib; sourceTree = "<group>"; };
+		74829B4F1205B4B200A06DA1 /* PDFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFViewController.h; sourceTree = "<group>"; };
+		74829B501205B4B200A06DA1 /* PDFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFViewController.m; sourceTree = "<group>"; };
+		74829B511205B4B200A06DA1 /* PDFViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PDFViewController.xib; path = Classes/PDFViewController.xib; sourceTree = "<group>"; };
+		748956B812045736007AA0A1 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		748956B912045736007AA0A1 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		74C087451202DB4C00BE8D65 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		74D6C9AE12005D7C002CE501 /* ServicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicesViewController.h; sourceTree = "<group>"; };
+		74D6C9AF12005D7C002CE501 /* ServicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServicesViewController.m; sourceTree = "<group>"; };
+		74D6C9B012005D7C002CE501 /* ServicesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ServicesViewController.xib; path = Classes/ServicesViewController.xib; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* PDFSignVerify-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PDFSignVerify-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
+				74C087461202DB4C00BE8D65 /* Security.framework in Frameworks */,
+				6455C4B512BE0A36001C683F /* libcrypto.a in Frameworks */,
+				6455C4B612BE0A36001C683F /* libssl.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4150101212BBA35400C9DA28 /* PdfSigUtils.h */,
+				4150101312BBA35400C9DA28 /* PdfSigUtils.m */,
+				28C286DF0D94DF7D0034E888 /* MenuViewController.h */,
+				28C286E00D94DF7D0034E888 /* MenuViewController.m */,
+				1D3623240D0F684500981E51 /* PDFSignVerifyAppDelegate.h */,
+				1D3623250D0F684500981E51 /* PDFSignVerifyAppDelegate.m */,
+				74D6C9AE12005D7C002CE501 /* ServicesViewController.h */,
+				74D6C9AF12005D7C002CE501 /* ServicesViewController.m */,
+				748956B812045736007AA0A1 /* TableViewController.h */,
+				748956B912045736007AA0A1 /* TableViewController.m */,
+				74829B4F1205B4B200A06DA1 /* PDFViewController.h */,
+				74829B501205B4B200A06DA1 /* PDFViewController.m */,
+				7481A5341205D7E3001F34DD /* CertTableViewController.h */,
+				7481A5351205D7E3001F34DD /* CertTableViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* PDFSignVerify.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6435695A129D73750070D358 /* DropboxSDK */,
+				74AD18B31200392C00956E15 /* WebServer */,
+				74CE5A8712002B8100711DDD /* Security */,
+				28A0AAE50D9B0CCF005BE974 /* PDFSignVerify_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				64B947D412BE96D900164C45 /* Certs */,
+				640C47AE12BE8EED00388807 /* Images */,
+				28F335F01007B36200424DE2 /* MenuViewController.xib */,
+				74829B511205B4B200A06DA1 /* PDFViewController.xib */,
+				7481A5361205D7E3001F34DD /* CertTableViewController.xib */,
+				74D6C9B012005D7C002CE501 /* ServicesViewController.xib */,
+				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* PDFSignVerify-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6455C4B312BE0A36001C683F /* libcrypto.a */,
+				6455C4B412BE0A36001C683F /* libssl.a */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
+				74C087451202DB4C00BE8D65 /* Security.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		640C47AE12BE8EED00388807 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				640C47BD12BE8F1200388807 /* imgres.png */,
+				640C47BE12BE8F1200388807 /* map.png */,
+				640C47BF12BE8F1200388807 /* pericolo.png */,
+				640C47C012BE8F1200388807 /* photo_old.png */,
+				640C47C112BE8F1200388807 /* photo.png */,
+				640C47C212BE8F1200388807 /* tools.png */,
+				640C47C312BE8F1200388807 /* Verify.png */,
+				640C47AF12BE8EFD00388807 /* CheckedPDF-72.png */,
+				640C47B012BE8EFD00388807 /* CheckedPDF-original-269x269.png */,
+				640C47B112BE8EFD00388807 /* CheckedPDF-Small-50.png */,
+				640C47B212BE8EFD00388807 /* CheckedPDF-Small.png */,
+				640C47B312BE8EFD00388807 /* CheckedPDF-Small@2x.png */,
+				640C47B412BE8EFD00388807 /* CheckedPDF.png */,
+				640C47B512BE8EFD00388807 /* CheckedPDF@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		6435695A129D73750070D358 /* DropboxSDK */ = {
+			isa = PBXGroup;
+			children = (
+				6435695B129D73750070D358 /* DBAccountInfo.h */,
+				6435695C129D73750070D358 /* DBAccountInfo.m */,
+				6435695D129D73750070D358 /* DBCreateAccountController.h */,
+				6435695E129D73750070D358 /* DBCreateAccountController.m */,
+				6435695F129D73750070D358 /* DBError.h */,
+				64356960129D73750070D358 /* DBError.m */,
+				64356961129D73750070D358 /* DBLoadingView.h */,
+				64356962129D73750070D358 /* DBLoadingView.m */,
+				64356963129D73750070D358 /* DBLoginController.h */,
+				64356964129D73750070D358 /* DBLoginController.m */,
+				64356965129D73750070D358 /* DBMetadata.h */,
+				64356966129D73750070D358 /* DBMetadata.m */,
+				64356967129D73750070D358 /* DBQuota.h */,
+				64356968129D73750070D358 /* DBQuota.m */,
+				64356969129D73750070D358 /* DBRequest.h */,
+				6435696A129D73750070D358 /* DBRequest.m */,
+				6435696B129D73750070D358 /* DBRestClient.h */,
+				6435696C129D73750070D358 /* DBRestClient.m */,
+				6435696D129D73750070D358 /* DBSession.h */,
+				6435696E129D73750070D358 /* DBSession.m */,
+				6435696F129D73750070D358 /* DropboxSDK.h */,
+				64356970129D73750070D358 /* JSON */,
+				6435697E129D73750070D358 /* MPOAuth */,
+				643569A3129D73750070D358 /* NSString+Dropbox.h */,
+				643569A4129D73750070D358 /* NSString+Dropbox.m */,
+				643569A5129D73750070D358 /* Resources */,
+			);
+			name = DropboxSDK;
+			path = ../Library/DropboxSDK;
+			sourceTree = SOURCE_ROOT;
+		};
+		64356970129D73750070D358 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				64356971129D73750070D358 /* JSON.h */,
+				64356972129D73750070D358 /* NSObject+SBJSON.h */,
+				64356973129D73750070D358 /* NSObject+SBJSON.m */,
+				64356974129D73750070D358 /* NSString+SBJSON.h */,
+				64356975129D73750070D358 /* NSString+SBJSON.m */,
+				64356976129D73750070D358 /* SBJSON.h */,
+				64356977129D73750070D358 /* SBJSON.m */,
+				64356978129D73750070D358 /* SBJsonBase.h */,
+				64356979129D73750070D358 /* SBJsonBase.m */,
+				6435697A129D73750070D358 /* SBJsonParser.h */,
+				6435697B129D73750070D358 /* SBJsonParser.m */,
+				6435697C129D73750070D358 /* SBJsonWriter.h */,
+				6435697D129D73750070D358 /* SBJsonWriter.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		6435697E129D73750070D358 /* MPOAuth */ = {
+			isa = PBXGroup;
+			children = (
+				6435697F129D73750070D358 /* Crypto */,
+				64356982129D73750070D358 /* MPDebug.h */,
+				64356983129D73750070D358 /* MPOAuth.h */,
+				64356984129D73750070D358 /* MPOAuthAPI.h */,
+				64356985129D73750070D358 /* MPOAuthAPI.m */,
+				64356986129D73750070D358 /* MPOAuthAPIRequestLoader.h */,
+				64356987129D73750070D358 /* MPOAuthAPIRequestLoader.m */,
+				64356988129D73750070D358 /* MPOAuthAuthenticationMethod.h */,
+				64356989129D73750070D358 /* MPOAuthAuthenticationMethod.m */,
+				6435698A129D73750070D358 /* MPOAuthAuthenticationMethodOAuth.h */,
+				6435698B129D73750070D358 /* MPOAuthAuthenticationMethodOAuth.m */,
+				6435698C129D73750070D358 /* MPOAuthConnection.h */,
+				6435698D129D73750070D358 /* MPOAuthConnection.m */,
+				6435698E129D73750070D358 /* MPOAuthCredentiaIConcreteStore+KeychainAdditionsMac.m */,
+				6435698F129D73750070D358 /* MPOAuthCredentialConcreteStore+KeychainAdditions.h */,
+				64356990129D73750070D358 /* MPOAuthCredentialConcreteStore+KeychainAdditionsiPhone.m */,
+				64356991129D73750070D358 /* MPOAuthCredentialConcreteStore.h */,
+				64356992129D73750070D358 /* MPOAuthCredentialConcreteStore.m */,
+				64356993129D73750070D358 /* MPOAuthCredentialStore.h */,
+				64356994129D73750070D358 /* MPOAuthParameterFactory.h */,
+				64356995129D73750070D358 /* MPOAuthSignatureParameter.h */,
+				64356996129D73750070D358 /* MPOAuthSignatureParameter.m */,
+				64356997129D73750070D358 /* MPOAuthURLRequest.h */,
+				64356998129D73750070D358 /* MPOAuthURLRequest.m */,
+				64356999129D73750070D358 /* MPOAuthURLResponse.h */,
+				6435699A129D73750070D358 /* MPOAuthURLResponse.m */,
+				6435699B129D73750070D358 /* MPURLRequestParameter.h */,
+				6435699C129D73750070D358 /* MPURLRequestParameter.m */,
+				6435699D129D73750070D358 /* NSString+URLEscapingAdditions.h */,
+				6435699E129D73750070D358 /* NSString+URLEscapingAdditions.m */,
+				6435699F129D73750070D358 /* NSURL+MPURLParameterAdditions.h */,
+				643569A0129D73750070D358 /* NSURL+MPURLParameterAdditions.m */,
+				643569A1129D73750070D358 /* NSURLResponse+Encoding.h */,
+				643569A2129D73750070D358 /* NSURLResponse+Encoding.m */,
+			);
+			path = MPOAuth;
+			sourceTree = "<group>";
+		};
+		6435697F129D73750070D358 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				64356980129D73750070D358 /* Base64Transcoder.c */,
+				64356981129D73750070D358 /* Base64Transcoder.h */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
+		643569A5129D73750070D358 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				643569A6129D73750070D358 /* db_background.png */,
+				643569A7129D73750070D358 /* db_create_account.png */,
+				643569A8129D73750070D358 /* db_create_account@2x.png */,
+				643569A9129D73750070D358 /* db_create_account_button.png */,
+				643569AA129D73750070D358 /* db_create_account_button_down.png */,
+				643569AB129D73750070D358 /* db_link_button.png */,
+				643569AC129D73750070D358 /* db_link_button_down.png */,
+				643569AD129D73750070D358 /* db_link_header.png */,
+				643569AE129D73750070D358 /* db_link_header@2x.png */,
+				643569AF129D73750070D358 /* db_logo.png */,
+				643569B0129D73750070D358 /* db_logo@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		64B947D412BE96D900164C45 /* Certs */ = {
+			isa = PBXGroup;
+			children = (
+				64B24F3412BE159300560B94 /* cacert.crt */,
+				64B24F3512BE159300560B94 /* InfoCertFirmaQualificata.crt */,
+				64B24F3612BE159300560B94 /* InfoCertServizidiCertificazione.crt */,
+			);
+			name = Certs;
+			sourceTree = "<group>";
+		};
+		74AD18B31200392C00956E15 /* WebServer */ = {
+			isa = PBXGroup;
+			children = (
+				6455C5FC12BE0C17001C683F /* mongoose.c */,
+				6455C5FD12BE0C17001C683F /* mongoose.h */,
+				6455C5FE12BE0C17001C683F /* MongooseWrapper.h */,
+				6455C5FF12BE0C17001C683F /* MongooseWrapper.m */,
+			);
+			name = WebServer;
+			sourceTree = "<group>";
+		};
+		74CE5A8712002B8100711DDD /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				6455C44512BE0897001C683F /* CommonSec.h */,
+				6455C44612BE0897001C683F /* CommonSec.m */,
+				6455C44712BE0897001C683F /* OpenSSLHash.h */,
+				6455C44812BE0897001C683F /* OpenSSLHash.m */,
+				6455C44912BE0897001C683F /* OpenSSLPKCS7.h */,
+				6455C44A12BE0897001C683F /* OpenSSLPKCS7.m */,
+				6455C44B12BE0897001C683F /* OpenSSLRSA.h */,
+				6455C44C12BE0897001C683F /* OpenSSLRSA.m */,
+				6455C44D12BE0897001C683F /* OpenSSLTSP.h */,
+				6455C44E12BE0897001C683F /* OpenSSLTSP.m */,
+				6455C44F12BE0897001C683F /* OpenSSLX509.h */,
+				6455C45012BE0897001C683F /* OpenSSLX509.m */,
+			);
+			name = Security;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* PDFSignVerify */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "PDFSignVerify" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PDFSignVerify;
+			productName = MyPhotoVerify;
+			productReference = 1D6058910D05DD3D006BFB54 /* PDFSignVerify.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PDFSignVerify" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* PDFSignVerify */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
+				28F335F11007B36200424DE2 /* MenuViewController.xib in Resources */,
+				74D6C9B212005D7C002CE501 /* ServicesViewController.xib in Resources */,
+				74829B531205B4B200A06DA1 /* PDFViewController.xib in Resources */,
+				7481A5381205D7E3001F34DD /* CertTableViewController.xib in Resources */,
+				643569D2129D73750070D358 /* db_background.png in Resources */,
+				643569D3129D73750070D358 /* db_create_account.png in Resources */,
+				643569D4129D73750070D358 /* db_create_account@2x.png in Resources */,
+				643569D5129D73750070D358 /* db_create_account_button.png in Resources */,
+				643569D6129D73750070D358 /* db_create_account_button_down.png in Resources */,
+				643569D7129D73750070D358 /* db_link_button.png in Resources */,
+				643569D8129D73750070D358 /* db_link_button_down.png in Resources */,
+				643569D9129D73750070D358 /* db_link_header.png in Resources */,
+				643569DA129D73750070D358 /* db_link_header@2x.png in Resources */,
+				643569DB129D73750070D358 /* db_logo.png in Resources */,
+				643569DC129D73750070D358 /* db_logo@2x.png in Resources */,
+				64B24F3712BE159300560B94 /* cacert.crt in Resources */,
+				64B24F3812BE159300560B94 /* InfoCertFirmaQualificata.crt in Resources */,
+				64B24F3912BE159300560B94 /* InfoCertServizidiCertificazione.crt in Resources */,
+				640C47B612BE8EFD00388807 /* CheckedPDF-72.png in Resources */,
+				640C47B712BE8EFD00388807 /* CheckedPDF-original-269x269.png in Resources */,
+				640C47B812BE8EFD00388807 /* CheckedPDF-Small-50.png in Resources */,
+				640C47B912BE8EFD00388807 /* CheckedPDF-Small.png in Resources */,
+				640C47BA12BE8EFD00388807 /* CheckedPDF-Small@2x.png in Resources */,
+				640C47BB12BE8EFD00388807 /* CheckedPDF.png in Resources */,
+				640C47BC12BE8EFD00388807 /* CheckedPDF@2x.png in Resources */,
+				640C47C412BE8F1200388807 /* imgres.png in Resources */,
+				640C47C512BE8F1200388807 /* map.png in Resources */,
+				640C47C612BE8F1200388807 /* pericolo.png in Resources */,
+				640C47C712BE8F1200388807 /* photo_old.png in Resources */,
+				640C47C812BE8F1200388807 /* photo.png in Resources */,
+				640C47C912BE8F1200388807 /* tools.png in Resources */,
+				640C47CA12BE8F1200388807 /* Verify.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* PDFSignVerifyAppDelegate.m in Sources */,
+				28C286E10D94DF7D0034E888 /* MenuViewController.m in Sources */,
+				74D6C9B112005D7C002CE501 /* ServicesViewController.m in Sources */,
+				748956BB12045736007AA0A1 /* TableViewController.m in Sources */,
+				74829B521205B4B200A06DA1 /* PDFViewController.m in Sources */,
+				7481A5371205D7E3001F34DD /* CertTableViewController.m in Sources */,
+				643569B1129D73750070D358 /* DBAccountInfo.m in Sources */,
+				643569B2129D73750070D358 /* DBCreateAccountController.m in Sources */,
+				643569B3129D73750070D358 /* DBError.m in Sources */,
+				643569B4129D73750070D358 /* DBLoadingView.m in Sources */,
+				643569B5129D73750070D358 /* DBLoginController.m in Sources */,
+				643569B6129D73750070D358 /* DBMetadata.m in Sources */,
+				643569B7129D73750070D358 /* DBQuota.m in Sources */,
+				643569B8129D73750070D358 /* DBRequest.m in Sources */,
+				643569B9129D73750070D358 /* DBRestClient.m in Sources */,
+				643569BA129D73750070D358 /* DBSession.m in Sources */,
+				643569BB129D73750070D358 /* NSObject+SBJSON.m in Sources */,
+				643569BC129D73750070D358 /* NSString+SBJSON.m in Sources */,
+				643569BD129D73750070D358 /* SBJSON.m in Sources */,
+				643569BE129D73750070D358 /* SBJsonBase.m in Sources */,
+				643569BF129D73750070D358 /* SBJsonParser.m in Sources */,
+				643569C0129D73750070D358 /* SBJsonWriter.m in Sources */,
+				643569C1129D73750070D358 /* Base64Transcoder.c in Sources */,
+				643569C2129D73750070D358 /* MPOAuthAPI.m in Sources */,
+				643569C3129D73750070D358 /* MPOAuthAPIRequestLoader.m in Sources */,
+				643569C4129D73750070D358 /* MPOAuthAuthenticationMethod.m in Sources */,
+				643569C5129D73750070D358 /* MPOAuthAuthenticationMethodOAuth.m in Sources */,
+				643569C6129D73750070D358 /* MPOAuthConnection.m in Sources */,
+				643569C7129D73750070D358 /* MPOAuthCredentiaIConcreteStore+KeychainAdditionsMac.m in Sources */,
+				643569C8129D73750070D358 /* MPOAuthCredentialConcreteStore+KeychainAdditionsiPhone.m in Sources */,
+				643569C9129D73750070D358 /* MPOAuthCredentialConcreteStore.m in Sources */,
+				643569CA129D73750070D358 /* MPOAuthSignatureParameter.m in Sources */,
+				643569CB129D73750070D358 /* MPOAuthURLRequest.m in Sources */,
+				643569CC129D73750070D358 /* MPOAuthURLResponse.m in Sources */,
+				643569CD129D73750070D358 /* MPURLRequestParameter.m in Sources */,
+				643569CE129D73750070D358 /* NSString+URLEscapingAdditions.m in Sources */,
+				643569CF129D73750070D358 /* NSURL+MPURLParameterAdditions.m in Sources */,
+				643569D0129D73750070D358 /* NSURLResponse+Encoding.m in Sources */,
+				643569D1129D73750070D358 /* NSString+Dropbox.m in Sources */,
+				4150101412BBA35400C9DA28 /* PdfSigUtils.m in Sources */,
+				6455C45112BE0897001C683F /* CommonSec.m in Sources */,
+				6455C45212BE0897001C683F /* OpenSSLHash.m in Sources */,
+				6455C45312BE0897001C683F /* OpenSSLPKCS7.m in Sources */,
+				6455C45412BE0897001C683F /* OpenSSLRSA.m in Sources */,
+				6455C45512BE0897001C683F /* OpenSSLTSP.m in Sources */,
+				6455C45612BE0897001C683F /* OpenSSLX509.m in Sources */,
+				6455C60012BE0C17001C683F /* mongoose.c in Sources */,
+				6455C60112BE0C17001C683F /* MongooseWrapper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PDFSignVerify_Prefix.pch;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../Library/openssl/include/\"";
+				INFOPLIST_FILE = "PDFSignVerify-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../Library/openssl/iphone-os1.0\"";
+				PRODUCT_NAME = PDFSignVerify;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PDFSignVerify_Prefix.pch;
+				INFOPLIST_FILE = "PDFSignVerify-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../Library/iphone-exif/Release-iphoneos\"",
+					"\"$(SRCROOT)/../../../Library/openssl/iphone-os1.0\"",
+					"\"$(SRCROOT)/../Library/iphone-exif/Release-iphoneos\"",
+					"\"$(SRCROOT)/../Library/openssl/iphone-os1.0\"",
+				);
+				PRODUCT_NAME = PDFSignVerify;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "";
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "PDFSignVerify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PDFSignVerify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

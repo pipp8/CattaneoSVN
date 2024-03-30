@@ -1,0 +1,9 @@
+CRYPTOSMS.ORG CODING STYLE FOR DEVELOPERS
+
+We use standard Eclipse formatter settings to format the source code and  
+changed the "Maximum Line Width" in section "Line Wrapping" to 120.
+
+   Java->Codestyle->Formatter 
+
+Please comment code only when necessary.
+

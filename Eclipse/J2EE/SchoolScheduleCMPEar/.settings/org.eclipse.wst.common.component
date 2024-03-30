@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+<wb-module deploy-name="SchoolScheduleCMPEar">
+<wb-resource deploy-path="/" source-path="/EarContent"/>
+<dependent-module archiveName="SchoolScheduleCMPEjbClient.jar" deploy-path="/" handle="module:/resource/SchoolScheduleCMPEjbClient/SchoolScheduleCMPEjbClient">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module deploy-path="/" handle="module:/resource/SchoolScheduleCMPEjb/SchoolScheduleCMPEjb">
+<dependent-object/>
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module deploy-path="/" handle="module:/resource/SchoolScheduleCMPWeb/SchoolScheduleCMPWeb">
+<dependent-object></dependent-object>
+<dependency-type>uses</dependency-type>
+</dependent-module>
+</wb-module>
+</project-modules>

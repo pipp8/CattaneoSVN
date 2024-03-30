@@ -1,0 +1,88 @@
+\begin{thebibliography}{10}
+
+\bibitem{PhotoshopSITE}
+{Adobe Photoshop Web Site}.
+\newblock \url{http://www.adobe.com/products/photoshop/}, June 2010.
+
+\bibitem{Bayram05}
+Sevinc Bayram, Husrev~T. Sencar, Nasir~D. Memon, and Ismail Avcibas.
+\newblock {Source Camera Identification Based on CFA Interpolation}.
+\newblock In {\em ICIP (3)}, pages 69--72, 2005.
+
+\bibitem{cipa}
+{Camera Imaging Products Association}.
+\newblock \url{http://cipa.jp/english/index.html}, January 2011.
+
+\bibitem{EOS1000}
+{Camera Labs}.
+\newblock
+  \url{http://www.cameralabs.com/reviews/Canon_EOS_1000D_Rebel_XS/verdict.shtm%
+l}, June 2010.
+
+\bibitem{Chen08}
+Mo~Chen, Jessica~J. Fridrich, Miroslav Goljan, and Jan Luk{\'a}s.
+\newblock {Determining Image Origin and Integrity Using Sensor Noise}.
+\newblock {\em IEEE Transactions on Information Forensics and Security},
+  3(1):74--90, 2008.
+
+\bibitem{Choi06}
+K.~S. Choi, E.~Y. Lam, and K.~K.~Y. Wong.
+\newblock Source camera identification using footprints from lens aberration.
+\newblock In {\em {Proceedings of the SPIE}}, pages 69--72, 2006.
+
+\bibitem{Goljian09}
+Miroslav Goljan, Jessica~J. Fridrich, and Tomas Filler.
+\newblock {Large Scale Test of Sensor Fingerprint Camera Identification}.
+\newblock {\em Proc. SPIE, Electronic Imaging, Media Forensics and Security
+  XI}, 2009.
+
+\bibitem{picasa}
+{Google Picasa}.
+\newblock
+  \url{http://picasatutorials.com/2009/04/picasa-tip-im-feeling-lucky/}, June
+  2010.
+
+\bibitem{Holst96}
+Gerald~C. Holst.
+\newblock {\em {CCD arrays, cameras, and displays}}.
+\newblock JCD Pub. ; SPIE Optical Engineering Press, 1996.
+
+\bibitem{Janesick95}
+James~R. Janesick and Morley Blouke.
+\newblock {Scientific Charge-Coupled Devices: Past, Present, \& Future}.
+\newblock {\em Opt. Photon. News}, 6(4):16--20, 1995.
+
+\bibitem{Kharrazi04}
+Mehdi Kharrazi, Husrev~T. Sencar, and Nasir~D. Memon.
+\newblock Blind source camera identification.
+\newblock In {\em ICIP}, pages 709--712, 2004.
+
+\bibitem{Mihcak99}
+M.~Kivanc~Mihcak, I.~Kozintsev, and K.~Ramchandran.
+\newblock {Spatially Adaptive Statistical Modeling of Wavelet Image
+  Coefficients and its Application to Denoising}.
+\newblock In {\em ICASSP '99: Proceedings of the Acoustics, Speech, and Signal
+  Processing, IEEE International Conference}, pages 3253--3256, Washington, DC,
+  USA, 1999. IEEE Computer Society.
+
+\bibitem{Long06}
+Yangjing Long and Yizhen Huang.
+\newblock {Image Based Source Camera Identification using Demosaicking}.
+\newblock In {\em Multimedia Signal Processing, 2006 IEEE 8th Workshop on},
+  pages 419 --424, 2006.
+
+\bibitem{Lukas06}
+Jan Luk{\'a}s, Jessica~J. Fridrich, and Miroslav Goljan.
+\newblock {Digital Camera Identification from Sensor Pattern Noise}.
+\newblock {\em IEEE Transactions on Information Forensics and Security},
+  1(2):205--214, 2006.
+
+\bibitem{MatlabSITE}
+{MathWorks MATLAB Web Site}.
+\newblock \url{http://www.mathworks.com/products/matlab/}, June 2010.
+
+\bibitem{PhotoBucketStat}
+{Photobucket About us page }.
+\newblock \url{http://photobucket.com/about}, March 2011.
+
+\end{thebibliography}

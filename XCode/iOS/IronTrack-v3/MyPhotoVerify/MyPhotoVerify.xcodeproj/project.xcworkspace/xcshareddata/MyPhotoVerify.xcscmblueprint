@@ -1,0 +1,35 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "ec92c943-5db4-0f4b-9571-7a1bbd119c6d++5845",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "ec92c943-5db4-0f4b-9571-7a1bbd119c6d++5845" : {
+
+    },
+    "a71733c7-f84f-0410-b2c2-5d3f89d7bb07++505" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "ec92c943-5db4-0f4b-9571-7a1bbd119c6d++5845" : 0,
+    "a71733c7-f84f-0410-b2c2-5d3f89d7bb07++505" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "158D8642-4FF5-4473-9B6B-DEAD14A82A96",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "ec92c943-5db4-0f4b-9571-7a1bbd119c6d++5845" : "IronTrack-v3\/",
+    "a71733c7-f84f-0410-b2c2-5d3f89d7bb07++505" : "IronTrack-v3\/Library\/iphone-exif\/src\/iphone-exif\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MyPhotoVerify",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MyPhotoVerify\/MyPhotoVerify.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/iphone-exif.googlecode.com\/svn",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "a71733c7-f84f-0410-b2c2-5d3f89d7bb07++505"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/minosse.diaserv.unisa.it\/svn\/Cattaneo",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ec92c943-5db4-0f4b-9571-7a1bbd119c6d++5845"
+    }
+  ]
+}

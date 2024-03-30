@@ -1,0 +1,45 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "ec92c943-5db4-0f4b-9571-7a1bbd119c6d++5845",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "ec92c943-5db4-0f4b-9571-7a1bbd119c6d++5845" : {
+
+    },
+    "31fc19ee-a5f4-11dd-bf8d-3712e0689f7b++9672" : {
+
+    },
+    "a71733c7-f84f-0410-b2c2-5d3f89d7bb07++505" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "ec92c943-5db4-0f4b-9571-7a1bbd119c6d++5845" : 0,
+    "31fc19ee-a5f4-11dd-bf8d-3712e0689f7b++9672" : 0,
+    "a71733c7-f84f-0410-b2c2-5d3f89d7bb07++505" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "ED3E2C3D-80BA-48BC-96FD-30332DC60AB2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "ec92c943-5db4-0f4b-9571-7a1bbd119c6d++5845" : "IronTrack-v3\/",
+    "31fc19ee-a5f4-11dd-bf8d-3712e0689f7b++9672" : "SMTPSender\/",
+    "a71733c7-f84f-0410-b2c2-5d3f89d7bb07++505" : "IronTrack-v3\/Library\/iphone-exif\/src\/iphone-exif\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PhotoSign",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PhotoSign\/PhotoSign.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/skpsmtpmessage.googlecode.com\/svn",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "31fc19ee-a5f4-11dd-bf8d-3712e0689f7b++9672"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/iphone-exif.googlecode.com\/svn",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "a71733c7-f84f-0410-b2c2-5d3f89d7bb07++505"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/minosse.diaserv.unisa.it\/svn\/Cattaneo",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ec92c943-5db4-0f4b-9571-7a1bbd119c6d++5845"
+    }
+  ]
+}

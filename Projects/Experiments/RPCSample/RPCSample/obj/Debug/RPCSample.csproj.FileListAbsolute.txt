@@ -1,0 +1,6 @@
+c:\users\cattaneo\documents\visual studio 2010\Projects\RPCSample\RPCSample\bin\Debug\RPCSample.dll.config
+c:\users\cattaneo\documents\visual studio 2010\Projects\RPCSample\RPCSample\bin\Debug\RPCSample.dll
+c:\users\cattaneo\documents\visual studio 2010\Projects\RPCSample\RPCSample\bin\Debug\RPCSample.pdb
+c:\users\cattaneo\documents\visual studio 2010\Projects\RPCSample\RPCSample\obj\Debug\ResolveAssemblyReference.cache
+c:\users\cattaneo\documents\visual studio 2010\Projects\RPCSample\RPCSample\obj\Debug\RPCSample.dll
+c:\users\cattaneo\documents\visual studio 2010\Projects\RPCSample\RPCSample\obj\Debug\RPCSample.pdb

@@ -1,0 +1,3 @@
+Queste lib con il comando 'lipo' sono codice esequibile per i386 armv6 ed armv7 tutte unite!
+
+Consistono nelle lib di OpenSSL con esclusa la lib CMS che prendo da infocert

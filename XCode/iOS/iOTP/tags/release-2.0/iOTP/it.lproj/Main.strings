@@ -1,0 +1,75 @@
+
+/* Class = "UILabel"; text = "Inserire il codice numerico ricevuto"; ObjectID = "1SH-TE-nW3"; */
+"1SH-TE-nW3.text" = "Inserire il codice numerico ricevuto";
+
+/* Class = "UILabel"; text = "ready"; ObjectID = "4b1-DN-ZVU"; */
+"4b1-DN-ZVU.text" = "pronto";
+
+/* Class = "UINavigationItem"; title = "Autenticazione OTP"; ObjectID = "5ei-RU-llI"; */
+"5ei-RU-llI.title" = "Autenticazione OTP";
+
+/* Class = "UIViewController"; title = "Remote Seed Enrollment"; ObjectID = "7a5-PA-1vf"; */
+"7a5-PA-1vf.title" = "Sincronizzazione Segreto";
+
+/* Class = "UITabBarItem"; title = "Remote Setup"; ObjectID = "8xK-gW-4Me"; */
+"8xK-gW-4Me.title" = "Setup On-Line";
+
+/* Class = "UILabel"; text = "eTuitus S.r.L. è uno spin-off "; ObjectID = "CmP-2k-oi5"; */
+"CmP-2k-oi5.text" = "eTuitus S.r.L. è uno spin-off ";
+
+/* Class = "UILabel"; text = "Inserire la passphrase ricevuta"; ObjectID = "Cy3-zG-d0q"; */
+"Cy3-zG-d0q.text" = "Inserire la passphrase ricevuta";
+
+/* Class = "UINavigationItem"; title = "Sincronizzazione Segreto"; ObjectID = "HUj-OK-DEC"; */
+"HUj-OK-DEC.title" = "Sincronizzazione Segreto";
+
+/* Class = "UITextView"; text = "Soft Token per la generazione di Time based One Time Password secondo la specifica RFC 6238."; ObjectID = "IZ2-T6-XUl"; */
+"IZ2-T6-XUl.text" = "Soft Token per la generazione di Time based One Time Password secondo la specifica RFC 6238.";
+
+/* Class = "UILabel"; text = "  Copyright (c) 2015 eTuitus.com. All rights reserved."; ObjectID = "J5U-Uy-jYq"; */
+"J5U-Uy-jYq.text" = "  Copyright (c) 2015 eTuitus.com. All rights reserved.";
+
+/* Class = "UILabel"; text = "iOTP"; ObjectID = "MN1-GD-UES"; */
+"MN1-GD-UES.text" = "iOTP";
+
+/* Class = "UIButton"; normalTitle = "Press"; ObjectID = "NPQ-sa-Vnx"; */
+"NPQ-sa-Vnx.normalTitle" = "Press";
+
+/* Class = "UIBarButtonItem"; title = "Init"; ObjectID = "P9Q-a3-E1F"; */
+"P9Q-a3-E1F.title" = "Init";
+
+/* Class = "UITabBarItem"; title = "Info"; ObjectID = "V3Z-LW-xLV"; */
+"V3Z-LW-xLV.title" = "Info";
+
+/* Class = "UIButton"; normalTitle = "Richiedi Seed"; ObjectID = "aum-pm-TgJ"; */
+"aum-pm-TgJ.normalTitle" = "Richiedi Seed";
+
+/* Class = "UITabBarItem"; title = "Local Setup"; ObjectID = "btE-mY-v8A"; */
+"btE-mY-v8A.title" = "Setup Off-Line";
+
+/* Class = "UILabel"; text = "dell'Università di Salerno e di InfoCert S.p.A."; ObjectID = "bxa-sH-VwV"; */
+"bxa-sH-VwV.text" = "dell'Università di Salerno e di InfoCert S.p.A.";
+
+/* Class = "UINavigationItem"; title = "About iOTP"; ObjectID = "c6L-ch-B6O"; */
+"c6L-ch-B6O.title" = "About iOTP";
+
+/* Class = "UINavigationItem"; title = "Generazione Seed"; ObjectID = "dXt-Cx-vpJ"; */
+"dXt-Cx-vpJ.title" = "Generazione Seed";
+
+/* Class = "UILabel"; text = "Username"; ObjectID = "eha-L4-OMb"; */
+"eha-L4-OMb.text" = "Username";
+
+/* Class = "UIViewController"; title = "Info"; ObjectID = "enV-ZN-Om4"; */
+"enV-ZN-Om4.title" = "Info";
+
+/* Class = "UIButton"; normalTitle = "Richiedi OTP"; ObjectID = "mVW-tm-ntO"; */
+"mVW-tm-ntO.normalTitle" = "Richiedi OTP via SMS";
+
+/* Class = "UITabBarItem"; title = "OTP"; ObjectID = "vWm-Oe-4UT"; */
+"vWm-Oe-4UT.title" = "OTP";
+
+/* Class = "UIViewController"; title = "Local Init"; ObjectID = "yre-d8-9j4"; */
+"yre-d8-9j4.title" = "Off-Line Setup";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "z6e-Mi-HaW"; */
+"z6e-Mi-HaW.text" = "Password";

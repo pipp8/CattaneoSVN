@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ <class name="it.unisa.entity.Book" table="Books">
+  <id name="idBook"/>
+  <property generated="never" lazy="false" name="title"/>
+  <property generated="never" lazy="false" name="author"/>
+  <property generated="never" lazy="false" name="price"/>
+  <property generated="never" lazy="false" name="publishDate"/>
+  <property generated="never" lazy="false" name="isbn"/>
+ </class>
+</hibernate-mapping>

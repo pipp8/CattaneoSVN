@@ -1,0 +1,4 @@
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\TestWebService\TestWebService\bin\TestWebService.dll
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\TestWebService\TestWebService\bin\TestWebService.pdb
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\TestWebService\TestWebService\obj\Debug\TestWebService.dll
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\TestWebService\TestWebService\obj\Debug\TestWebService.pdb

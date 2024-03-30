@@ -1,0 +1,15 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}
+\BOOKMARK [1][-]{section.2}{The Android OS}{}
+\BOOKMARK [2][-]{subsection.2.1}{The Android File System}{section.2}
+\BOOKMARK [2][-]{subsection.2.2}{The Flash Memories}{section.2}
+\BOOKMARK [2][-]{subsection.2.3}{Digital Evidence in Android}{section.2}
+\BOOKMARK [1][-]{section.3}{Android Forensics}{}
+\BOOKMARK [2][-]{subsection.3.1}{Tools for the Logical Acquisition}{section.3}
+\BOOKMARK [2][-]{subsection.3.2}{Tools for the Physical Acquisition}{section.3}
+\BOOKMARK [2][-]{subsection.3.3}{Tools for the Analysis}{section.3}
+\BOOKMARK [1][-]{section.4}{The Android Anti-Forensics Tecnique}{}
+\BOOKMARK [1][-]{section.5}{Case Study}{}
+\BOOKMARK [2][-]{subsection.5.1}{Applying the Technique}{section.5}
+\BOOKMARK [2][-]{subsection.5.2}{The Technique Validation}{section.5}
+\BOOKMARK [1][-]{section.6}{Conclusions and Future Work}{}
+\BOOKMARK [1][-]{section*.1}{References}{}

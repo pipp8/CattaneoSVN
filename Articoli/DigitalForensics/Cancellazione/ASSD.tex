@@ -1,0 +1,474 @@
+%\documentclass[10pt, conference, compsocconf, draft, onecolumn]{IEEEtran}
+
+\documentclass[10pt, conference, compsocconf]{IEEEtran}
+
+%%%%\documentclass[conference]{IEEEtran}
+
+\IEEEoverridecommandlockouts
+
+\ifCLASSINFOpdf
+  \usepackage[pdftex]{graphicx}
+\else
+  \usepackage[dvips]{graphicx}
+\fi
+%\usepackage[cmex10]{amsmath}
+%\usepackage{algorithmic}
+%\usepackage{array}
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+\usepackage{eqparbox}
+\usepackage[tight,footnotesize]{subfigure}
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+%\usepackage[caption=false,font=footnotesize]{subfig}
+\usepackage{fixltx2e}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{balance}
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\usepackage{listings}
+\usepackage{color}
+\lstset{
+language=Java,
+captionpos=b,
+tabsize=3,
+frame=lines,
+keywordstyle=\color{blue},
+commentstyle=\color{darkgreen},
+stringstyle=\color{red},
+%numbers=left,
+numberstyle=\tiny,
+numbersep=5pt,
+breaklines=true,
+showstringspaces=false,
+basicstyle=\footnotesize\ttfamily,
+emph={label}
+}
+
+\usepackage{xspace}
+
+\usepackage{cite}
+\usepackage[dvips]{hyperref}
+
+\hypersetup{
+  bookmarks = false,
+  pagebackref=true,
+  pdftoolbar=true,
+  pdfnewwindow=true,
+  pdfmenubar=true,
+  pdftitle = {Automatic, Selective and Secure Deletion of Digital Evidence},
+  pdfkeywords = {Information Forensics; Digital Forensics; Computer Forensics; Anti-Forensics; Counter-Forensics; Privacy and Freedom; Right to Privacy; Secure Deletion; Selective Deletion; Automatic Deletion; Wiping; Free Communication; Data Remanence.},
+  pdfauthor = {Aniello Castiglione, Giuseppe Cattaneo, Giancarlo De Maio and Alfredo De Santis},
+  pdfsubject =  {Sixth International Conference on Broadband and Wireless Computing, Communication and Applications  - BWCCA-2011},
+  pdfcreator =  {Dr. Aniello Castiglione - castiglione@ieee.org},
+}
+
+
+%\newcommand{\assd}{\emph{AS$^{2}$D}\xspace}
+\newcommand{\assd}{\emph{ASSD}\xspace}
+
+\begin{document}
+
+%%% \IEEEauthorblockN{Aniello Castiglione, Giuseppe Cattaneo, Giancarlo De Maio, Alfredo De Santis}
+
+\title{Automatic, Selective and Secure Deletion\\of Digital Evidence}
+
+\author{
+\IEEEauthorblockN{Aniello Castiglione\IEEEauthorrefmark{1}\thanks{Corresponding author: Aniello Castiglione,~Member,~\textit{IEEE},~\href{mailto:castiglione@ieee.org}{castiglione@ieee.org},~Phone: +39089969594,~FAX: +39089969821}, Giuseppe Cattaneo\IEEEauthorrefmark{2}, Giancarlo De Maio\IEEEauthorrefmark{3}, Alfredo De Santis\IEEEauthorrefmark{4}}
+
+\IEEEauthorblockA{Dipartimento di Informatica ``R.M. Capocelli''\\
+Universit\`{a} degli Studi di Salerno\\
+%Via Ponte don Melillo,\\
+I-84084 Fisciano (SA), Italy\\
+\href{mailto:castiglione@ieee.org}{castiglione@ieee.org}\IEEEauthorrefmark{1},  \href{mailto:cattaneo@dia.unisa.it}{cattaneo@dia.unisa.it}\IEEEauthorrefmark{2},
+\href{mailto:demaio@dia.unisa.it}{demaio@dia.unisa.it}\IEEEauthorrefmark{4},  \href{mailto:ads@dia.unisa.it}{ads@dia.unisa.it}\IEEEauthorrefmark{3}}
+}
+
+\maketitle
+
+
+\begin{abstract}
+% Spiegare subito che ``Resistant against forensics analysis'' include self-deletion.
+%
+% Chiarire subito gli obiettivi:
+% \begin{itemize}
+%  \item pi\`u file
+%  \item dati e applicazioni
+%  \item tracce delle applicazioni
+%  \item automaticamente
+%  \item in modo sicuro
+%  \item self-deletion
+% \end{itemize}
+
+The secure deletion of sensitive data can improve user privacy in many contexts and, in some extreme circumstances, keeping some information private can determine the life or death of a person. In fact, there are still several countries where freedom of expression is limited by authoritarian regimes, with dissidents being persecuted by their government. Recently, some countries have begun to make an effort to aid these people to communicate in a secure way, thus helping them to gain freedom. In this context, the present work can be a contribution in spreading the free use of Internet and, in general, digital devices.
+
+In countries where freedom of expression is persecuted, a dissident who would like to spread (illegal) information by means of the Internet should take into account the need to avoid as many traces as possible of his activity, in order to mislead eventual forensics investigations. In particular, this work introduces a methodology to delete a predetermined data set from a digital device in a secure and fast way, for example, with a single click of the mouse. All the actions required to remove the unwanted evidence can be performed by means of an automation, which is also able to remove traces about its execution and presence on the system. A post-mortem digital forensics analysis of the system will never reveal any information that may be referable to either the deleted data set or automation process.
+\end{abstract}
+
+\begin{keywords}
+Information Forensics; Digital Forensics; Computer Forensics; Anti-Forensics; Counter-Forensics; Privacy and Freedom; Right to Privacy; Secure Deletion; Selective Deletion; Automatic Deletion; Wiping; Free Communication; Data Remanence.
+\end{keywords}
+
+\IEEEpeerreviewmaketitle
+
+
+\section{Introduction}
+\label{intro}
+The secure deletion of data from a media is an extensively covered topic which finds numerous applications in many areas of Computer Science. In particular, this work focuses on the importance of secure deletion for user privacy and Digital Forensics purposes. The key concept is that erasing data from digital devices is not a simple task, since some inherent characteristics of digital systems can retain recoverable information about it (i.e., data remanence).
+%This can be due to many reasons including hardware characteristics, which can maintain traces of data even after its erase from the media, and mechanisms of the Operating System (OS), which can just ``hide'' deleted data, instead of completely remove it, in order to improve the system performance.
+In substance, data remanence can be considered a problem to solve in order to grant user privacy in many situations where secure deletion is crucial, as well as a benefit to exploit so as to gain useful evidence in a digital forensics analysis.
+
+In this paper, a new methodology for secure deletion is proposed. With respect to existing works, the challenge has been that of adding more strict requirements to the entire process. In particular, methods and techniques to realize an Automatic, Selective and Secure Deletion (\assd) of digital evidence, avoiding suspicious artifacts, are discussed. Such methodology can be useful both in improving user privacy in some contexts as well as providing guidelines for digital forensics analysts interested in finding evidence of automated deletion procedures.
+
+This work can be also considered a small contribution in spreading the freedom of using the Internet and, in general, digital devices in everyday life. In fact, there are still countries where freedom of expression is persecuted, even though, recently, some efforts have been made to aid those who are oppressed in using the Internet~\cite{obama}. The methods presented in this paper can be useful for a dissident who intends to delete some information in a fast and secure manner (i.e., in a few seconds during a police inspection), in order to divert a digital forensics analysis on his devices.
+
+
+\subsection{Secure Deletion}
+\label{secdel}
+In this work the \textit{secure deletion} of sensitive data is considered a task which involves the removal of any information regarding such data as well as any evidence left by the deletion procedure. This includes the following steps:
+\begin{enumerate}
+ \item the rewriting of the physical locations where sensitive data is memorized (wiping), in order to prevent any possibility of recovery;
+ \item the removal or obfuscation of metadata, which might be recorded by the filesystem or the OS, having reference to the wiped data;
+ \item the removal or obfuscation of ``unwanted'' and ``suspicious'' traces.
+\end{enumerate}
+
+The term ``unwanted'' refers to traces, evidence or data through which it is possible to recover deleted information, for example by means of a file carving operation. %that might recover a removed file.
+
+When considering a digital forensic analysis on the system, it is important to note that some traces | though containing no meaningful information about the erased data | can be considered ``suspicious'' if linkable to the deletion process. %when linked to an eventual secure deletion process.
+For example, the presence on the system of a wiped disk, or an encrypted partition, or a wiping software is an atypical evidence that may create suspicion.
+
+\subsection{Selectivity}
+The secure deletion of unwanted data can be implemented by using many techniques. The simplest one consists of wiping the entire partition where the information resides, but this approach raises at least two problems: in a digital forensics analysis, the presence of a void partition can create suspicion, while wiping an entire partition also requires a great deal of time.
+
+The choice of the right technique depends on the context, with a simple one not necessarily being viable in situations where a \textit{selective} deletion is required. An individual could be interested in removing only specific software from his PC which is used, for example, to create a false digital alibi~\cite{autoalibi}.
+
+
+\subsection{Automation and Self-Deletion}
+In addition to the selectivity, another important requirement could be that of \textit{automating} the deletion procedure, when certain data have to be deleted repeatedly or in a systematic manner. An automate and selective deletion procedure could be useful in many situations, such as to speed up and simplify the systematic deletion of certain data from a system, to guard a person (e.g., a spy) who has been uncovered and does not want to reveal some information, to aid a political dissident who has to quickly hide suspicious data on his PC before it is confiscated by a Law Enforcement Agency.
+
+Therefore, an automatic and secure deletion procedure, along with the deletion of a predetermined data set, should also include the removal of any traces left by its execution and presence on the system. In other words, the procedure has to implement a \textit{self-deletion} technique, which should take into account the presence of the procedure stored on the disk and any evidence of its execution. An \assd process should include procedures to remove or obfuscate both unwanted and suspicious traces.
+Digital evidence removed using these precautions should not leave any meaningful information and therefore should be resistant against a digital forensic analysis.
+
+%Scope of this work is to propose methods and techniques for an Automated, Selective and Secure Deletion (\assd) of digital evidence.
+
+\section{Deletion Issues}
+Typical operations implemented by the OS, such as removing a file or formatting a storage media, do not guarantee that any unwanted data is effectively removed.
+In general, a number of rewritings of the occupied physical locations are necessary to accomplish this task.
+A residual representation of data, called \textit{data remanence}, can persist on the drive for many reasons:
+
+\begin{itemize}
+ \item the OS could provide a file retention facility, in charge of moving deleted files to a holding area which allows users to easily revert mistakes (e.g., the Recycle Bin);
+ \item when a file is deleted, the OS generally removes its entry from the filesystem directory marking the previously occupied space as ``unused'' and ``free'' for subsequent writings, but data of the deleted file remains on the media until rewritten;
+ \item filesystem metadata (i.e., pathname, last modified time, etc.) about deleted files can be maintained by the system for a certain period of time;
+ \item files are often stored in non-contiguous physical locations, making it more difficult to overwrite them;
+ \item the filesystem could implement optimization techniques which do not guarantee that file rewriting happens onto the previous occupied device locations;
+ \item reformatting an entire drive or a partition generally implies the destruction of the filesystem metadata, but does not guarantee that the data present in the formatted area is completely destroyed;
+ \item some actual storage technologies, such as flash memory, have inherent limitations that make it difficult to rewrite a specific physical location;
+ \item even when the storage medium is overwritten, physical properties of the medium could make it possible to recover some previous contents by means of electron microscopes.
+\end{itemize}
+
+Since bypassing hardware constraints, as those regarding the solid state memories, is sometimes impracticable~\cite{solid}, in this work only magnetic memories such as hard disks are taken into account.
+%As shown below in Section~\ref{wip1}, there are many techniques capable of wiping data from this type of device.
+
+Performing a secure deletion is more complicated when different kinds of data should be erased. For example, the secure deletion of software requires the deletion of applications and their data, which is typically contained in various files and system structures (e.g., the Windows Registry). In this case, a deep analysis of digital evidence produced by the software should be performed by using specific tools~\cite{autoalibi}. An alternative approach is to ``organize'' the data to be deleted in order to simplify the deletion procedure. In this work various methods belonging to the latter approach are analyzed in Section~\ref{par:env}.
+
+\subsection{Wiping Issues}
+\label{wip1}
+%Proof of erasability
+Deleting a file using the OS-specific functions does not guarantee that it is completely removed from the drive. In fact, the sectors that were occupied by the file become available for a new writing operation, but the previous data remains on the disk until it is overwritten: this operation is commonly known as ``unlinking''~\cite{os}.
+
+The amount of rewritings required to completely remove any traces of certain data from a media is a controversial theme.
+Some works support the thesis that electromagnetic evidence can be recovered from medias by means of electron microscopes. The Gutmann method~\cite{pgut01}~\cite{pgut02} asserts that 35 rewritings with different patterns are needed to guarantee irrecoverability of data, while the DoD technique~\cite{usdod5220} claims that 7 rewritings should be sufficient. On the contrary, in the NIST Special Publication 800-88~\cite{nist} it is stated that, on modern storage media, a single overwrite of data should guarantee its irrecoverability. This last thesis is also supported by Wright et al., who in a recent work~\cite{controversy} have proven that ``Although there is a good chance of recovery for any individual bit from a drive, the chances of recovery of any amount of data from a drive using an electron microscope are negligible''.
+
+Even if any of these methods can be adopted to realize the methodology discussed in this paper, a wiping technique that relies on a single overwriting operation has been adopted in the experiments conducted by the authors. This method turned out to be resistant against an analysis performed by using typical digital forensics tools.
+
+%However, in the case study a single rewriting technique is shown to be resistant against typical digital forensic software tools.
+
+\subsection{Automation and Self-Deletion Issues}
+\label{com_int}
+Automating a secure deletion procedure implies the execution of a process which is in charge of performing all the required actions. Most modern OSes optimize the execution of programs by recording information in some internal structures for user profiling, caching and so on. It can occur that also evidence regarding the automation are recorded for these purposes.
+In this case, it should be cleaned by the automation itself or obfuscated in order to divert any eventual forensic analysis.
+
+%Discorso sulla self deletion: come fa un processo a cancellare la sua immagine fisica? Linguaggio interpretato
+
+Self-deletion is a crucial feature which a fully-fledged deletion procedure should implement. Unfortunately, OSes typically lock running executables forbidding any processes to modify them.
+%In general, this behavior is due to the virtual memory module which uses running executables for swapping memory pages.
+This is done to preserve the read-only property of the \textit{code segment}. Thanks to this property, multiple processes (e.g., resulting from a \verb=vfork()= operation) can run the same program because the same executable code is safely shared among them~\cite{os}.
+As a result, a program cannot modify/delete/wipe itself from the disk whilst running.
+
+The methodology proposed in this paper bypasses this limitation exploiting the properties of the interpreted programming languages. An interpreted program is not directly executed by the OS, with the ``interpreter'' being in charge of executing its instructions. While in a compiled language the whole program is first decoded and then executed, in an interpreted language each line of the code is decoded and executed in sequence. In general, especially when the program is small, the interpreter loads all the instruction into the memory and does not lock the executing file, thus permitting (self) modifications.
+%, thus overcoming the concept of a read-only code segment.
+%This implies that an interpreted program can modify its executable(s) whilst running.
+
+
+\section{The Proposed Methodology}
+Secure deletion of a predetermined data set can be performed using different techniques involving existing tools or ad-hoc crafted solutions. The use of existing software has the advantage of simplicity but can leave more unwanted traces on the system. However, auxiliary tools are useful in some cases where the amount of evidence to be deleted is large or ``unpredictable''. In particular, the secure deletion of an application requires the removal of all data left on the system by that application; it is generally stored in different files, directories and system structures (such as the Windows Registry), which makes it quite impossible to identify all the traces to remove.
+
+Depending on the context, there are different strategies to realize an \assd procedure.
+In Section~\ref{case}, the implementation of a possible solution for a ``basic'' case is presented.
+In order to adopt the appropriate actions, it is necessary to identify all the elements that can influence the operational scenario.
+
+\subsection{Unwanted Traces}
+All evidence left by the automated deletion procedure and referable to the wiped data should be considered unwanted.
+While some precautions may be taken in order to prevent as many unwanted traces as possible, there are some OS and filesystem mechanisms, crucial for the system functioning, that record information about applications, files and user activities. Moreover,
+data remanence on the media can be due to the storage technology.
+%For example, solid state memories can produce copies of the data that are invisible to the user, but that a digital forensics analysis could recover~\cite{solid}.
+
+Mechanisms that may interfere with the deletion procedure can be organized into categories, each of which has to be addressed in a different manner:
+\begin{enumerate}
+ \item OS recordings maintained in internal structures such as the Windows Registry;
+ \item filesystem structures such as the file table or the journal, which respectively maintain metadata (file name, size, creation time, etc.) of files and operations (accesses, modifications, etc.) made on them even after their unlinking;
+ %\item change journal of the filesystem, which records lot of operations made on files, like accesses, modifications and their timestamps;
+ \item algorithms used to manage and access data on the storage device.
+\end{enumerate}
+
+OS or hardware constraints often make it difficult to modify internal structures whilst the system is running in order to prevent faults. In such cases, an obfuscation strategy should be adopted to mask non-removable traces as something that is not suspicious. For example, one should use common filenames, as well as launch applications from the command line in order to avoid meaningful recordings in the Registry. One can also use portable version of the software from a removable device to avoid the creation of temporary files on the main drive.
+
+
+\subsection{The Basic Case}
+\label{basic}
+In the simplest case, which is referred to as the ``basic'' case, the predetermined data set is a list of files storing sensitive information (e.g., text files containing a political propaganda) that has to be deleted in a secure and fast manner. No applications are involved, thus having no unwanted traces dispersed on the system. However, traces left by the deletion procedure (i.e., the automation program) should be considered and removed.
+A methodology viable for resolving the basic case is presented, which consists of different and mutually dependent phases. Finally, some methods useful in setting up a system in order to realize an \assd process for complex data sets, including applications and their traces, are discussed. An aim of these approaches is to encapsulate as much unwanted data as possible into few system locations, thus reducing a complex problem into a basic one.
+
+
+\subsection{Wiping}
+\label{ramethod}
+The first choice for realizing an \assd procedure regards the wiping method.
+It is important to note that, especially on journalized filesystems such as NTFS~\cite{ntfs}, overwriting a file does not guarantee that the physical locations occupied by it on the media are rewritten. This risk increases when the file is large and fragmented.
+It is mostly due to optimization techniques that are in charge of reducing access time to the disk, maintaining data in the memory until an optimal amount of it is ready to be written. Moreover, coherency mechanisms of transactional filesystems could also postpone writings.
+%, as well as relocate blocks of a modified file onto different disk locations.
+In both cases, the filesystem can relocate the file to different physical locations for some reasons, such as recovering data in the presence of faults or obtaining a better occupation of free space, thus reducing file fragmentation.
+
+Due to the reasons described above, data wiping on modern filesystems is not a simple task. Most programming languages do provide neither API which include primitives for wiping nor primitives for overwriting files in place, that is, using the same physical blocks. It is interesting to note that some common utilities deployed with OSes, such as \verb=shred= on Linux, are not guaranteed to work properly on modern transactional filesystems (see \verb=man shred=).
+%Shred itself has been discarded since some experiments confirmed that the input file is not always overwritten ``in place'', thus leaving unwanted traces on the drive.
+
+%In substance, overwriting physical locations of a file can be done in a secure manner only if buffering mechanisms implemented by the I/O subsystem of the OS are bypassed.
+These problems can be bypassed by opening a file using the ``random access'' method, which is provided by most of the OSes through the \verb=open()= system call. The semantics of this operation, in fact, permits nonsequential (or random) access to the file contents, making it possible to use the \verb=seek= system call in order to read from or write to a particular location.
+%Using this method, a file can be modified byte-by-byte avoiding most of buffering and caching mechanisms.
+Several experiments on different filesystems (including NTFS and EXT3) have confirmed that files are overwritten in place when using this technique.
+
+The new values of the blocks to be cleaned can be chosen according to different methods. The choice depends on a trade-off between security and efficiency, since some values that can be easily and quickly generated could be considered suspicious after a forensics analysis. Four viable methods, which adopt different data sources for the overwriting operations, are presented below.
+
+\subsubsection{Naive Method}
+The simplest approach is to overwrite the file with a fixed pattern, such as all zeros. This technique is very fast as no more operations except writings on the media are needed, with it thus being possible to reach the maximum transfer rate of the device. The disadvantage of this method is that a digital forensics analysis can reveal anomalies as a repeated data pattern in some disk blocks, which can raise suspicions of having performed a wiping operation.
+
+\subsubsection{Randomization Method}
+The physical blocks occupied by the file can be overwritten with data randomly generated or obtained by means of a Pseudo-Random Number Generator (PRNG). The PRNG should be cryptographically secure in order to prevent that a deep analysis on the written data can reveal that such a sequence has been generated by an algorithm.
+
+\noindent This approach has the advantage that it can be straightforwardly implemented, due to (pseudo) random number generators being implemented for most of programming language and are ready-to-use. Moreover, the overhead introduced to generate the data to be written, in terms of execution time, is typically low on common PCs. The main drawback comes from the consideration that an analysis of the overwritten blocks will reveal an atypical high entropy of data, with it being suspicious.
+
+\subsubsection{Data Replication Method}
+A more secure approach can be that of moving data already present on the disk onto the blocks to overwrite. The blocks to replicate can be chosen by the automation at runtime in a random or predetermined manner. In the first case, data can be read from some randomly chosen files or raw drive locations. Alternatively, a specific file or set of files can be used as the source for the wiping procedure.
+
+\noindent Assuming that data replication is common when using modern OSes and filesystems, due to the mechanisms described in the previous sections, even a detailed forensics analysis cannot establish whether data copied onto the overwritten blocks has been transferred by means of an ad-hoc procedure or a common system process. Although this technique guarantees a high level of robustness, it has a weighty drawback: reading at runtime the data to be copied requires further accesses to the drive, which can determine a performance degradation, especially when the file to be overwritten is large.
+
+\noindent Alternatively, a certain amount of data can be copied at runtime from the media into the memory, and then used as the pattern to rewrite the entire set of blocks. With respect to the previous solution, this can improve performance at a small expense of security.
+
+\subsubsection{Code Mutation Method}
+A more sophisticated method consists of transforming the content of the files to be cleaned into something different but more plausible.
+In the case of a program, it can be ``polymorphed'' into another program. The automation, created by means of an interpreted language, can contain a bytecode that itself can inject into its executable at runtime. In this case, it is not crucial that the entire executable content is overwritten. In fact, the probability that a forensics analysis on the unused disk blocks reveals meaningful traces about the automation can be considered negligible when a consistent portion of the program is lost.
+
+\noindent This method is very robust due to the rewritten files having a plausible content which should divert any suspicions on their nature. However, this is strictly dependent on the size of the data to wipe. In fact, it could be difficult to generate a plausible new content for a large file.
+
+\vspace{0.15cm}
+The first method is the simplest and fastest, while the fourth one is the most secure as well as the most difficult to implement. Clearly, it is possible to adopt more than one overwriting method, based on a per-file policy: for example, code mutation for cleaning the automation program, data replication for small-sized files as well as randomization for large files.
+
+\subsection{Automation and Self-Deletion}
+\label{overw}
+The second step involves the choice of the technique for automating the deletion procedure and removing its presence from the system.
+The automation should make use of the wiping procedure to remove a predetermined set of files from the system, including itself, as well as require no human intervention. The procedure should take a list of files as argument and iterate the wiping procedure for each element, including itself in order to perform the self-deletion. This methodology proposes the use of an interpreted language to implement the automation, which allows a program to modify (i.e., wipe) its executable file(s) whilst running, as discussed in Section~\ref{com_int}.
+A separate shell script can be prepared in order to implement the ``one-click'' deletion feature.
+It could maintain the list of files to be deleted and pass it to the automation process.
+%When the Windows loader runs an executable, it opens the executable's disk file and maps that region of disk into memory, effectively loading the executable into memory.
+%The loader of an OS runs an executable by opening its disk file and mapping that region of media into memory.
+%Typically, this disk file is kept open during the entire lifetime of the process, and is only closed when the process terminates. Because of this lock on the file, it is usually impossible to modify an executable file whilst it is running.
+%On the other hand, a program created by means of an interpreted programming language is not directly executed by the OS, since that is interpreted by another program, the interpreter, which is itself directly executed by the OS. Most of interpreters does not lock disk files of programs whilst they are running, thus permitting programs to modify their physical image at execution time.
+
+%Focusing on the self-deletion, various approaches implementing different overwriting methods can be adopted in order to remove the presence of the automation from the disk: the choice depends on a trade-off between security and performance.
+
+%More generally, the four methods presented below can be also adopted to implement the wiping of the other files involved in the \assd procedure, by possibly adopting a selective policy.
+
+\subsection{Memory wiping}
+The methodology proposed in this work can be enhanced by introducing an additional requirement: the resistance against a live forensics analysis. In order to accomplish this task, it is necessary to remove any traces left by the \assd procedure from the main memory. Some possible solutions are:
+
+\begin{itemize}
+ \item \textit{Execute a memory diagnostic tool}: It is possible to execute a memory diagnostic tool as the last statement of the automation. These tools generally rewrite the memory many times in order to test the memory banks. The process will continue after the automation ends, and will overwrite the memory frames used by it.
+ \item \textit{Execute a heavy process}: A videogame or a similar memory-consuming process can be launched just before the termination of the automation. This should overwrite any free memory frame, including those previously reserved to the automation.
+ \item \textit{Perform a system shutdown}: A system shutdown will reset any connected volatile memories, including the main memory.
+\end{itemize}
+
+
+\subsection{Testing}
+A testing phase should verify that the implemented \assd procedure meets all the requirements discussed in Section~\ref{intro}. Moreover, a significant number of experiments with different classes of input (i.e., size and number of files to be removed) should be performed in order to be confident that the procedure works correctly.
+
+Advanced tools should be used to verify that no remanence of wiped data persists on the system. In particular, the deletion procedure should resist file carving as well as to deeper low-level analysis. The approach proposed in this work consists of setting data to be deleted with a predefined pattern, and subsequently verifying that this pattern is no longer present on the entire drive by means of a raw scanning of the involved partition. Although this technique can require a long time, it is as general as possible since it is totally independent from the used filesystem and storage media.
+
+The testing should also include the research for suspicious traces, such as those regarding the execution of applications used for implementing the \assd. Also in this case, the most general approach is to perform a raw scan of the media in order to find references to such applications. It is well-known that some information regarding removed files, such as that contained in the internal OS structures, may remain because it is difficult to delete it whilst the OS is running. In this case, filenames should be previously chosen with the aim of avoiding suspicious traces. Whenever the testing phase reveals the presence of suspicious digital evidence, it is necessary to refine the implemented \assd procedure and then rerun the testing phase.
+
+
+\subsection{Deletion of complex data sets}
+\label{par:env}
+%Evidenziare l'aspetto che organizzo le informazioni in modo che le riesco a cancellare in modo sicuro.
+There are circumstances where the secure deletion could involve several data sparse on the system, for example an entire data repository of a dissident.
+The deletion of entire applications and respective traces is a hard task, since it is sometimes impossible to predict ``what'' information these programs will generate and ``where'' it will be recorded. Applications often keep temporary data (e.g., for caching) and permanent data (e.g., for configuration) using files stored on different locations of the disk, with the OS recording traces about the programs and files used in some protected structures (such as the Windows Registry). A general approach to manage such cases is to encapsulate the involved applications in order to avoid information leakage. Data can be encapsulated using different methods, as discussed below.
+
+\subsubsection{External Local Disk}
+Applications and data can be maintained on an external local disk, such as an USB flash drive. A portable version of the software can be used in order to avoid the use of the main system drive to store application data. The automation should implement the wiping of the entire external drive, and eventually the copying of plausible data (e.g., multimedia files) onto it.
+The main drawback of this method is that information about the used applications can already be logged by the OS in its internal structures unless specific precautions are taken, such as launching the \assd procedure from the command prompt of Windows.
+%thus not completely resolving the problem of unpredictable data.
+
+\subsubsection{Remote Disk}
+The involved data set can reside on a different device which can be accessed remotely. In this case, any traces linking the local system with the remote one should be removed or avoided. These include eventual applications (and respective traces) used to access the remote devices, as well as suspicious connections registered at the ISP side.
+
+\subsubsection{Virtualization}
+A virtual machine can be used to contain sensitive applications and data. The main advantages of this method are that the data is maintained locally, thus having the full control of it, and at the same time applications can be executed in an environment decoupled from the main system. In general, the main OS records information about the virtualization software but nothing regarding applications and data of the hosted OS. The presence of a virtualization software on a system cannot be considered suspicious, since the use of virtual machines nowadays is a common practice.
+The wiping process should only involve the cleaning of the files containing the virtual machine. An ad-hoc procedure could consider rewriting these files by copying data of another virtual machine onto them.
+
+\subsubsection{Disk Encryption}
+A complex data set could also be maintained in an encrypted disk or partition. This method can be used in conjunction with virtualization in order to improve the hiding of sensitive data. Furthermore, this method can be useful when it is not possible to run the entire wiping process (e.g., due to very strict time constraints). In fact, without the appropriate key, even a deep forensics analysis cannot recover the encrypted information. However, traces left by software used to manage encrypted disks~\cite{diskenc} might raise considerable suspicions, and in some Countries are illegal.
+
+
+\section{Case Study}
+\label{case}
+
+Experiments on various systems, with different storage technologies, OSes and filesystems, have been and are being conducted in order to demonstrate that the automatic, selective and secure deletion of data can be performed and does not require advanced skills.
+In this section, an experimental study, implementing the basic case (see Section~\ref{basic}), is dealt with. Experiments have been conducted on
+a sample hardware platform with CPU Intel Core I5-480M, RAM 4GB DDR3, hard disk SATA 640GB 5400RPM, running Microsoft Windows 7 with Service Pack 1 and NTFS filesystem.
+
+
+The procedure has been implemented using the Java language, showing that a detailed knowledge of programming is not necessary in order to create an automation meeting all the requested features. Moreover, implementing the self-deletion functionality is quite easy since a Java executable, being indirectly executed (i.e., interpreted) by the Java Virtual Machine (JVM), can modify its physical image at runtime.
+
+\subsection{Wiping}
+\label{case_wiping}
+An ad-hoc procedure has been implemented to wipe unwanted data from the disk. It performs a single rewriting of the physical locations occupied by a file using one of the overwriting methods discussed in Section~\ref{overw}. Subsequently, it calls the standard deletion function of the OS which unlinks the file. However, this procedure can be straightforwardly replaced by any other wiping technique, i.e., performing more rewritings or overwriting files with different patterns.
+
+The wiping procedure implemented for this case study is based on the \verb=RandomAccessFile= class provided by the \verb=java.io= package included in the JDK, which allows a file to be opened with the random access method. As discussed in Section~\ref{ramethod}, this operation prevents that blocks of a file are moved onto different disk locations when modifying it.
+In the following code snippet, it is shown how is possible to use the \verb=SecureRandom= class, from the \verb=java.security= package, to overwrite a file using a secure pseudo-random pattern. A proprietary PNRG algorithm based on SHA-1, compliant with the FIPS 140-2~\cite{secrand} requirements, has been chosen to accomplish this task.
+Since hard disks are block devices, they only supports reading or writing a whole physical block at a time. In general, the logical block size in file systems is a multiple of the physical block size. Thus, in the code listed below, writings are performed \verb=BLOCKSIZE=-by-\verb=BLOCKSIZE=, where \verb=BLOCKSIZE= is 512 byte as the NTFS sector size.
+%A sketch of the wiping procedure is listed below:
+%{ \scriptsize
+\begin{lstlisting}
+RandomAccessFile randomAccessFile = new RandomAccessFile(file, "rw");
+SecureRandom PRNG = SecureRandom.getInstance("SHA1PRNG");
+byte[] buffer = new byte[BLOCKSIZE];
+...
+for( i = 0; i < fileSize; i += BLOCKSIZE ){	
+    ...
+	PRNG.nextBytes(buffer);
+	randomAccessFile.write(buffer);
+    ... 
+}
+...
+file.delete();
+\end{lstlisting}
+%}
+
+In the experiments, data files have been overwritten with values obtained by means of the Randomization method, whose implementation has been presented above. The automation, named \verb=HelloWorld.class=, has been overwritten by using the Code Mutation method, which transforms it in a program that prints the string ``Hello World'' on the standard output.
+
+
+\subsection{Automation and Self-Deletion}
+The automation of this case study has been implemented using the Java language and needs to be executed by a JVM, which generally does not lock the executing class files. After removing the predetermined list of files, the automation can finally remove itself from the disk using the same wiping procedure shown in Section~\ref{case_wiping}.
+
+A batch (\verb=.bat=) script has been prepared in order to implement the ``one-click'' deletion semantic. It maintains the list of files to be removed, including itself. When executed, it passes that list to the automation, which performs all the required actions. It is important to note that starting the deletion process by means of a batch script makes it possible to execute the core procedure through the \verb=cmd.exe= shell. As shown in Section~\ref{prec}, this approach avoids traces about the automation recorded into the Registry.
+
+\subsection{Precautions}
+\label{prec}
+Some evidence can be classified as \emph{hard-to-remove}. This includes information about the automation recorded in Registry keys and other system structures, whose files are often locked by the OS and are difficult to remove whilst it is in use.
+In the experiments carried out, some precautions have been taken in order to minimize these traces:
+
+\begin{itemize}
+  \item \emph{Prefetcher}: The Prefetch mechanism of Microsoft Windows, which stores information about recently used programs onto the filesystem in order to speed up their execution, has been been disabled.
+  \item \emph{Virtual Memory}: The Virtual Memory, which extends the main memory by means of the storage media, has been disabled by setting its size to zero.
+  \item \emph{Registry}: It has been avoided that the OS stores meaningful information about the automation into the Registry, since it is not executed through the file manager but through the shell (\verb=cmd.exe=).
+\end{itemize}
+
+\noindent A more detailed explanation of techniques adopted to avoid unwanted traces related to the automation is presented in~\cite{autoalibi}.
+
+Even though the content of the files passed in input to the automation is completely removed and unrecoverable from the media, some metadata related to such files may remain on the system. It includes entries in the MFT containing information such as name, creation time, modification time, access time, size etc.. Moreover, a log of the operations (openings, writings, truncations, renamings etc.) performed onto the files also remains in the filesystem journal. Due to these considerations, it is crucial that the files to be removed, including the automation itself, do not have suspicious names.
+In the conducted experiments, data files have been named \verb=songs_2001.doc, songs_2002.doc, ...,= \verb=songs_2010.doc=, while the automation \verb=HelloWorld.class=.
+
+
+\subsection{Testing and Performances}
+
+The proper functioning of the secure deletion has been properly verified by the authors.
+In particular, DiskView 2.4~\cite{diskview} and WinHex 16.0~\cite{winhex} were used to verify that the physical sectors of the deleted files were overwritten, thus being unrecoverable. Subsequently, forensics tools included in the DEFT~\cite{deft} distribution were used to perform a post-mortem digital forensics analysis on the data and metadata present on the disk. The result confirmed that no meaningful information remains on the system, with it thus being impossible to carve the removed files.
+
+%Fatti TOT test su TOT casi... TOT file di TOT dimensione...
+
+\vspace{0.15cm}
+The time taken by the automation to complete the secure deletion of a specified data set is a crucial requirement in some situations. For example, a dissident subject to a sudden inspection by the government authorities should delete any traces of his ``illegal'' activities in a few seconds.
+
+It is important to note that performance of any \assd procedures is strictly connected to the transfer rate of the storage media.
+%, as well as influenced by the performance of the system bus.
+For these reasons, a deep analysis of the performance obtained by the implemented prototype is out of the scope of this article. The only operation introducing a considerable overhead during the \assd process is the overwriting procedure.
+
+Several tests have been performed, each one passing a single file with different size to the implemented prototype.
+It has been measured that the Naive method is only influenced by the drive transfer rate, due to it not requiring additional computations. On the sample hardware/software configuration, the Randomization method is about 1.6 times slower than the first one, with it having a considerable overhead introduced by the pseudo-random number generation. Performances of the Data Replication method depend on the strategy implemented to select the data source: \verb=seeking= to random locations of the disk at each block rewriting is very slow, with it being more than 250 times slower than the Naive method. Use of sequential locations considerably increases performances (due to the caching mechanisms of the drive), which are similar to those measured for the Randomization method. As expected, performances of the Code Mutation method are the best ones because the data to be written are previously loaded into the memory and a complete overwrite of the entire file is not required. The results are summarized in Tab.~\ref{performance}.
+
+%Several measurements have been conducted on different data sets, composed of different number of files and relative sizes.
+\noindent Table~\ref{performance1} shows the average performances of the implemented prototype, which uses the Randomization method, measured on different settings, depending on the size of the file to be deleted. It is important to highlight that these time values are strictly related to the hardware platform used for the experiments.
+
+
+\begin{table}
+\centering
+\caption{Performance of the implemented \assd process using the four overwriting methods}
+\begin{tabular}{ | l | l | l | }
+\hline
+\textbf{Method} & \textbf{Average units of time}\\
+\hline
+Naive & 1\\
+\hline
+Randomization & 1.6\\
+\hline
+Replication (random)& $>$250\\
+\hline
+Replication (sequential) & 1.7\\
+\hline
+Code Mutation & 1\\
+\hline
+\end{tabular}
+\label{performance}
+\end{table}
+
+\balance
+
+\begin{table}
+\centering
+\caption{Performance of the Randomization method on different data sets}
+\begin{tabular}{ | r | r | }
+\hline
+\textbf{File size} & \textbf{Average time}\\
+\hline
+1 MB & 131 ms\\
+\hline
+% 10 & 1 MB & 883 ms\\
+% \hline
+10 MB & 682 ms\\
+\hline
+% 10 & 10 MB & 5919 ms\\
+% \hline
+100 MB & 4946 ms\\
+\hline
+% 10 & 100 MB & 128326 ms\\
+% \hline
+1000 MB & 36523 ms\\
+\hline
+% 10 & 1000 MB & 8649092 ms\\
+% \hline
+\end{tabular}
+\label{performance1}
+\end{table}
+
+
+
+\section*{Acknowledgments}
+The authors would like to thank Mario Ianulardo for many and long interesting discussions on the false digital alibi, and especially on its legal implications. A special thanks goes to Mattia Epifani for his encouragement and useful exchange of ideas.
+
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,ASSD}
+
+\end{document}
+
+

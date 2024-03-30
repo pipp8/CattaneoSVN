@@ -1,0 +1,7 @@
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\WCFServiceSample\WcfServiceLibrary1\bin\Debug\SampleDB.xml
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\WCFServiceSample\WcfServiceLibrary1\bin\Debug\WcfServiceLibrary1.dll.config
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\WCFServiceSample\WcfServiceLibrary1\bin\Debug\WcfServiceLibrary1.dll
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\WCFServiceSample\WcfServiceLibrary1\bin\Debug\WcfServiceLibrary1.pdb
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\WCFServiceSample\WcfServiceLibrary1\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\WCFServiceSample\WcfServiceLibrary1\obj\Debug\WcfServiceLibrary1.dll
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\WCFServiceSample\WcfServiceLibrary1\obj\Debug\WcfServiceLibrary1.pdb

@@ -1,0 +1,5 @@
+C:\Users\cattaneo\documents\visual studio 2010\Projects\IPCChannelSample\SharedObjectLibrary\bin\Debug\SharedObjectLibrary.dll
+C:\Users\cattaneo\documents\visual studio 2010\Projects\IPCChannelSample\SharedObjectLibrary\bin\Debug\SharedObjectLibrary.pdb
+C:\Users\cattaneo\documents\visual studio 2010\Projects\IPCChannelSample\SharedObjectLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\cattaneo\documents\visual studio 2010\Projects\IPCChannelSample\SharedObjectLibrary\obj\Debug\SharedObjectLibrary.dll
+C:\Users\cattaneo\documents\visual studio 2010\Projects\IPCChannelSample\SharedObjectLibrary\obj\Debug\SharedObjectLibrary.pdb

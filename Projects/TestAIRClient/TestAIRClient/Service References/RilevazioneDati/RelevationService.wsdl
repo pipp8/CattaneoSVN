@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://air.di.unisa.it/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="RelevationService" targetNamespace="http://air.di.unisa.it/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://air.di.unisa.it/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="checkPatientCF" type="tns:checkPatientCF" />
+      <xs:element name="checkPatientCFResponse" type="tns:checkPatientCFResponse" />
+      <xs:element name="doEndRelevation" type="tns:doEndRelevation" />
+      <xs:element name="doEndRelevationResponse" type="tns:doEndRelevationResponse" />
+      <xs:element name="doWriteQuarterPatientData" type="tns:doWriteQuarterPatientData" />
+      <xs:element name="doWriteQuarterPatientDataResponse" type="tns:doWriteQuarterPatientDataResponse" />
+      <xs:element name="doWriteSemestralPatientData" type="tns:doWriteSemestralPatientData" />
+      <xs:element name="doWriteSemestralPatientDataResponse" type="tns:doWriteSemestralPatientDataResponse" />
+      <xs:element name="doWriteStartUpPatientData" type="tns:doWriteStartUpPatientData" />
+      <xs:element name="doWriteStartUpPatientDataResponse" type="tns:doWriteStartUpPatientDataResponse" />
+      <xs:element name="doWriteYearlyPatientData" type="tns:doWriteYearlyPatientData" />
+      <xs:element name="doWriteYearlyPatientDataResponse" type="tns:doWriteYearlyPatientDataResponse" />
+      <xs:element name="getAuthorizationToken" type="tns:getAuthorizationToken" />
+      <xs:element name="getAuthorizationTokenResponse" type="tns:getAuthorizationTokenResponse" />
+      <xs:element name="getVersion" type="tns:getVersion" />
+      <xs:element name="getVersionResponse" type="tns:getVersionResponse" />
+      <xs:complexType name="doWriteStartUpPatientData">
+        <xs:sequence>
+          <xs:element name="securityToken" type="tns:authorizationToken" />
+          <xs:element name="MMGCodFisc" type="xs:string" />
+          <xs:element name="relevation" type="tns:startupRelevation" />
+          <xs:element name="quarter" type="xs:int" />
+          <xs:element name="year" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="authorizationToken">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="token" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="startupRelevation">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:yearlyRelevation">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="yearlyRelevation">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:semestralRelevation">
+            <xs:sequence>
+              <xs:element name="ALT" type="xs:int" />
+              <xs:element minOccurs="0" name="ALT_date" type="xs:dateTime" />
+              <xs:element name="AST" type="xs:int" />
+              <xs:element minOccurs="0" name="AST_date" type="xs:dateTime" />
+              <xs:element name="CVRiskCalculation" type="xs:int" />
+              <xs:element minOccurs="0" name="CVRiskCalculation_date" type="xs:dateTime" />
+              <xs:element name="cardiologicVisit" type="xs:boolean" />
+              <xs:element minOccurs="0" name="cardiologicVisit_date" type="xs:dateTime" />
+              <xs:element name="colesteroloLDL" type="xs:double" />
+              <xs:element minOccurs="0" name="colesteroloLDL_date" type="xs:dateTime" />
+              <xs:element name="colesteroloTot" type="xs:double" />
+              <xs:element minOccurs="0" name="colesteroloTot_date" type="xs:dateTime" />
+              <xs:element name="creatinemia" type="xs:double" />
+              <xs:element minOccurs="0" name="creatinemia_date" type="xs:dateTime" />
+              <xs:element name="diabetologicVisit" type="xs:boolean" />
+              <xs:element minOccurs="0" name="diabetologicVisit_date" type="xs:dateTime" />
+              <xs:element name="ECG" type="xs:boolean" />
+              <xs:element minOccurs="0" name="ECG_date" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="emocromopFp" type="xs:string" />
+              <xs:element minOccurs="0" name="emocromopFp_date" type="xs:dateTime" />
+              <xs:element name="fundus" type="xs:boolean" />
+              <xs:element minOccurs="0" name="fundus_date" type="xs:dateTime" />
+              <xs:element name="GGT" type="xs:int" />
+              <xs:element minOccurs="0" name="GGT_date" type="xs:dateTime" />
+              <xs:element name="microalbuminuria" type="xs:double" />
+              <xs:element minOccurs="0" name="microalbuminuria_date" type="xs:dateTime" />
+              <xs:element name="nephrologicVisit" type="xs:boolean" />
+              <xs:element minOccurs="0" name="nephrologicVisit_date" type="xs:dateTime" />
+              <xs:element name="neurologicVisit" type="xs:boolean" />
+              <xs:element minOccurs="0" name="neurologicVisit_date" type="xs:dateTime" />
+              <xs:element name="oculisticVisit" type="xs:boolean" />
+              <xs:element minOccurs="0" name="oculisticVisit_date" type="xs:dateTime" />
+              <xs:element name="trigliceridi" type="xs:double" />
+              <xs:element minOccurs="0" name="trigliceridi_date" type="xs:dateTime" />
+              <xs:element name="uricemia" type="xs:double" />
+              <xs:element minOccurs="0" name="uricemia_date" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="semestralRelevation">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:quarterRelevation">
+            <xs:sequence>
+              <xs:element name="footInspection" type="xs:boolean" />
+              <xs:element minOccurs="0" name="footInspection_date" type="xs:dateTime" />
+              <xs:element name="hbA1c" type="xs:double" />
+              <xs:element minOccurs="0" name="hbA1c_date" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="quarterRelevation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="antropometricData" type="tns:antropometricData" />
+          <xs:element name="bloodPressureMax" type="xs:int" />
+          <xs:element minOccurs="0" name="bloodPressureMax_date" type="xs:dateTime" />
+          <xs:element name="bloodPressureMin" type="xs:int" />
+          <xs:element minOccurs="0" name="bloodPressureMin_date" type="xs:dateTime" />
+          <xs:element name="citizenId" type="xs:string" />
+          <xs:element minOccurs="0" name="educativeReinforcement" type="tns:educativeReinforcement" />
+          <xs:element name="glicemicSelfMonitoring" type="xs:boolean" />
+          <xs:element minOccurs="0" name="glicemicSelfMonitoring_date" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="antropometricData">
+        <xs:sequence>
+          <xs:element name="bmi" type="xs:double" />
+          <xs:element minOccurs="0" name="bmi_date" type="xs:dateTime" />
+          <xs:element name="height" type="xs:int" />
+          <xs:element name="height_date" type="xs:dateTime" />
+          <xs:element name="waistcircumference" type="xs:int" />
+          <xs:element minOccurs="0" name="waistcircumference_date" type="xs:dateTime" />
+          <xs:element name="weight" type="xs:double" />
+          <xs:element name="weight_date" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="educativeReinforcement">
+        <xs:sequence>
+          <xs:element name="footPrevention" type="xs:boolean" />
+          <xs:element minOccurs="0" name="footPrevention_date" type="xs:dateTime" />
+          <xs:element name="nutrition" type="xs:boolean" />
+          <xs:element minOccurs="0" name="nutrition_date" type="xs:dateTime" />
+          <xs:element name="selfMonitoring" type="xs:boolean" />
+          <xs:element minOccurs="0" name="selfMonitoring_date" type="xs:dateTime" />
+          <xs:element name="sport" type="xs:boolean" />
+          <xs:element minOccurs="0" name="sport_date" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doWriteStartUpPatientDataResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doWriteSemestralPatientData">
+        <xs:sequence>
+          <xs:element name="securityToken" type="tns:authorizationToken" />
+          <xs:element name="MMGCodFisc" type="xs:string" />
+          <xs:element name="relevation" type="tns:semestralRelevation" />
+          <xs:element name="quarter" type="xs:int" />
+          <xs:element name="year" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doWriteSemestralPatientDataResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getVersion">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getVersionResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="checkPatientCF">
+        <xs:sequence>
+          <xs:element name="MMGCodFisc" type="xs:string" />
+          <xs:element maxOccurs="unbounded" name="patientCodFiscs" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="checkPatientCFResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:checkPatientResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="checkPatientResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="patientCF" type="xs:string" />
+          <xs:element name="result" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doWriteQuarterPatientData">
+        <xs:sequence>
+          <xs:element name="securityToken" type="tns:authorizationToken" />
+          <xs:element name="MMGCodFisc" type="xs:string" />
+          <xs:element name="relevation" type="tns:quarterRelevation" />
+          <xs:element name="quarter" type="xs:int" />
+          <xs:element name="year" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doWriteQuarterPatientDataResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doWriteYearlyPatientData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="securityToken" type="tns:authorizationToken" />
+          <xs:element minOccurs="0" name="MMGCodFisc" type="xs:string" />
+          <xs:element minOccurs="0" name="relevation" type="tns:yearlyRelevation" />
+          <xs:element name="quarter" type="xs:int" />
+          <xs:element name="year" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doWriteYearlyPatientDataResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doEndRelevation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="securityToken" type="tns:authorizationToken" />
+          <xs:element minOccurs="0" name="patientCodFisc" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doEndRelevationResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAuthorizationToken">
+        <xs:sequence>
+          <xs:element name="MMGCodFisc" type="xs:string" />
+          <xs:element name="AuthenticationToken" type="tns:authenticationToken" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="authenticationToken">
+        <xs:sequence>
+          <xs:element name="clientSecret" type="xs:string" />
+          <xs:element name="password" type="xs:string" />
+          <xs:element name="role" type="xs:string" />
+          <xs:element name="username" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAuthorizationTokenResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:authorizationToken" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="IllegalArgumentException" type="tns:IllegalArgumentException" />
+      <xs:complexType name="IllegalArgumentException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AIRApplicationException" type="tns:AIRApplicationException" />
+      <xs:complexType name="AIRApplicationException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="errorCode" type="xs:string" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="DataValidationException" type="tns:DataValidationException" />
+      <xs:complexType name="DataValidationException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="errorCode" type="xs:string" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getAuthorizationToken">
+    <wsdl:part name="parameters" element="tns:getAuthorizationToken" />
+  </wsdl:message>
+  <wsdl:message name="DataValidationException">
+    <wsdl:part name="DataValidationException" element="tns:DataValidationException" />
+  </wsdl:message>
+  <wsdl:message name="doWriteYearlyPatientDataResponse">
+    <wsdl:part name="parameters" element="tns:doWriteYearlyPatientDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="doWriteSemestralPatientData">
+    <wsdl:part name="parameters" element="tns:doWriteSemestralPatientData" />
+  </wsdl:message>
+  <wsdl:message name="doWriteSemestralPatientDataResponse">
+    <wsdl:part name="parameters" element="tns:doWriteSemestralPatientDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="doWriteYearlyPatientData">
+    <wsdl:part name="parameters" element="tns:doWriteYearlyPatientData" />
+  </wsdl:message>
+  <wsdl:message name="getVersion">
+    <wsdl:part name="parameters" element="tns:getVersion" />
+  </wsdl:message>
+  <wsdl:message name="getAuthorizationTokenResponse">
+    <wsdl:part name="parameters" element="tns:getAuthorizationTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="doWriteQuarterPatientData">
+    <wsdl:part name="parameters" element="tns:doWriteQuarterPatientData" />
+  </wsdl:message>
+  <wsdl:message name="IllegalArgumentException">
+    <wsdl:part name="IllegalArgumentException" element="tns:IllegalArgumentException" />
+  </wsdl:message>
+  <wsdl:message name="AIRApplicationException">
+    <wsdl:part name="AIRApplicationException" element="tns:AIRApplicationException" />
+  </wsdl:message>
+  <wsdl:message name="doWriteQuarterPatientDataResponse">
+    <wsdl:part name="parameters" element="tns:doWriteQuarterPatientDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="doEndRelevationResponse">
+    <wsdl:part name="parameters" element="tns:doEndRelevationResponse" />
+  </wsdl:message>
+  <wsdl:message name="doEndRelevation">
+    <wsdl:part name="parameters" element="tns:doEndRelevation" />
+  </wsdl:message>
+  <wsdl:message name="getVersionResponse">
+    <wsdl:part name="parameters" element="tns:getVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="doWriteStartUpPatientData">
+    <wsdl:part name="parameters" element="tns:doWriteStartUpPatientData" />
+  </wsdl:message>
+  <wsdl:message name="doWriteStartUpPatientDataResponse">
+    <wsdl:part name="parameters" element="tns:doWriteStartUpPatientDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkPatientCFResponse">
+    <wsdl:part name="parameters" element="tns:checkPatientCFResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkPatientCF">
+    <wsdl:part name="parameters" element="tns:checkPatientCF" />
+  </wsdl:message>
+  <wsdl:portType name="RelevationWebService">
+    <wsdl:operation name="doWriteStartUpPatientData">
+      <wsdl:input name="doWriteStartUpPatientData" message="tns:doWriteStartUpPatientData" />
+      <wsdl:output name="doWriteStartUpPatientDataResponse" message="tns:doWriteStartUpPatientDataResponse" />
+      <wsdl:fault name="AIRApplicationException" message="tns:AIRApplicationException" />
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException" />
+      <wsdl:fault name="DataValidationException" message="tns:DataValidationException" />
+    </wsdl:operation>
+    <wsdl:operation name="doWriteSemestralPatientData">
+      <wsdl:input name="doWriteSemestralPatientData" message="tns:doWriteSemestralPatientData" />
+      <wsdl:output name="doWriteSemestralPatientDataResponse" message="tns:doWriteSemestralPatientDataResponse" />
+      <wsdl:fault name="AIRApplicationException" message="tns:AIRApplicationException" />
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException" />
+      <wsdl:fault name="DataValidationException" message="tns:DataValidationException" />
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <wsdl:input name="getVersion" message="tns:getVersion" />
+      <wsdl:output name="getVersionResponse" message="tns:getVersionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="checkPatientCF">
+      <wsdl:input name="checkPatientCF" message="tns:checkPatientCF" />
+      <wsdl:output name="checkPatientCFResponse" message="tns:checkPatientCFResponse" />
+      <wsdl:fault name="AIRApplicationException" message="tns:AIRApplicationException" />
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException" />
+      <wsdl:fault name="DataValidationException" message="tns:DataValidationException" />
+    </wsdl:operation>
+    <wsdl:operation name="doWriteQuarterPatientData">
+      <wsdl:input name="doWriteQuarterPatientData" message="tns:doWriteQuarterPatientData" />
+      <wsdl:output name="doWriteQuarterPatientDataResponse" message="tns:doWriteQuarterPatientDataResponse" />
+      <wsdl:fault name="AIRApplicationException" message="tns:AIRApplicationException" />
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException" />
+      <wsdl:fault name="DataValidationException" message="tns:DataValidationException" />
+    </wsdl:operation>
+    <wsdl:operation name="doWriteYearlyPatientData">
+      <wsdl:input name="doWriteYearlyPatientData" message="tns:doWriteYearlyPatientData" />
+      <wsdl:output name="doWriteYearlyPatientDataResponse" message="tns:doWriteYearlyPatientDataResponse" />
+      <wsdl:fault name="AIRApplicationException" message="tns:AIRApplicationException" />
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException" />
+      <wsdl:fault name="DataValidationException" message="tns:DataValidationException" />
+    </wsdl:operation>
+    <wsdl:operation name="doEndRelevation">
+      <wsdl:input name="doEndRelevation" message="tns:doEndRelevation" />
+      <wsdl:output name="doEndRelevationResponse" message="tns:doEndRelevationResponse" />
+      <wsdl:fault name="AIRApplicationException" message="tns:AIRApplicationException" />
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException" />
+      <wsdl:fault name="DataValidationException" message="tns:DataValidationException" />
+    </wsdl:operation>
+    <wsdl:operation name="getAuthorizationToken">
+      <wsdl:input name="getAuthorizationToken" message="tns:getAuthorizationToken" />
+      <wsdl:output name="getAuthorizationTokenResponse" message="tns:getAuthorizationTokenResponse" />
+      <wsdl:fault name="AIRApplicationException" message="tns:AIRApplicationException" />
+      <wsdl:fault name="DataValidationException" message="tns:DataValidationException" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RelevationServiceSoapBinding" type="tns:RelevationWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="doWriteStartUpPatientData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="doWriteStartUpPatientData">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="doWriteStartUpPatientDataResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AIRApplicationException">
+        <soap:fault use="literal" name="AIRApplicationException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap:fault use="literal" name="IllegalArgumentException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DataValidationException">
+        <soap:fault use="literal" name="DataValidationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doWriteSemestralPatientData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="doWriteSemestralPatientData">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="doWriteSemestralPatientDataResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AIRApplicationException">
+        <soap:fault use="literal" name="AIRApplicationException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap:fault use="literal" name="IllegalArgumentException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DataValidationException">
+        <soap:fault use="literal" name="DataValidationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getVersion">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getVersionResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkPatientCF">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="checkPatientCF">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="checkPatientCFResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AIRApplicationException">
+        <soap:fault use="literal" name="AIRApplicationException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap:fault use="literal" name="IllegalArgumentException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DataValidationException">
+        <soap:fault use="literal" name="DataValidationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doWriteQuarterPatientData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="doWriteQuarterPatientData">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="doWriteQuarterPatientDataResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AIRApplicationException">
+        <soap:fault use="literal" name="AIRApplicationException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap:fault use="literal" name="IllegalArgumentException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DataValidationException">
+        <soap:fault use="literal" name="DataValidationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doEndRelevation">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="doEndRelevation">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="doEndRelevationResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AIRApplicationException">
+        <soap:fault use="literal" name="AIRApplicationException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap:fault use="literal" name="IllegalArgumentException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DataValidationException">
+        <soap:fault use="literal" name="DataValidationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doWriteYearlyPatientData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="doWriteYearlyPatientData">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="doWriteYearlyPatientDataResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AIRApplicationException">
+        <soap:fault use="literal" name="AIRApplicationException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap:fault use="literal" name="IllegalArgumentException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DataValidationException">
+        <soap:fault use="literal" name="DataValidationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAuthorizationToken">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getAuthorizationToken">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAuthorizationTokenResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AIRApplicationException">
+        <soap:fault use="literal" name="AIRApplicationException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DataValidationException">
+        <soap:fault use="literal" name="DataValidationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RelevationService">
+    <wsdl:port name="RelevationServicePort" binding="tns:RelevationServiceSoapBinding">
+      <soap:address location="https://air.di.unisa.it:8443/AIR-EJBWS/RelevationService/RelevationWebService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

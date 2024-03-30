@@ -1,0 +1,9 @@
+C:\Users\cattaneo.DIASERV\DocumentiLocali\Visual Studio 2010\Projects\FieldOPSWS\FieldOPSWS\bin\FieldOPSWS.dll
+C:\Users\cattaneo.DIASERV\DocumentiLocali\Visual Studio 2010\Projects\FieldOPSWS\FieldOPSWS\bin\FieldOPSWS.pdb
+C:\Users\cattaneo.DIASERV\DocumentiLocali\Visual Studio 2010\Projects\FieldOPSWS\FieldOPSWS\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\cattaneo.DIASERV\DocumentiLocali\Visual Studio 2010\Projects\FieldOPSWS\FieldOPSWS\obj\Debug\FieldOPSWS.dll
+C:\Users\cattaneo.DIASERV\DocumentiLocali\Visual Studio 2010\Projects\FieldOPSWS\FieldOPSWS\obj\Debug\FieldOPSWS.pdb
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\FieldOPSWS\FieldOPSWS\bin\FieldOPSWS.dll
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\FieldOPSWS\FieldOPSWS\bin\FieldOPSWS.pdb
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\FieldOPSWS\FieldOPSWS\obj\Debug\FieldOPSWS.dll
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\FieldOPSWS\FieldOPSWS\obj\Debug\FieldOPSWS.pdb

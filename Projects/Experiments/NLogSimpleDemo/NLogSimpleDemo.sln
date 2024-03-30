@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLogSimpleDemo", "NLogSimpleDemo\NLogSimpleDemo.csproj", "{BCEAE555-1D8D-4D4E-BAA7-43D5A4D9A96B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCEAE555-1D8D-4D4E-BAA7-43D5A4D9A96B}.Debug|x86.ActiveCfg = Debug|x86
+		{BCEAE555-1D8D-4D4E-BAA7-43D5A4D9A96B}.Debug|x86.Build.0 = Debug|x86
+		{BCEAE555-1D8D-4D4E-BAA7-43D5A4D9A96B}.Release|x86.ActiveCfg = Release|x86
+		{BCEAE555-1D8D-4D4E-BAA7-43D5A4D9A96B}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

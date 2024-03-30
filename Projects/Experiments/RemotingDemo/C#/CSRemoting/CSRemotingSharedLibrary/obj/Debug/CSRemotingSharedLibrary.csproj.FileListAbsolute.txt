@@ -1,0 +1,5 @@
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\RemotingDemo\C#\Debug\CSRemotingSharedLibrary.dll
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\RemotingDemo\C#\Debug\CSRemotingSharedLibrary.pdb
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\RemotingDemo\C#\CSRemoting\CSRemotingSharedLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\RemotingDemo\C#\CSRemoting\CSRemotingSharedLibrary\obj\Debug\CSRemotingSharedLibrary.dll
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\RemotingDemo\C#\CSRemoting\CSRemotingSharedLibrary\obj\Debug\CSRemotingSharedLibrary.pdb

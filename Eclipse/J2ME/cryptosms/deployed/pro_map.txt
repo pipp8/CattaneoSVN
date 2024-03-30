@@ -1,0 +1,748 @@
+org.bouncycastle.asn1.x9.X9IntegerConverter -> at:
+    int getByteLength(org.bouncycastle.math.ec.ECFieldElement) -> a
+    byte[] integerToBytes(org.bouncycastle.math.BigInteger,int) -> a
+org.bouncycastle.crypto.AsymmetricCipherKeyPair -> be:
+    org.bouncycastle.crypto.CipherParameters publicParam -> a
+    org.bouncycastle.crypto.CipherParameters privateParam -> b
+org.bouncycastle.crypto.BufferedBlockCipher -> ae:
+    byte[] buf -> a
+    int bufOff -> b
+    org.bouncycastle.crypto.engines.AESFastEngine cipher$7509190d -> c
+    boolean partialBlockOkay -> d
+    boolean pgpCFB -> e
+    void init(boolean,org.bouncycastle.crypto.CipherParameters) -> a
+    int getBlockSize() -> a
+    int getUpdateOutputSize(int) -> b
+    int getOutputSize(int) -> a
+    int processBytes(byte[],int,int,byte[],int) -> a
+    int doFinal(byte[],int) -> a
+    void reset() -> b
+org.bouncycastle.crypto.CipherParameters -> bf:
+org.bouncycastle.crypto.CryptoException -> bd:
+org.bouncycastle.crypto.DataLengthException -> bh:
+org.bouncycastle.crypto.DerivationParameters -> aa:
+org.bouncycastle.crypto.InvalidCipherTextException -> bs:
+org.bouncycastle.crypto.RuntimeCryptoException -> u:
+org.bouncycastle.crypto.agreement.ECDHBasicAgreement -> a:
+    org.bouncycastle.crypto.params.ECPrivateKeyParameters key -> a
+    void init(org.bouncycastle.crypto.CipherParameters) -> a
+    org.bouncycastle.math.BigInteger calculateAgreement(org.bouncycastle.crypto.CipherParameters) -> b
+org.bouncycastle.crypto.digests.GeneralDigest -> cc:
+    byte[] xBuf -> a
+    int xBufOff -> b
+    long byteCount -> c
+    void update(byte) -> a
+    void update(byte[],int,int) -> a
+    void finish() -> e
+    void reset() -> c
+    int getByteLength() -> f
+    void processWord(byte[],int) -> a
+    void processLength(long) -> a
+    void processBlock() -> d
+    int getDigestSize() -> b
+    java.lang.String getAlgorithmName() -> a
+    int doFinal(byte[],int) -> b
+org.bouncycastle.crypto.digests.SHA1Digest -> ai:
+    int H1 -> a
+    int H2 -> b
+    int H3 -> c
+    int H4 -> d
+    int H5 -> e
+    int[] X -> f
+    int xOff -> g
+    java.lang.String getAlgorithmName() -> a
+    int getDigestSize() -> b
+    void processWord(byte[],int) -> a
+    void unpackWord(int,byte[],int) -> a
+    void processLength(long) -> a
+    int doFinal(byte[],int) -> b
+    void reset() -> c
+    int f(int,int,int) -> a
+    int h(int,int,int) -> b
+    int g(int,int,int) -> c
+    void processBlock() -> d
+org.bouncycastle.crypto.digests.SHA256Digest -> ac:
+    int H1 -> b
+    int H2 -> c
+    int H3 -> d
+    int H4 -> e
+    int H5 -> f
+    int H6 -> g
+    int H7 -> h
+    int H8 -> i
+    int[] X -> j
+    int xOff -> k
+    int[] K -> a
+    java.lang.String getAlgorithmName() -> a
+    int getDigestSize() -> b
+    void processWord(byte[],int) -> a
+    void unpackWord(int,byte[],int) -> a
+    void processLength(long) -> a
+    int doFinal(byte[],int) -> b
+    void reset() -> c
+    void processBlock() -> d
+    int Ch(int,int,int) -> a
+    int Maj(int,int,int) -> b
+    int Sum0(int) -> a
+    int Sum1(int) -> b
+    int Theta0(int) -> c
+    int Theta1(int) -> d
+org.bouncycastle.crypto.engines.AESFastEngine -> ad:
+    byte[] S -> a
+    byte[] Si -> b
+    int[] rcon -> c
+    int[] T0 -> d
+    int[] T1 -> e
+    int[] T2 -> f
+    int[] T3 -> g
+    int[] Tinv0 -> h
+    int[] Tinv1 -> i
+    int[] Tinv2 -> j
+    int[] Tinv3 -> k
+    int ROUNDS -> l
+    int[][] WorkingKey -> m
+    int C0 -> n
+    int C1 -> o
+    int C2 -> p
+    int C3 -> q
+    boolean forEncryption -> r
+    int shift(int,int) -> a
+    int FFmulX(int) -> a
+    int inv_mcol(int) -> b
+    int subWord(int) -> c
+    int[][] generateWorkingKey(byte[],boolean) -> a
+    void init(boolean,org.bouncycastle.crypto.CipherParameters) -> a
+    int getBlockSize() -> a
+    int processBlock(byte[],int,byte[],int) -> a
+    void unpackBlock(byte[],int) -> a
+    void packBlock(byte[],int) -> b
+    void encryptBlock(int[][]) -> a
+    void decryptBlock(int[][]) -> b
+org.bouncycastle.crypto.engines.IESEngine -> cb:
+    org.bouncycastle.crypto.agreement.ECDHBasicAgreement agree$3a051f35 -> a
+    org.bouncycastle.crypto.generators.BaseKDFBytesGenerator kdf$47de5d9e -> b
+    org.bouncycastle.crypto.macs.HMac mac$6c1a5e6a -> c
+    org.bouncycastle.crypto.BufferedBlockCipher cipher -> d
+    byte[] macBuf -> e
+    boolean forEncryption -> f
+    org.bouncycastle.crypto.CipherParameters privParam -> g
+    org.bouncycastle.crypto.CipherParameters pubParam -> h
+    org.bouncycastle.crypto.params.IESParameters param -> i
+    void init(boolean,org.bouncycastle.crypto.CipherParameters,org.bouncycastle.crypto.CipherParameters,org.bouncycastle.crypto.CipherParameters) -> a
+    byte[] decryptBlock(byte[],int,int,byte[]) -> a
+    byte[] encryptBlock(byte[],int,int,byte[]) -> b
+    byte[] generateKdfBytes(org.bouncycastle.crypto.params.KDFParameters,int) -> a
+    byte[] processBlock(byte[],int,int) -> a
+org.bouncycastle.crypto.generators.BaseKDFBytesGenerator -> ch:
+    int counterStart -> a
+    org.bouncycastle.crypto.digests.GeneralDigest digest$214ad1ed -> b
+    byte[] shared -> c
+    byte[] iv -> d
+    void init(org.bouncycastle.crypto.DerivationParameters) -> a
+    int generateBytes(byte[],int,int) -> a
+org.bouncycastle.crypto.generators.KDF2BytesGenerator -> d:
+org.bouncycastle.crypto.macs.HMac -> cd:
+    org.bouncycastle.crypto.digests.GeneralDigest digest$214ad1ed -> a
+    int digestSize -> b
+    int blockLength -> c
+    byte[] inputPad -> d
+    byte[] outputPad -> e
+    java.util.Hashtable blockLengths -> f
+    int getByteLength$bbc0615(org.bouncycastle.crypto.digests.GeneralDigest) -> a
+    void init(org.bouncycastle.crypto.CipherParameters) -> a
+    int getMacSize() -> a
+    void update(byte[],int,int) -> a
+    int doFinal(byte[],int) -> a
+    void reset() -> b
+org.bouncycastle.crypto.params.AsymmetricKeyParameter -> x:
+org.bouncycastle.crypto.params.ECDomainParameters -> c:
+    org.bouncycastle.math.ec.ECCurve curve -> a
+    org.bouncycastle.math.ec.ECPoint G -> b
+    org.bouncycastle.math.BigInteger h -> c
+org.bouncycastle.crypto.params.ECKeyParameters -> w:
+    org.bouncycastle.crypto.params.ECDomainParameters params -> b
+org.bouncycastle.crypto.params.ECPrivateKeyParameters -> e:
+    org.bouncycastle.math.BigInteger d -> a
+org.bouncycastle.crypto.params.ECPublicKeyParameters -> g:
+    org.bouncycastle.math.ec.ECPoint Q -> a
+org.bouncycastle.crypto.params.IESParameters -> bc:
+    byte[] derivation -> b
+    byte[] encoding -> c
+    int macKeySize -> d
+org.bouncycastle.crypto.params.IESWithCipherParameters -> ao:
+    int cipherKeySize -> a
+org.bouncycastle.crypto.params.ISO18033KDFParameters -> h:
+    byte[] seed -> a
+org.bouncycastle.crypto.params.KDFParameters -> bu:
+    byte[] iv -> a
+    byte[] shared -> b
+org.bouncycastle.crypto.params.KeyParameter -> bn:
+    byte[] key -> a
+org.bouncycastle.crypto.prng.DigestRandomGenerator -> ax:
+    long counter -> a
+    org.bouncycastle.crypto.digests.GeneralDigest digest$214ad1ed -> b
+    byte[] state -> c
+    void addSeedMaterial(long) -> a
+    void nextBytes(byte[]) -> a
+    void nextBytes(byte[],int,int) -> a
+    void digestUpdate(long) -> b
+    void digestUpdate(byte[]) -> b
+    void digestDoFinal(byte[]) -> c
+org.bouncycastle.math.BigInteger -> aq:
+    int sign -> a
+    int[] magnitude -> d
+    int nBitLength -> e
+    long mQuote -> f
+    byte[] rndMask -> g
+    byte[] bitCounts -> h
+    org.bouncycastle.math.BigInteger ZERO -> b
+    org.bouncycastle.math.BigInteger ONE -> c
+    int[] makeMagnitude(byte[],int) -> a
+    void nextRndBytes(java.util.Random,byte[]) -> a
+    org.bouncycastle.math.BigInteger abs() -> a
+    int[] add(int[],int[]) -> a
+    int[] inc(int[]) -> a
+    org.bouncycastle.math.BigInteger add(org.bouncycastle.math.BigInteger) -> a
+    org.bouncycastle.math.BigInteger addToMagnitude(int[]) -> b
+    int bitLength(int,int[]) -> a
+    int bitLength() -> b
+    int bitLen(int) -> h
+    int compareTo(int,int[],int,int[]) -> a
+    int compareTo(org.bouncycastle.math.BigInteger) -> b
+    int[] divide(int[],int[]) -> b
+    org.bouncycastle.math.BigInteger divide(org.bouncycastle.math.BigInteger) -> h
+    boolean equals(java.lang.Object) -> equals
+    int hashCode() -> hashCode
+    org.bouncycastle.math.BigInteger mod(org.bouncycastle.math.BigInteger) -> c
+    org.bouncycastle.math.BigInteger modInverse(org.bouncycastle.math.BigInteger) -> d
+    org.bouncycastle.math.BigInteger extEuclid(org.bouncycastle.math.BigInteger,org.bouncycastle.math.BigInteger,org.bouncycastle.math.BigInteger,org.bouncycastle.math.BigInteger) -> a
+    void zero(int[]) -> c
+    org.bouncycastle.math.BigInteger modPow(org.bouncycastle.math.BigInteger,org.bouncycastle.math.BigInteger) -> a
+    int[] square(int[],int[]) -> c
+    int[] multiply(int[],int[],int[]) -> a
+    long _extEuclid(long,long,long[]) -> a
+    long _modInverse(long,long) -> a
+    long getMQuote() -> f
+    void multiplyMonty(int[],int[],int[],int[],long) -> a
+    org.bouncycastle.math.BigInteger multiply(org.bouncycastle.math.BigInteger) -> e
+    org.bouncycastle.math.BigInteger negate() -> c
+    org.bouncycastle.math.BigInteger not() -> g
+    int[] remainder(int[],int[]) -> d
+    org.bouncycastle.math.BigInteger remainder(org.bouncycastle.math.BigInteger) -> i
+    int[] shiftLeft(int[],int) -> a
+    org.bouncycastle.math.BigInteger shiftLeft(int) -> a
+    int[] shiftRight(int,int[],int) -> a
+    int[] shiftRightOne(int,int[]) -> b
+    org.bouncycastle.math.BigInteger shiftRight(int) -> b
+    int[] subtract(int,int[],int,int[]) -> b
+    org.bouncycastle.math.BigInteger subtract(org.bouncycastle.math.BigInteger) -> f
+    byte[] toByteArray() -> d
+    org.bouncycastle.math.BigInteger xor(org.bouncycastle.math.BigInteger) -> g
+    org.bouncycastle.math.BigInteger setBit(int) -> c
+    org.bouncycastle.math.BigInteger clearBit(int) -> d
+    org.bouncycastle.math.BigInteger flipBit(int) -> e
+    int[] createResult(int) -> i
+    java.lang.String toString() -> toString
+    java.lang.String toString(int) -> f
+    org.bouncycastle.math.BigInteger valueOf(long) -> a
+    int getLowestSetBit() -> e
+    boolean testBit(int) -> g
+org.bouncycastle.math.ec.ECConstants -> j:
+    org.bouncycastle.math.BigInteger ZERO -> d
+    org.bouncycastle.math.BigInteger ONE -> e
+    org.bouncycastle.math.BigInteger TWO -> f
+org.bouncycastle.math.ec.ECCurve -> aw:
+    org.bouncycastle.math.ec.ECFieldElement a -> a
+    org.bouncycastle.math.ec.ECFieldElement b -> b
+    org.bouncycastle.math.ec.ECFieldElement fromBigInteger(org.bouncycastle.math.BigInteger) -> a
+    org.bouncycastle.math.ec.ECPoint decodePoint(byte[]) -> a
+    org.bouncycastle.math.ec.ECPoint getInfinity() -> a
+org.bouncycastle.math.ec.ECCurve$Fp -> ce:
+    org.bouncycastle.math.BigInteger q -> c
+    org.bouncycastle.math.ec.ECPoint$Fp infinity -> d
+    org.bouncycastle.math.ec.ECFieldElement fromBigInteger(org.bouncycastle.math.BigInteger) -> a
+    org.bouncycastle.math.ec.ECPoint decodePoint(byte[]) -> a
+    org.bouncycastle.math.ec.ECPoint getInfinity() -> a
+    boolean equals(java.lang.Object) -> equals
+    int hashCode() -> hashCode
+org.bouncycastle.math.ec.ECFieldElement -> bt:
+    org.bouncycastle.math.BigInteger x -> b
+    org.bouncycastle.math.ec.ECFieldElement add(org.bouncycastle.math.ec.ECFieldElement) -> a
+    org.bouncycastle.math.ec.ECFieldElement subtract(org.bouncycastle.math.ec.ECFieldElement) -> b
+    org.bouncycastle.math.ec.ECFieldElement multiply(org.bouncycastle.math.ec.ECFieldElement) -> c
+    org.bouncycastle.math.ec.ECFieldElement divide(org.bouncycastle.math.ec.ECFieldElement) -> d
+    org.bouncycastle.math.ec.ECFieldElement negate() -> a
+    org.bouncycastle.math.ec.ECFieldElement square() -> b
+    org.bouncycastle.math.ec.ECFieldElement invert() -> c
+    org.bouncycastle.math.ec.ECFieldElement sqrt() -> d
+    java.lang.String toString() -> toString
+org.bouncycastle.math.ec.ECFieldElement$F2m -> bl:
+    int representation -> c
+    int m -> a
+    int k1 -> g
+    int k2 -> h
+    int k3 -> i
+    void checkFieldElements(org.bouncycastle.math.ec.ECFieldElement,org.bouncycastle.math.ec.ECFieldElement) -> a
+    org.bouncycastle.math.BigInteger multZModF(org.bouncycastle.math.BigInteger) -> a
+    org.bouncycastle.math.ec.ECFieldElement add(org.bouncycastle.math.ec.ECFieldElement) -> a
+    org.bouncycastle.math.ec.ECFieldElement subtract(org.bouncycastle.math.ec.ECFieldElement) -> b
+    org.bouncycastle.math.ec.ECFieldElement multiply(org.bouncycastle.math.ec.ECFieldElement) -> c
+    org.bouncycastle.math.ec.ECFieldElement divide(org.bouncycastle.math.ec.ECFieldElement) -> d
+    org.bouncycastle.math.ec.ECFieldElement negate() -> a
+    org.bouncycastle.math.ec.ECFieldElement square() -> b
+    org.bouncycastle.math.ec.ECFieldElement invert() -> c
+    org.bouncycastle.math.ec.ECFieldElement sqrt() -> d
+    boolean equals(java.lang.Object) -> equals
+    int hashCode() -> hashCode
+org.bouncycastle.math.ec.ECFieldElement$Fp -> ba:
+    org.bouncycastle.math.BigInteger q -> a
+    org.bouncycastle.math.ec.ECFieldElement add(org.bouncycastle.math.ec.ECFieldElement) -> a
+    org.bouncycastle.math.ec.ECFieldElement subtract(org.bouncycastle.math.ec.ECFieldElement) -> b
+    org.bouncycastle.math.ec.ECFieldElement multiply(org.bouncycastle.math.ec.ECFieldElement) -> c
+    org.bouncycastle.math.ec.ECFieldElement divide(org.bouncycastle.math.ec.ECFieldElement) -> d
+    org.bouncycastle.math.ec.ECFieldElement negate() -> a
+    org.bouncycastle.math.ec.ECFieldElement square() -> b
+    org.bouncycastle.math.ec.ECFieldElement invert() -> c
+    org.bouncycastle.math.ec.ECFieldElement sqrt() -> d
+    org.bouncycastle.math.BigInteger[] lucasSequence(org.bouncycastle.math.BigInteger,org.bouncycastle.math.BigInteger,org.bouncycastle.math.BigInteger,org.bouncycastle.math.BigInteger) -> a
+    boolean equals(java.lang.Object) -> equals
+    int hashCode() -> hashCode
+org.bouncycastle.math.ec.ECPoint -> bx:
+    org.bouncycastle.math.ec.ECCurve curve -> a
+    org.bouncycastle.math.ec.ECFieldElement x -> b
+    org.bouncycastle.math.ec.ECFieldElement y -> c
+    org.bouncycastle.asn1.x9.X9IntegerConverter converter -> d
+    boolean isInfinity() -> c
+    boolean equals(java.lang.Object) -> equals
+    int hashCode() -> hashCode
+    byte[] getEncoded() -> a
+    org.bouncycastle.math.ec.ECPoint add(org.bouncycastle.math.ec.ECPoint) -> a
+    org.bouncycastle.math.ec.ECPoint subtract(org.bouncycastle.math.ec.ECPoint) -> b
+    org.bouncycastle.math.ec.ECPoint twice() -> b
+    org.bouncycastle.math.ec.ECPoint multiply(org.bouncycastle.math.BigInteger) -> a
+org.bouncycastle.math.ec.ECPoint$F2m -> ci:
+    boolean withCompression -> d
+    byte[] getEncoded() -> a
+    org.bouncycastle.math.ec.ECPoint add(org.bouncycastle.math.ec.ECPoint) -> a
+    org.bouncycastle.math.ec.ECPoint subtract(org.bouncycastle.math.ec.ECPoint) -> b
+    org.bouncycastle.math.ec.ECPoint twice() -> b
+    org.bouncycastle.math.ec.ECPoint multiply(org.bouncycastle.math.BigInteger) -> a
+org.bouncycastle.math.ec.ECPoint$Fp -> bp:
+    boolean withCompression -> d
+    byte[] getEncoded() -> a
+    org.bouncycastle.math.ec.ECPoint add(org.bouncycastle.math.ec.ECPoint) -> a
+    org.bouncycastle.math.ec.ECPoint twice() -> b
+    org.bouncycastle.math.ec.ECPoint subtract(org.bouncycastle.math.ec.ECPoint) -> b
+    org.bouncycastle.math.ec.ECPoint multiply(org.bouncycastle.math.BigInteger) -> a
+org.bouncycastle.security.SecureRandom -> n:
+    org.bouncycastle.crypto.prng.DigestRandomGenerator generator$527189f5 -> a
+    org.bouncycastle.security.SecureRandom getInstance(java.lang.String) -> a
+    byte[] generateSeed(int) -> a
+    void nextBytes(byte[]) -> a
+    void setSeed(long) -> setSeed
+    int nextInt() -> nextInt
+    int next(int) -> next
+org.bouncycastle.util.encoders.Hex -> l:
+    org.bouncycastle.util.encoders.HexEncoder encoder$1946a372 -> a
+    byte[] decode(java.lang.String) -> a
+org.bouncycastle.util.encoders.HexEncoder -> af:
+    byte[] encodingTable -> a
+    byte[] decodingTable -> b
+    void initialiseDecodingTable() -> a
+    boolean ignore(char) -> a
+    int decode(java.lang.String,java.io.OutputStream) -> a
+org.cryptosms.book.Address -> ak:
+    org.cryptosms.book.Person _person -> a
+    java.lang.String _url -> b
+    int _publicKeyLen -> c
+    boolean _hasKey -> d
+org.cryptosms.book.AddressService -> bo:
+    org.cryptosms.book.AddressService _adressService -> a
+    org.cryptosms.helpers.CryptedRecordStore _persons -> b
+    org.cryptosms.helpers.CryptedRecordStore _numbers -> c
+    org.cryptosms.helpers.CryptedRecordStore _messages -> d
+    org.cryptosms.helpers.CryptedRecordStore _settings -> e
+    void init(org.cryptosms.gui.CryptoSMSMidlet) -> a
+    void saveMessage(org.cryptosms.book.CMessage) -> a
+    org.cryptosms.book.Settings getSetting() -> a
+    org.cryptosms.book.Settings saveSettings(java.lang.String,java.lang.String,org.cryptosms.helpers.KeyPairHelper) -> a
+    void deleteMessage(org.cryptosms.book.CMessage) -> b
+    org.cryptosms.book.CMessage[] getInboxUnreadMessages() -> b
+    org.cryptosms.book.CMessage[] getInboxReadMessages() -> c
+    org.cryptosms.book.CMessage[] getPKServerChallenge() -> d
+    org.cryptosms.book.CMessage[] getPKRegisterRequest() -> e
+    org.cryptosms.book.CMessage[] getMessagesFromEnumeration(javax.microedition.rms.RecordEnumeration) -> a
+    org.cryptosms.book.Person getPerson(int) -> a
+    org.cryptosms.book.Address findAdress4Url(java.lang.String) -> a
+org.cryptosms.book.AddressUrlFilter -> cg:
+    java.lang.String _url -> a
+    boolean matches(byte[]) -> matches
+org.cryptosms.book.CMessage -> ca:
+    int _rmsID -> a
+    java.util.Date _time -> b
+    byte[] _data -> c
+    java.lang.String _sender -> d
+    java.lang.String _receiver -> f
+    byte _type -> e
+    byte _version -> g
+    byte[] getBytes() -> a
+    byte[] prepareForTransport() -> b
+    org.cryptosms.book.CMessage createFromTransport(javax.wireless.messaging.BinaryMessage) -> a
+org.cryptosms.book.MessageTypeFilter -> bi:
+    byte _mType -> a
+    boolean matches(byte[]) -> matches
+org.cryptosms.book.Person -> al:
+    java.lang.String _name -> a
+org.cryptosms.book.Settings -> i:
+    org.cryptosms.book.Settings _settings -> d
+    java.lang.String _name -> a
+    java.lang.String _number -> b
+    org.cryptosms.helpers.KeyPairHelper _keyPair -> c
+    java.lang.String build -> e
+    org.cryptosms.helpers.Logger logger -> f
+    org.cryptosms.book.Settings init(byte[]) -> a
+    org.cryptosms.book.Settings init(java.lang.String,java.lang.String,org.cryptosms.helpers.KeyPairHelper) -> a
+    org.cryptosms.book.Settings findSettings() -> a
+    byte[] getPublicKey() -> b
+    java.lang.String getVersion() -> c
+    byte[] toBytes() -> d
+org.cryptosms.connection.MessageReader -> m:
+    org.cryptosms.gui.CryptoSMSMidlet midlet -> a
+    org.cryptosms.connection.MessageReader _mr -> b
+    org.cryptosms.helpers.Logger log -> c
+    javax.microedition.rms.RecordStore incommingStore -> d
+    org.cryptosms.connection.MessageReader worker -> e
+    org.cryptosms.connection.MessageReader getInstance() -> b
+    void init(org.cryptosms.gui.CryptoSMSMidlet) -> a
+    org.cryptosms.book.CMessage loadMessage() -> c
+    void run() -> run
+    void stop() -> a
+org.cryptosms.connection.MessageSender -> av:
+    java.lang.Thread sender -> a
+    org.cryptosms.connection.MessageSender instance -> b
+    java.util.Vector queue -> c
+    org.cryptosms.gui.CryptoSMSMidlet midlet -> d
+    org.cryptosms.helpers.Logger log -> e
+    org.cryptosms.connection.MessageSender getInstance() -> a
+    void init(org.cryptosms.gui.CryptoSMSMidlet) -> a
+    void send(java.lang.String,byte[]) -> a
+    void run() -> run
+    java.lang.String numberToUrl(java.lang.String) -> a
+    java.lang.String sanitizeNumber(java.lang.String) -> b
+    org.cryptosms.connection.MessageSender$QueuedMessage accessQueue(boolean,java.lang.String,byte[]) -> a
+    void enqueue(java.lang.String,byte[]) -> b
+    org.cryptosms.connection.MessageSender$QueuedMessage dequeue() -> b
+org.cryptosms.connection.MessageSender$QueuedMessage -> t:
+    java.lang.String url -> a
+    byte[] payload -> b
+org.cryptosms.connection.Receiver -> az:
+    javax.wireless.messaging.MessageConnection connection -> a
+    org.cryptosms.helpers.Logger log -> b
+    javax.microedition.rms.RecordStore incommingStore -> c
+    org.cryptosms.connection.Receiver receiver -> d
+    org.cryptosms.connection.Receiver getInstance() -> a
+    org.cryptosms.connection.Receiver dirtyInit() -> b
+    org.cryptosms.connection.Receiver getReceiver() -> c
+    javax.wireless.messaging.MessageConnection getConnection() -> d
+    void setConnection(javax.wireless.messaging.MessageConnection) -> a
+    void notifyIncomingMessage(javax.wireless.messaging.MessageConnection) -> notifyIncomingMessage
+    void saveMessage(javax.wireless.messaging.Message) -> a
+org.cryptosms.gui.CryptoSMSMidlet -> org.cryptosms.gui.CryptoSMSMidlet:
+    javax.microedition.lcdui.Displayable menu -> a
+    org.cryptosms.helpers.PassphraseTimer timer -> e
+    org.cryptosms.book.Settings _settings -> b
+    org.cryptosms.helpers.ResourceManager res -> c
+    javax.microedition.lcdui.Form splashScreen -> f
+    org.cryptosms.helpers.Logger log -> g
+    org.cryptosms.connection.Receiver receiver -> h
+    javax.microedition.lcdui.Ticker ticker -> d
+    org.cryptosms.helpers.TickerTask tickerTask -> i
+    void initAddressService(java.lang.String) -> a
+    void notify(java.lang.Object) -> a
+    void destroyApp(boolean) -> destroyApp
+    void openUnreadMessageList() -> a
+    void openReadMessageList() -> b
+    void Registrazione() -> c
+    void openExitScreen() -> d
+    void pauseApp() -> pauseApp
+    void showError(java.lang.String) -> b
+    void showInfo(java.lang.String) -> c
+    void showMenu() -> e
+    void startApp() -> startApp
+    void startPPTimer() -> f
+    void showSplash(java.lang.String) -> d
+    void openInfoScreen() -> g
+    void dumpLog() -> h
+    void finishInit() -> i
+    void setTicketText(java.lang.String) -> e
+org.cryptosms.gui.EraserMidlet -> org.cryptosms.gui.EraserMidlet:
+    javax.microedition.lcdui.Display display -> a
+    javax.microedition.lcdui.Form form -> b
+    javax.microedition.lcdui.Command CMD_OK -> c
+    javax.microedition.lcdui.Command CMD_EXIT -> d
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+    void destroyApp(boolean) -> destroyApp
+    void pauseApp() -> pauseApp
+    void startApp() -> startApp
+org.cryptosms.gui.ErrorScreen -> o:
+    void showE(javax.microedition.lcdui.Display,java.lang.String,javax.microedition.lcdui.Displayable) -> a
+    void showI(javax.microedition.lcdui.Display,java.lang.String,javax.microedition.lcdui.Displayable) -> b
+    void show(javax.microedition.lcdui.Display,java.lang.String,javax.microedition.lcdui.Displayable,javax.microedition.lcdui.AlertType) -> a
+org.cryptosms.gui.ExitScreen -> bj:
+    javax.microedition.lcdui.Command CMD_YES -> a
+    javax.microedition.lcdui.Command CMD_NO -> b
+    org.cryptosms.gui.CryptoSMSMidlet midlet -> c
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+org.cryptosms.gui.InfoScreen -> bg:
+    javax.microedition.lcdui.Command ok -> a
+    javax.microedition.lcdui.Command alterNumber -> b
+    org.cryptosms.gui.CryptoSMSMidlet midlet -> c
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+org.cryptosms.gui.LogOutput -> br:
+    javax.microedition.lcdui.Command CMD_EXIT -> a
+    org.cryptosms.gui.CryptoSMSMidlet midlet -> b
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+org.cryptosms.gui.Login -> am:
+    javax.microedition.lcdui.Command ok -> a
+    javax.microedition.lcdui.Command exit -> b
+    org.cryptosms.gui.CryptoSMSMidlet midlet -> c
+    int counter -> d
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+org.cryptosms.gui.Menu -> bq:
+    javax.microedition.lcdui.Command exit -> a
+    javax.microedition.lcdui.Command ok -> b
+    org.cryptosms.gui.CryptoSMSMidlet gui -> c
+    java.lang.String[] mainMenu -> d
+    void buildList() -> a
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+org.cryptosms.gui.MessageList -> ay:
+    org.cryptosms.gui.CryptoSMSMidlet gui -> a
+    org.cryptosms.book.CMessage[] messages -> b
+    javax.microedition.lcdui.Command back -> c
+    javax.microedition.lcdui.Command showText -> d
+    javax.microedition.lcdui.Command delete -> e
+    void setMessages() -> a
+    void deleteMessage(org.cryptosms.book.CMessage) -> a
+    java.lang.String getMessageText(org.cryptosms.book.CMessage) -> b
+    java.lang.String getNumber(org.cryptosms.book.CMessage) -> c
+    void buildList() -> b
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+    void access$0(org.cryptosms.gui.MessageList) -> a
+org.cryptosms.gui.MessageList$MessageText -> bz:
+    javax.microedition.lcdui.Command ok -> c
+    org.cryptosms.gui.MessageList nl -> a
+    org.cryptosms.gui.MessageList this$0 -> b
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+org.cryptosms.gui.ModalAlert -> ah:
+    javax.microedition.lcdui.Displayable dspBACK -> d
+    javax.microedition.lcdui.Display d -> e
+    org.cryptosms.gui.menuRegistrazione mr -> f
+    javax.microedition.lcdui.Command CMD_ESCI -> a
+    javax.microedition.lcdui.Command CMD_REINVIO -> b
+    javax.microedition.lcdui.Command CMD_INVIO -> c
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+org.cryptosms.gui.ProgressScreen -> v:
+    javax.microedition.lcdui.Displayable _next -> b
+    org.cryptosms.gui.ProgressScreen$Progress _progress -> a
+    javax.microedition.lcdui.Gauge _gauge -> d
+    javax.microedition.lcdui.TextField _status -> e
+    javax.microedition.lcdui.Display _display -> c
+    void setStatus(java.lang.String) -> a
+    void stop() -> a
+    void run() -> run
+org.cryptosms.gui.ProgressScreen$Progress -> ag:
+    int i -> a
+    boolean _running -> b
+    javax.microedition.lcdui.Gauge g -> c
+    void run() -> run
+    void stop() -> a
+org.cryptosms.gui.ReadMessageList -> by:
+    void deleteMessage(org.cryptosms.book.CMessage) -> a
+    java.lang.String getMessageText(org.cryptosms.book.CMessage) -> b
+    void setMessages() -> a
+    java.lang.String getNumber(org.cryptosms.book.CMessage) -> c
+org.cryptosms.gui.ScannerMidlet -> org.cryptosms.gui.ScannerMidlet:
+    javax.microedition.lcdui.Display display -> a
+    javax.microedition.lcdui.Form form -> b
+    javax.microedition.lcdui.Command CMD_EXIT -> c
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+    void destroyApp(boolean) -> destroyApp
+    void pauseApp() -> pauseApp
+    void startApp() -> startApp
+org.cryptosms.gui.Setup -> bw:
+    javax.microedition.lcdui.Command ok -> f
+    javax.microedition.lcdui.TextField name -> a
+    javax.microedition.lcdui.TextField number -> b
+    javax.microedition.lcdui.TextField pass -> c
+    javax.microedition.lcdui.TextField repeatPass -> d
+    org.cryptosms.gui.CryptoSMSMidlet midlet -> e
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+org.cryptosms.gui.Setup$1 -> f:
+    org.cryptosms.gui.Setup this$0 -> a
+    void run() -> run
+org.cryptosms.gui.UnreadMessageList -> bb:
+    java.lang.String text1 -> c
+    void deleteMessage(org.cryptosms.book.CMessage) -> a
+    java.lang.String getNumber(org.cryptosms.book.CMessage) -> c
+    java.lang.String getMessageText(org.cryptosms.book.CMessage) -> b
+    void setMessages() -> a
+org.cryptosms.gui.UnreadMessageList$1 -> q:
+    org.cryptosms.gui.UnreadMessageList this$0 -> a
+    org.cryptosms.book.CMessage val$m -> d
+    org.cryptosms.gui.MessageList$MessageText val$mt -> e
+    void run() -> run
+org.cryptosms.gui.menuRegistrazione -> z:
+    javax.microedition.lcdui.Command exit -> a
+    javax.microedition.lcdui.Command ok -> b
+    org.cryptosms.gui.CryptoSMSMidlet gui -> c
+    java.lang.String[] mainMenu -> d
+    java.lang.String SMSC -> e
+    boolean isEmulator() -> c
+    void buildList() -> d
+    void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+    void cancellaRichieste() -> a
+    void richiestaAttivazione() -> b
+    void creaFakeChallenge() -> e
+    boolean richiestaGiaInviata() -> f
+    void confermaAttivazione() -> g
+    void completaRegistrazione(org.cryptosms.book.CMessage) -> a
+    org.cryptosms.book.CMessage ottieniChallenge() -> h
+    org.cryptosms.gui.CryptoSMSMidlet access$0(org.cryptosms.gui.menuRegistrazione) -> a
+    java.lang.String access$1(org.cryptosms.gui.menuRegistrazione) -> b
+org.cryptosms.gui.menuRegistrazione$1 -> p:
+    org.cryptosms.gui.menuRegistrazione this$0 -> a
+    void run() -> run
+org.cryptosms.gui.menuRegistrazione$2 -> ab:
+    org.cryptosms.gui.menuRegistrazione this$0 -> a
+    org.cryptosms.book.CMessage val$challenge -> d
+    void run() -> run
+org.cryptosms.helpers.CacheEnumeration -> ar:
+    org.cryptosms.helpers.RSCache _cache -> a
+    int[] _recIds -> b
+    javax.microedition.rms.RecordFilter _rf -> c
+    javax.microedition.rms.RecordComparator _rc -> d
+    int _currentRecIndex -> e
+    void destroy() -> destroy
+    void intialize() -> a
+    void destroyed() -> b
+    boolean hasNextElement() -> hasNextElement
+    boolean hasPreviousElement() -> hasPreviousElement
+    boolean isKeptUpdated() -> isKeptUpdated
+    void keepUpdated(boolean) -> keepUpdated
+    byte[] nextRecord() -> nextRecord
+    int nextRecordId() -> nextRecordId
+    int numRecords() -> numRecords
+    byte[] previousRecord() -> previousRecord
+    int previousRecordId() -> previousRecordId
+    void sort(int[],int,int) -> a
+    void rebuild() -> rebuild
+    void reset() -> reset
+org.cryptosms.helpers.CountryCode -> as:
+    java.lang.String code -> a
+    java.lang.String replacement -> b
+org.cryptosms.helpers.CountryCodeStore -> r:
+    java.util.Vector CountryCodes -> a
+    boolean compareNumbers(java.lang.String,java.lang.String) -> a
+org.cryptosms.helpers.CryptedRecordEnumeration -> bv:
+    org.cryptosms.helpers.CryptedRecordStore _store -> a
+    int[] _recIds -> b
+    int _currentRec -> c
+    void intialize() -> c
+    void destroyed() -> d
+    boolean hasNextElement() -> a
+    byte[] nextRecord() -> b
+    int nextRecordId() -> e
+    int numRecords() -> f
+org.cryptosms.helpers.CryptedRecordStore -> y:
+    boolean initialized -> a
+    javax.microedition.rms.RecordStore magic_cookie_store -> b
+    byte[] MAGIC_COOKIE -> c
+    org.bouncycastle.crypto.engines.AESFastEngine encryptEngine -> d
+    org.bouncycastle.crypto.engines.AESFastEngine decryptEngine -> e
+    org.bouncycastle.crypto.params.KeyParameter param -> f
+    javax.microedition.rms.RecordStore store -> g
+    org.cryptosms.helpers.RSCache cache -> h
+    void initialize(byte[]) -> b
+    boolean checkPassword() -> e
+    void init(java.lang.String) -> a
+    org.cryptosms.helpers.CryptedRecordStore open(java.lang.String,boolean) -> a
+    void addRecord(byte[]) -> a
+    org.cryptosms.helpers.CryptedRecordEnumeration enumerateCryptedRecords$298ec7b3() -> a
+    int[] getRecordIds() -> b
+    byte[] getRecord(int) -> a
+    byte[] encrypt(byte[]) -> c
+    byte[] decrypt(byte[]) -> d
+    java.lang.String getName() -> c
+    void deleteRecord(int) -> b
+    boolean hasPass() -> d
+    org.cryptosms.helpers.CacheEnumeration enumerateCache(javax.microedition.rms.RecordFilter,javax.microedition.rms.RecordComparator) -> a
+org.cryptosms.helpers.CryptoHelper -> ap:
+    org.bouncycastle.math.ec.ECCurve cFp192v1 -> a
+    org.bouncycastle.crypto.params.ECDomainParameters prime192v1 -> b
+    org.bouncycastle.security.SecureRandom PRNG -> c
+    int NONCE_SIZE -> d
+    int PRIV_KEY_SIZE -> e
+    org.bouncycastle.crypto.params.ECDomainParameters ecparms -> f
+    void initPRNG() -> a
+    byte[] encrypt(byte[],byte[]) -> a
+    byte[] decrypt(byte[],org.bouncycastle.crypto.AsymmetricCipherKeyPair) -> a
+    org.cryptosms.helpers.KeyPairHelper generateKeyPairHelper(org.cryptosms.gui.ProgressScreen) -> a
+    org.bouncycastle.crypto.params.ECPublicKeyParameters generatePublicKey(org.bouncycastle.crypto.params.ECPrivateKeyParameters) -> a
+    byte[] privateKeyArrayFromACKeyPair(org.bouncycastle.crypto.AsymmetricCipherKeyPair) -> a
+    byte[] publicKeyArrayFromACKeyPair(org.bouncycastle.crypto.AsymmetricCipherKeyPair) -> b
+    org.bouncycastle.crypto.AsymmetricCipherKeyPair ACKeyPairFromByteArrays(byte[],byte[]) -> b
+org.cryptosms.helpers.Helpers -> bk:
+    java.lang.String dateToStringFull(java.util.Date) -> a
+    boolean compareByteArray(byte[],byte[]) -> a
+    boolean isWhitespace(char) -> a
+    java.util.Hashtable splitTokens(java.lang.String) -> a
+    java.lang.String getNumberFromUrl(java.lang.String) -> b
+org.cryptosms.helpers.KeyPairHelper -> aj:
+    byte[] _privateKeyBA -> a
+    byte[] _publicKeyBA -> b
+    org.bouncycastle.crypto.AsymmetricCipherKeyPair _keyPair -> c
+org.cryptosms.helpers.Logger -> cf:
+    org.cryptosms.helpers.Logger instance -> a
+    java.lang.String[] buffer -> b
+    int next -> c
+    boolean turnaround -> d
+    org.cryptosms.helpers.Logger getInstance() -> a
+    void write(java.lang.String) -> a
+    java.lang.String[] readout() -> b
+    void reset() -> c
+org.cryptosms.helpers.NullEncoder -> au:
+    byte[] encode(byte[]) -> a
+    byte[] decode(byte[]) -> b
+org.cryptosms.helpers.PassphraseTimer -> cj:
+    java.util.Timer timer -> b
+    org.cryptosms.helpers.PassphraseTimer$Task task -> c
+    org.cryptosms.gui.CryptoSMSMidlet observing -> a
+    void start() -> a
+    void notifyObserver() -> b
+org.cryptosms.helpers.PassphraseTimer$Task -> bm:
+    boolean valid -> a
+    org.cryptosms.helpers.PassphraseTimer runtime -> b
+    void run() -> run
+org.cryptosms.helpers.RSCache -> s:
+    java.util.Vector records -> a
+    void add(org.cryptosms.helpers.Record) -> a
+    byte[] getData(int) -> a
+    int getCacheID4RecordID(int) -> c
+    void deleteRecord(int) -> b
+    org.cryptosms.helpers.CacheEnumeration getEnumeration(javax.microedition.rms.RecordFilter,javax.microedition.rms.RecordComparator) -> a
+    int[] getRecordIds(javax.microedition.rms.RecordFilter) -> a
+org.cryptosms.helpers.Record -> k:
+    int id -> a
+    byte[] record -> b
+org.cryptosms.helpers.ResourceManager -> an:
+    java.util.Hashtable tokenMap -> a
+    java.lang.String getString(java.lang.String) -> a
+org.cryptosms.helpers.TickerTask -> b:
+    org.cryptosms.gui.CryptoSMSMidlet midlet -> a
+    java.util.Timer timer -> b
+    int counter -> c
+    void run() -> run
+    void incrCounter() -> b
+    int readCounter() -> c
+    void resetCounter() -> a
+    int accessCounter(int) -> a

@@ -1,0 +1,10 @@
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\WCFServiceSample\WcfClient\bin\Debug\WcfClient.exe.config
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\WCFServiceSample\WcfClient\bin\Debug\WcfClient.exe
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\WCFServiceSample\WcfClient\bin\Debug\WcfClient.pdb
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\WCFServiceSample\WcfClient\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\WCFServiceSample\WcfClient\obj\x86\Debug\WcfClient.Form1.resources
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\WCFServiceSample\WcfClient\obj\x86\Debug\WcfClient.Properties.Resources.resources
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\WCFServiceSample\WcfClient\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\WCFServiceSample\WcfClient\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\WCFServiceSample\WcfClient\obj\x86\Debug\WcfClient.exe
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\WCFServiceSample\WcfClient\obj\x86\Debug\WcfClient.pdb

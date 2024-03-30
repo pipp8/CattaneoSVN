@@ -1,0 +1,11 @@
+2014-07-03 12:53:44.6921|INFO|NLogSimpleDemo.Program|Sample informational message
+2014-07-03 12:53:44.7011|WARN|NLogSimpleDemo.Program|Sample warning message
+2014-07-03 12:53:44.8111|ERROR|NLogSimpleDemo.Program|Sample error message
+2014-07-03 12:53:44.8111|FATAL|NLogSimpleDemo.Program|Sample fatal error message
+2014-07-03 12:53:44.8111|INFO|NLogSimpleDemo.Program|Sample informational message
+2014-07-03 14:47:03.2473|INFO|DerivedClass|test
+2014-07-03 14:47:03.2629|INFO|Main|Sample informational message
+2014-07-03 14:47:03.2629|WARN|Main|Sample warning message
+2014-07-03 14:47:03.2629|ERROR|Main|Sample error message
+2014-07-03 14:47:03.2629|FATAL|Main|Sample fatal error message
+2014-07-03 14:47:03.2629|INFO|Main|Sample informational message

@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://air.di.unisa.it/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="PatientDataService" targetNamespace="http://air.di.unisa.it/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://air.di.unisa.it/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="doWriteAnagraficData" type="tns:doWriteAnagraficData" />
+      <xs:element name="doWriteAnagraficDataResponse" type="tns:doWriteAnagraficDataResponse" />
+      <xs:element name="doWriteAnamnesticData" type="tns:doWriteAnamnesticData" />
+      <xs:element name="doWriteAnamnesticDataResponse" type="tns:doWriteAnamnesticDataResponse" />
+      <xs:element name="doWriteComplications" type="tns:doWriteComplications" />
+      <xs:element name="doWriteComplicationsResponse" type="tns:doWriteComplicationsResponse" />
+      <xs:element name="doWriteExemptionCode" type="tns:doWriteExemptionCode" />
+      <xs:element name="doWriteExemptionCodeResponse" type="tns:doWriteExemptionCodeResponse" />
+      <xs:element name="getAuthorizationToken" type="tns:getAuthorizationToken" />
+      <xs:element name="getAuthorizationTokenResponse" type="tns:getAuthorizationTokenResponse" />
+      <xs:element name="getVersion" type="tns:getVersion" />
+      <xs:element name="getVersionResponse" type="tns:getVersionResponse" />
+      <xs:complexType name="doWriteComplications">
+        <xs:sequence>
+          <xs:element name="securityToken" type="tns:authorizationToken" />
+          <xs:element name="MMGCodFisc" type="xs:string" />
+          <xs:element name="patientComplications" type="tns:patientComplications" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="authorizationToken">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="token" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="patientComplications">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="amputation" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="angina" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="blindness" type="xs:dateTime" />
+          <xs:element name="citizenId" type="xs:string" />
+          <xs:element minOccurs="0" name="claudicatio" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="dialysis" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="fundus" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ictus" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ima" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ischemicHeartCondition" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="nephropathy" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="retinopathy" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="revascularization" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="tia" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ulcerations" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doWriteComplicationsResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doWriteExemptionCode">
+        <xs:sequence>
+          <xs:element name="securityToken" type="tns:authorizationToken" />
+          <xs:element name="MMGCodFisc" type="xs:string" />
+          <xs:element name="patientExemption" type="tns:patientExemption" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="patientExemption">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="citizenId" type="xs:string" />
+          <xs:element name="exemptionCode" type="xs:string" />
+          <xs:element name="exemptionDate" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doWriteExemptionCodeResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getVersion">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getVersionResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doWriteAnagraficData">
+        <xs:sequence>
+          <xs:element name="securityToken" type="tns:authorizationToken" />
+          <xs:element name="MMGCodFisc" type="xs:string" />
+          <xs:element name="patientAnagraficData" type="tns:patientAnagraficData" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="patientAnagraficData">
+        <xs:sequence>
+          <xs:element name="asl" type="xs:int" />
+          <xs:element name="birthdate" nillable="true" type="xs:dateTime" />
+          <xs:element name="city" nillable="true" type="xs:string" />
+          <xs:element name="citizenId" type="xs:string" />
+          <xs:element name="dsb" type="xs:int" />
+          <xs:element name="houseNumber" nillable="true" type="xs:string" />
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="nationality" nillable="true" type="xs:string" />
+          <xs:element name="road" nillable="true" type="xs:string" />
+          <xs:element name="patientCodFisc" type="xs:string" />
+          <xs:element name="surname" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doWriteAnagraficDataResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:patientAnagraficDataResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="patientAnagraficDataResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="citizenId" type="xs:string" />
+          <xs:element name="result" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAuthorizationToken">
+        <xs:sequence>
+          <xs:element name="MMGCodFisc" type="xs:string" />
+          <xs:element name="AuthenticationToken" type="tns:authenticationToken" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="authenticationToken">
+        <xs:sequence>
+          <xs:element name="clientSecret" type="xs:string" />
+          <xs:element name="password" type="xs:string" />
+          <xs:element name="role" type="xs:string" />
+          <xs:element name="username" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAuthorizationTokenResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:authorizationToken" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doWriteAnamnesticData">
+        <xs:sequence>
+          <xs:element name="securityToken" type="tns:authorizationToken" />
+          <xs:element name="MMGCodFisc" type="xs:string" />
+          <xs:element name="patientAnamnesticData" type="tns:patientAnamnesticData" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="patientAnamnesticData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="alcoholCheckDate" type="xs:dateTime" />
+          <xs:element name="alcoholKind" type="xs:int" />
+          <xs:element name="alcoholQuantity" type="xs:int" />
+          <xs:element name="citizenId" type="xs:string" />
+          <xs:element name="currentTherapy" type="xs:int" />
+          <xs:element name="educationLevel" type="xs:int" />
+          <xs:element minOccurs="0" name="enrollDate" type="xs:dateTime" />
+          <xs:element name="firstDiabetesDiagnosis" type="xs:int" />
+          <xs:element name="marital_status" type="xs:int" />
+          <xs:element name="physicalActivity" type="xs:boolean" />
+          <xs:element minOccurs="0" name="physicalActivityCheckDate" type="xs:dateTime" />
+          <xs:element name="physicalActivityLevel" type="xs:int" />
+          <xs:element minOccurs="0" name="smokingCheckDate" type="xs:dateTime" />
+          <xs:element name="smokingCurrentAttitude" type="xs:boolean" />
+          <xs:element name="smokingDailyQuantity" type="xs:int" />
+          <xs:element name="smokingLastYear" type="xs:int" />
+          <xs:element name="smokingPreviousAttitude" type="xs:boolean" />
+          <xs:element name="smokingType" type="xs:int" />
+          <xs:element name="alcoholUser" type="xs:boolean" />
+          <xs:element name="workingCategory" type="xs:int" />
+          <xs:element name="workingPosition" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doWriteAnamnesticDataResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="IllegalArgumentException" type="tns:IllegalArgumentException" />
+      <xs:complexType name="IllegalArgumentException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AIRApplicationException" type="tns:AIRApplicationException" />
+      <xs:complexType name="AIRApplicationException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="errorCode" type="xs:string" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="DataValidationException" type="tns:DataValidationException" />
+      <xs:complexType name="DataValidationException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="errorCode" type="xs:string" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="DataValidationException">
+    <wsdl:part name="DataValidationException" element="tns:DataValidationException" />
+  </wsdl:message>
+  <wsdl:message name="getAuthorizationToken">
+    <wsdl:part name="parameters" element="tns:getAuthorizationToken" />
+  </wsdl:message>
+  <wsdl:message name="getVersion">
+    <wsdl:part name="parameters" element="tns:getVersion" />
+  </wsdl:message>
+  <wsdl:message name="getAuthorizationTokenResponse">
+    <wsdl:part name="parameters" element="tns:getAuthorizationTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="doWriteComplicationsResponse">
+    <wsdl:part name="parameters" element="tns:doWriteComplicationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="doWriteAnagraficData">
+    <wsdl:part name="parameters" element="tns:doWriteAnagraficData" />
+  </wsdl:message>
+  <wsdl:message name="doWriteExemptionCode">
+    <wsdl:part name="parameters" element="tns:doWriteExemptionCode" />
+  </wsdl:message>
+  <wsdl:message name="IllegalArgumentException">
+    <wsdl:part name="IllegalArgumentException" element="tns:IllegalArgumentException" />
+  </wsdl:message>
+  <wsdl:message name="AIRApplicationException">
+    <wsdl:part name="AIRApplicationException" element="tns:AIRApplicationException" />
+  </wsdl:message>
+  <wsdl:message name="doWriteExemptionCodeResponse">
+    <wsdl:part name="parameters" element="tns:doWriteExemptionCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="doWriteAnagraficDataResponse">
+    <wsdl:part name="parameters" element="tns:doWriteAnagraficDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="getVersionResponse">
+    <wsdl:part name="parameters" element="tns:getVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="doWriteComplications">
+    <wsdl:part name="parameters" element="tns:doWriteComplications" />
+  </wsdl:message>
+  <wsdl:message name="doWriteAnamnesticData">
+    <wsdl:part name="parameters" element="tns:doWriteAnamnesticData" />
+  </wsdl:message>
+  <wsdl:message name="doWriteAnamnesticDataResponse">
+    <wsdl:part name="parameters" element="tns:doWriteAnamnesticDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PatientDataWebService">
+    <wsdl:operation name="doWriteComplications">
+      <wsdl:input name="doWriteComplications" message="tns:doWriteComplications" />
+      <wsdl:output name="doWriteComplicationsResponse" message="tns:doWriteComplicationsResponse" />
+      <wsdl:fault name="AIRApplicationException" message="tns:AIRApplicationException" />
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException" />
+      <wsdl:fault name="DataValidationException" message="tns:DataValidationException" />
+    </wsdl:operation>
+    <wsdl:operation name="doWriteExemptionCode">
+      <wsdl:input name="doWriteExemptionCode" message="tns:doWriteExemptionCode" />
+      <wsdl:output name="doWriteExemptionCodeResponse" message="tns:doWriteExemptionCodeResponse" />
+      <wsdl:fault name="AIRApplicationException" message="tns:AIRApplicationException" />
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException" />
+      <wsdl:fault name="DataValidationException" message="tns:DataValidationException" />
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <wsdl:input name="getVersion" message="tns:getVersion" />
+      <wsdl:output name="getVersionResponse" message="tns:getVersionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="doWriteAnagraficData">
+      <wsdl:input name="doWriteAnagraficData" message="tns:doWriteAnagraficData" />
+      <wsdl:output name="doWriteAnagraficDataResponse" message="tns:doWriteAnagraficDataResponse" />
+      <wsdl:fault name="AIRApplicationException" message="tns:AIRApplicationException" />
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException" />
+      <wsdl:fault name="DataValidationException" message="tns:DataValidationException" />
+    </wsdl:operation>
+    <wsdl:operation name="getAuthorizationToken">
+      <wsdl:input name="getAuthorizationToken" message="tns:getAuthorizationToken" />
+      <wsdl:output name="getAuthorizationTokenResponse" message="tns:getAuthorizationTokenResponse" />
+      <wsdl:fault name="AIRApplicationException" message="tns:AIRApplicationException" />
+      <wsdl:fault name="DataValidationException" message="tns:DataValidationException" />
+    </wsdl:operation>
+    <wsdl:operation name="doWriteAnamnesticData">
+      <wsdl:input name="doWriteAnamnesticData" message="tns:doWriteAnamnesticData" />
+      <wsdl:output name="doWriteAnamnesticDataResponse" message="tns:doWriteAnamnesticDataResponse" />
+      <wsdl:fault name="AIRApplicationException" message="tns:AIRApplicationException" />
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException" />
+      <wsdl:fault name="DataValidationException" message="tns:DataValidationException" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PatientDataServiceSoapBinding" type="tns:PatientDataWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="doWriteComplications">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="doWriteComplications">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="doWriteComplicationsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AIRApplicationException">
+        <soap:fault use="literal" name="AIRApplicationException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap:fault use="literal" name="IllegalArgumentException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DataValidationException">
+        <soap:fault use="literal" name="DataValidationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doWriteExemptionCode">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="doWriteExemptionCode">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="doWriteExemptionCodeResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AIRApplicationException">
+        <soap:fault use="literal" name="AIRApplicationException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap:fault use="literal" name="IllegalArgumentException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DataValidationException">
+        <soap:fault use="literal" name="DataValidationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getVersion">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getVersionResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doWriteAnagraficData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="doWriteAnagraficData">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="doWriteAnagraficDataResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AIRApplicationException">
+        <soap:fault use="literal" name="AIRApplicationException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap:fault use="literal" name="IllegalArgumentException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DataValidationException">
+        <soap:fault use="literal" name="DataValidationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doWriteAnamnesticData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="doWriteAnamnesticData">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="doWriteAnamnesticDataResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AIRApplicationException">
+        <soap:fault use="literal" name="AIRApplicationException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap:fault use="literal" name="IllegalArgumentException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DataValidationException">
+        <soap:fault use="literal" name="DataValidationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAuthorizationToken">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getAuthorizationToken">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAuthorizationTokenResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AIRApplicationException">
+        <soap:fault use="literal" name="AIRApplicationException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DataValidationException">
+        <soap:fault use="literal" name="DataValidationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PatientDataService">
+    <wsdl:port name="PatientDataServicePort" binding="tns:PatientDataServiceSoapBinding">
+      <soap:address location="https://air.di.unisa.it:8443/AIR-EJBWS/PatientDataService/PatientDataWebService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+ xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ns1="http://webapi.wfca.infocert.it">
+ <SOAP-ENV:Body>
+   <ns1:avanzaProcedimento>
+    <ns1:token></ns1:token>
+    <ns1:username></ns1:username>
+    <ns1:idAmministrazione>0</ns1:idAmministrazione>
+    <ns1:idAoo>0</ns1:idAoo>
+    <ns1:idProcedimento></ns1:idProcedimento>
+    <ns1:idStep></ns1:idStep>
+    <ns1:valoreEsito></ns1:valoreEsito>
+    <ns1:note></ns1:note>
+   </ns1:avanzaProcedimento>
+
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

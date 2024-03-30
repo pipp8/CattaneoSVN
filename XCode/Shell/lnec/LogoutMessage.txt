@@ -1,0 +1,7 @@
+This session will be automatically terminated when all subprocesses will end.
+
+An E-Mail will be sent with a link to download a signed package with
+the collected evidence.
+
+Thank you for using this service,
+please send any bug or comment to: lnec at dia.unisa.it

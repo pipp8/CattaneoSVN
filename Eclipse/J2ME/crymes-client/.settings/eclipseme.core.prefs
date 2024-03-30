@@ -1,0 +1,5 @@
+#Thu Sep 27 20:29:36 CEST 2007
+eclipse.preferences.version=1
+obfuscate_use_project=true
+proguard_keep=public class crymes.gui.* extends javax.microedition.midlet.MIDlet
+proguard_options=-dontusemixedcaseclassnames -defaultpackage '' -dontoptimize

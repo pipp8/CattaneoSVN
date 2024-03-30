@@ -1,0 +1,4 @@
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\dblp2csv\trunk\bin\Debug\dblp_xml2csv.exe
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\dblp2csv\trunk\bin\Debug\dblp_xml2csv.pdb
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\dblp2csv\trunk\obj\x86\Debug\dblp_xml2csv.exe
+C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\dblp2csv\trunk\obj\x86\Debug\dblp_xml2csv.pdb

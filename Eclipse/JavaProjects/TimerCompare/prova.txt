@@ -1,0 +1,297 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+
+<html>
+
+<head>
+
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+   <meta http-equiv="Content-Language" content="it">
+
+   <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+
+   <meta name="ProgId" content="FrontPage.Editor.Document">
+
+   <title>Linguaggi di Programmazione II</title>
+
+</head>
+
+<body>
+
+<b><font size=+3>Linguaggi di Programmazione
+
+II&deg;</font></b>
+
+<p>&nbsp;<p>In questa pagina
+
+saranno diffuse le informazioni relative al solo corso per le matricole che
+
+terminano per 8 e 9.<p><a href="EserciziSvolti.html">Esercizi svolti ed esempi di
+codice</a><p><font size="5">Date Appelli anno corrente</font></p>
+
+<table width="100%" border="1">
+
+    <tr>
+
+      <td align="center" width="14%">Ia prova Intercorso</td>
+
+      <td align="center" width="14%">IIa prova Intercorso</td>
+
+      <td align="center" width="14%">I° Appello</td>
+
+      <td align="center" width="14%">II° Appello</td>
+
+      <td align="center" width="14%">III° Appello</td>
+
+      <td align="center" width="15%">IV° Appello</td>
+
+      <td align="center" width="15%">V° Appello</td>
+
+    </tr>
+
+    <tr>
+
+      <td width="14%" align="center"><font size="2">29/4/2003<br>
+
+ 15.00 - 18.00<br>
+
+        Aule C31 e C38</font></td>
+
+      <td width="14%" align="center"><font size="2">26/6/2003<br>
+
+        9.00 - 12.00<br>
+
+        Aule F1,F2,F3, F4</font></td>
+
+      <td width="14%" align="center"><font size="2">4/7/2003<br>
+
+        9.30 - 12.00<br>
+
+        Aula C31</font></td>
+
+      <td width="14%" align="center"><font size="2">26/7/2003<br>
+
+        9.00 - 12.00<br>
+
+        Aule F1,F2,F3, F4</font></td>
+
+      <td width="14%" align="center">&nbsp;</td>
+
+      <td width="15%" align="center">&nbsp;</td>
+
+      <td width="15%" align="center">&nbsp;</td>
+
+    </tr>
+
+    <tr>
+
+      <td width="14%"><a href="Prova29-4-2003.pdf">Traccia 29/4/2003</a></td>
+
+      <td width="14%"><a href="Prova26-6-2003.pdf">Traccia 26/6/2003</a></td>
+
+      <td width="14%"><a href="Prova4-7-2003.pdf">Traccia 4/7/2003</a></td>
+
+      <td width="14%">&nbsp;</td>
+
+      <td width="14%">&nbsp;</td>
+
+      <td width="15%">&nbsp;</td>
+
+      <td width="15%">&nbsp;</td>
+
+    </tr>
+
+    <tr>
+
+      <td width="14%"><a href="RisWeb29-4-2003.pdf">Risultati</a></td>
+
+      <td width="14%"><a href="RisWeb26-6-2003.pdf">Risultati</a></td>
+
+      <td width="14%"><a href="RisWeb4-7-2003.pdf">Risultati</a></td>
+
+      <td width="14%">&nbsp;</td>
+
+      <td width="14%">&nbsp;</td>
+
+      <td width="15%">&nbsp;</td>
+
+      <td width="15%">&nbsp;</td>
+
+    </tr>
+
+    <tr>
+
+      <td width="14%"><a href="Soluzioni29-4-2003.pdf">Soluzioni 29/4/2003</a></td>
+
+      <td width="14%">&nbsp;</td>
+
+      <td width="14%">&nbsp;</td>
+
+      <td width="14%">&nbsp;</td>
+
+      <td width="14%">&nbsp;</td>
+
+      <td width="15%">&nbsp;</td>
+
+      <td width="15%">&nbsp;</td>
+
+    </tr>
+
+</table>
+
+<p>&nbsp;</p>
+
+<p><font size="5">Date Appelli anno accademico 2001-2002</font></p>
+
+<table width="100%" border="1">
+
+  <tbody>
+
+    <tr>
+
+      <td align="center" width="14%">Ia prova Intercorso</td>
+
+      <td align="center" width="14%">IIa prova Intercorso</td>
+
+      <td align="center" width="14%">I° Appello</td>
+
+      <td align="center" width="14%">II° Appello</td>
+
+      <td align="center" width="14%">III° Appello</td>
+
+      <td align="center" width="15%">IV° Appello</td>
+
+      <td align="center" width="15%">V° Appello</td>
+
+    </tr>
+
+    <tr>
+
+      <td width="14%" align="center">30/4/2002<br>
+
+ 15.00 - 18.00<br>
+
+        Aula P1</td>
+
+      <td width="14%" align="center">19/6/2002<br>
+
+        15.00 - 18.00<br>
+
+        Aula C31</td>
+
+      <td width="14%" align="center">8/7/2002<br>
+
+        15.00 - 18.00<br>
+
+        Aula D19</td>
+
+      <td width="14%" align="center">18/7/2002<br>
+
+        15.00 - 18.00<br>
+
+        Aula D19</td>
+
+      <td width="14%" align="center">5/9/2002<br>
+
+        9.00 - 12.00<br>
+
+        Aula D19</td>
+
+      <td width="15%" align="center">17/9/2002<br>
+
+        15.00 - 18.00<br>
+
+        Aula C38</td>
+
+      <td width="15%" align="center">25/2/2003<br>
+
+        15.00 - 18.00<br>
+
+        Aula C38</td>
+
+    </tr>
+
+    <tr>
+
+      <td width="14%"><a href="Prova30-4-2002.pdf">Traccia
+
+        30/4/2002</a></td>
+
+      <td width="14%"><a href="Prova19-6-2002.pdf">Traccia 19/6/2002</a></td>
+
+      <td width="14%"><a href="Prova8-7-2002.pdf">Traccia 8/7/2002</a></td>
+
+      <td width="14%"><a href="Prova18-7-2002.pdf">Traccia 18/7/2002</a></td>
+
+      <td width="14%"><a href="Prova5-9-2002.pdf">Traccia 5/9/2002</a></td>
+
+      <td width="15%"><a href="Prova17-9-2002.pdf">Traccia 17/9/2002</a></td>
+
+      <td width="15%"><a href="Prova25-2-2003.pdf">Traccia 25/2/2003</a></td>
+
+    </tr>
+
+    <tr>
+
+      <td width="14%"><a href="RisWebModuli.pdf">Risultati</a></td>
+
+      <td width="14%"><a href="RisWebModuli.pdf">Risultati</a></td>
+
+      <td width="14%"><a href="RisWeb8-7-2002.pdf">Risultati</a></td>
+
+      <td width="14%"><a href="RisWeb18-7-2002.pdf">Risultati</a></td>
+
+      <td width="14%"><a href="RisWeb5-9-2002.pdf">Risultati</a></td>
+
+      <td width="15%"><a href="RisWeb17-9-2002.pdf">Risultati</a></td>
+
+      <td width="15%"><a href="RisWeb25-2-2003.pdf">Risultati</a></td>
+
+    </tr>
+
+    <tr>
+
+      <td width="14%">&nbsp;</td>
+
+      <td width="14%"><a href="Soluzioni19-6-2002.html">Soluzioni 19/6/2002</a></td>
+
+      <td width="14%">&nbsp;</td>
+
+      <td width="14%">&nbsp;</td>
+
+      <td width="14%">&nbsp;</td>
+
+      <td width="15%">&nbsp;</td>
+
+      <td width="15%">&nbsp;</td>
+
+    </tr>
+
+    <tr>
+
+      <td width="14%">&nbsp;</td>
+
+      <td width="14%"><a href="Biblioteca.zip">Codice Biblioteca.zip</a></td>
+
+      <td width="14%">&nbsp;</td>
+
+      <td width="14%">&nbsp;</td>
+
+      <td width="14%">&nbsp;</td>
+
+      <td width="15%">&nbsp;</td>
+
+      <td width="15%">&nbsp;</td>
+
+    </tr>
+
+  </tbody>
+
+</table>
+
+<p>&nbsp;<p>&nbsp;
+
+</body>
+
+</html>
+

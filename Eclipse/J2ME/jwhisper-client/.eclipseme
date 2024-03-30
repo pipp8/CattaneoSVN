@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipsemeMetadata jad="jwhisper.jad" version="1.7.6">
+   <device group="S60 2nd FP3 MIDP SDK" name="S60_2nd_FP3_MIDP_SDK"/>
+   <signing signProject="false"/>
+</eclipsemeMetadata>

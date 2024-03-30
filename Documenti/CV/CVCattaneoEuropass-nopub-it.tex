@@ -1,0 +1,352 @@
+% !TEX encoding = UTF-8
+% !TEX program = pdflatex
+% !TEX spellcheck = it_IT
+
+\documentclass[italian,a4paper]{europasscv}
+\usepackage[italian]{babel}
+
+\usepackage{tabularx}
+
+\usepackage{lastpage}
+
+\usepackage[official]{eurosym}
+
+%% DATES, VERSIONS AND TITLES:
+\usepackage{svn-multi}
+
+\svnid{$Id: CVCattaneoEuropass-nopub-it.tex 917 2024-03-28 21:27:26Z cattaneo $}
+
+\svnkwsave{$LastChangedDate $}
+
+\newcommand{\currentDate}{\svnfileday/\svnfilemonth/\svnfileyear}
+\newcommand{\lastYear}{\em 2023} 
+
+% bibliografia 
+%\usepackage[style=numeric-comp,sorting=ydnt,defernumbers]{biblatex}
+%\addbibresource{personal.bib}
+
+\usepackage[backend=biber,style=numeric-comp,giveninits=true, maxbibnames=10,sorting=ydnt,defernumbers=true,doi=false,isbn=false,url=false]{biblatex}
+%\usepackage[defernumbers=true,backend=biber]{biblatex}
+
+\addbibresource{BiblioCattaneo.bib}
+
+\usepackage{europasscv-bibliography}
+
+
+\DeclareRefcontext{rc}{sorting=ydnt}
+
+\AtEveryBibitem{%
+  % elimina i seguenti field dalla bibliografia
+  % \clearfield{note}%
+  \clearlist{language}%
+}
+
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map{
+       \step[fieldset=note, null]
+       \step[fieldset=eprint, null]
+    }
+  }
+}
+%\AtDataInput{%
+%  \csnumgdef{entrycount:\strfield{prefixnumber}}{%
+%    \csuse{entrycount:\strfield{prefixnumber}}+1}}
+%
+%\DeclareFieldFormat{labelnumber}{\mkbibdesc{#1}}    
+%\newrobustcmd*{\mkbibdesc}[1]{%
+%  \number\numexpr\csuse{entrycount:\strfield{prefixnumber}}+1-#1\relax}
+
+
+\ecvname{Giuseppe Cattaneo}
+\ecvaddress{Via Panoramica, 15, 84135 Salerno, Italia}
+\ecvmobile{(+39) 320 7406160}
+\ecvtelephone{(+39) 089 96 9716}
+\ecvworkphone{(+39) 089 96 9840}
+\ecvemail{cattaneo@unisa.it}
+\ecvhomepage{https://docenti.unisa.it/000763/home}
+%\ecvim{AOL Messenger}{betty.smith}
+%\ecvim{Google Talk}{bsmith}
+
+\ecvdateofbirth{11 Gennaio 1960}
+\ecvnationality{Italiana}
+\ecvgender{Maschio}
+
+\ecvpicture[width=3.8cm]{FotoTessera2016.jpg}
+%\ecvpictureright
+
+\begin{document}
+  \begin{europasscv}
+
+  \ecvpersonalinfo
+
+  \ecvbigitem{Motivo}{Redazione Relazione Tecnica di Parte}
+
+  \ecvsection{Esperienza Lavorativa}
+  
+   \ecvtitle{1984 -- \lastYear}{Professore universitario}
+%    \ecvitem{}{British Council\newline 123, Bd Ney, 75023 Paris (France)}
+%    \ecvitem{}{Evaluation of European Commission youth training support measures for youth national agencies and young people}
+% 
+	\ecvitem{1999 -- \lastYear}{Professore Universitario di IIa fascia presso Università di Salerno\newline
+	Partecipando al concorso bandito dall’Università di Salerno per posti di professore associato seconda fascia settore K05B (Informatica, oggi INF/01), consegue l’idoneità nella procedura comparativa e prende servizio presso la Facoltà di Scienze MM.FF. e NN. nel corso dell’anno accademico 1999-2000 divenendo titolare dell’insegnamento di Linguaggi di Programmazione II fino al 2005. Contemporaneamente ha attivato un nuovo corso denominato Programmazione su reti II, per l’insegnamento delle tecnologie emergenti nell'ambito dei sistemi distribuiti, quali Java Enterprise Edition e ambienti di programmazione evoluti per la creazione di servizi WEB based, secondo il paradigma delle Service Oriented Architecture.\newline
+	Successivamente, all’introduzione dei nuovi ordinamenti didattici, ha insegnato Sistemi Operativi alla laurea triennale e Sistemi Operativi Avanzati alla laurea Magistrale.\newline
+	Nel 2018 ha conseguito l'Abilitazione  Scientifica Nazionale (art. 16, comma 1, Legge 240/10) per professore di Ia fascia per i settori concorsuali 01/B1 Informatica (INF/01) e 09/H1 Ingegneria Informatica - Sistemi di Elaborazione delle Informazioni (ING-INF/05).}
+	
+	\ecvitem{1986--1999}{Ricercatore Universitario presso Università di Salerno\newline
+	Vincitore di un concorso per ricercatore universitario gruppo di discipline 92/bis (Informatica, oggi INF/01) prende servizio presso la Facoltà di Scienze Matematiche Fisiche e Naturali dell’Università di Salerno, afferendo al Dipartimento di Informatica ed Applicazioni (DIA).}
+	 
+	\ecvitem{1986--1990}{Invited researcher presso il Laboratoire d'Informatique Théorique et Programmation (LITP), Universitè Paris 6, Parigi, Francia\newline
+	Nell'ambito di una collaborazione scientifica tra l’Università di Parigi 6 ed il DIA si reca in visita presso il laboratorio francese (LITP) grazie ad una borsa di studio annuale del FORMEZ.\newline
+	Al termine della borsa, il soggiorno è stato prolungato per ulteriori 24 mesi grazie ad un contratto di ricerca biennale (n. 871B00-7909245-LAAISLCIMAIA) stipulato con il LITP dedicato allo sviluppo, la realizzazione e la messa a punto di una Lisp Machine (denominata MAIA) interamente progettata e costruita in Francia nell’ambito di un progetto del Centre National d'Etudes en Télécommunications (CNET).}
+ 
+	\ecvitem{1984--1986}{Tecnico Laureato presso il Dipartimento di Informatica ed Applicazioni dell'Università di Salerno\newline Stipula un contratto triennale ai sensi dell'art. 26 D.P.R. 380/80 per attività specialistica di supporto alla attivazione dei laboratori didattici del Dipartimento in fase di creazione.}
+  
+  \newpage
+  \ecvtitle{}{Attività per il trasferimento tecnologico}
+  
+  	\ecvitem{1998--2004}{Responsabile R\&D Sintel S.p.A.\newline
+	Stipula un contratto con la Sintel S.p.A. per assumere l’incarico di responsabile della divisione ricerca e sviluppo. Nello stesso anno partecipa al collocamento in borsa del titolo della capogruppo (Finmatica S.p.A.) contribuendo alla definizione delle strategie per l'innovazione, parametri cruciali per un'azienda che all'epoca ha caratterizzato il fenomeno della new economy. Per garantire il necessario impegno nello svolgimento di queste attività è stata scelta l'opzione del tempo definito come regime di impegno con l'Università di Salerno attivando un ciclo virtuoso di sinergie tra Università e mondo privato.\newline
+  	Dal termine dell'OPA fino al giugno del 2002 ha fatto parte del {"\em Board of Directors"} di Finmatica con l’incarico di  responsabile dei processi per l'innovazione tecnologica all’interno dell’intero gruppo.\newline
+  	Nel contempo in collaborazione con la divisione M\&A ha partecipato a tutte le {\em “Due Diligence”} effettuate nel processo di crescita del gruppo mediante acquisizione di nuove aziende affermate su mercati internazionali complementari. Tali acquisizioni si sono dirette prima verso il mercato della sicurezza informatica (Intesis S.p.A.) e successivamente verso l’Extended SCM (Ortéms s.a., Lyon Fr e Mercia Ltd Birmingham UK). Infine particolare interesse è stato rivolto verso il settore della logistica e dei trasporti 3PL con l’acquisizione di OBSoft Paris Fr ed un grande progetto per Deutch Post (DHL).}
+  
+  	\ecvitem{2013--2018}{Fondatore dello spin-off universitario eTuitus s.r.l. con Infocert}
+  
+	\ecvitem{2017--\lastYear}{Fondatore dello spin-off universitario UniDoc s.r.l. con il consorzio CSA}
+%  \ecvblueitem{Organisational / managerial skills}{
+%  \begin{ecvitemize}
+%    \item whilst working for a Brussels based refugee NGO ``Convivial'' I organized a ``Civil Dialogue'' between refugees and civil servants at the European Commission 20th June 2002
+%    \item during my PhD I organised a seminar series on research methods
+%  \end{ecvitemize}
+%  }
+\ecvtitle{}{Attività di coordinamento}{
+%\subsection{TBD}
+	\ecvitem{1991--\lastYear}{Delegato del Rettore per il polo GARR dell’Ateneo Salernitano\newline
+	Fin dall'assunzione ha collaborato alla gestione del centro di calcolo del DIA programmando la migrazione dai sistemi legacy (Digital VMS) ai sistemi Open (Unix 4.2 BSD).\newline
+	Dall'ottobre del 1991, con l'entrata in esercizio della rete GARR (Gruppo Armonizzazione Reti Ricerca) voluta dal Ministero dell'Università e della Ricerca Scientifica e Tecnologica (MURST), ha coordinato la nascita del nodo dell'Ateneo Salernitano, nel ruolo di responsabile del Polo GARR, delegato del Rettore. In questo contesto ha personalmente partecipato alle scelte tecniche sull'architettura della nascente rete  ed alla messa a punto delle attrezzature che all'epoca si basavano su standard ancora non maturi e quindi fonte di numerosi problemi. Successivamente (’93) ha curato la migrazione dal primo ISP italiano I2Unix alla ormai consolidata rete per la ricerca GARR, estendendo i servizi telematici a tutte le componenti dell'Ateneo che ne hanno fatto richiesta. Da allora il numero di utenti è cresciuto in maniera esponenziale, fino a richiedere la stipula di una convenzione ex art 66 DL 382/80 tra Ateneo e Dipartimento DIA. In quest’ambito è stata curata la migrazione a GARR-B una infrastruttura nazionale di rete unitaria per la ricerca a larga banda con prestazioni considerevoli e livelli di affidabilità / qualità notevolmente migliorati rispetto alla precedente.\newline
+	In questo stesso contesto ha presentato un progetto per la realizzazione di una rete metropolitana della valle dell’Irno. Tale progetto è stato approvato nel maggio del 2000 per un importo di 2.300 Ml ed una durata di 24 mesi.\newline
+	Successivamente è stato delegato dal Rettore alla gestione del progetto finalizzato alla realizzazione di una capillare rete di distribuzione della connettività interna al Campus e tra il Campus ed il territorio circostante, creando così le premesse necessarie affinché il ruolo dell’Università si possa estendere in qualità di soggetto erogatore di servizi ad alto contenuto tecnologico al territorio circostante.}
+
+	\ecvitem{2012--2015}{Membro del CTS del GARR\newline
+	Per il triennio 2012--2015 è stato membro effettivo del Comitato Tecnico Scientifico del GARR partecipando attivamente ai progetti nazionali ed internazionali dedicati alle reti per la ricerca (N-REN) tra cui GARR-X Progress.}
+	
+	\ecvitem{2013--2016}{Delegato del Rettore all'ICT\newline
+	Per il triennio 2013--2016, il Rettore dell’Università di Salerno, Prof. Aurelio Tommasetti, ha esteso la delega, nominandolo delegato del Rettore per l’ICT per l’Ateneo Salernitano.
+	In tale ambito, il sottoscritto ha coordinato numerosi progetti di Ateneo dedicati alle infrastrutture tecnologiche tra cui la realizzazione di un nuovo sito Web di Ateneo, ed il progetto RIMIC per la realizzazione di una MAN regionale per l’interconnessione delle 7 università Campane. Per lo stesso periodo è stato rappresentante dell'Università di Salerno in seno al Consiglio di Amministrazione di RIMIC Scarl la società appositamente creata per la gestione dell’intera infrastruttura tecnologica realizzata con il progetto PON.}
+
+	\ecvitem{1996--2016}{Laboratorio Specialistico Linux/TCFS e Sicurezza\newline
+	Sin dalle prime attività, particolare interesse è stato dedicato al sistema operativo Linux, sulle piattaforme Intel e non. In particolare in collaborazione con il prof. G. Persiano è stato realizzato un laboratorio specialistico appositamente creato, all'interno del quale si sviluppano in maniera estremamente professionale parti del sistema (file system crittografico) ~\cite{USENIX:01} che nello spirito dell’Open Software vengono distribuite ad una vasta comunità di utenti sparsa nel mondo. Finora hanno gravitato attorno al laboratorio ed alle attività ad esso connesse circa 20 studenti, formando così un vero e proprio centro di competenza. Gli utenti del pacchetto sviluppato sono centinaia e mostrano un interesse crescente per il servizio offerto partecipando a tutte le frequenti fasi di upgrade e sviluppo.}
+
+	\ecvitem{2000--2003}{Progetto di ricerca “Oltre la Firma Digitale”\newline
+	Nel 2000 ha istruito la presentazione di un progetto di ricerca nell’ambito della legge 297  finanziato dal MURST sui fondi della Legge 488 D.M. 629 per conto della società Sintel S.p.A. gruppo Finmatica. Obiettivo del progetto è stato lo sviluppo di un’infrastruttura a chiave pubblica per il superamento degli attuali limiti teorici della firma digitale~\cite{AICA:01}.
+	Successivamente il progetto triennale è stato finanziato dal Ministero per un importo di 9,089 Mld con decorrenza dal 1/10/2000 al 30/9/2003 e ne ha assunto la piena responsabilità in qualità di project manager. Il progetto si è concluso nei tempi previsti ed a gennaio 2004 è stato oggetto di valutazione da parte dell’esperto ministeriale che ha espresso piena soddisfazione sui risultati raggiunti.}
+
+	\ecvitem{2005--2006}{Consulente Commissione Parlamentare di Inchiesta\newline
+	Il sottoscritto ha partecipato alle attività della Commissione Parlamentare d’Inchiesta sugli effetti dell’impiego di uranio impoverito in qualità di consulente  esterno esperto informatico, partecipando in particolare, per quanto attiene le indagini, alla creazione di una base dati ed un campione statistico per l’analisi dei fenomeni rilevati sul campo.}
+
+	\ecvitem{2005--2006}{Consulente CNIPA (Sicurezza ICT)\newline
+	Nell’ambito del progetto per la Razionalizzazione del Pubblica Amministrazione Centrale, il sottoscritto ha collaborato con il Centro Nazionale per l’Informatica nella Pubblica Amministrazione alla realizzazione di un questionario (sezione sicurezza) compilato da tutte le PAC per la rilevazione dello stato delle varie Amministrazioni. Successivamente i risultati raccolti sono stati analizzati e presentati alle Amministrazioni per la definizione di un modello unico e condiviso per la sicurezza all’interno della PAC. Contemporaneamente sono state elaborate le linee guida per approntare nel breve le misure minime necessarie per il raggiungimento di un livello accettabile di sicurezza.}
+
+	\ecvitem{2007--2009}{Consulente CNIPA (Sicurezza ICT e Continuità Operativa)\newline
+	In occasione della stesura della relazione annuale (2006) sullo stato della Pubblica Amministrazione il sottoscritto ha rinnovato il contratto  di consulenza con il CNIPA per occuparsi direttamente della sezione dedicata alla Sicurezza ICT.
+	Nel contempo nell’ambito del contratto si è occupato del tema Continuità Operativa con lo scopo di analizzare ed elaborare modelli per la C.O. per la PA da utilizzare per le principali amministrazioni della PAC. E’ ancora in fase di definizione un progetto per la realizzazione di uno o più centri per la C.O. condivisi tra più Amministrazioni sia per razionalizzare i costi che per ottenere livelli di sicurezza omogenei tra i vari utenti.}
+
+	\ecvitem{2006--2007}{Membro ordinario del Consiglio Superiore delle Comunicazioni\newline
+	Con decreto del 22 Dicembre 2004 del Ministro elle Comunicazione On. M. Landolfi è stato nominato membro del Consiglio presidiato dall’avv. G. Massaro che si è insediato il 16 Marzo 2006 per il quadriennio 2006-2009. Nell’organigramma del Consiglio il sottoscritto partecipa alla terza ed alla quarta sezione, aventi rispettivamente come attribuzioni :
+	Ricerca e sperimentazione, nuove tecnologie, istruzione ed aggiornamento professionale, la prima, e Multimedialità ed intermedialità, contenuti affari non suscettibili di rientrare nella competenza delle altre sezione o della giunta, la seconda. Il Consiglio, che rappresenta il massimo organo consultivo del Ministro, si riunisce con cadenza bisettimanale per il necessario supporto alle attività del Ministero delle Comunicazioni. In funzione del D.P.R. del 14 maggio 2007, n. 90, è decaduto dalle funzioni.}
+
+	\ecvitem{2009--2012}{Membro del CTS della Provincia di Salerno}
+	
+	\ecvitem{2011--2017}{Membro dell’Ufficio Piano di Zona Ambito SA5, Salerno\newline
+	Nell’ambito della struttura dedicata ai servizi sociosanitari del Comune di Salerno e del Comune di Pellezzano partecipa al tavolo istituzionale in qualità di esperto informatico per le attività di informatizzazione dei servizi erogati.}
+}
+
+
+\ecvtitle{}{Progetti, collaborazioni e convenzioni}
+
+	\ecvitem{}{Il sottoscritto è stato responsabile o proponente di numerosi progetti di ricerca in ambito ICT condotti in partnership con importanti aziende o con Enti Pubblici attraverso convenzioni stipulate con il DIA. Tutte queste esperienze hanno sempre fornito feedback estremamente utili per comprendere l'effettive esigenze del mercato e per fornire risposte sempre aggiornate  rispetto alle tecnologie disponibili nel complesso e dinamico mondo dell’ ICT.}
+
+	\ecvitem{1984--1986}{Responsabile convenzione DIA-ITALTEL S.p.A., S. Maria C.V. (CE)\newline
+	ha avvicinato il mondo dell'industria nell'area delle telecomunicazioni con una collaborazione sul tema: “Introduzione dei sistemi aperti (UNIX) nella loro catena di produzione e per la sperimentazione di una linea di apparati trasmissione dati”.}
+
+	\ecvitem{1987--1990}{Invited Researcher presso il Centre National d'Etudes en Télécommunications (CNET), Paris (Fr)\newline
+	Graze ad una collaborazione con il Laboratoire d'Informatique Théorique et Programmation dell'Université Paris 6 ha ricevuto un contratto di ricerca per partecipare ad un progetto finalizzato allo sviluppo di un sistema LISP con primitive per la gestione di processi concorrenti.}
+
+	\ecvitem{1985--1998}{Consulente scientifico presso ITALDATA S.p.A. gruppo Siemens Data, Pianodardine (AV)\newline
+	In un arco di tempo durato oltre 15 anni ha partecipato a numerosi progetti su varie tematiche dai sistemi aperti (progetto finalizzato Calcolo Parallelo~\cite{AICA:1,AICA:2}) fino al commercio elettronico al CSCW~\cite{ECOM:2,CABOTO:98,Barra199811}.}
+
+	\ecvitem{1990--1995}{Consulente scientifico presso SINTEL Consulting S.p.A.,Salerno\newline
+	Ha partecipato attivamente al ridisegno dei processi interni per lo sviluppo della Software Factory e per il miglioramento dei processi produttivi mediante l’adozione di tecnologie innovative relative al calcolo distribuito e più in generale al processo di sviluppo Object Oriented adeguatamente supportato dalla metodologia RUP e strumenti basati sull'Unified Modeling Language.}
+
+	\ecvitem{1998--2000}{Responsabile convenzione con Università degli studi di Salerno\newline
+	L'Ateneo ha affidato, attraverso una convenzione di ricerca ex art. 66 DL 382/80 per un importo di 500 Ml Lire e durata di 24+6 mesi, lo sviluppo della rete dell'intero Campus al DIA e ad un Dipartimento di Ingegneria (DIIMA). Obiettivo principale del progetto è stato quello di estendere l'utilizzabilità dei servizi legati ad Internet all’interno Ateneo, operando alla fine della convenzione un graduale passaggio di consegne ed un piano di formazione verso le strutture interne dell'Amministrazione preposte al mantenimento e agli sviluppi futuri.}
+
+	\ecvitem{2001--2002}{Responsabile convenzione con Ericsson Lab, Pagani (SA)\newline
+	Con il laboratorio di ricerca di Ericsson a Pagani è stato responsabile scientifico di una convenzione di ricerca ex art. 66 DL 382/80 per un importo di 130 Ml Lire finalizzata alla individuazione di metodologie per il Network Element Management. La convenzione ha coinvolto diversi colleghi del DIA, con competenze diversificate dalla sicurezza al networking, proponendo una soluzione complessiva secondo gli standard ancor oggi validi~\cite{wbem:03,Cattaneo2003975}.}
+
+	\ecvitem{2006--2007}{Responsabile convenzione con Bit4ID S.r.l.,Napoli\newline
+	Nell'ambito dei progetti PIA (Pacchetto Integrato Agevolazioni) la società Bit4ID ha
+	affidato lo sviluppo delle componenti per la sicurezza al DIA stipulando una convenzione di ricerca ex art. 66 DL 382/80 per un importo complessivo di 107.000~\euro{}.}
+	%Il sottoscritto, responsabile scientifico della convenzione, ha coordinato lo sviluppo di una serie di moduli per l’autenticazione e la firma digitale per una network appliance dedicata (Hardware Security Module)~\cite{Cattaneo200798,Cattaneo2010213,HSMProxyChap:2012}. Alla luce degli ottimi risultati raggiunti nel progetto specifico e delle affinità culturali con l'azienda partner, la collaborazione è divenuta permanente, con frequenti incontri sul tema della sicurezza che rappresenta il core business della società.}
+
+	\ecvitem{2006--2008}{Responsabile convenzione con Tesnet-IT S.r.l., Napoli\newline
+	Nell'ambito di un progetto finanziato (PIA) la società Tesnet-IT ha affidato al DIA una importante commessa stipulando una convenzione di ricerca ex art. 66 DL 382/80 per un importo complessivo di 150.000~\euro{} finalizzato allo sviluppo di un sistema off-line di rilevamento delle frodi telefoniche basato su reti neurali. Il sistema realizzato dal gruppo di lavoro coordinato dal sottoscritto è stato sperimentato in collaborazione con uno dei primari operatori telefonici nazionali, su dati reali di traffico opportunamente cifrati e sui dati prodotti da un simulatore appositamente realizzato, esibendo risultati notevolmente superiori per qualità e quantità rispetto a quelli ottenibili con i prodotti presenti in commercio.}
+
+	\ecvitem{2005--2008}{Responsabile scientifico accordo quadro con Provincia di Salerno, Salerno\newline
+	In collaborazione con il prof. A. De Santis e di un gruppo di giovani ricercatori è stato sviluppato un sistema di comunicazione per dispositivi mobili (GSM) in grado di garantire la massima privacy della conversazione ed il non ripudio (firma digitale). Il progetto  Speech~\cite{Castiglione2006287} è stato finanziato dalla Provincia di Salerno attraverso un contributo di di 80.000~\euro{}. Dopo le fasi di progettazione, è stato sviluppato un prototipo dimostrabile che è stato presentato a numerose aziende del settore delle telecomunicazione. Tali risultati sono stati unanimemente ritenuti estremamente significativi ed innovativi per un settore estremamente delicato da affrontare in  maniera laica (quello delle intercettazione telefoniche). La Provincia di Salerno, nel riconoscimento dei risultati raggiunti, ha offerto il suo contributo per promuovere la fase di pre-industrializzazione. Tali risorse sono state utilizzate per allestire un laboratorio avanzato sul tema comunicazioni e privatezza che attualmente opera nel settore delle comunicazioni VoIP.}
+
+	\ecvitem{2007--2010}{Responsabile convenzione con Telepark S.p.A, Salerno\newline
+	Nell'ambito del (Piano Operativo Regionale POR Campania 2000/2006 nell’ambito dell’Accordo di Programma Quadro in materia di e-government e società dell’Informazione) misura 3.17 il sottoscritto ha presentato un progetto in Associazione Temporanea di Scopo con la società Telepark S.p.A. denominato "{\em Framework for Advanced Secured Transactions} - Definizione di un’architettura di riferimento per la realizzazione di sistemi di micropagamenti  basata sul concetto di sicurezza delle transazioni finanziarie e accesso multicanale - FAST''.
+	Il progetto è stato approvato per 800.000~\euro{} di spese ammissibili, di cui 80.000~\euro{} affidati alla componente DIA.
+	Il progetto ha reso disponibile un sistema per microtransazioni di danaro utilizzato per il pagamento della sosta. La società partner ha anche depositato un brevetto per la tutela dei diritti dell'opera dell'ingegno ed ha offerto servizi basati sul sistema disegnato in diverse città d'Italia.
+	Il framework realizzato è stato anche oggetto di numerose pubblicazioni in ambito sicurezza (per il protocollo di pagamento e riscatto)~\cite{Castiglione200962,DeSantis2010843}.}
+
+	\ecvitem{2009--2013}{Responsabile unità locale Progetto MISE Made in Italy "OPEN"\newline
+	Nell'ambito del bando di finanziamento del MISE denominato {\em Made in Italy} ha partecipato alla presentazione del progetto OPEN, successivamente ammesso a finanziamento per un importo complessivo di 6,4 M\euro{}. Il progetto ha raccolto in ATS numerosi partner nazionali tra cui la società di consulenza Everis Italia S.p.A. (capofila) ed aziende private quali: Prima Electro di Moncalieri (TO), Domini Officine di Alba (CN),  Taglio Srl di Piobesi d’Alba (CN), ERXA di Torino, Motor Power Company di Castelnovo di Sotto (RE). Il progetto ha avuto come obiettivo la realizzazione di una macchina a controllo numerico per il taglio (ottimizzato) ad acqua delle pelli. Il sottoscritto ha diretto l'unità salernitana (il DIA è stato partner del progetto in ATS), che ha contribuito sia sugli aspetti di sicurezza che sugli sistemistici affrontati per la remotizzazione delle primitive per il controllo delle attrezzature sul campo. Il progetto si è concluso con successo nel 2013 dopo 36 mesi di attività e l'unità salernitana ha ottenuto un finanziamento di 185.000 \euro{}.}
+
+	\ecvitem{2012--2015}{Responsabile OR Progetto Campus Salus per Lactem, Salerno\newline
+	Nell'ambito del bando della Regione Campania per la concessione di aiuti a progetti di ricerca industriale e sviluppo sperimentale per la realizzazione di campus dell’innovazione in attuazione delle azioni  a valere sugli obiettivi operativi 2.1 e 2.2. del POR Campania 2007/2013, in collaborazione con il Dipartimento di Farmacia (Capofila per l'Università di Salerno) ed il Dipartimento di Ingegneria Elettronica oltre ad un gruppo di aziende tra cui la capofila Centrale del Latte di Salerno, ha presentato un proposta progettuale finalizzata al tracciamento ed al recupero del serio caseario, denominata {\em Salus per Lactem}. Il progetto industriale molto ambizioso è stato affrontato introducendo le soluzione più moderne esistenti in letteratura per disporre di dati raccolti direttamente presso le stalle al momento della raccolta. Un gruppo di sensori appositamente realizzati hanno infatti permesso di isolare parametri qualitativi e quantitativi del latte raccolto (come acidità, carica batterica, quantità di grassi). \`E stato poi successivamente dimostrato che tali parametri risultano fortemente caratterizzanti per quanto riguarda le proprietà organolettiche del prodotto finale e dei suoi derivati (yogourt, formaggi, prodotti salutistici, ecc.). Il progetto è stato finanziato per un costo complessivo di 3,6 M\euro{}.
+	Il sottoscritto, responsabile del Obiettivo Realizzativo 2 (Progettazione del sistema di tracciabilità), ha realizzato insieme all'azienda NexSoft tutto il sistema per la raccolta dati ed il tracciamento delle materie prime.
+	Il progetto ha concluso le attività di disseminazione dei risultati nell'ottobre del 2015.}
+
+	\ecvitem{2010--2015}{Responsabile convenzione con Enti Locali, Salerno\newline
+	Dal 2010 al 2015 sono state stipulate numerose convenzioni di ricerca con Enti Pubblici locali, tra cui Comune di Battipaglia, Provincia di Salerno, Comune di Pontecagnano, ecc. per importo complessivi di circa 60.000~\euro{}.}
+
+	\ecvitem{2012--2015}{Responsabile convenzione con InfoCert S.p.A., Roma\newline
+	\'E stato responsabile scientifico di 3 convenzioni stipulate con la società Infocert S.p.A. per la realizzazione di soluzioni dedicate alla Posta Elettronica Certificata, alla firma digitale ed agli strumenti per la strong authentication, nell’ambito del progetto nazionale denominato SPID.
+	Le tre convenzioni hanno complessivamente prodotto un fatturato di oltre 440.000~\euro{}.}
+
+
+%\ecvtitle{March 2002 -- July 2002}{Internship}
+%  \ecvitem{}{European Commission, Youth Unit, DG Education and Culture \newline 200, Rue de la Loi, 1049 Brussels (Belgium)}
+%  \ecvitem{}{
+%  \begin{ecvitemize}
+%      \item evaluating youth training programmes for SALTO UK and the partnership between the Council of Europe and European Commission
+%      \item organizing and running a 2 day workshop on non-formal education for Action 5 large scale projects focusing on quality, assessment and recognition
+%      \item contributing to the steering sroup on training and developing action plans on training for the next 3 years. Working on the Users Guide for training and the support measures
+%  \end{ecvitemize}
+%  }
+%  \ecvitem{}{\ecvhighlight{Business or sector}\quad European institution}
+%  
+%  \ecvtitle{Oct 2001 -- Feb 2002}{Researcher / Independent Consultant}
+%  \ecvitem{}{Council of Europe, Budapest (Hungary)}
+%  \ecvitem{}{Working in a research team carrying out in-depth qualitative evaluation of the 2 year Advanced Training of Trainers in Europe using participant observations, in-depth interviews and focus groups. Work carried out in training courses in Strasbourg, Slovenia and Budapest.}
+%  
+  
+  \ecvsection{Formazione}
+  
+  \ecvtitlelevel{1978--1983}{Laurea in Scienze dell'Informazione}{}
+   \ecvitem{} {Si è laureato con \emph{lode} in Scienze dell'Informazione presso l'Università di Salerno discutendo una tesi dal titolo {\em “Architetture Special Purpose per l'Elaborazione di Immagini”}.}
+  
+  \ecvtitle{1973--1978}{Maturità Scientifica}
+   \ecvitem{} {Ha ottenuto la maturità scientifica presso il Liceo Scientifico F. Severi, Salerno con votazione \emph{60/60}}
+%  \ecvitem{}{Brunel University, London United Kingdom}
+%  \ecvitem{}{
+%      \begin{ecvitemize}
+%	\item sociology of risk
+%	\item sociology of scientific knowledge / information society
+%	\item anthropology
+%	\item E-learning and Psychology
+%	\item research methods
+%      \end{ecvitemize}
+%  }
+%  
+%  \pagebreak
+ 
+%  \ecvsection{Personal skill}
+%  \ecvmothertongue{Italiano}
+%  \ecvlanguageheader
+%  \ecvlanguage{Inglese}{B2}{C1}{C1}{C1}{C1}
+%  \ecvlastlanguage{Francese}{C1}{C2}{C1}{C1}{C1}
+%  \ecvlanguagefooter
+%   
+%  \ecvblueitem{Communication skills}{
+%  \begin{ecvitemize}
+%    \item team work: Ottima capacità di team building Ha fatto parte di numerosi gruppi di lavori e squadre di atleti
+%    \item mediating skill: Ottima capacità di ascolto e di negoziazione in condizioni di stress psico fisico.
+%    \item intercultural skill: Buona capacità di integrare culture ed approcci diversi.
+%  \end{ecvitemize}
+%  }
+%  
+%  \ecvdigitalcompetence{\ecvProficient}{\ecvProficient}{\ecvIndependent}{\ecvProficient}{\ecvProficient}
+%  
+%  \ecvblueitem{Computer skill}{
+%  \begin{ecvitemize}
+%    \item Esperto dei principali linguaggi di programmazioni: Lisp, C, C++, Java, Scala, Python
+%    \item Esperto dei principali framework di sviluppo: Visual Studio, Netbeans, Eclipse, IntelliJ
+%    \item Esperto dei sistemi operativi: Unix, Linux, Mac OS X, Windows.
+%  \end{ecvitemize}
+%  }
+%  
+%  
+%  \ecvblueitem{Other skill}{
+%    \begin{ecvitemize}
+%		\item Appassionato di mare, vela e sport nautici in generale
+%        \item Pratica Tennis Tavolo a livello agonista e fitness
+%	  \end{ecvitemize}
+%	}
+%  % \ecvblueitem{Driving licence}{A, B}
+%  
+%  
+%  \nocite{*}
+\ecvsection{Pubblicazioni}
+  \ecvtitle{1983--\lastYear}{}
+   \ecvitem{} {\`E stato autore di oltre 100 articoli scientifici pubblicati su primarie riviste internazionali o negli atti di convegni scientifici internazionali. Tutti gli articoli sono reperibili on-line.}
+%  
+  
+  %\ecvblueitem{}{\nocite{*}}
+%  \textit{How to do Observations: Borrowing techniques from the Social Sciences to help Participants do Observations in Simulation Exercises}, Coyote EU/CoE Partnership Publication, (2002).
+  % \newpage
+%  \renewcommand\refname{Bibliografia}
+%  \printbibheading
+  %\printbibliography[prefixnumbers={A},type=article,title={Articoli su riviste internazionali},heading=subbibliography]
+  %\printbibliography[prefixnumbers={C},type=inproceedings,title={Articoli a conferenze},heading=subbibliography]
+  
+  
+%  \begin{refcontext}[labelprefix=J]{rc}
+%  \renewcommand*{\bibfont}{\footnotesize}
+%  \printbibliography[type=article, title={Articoli su riviste internazionali}, heading=subbibliography, resetnumbers=1]
+%  
+%  \end{refcontext}
+%  
+%  
+%  \begin{refcontext}[labelprefix=W]{rc}
+%  \renewcommand*{\bibfont}{\footnotesize}
+%  \printbibliography[nottype=article,title={Articoli presentati a conferenze internazionali}, heading=subbibliography, resetnumbers=1]
+%  
+%  \end{refcontext}
+%  
+%\renewcommand{\section}[2]{\ecvsection{#2}}
+%\renewcommand{\subsection}[2]{\ecvsection{#2}}
+%
+%\printbibtabular[type=article, title={Articoli su riviste internazionali}, heading=subbibliography, resetnumbers=1]
+%  
+%  
+%\printbibtabular[nottype=article, title={Articoli presentati a conferenze internazionali}, heading=subbibliography, resetnumbers=1]
+%
+%
+%
+%\ecvsection{Trattamento dei dati personali}
+%  
+%\ecvitem{}{\emph{Autorizzo il trattamento dei dati personali contenuti nel mio  Curriculum Vitae ai sensi dell’art. 13 Dlgs 196 del 30 giugno 2003 e  dell’art. 13 GDPR (Regolamento UE 2016/679).}}
+
+
+\bigskip
+
+Salerno, \currentDate
+
+\hfill\parbox[t]{8cm}{
+  \begin{center}
+    firmato\\
+    \textit{Giuseppe CATTANEO}
+	 \includegraphics[width=0.9\linewidth]{../../Modelli/Signatures/cattaneosignature}
+  \end{center}
+%  \hrule   
+}
+	
+
+  \clearpage
+  
+  \end{europasscv}
+
+\end{document}

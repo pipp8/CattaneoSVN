@@ -1,0 +1,185 @@
+\documentclass[runningheads]{llncs}
+\usepackage{graphicx}
+
+\newcommand{\Owner}{\ensuremath{\mathsf{O}}}
+\newcommand{\SM}{\ensuremath{\mathsf{SM}}}
+\newcommand{\User}{\ensuremath{\mathsf{U}}}
+\newcommand{\Proxy}{\ensuremath{\mathsf{P}}}
+\newcommand{\SC}{\ensuremath{\mathsf{SC}}}
+\newcommand{\RSC}{\ensuremath{\mathsf{RSC}}}
+\newcommand{\SRSC}{\ensuremath{\mathsf{SRSC}}}
+\newcommand{\PRSC}{\ensuremath{\mathsf{PRSC}}}
+\newcommand{\MRSC}{\ensuremath{\mathsf{MRSC}}}
+\newcommand{\PSCS}{\ensuremath{\mathsf{PSCS}}}
+
+\newcommand{\remove}[1]{}
+
+\begin{document}
+\title{Proxy Smart Card Systems
+\thanks{
+This work has been supported in part by the joint project {\sl
+``SmartSEC"},  with Bit4ID S.r.l., financed by Italian Ministry of Economic Development in the framework P.O.N. 2000-2006 - Misura 2.1.}}
+
+\author{ Giuseppe Cattaneo\inst{1} \and  Pompeo Faruolo\inst{1} \and Vincenzo Palazzo\inst{2} \and Ivan Visconti\inst{1} }
+\authorrunning{Cattaneo et al.}
+\tocauthor{G. Cattaneo, P. Faruolo, V. Palazzo, I. Visconti}
+\institute{ Universit\`{a} di Salerno, ITALY
+\email{\{cattaneo,pomfar,visconti\}@dia.unisa.it} \and Bit4ID s.r.l,
+via Coroglio, 57 BIC Citt\`a della Scienza - 80124 Napoli
+\email{vpa@bit4id.com}}
+
+
+\maketitle
+\begin{abstract}
+The established legal value of digital signatures and the growing availability of identity-based digital services are progressively extending the use of smart cards to all citizens, opening new challenging scenarios.  Among them, motivated by concrete applications, secure and practical delegation of digital signatures is becoming more and more critical. Unfortunately, secure delegation systems proposed so far (e.g., proxy signatures)  include various drawbacks for any practical system.
+
+In this work we put forth the notion of a ``Proxy Smart Card System", a distributed system that allows a smart card owner to delegate part of its computations (e.g., signatures of messages) to remote users.  We stress the problematic aspects concerning the use of known proxy-cryptography schemes in synergy with current standard technologies. This in turn motivates the need of proxy smart card systems. Then we formalize the security and functional requirements of a proxy smart card system, identifying the involved parties, the adversary model and the usability properties. Finally, we present the design and analysis of a proxy smart card system which outperforms the current state of the art.
+\end{abstract}
+
+
+\section{Introduction}
+Proxy cryptography is a widely developed research area that consists in providing cryptographic primitives that allow  a user to safely delegate part of its tasks (typically signatures of messages) to another user. Concrete applications of proxy cryptography are becoming more and more critical. For instance digital signatures are now regulated and accepted by law in almost all countries and many entities playing crucial roles in both enterprises (e.g., CEOs) and public institutions (e.g., mayors, rectors),  have to sign a large amount of documents per day. Moreover, it is often the case that documents have to be signed urgently, even when the signer is out of his office and unreachable. The possibility of delegating signing privileges should therefore be extended also to {\em digital} signatures.
+
+Unfortunately we observe a huge gap between the results provided for proxy cryptography and their use in the real world. Indeed, it is well known that results produced by cryptographers need several years to be assessed and then used by practitioners. Moreover cryptography in stand-alone is not usable, it needs to be integrated in a system with  security and privacy mechanisms that can make robust all the involved components. Proxy cryptography is affected by such delays, and indeed, while the literature already gives several provably-secure schemes enjoying many features and reasonable efficiency, almost nothing of it is actually used in the real world. This is in large part a consequence of the long distance between the requirements of proxy cryptography (e.g., system parameters, cryptographic operations) and the currently used technologies (e.g., PKIX~\cite{PKIX}, Smart Cards). It is therefore urgent to provide mechanisms that allow delegation of signatures using {\em current} standard technologies {\em only}.
+
+
+
+\paragraph{Our contribution.}
+In this work we study the problematic aspects of using proxy cryptography along with current standard technologies to implement delegation of signatures. Therefore, motivated by the world-wide spread of smart cards (\SC s, for short), and their cryptographic operations (e.g., signatures) for implementing various cryptographic services, we put forth the notion of a \emph{Proxy Smart Card System }(\PSCS, for short). We investigate concrete real-world scenarios and according to them we formalize the security and functional requirements of a \PSCS, identifying the involved parties, the adversary model and the critical usability properties. We finally present the design and analysis of a proxy smart card system based on the use of a network security appliance that outperforms the current state of the art. The development of our system required the combined use of several techniques and technologies in a novel way, which in some case could be also of independent interest.
+
+Our solution is a ``ready-to-use" framework that can be easily plugged in real-life scenarios. It does not resort to currently unadopted features of proxy cryptography and instead uses the synergy of existing crypto tools and security technologies to obtain a robust, easy to configure, scalable and cheap system to delegate, under some access control policies, signature privileges.
+
+
+\section{Proxy Signatures and Decryptions}
+\label{relatedwork}
+The concepts of proxy signatures and proxy encryptions were introduced respectively by Mambo et al.~\cite{DBLP:conf/ccs/MamboUO96} and by Mambo and Okamoto~\cite{MamboO97}.  In such schemes a player called owner \Owner\, delegates to another player, called user \User, the power to execute his own cryptographic tasks. In a proxy signature system, \User\ can sign messages on \Owner's behalf, while in a proxy encryption system he can decrypt ciphertexts encrypted under \Owner's public key. In general, in such systems, \Owner\ generates some \emph{proxy secret keys} which \User s can use to sign documents verifiable through \Owner's public key and decrypt ciphertexts encrypted under \Owner's  public key.
+
+Originally, these building blocks were considered to be used in large enterprise scenarios, where a manager would like to delegate signature capabilities or he could delegate to  someone else the capabilities to decrypt some messages (e.g., e-mails) encrypted with his public key. Subsequently,  the use of such schemes has been suggested in numerous other contexts.
+
+\paragraph{Security requirements.}
+According to the relevant literature~\cite{DBLP:conf/ccs/MamboUO96,DBLP:conf/acisp/LeeKK012}, and
+the requirements of real-world applications, a proxy signature and encryption schemes should
+enjoy the following (informal) properties.
+
+{\tt Proxy signature.}
+{\em Verifiability}: a verifier always accepts a proxy signature computed by a delegated honest user \User;
+{\em Strong unforgeability}: it must be computationally hard for a player that is not a delegated honest \User\ to compute a new proxy signature that is accepted by a verifier;
+{\em Strong identifiability}: from a proxy signature computed by a delegated user \User, it must be possible to determine efficiently the identity of \User;
+{\em Strong undeniability}:
+it must be computationally hard for a player that computed a proxy signature, to subsequently repudiate it.
+
+{\tt Proxy Encryption.}
+{\em Correctness}: a delegated honest user \User\ always correctly decrypts an encryption of a message under \Owner's public key;
+{\em Indistinguishability}: it is computationally hard for a player that is not \Owner\ and neither a delegated honest user
+\User\ to distinguish the plaintext encrypted in a ciphertext w.r.t. any other possible plaintext of the same length.
+
+The above properties have been formally defined along with several variations and extensions in the related literature. Here, for lack of space and the sake of focusing the paper on the core of our contribution, we will consider the above informal security requirements only.
+
+\paragraph{Functional requirements.}
+We notice that currently no proxy-cryptography scheme seems to be concretely used in practice. Our investigations about the available schemes, the above security requirements and the available cryptographic tools, raised the following issues. 1) Proxy-cryptography schemes often use number-theoretic constructions and procedures that heavily deviate from the currently available standard technology. Their introduction in real-life scenarios would require too much effort for users to move to new/different systems. 2) Several schemes do not combine gracefully security and flexibility, indeed most of the proposed systems enjoy some given properties and can not be easily adapted to relax some of them. 3) Several schemes suffer of practical limitations.
+
+The work done so far on proxy cryptography mainly focused on the design of powerful cryptographic primitives, but unfortunately it substantially ignored the concrete functional requirements of a practical and easy to use system. In order to be more concrete about such requirements, we studied different contexts where proxy signatures are needed and we collected the \emph{functional requirements} (beyond the usual security requirements) that we believe any practical proxy signature/encryption system should enjoy. We summarize those requirements in the following categories.
+{\em Compatibility}: schemes should use standard technologies only in order to be compatible with current software applications;
+{\em Flexibility}: schemes should allow users to configure and select the appropriate features dynamically.
+{\em Efficiency}: schemes should be reliable and satisfy some critical performance requirements.
+
+Motivated by the above requirements, and the problematic use of proxy cryptography for satisfying them, we investigated the possibility of designing a system where all those security and functional requirements could be satisfied simultaneously. In the next section we show the design of our system that thus gives a positive answer to the challenging question of having a viable technology for digital signature delegation.
+
+\section{Design of a Proxy Smart Card System}
+\label{pcsc}
+Following the security and functional requirements identified in the previous section, we designed a \PSCS , that is, a proxy smart cards system that can be used to safely delegate signing and decrypting capabilities of a personal smart card. In our system \Owner s can allow authorized \User s to remotely access to their \SC s in order to sign and decrypt messages using their private keys. Notice that smart cards are nowadays a standard technology deployed to all citizens by means of electronic ID cards. Moreover, the use of smart cards guarantees a high level of robustness of the system, thanks to the hardness of extracting private keys (i.e., the device is ideally considered tamper proof). Here we consider \SC s as standard
+PKCS\#11~\cite{PKCS11} compliant smart cards, where the critical operations are protected by PIN (i.e., personal identification number).
+
+A central role in our \PSCS\ is the Proxy Server \Proxy, a hardware/software network security appliance equipped with smart card readers. The purpose of \Proxy\ is to allow \User s to use the signing/decrypting capabilities of \SC\ without compromising any critical information (e.g., private keys, PIN).  \Owner\ shares his \SC s by plugging them into readers connected to \Proxy, while \User s remotely interacts with \Proxy\ to use them according to the role-based access control (in short, RBAC~\cite{RBAC}) configured by \Owner . These interactions are implemented by \PSCS\ through a \emph{Remote PKCS\#11}, that is, a library that exposes to \User s standard PKCS\#11 functionalities while the computations are carried out on \SC s plugged in \Proxy . Using this approach, \User s can continue to use their standard applications also on \Owner 's \SC s to compute proxy signatures or to decrypt messages.
+
+Making \SC s remotely available introduces the problem of filtering remote access to the \SC s. This requires the assumption that \Proxy\  is a {\sl tamper proof/evident network security appliance} designed to provide the same services of a local smart card reader through the net.
+
+
+\paragraph{Remote smart card.}
+The smart cards that \Proxy\ makes available to \User s do not necessarily correspond to the smart cards plugged in card readers. Indeed, in our system \Owner s have the possibility to configure \SC s in different operating modes giving to \User s a virtual view of the \SC s available. In detail, \Owner s can define the \emph{Remote Smart Card} (\RSC) as \emph{Single} (\SRSC) or \emph{Parallel} (\PRSC). In the former case, a \RSC\ corresponds exactly to a real \SC\ while in the latter case several \SC s, offering the same objects, will appear to \User s as a single \RSC . A request on a \PRSC\ can be executed indifferently by any \SC\ linked to it. Notice that an \Owner\ can have several certificates (and thus several public keys) associated to his identity, therefore \PRSC\ is achievable by using a smart card for each certificate, so that each smart card stores a different private key. Indeed, a critical feature concerning the use of smart cards is that the private key should never leave the smart card (and thus cloning procedures should not be performed).
+Another important requirement is that the associated PIN should never be memorized in permanent storage, and we will deal with this later when we will discuss our PIN management system.
+
+From the above discussion, we have that  \SC s with different keys can still be used for signatures delegation,  while only one of them can be used for decrypting a message. The above mechanism makes signature delegation more efficient, indeed, a \PRSC\ allows one to parallelize the load of requests across its \SC s.
+
+\paragraph{Set up of the system.}
+All \User s and \Owner s must enroll the system by registering their public keys. \Owner\ plugs his \SC s into the smart card readers connected to \Proxy. Through a remote administration web interface \Owner\ sets the configuration of his \RSC s and defines the related access policies for the delegated \User s. An authorized \User\ for a given \RSC, receives a special PIN that does not correspond to the real \SC 's PIN, but instead is a \emph{virtual PIN} that allows him to access  that \RSC. We discuss in the next section the problematic issues concerning  PIN management, and the technical motivation of our non-trivial solution. \Owner s can revoke the delegated capabilities to each \User\ in any moment by simply updating the access control policies. Such updates have immediate effects, indeed a revoked \User\ will not be able to invoke any further service on \Proxy . The past signatures will remain valid. The system allows \Owner s to authorize the delegation only for a given time interval and/or on specific documents. Moreover, \Owner\ can decide if the proxy signatures will be with or without warranty (in the former case, the signature will contain also a warning about performed delegation).
+
+\paragraph{Proxy signatures/decryptions.}
+First of all we remark that \User\ can use his standard applications, that are PKCS\#11 compatible, to sign or decrypt documents through the \Owner 's \SC s. These applications must only set the client side of  \emph{Remote PKCS\#11}  as PKCS\#11 layer. This module has the task of interacting with \Proxy\ in order to accomplish remotely the operation invoked by the application. Obviously, this task is done transparently to the application. Its first step is to access to \Proxy\  by means of a strong authorization mechanism (i.e., TLS~\cite{TLS} client authentication through digital certificates). Once the secure channel has been established, according to \User\ privileges, it enumerates to the application all the \RSC s available as PKCS\#11 slots.  When an \RSC\ has been selected by \User\  to sign or to decrypt documents, the client component of \emph{Remote PKCS\#11}  will sign the request with \User 's private key and will send it to the server component of the library. This signature is required in order to log on \Proxy\ the request, that thus can not be repudiated by \User. If the PIN is correct and \User\ has the required privileges, the operation is executed by the selected \SC\ and the result is sent back to local component of  \emph{Remote PKCS\#11} that will forward it to the application. More specifically, the system will dispatch the requests on a \PRSC\ to the first available \SC\ linked to that \PRSC\ through a Round Robin scheme that therefore will balance the load of requests. Since the sign/decrypt functions are slow and long term operations, this mechanism radically improves system performance linearly scaling with the number of \SC s configured for the \PRSC.
+The system allows obviously \Owner s access (even remotely) to all the logs, in order to let them monitor completely the activity of their delegates.
+
+
+\paragraph{Security model.}
+Given the critical use of smart cards in real world scenarios, a security model is required in order to show that a proposal is resilient to attacks mounted by malicious players. First of all, we follow the standard approach that assumes that an adversary has complete control over the communication channel. This includes the capability of reading and updating all messages that cross the network, of delaying the delivering of messages, and so on.
+
+We assume that \Proxy\ is a trusted player, this means that when it is active it follows the prescribed procedures and his behavior can not be compromised. This assumption is both 1) necessary, and 2) achievable in practice. Indeed, in case \Proxy\ is under the control of an adversary, since \SC s are plugged into its readers, and remotely accessed through its software, the adversary would obtain the PINs of the \SC s and thus could also ask them non-authorized services (e.g., signatures). Notice that while it is known how to design protocols that are secure even in presence of such adversaries, the known solutions require that honest players (in this case \SC s and honest \User s) perform computations that go much beyond the simple PKCS\#11 interface that is currently available for accessing to standard smart cards. The need of obtaining a proxy system on top of standard technologies, therefore requires
+that \Proxy\ behaves honestly.
+
+The above assumption about \Proxy\ is also achievable in practice since the hardware infrastructure of \Proxy\ can be placed into a restricted access area (basically implementing a tamper evident mechanism) and moreover his software could be placed in EEROM (i.e., Electrically Erasable Read-Only Memory). Therefore
+the software is rewritable only when a special password is known. There must be instead a read-write (RW, for short) memory that will contain for instance log files and the RBAC policy files. We do not assume special requirements about such an RW memory, indeed its content remain valid and used by \Proxy\ as long as there is a valid message authentication code (MAC, for short) associated to them. Indeed, this memory could be adversarially corrupted and we require that the adversary must not be
+able to produce new valid data. Moreover, erasing such data or trying to restore previous data will have no (substantial) effect since \Proxy\ is assumed to periodically send through S/MIME~\cite{smime} encrypted and signed backups of such data to the addresses associated to \Owner s.
+
+We assume that {\em qualified} \User s are honest while other \User s can be corrupted. The distinction between such two categories depends on the RBAC policies configured for each smart card. \User s that can access to services provided by some \SC s are assumed to be honest for those \SC s and potentially dishonest for the remaining services of those \SC s and for the other \SC s. Notice that since RBAC policies are dynamic, the set of qualified users is dynamic as well, and thus a user can be considered honest only temporarily (therefore one can not simply assume that the owner of a \SC\ gives the PIN to qualified \User s).
+All honestly produced \SC s are assumed to be incorruptible, instead an adversary can produce some non-legitimate \SC s that can be plugged into the readers of \Proxy\ and \User s.
+
+\paragraph{Pin management.}
+A major requirement for the design of a proxy smart-card system is the transparent use of remote smart cards as they were local. Indeed, clients would like to recycle their applications that access to local smart in order to also access to the remote smart cards connected to the proxy smart-card system. Notice that access to a smart card is possible through a log on procedure where a personal identification number (PIN) has to be provided by the user and sent to the smart card. The need of recycling standard applications implies that one can not simply assume that qualified users are identified by the system through passwords. This restriction is enforced could be enforced by laws that mandatory require the use of PINs for accessing smart cards. Moreover, after a prescribed number of PIN log on failures a Personal Unblocking Key (PUK) is needed to restore access to the smart card.
+
+The above problem could in general be solved by the following trivial solution: the PIN of the smart card is communicated to all users that have sufficient privileges to access the smart card. This solution however does not satisfy the flexibility requirement of a proxy smart-card system since user privileges are in general dynamic and thus removing a user from the system would require the generation of new PINs that then should be distributed to all qualified users. This is clearly unacceptable in systems with many users and dynamic assignment of privileges. We have therefore developed a more sophisticated system.
+
+The failure of the trivial solution discussed above implies that the PIN on the client's side must be different from the real PIN that allows one to succeed in the log on procedure with the smart card. It is therefore fundamental to establish a virtual PIN system where users know some virtual PINs that can be translated into real PINs by the proxy smart-card system. In this direction one can consider the following simple but conceptually wrong solution. The RBAC policy is encoded through a table where each \User\ has associated a mapping between virtual PIN and real PIN. Therefore, upon receiving a remote log on request with a given virtual PIN, \Proxy\  simply accesses the table and translates the virtual PIN to a real PIN to be used for the log on procedure with the smart card. This procedure would match the flexibility requirement of the system. However, it still includes a security drawback that we want to exclude from our architecture. Indeed, the above table should be stored somewhere in the permanent memory of \Proxy\ and would include the real PIN. Storing a real PIN on a permanent memory is conceptually wrong and in contrast with the common philosophy about the correct use of smart cards.  Taking into account these issues, our solution is more sophisticated and requires the use of the virtual PIN as a key for the symmetric encryption of the real PIN. Therefore, when a new virtual PIN is generated and associated to a real PIN, \Proxy\ will be updated by adding a new entry in an access control table and it will contain an encryption of the real PIN computed by means of the virtual PIN as key. When \User\ accesses remotely to a \SC , he has to send the virtual PIN that then will be used by \Proxy\ to decrypt the corresponding entry in the RBAC table and to perform the log on procedure on the \SC . Notice that using this approach we can still have flexibility and at the same time no key or PIN is stored unencrypted in the permanent memory of \Proxy.
+
+\paragraph{Implementation details.}
+In this section we illustrate the main implementation details of our \PSCS. First of all we implemented our \PSCS\ using a Client/Server schema, between the PKCS\#11 local component (on client side) and the PKCS\#11 engine (on server side). The first one exposes a standard PKCS\#11 interface to \User's local application, but when the applications invoke its functions, the module remotely calls the corresponding engine function on \Proxy . Invocations are encapsulated in a proprietary format and sent using the HTTP protocol through a secure channel (HTTPS) with mutual authentication based on the exchange of X.509 certificates~\cite{PKIX}. The server engine forwards the requests to the plugged \SC s and returns to the client the results. In the standard PKCS\#11 interface some functions must be coded by the library and some others must be executed natively by \SC . Some computations (e.g., AES symmetric encryptions,  cryptographic hashing), are executed locally by the client module while others (e.g., signatures) by \SC\ on \Proxy\ through the engine component. We stress that this mechanism is transparent to \User s and requires only the availability of \User's authentication capabilities in the standard PKIX~\cite{PKIX} setting.
+
+\section{Conclusion.}
+We have conducted several performance measurements with different use cases. In all of them, our system resulted sufficiently practical, flexible, efficient and secure as no other currently available proposal in the literature.
+Our system is also easy to set up and we expect that our work will also give a chance for further extensions and improvements, thus generating follow up research on this topic. Further details about the implementation and the security of our
+system will be shown in the full version of this paper.
+
+\begin{thebibliography}{1}
+
+\bibitem{PKIX}
+Housley, R., Ford, W., Polk, W., Solo, D.:
+\newblock {Internet X.509 Public Key Infrastructure Certificate and CRL
+  Profile} (1999)
+
+\bibitem{DBLP:conf/ccs/MamboUO96}
+Mambo, M., Usuda, K., Okamoto, E.:
+\newblock Proxy signatures for delegating signing operation.
+\newblock In: ACM Conference on Computer and Communications Security. (1996)
+  48--57
+
+\bibitem{MamboO97}
+Mambo, M., Okamoto, E.:
+\newblock Proxy cryptosystem: delegation of the power to decrypt ciphertexts.
+\newblock In: IEICE Trans. Fundamentals E80-A(1). (1997)  54--63
+
+\bibitem{DBLP:conf/acisp/LeeKK012}
+Lee, B., Kim, H., Kim, K.:
+\newblock Strong proxy signature and its applications.
+\newblock In: SCIS. (2001)  603--608
+
+\bibitem{PKCS11}
+{RSA Laboratories}:
+\newblock {PKCS \#11: Cryptographic Token Interface Standard}.
+\newblock http://www.rsa.com/rsalabs/node.asp?id=2133
+
+\bibitem{RBAC}
+Ferraiolo, D.F., Kuhn, D.R.:
+\newblock Role based access control.
+\newblock In: 15th National Computer Security Conference. (1992)  554--563
+
+\bibitem{TLS}
+{Network Working Group }:
+\newblock {The Transport Layer Security (TLS) Protocol Version 1.2}.
+\newblock http://tools.ietf.org/html/rfc5246 (2008)
+
+\bibitem{smime}
+{Network Working Group }:
+\newblock {S/MIME Version 3 Message Specification}.
+\newblock http://tools.ietf.org/html/rfc2633 (1999)
+
+\end{thebibliography}
+
+\end{document}

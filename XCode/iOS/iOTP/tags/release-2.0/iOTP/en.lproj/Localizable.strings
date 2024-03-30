@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings (English Version)
+  iOTP
+
+  Created by Giuseppe Cattaneo on 16/03/15.
+  Copyright (c) 2015 Giuseppe Cattaneo. All rights reserved.
+
+"KEY" = "CONTENT";
+"You like?" = "You like?";
+*/
+
+"SAVESEED-TITLE"    = "Save Seed";
+"INSERTPIN-MSG"     = "Please insert your PIN\n(This cannot be recovered!)";
+"ABORT"             = "Abort";
+"OK"                = "OK";
+
+"SEEDSTORED-MSG"    = "Seed Received and Successfully Stored";
+
+
+"SUCCESS-STR" = "success\n";
+"ITEM_ALREADY_EXISTS-ERR" = "error item already exists";
+"ITEM_NOT_FOUND-ERR" = "error item not found";
+"ITEM_AUTHENTICATION_FAILED-ERR" = "error item authentication failed";

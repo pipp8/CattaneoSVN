@@ -1,0 +1,234 @@
+%
+% $Header:  $
+%
+%\documentclass{acm_proc_article-sp}
+\documentclass[runningheads,11pt]{llncs}
+\usepackage[hmargin=1.5in,vmargin=1.8in]{geometry}
+\usepackage{graphicx}
+
+
+\newcommand{\Owner}{\ensuremath{\mathsf{O}}}
+\newcommand{\SM}{\ensuremath{\mathsf{SM}}}
+\newcommand{\User}{\ensuremath{\mathsf{U}}}
+\newcommand{\Proxy}{\ensuremath{\mathsf{P}}}
+\newcommand{\SC}{\ensuremath{\mathsf{SC}}}
+\newcommand{\RSC}{\ensuremath{\mathsf{RSC}}}
+\newcommand{\SRSC}{\ensuremath{\mathsf{SRSC}}}
+\newcommand{\PRSC}{\ensuremath{\mathsf{PRSC}}}
+\newcommand{\MRSC}{\ensuremath{\mathsf{MRSC}}}
+\newcommand{\PSCS}{\ensuremath{\mathsf{PSCS}}}
+
+\newenvironment{myitemize}
+{\begin{list}{$\bullet$}{ \itemindent=-.663cm \listparindent=.6cm
+\itemsep=0.0in
+\parsep=0.0in
+\topsep=0.0in
+\partopsep=0.0in}}{\end{list}}
+
+\newcounter{itemcount}
+\newenvironment{myenumerate}
+{\setcounter{itemcount}{0}\begin{list}
+{\arabic{itemcount}.}{\usecounter{itemcount} \itemindent=0.0cm
+\itemsep=0.0in
+\parsep=0.0in
+\topsep=0.0in
+\partopsep=0.0in}}{\end{list}}
+
+\newenvironment{mydescription}
+{\setcounter{itemcount}{0}\begin{list}
+{\arabic{itemcount}.}{\usecounter{itemcount} \itemindent=0.0cm
+\itemsep=0.0in
+\parsep=0.0in
+\topsep=0.0in
+\partopsep=0.0in}}{\end{list}}
+
+
+\newcommand{\remove}[1]{}
+
+
+\begin{document}
+\title{Improved Image Source Analysis}
+\titlerunning{Improved Image Source Analysis}
+%
+%\numberofauthors{1}
+\author{ Pippo \and Pluto \and Paperino}
+\authorrunning{ short author list}
+\institute{ Dip. di Informatica ed Applicazioni {\sl R.M. Capocelli}\\
+   University of Salerno - ITALY\\
+   \email{\{pippo,pluto,paperino\}@dia.unisa.it}
+}
+
+\maketitle
+\begin{abstract}
+
+In this paper, we present an improvement over the digital camera
+identification technique based on sensor noise proposed by Lukas
+\emph{et al.}\cite{Fri06}.
+
+The project is a joint work with the C.N.C.P.O.  (Centro Nazionale
+per il Contrasto della Pedopornografia sulla rete internet,
+Dipartimento della Pubblica Sicurezza del Ministero dell'Interno, by
+the Italian Servizio Polizia Postale e delle Comunicazioni). Our
+main goal is to develop a a full fledged system prototype (a tool
+set supported by a robust methodology) able to give an answer to the
+following question: {\em which camera among a predefined set could
+be the source of a given digital image ?} This was formerly known as
+the problem of the identification of how a given image has been
+generated). As this method as been conceived as a digital image
+forensics technique to support policy investigation, the result is
+acceptable only if it comes with the highest degree of accuracy.
+
+The project started from the results presented in \cite{Fri06} which
+use the characteristic noise of the sensor, typically a CCD
+(charge-coupled device), as a fingerprint to identify the source
+camera. We first implemented a framework to perform an experimental
+analysis of such a technique and to verify on the field if it could
+be successfully used for our specific purposes with the necessary
+reliability. During this phase we stressed the original technique
+with a big amount of consumer and professional digital cameras
+populating our data base with several thousand of digital images.
+All the test confirmed that the pixel non-uniformity noise could be
+successfully used to identify the image source but for some specific
+camera models we got a sort of pattern clash and many images
+produced low correlation values with more than one reference pattern
+previously extracted from the cameras under investigation including
+the true source. In these cases the values were also too close to
+the rejection threshold. This has been considered an important issue
+to adopt the Fridrich's approach for digital image forensics.
+
+Moreover the process to define the acceptance threshold based on the
+Neyman-Pearson approach, which has been originally employed to
+define the acceptance threshold $ t $ minimizing the false reject
+rate (FRR), resulted too time consuming e not enough flexible
+because the necessary accuracy can be reached only if the system can
+learn from the analysis of a considerable number of images from  a
+known source and when the camera set or the input image set change
+all the threshold $ t $ must be recomputed.
+
+In this paper we present three variants to the original technique
+based on a different approach in the classification phase to
+identify the source camera. We first define a set $ S $ of candidate
+digital cameras, than we  extract the sensor noise reference pattern
+for each camera. Then we take a small set (even a dozen) of randomly
+chosen pictures for each camera. For each image we calculate the
+correlation factor against the reference pattern of each camera.
+Finally we use these values as training set for a SVM classifier
+(Support Vector Machine) with a number of input attributes equal to
+the cardinality of the set $ S $. Similarly we defined a test set to
+verify the result of the training. The trained classifier is now
+ready to  answer to the question \emph{which camera among the set $
+S $ produced the image $ I $ ?} In fact we recalculate the
+correlation with all the reference patterns and we give the
+resulting values as input to the SVM which can provide us with the
+source camera identification.
+
+We have extensively tested the approach we propose and, as shown in
+the section \ref{sec:experiments}, it led us to a double
+improvement:
+
+\begin{myenumerate}
+\item on one hand our approach improved the accuracy of the final
+result especially in the case of cameras with sensor noise patterns
+which produces low correlation values or simply too close to be
+considered distinct. In facts, the SVM can identify the source
+discriminating these values considering the correlation values
+produced by the patterns of the other cameras of the set $ S $
+instead of comparing each correlation value against a single
+predefined threshold value.
+
+
+\item on the other hand our approach produced a considerable speed up
+of the whole process for source camera identification, reducing the
+amount of the images necessary to train the system establishing the
+threshold of acceptance. This becomes even more meaningful if is
+considered that during the investigation often we had to work with a
+set of hundred candidate cameras, and many of these belong to the
+same producer / model.
+\end{myenumerate}
+\end{abstract}
+
+%\keywords{Smart Card, Proxy Cryptography, Network Security Appliance}
+
+\section{Introduction}
+
+\section{System Components}
+
+Comparing our system with the original one proposed by Lukas
+\emph{et al.} \cite{Fri06} three main differences arise:
+
+\begin{enumerate}
+\item The process to extract the camera reference pattern is based
+on a series of images with a very smooth subject, such as a white
+and uniformly lighted wall. Moreover the process for pattern
+extraction has been logically separated by the process for source
+camera identification. More in details, for each camera $ k $  we
+produce a set of $ N^k $ template images $ T $, and for each image $
+I_x, x = 1, \ldots, N^k $ we apply a filter $ F $ to remove the
+scene content leaving only high frequency noise. The final camera
+reference pattern $ np^k $ is obtained by averaging the residual
+noise pattern as shown in \ref{form:pat}
+
+\begin{equation}
+np^k = AVG_x(n_x = I_x - F(I_x)) \label{form:pat}
+\end{equation}
+
+\item The denoising filter $ F $ is based on our implementation of
+a flexible wavelet package able to efficiently manage images of any
+size (using padding to a smallest power of 2) (with 8 or 16
+coefficients). In this way ...
+
+\item The identification process is based on a trained SVM. The target
+input image $ I^T$ is filtered with the same filter $ F $ to obtain
+the image noise pattern $ np^{I^T} $. Then, for each camera $ k $ we
+calculate a correlation value between the image noise pattern $
+np^{I^T} $ and the camera noise pattern $ np^k $:
+
+\begin{equation}
+\rho^{k} = corr( np^{I^T}, np^k), k = 1, \dots, N \label{form:np}
+\end{equation}
+
+the resulting ordered data set (just one raw) becomes the SVM input,
+that will give the final answer providing the user with the index $
+k $ of the camera whose reference pattern is closest to the image
+pattern. Obviously this answer will consider the global distance,
+considering also the relations of the chosen reference pattern with
+all the other cameras reference pattern.
+\end{enumerate}
+
+We will demonstrate how item 1 produces better reference patterns,
+comparing the correlation values between generic input images and
+our reference pattern with the ones obtained using reference pattern
+extracted from generic images.
+
+Item 2 radically reduced the use of cropping or resizing operator,
+giving again higher correlation values. Moreover this makes the
+system suitable to efficiently handle real word images.
+
+We will demonstrate how item 3 improved the performance of the
+overall process reducing the classification errors.
+
+
+\section{Experimental Analysis}
+\label{sec:experiments}
+
+\begin{tabular}{|l|c|c|}
+  \hline
+  Camera model & \# identification error & \# identification  error \\
+               & Fridrich's method    & SVM classifier \\
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  Canon 400D  & 2 & 0 \\
+  Canon $ A400_1 $ & 8 & 2 \\
+  Canon $ A400_2 $ & 1 & 0 \\
+  HP E327 & 5 & 0 \\
+  Kodak CX7530  & 1 & 0 \\
+  \hline
+\end{tabular}
+\section{Conclusion}
+
+
+
+\bibliographystyle{acm}
+\bibliography{ImageForensics}
+
+\end{document}

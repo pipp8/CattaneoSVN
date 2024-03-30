@@ -1,0 +1,245 @@
+% !TEX encoding = UTF-8 Unicode
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{classic}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+% \nopagenumbers{}                                 % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% adjust the page margins
+\usepackage[scale=0.75, top=2.5cm, bottom=2.5cm]{geometry}
+\recomputelengths 
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}       % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+\usepackage[T1]{fontenc}
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+\usepackage[english,italian]{babel}
+
+\usepackage{lastpage}
+\usepackage[official]{eurosym}
+
+\newcommand{\lastYear}{\em 2015} 
+
+% personal data
+\name{Paolo}{Cattaneo}
+\firstname{Paolo}
+\familyname{Cattaneo}
+
+\title{Curriculum Vitae}                               % optional, remove / comment the line if not wanted
+\address{Via R.Pitteri, 56}{I-20134 Milano}{Italy}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\phone[mobile]{+39~380~7560~218}         % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+%\phone[fixed]{+39~089~96~9716}
+\phone[fax]{+39~089~96~9840}
+\email{paolo18.cattaneo@mail.polimi.it}                          % optional, remove / comment the line if not wanted
+%\homepage{www.dia.unisa.it/professori/cattaneo}                         % optional, remove / comment the line if not wanted
+%\social[linkedin]{john.doe}                        % optional, remove / comment the line if not wanted
+%\social[twitter]{jdoe}                                  % optional, remove / comment the line if not wanted
+%\social[github]{jdoe}                                  % optional, remove / comment the line if not wanted
+% \extrainfo{}             % optional, remove / comment the line if not wanted
+
+%\photo[64pt][0.4pt]{FotoTessera2010.png}   % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Data di nascita: 23 novembre 1993}                                  % optional, remove / comment the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+\makeatletter
+\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+\makeatother
+\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+\makeatletter
+\renewcommand*{\nopagenumbers}{\@displaypagenumbersfalse}
+\AtEndPreamble{%
+  \AtBeginDocument{%
+    \if@displaypagenumbers%
+      \@ifundefined{r@lastpage}{}{%
+        \ifthenelse{\pageref{lastpage}>1}{%
+          \settowidth{\pagenumberwidth}{\color{color2}\addressfont\itshape\strut\thepage/\pageref{lastpage}}%
+          \fancypagestyle{plain}{%
+            \fancyfoot[r]{\parbox[t]{\pagenumberwidth}{\color{color2}\addressfont\itshape\strut\thepage/\pageref{lastpage}}}}% the parbox is required to ensure alignment with a possible center footer (e.g., as in the casual style)
+          \pagestyle{plain}}{}}%
+      \AtEndDocument{\label{lastpage}}\else\fi}}
+\makeatother
+
+\cfoot{\addressfont\itshape\textcolor{color2}{Pagina \thepage\ / \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{0.4pt}
+
+\makeatletter
+\chead{\addressfont\itshape\textcolor{color2}{Curriculum Vitae di \@firstname~\@familyname}}
+\makeatother
+
+% bibliography with mutiple entries
+\usepackage{multibib}
+\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\thispagestyle{empty}
+
+\section{Dati Anagrafici}
+
+%\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\setlength\tabcolsep{0.2cm}
+
+\begin{center}
+	\begin{tabular} {r l}
+  Data di nascita: & 23 novembre 1993 \\
+  Luogo di Nascita: & Battipaglia (SA) \\
+  Nazionalità: & Italiana\\
+  Residenza: & Via Panoramica, 15 - 84134 Salerno
+	\end{tabular}
+\end{center}
+
+
+\section{Formazione}
+\cventry{Dal 2012}{Corso di Laurea Triennale in Ingegneria Energetica}{Politecnico di Milano}{Milano}{}
+{
+Indirizzo propedeutico per una laurea specialistica in Ingegneria Nucleare, arricchito dalla partecipazione ai percorsi ASPRI (Alta Scuola Politecnica Ricerca e Innovazione; cf.:  
+\url{http://www.ingind.polimi.it/avvisi_eventi/file/1034/Informativa_PERCORSI_ASPRI_2012-2013.pdf}
+}  % arguments 3 to 6 can be left empty
+
+\cventry{2007--2012}{Maturità Scientifica PNI (Piano Nazionale Informatica)}{Liceo Scientifico G. Da Procida}{Salerno}{\textit{95/100}}
+{}
+
+%\section{Master thesis}
+%\cvitem{title}{\emph{Title}}
+%\cvitem{supervisors}{Supervisors}
+%\cvitem{description}{Short thesis abstract}
+
+\section{Esperienze Professionali}
+%\subsection{TBD}
+%\cventry{1984--1986}{Tecnico Laureato}{Dipartimento di Informatica ed Applicazioni dell'Università di Salerno}{}{}{Stipula un contratto triennale ai sensi dell'art. 26 D.P.R. 380/80 per attività specialistica di supporto alla attivazione dei laboratori didattici del Dipartimento in fase di creazione.\newline{}%
+%Detailed achievements:%
+%\begin{itemize}%
+%\item Achievement 1;
+%\item Achievement 2, with sub-achievements:
+%  \begin{itemize}%
+%  \item Sub-achievement (a);
+%  \item Sub-achievement (b), with sub-sub-achievements (don't do this!);
+%    \begin{itemize}
+%    \item Sub-sub-achievement i;
+%    \item Sub-sub-achievement ii;
+%    \item Sub-sub-achievement iii;
+%    \end{itemize}
+%  \item Sub-achievement (c);
+%  \end{itemize}
+%\item Achievement 3.
+%\end{itemize}
+%}
+
+\section{Attività Scientifica}
+
+\section{Computer Skill}
+\cvdoubleitem{C}{Buona conoscenza}{Solid Edge}{Livello di utilizzo discreto}
+\cvdoubleitem{Matlab}{Buona conoscenza}{Solid Works}{Livello di utilizzo discreto}
+\cvdoubleitem{R}{Semplici progetti di statistica}{Inventor}{Livello di utilizzo discreto}
+
+\section{Lingue Straniere}
+\cvitemwithcomment{Inglese}{IELTS test con punteggio di 6.5 }{Course in English at OISE Language School in Bristol}
+\cvitemwithcomment{Spagnolo}{buona conversazione}{ottenimento di abilità di base nella lingua parlata, attraverso la partecipazione ad uno scambio culturale con il Liceo IES “Maestro Matias Bravo”di Valdemoro, Madrid (Spagna), nell’ambito del progetto “e-twinning” del Liceo Da Procida}
+\cvitemwithcomment{Francese}{buona conversazione, discreto lo scritto}{ottenimento di abilità di base, tramite la scuola secondaria di primo e secondo grado e brevi esperienze in Francia}
+%\cvitemwithcomment{Language 3}{Skill level}{Comment}
+
+\section{Sport e Hobby}
+\cventry{2006--2011}{Membro della squadra atleti agonisti}{Circolo Canottieri Irno}{Salerno}{}
+{
+Dal  2006 al 2011: ho svolto canottaggio a livello agonistico. Ho partecipato a numerose gare di livello regionale e nazionale ottenendo diverse vittorie e medaglie in differenti specialità. In particolare sono risultato campione regionale nella specialità del doppio Under 23 Pesi Leggeri nel 2010, nel bacino di Lago Patria (NA).
+}
+
+\cventry{2011--2012}{Membro della squadra atleti agonisti}{Circolo Canottieri Irno}{Salerno}{}
+{
+ho affinato la mia passione nella vela, già svolta amatorialmente, svolgendo attività agonistica, presso il  circolo velico di Salerno, nella specialità del  laser standard. In particolare ho ottenuto la vittoria di una regata zonale tenutasi a Salerno nella primavera del 2012.
+}
+
+\cventry{2013--\lastYear}{Membro della squadra atleti agonisti}{Centro Universitario Sportivo (CUS)}{Milano}{}
+{
+ho ripreso a svolgere canottaggio a livello agonistico presso il Centro Universitario Sportivo (CUS) Milano. Ho partecipato a gare di livello per lo più  universitario, quali il Campionato Italiano Universitario del 2014, nel quale ho vinto una medaglia di bronzo e una medaglia di argento in due diverse specialità, e la Regata Internazionale delle Università, disputatasi sui galeoni storici nelle acque del Canal Grande di Venezia nel Settembre 2014, nella quale ho vinto la medaglia di bronzo.
+}
+
+
+\section{Interests}
+\cvitem{hobby 1}{Description}
+\cvitem{hobby 2}{Description}
+\cvitem{hobby 3}{Description}
+
+\section{Extra 1}
+\cvlistitem{Item 1}
+\cvlistitem{Item 2}
+\cvlistitem{Item 3. This item is particularly long and therefore normally spans over several lines. Did you notice the indentation when the line wraps?}
+
+\section{Extra 2}
+\cvlistdoubleitem{Item 1}{Item 4}
+\cvlistdoubleitem{Item 2}{Item 5\cite{book1}}
+\cvlistdoubleitem{Item 3}{Item 6. Like item 3 in the single column list before, this item is particularly long to wrap over several lines.}
+
+\section{References}
+\begin{cvcolumns}
+  \cvcolumn{Category 1}{\begin{itemize}\item Person 1\item Person 2\item Person 3\end{itemize}}
+  \cvcolumn{Category 2}{Amongst others:\begin{itemize}\item Person 1, and\item Person 2\end{itemize}(more upon request)}
+  \cvcolumn[0.5]{All the rest \& some more}{\textit{That} person, and \textbf{those} also (all available upon request).}
+\end{cvcolumns}
+
+% Publications from a BibTeX file without multibib
+%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+
+\section{Premi accademici}
+
+Nell’a.a. 2012/13 ha ottenuto una borsa per studenti con merito particolarmente elevato, consistente in una quota di esonero sulla tassa di iscrizione e contributi universitari.
+
+Nell’a.a. 2014/15 sono in gara per una borsa per meriti sportivi e accademici.
+\nocite{*}
+
+\section{Aspirazioni}
+Sin dal liceo, ho trovato estremamente riduttivo trascorrere anni così importanti della propria vita, soprattutto in termini di crescita, all’interno della propria bella e confortante città natale. Ho quindi colto tutte le occasioni possibili  per viaggiare, ed ho intenzione di costruirmi un futuro, nel quale tali occasioni continuino a presentarsi sempre più frequentemente.
+
+
+\bibliographystyle{plain}
+\bibliography{personal}                        % 'publications' is the name of a BibTeX file
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+
+\clearpage
+%-----       letter       ---------------------------------------------------------
+% recipient data
+%\recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
+%\date{January 01, 1984}
+%\opening{Dear Sir or Madam,}
+%\closing{Yours faithfully,}
+%\enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
+%\makelettertitle
+%
+%Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
+%
+%Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum varius nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus varius blandit.
+%
+%Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim varius pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
+%
+%Albert Einstein discovered that $e=mc^2$ in 1905.
+%
+%\[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n \]
+%
+%\makeletterclosing
+
+%\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+\end{document}
+
+
+%% end of file `template.tex'.

@@ -1,0 +1,30 @@
+﻿Build started 28/02/2014 17:10:54.
+     1>Project "C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\Experiments\TestCPP\TestCPP\TestCPP.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\TestCPP.unsuccessfulbuild".
+       ClCompile:
+         All outputs are up-to-date.
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\TestCPP.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt TestCPP.cpp
+         TestCPP.cpp
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\TestCPP.exe.embed.manifest.res" Debug\TestCPP_manifest.rc 
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\Experiments\TestCPP\Debug\TestCPP.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\TestCPP.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\Experiments\TestCPP\Debug\TestCPP.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\Experiments\TestCPP\Debug\TestCPP.lib" /MACHINE:X86 Debug\TestCPP.exe.embed.manifest.res
+         Debug\stdafx.obj
+         Debug\TestCPP.obj
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\TestCPP.exe.embed.manifest" /manifest Debug\TestCPP.exe.intermediate.manifest
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\TestCPP.exe.embed.manifest.res" Debug\TestCPP_manifest.rc 
+       LinkEmbedManifest:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\Experiments\TestCPP\Debug\TestCPP.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\TestCPP.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\Experiments\TestCPP\Debug\TestCPP.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\Experiments\TestCPP\Debug\TestCPP.lib" /MACHINE:X86 Debug\TestCPP.exe.embed.manifest.res
+         Debug\stdafx.obj
+         Debug\TestCPP.obj
+         TestCPP.vcxproj -> C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\Experiments\TestCPP\Debug\TestCPP.exe
+       FinalizeBuildStatus:
+         Deleting file "Debug\TestCPP.unsuccessfulbuild".
+         Touching "Debug\TestCPP.lastbuildstate".
+     1>Done Building Project "C:\Users\cattaneo\Documents\Visual Studio 2010\Projects\Experiments\TestCPP\TestCPP\TestCPP.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.26

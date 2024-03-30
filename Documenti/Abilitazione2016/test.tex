@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage[defernumbers=true, backend=biber, url=false, doi=false, isbn=false]{biblatex}
+
+\addbibresource{personal.bib}
+
+\AtEveryBibitem{%
+  \clearfield{note}%
+}
+
+
+\begin{document}
+
+\nocite{*}
+\printbibheading[title={Publications}]
+\printbibliography[type=article,heading=subbibliography,
+title={Printed Sources},resetnumbers=true]
+\printbibliography[nottype=article,heading=subbibliography,
+title={Online Sources},resetnumbers=true]
+
+\end{document}

@@ -1,0 +1,875 @@
+% !TeX spellcheck = it_IT
+% !TEX encoding = UTF-8 Unicode
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{classic}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+% \nopagenumbers{}                                 % uncomment to suppress automatic page numbering for CVs longer than one page
+
+\usepackage[T1]{fontenc}
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+\usepackage[italian,english]{babel}
+\usepackage{csquotes} 							  % requested by biblatex
+
+
+%\usepackage[
+%placement=center,
+%angle=60,
+%color=black!20,
+%scale=24]{background}
+%
+%\backgroundsetup{contents={\textbf{Draft}}}
+
+
+% adjust the page margins
+\usepackage[scale=0.8, top=2.5cm, bottom=1.7cm]{geometry}
+
+\recomputelengths 
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}       	   % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+\usepackage{svn-multi}
+\svnidlong
+{$HeadURL: http://maccattaneo:8081/svn/Cattaneo/Documenti/Abilitazione2016/CVCattaneo2017.tex $}
+{$LastChangedDate: 2017-03-26 19:22:30 +0200(Dom, 26 Mar 2017) $}
+{$LastChangedRevision: 871 $}
+{$LastChangedBy: cattaneo $}
+
+\svnid{$Id: CVCattaneo2017.tex 871 2017-03-26 17:22:30Z cattaneo $}
+
+% bibliografia 
+\usepackage[backend=biber,style=numeric-comp,giveninits=true, maxbibnames=10,sorting=ydnt,defernumbers=true,doi=false,isbn=false,url=false]{biblatex}
+%\usepackage[defernumbers=true,backend=biber]{biblatex}
+
+\addbibresource{personal.bib}
+
+\DeclareRefcontext{rc}{sorting=ydnt}
+
+\AtEveryBibitem{%
+  % elimina i seguenti field dalla bibliografia
+  % \clearfield{note}%
+  \clearlist{language}%
+}
+
+
+\usepackage{tabularx}
+\usepackage{longtable}			% per la lista delle citazioni
+\usepackage[shortlabels]{enumitem}
+
+\makeatletter
+\newcommand\subparagraph{%
+  \@startsection{subparagraph}{5}
+  {\parindent}
+  {3.25ex \@plus 1ex \@minus .2ex}
+  {-1em}
+  {\normalfont\normalsize\bfseries}}
+\newcommand\subsubsection{%
+  \@startsection{subsubsection}{5}
+  {\parindent}
+  {3.25ex \@plus 1ex \@minus .2ex}
+  {-1em}
+  {\normalfont\normalsize\bfseries}}
+\newcommand\paragraph{%
+  \@startsection{paragraph}{5}
+  {\parindent}
+  {3.25ex \@plus 1ex \@minus .2ex}
+  {-1em}
+  {\normalfont\normalsize\bfseries}}
+\makeatother
+
+\NewDocumentCommand{\mysection}{sm}{%
+  \cvitem[0ex]{\strut\raggedleft\raisebox{2pt}{\color{color1}\rule{\hintscolumnwidth}{0.95ex}}}{\strut\sectionstyle{#2}}
+}
+
+%\usepackage{scrextend} % per addmargin
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+
+
+\usepackage{titlesec} %
+
+%\titlespacing*{\section}{0pt}{5.5ex plus 1ex minus .2ex}{4.3ex plus .2ex}
+%\titlespacing*{\subsection}{0pt}{5.5ex plus 1ex minus .2ex}{4.3ex plus .2ex}
+
+\titleformat{\section}
+    {}
+    {\thesection}{0pt}{\mysection}
+    
+\titlespacing*{\section}{0pt}{20pt}{-10pt}
+
+\titleformat{\subsection}
+    {}
+    {\thesubsection}{0pt}{\subsectionstyle}
+\titlespacing*{\subsection}{0pt}{10pt}{2pt}
+
+\let\subparagraph\relax % You don't want to use \subparagraph
+\let\paragraph\relax % You don't want to use \subparagraph
+\let\subsubsection\relax % You don't want to use \subparagraph
+
+
+\usepackage{lastpage}
+\usepackage[official]{eurosym}
+
+\usepackage[table]{xcolor} %Used to color the last column
+
+\usepackage{graphicx}
+
+\newcommand{\lastYear}{\em 2017} 
+
+\newcommand{\commento}[1]{{\footnotesize{\emph{\textcolor{blue}{Commento: #1}}}}}
+
+\newcolumntype{L}[1]{>{\hsize=#1\hsize\raggedright\arraybackslash}X}%
+\newcolumntype{R}[1]{>{\hsize=#1\hsize\raggedleft\arraybackslash}X}%
+%\newcolumntype{C}[1]{>{\hsize=#1\hsize\columncolor{#2}\centering\arraybac
+\newcolumntype{C}[1]{>{\hsize=#1\hsize\centering\arraybackslash}X}%
+
+\setlength\tabcolsep{2pt}
+\renewcommand{\arraystretch}{1.2} % distanza verticale tra i bordi
+\newcommand*{\thead}[1]{\multicolumn{1}{| c}{\bfseries #1}}
+
+
+% personal data
+\name{Giuseppe}{Cattaneo}
+\firstname{Giuseppe}
+\familyname{Cattaneo}
+
+\title{Curriculum Vit\ae{}}         % optional, remove / comment the line if not wanted
+\address{Via Panoramica, 15}{I-84134 Salerno}{Italy} % optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\phone[fixed]{+39~089~96~9716}
+\phone[fax]{+39~089~96~9840}
+\phone[mobile]{+39~320~7406160}     % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+\email{cattaneo@unisa.it}           % optional, remove / comment the line if not wanted
+%\homepage{www.dia.unisa.it/professori/cattaneo}  % optional, remove / comment the line if not wanted
+%\social[linkedin]{john.doe}        % optional, remove / comment the line if not wanted
+%\social[twitter]{jdoe}             % optional, remove / comment the line if not wanted
+%\social[github]{jdoe}              % optional, remove / comment the line if not wanted
+%\extrainfo{additional information} % optional, remove / comment the line if not wanted
+\photo[78pt][0.4pt]{FotoTessera2016.jpg}   % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Some quote}                 % optional, remove / comment the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+\makeatletter
+\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+\makeatother
+\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+\makeatletter
+\renewcommand*{\nopagenumbers}{\@displaypagenumbersfalse}
+\AtEndPreamble{%
+  \AtBeginDocument{%
+    \if@displaypagenumbers%
+      \@ifundefined{r@lastpage}{}{%
+        \ifthenelse{\pageref{lastpage}>1}{%
+          \settowidth{\pagenumberwidth}{\color{color2}\addressfont\itshape\strut\thepage/\pageref{lastpage}}%
+          \fancypagestyle{plain}{%
+            \fancyfoot[r]{\parbox[t]{\pagenumberwidth}{\color{color2}\addressfont\itshape\strut\thepage/\pageref{lastpage}}}}% the parbox is required to ensure alignment with a possible center footer (e.g., as in the casual style)
+          \pagestyle{plain}}{}}%
+      \AtEndDocument{\label{lastpage}}\else\fi}}
+\makeatother
+
+%\cfoot{\addressfont\itshape\textcolor{color2}{Pagina \thepage\ / \pageref{LastPage}}}
+
+\fancyhead[ol]{\addressfont\slshape\leftmark }
+\fancyfoot[ol]{\addressfont\itshape\textcolor{color2}{Rev: (\svnrev) del: \svnyear-\svnmonth-\svnday\ \svnhour:\svnminute} - Draft non distribuire}
+\fancyfoot[or]{\addressfont\itshape\textcolor{color2}{Pagina \thepage\ / \pageref{LastPage}}} % Date
+
+\renewcommand{\headrulewidth}{0.4pt}
+
+\makeatletter
+\rhead{\addressfont\itshape\textcolor{color2}{Curriculum Vit\ae{} di \@firstname~\@familyname}}
+\makeatother
+
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\thispagestyle{empty}
+
+
+%\section{Master thesis}
+%\cvitem{title}{\emph{Title}}
+%\cvitem{supervisors}{Supervisors}
+%\cvitem{description}{Short thesis abstract}
+
+\section{Posizione Attuale}
+
+\cventry{1999--\lastYear}{Professore Universitario di IIa fascia}{Università di Salerno}{}{} {
+Partecipando al concorso bandito dall’Università di Salerno per posti di professore associato seconda fascia settore K05B (Informatica, oggi INF/01), consegue l’idoneità nella procedura comparativa e prende servizio presso la Facoltà di Scienze MM.FF. e NN.  nel corso dell’anno accademico 1999-2000 divenendo titolare dell’insegnamento di Linguaggi di Programmazione II fino al 2005. Contemporaneamente ha attivato un nuovo corso denominato Programmazione su reti II, per l’insegnamento delle tecnologie emergenti nell'ambito dei sistemi distribuiti, quali Java Enterprise Edition e ambienti di programmazione evoluti per la creazione di servizi WEB based, secondo il paradigma delle Service Oriented Architecture.
+\newline{Successivamente, l’introduzione dei nuovi ordinamenti didattici, ha insegnato Sistemi Operativi~\cite{sistemiII} alla laurea triennale e Sistemi Operativi Avanzati alla laurea Magistrale. }
+}
+
+
+\section{Attività Scientifica}
+%\subsection{TBD}
+L'intera attività può essere classificata nelle seguenti aree:
+\medskip
+
+\cventry{1982--1992}{Studio ed implementazione dei linguaggi logico/funzionali}{}{}{}
+{
+Lo studio dei linguaggi funzionali ed in particolare del Lisp ha rappresentato il primo contatto con il mondo della ricerca nell'ambito dei linguaggi di programmazione. Grazie a numerose collaborazioni internazionali sono state create le competenze necessarie per affrontare il tema e proporre soluzioni originali sia in termini di efficienza dell'implementazione dell'interprete sia in termini di potenza espressiva del linguaggio~\cite{Cattaneo1984108, Cattaneo198622, Cattaneo198887, mxlog:2, SPLT:89, GULP:89, ISCIS:2, Loia1992394}.
+}
+
+\cventry{1986--1994}{
+Approccio al parallelismo mediante linguaggi funzionali e linguaggi Actor Oriented}{}{}{}
+{
+Come naturale evoluzione degli studi effettuati nell'ambito dei linguaggi funzionali è stato affrontato il tema del parallelismo massivo, utilizzando il paradigma dei linguaggi actor oriented così come definiti da Hewitt e Gul Agha. In tale contesto è stata sviluppata una implementazione su scala reale per lo sviluppo di applicazioni con un elevato grado di parallelismo su architetture multiprocessore shared memory~\cite{cnr:1, cnr:2, litp:1, ISCIS:1, litp:2, ISCIS:3, Cattaneo199281, AICA:1,ISCIS:4,AICA:2}.
+}
+
+\cventry{1994--2006}{Progettazione, sperimentazione e ingegnerizzazione di algoritmi e strutture dati}{}{}{}
+{
+I risultati delle attività ottenuti in questo ambito rappresentano il frutto di una intensa collaborazione scientifica con il Prof. G.F. Italiano dell’Università di Roma 2 Tor Vergata volta alla definizione di una metodologia per la raccolta e la corretta interpretazione dei dati ottenuti attraverso l'analisi sperimentale. Il contributo fornito a tale settore scientifico  è stato determinante in termini di ricadute concrete sui settori più applicativi dell’informatica. Infatti benché l'area sia stata riconosciuta solo di recente da parte della comunità scientifica, è stata  già prodotta una consistente mole di risultati. Durante questa collaborazione è stata sviluppata una piattaforma per il testing di algoritmi per la soluzione del problema "Shortest Path" ed una accurata metodologia di testing per la misurazione sperimentale delle prestazione dei singoli algoritmi implementati. La piattaforma è stata distribuita insieme alla libreria LEDA del MPI ed ha fornito indicazioni puntuali sia su grafi casuali che su data-set appositamente creati dalla comunità per rendere confrontabili i risultati finali~\cite{SODA96:1, jea:1, Amato1997316, ALEX:98, acms:99, Cattaneo2002111, airo:04, Cattaneo2010404}. 
+}
+
+\cventry{1998--2009}{Animazione di algoritmi e Computer Supported Cooperative Workgroup}{}{}{}
+{
+A valle dei risultati ottenuti nell'ambito dell'Algorithm Engineering la piattaforma è stata arricchita con un sistema dedicato alla visualizzazione delle strutture dati utilizzate. Questa esperienza è stata successivamente estesa sia in ambito CSCW per studiare nuovi modelli di interazione a distanza, sia in ambito sicurezza, dove la complessità dei protocolli richiede necessariamente un maggior livello di astrazione. L'approccio si è dimostrato particolarmente utile ed abilitante essendo basato primariamente su alti livelli di genericità e riutilizzabilità delle strutture dati impiegate~\cite{RETIS:97, ECOM:2, CABOTO:98, Barra199811, IFIP:98,WSDAL:00, Barra2000124,Cattaneo2002391, Cattaneo200441, Cattaneo2008258, Cattaneo2009}.
+}
+
+\cventry{1997--\lastYear}{Sicurezza dei sistemi distribuiti e digital forensic}{}{}{}
+{
+A partire dai risultati del progetto Transparent Cryptographic File System (TCFS) focalizzato allo sviluppo di un file system distribuito per il sistema Linux (la pubblicazione che descrive i risultati ~\cite{USENIX:01} negli anni ha ricevuto circa 50 citazioni secondo WoS) le attività scientifiche si sono concentrate sulle moderne architetture distribuite (Service Oriented Architecture) e sulle implicazioni che queste comportano in termini di sicurezza ed approccio all'ubiquitus computing (cloud computing)~\cite{AICA:01, AICA:02, SSGRR:03, wbem:03, Cattaneo2003975, Cilardo2003960, jwe:04, Cattaneo2004166, Cattaneo200798, HSMProxyChap:2012, Cattaneo2010213}.
+In ambito sicurezza le attività hanno seguito due strade parallele:
+\begin{changemargin}{15pt}{0pt}
+\begin{enumerate}[ a)]
+\item Sicurezza delle comunicazioni
+\item Strumenti e metodologie a supporto della Digital Forensic
+\end{enumerate}
+\end{changemargin}
+Nel primo caso, particolare attenzione è stata dedicata al tema della privatezza delle informazioni scambiate sulla rete. A partire dal progetto SPEECH (Secure Personal End-to-End Communication with Handheld) è stato realizzato un prototipo su rete GSM per garantire riservatezza e non ripudio~\cite{Castiglione2006287}. Con gli sviluppi delle rete di comunicazione, lo stesso concetto è stato esteso agli SMS~\cite{DeSantis2010843, Castiglione200962, Castiglione2012771}, alla videoconferenza per le reti di terza generazione~\cite{Castiglione2011520} ed alle comunicazioni su reti a pacchetto VoIP~\cite{voip:08, Cattaneo2016315}.
+I risultati di queste attività sono confluiti in un'analisi delle vulnerabilità della rete GSM~\cite{Cattaneo20132437, Cattaneo2013507, Cattaneo2015101} o, più in generale, in soluzioni capaci di garantire la sicurezza degli oggetti connessi in rete~\cite{Carullo20131113, You2013}.
+\newline{
+Le stesse competenze in ambito sicurezza sono state impiegate proficuamente per lo sviluppo di metodologie e strumenti per l'analisi forense, prima sul tema dell'alibi digitale~\cite{DeSantis2011359, Albano2011685, Albano2011380, Castiglione2012430, Castiglione2012114, Castiglione2013216} e successivamente sul tema della raccolta e conservazione delle evidenze digitali prodotte da servizi in rete, e, come tali, tipicamente immateriali
+~\cite{ Castiglione2011392, Castiglione2013405, LNEC:TBD2017}.}
+}
+
+\cventry{2009--\lastYear}{Elaborazione dei segnali ed image forensic}{}{}{}
+{
+Sempre nell'ambito forense, in collaborazione con il Centro Nazionale per il Contrasto alla Pedopornografica OnLine (CNCPO organo della Polizia di Stato), è stato avviato un progetto di ricerca finalizzato alla individuazione di strumenti per la image forensic e, in particolare, soluzioni al problema della source camera identification e dell' image integrity.
+La ricerca sfrutta il rumore deterministico introdotto nelle immagini digitali da lievi imperfezioni del sensore utilizzato per l'acquisizione, noto come Photo Response Non-Uniformity (PRNU).
+Utilizzando risultati provenienti dalla ricerca di base nel campo dell'elaborazione dei segnali sono stati prima realizzati i filtri per l'estrazione del rumore~\cite{Castiglione2010417} e successivamente sono state migliorate le prestazioni definendo tecniche di enhancement attraverso euristiche\cite{Cattaneo2012609}. Infine sono state progettate e realizzate diverse soluzioni originali mettendo a punto l'intero processo di analisi e riconoscimento dell'immagine.
+Sono stati sviluppati 2 prototipi, attualmente in uso presso la Polizia di Stato, impiegati per una sperimentazione volta a dimostrare l'attendibilità dei risultati e le condizioni ottimali di utilizzo. Prima gli sforzi si sono focalizzati sul problema della source camera identification (progetto CHI Camera Hardware Identification)~\cite{Cattaneo2012609}.
+Successivamente, con tecniche simili, è stato affrontato il problema dell'integrità (presenza di eventuali manipolazioni successive alla acquisizione) sia per immagini digitali~\cite{Cattaneo2015486, Cattaneo2014643} che per filmati~\cite{Cattaneo2016735}.
+Per la sperimentazione, oltre ad utilizzare i data set disponibili nella comunità scientifica, dopo aver riscontrato delle anomalie nei data set pubblici~\cite{Cattaneo2014279, Cattaneo2017}, è stato realizzato un proprio data set con circa 5.000 immagini modificate secondo schemi prestabiliti. Infine nel laboratorio della Polizia di Stato sono stati effettuati gli stessi test sui data set reali in loro possesso.
+}
+
+\cventry{2010--\lastYear}{Calcolo distribuito e analisi di Big Data secondo il paradigma del MapReduce}{}{}{}
+{
+Riprendendo l'eseperienze già maturate nell'ambito del calcolo paralello ha avviato una interessante attività di ricerca, ancora attiva, finalizzata alla sperimentazione di soluzioni per l'elaborazione di grosse moli di dati basate sul paradigma del MapReduce.
+Replicando esattamente le metodologie adottate per la sperimentazione di algoritmi, è stata realizzata una piattaforma sperimentale, basata sul software open source Hadoop di Apache capace di distribuire il calcolo su una rete di personal computer (aule didattiche del Dipartimento). Successivamente la piattaforma è stata generalizzata prima ad un cluster di piccole dimensioni con risorse locali e, successivamente, ad un grosso Virtual Data Center con migliaia di processori distribuito tra diverse sedi, messo a disposizione dal dipartimento per lo starage ed il calcolo distribuito (progetto GARR X Progress).
+Prima ancora di avviare la sperimentazione, la piattaforma realizzata ha reso disponibili numerosi strumenti per la raccolta di tutti i dati necessari per il monitoraggio delle prestazioni raggiunte. Contemporaneamente è stata definita una metodologia che a partire dai dati raccolti ha potuto fornire indicazioni precise sulla qualità delle soluzioni adottate in termini di scalabilità ed efficienza raggiunti, rispetto alle soluzioni sequenziali o multithread eseguite su architetture shared-memory.
+In un simile contesto, una volta consolidata, la metodologia definita è stata applicata a due problemi reali connessi al mondo dei big data:
+\begin{changemargin}{15pt}{0pt}
+\begin{enumerate}[a)] % a), b), c), ...
+\item Nell'area dell'Image Processing, per l'analisi massiva di immagini digitali provenienti dai on-line social network~\cite{Castiglione2011679, Castiglione2013265};
+\item Nel campo della BioInformatica per l'analisi di sequenze genomiche, a problemi quali conteggio dei k-meri, confronto Alignment Free, calcolo delle distanze e metagenomica. 
+\end{enumerate} 
+\end{changemargin}
+Nel primo caso è stata ingegnerizzata una soluzione che, applicando il paradigma del MapReduce ha consentito l'elaborazione concorrente dell'algoritmo per l'estrazione del rumore caratteristico del sensore, può processare milioni di immagini per giorno, classificandole secondo pattern predefiniti. Se si considera che il solo filtro per l'estrazione del rumore richiede tempi di calcolo superiori ai 100 sec. si intuisce quanto la soluzione distribuita diventi imprescindibile per affrontare le moli di dati prodotte giornaliermente su Internet~\cite{Cattaneo2014366}.
+\newline{
+nel secondo caso, sempre alla ricerca di benchmark e di dati reali su cui sperimentare la metodologia definita, in collaborazione con l'Università di Palermo (Prof. R. Giancarlo) e con l'Università di Trento (Prof. N. Segata laboratorio CIBIO) sono stati avviati nel 2015 due interessanti progetti nell'ambito della BioInformatica e specificatamente per il confronto senza allineamento tra stringhe genomiche, e per il calcolo delle distanze.
+Anche in questo caso, \emph{sequencer} di nuova generazione hanno reso disponibili una enorme quantità di dati, assolutamente intrattabili con le architetture tradizionali. Al contrario l'approccio distribuito ha dimostrato come, sfruttando opportunamente le caratteristiche del cluster, sia possibile processare moli di dati virtualmente illimitate (architeture iper scalari) \cite{Bioinformation:GRIMD14, Cattaneo2015184, Cattaneo20171, Sessa2016117, DiBiasi201665, BioInformaticsAN-2017}.}
+}
+
+
+\section{Formazione}
+\cventry{1973--1978}{Maturità Scientifica}{Liceo Scientifico F. Severi}{Salerno}{\textit{60/60}}
+{}  % arguments 3 to 6 can be left empty
+\cventry{1978--1983}{Laurea in Scienze dell'Informazione}{Università di Salerno}{Salerno}{\textit{110/110 e lode}}
+{
+titolo della tesi {\em “Architetture Special Purpose per l'Elaborazione di Immagini”}.
+}
+
+
+\section{Titoli ai fini concorsuali}
+
+\subsection{Impatto della produzione scientifica}
+
+%\commento{valutata per i candidati nei settori bibliometrici secondo quanto indicato nell'Allegato C} 
+\begin{description}
+\item[a)] 
+Numero complessivo di articoli riportati nella domanda e pubblicati su riviste scientifiche contenute nelle banche dati internazionali «Scopus» e «Web of Science» nei dieci anni precedenti alla domanda: 
+\begin{itemize}
+\item \textbf{8} (scopus\cite{Cattaneo2008258, Cattaneo2010404, Castiglione2012771, Cattaneo20132437, Castiglione2013216, Castiglione2013265, Cattaneo2016315, Cattaneo20171}) +
+
+\item \textbf{1} (su scopus in press~\cite{ Cattaneo2017}) +
+
+\item \textbf{2} (con DOI ma non ancora su scopus~\cite{BioInformaticsAN-2017, LNEC:TBD2017}) +
+
+\item \textbf{1} (non indicizzato da scopus e WoS~\cite{Bioinformation:GRIMD14}).
+\end{itemize}
+
+
+\item[b)] 
+Numero di citazioni ricevute dalla produzione scientifica contenuta nella domanda, pubblicata e rilevata dalle banche dati internazionali «Scopus» e «Web of Science», nei quindici anni precedenti alla domanda:
+
+{\bfseries 304} (cf tabella).
+
+\end{description}
+
+{
+\footnotesize
+\smallskip
+%\begin{longtable}{\textwidth}{ | L{0.2} | L{10} | R{0.1} |R{0.1} |R{0.1} |R{0.1} |R{0.1} |R{0.1} |R{0.1} |R{0.1} |R{0.1} |R{0.1} |R{0.1} |R{0.1} |R{0.1} |R{0.1} |R{0.1} | R{0.1} | }
+\begin{longtable}{|l|p{6.0cm}|r|r|r|r|r|r|r|r|r|r|r|r|r|r|r|r|}
+\hline 
+ \thead{Anno} &  \thead{Titolo}&\thead{'02} & \thead{'03} & \thead{'04} & \thead{'05}& \thead{'06}& \thead{'07}& \thead{'08}& \thead{'09}& \thead{'10}& \thead{'11}& \thead{'12}& \thead{'13}&\thead{'14}&\thead{'15}&\thead{'16}&\multicolumn{1}{| c |}{\bfseries Tot.} \\* 
+\hline 
+\endfirsthead
+
+\hline
+ \thead{Anno} &  \thead{Titolo}&\thead{'02} & \thead{'03} & \thead{'04} & \thead{'05}& \thead{'06}& \thead{'07}& \thead{'08}& \thead{'09}& \thead{'10}& \thead{'11}& \thead{'12}& \thead{'13}&\thead{'14}&\thead{'15}&\thead{'16}&\multicolumn{1}{| c |}{\bfseries Tot.} \\* 
+\hline 
+\endhead
+
+%\nopagebreak
+2010&An extensible framework for efficient \ldots & & & & & & & &1& &1&5&11&8&5& &31\\*
+\hline
+2011&A novel anti-forensics technique for the \ldots& & & & & & & & & &1&1&3&4&8&5&22\\
+\hline
+2012&Engineering a secure mobile messaging \ldots& & & & & & & & & & & &8&6&4&2&20\\
+\hline
+2011&SECR3T: Secure end-to-end comm\ldots& & & & & & & & & & &1&6&2&6&5&20\\
+\hline
+2013&FeelTrust: Providing trustworthy comm\ldots& & & & & & & & & & & &1&6&5&7&19\\
+\hline
+2008&Visualization of cryptographic protocols \ldots& & & & & & &1&5&3&3&2& &1&2&1&18\\
+\hline
+2006&SPEECH: Secure personal end-to-end \ldots& & & & & & & &1& &1& &4&3&4&4&17\\
+\hline
+2011&On the construction of a false digital alibi \ldots& & & & & & & & & &1&2&4&5&3&1&16\\
+\hline
+2011&Automated construction of a false digital alibi& & & & & & & & & &3&2&4&3&2& &14\\
+\hline
+2011&A forensic analysis of images on Online \ldots& & & & & & & & & &1& &3&4&3&2&13\\
+\hline
+2011&Automatic, selective and secure deletion \ldots& & & & & & & & & &3&2&3&3&2& &13\\
+\hline
+2013&Experimentations with source camera \ldots& & & & & & & & & &1&1& &3&2&2&9\\
+\hline
+2012&The forensic analysis of a false digital alibi& & & & & & & & & & &1&4&2&2& &9\\
+\hline
+2002&Maintaining dynamic minimum spanning \ldots& &1&1& &1&2&1&1&2& & & & & & &9\\
+\hline
+2014&A scalable approach to source camera \ldots& & & & & & & & & & & & &2&4&2&8\\
+\hline
+2012&How to forge a digital alibi on Mac OS X& & & & & & & & & & & &3&2&1& &6\\
+\hline
+2014&A possible pitfall in the experimental \ldots& & & & & & & & & & & & & &3&2&5\\
+\hline
+2014&Experimental evaluation of an algorithm \ldots& & & & & & & & & & & & &1&2&2&5\\
+\hline
+2012&Experiments on improving sensor \ldots& & & & & & & & & & & & &3&1&1&5\\
+\hline
+2010&Maintaining dynamic minimum spanning \ldots& & & & & & & & & & &1&1&2& &1&5\\
+\hline
+2002&CATAI: Concurrent algorithms and data \ldots& &1&2& & & & &2& & & & & & & &5\\
+\hline
+2013&Security issues and attacks on the GSM \ldots& & & & & & & & & & & & & &2&2&4\\
+\hline
+2012&Virtual lab: A concrete experience in \ldots& & & & & & & & & & & & & &1&3&4\\
+\hline
+2007&iToken: A wireless smart card reader \ldots& & & & & & & & & & & &2& &1&1&4\\
+\hline
+2004&JIVE: Java interactive software \ldots& & & &1& & & &1& & & & & & &2&4\\
+\hline
+2013&On asynchronous enforcement of security \ldots& & & & & & & & & & & & &1&1&1&3\\
+\hline
+2013&Automated production of predetermined \ldots& & & & & & & & & & & &1& &2& &3\\
+\hline
+2013&Forensically-sound methods to collect live \ldots& & & & & & & & & & & &1& &1& &2\\
+\hline
+2013&A review of security attacks on the GSM \ldots& & & & & & & & & & & &1&1& & &2\\
+\hline
+2010&Source camera identification in real \ldots& & & & & & & & & & &1& &1& & &2\\
+\hline
+2004&Providing privacy for web services \ldots& & & & &1&1& & & & & & & & & &2\\
+\hline
+2015&Reliable Voice-Based Transactions over \ldots& & & & & & & & & & & & & & &1&1\\
+\hline
+2015&A PNU-based technique to detect forged \ldots& & & & & & & & & & & & & & &1&1\\
+\hline
+2010&Proxy smart card systems& & & & & & & & & & & &1& & & &1\\
+\hline
+2000&Teach++: A cooperative distance learning\ldots& &1& & & & & & & & & & & & & &1\\
+\hline
+1992&Another C Threads Library&1& & & & & & & & & & & & & & &1\\
+\hline
+&Totale&1&3&3&1&2&3&2&11&5&15&19&61&63&67&48&304\\
+\hline
+\end{longtable} 
+}
+\normalsize
+
+\begin{description}
+\item[c)] 
+Indice h di Hirsch, calcolato sulla base delle citazioni rilevate dalle banche dati internazionali «Scopus» e «Web of Science» con riferimento alle pubblicazioni contenute nella domanda e pubblicate, rispettivamente, nei quindici anni precedenti: {\bfseries 11}. 
+
+\end{description}
+
+
+\subsection{Organizzazione convegni}
+
+
+% \commento {Organizzazione o partecipazione come relatore a convegni di carattere scientifico in Italia o all'estero}
+Ha partecipato all'organizzazione dei seguenti convegni di carattere scientifico:
+
+% \cvitem{Workshop Co-Chair}{\emph{Title}}
+
+\cventry{2014}{\`E stato Workshop Co-Chair}{della "5-th International Conference on Emerging Intelligent Data \& Web Technologies" (EIDWT-2014)}{10-12 Sep 2014}{Salerno, Italy}{}
+
+\cventry{2015}{Ha fatto parte del Program Committee}{della conferenza "Advanced Concepts for Intelligent Vision Systems 2015"  (ACIVS 2015)}{26-29 Oct 2015}{Catania, Italy}
+{}
+\cventry{2016}{\`E stato Workshop Co-Chair}{della "IEEE International Workshop on Biometrics and Image Forensics 2016" (BIF-2016)} {3 Jun 2016}{Palinuro (SA), Italy}{}
+
+\cventry{2016}{Ha fatto parte del Program Committee}{della conferenza "Advanced Concepts for Intelligent Vision Systems 2016" (ACIVS 2016)}{24-27 Oct 2016}{Lecce, Italy}{}
+
+\cventry{2016}{\`E stato General Co-Chair}{della conferenza "WIVACE 2016: Workshop on Artificial Life and Evolutionary Computation" e "BIONAM 2016: workshop on bio-nanomaterials", (WIVACE 2016/BIONAM 2016)}{4-7 Oct 2016} {Salerno, Italy}{}
+
+\cventry{2017}{Partecipa al Program Committee}{ della conferenza "Advanced Concepts for Intelligent Vision Systems 2017"  (ACIVS 2017)} {18-21 Sep 2017}{Antwerp, Belgium}{} 
+
+\medskip
+
+Inoltre è stato relatore a numerose conferenze di carattere scientifico tra cui:
+
+
+\cventry{2012}{\`E stato relatore}{alla "Conference on Innovative Mobile and Internet Services in Ubiquitous Computing, IMIS 2012"}{4-6 Jul 2012}{Palermo, Italia}{}
+
+\cventry{2014}{Ha tenuto un key note speach in qualità di relatore invitato}{alla "Conferenza sulla Strategia Europea per la Sicurezza dei Minori Online"}{21-22 Nov 2014} {Roma}{}
+
+\cventry{1998}{\`E stato relatore}{alla "Fundamentals, Foundations of Computer Science, 15th IFIP World Computer Congress (IFIP 98)"}{31 Aug 1998}{Vienna (Austria)}{}
+
+\cventry{1996}{\`E stato relatore}{alla "8th Annual
+ACM-SIAM Symposium on Discrete Algorithms}{5-7 Jan 1997}{New Orleans, LA, USA}{}
+
+
+\subsection{Direzione attività gruppo di ricerca}
+
+% Direzione o partecipazione alle attività di un gruppo di ricerca caratterizzato da collaborazioni a livello nazionale o internazionale; 
+
+\cventry{1996--2000}{Laboratorio Specialistico Linux/TCFS e Sicurezza}{Dipartimento di Informatica - Università di Salerno}{}{}
+{
+Sin dalla pubblicazione dei primi articoli sul tema, particolare interesse è stato dedicato al sistema operativo Linux. \`E stato quindi realizzato un laboratorio specialistico dedicato allo sviluppo di componenti kernel del sistema (file system crittografico)~\cite{USENIX:01} che nello spirito dell’Open Source vengono distribuite ad una vasta comunità di utenti sparsa nel mondo. Al progetto hanno partecipato circa 20 studenti che hanno sviluppato competenze estremamente specialistiche.
+}
+
+
+\cventry{2006--\lastYear}{Laboratorio specialistico: Metodologie di Benchmarking e Algorithm Engineering}{Dipartimento di Informatica - Università di Salerno}{}{}
+{
+Dopo il trasferimento al campus di Fisciano è stato responsabile del laboratorio specialistico MBAE nel quale sono state svolte tutte le attività di ricerca e di trasferimento tecnologico attraverso progetti finananziati. Negli ultimi 10 anni sono stati ospitati circa un centinaio di tesisti (laurea triennale e magistrale) oltre agli assegnisti e i dottorandi. Tutte le attività di ricerca, e le relative sperimentazioni sono state svolte nel laboratorio tra cui analisi sperimentale degli algoritmi, sperimentazione delle architetture SOA,  sviluppo di applicazioni su dispositivi mobili secondo il paradigma dei Web Service, sperimentazione  di infrastrutture digitali per la sicurezza (Certification Authority e Public Key Infrastructure, firma digitale, cifratura e sicurezza del canale di trasporto), strumenti di autenticazione.
+Attualmente il laboratorio ospita tra l'altro il Linux User Group locale. 
+}
+
+\subsection{Responsabilità di studi e ricerche scientifiche}
+
+% Responsabilità di studi e ricerche scientifiche affidati da qualificate istituzioni pubbliche o private; 
+
+\cventry{1998--2004}{Progetto di ricerca "Oltre la firma digitale"}{Finmatica S.p.A.}{}{}
+{
+A valle di una lunga collaborazione nell'ambito delle soluzioni tecnologiche per il mercato finance è stato responsabile della divisione R\&D di Finmatica S.p.A. In questo contesto ha  presentato al MURST un progetto di ricerca nell’ambito della legge 297. Dopo la valutazione tecnico/amministrativa il progetto è stato finanziato sui fondi della Legge 488 D.M. 629 per 9,089 Mld di lire di costi ammissibili. Obiettivo del progetto è stato lo sviluppo di un’infrastruttura a chiave pubblica per il superamento di quelli che all'epoca rappresentavano i principali ostacoli (tecnologici) alla diffusione della firma digitale~\cite{AICA:01}. Il sottoscritto ha poi diretto il gruppo di lavoro per l'intera durata del progetto (dal 1/10/2000 al 30/9/2003).
+%Il progetto è stato regolamente concluso nei tempi previsti ed nel gennaio 2004 è stato oggetto di valutazione da parte dell’esperto ministeriale che ha espresso piena soddisfazione sui risultati raggiunti.
+}
+
+\cventry{2009--\lastYear}{Progetto CHI: "Camera Hardware Identification}{Accordo quadro Polizia di Stato}{}{}
+{
+Nell'ambito delle attività di ricerca nell'area dell'Image Forensics è stato sviluppato un proficuo e duraturo rapporto di collaborazione con il Centro Nazionale per il Contrasto alla Pedopornografica OnLine (CNCPO) divisione della Polizia Postale, organo della Polizia di Stato. Nel marzo 2010 è stato siglato l'accordo quadro tra la Polizia di Stato (Prefetto O. Fiorolli) e l'Università di Salerno (Rettore R. Pasquino). Il sottoscritto è stato nominato responsabile scientifico del progetto che ha prodotto una notevole mole di risultati in particolare per quanto riguarda gli strumenti per la source camera identification. La collaborazione è stata molto utile anche sul pianto scientifico, fornendo dapprima requisiti e casi d'uso reali utili allo sviluppo dello strumento e, suggessivamente, un concreto banco di prova per misurare la qualità dei risultati su casi reali.
+Lo strumento realizzato è stato molto apprezzato dal nucleo investigativo che ha deciso di presentare lo stato dell'arte del progeto alle diverse polizie europee durante la "\emph{Conferenza sulla Strategia Europea per la Sicurezza dei Minori Online}" tenuta a Roma presso la sede della Scuola Superiore della Polizia di Stato il 21-22 Novembre 2014 in occasione del semestre di Presidenza Italiana del Consiglio dell'Unione Europea. L'intervento ha prodotto una grossa eco su riviste specializzate e quotidiani nazionali. 
+}
+
+\subsection{Responsabilità scientifica di progetti di ricerca} 
+
+%Responsabilità scientifica per progetti di ricerca internazionali e nazionali, ammessi al finanziamento sulla base di bandi competitivi che prevedano la revisione tra pari; 
+
+\cventry{1998--2000}{Responsabile Convenzione ex art. 66 DL 382/80}{Università di Salerno}{Salerno}{}
+{
+\`E stato responsabile scientifico della convenzione stipulata tra l'Ateneo ed i Dipartimenti di Informatica ed Aplicazioni (DIA) e quello di Ingegneria Informatica e Matematica Applicata (DIIMA) per un importo complessivo di 500 Ml Lire ed una durata di 24+6 mesi. Attraverso la convenzione l'Amministrazione dell'Ateneo ha inteso avviare il processo di trasferimento di competenze e responsabilità dei servizi informatici dai dipartimenti coinvolti verso il proprio personale tecnico amministrativo con l'obiettivo di rendere pervasivi i servizi legati alla connettività Internet all’intero Ateneo. Inoltre è stato disegnato il layout della rete interna al Campus di Fisciano pianificando gli sviluppi che hanno poi portato all'attuale realizzazione.
+}
+
+
+\cventry{2001--2002}{Responsabile Convenzione ex art. 66 DL 382/80}{Ericsson Lab Italy}{Pagani (SA)}{}
+{
+\`E stato responsabile scientifico della convenzione stipulata con il laboratorio di ricerca di Ericsson a Pagani per un importo di 130 Ml Lire finalizzata alla individuazione di metodologie per la amministrazione e la gestione della sicurezza dei Network Element prodotti in Italia. La convenzione ha spinto alla creazione di un team di lavoro con rappresentanti delle due istituzioni con competenze diversificate dalla sicurezza al networking capace di produrre soluzioni molto innovative ancor oggi in uso in molti casi~\cite{wbem:03, Cattaneo2003975}.
+}
+
+
+\cventry{2006--2007}{Responsabile Convenzione ex art. 66 DL 382/80}{ Bit4ID S.r.l.}{Napoli}{}
+{
+\`E stato responsabile scientifico della convenzione stipulata con la società Bit4ID nell'ambito dei progetti PIA (Pacchetto Integrato Agevolazioni). La convenzione prevedeva la progettazione e lo sviluppo delle componenti per la sicurezza (moduli per l’autenticazione e la firma digitale per una network appliance dedicata (Hardware Security Module)~\cite{Cattaneo200798, Cattaneo2010213, HSMProxyChap:2012}) per un importo complessivo di \euro{107.000}.
+% Alla luce degli ottimi risultati raggiunti nel progetto specifico e delle affinità culturali con l'azienda partner, la collaborazione è divenuta permanente, con frequenti incontri sul tema della sicurezza che rappresenta il core business della società.
+}
+
+\cventry{2006--2008}{Responsabile Convenzione ex art. 66 DL 382/80}{Tesnet-IT S.r.l.}{Napoli}{}
+{
+\`E stato responsabile scientifico della convenzione stipulata con la società Tesnet-IT nell'ambito di un progetto finanziato (PIA). L'accordo è stato finalizzato allo sviluppo di un sistema off-line di rilevamento delle frodi telefoniche basato su reti neurali per un importo complessivo di \euro{150.000}. Il sottoscritto ha coordinato il gruppo di lavoro ed il sistema realizzato è stato sperimentato in collaborazione con uno dei primari operatori telefonici nazionali, prima sui dati prodotti da un simulatore appositamente realizzato e successivamente su dati reali di traffico opportunamente cifrati, producendo risultati notevolmente superiori per qualità e quantità di allarmi generati rispetto a quelli ottenibili con i prodotti disponibili in commercio.
+}
+
+\cventry{2005--2008}{Responsabile Scientifico}{Progetto SPEECH}{Provincia di Salerno}{Salerno}
+{
+In collaborazione con il prof. A. De Santis e di un gruppo di giovani ricercatori è stato sviluppato un sistema di comunicazione per dispositivi mobili (GSM) in grado di garantire la  privacy della conversazione ed il non ripudio (firma digitale). Il progetto (SPEECH~\cite{Castiglione2006287}) è stato cofinanziato dalla Provincia di Salerno attraverso un contributo di \euro{80.000}. Dopo le fasi di progettazione è stato sviluppato un prototipo dimostrabile che è stato presentato a numerose aziende del settore delle telecomunicazioni.  La Provincia di Salerno, valutando positivamente i risultati raggiunti, ha offerto il suo contributo per promuovere la fase di pre-industrializzazione. Tali risorse sono state utilizzate per alimentare le attività di ricerca del laboratorio avanzato sul tema comunicazioni e privatezza che attualmente opera nel settore delle comunicazioni VoIP.
+}
+
+\cventry{2007--2010}{Responsabile Scientifico}{Progetto FAST}{Telepark S.p.A}{Salerno}
+{
+Ha presentato il progetto "{\em Framework for Advanced Secured Transactions} - Definizione di un’architettura di riferimento per la realizzazione di sistemi di micropagamenti  basata sul concetto di sicurezza delle transazioni finanziarie e accesso multicanale - FAST'' in Associazione Temporanea di Scopo con la società Telepark S.p.A.
+La Regione Camoania, nell'ambito del (Piano Operativo Regionale POR Campania 2000/2006 nell’ambito dell’Accordo di Programma Quadro in materia di e-government e società dell’Informazione) misura 3.17 ha cofinanziato il progetto per \euro{800.000} di spese ammissibili di cui \euro{80.000} di agevolazioni per la componente DIA. Il sottoscritto è stato responsabile scientifico del progetto che ha sviluppato un sistema per micropagamenti di danaro pensato per il pagamento della sosta. La società partner ha anche depositato un brevetto per la tutela dei diritti dell'opera dell'ingegno ed ha fornito i servizi basati sul sistema disegnato in diverse città d'Italia.
+Il framework realizzato è stato anche oggetto di numerose pubblicazioni in ambito sicurezza (per il protocollo di pagamento e riscatto)~\cite{Castiglione200962, DeSantis2010843}.
+}
+
+\cventry{2009--2013}{Responsabile unità locale}{Progetto MISE Made in Italy "OPEN"}{}{}
+{
+Ha partecipato alla presentazione del progetto OPEN nell'ambito del bando di finanziamento MISE denominato {\em Made in Italy}. Il progetto è stato finanziato per un importo complessivo di 6,4~M\euro{} ed ha raccolto in ATS numerosi partner nazionali tra cui la società di consulenza Everis Italia S.p.A. (capofila) ed aziende private quali: Prima Electro di Moncalieri (TO), Domini Officine di Alba (CN),  Taglio Srl di Piobesi d’Alba (CN), ERXA di Torino, Motor Power Company di Castelnovo di Sotto (RE). Il progetto ha realizzato una macchina a controllo numerico per il taglio (ottimizzato) ad acqua delle pelli. Il sottoscritto ha diretto l'unità salernitana (il DIA è stato partner del progetto in ATS), che ha fornito il proprio contributo sia sugli sistemistici per la remotizzazione delle primitive per il controllo delle attrezzature sul campo che sugli aspetti legati alla sicurezza degli accessi da remoto. Il progetto si è concluso con successo nel 2013 dopo 36 mesi di attività e l'unità salernitana ha ottenuto un finanziamento di \euro{98.000}. 
+}
+
+\cventry{2009--2012}{Membro del CTS della Provincia di Salerno}{}{}{}
+{
+\`E stato nominato membro del CTS della Provincia di Salerno.
+}
+
+\cventry{2011--\lastYear}{Membro dell’Ufficio Piano di Zona Ambito SA5}{Salerno}{}{}
+{
+\`E attualmente responsabile delle strategie ICT dell'Ufficio Piano di Zona la struttura dedicata ai servizi sociosanitari del Comune di Salerno e del Comune di Pellezzano. Partecipa al tavolo istituzionale in qualità di esperto informatico per le attività di informatizzazione dei servizi sociosanitari erogati dall'Ufficio.
+}
+
+
+\cventry{2012--2015}{Responsabile OR}{Progetto Campus Salus per Lactem}{Salerno}{}
+{
+\`E stato responsabile dell'obiettivio realizzativo OR2 del progetto Salus per lactem. Nell'ambito del bando della Regione Campania per la concessione di aiuti a progetti di ricerca industriale e sviluppo sperimentale per la realizzazione di campus dell’innovazione in attuazione delle azioni a valere sugli obiettivi operativi 2.1 e 2.2. del POR Campania 2007/2013, in collaborazione con il Dipartimento di Farmacia (Capofila per l'Università di Salerno) ed il Dipartimento di Ingegneria Elettronica oltre ad un gruppo di aziende tra cui la capofila Centrale del Latte di Salerno, è stata presentata una proposta progettuale finalizzata al tracciamento ed al recupero del serio caseario, denominata {\em Salus per Lactem}. 
+%Il progetto industriale molto ambizioso è stato affrontato introducendo le soluzione più moderne esistenti in letteratura per disporre di dati raccolti direttamente presso le stalle al momento della raccolta. Un gruppo di sensori appositamente realizzati hanno infatti permesso di isolare parametri qualitativi e quantitativi del latte raccolto (come acidità, carica batterica, quantità di grassi). \`E stato poi successivamente dimostrato che tali parametri risultano fortemente caratterizzanti per quanto riguarda le proprietà organolettiche del prodotto finale e dei suoi derivati (yogourt, formaggi, prodotti salutistici, ecc.). Il progetto è stato finanziato per un costo complessivo di 3,6 M\euro{}.
+Il sottoscritto ha partecipato alla formulazione del progetto ed è stato responsabile del Obiettivo Realizzativo 2 (Progettazione del sistema di tracciabilità) che ha portato alla realizzazione (insieme all'azienda partner del progetto NexSoft S.p.A.) dell'intero sistema per la raccolta dati ed il tracciamento delle materie prime. 
+Il progetto ha concluso le attività di disseminazione dei risultati nell'ottobre del 2015.
+La sola componente universitaria per l'OR2 ha rendicontato costi per circa \euro{400.000}.
+}
+
+
+\cventry{2010--2015}{Responsabile Convenzione ex art. 66 DL 382/80}{InfoCert S.p.A.}{Roma}{}
+{
+\'E stato responsabile scientifico di 3 convenzioni stipulate con la società Infocert S.p.A.. La prima è stata finalizzata alla realizzazione di soluzioni tecnologiche (in ambito mobile) dedicate alla Posta Elettronica Certificata ed alla firma digitale per un importo complessivo di \euro{220.000}. Successivamente sono state stipulate due convenzioni nell'ambito di altrettanti progetti di ricerca finanziati da Regione Lazio (Nemesys e PROCIDA) che hanno visto la partecipazione del Dipartimento di Informatica (DI) in qualità di sub contractor. Nemesys ha sviluppato soluzioni dedicate alla digitalizzazione e dematerializzazione per la promozione delle reti di impresa per un importo di \euro{90.000}. Nell'ambito del progetto PROCIDA il DI ha svolto le proprie attività per la realizzazione di strumenti per la strong authentication da impiegare nell’ambito del progetto nazionale denominato Sistema Pubblico per l'Identitià Digitale (SPID) per un importo di \euro{120.000}. Attualmente Infocert S.p.A. è uno dei tre enti certificati per il rilascio di identità SPID.
+}
+
+\cventry{2014--2016}{Responsabile Scientifico}{Progetto M-ERP}{Techmobile S.r.L.}{Milano}
+{
+\`E stato responsabile scientifico delegato dal Rettore dell’Università di Salerno (giusto Decreto Rettorale Rep. N. 4667/2015 Prot. n.~67764 del 16/11/2015) del progetto M-ERP “Mobile Enterprise Resource Planning”.
+Nel maggio del 2014 è stato presentata la domanda di finanziamento in ATS con la società Techmobile S.r.l. al bando "Sportello dell'Innovazione" a valere sulle risorse del P.O. FESR Campania 2007/2013 Obiettivo Operativo 2.1, ottenendo un finanziamento per costi complessivi pari a \euro{925.702} ed un contributo di \euro{562.165,20} di cui \euro{81.043,20} per il DI.
+\newline{
+I temi affrontanti dal gruppo di lavoro hanno riguardato lo sviluppo di tool per la fruizione in mobilità di servizi di business intelligence erogati secondo il paradigma Software as a Service (SaaS).  In particolare il team del Dipartimento di Informatica si è occupato del disegno dei meccanismi per l'autenticazione ed autorizzazione condivisi (federati) tra i molteplici service provider.
+Il progetto si è concluso nel marzo 2016 con le fasi di rendicontazione.}
+}
+
+
+\subsection{Direzione o partecipazione a comitati editoriali di riviste} 
+
+% Direzione o partecipazione a comitati editoriali di riviste, collane editoriali, enciclopedie e trattati di riconosciuto prestigio; 
+
+\commento{Nessuna}
+
+\subsection{Partecipazione al collegio dei docenti del dottorato}
+
+% Partecipazione al collegio dei docenti, ovvero attribuzione di incarichi di insegnamento, nell'ambito di dottorati di ricerca accreditati dal Ministero; 
+
+\small
+\`E stato membro del collegio dei docenti del dottorato di informatica dell'Università di Salerno per i seguenti cicli:
+\smallskip
+\begin{tabularx}{\textwidth}{ | L{1} | L{2} | C{0.5} | C{0.5} | }
+
+%\begin{tabularx}{\textwidth}{ |X|X|X|X| }
+\hline 
+ \thead{Ateneo Proponente} & \thead{Titolo} & \thead{Anno} & \multicolumn{1}{| c |}{\bfseries Ciclo} \\ 
+\hline 
+ Università di Salerno & Informatica & 1996 & XII \\
+\hline 
+ Università di Salerno & Informatica & 1997 & XIII \\
+\hline 
+ Università di Salerno & Informatica & 1998 & XIV \\
+\hline 
+ Università di Salerno & Informatica & 1999 & XV \\
+\hline 
+ Università di Salerno & Informatica & 2006 & XXII \\ 
+\hline 
+ Università di Salerno & Informatica & 2007 & XXIII \\ 
+\hline 
+ Università di Salerno & Informatica & 2008 & XXIV \\ 
+\hline 
+ Università di Salerno & Teorie, Metodologie e Applicazioni Avanzate per la Comunicazione, l'Informatica e la Fisica & 2009 & XXV \\ 
+\hline 
+ Università di Salerno & Informatica & 2010 & XXVI \\ 
+\hline 
+ Università di Salerno & Informatica & 2011 & XXVII \\ 
+\hline 
+ Università di Salerno & Informatica & 2012 & XXVIII \\ 
+\hline 
+ Università di Salerno & Informatica ed Ingegneria dell'Informazione & 2013 & XXIX \\ 
+\hline 
+\end{tabularx} 
+
+\medskip
+
+Inoltre, attraverso i vari cicli, è stato tutor di 5 studenti del dottorato di ricerca in informatica:
+\smallskip 
+
+\cventry{1998--2002}{Umberto Ferraro Petrillo}{XIII ciclo di dottorato in Informatica dell'Università di Salerno}{}{}
+{
+Ha discusso una tesi dal titolo: "\emph{Algorithm Engineering: Methodologies and Support Tools}". Attualmente è in servizio presso il Dipartimento di Statistica dell'Università di Roma La Sapienza dal 2004.
+}
+
+\cventry{2000--2004}{Pompeo Faruolo}{XVI ciclo del dottorato in Informatica dell'Università di Salerno}{}{}
+{
+\`E stato sviluppato un tool basato sull'utilizzo degli hardware counter per la raccolta dei dati in esecuzione discutendo una tesi dal titolo: "\emph{Experimental Analysis of Graph Algorithms}". Attualmente è socio e dipendente dello Spin-Off eTuitus. 
+}
+
+\cventry{2011--2014}{Giancarlo De Maio}{XXV ciclo del dottorato in Informatica dell'Università di Salerno}{}{}
+{
+Si è occupato di Digital Forensics discutendo una tesi dal titolo: "\emph{On The Evolution of Digital Evidence: Novel Approaches for Cyber Investigation}" svolta a Santa Barbara (CA) USA con il Prof. G. Vigna. Dal 2014 è Senior Software Engineer presso la società Lastline, Inc. con sede a Londra (UK). 
+}
+
+\cventry{2013--2016}{Gianluca Roscigno}{XXVII ciclo del dottorato in Informatica dell'Università di Salerno}{}{}
+{
+Si è occupato di calcolo distribuito e Big Data in ambito digital image processing e bioinformatica discutendo una tesi dal titolo: "\emph{The Role of Distributed Computing in Big Data Science: Case Studies in Forensics and Bioinformatics}".
+}
+
+\cventry{2016--2019}{Andrea Bruno}{XXXII ciclo del dottorato in Informatica dell'Università di Salerno}{}{}
+{
+Lo studente ha iniziato il suo progetto formativo, puntando ad approndire le tematiche di Image Forensics ed elaborazione dei segnali.
+}
+
+\medskip
+\`E stato inoltre responsabile scientifico di numerose borse di studio ed assegni di ricerca post-doc. In particolare 2 assegni di tipo A (fondi di Ateneo) e 6 assegni di tipo B (finanziati da progetti di ricerca). 
+
+% Ferraro, Faruolo x 3 annulalità, Petagna, Cembalo, Giamberini, Mannetta, 
+
+\subsection{Incarichi di insegnamento o di ricerca presso atenei e istituti di ricerca esteri}
+
+% Formale attribuzione di incarichi di insegnamento o di ricerca (fellowship) presso qualificati atenei e istituti di ricerca esteri o sovranazionali; 
+\cventry{1987--1990}{Invited researcher}{Laboratoire d'Informatique Théorique et Programmation (LITP), Universitè Paris 6}{Paris}{France}
+{
+\'E stato Invited Researcher presso il Laboratoire d'Informatique Théorique et Programmation (LITP) dell'Université Paris 6. Il primo anno ha utilizzato una borsa di studio italiana offerta dal FORMEZ e successivamente ha ricevuto un contratto di ricerca biennale (contratto n.~871B00-7909245-LAAISLCIMAIA) stipulato con il LITP per prolungare il soggiorno di ulteriori 24 mesi e partecipare allo sviluppo del progetto MAIA con il Centre National d'Etudes en Télécommunications (CNET) per la realizzazione di una lisp machine dotata di Hardware e Software dedicato, interamente progettata e costruita in Francia. Nel team di ricerca è stato responsabile dello sviluppo del sottosistema dedicato alla concorrenza ed allo sviluppo delle primitive per la gestione di processi concorrenti.
+}
+
+
+\subsection{Conseguimento di premi e riconoscimenti per l'attività scientifica}
+
+% Conseguimento di premi e riconoscimenti per l'attività scientifica, inclusa l'affiliazione ad accademie di riconosciuto prestigio nel settore; 
+
+\cvitem{}{\`E stato tra gli autori del paper vincitore del \emph{Best Paper Award} della \emph{27th IEEE International Conference on Advanced Information Networking and Applications} (IEEE AINA-2013), Barcelona, Spagna, 25-28 Marzo 2013, per il lavoro: \emph{Forensically-Sound Methods to Collect Live Network Digital Evidence}, (Autori: A. Castiglione, G. Cattaneo, G. De Maio, e A. De Santis)~\cite{Castiglione2013405}.
+}
+
+\subsection{Risultati ottenuti nel trasferimento tecnologico}
+
+% Risultati ottenuti nel trasferimento tecnologico in termini di partecipazione alla creazione di nuove imprese (spin-off), sviluppo, impiego e commercializzazione di brevetti; 
+\cventry{2010--\lastYear}{Spin-Off Universitario eTuitus}{}{Salerno}{}
+{
+Ha condotto la nascita di uno spin-off universitario denominato \emph{e-Tuitus} costituito nell'ottobre 2014. Inizialmente è stata stipulata una convenzione di ricerca con il socio privato Infocert S.p.A. e, a valle dei risultati raggiunti, si è deciso di proseguire la collaborazione elaborando una iniziativa imprenditoriale e presentando la domanda per la costituzione di uno spin-off universitario. La società, con le caratteristiche di una start-up innovativa, è stata costituita il 4 ottobre 2014 con un capitale sociale di \euro{50.000} con la seguente compagine: Infocert S.p.A. con una quota del 24\%, i proff. A. De Santis e R. De Prisco con una quota del 19,25\% ciascuno e 3 dottori di ricerca, Dott. Fabio Petagna, M. Cembalo, P. Faruolo, con una quota del 12,5\% ognuno. Il sottoscritto ha scelto di restare socio occulto della società. La società, grazie all'enorme bagaglio di idee/progetto frutto delle attività di ricerca pregresse ed alle sinergie col partner InfCert S.p.A, è riuscita subito sviluppare una concreta operatività sul mercato, divenendo uno dei principali player nazionali per le applicazioni di firma digitale ed autenticazione, e realizzando numerosi progetti in tali ambiti. Attualmente conta 10 dipendenti tutti a tempo indeterminato ed un fatturato di circa \euro{300.000} per anno. 
+}
+
+
+\cventry{2015--\lastYear}{Deposito brevetto italiano}{}{}{}
+{
+Insieme al prof. A. De Santis è co-autore di un brevetto depositato all'Ufficio Italiano Brevetti e Marchi (UIBM) il 26 gennaio 2016 ed accettato dopo la review internazionale. (domanda No.~102016000007162) dal titolo: "\emph{Metodo e sistema per verificare l'integrità di sequenze di dati audio e/o video in tempo reale}". I diritti per lo sfruttamento dell'invenzione sono stati ceduti interamente allo spin-off eTuitus che è titolare del brevetto.
+}
+
+\subsection{Esperienze professionali}
+
+%Specifiche esperienze professionali caratterizzate da attività di ricerca del candidato e attinenti al settore concorsuale per cui è presentata la domanda per l'abilitazione
+
+%\pagebreak
+%\section{Attività di Coordinamento}
+%\subsection{TBD}
+
+%\subsection{TBD}
+\cventry{1984--1986}{Tecnico Laureato}{Dipartimento di Informatica ed Applicazioni dell'Università di Salerno}{}{}
+{
+Stipula un contratto triennale ai sensi dell'art. 26 D.P.R. 380/80 per attività specialistica di supporto alla attivazione dei laboratori didattici del Dipartimento in fase di creazione.
+}
+
+
+\cventry{1986--1999}{Ricercatore Universitario}{Università di Salerno}{}{}
+{Vincitore di un concorso per ricercatore universitario gruppo di discipline 92/bis (Informatica, oggi INF/01) prende servizio presso la Facoltà di Scienze Matematiche Fisiche e Naturali dell’Università di Salerno, afferendo al Dipartimento di Informatica ed Applicazioni (DIA).\newline{}
+}
+
+
+\cventry{1998--2004}{Responsabile R\&D}{Sintel S.p.A.}{Salerno}{Italy}{
+Una volta completata l'opzione per il passaggio a tempo definito all'Università di Salerno, stipula un contratto con la Sintel S.p.A. per assumere l’incarico di responsabile della divisione ricerca e sviluppo. Nello stesso anno partecipa al collocamento in borsa del titolo della capogruppo (Finmatica S.p.A.) contribuendo alla definizione delle strategie per l'innovazione, fattori determinanti per un'azienda che all'epoca ha caratterizzato il fenomeno della new economy.
+Dal termine dell'OPA fino al giugno del 2002 ha fatto parte del {"\em Board of Directors"} di Finmatica con l’incarico di  responsabile dei processi per l'innovazione tecnologica all’interno dell’intero gruppo.
+\newline{Con le stesse finalità, in collaborazione con la divisione M\&A, ha partecipato a tutte le {\em “Due Diligence”} effettuate nel processo di crescita del gruppo mediante acquisizione di nuove aziende già affermate su mercati internazionali complementari. Tali acquisizioni si sono dirette prima verso il mercato della sicurezza informatica (Intesis S.p.A.) e successivamente verso l’Extended SCM (Ortéms s.a., Lyon Fr e Mercia Ltd Birmingham UK). Infine particolare interesse è stato rivolto verso il settore della logistica e dei trasporti 3PL con l’acquisizione di OBSoft Paris Fr ed un grande progetto per Deutch Post (DHL).}
+}
+
+
+\cventry{1991--\lastYear}{Delegato del Rettore per il polo GARR dell’Ateneo Salernitano}{}{}{}
+{
+Fin dall'assunzione ha collaborato alla gestione del centro di calcolo del DIA attuando la migrazione dai sistemi proprietari (oggi legacy) come Digital VMS ai sistemi Open (all'epoca Unix 4.2 BSD).
+\newline{
+Dall'ottobre del 1991, con l'entrata in esercizio della rete GARR (Gruppo Armonizzazione Reti Ricerca) voluta dal Ministero dell'Università e della Ricerca Scientifica e Tecnologica (MURST), ha coordinato la nascita del nodo dell'Ateneo Salernitano, nel ruolo di responsabile del Polo GARR, delegato del Rettore. In questo contesto ha personalmente partecipato alle scelte tecniche sull'architettura della nascente rete ed alla messa a punto delle attrezzature che all'epoca si basavano su standard ancora non maturi e quindi fonte di numerosi problemi. Successivamente (’93) ha curato il passaggio dal primo ISP italiano I2Unix alla ormai consolidata rete per la ricerca GARR, estendendo i servizi telematici a tutte le componenti dell'Ateneo che ne hanno fatto richiesta. Nel 2000 è stata stipulata una convenzione ex art. 66 DL 382/80 tra Ateneo e DIA per il trasferimento dell'infrastruttura tecnologica al personale tecnico dell'Amministrazione centrale che da allora eroga tutti i principali servizi informatici all'intero Ateneo.
+}
+\newline{In questo stesso contesto ha presentato un progetto finanziato dal MIUR per la realizzazione di una rete metropolitana nella valle dell’Irno. Tale progetto è stato approvato nel maggio del 2000 per un importo di 2.300 Ml ed una durata di 24 mesi.
+Successivamente è stato delegato dal Rettore alla gestione del progetto finalizzato alla realizzazione di una capillare rete di distribuzione della connettività interna al Campus e tra il Campus ed il territorio circostante, creando così le premesse necessarie affinché i servizi di connettività potessero essere estesi anche alle componenti del territorio circostante.}
+}
+
+\cventry{2012--2015}{Membro del CTS del GARR}{}{}{}
+{
+Dal luglio del 2012 al giugno 2015 è stato membro del Comitato Tecnico Scientifico del GARR partecipando ai progetti nazionali ed internazionali dedicati alle reti per la ricerca (N-REN) tra cui il PON GARR-X Progress per tutte le Università delle regioni del Sud Italia.
+}
+
+\cventry{2013--2016}{Delegato del Rettore per l'ICT}{}{}{}
+{
+\`E stato delegato Rettore per l’ICT dell’Ateneo Salernitano.
+In tale ambito, ha coordinato numerosi progetti dell' Ateneo dedicati alle infrastrutture tecnologiche tra cui la completa virtualizzazione delle risorse di calcolo~\cite{Castiglione2012}, lo sviluppo della rete dati interna al campus ed il progetto RIMIC per la realizzazione di una MAN regionale per l’interconnessione delle 7 università Campane. Attualmente è membro del consiglio di amministrazione di RIMIC Scarl la società appositamente creata per la gestione infrastruttura tecnologica e l'erogazione dei servizi.
+}
+
+\cventry{2005--2006}{Consulente Commissione parlamentare di inchiesta}{}{}{}
+{
+\`E stato consulente esterno esperto informatico della Commissione Parlamentare d’Inchiesta sugli effetti dell’impiego di uranio impoverito partecipando, tra l'altro, alla creazione di una base dati ed un campione statistico per l’analisi dei fenomeni rilevati sul campo.
+}
+
+\cventry{2005--2006}{Consulente sicurezza ICT}{AgID ex CNIPA}{}{}
+{
+\'E stato nominato consulente per la sicurezza ICT dal Presidente L. Zoffoli del Centro Nazionale per l’Informatica nella Pubblica Amministrazione nell’ambito del progetto per la Razionalizzazione del Pubblica Amministrazione Centrale collaborando alla realizzazione di un questionario (sezione sicurezza) compilato da tutte le Pubbliche Amministrazioni Centrali per la rilevazione dello stato delle varie Amministrazioni. Successivamente i risultati raccolti sono stati analizzati e presentati alle Amministrazioni per la definizione di un modello unico e condiviso per la sicurezza all’interno della PAC. Contemporaneamente sono state elaborate le linee guida per approntare le misure minime necessarie per il raggiungimento delle soglie minime di sicurezza.
+}
+
+\cventry{2007--2009}{Consulente sicurezza ICT e continuità operativa}{AgID ex CNIPA}{}{}
+{
+Ha ricevuto un nuovo incarico come consulente per la sicurezza ICT e la continuità operativa dal Centro Nazionale per l’Informatica nella Pubblica Amministrazione.per occuparsi della seconda edizione del questionario ed in particolare alla sezione dedicata alla Sicurezza ICT.
+Nel contempo nell’ambito dello stesso contratto si è occupato del tema Continuità Operativa con lo scopo di analizzare ed elaborare modelli per la C.O. per la PA da utilizzare per le principali Amministrazioni della PAC.
+}
+
+\cventry{2006--2007}{Membro ordinario Consiglio Superiore delle Comunicazioni}{Ministero delle Comunicazioni}{}{}
+{
+Con decreto del 22 Dicembre 2004 del Ministro delle Comunicazioni On. M. Landolfi è stato nominato membro del Consiglio Superiore delle Comunicazioni presieduto dall’avv. G. Massaro cinsediato il 16 Marzo 2006 per il quadriennio 2006-2009. Nell’organigramma del Consiglio il sottoscritto ha partecipato alla terza ed alla quarta sezione, aventi rispettivamente come attribuzioni :
+Ricerca e sperimentazione, nuove tecnologie, istruzione ed aggiornamento professionale, la prima, e Multimedialità ed intermedialità, contenuti affari non suscettibili di rientrare nella competenza delle altre sezione o della giunta, la seconda. Il Consiglio, massimo organo consultivo del Ministro, si riunisce con cadenza bisettimanale per il necessario supporto alle attività del Ministero delle Comunicazioni. In funzione del D.P.R. del 14 maggio 2007, n. 90, è decaduto dalle funzioni.
+}
+
+
+
+%\medskip
+%\commento{Progetti, collaborazioni e convenzioni da eliminare ???}
+%%\cventry{year--year}{Job title}{Employer}{City}{}{Description}
+%%
+%
+%\`E stato inoltre  responsabile o proponente di numerosi progetti di ricerca in ambito ICT condotti in partnership con importanti aziende o con Enti Pubblici attraverso convenzioni stipulate con il DIA. Tutte queste esperienze hanno sempre fornito feedback estremamente utili per comprendere l'effettive esigenze del mercato e per fornire risposte sempre aggiornate  rispetto alle tecnologie disponibili nel complesso e dinamico mondo dell’ ICT.
+%
+%\medskip
+%
+%\cventry{1984--1986}{Responsabile}{ITALTEL S.p.A.}{S. Maria C.V.  (CE)}{}
+%{
+%ha avvicinato il mondo dell'industria nell'area delle telecomunicazioni con una collaborazione sul tema: “Introduzione dei sistemi aperti (UNIX) nella loro catena di produzione e per la sperimentazione di una linea di apparati trasmissione dati”.
+%}
+%
+%
+%
+%\cventry{1985--1998}{Consulente}{ITALDATA S.p.A. gruppo Siemens Data}{Pianodardine (AV)}{}
+%{
+%In un arco di tempo durato oltre 15 anni ha partecipato a numerosi progetti su varie tematiche dai sistemi aperti (progetto finalizzato Calcolo Parallelo~\cite{AICA:1,AICA:2}) fino al commercio elettronico al CSCW~\cite{ECOM:2,CABOTO:98,Barra199811}.
+%}
+%
+%\cventry{1990--1995}{Consulente}{SINTEL Consulting S.p.A.}{Salerno}{}
+%{
+%Ha partecipato attivamente al ridisegno dei processi interni per lo sviluppo della Software Factory e per il miglioramento dei processi produttivi mediante l’adozione di tecnologie innovative relative al calcolo distribuito e più in generale al processo di sviluppo Object Oriented adeguatamente supportato dalla metodologia RUP e strumenti basati sull' Unified Modeling Language.
+%}
+%
+%
+%\cventry{2010--2015}{Responsabile Convenzione}{Enti Locali}{Salerno}{}
+%{
+%Dal 2010 al 2015 sono state stipulate numerose convenzioni di ricerca con Enti Pubblici locali, tra cui Comune di Battipaglia, Provincia di Salerno, Comune di Pontecagnano, ecc. per importo complessivi di circa \euro{60.000}.
+%}
+%
+
+\section{Lingue Straniere}
+\cvitemwithcomment{Inglese}{Buon livello sia scritto che conversazione}{Numerosi soggiorni presso paesi anglofoni}
+\cvitemwithcomment{Francese}{Ottima la conversazione, discreto lo scritto}{3 anni di residenza continuata a Parigi}
+%\cvitemwithcomment{Language 3}{Skill level}{Comment}
+
+%\section{Computer skills}
+%\cvdoubleitem{category 1}{XXX, YYY, ZZZ}{category 4}{XXX, YYY, ZZZ}
+%\cvdoubleitem{category 2}{XXX, YYY, ZZZ}{category 5}{XXX, YYY, ZZZ}
+%\cvdoubleitem{category 3}{XXX, YYY, ZZZ}{category 6}{XXX, YYY, ZZZ}
+%
+%\section{Interests}
+%\cvitem{hobby 1}{Description}
+%\cvitem{hobby 2}{Description}
+%\cvitem{hobby 3}{Description}
+%
+%\section{Extra 1}
+%\cvlistitem{Item 1}
+%\cvlistitem{Item 2}
+%\cvlistitem{Item 3. This item is particularly long and therefore normally spans over several lines. Did you notice the indentation when the line wraps?}
+%
+%\section{Extra 2}
+%\cvlistdoubleitem{Item 1}{Item 4}
+%\cvlistdoubleitem{Item 2}{Item 5~\cite{book1}}
+%\cvlistdoubleitem{Item 3}{Item 6. Like item 3 in the single column list before, this item is particularly long to wrap over several lines.}
+%
+%\section{References}
+%\begin{cvcolumns}
+%  \cvcolumn{Category 1}{\begin{itemize}\item Person 1\item Person 2\item Person 3\end{itemize}}
+%  \cvcolumn{Category 2}{Amongst others:\begin{itemize}\item Person 1, and\item Person 2\end{itemize}(more upon request)}
+%  \cvcolumn[0.5]{All the rest \& some more}{\textit{That} person, and \textbf{those} also (all available upon request).}
+%\end{cvcolumns}
+%
+% Publications from a BibTeX file without multibib
+%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+%\nocite{*}
+%\bibliographystyle{plainyr}
+%\bibliography{personal}                        % 'publications' is the name of a BibTeX file
+
+% Publications from a BibTeX file using the multibib package
+%\section{Bibliografia}
+%\nocitebook{MyBibJournals}
+%\bibliographystylebook{plain}
+%\bibliographybook{MyBibJournals}                   % 'publications' is the name of a BibTeX file
+
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{MyBibConferences}                   % 'publications' is the name of a BibTeX file
+
+\renewcommand\refname{Bibliografia}
+
+\printbibheading
+
+
+\begin{refcontext}[labelprefix=J]{rc}
+
+\printbibliography[type=article, title={Articoli su riviste internazionali}, heading=subbibliography, resetnumbers=1]
+
+\end{refcontext}
+
+
+\begin{refcontext}[labelprefix=W]{rc}
+
+\printbibliography[nottype=article,title={Articoli presentati a conferenze internazionali}, heading=subbibliography, resetnumbers=1]
+
+\end{refcontext}
+
+%\printbibheading
+%\printbibliography[prefixnumbers={A},type=article,title={Articoli su riviste internazionali},heading=subbibliography]
+%\printbibliography[prefixnumbers={C},type=inproceedings,title={Articoli a conferenze},heading=subbibliography]
+%\printbibliography[prefixnumbers={C},type=conference,title={Articoli a conferenze},heading=subbibliography]
+
+\clearpage
+%-----       letter       ---------------------------------------------------------
+% recipient data
+%\recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
+%\date{January 01, 1984}
+%\opening{Dear Sir or Madam,}
+%\closing{Yours faithfully,}
+%\enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
+%\makelettertitle
+%
+
+%Albert Einstein discovered that $e=mc^2$ in 1905.
+%
+%\[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n \]
+%
+%\makeletterclosing
+
+%\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+\end{document}
+
+
+%% end of file `template.tex'.

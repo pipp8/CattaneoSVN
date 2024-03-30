@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Programmi/jboss-4.2.3.GA/client/jboss-saaj.jar"/>
+	<classpathentry kind="lib" path="C:/Programmi/jboss-4.2.3.GA/client/jboss-ejb3-client.jar"/>
+	<classpathentry kind="lib" path="C:/Programmi/jboss-4.2.3.GA/client/jboss-xml-binding.jar"/>
+	<classpathentry kind="lib" path="C:/Programmi/jboss-4.2.3.GA/client/jboss-jaxrpc.jar"/>
+	<classpathentry kind="lib" path="C:/Programmi/jboss-4.2.3.GA/client/jbossws-client.jar"/>
+	<classpathentry kind="lib" path="C:/Programmi/jboss-4.2.3.GA/client/activation.jar"/>
+	<classpathentry kind="lib" path="C:/Programmi/jboss-4.2.3.GA/client/mail.jar"/>
+	<classpathentry kind="lib" path="C:/Programmi/jboss-4.2.3.GA/client/wsdl4j.jar"/>
+	<classpathentry kind="lib" path="C:/Programmi/jboss-4.2.3.GA/lib/endorsed/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="C:/Programmi/jboss-4.2.3.GA/client/jbossall-client.jar"/>
+	<classpathentry kind="lib" path="C:/Programmi/jboss-4.2.3.GA/server/default/lib/jboss-remoting.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

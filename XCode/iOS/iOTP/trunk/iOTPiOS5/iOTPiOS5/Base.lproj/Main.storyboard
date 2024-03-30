@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="JDh-S4-opN">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <scenes>
+        <!--Autenticazione OTP-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="OTPMainViewController" id="BYZ-38-t0r" customClass="MainViewController" sceneMemberID="viewController">
+                    <view key="view" tag="1001" contentMode="scaleAspectFit" restorationIdentifier="OTPViewController" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="token_base.png" id="aGj-6n-Bmx">
+                                <rect key="frame" x="5" y="211" width="309" height="145"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="etuitus.png" id="IwD-qy-Vwn">
+                                <rect key="frame" x="16" y="46" width="116" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="infocert.jpg" id="jvO-Fu-ic1">
+                                <rect key="frame" x="176" y="24" width="141" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ready" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" id="4b1-DN-ZVU">
+                                <rect key="frame" x="129" y="256" width="114" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" staticText="YES" updatesFrequently="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NPQ-sa-Vnx">
+                                <rect key="frame" x="44" y="252" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Press" image="BluButton.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btGenerateClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CCN-dE-8fi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="OTP" image="keychain.png" id="vWm-Oe-4UT"/>
+                    <navigationItem key="navigationItem" title="Autenticazione OTP" id="5ei-RU-llI">
+                        <barButtonItem key="leftBarButtonItem" image="info28-32x32.png" id="cPL-IS-xbr"/>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Init" id="P9Q-a3-E1F"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btGenerate" destination="NPQ-sa-Vnx" id="vgM-BI-nU8"/>
+                        <outlet property="imgInfocert" destination="jvO-Fu-ic1" id="08J-Fu-mi5"/>
+                        <outlet property="imgToken" destination="aGj-6n-Bmx" id="RkA-5f-y82"/>
+                        <outlet property="imgTuitus" destination="IwD-qy-Vwn" id="DEs-ne-gDM"/>
+                        <outlet property="lblOTP" destination="4b1-DN-ZVU" id="u9k-RD-qW0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-181" y="337"/>
+        </scene>
+        <!--Local Init-->
+        <scene sceneID="d91-49-cVl">
+            <objects>
+                <viewController storyboardIdentifier="InitSeedViewControllerID" title="Local Init" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yre-d8-9j4" customClass="InitSeedViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cvi-Jg-8c1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="5SY-wJ-ofg">
+                                <rect key="frame" x="16" y="198" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="txtKeyEndOnExit:" destination="yre-d8-9j4" eventType="editingDidEndOnExit" id="ctK-Ys-lM8"/>
+                                    <action selector="txtKeyTouchOutside:" destination="yre-d8-9j4" eventType="touchUpOutside" id="xqp-ve-Wl5"/>
+                                    <action selector="txtKeyValueChanged:" destination="yre-d8-9j4" eventType="valueChanged" id="efP-eZ-3bS"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inserire la passphrase ricevuta" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cy3-zG-d0q">
+                                <rect key="frame" x="16" y="159" width="288" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" id="MCe-8r-gvV">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Generazione Seed" id="dXt-Cx-vpJ">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8Np-G3-dE3">
+                                            <connections>
+                                                <action selector="btCancelClicked:" destination="yre-d8-9j4" id="C4y-Dd-hs5"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Jgi-E1-dYQ">
+                                            <connections>
+                                                <action selector="btSaveClicked:" destination="yre-d8-9j4" id="X4Q-5b-PW9"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="dtP-Gw-CYm">
+                                <rect key="frame" x="10" y="294" width="300" height="222"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Local Setup" image="157-wrench.png" id="btE-mY-v8A"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="btCancel" destination="8Np-G3-dE3" id="8vK-aE-XWd"/>
+                        <outlet property="btSave" destination="Jgi-E1-dYQ" id="5eP-sY-tPb"/>
+                        <outlet property="lblKey" destination="Cy3-zG-d0q" id="9ss-Xk-Fsh"/>
+                        <outlet property="txtDisplaySeed" destination="dtP-Gw-CYm" id="7Th-k4-z4e"/>
+                        <outlet property="txtReceivedKey" destination="5SY-wJ-ofg" id="ME1-Es-JdW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xVX-gj-Gxb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="358" y="-355"/>
+        </scene>
+        <!--Info-->
+        <scene sceneID="sg1-Ac-zUT">
+            <objects>
+                <viewController title="Info" id="enV-ZN-Om4" customClass="AboutBoxViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MRc-RT-Erh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2015 eTuitus.com. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" id="J5U-Uy-jYq">
+                                <rect key="frame" x="16" y="279" width="288" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="eTuitus S.r.L. è uno spin-off " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" id="CmP-2k-oi5">
+                                <rect key="frame" x="16" y="308" width="288" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Soft Token per la generazione di Time based One Time Password secondo la specifica RFC 6238." selectable="NO" id="IZ2-T6-XUl">
+                                <rect key="frame" x="16" y="155" width="288" height="98"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOTP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MN1-GD-UES">
+                                <rect key="frame" x="107" y="74" width="106" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="infocert.jpg" id="hsw-TE-b2y">
+                                <rect key="frame" x="187" y="452" width="130" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dell'Università di Salerno e di InfoCert S.p.A." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" id="bxa-sH-VwV">
+                                <rect key="frame" x="16" y="328" width="288" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="etuitus.png" id="q20-ke-Cwf">
+                                <rect key="frame" x="16" y="464" width="101" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Info" image="info28-32x32.png" id="V3Z-LW-xLV"/>
+                    <navigationItem key="navigationItem" title="About iOTP" id="c6L-ch-B6O">
+                        <barButtonItem key="leftBarButtonItem" image="back10-48x48.png" id="PpG-qZ-1Ak"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="txtLongDesc" destination="IZ2-T6-XUl" id="zDv-AF-rMc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qqb-Nb-E7k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="358" y="337"/>
+        </scene>
+        <!--Main Tab Bar View Controller-->
+        <scene sceneID="66V-Pb-tn8">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarViewController" id="JDh-S4-opN" customClass="MainTabBarViewController" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="S4p-hW-EYp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="enV-ZN-Om4" kind="relationship" relationship="viewControllers" id="VhV-8A-can"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="neb-Ir-0mh"/>
+                        <segue destination="7a5-PA-1vf" kind="relationship" relationship="viewControllers" id="Jcl-qc-fPM"/>
+                        <segue destination="yre-d8-9j4" kind="relationship" relationship="viewControllers" id="czp-KU-5Op"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9FZ-Lw-9TG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-741.86666666666667" y="-22.719999999999999"/>
+        </scene>
+        <!--Remote Seed Enrollment-->
+        <scene sceneID="ku4-Vf-BIz">
+            <objects>
+                <viewController storyboardIdentifier="RemoteSeedViewControllerID" title="Remote Seed Enrollment" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7a5-PA-1vf" customClass="RemoteSeedViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wym-Eh-kD9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="753" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="3Co-ke-zxi">
+                                <rect key="frame" x="16" y="103" width="191" height="30.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="txtUsername_Changed:" destination="7a5-PA-1vf" eventType="editingChanged" id="RFU-ba-ooB"/>
+                                    <action selector="txtUsername_ValueChanged:" destination="7a5-PA-1vf" eventType="valueChanged" id="Q24-MU-TTd"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="753" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="2nC-Cw-Xzq">
+                                <rect key="frame" x="16" y="184" width="191" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="txtPassword_Changed:" destination="7a5-PA-1vf" eventType="editingChanged" id="O0H-3h-kKv"/>
+                                    <action selector="txtPassword_ValueChanged:" destination="7a5-PA-1vf" eventType="valueChanged" id="heW-7f-RlW"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eha-L4-OMb">
+                                <rect key="frame" x="16" y="76" width="288" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="z6e-Mi-HaW">
+                                <rect key="frame" x="16" y="157" width="294" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inserire il codice numerico ricevuto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1SH-TE-nW3">
+                                <rect key="frame" x="16" y="230" width="294" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" id="zDx-df-Ydo">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Sincronizzazione Segreto" id="HUj-OK-DEC">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="GXK-po-xnM"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="KGA-QV-5hy">
+                                            <connections>
+                                                <action selector="btSaveClicked:" destination="7a5-PA-1vf" id="7f5-vt-ZXD"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mVW-tm-ntO">
+                                <rect key="frame" x="224" y="184" width="80" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Richiedi OTP">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btStep1_Clicked:" destination="7a5-PA-1vf" eventType="touchUpInside" id="Lut-rD-x7W"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="KDv-Hm-GUs">
+                                <rect key="frame" x="16" y="326" width="294" height="185"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="0.17283950619999999" blue="0.17283950619999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="753" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="SRN-89-mnT">
+                                <rect key="frame" x="16" y="262" width="191" height="30.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="txtSMSOTP_Changed:" destination="7a5-PA-1vf" eventType="editingChanged" id="St1-ta-MSD"/>
+                                    <action selector="txtSMSOTP_TouchOutside:" destination="7a5-PA-1vf" eventType="touchUpOutside" id="MB1-6V-IlS"/>
+                                    <action selector="txtSMSOTP_ValueChanged:" destination="7a5-PA-1vf" eventType="valueChanged" id="4SE-lo-ts6"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aum-pm-TgJ">
+                                <rect key="frame" x="224" y="257" width="80" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Richiedi Seed">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btStep2_Clicked:" destination="7a5-PA-1vf" eventType="touchUpInside" id="prM-D8-aHz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Remote Setup" image="auth.png" id="8xK-gW-4Me"/>
+                    <connections>
+                        <outlet property="btCancel" destination="GXK-po-xnM" id="bUn-GP-YML"/>
+                        <outlet property="btSave" destination="KGA-QV-5hy" id="PEi-kG-etq"/>
+                        <outlet property="btStep1" destination="mVW-tm-ntO" id="r7B-am-TRI"/>
+                        <outlet property="btStep2" destination="aum-pm-TgJ" id="xHR-Gw-C4W"/>
+                        <outlet property="txtDisplaySeed" destination="KDv-Hm-GUs" id="5BS-5T-1iw"/>
+                        <outlet property="txtPassword" destination="2nC-Cw-Xzq" id="w2G-S4-cC9"/>
+                        <outlet property="txtSMSOTP" destination="SRN-89-mnT" id="yoC-Ss-HBK"/>
+                        <outlet property="txtUsername" destination="3Co-ke-zxi" id="UJV-3H-Gtm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8DY-y2-b6M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-181" y="-355"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="157-wrench.png" width="24" height="24"/>
+        <image name="BluButton.png" width="308" height="302"/>
+        <image name="auth.png" width="30" height="30"/>
+        <image name="back10-48x48.png" width="48" height="48"/>
+        <image name="etuitus.png" width="907" height="301"/>
+        <image name="info28-32x32.png" width="32" height="32"/>
+        <image name="infocert.jpg" width="634" height="294"/>
+        <image name="keychain.png" width="30" height="30"/>
+        <image name="token_base.png" width="2518" height="1128"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

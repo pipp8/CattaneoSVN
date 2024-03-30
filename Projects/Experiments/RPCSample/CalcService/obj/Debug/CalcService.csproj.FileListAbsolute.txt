@@ -1,0 +1,10 @@
+c:\users\cattaneo\documents\visual studio 2010\Projects\RPCSample\CalcClient\bin\CalcClient.dll
+c:\users\cattaneo\documents\visual studio 2010\Projects\RPCSample\CalcClient\bin\CalcClient.pdb
+c:\users\cattaneo\documents\visual studio 2010\Projects\RPCSample\CalcClient\obj\Debug\ResolveAssemblyReference.cache
+c:\users\cattaneo\documents\visual studio 2010\Projects\RPCSample\CalcClient\obj\Debug\CalcClient.dll
+c:\users\cattaneo\documents\visual studio 2010\Projects\RPCSample\CalcClient\obj\Debug\CalcClient.pdb
+C:\Users\cattaneo\documents\visual studio 2010\Projects\RPCSample\CalcService\bin\CalcClientService.dll
+C:\Users\cattaneo\documents\visual studio 2010\Projects\RPCSample\CalcService\bin\CalcClientService.pdb
+C:\Users\cattaneo\documents\visual studio 2010\Projects\RPCSample\CalcService\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\cattaneo\documents\visual studio 2010\Projects\RPCSample\CalcService\obj\Debug\CalcClientService.dll
+C:\Users\cattaneo\documents\visual studio 2010\Projects\RPCSample\CalcService\obj\Debug\CalcClientService.pdb
